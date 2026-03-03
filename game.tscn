@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=5 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://dn74uyqle0r5b" path="res://ground.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://player.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://ca5073hui4bqu" path="res://can.tscn" id="1_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b27eq4lmgnk1l" path="res://car.tscn" id="3_feb5d"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Can" parent="." instance=ExtResource("1_fc0e3")]
+transform = Transform3D(0.2572342, 0.094039746, 0.14983664, -0.12448027, 0.25568277, 0, -0.14453617, -0.05283957, 0.2666676, 2.6922104, 1.7716794, -4.059444)
 
 [node name="Ground" parent="." instance=ExtResource("1_80nbo")]
 
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0054595, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9775217, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8974124, 0.44119263, 0, -0.44119263, 0.8974124, 0, 0, 0)
 shadow_enabled = true
+
+[node name="Car" parent="." instance=ExtResource("3_feb5d")]
+transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.7842027, 3.009354, 1.6200225, 3.0233765)
