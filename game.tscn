@@ -25,7 +25,7 @@ glow_enabled = true
 
 [sub_resource type="Animation" id="Animation_fc0e3"]
 resource_name = "DayAndNight"
-length = 180.0
+length = 600.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -34,7 +34,7 @@ tracks/0/path = NodePath("Sun:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 180),
+"times": PackedFloat32Array(0, 600),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(1.8325957, 0.33161256, 2.459169), Vector3(-4.4505897, 0.33161256, 2.459169)]
@@ -46,7 +46,7 @@ tracks/1/path = NodePath("Sun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 180),
+"times": PackedFloat32Array(0, 600),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -92,7 +92,8 @@ script = ExtResource("1_ryrav")
 environment = SubResource("Environment_ryrav")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.53543466, -0.84036267, -0.08426324, -0.16323091, 0.20085558, -0.9659258, 0.82865274, -0.50343585, -0.24471821, 0, 0, 0)
+transform = Transform3D(-0.53543454, -0.84036267, -0.08426322, -0.16323088, 0.20085558, -0.9659256, 0.8286526, -0.50343585, -0.24471815, 0, 0, 0)
+top_level = true
 shadow_enabled = true
 
 [node name="terrain" parent="." instance=ExtResource("1_7jktm")]

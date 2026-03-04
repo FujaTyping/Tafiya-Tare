@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var startTime = 40
-@export var dayLengthInSeconds:float = 180
+@export var startTime = 160
+@export var dayLengthInSeconds:float = 155
 
 @export var morningColorTop: Color = Color("5897fa")
 @export var morningColorHorizon: Color = Color("d3916b")
@@ -18,12 +18,12 @@ extends Node3D
 @onready var day_night: AnimationPlayer = $DayNight
 @onready var environment: WorldEnvironment = $Environment
 
-var dayDuration = 180
+var dayDuration = 600
 var dayColorList = [
-	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 50},
-	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 70 },
-	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 138},
-	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 148}
+	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165},
+	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190 },
+	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470},
+	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485}
 ]
 var currentDayState = 0
 var durationMultiplier = 1.0

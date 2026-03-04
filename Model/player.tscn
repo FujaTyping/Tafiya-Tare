@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=6 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="2_c8du1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -34,3 +35,5 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.735679)
+
+[node name="Pause" parent="." instance=ExtResource("2_c8du1")]
