@@ -92,7 +92,7 @@ script = ExtResource("1_ryrav")
 environment = SubResource("Environment_ryrav")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.53543454, -0.84036267, -0.08426322, -0.16323088, 0.20085558, -0.9659256, 0.8286526, -0.50343585, -0.24471815, 0, 0, 0)
+transform = Transform3D(-0.53543454, -0.84036267, -0.08426322, -0.16323088, 0.20085558, -0.9659255, 0.8286526, -0.50343585, -0.24471813, 0, 0, 0)
 top_level = true
 shadow_enabled = true
 

@@ -1,0 +1,178 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk2eqtj4bowsx"]
+
+[ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
+[ext_resource type="PackedScene" uid="uid://0i1pyomtpv8i" path="res://Terrain/terrain.glb" id="2_wfiwe"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
+sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
+sky_horizon_color = Color(0.48235294, 0.7490196, 1, 1)
+sky_curve = 0.160766
+ground_bottom_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
+ground_horizon_color = Color(0.48235294, 0.7490196, 1, 1)
+ground_curve = 0.04287107
+
+[sub_resource type="Sky" id="Sky_7jktm"]
+sky_material = SubResource("ProceduralSkyMaterial_wfiwe")
+
+[sub_resource type="Environment" id="Environment_4hkxj"]
+background_mode = 2
+sky = SubResource("Sky_7jktm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_wfiwe"]
+resource_name = "Intro"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.41075087, 0.33461705, -0.27656758), Vector3(1.3572552, 0.19984427, 0.7351098), Vector3(0.8884597, 0.14619005, -0.91524005), Vector3(0.41075087, 0.33461705, -0.27656758)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.011307518, 1.4075669, 0), Vector3(0.067232326, 1.0105044, 0), Vector3(0.19118972, 2.2889562, 0), Vector3(-0.011307518, 1.4075669, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4hkxj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.41075087, 0.33461705, -0.27656758)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.011307518, 1.4075669, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmqfe"]
+_data = {
+&"Intro": SubResource("Animation_wfiwe"),
+&"RESET": SubResource("Animation_4hkxj")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0h2wq")
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4hkxj")
+
+[node name="terrain" parent="." instance=ExtResource("2_wfiwe")]
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0367001, 0.20293762, -0.9785037, 0.03095014, 0.97892445, 0.20186405, 0.998847, -0.02287639, -0.042207614, 0, 0, 0)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.16250554, -0.011156974, 0.9866443, 0, 0.99993587, 0.011307275, -0.9867076, -0.0018374948, 0.16249512, 0.41075087, 0.33461705, -0.27656758)
+keep_aspect = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 122.5
+offset_top = -212.875
+offset_right = 453.5
+offset_bottom = 212.875
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Project Catalyst"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Option" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Option"
+
+[node name="Play2" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credit"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qmqfe")
+}
+autoplay = "Intro"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

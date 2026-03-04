@@ -38,3 +38,7 @@ func pauseMenu() :
 		open.play("PauseAnimation")
 		get_tree().paused = true
 	paused = !paused  # Flip the paused state
+
+func _on_back_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://UI/menu.tscn")
