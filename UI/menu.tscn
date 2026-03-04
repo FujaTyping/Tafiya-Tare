@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk2eqtj4bowsx"]
+[gd_scene load_steps=10 format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
 [ext_resource type="PackedScene" uid="uid://0i1pyomtpv8i" path="res://Terrain/terrain.glb" id="2_wfiwe"]
+[ext_resource type="AudioStream" uid="uid://b55ww8sh6iako" path="res://Sound/Pitstop Playtime.mp3" id="3_4hkxj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -114,7 +115,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.16250554, -0.011156973, 0.98664427, 0, 0.9999358, 0.011307274, -0.9867076, -0.0018374947, 0.1624951, 0.41075087, 0.33461705, -0.27656758)
+transform = Transform3D(0.16250554, -0.0111569725, 0.9866442, 0, 0.99993575, 0.011307273, -0.9867076, -0.0018374946, 0.1624951, 0.41075087, 0.33461705, -0.27656758)
 keep_aspect = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -178,6 +179,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_qmqfe")
 }
 autoplay = "Intro"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4hkxj")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]

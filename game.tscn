@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=14 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://0i1pyomtpv8i" path="res://Terrain/terrain.glb" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://ca5073hui4bqu" path="res://Model/can.tscn" id="1_fc0e3"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="PackedScene" uid="uid://b27eq4lmgnk1l" path="res://Model/car.tscn" id="3_feb5d"]
+[ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
+[ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -112,3 +114,11 @@ transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.784
 libraries = {
 &"": SubResource("AnimationLibrary_ryrav")
 }
+
+[node name="nightBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ryrav")
+volume_db = -5.0
+
+[node name="dayBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_eow3j")
+volume_db = -5.0

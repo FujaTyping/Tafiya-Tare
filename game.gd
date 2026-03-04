@@ -18,6 +18,9 @@ extends Node3D
 @onready var day_night: AnimationPlayer = $DayNight
 @onready var environment: WorldEnvironment = $Environment
 
+@onready var night_bgm: AudioStreamPlayer = $nightBGM
+@onready var day_bgm: AudioStreamPlayer = $dayBGM
+
 var dayDuration = 600
 var dayColorList = [
 	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165},
@@ -79,6 +82,15 @@ func _day_change_animation():
 	tween.tween_property(environment, "environment:sky:sky_material:ground_bottom_color", topColor, duration)
 	tween.parallel()
 	tween.tween_property(environment, "environment:sky:sky_material:ground_horizon_color", hoirzonColor, duration)
+	
+	if dayColorList[currentDayState]["startTime"] >= 485 :
+		if not night_bgm.playing :
+			night_bgm.play()
+			day_bgm.stop()
+	else :
+		if not day_bgm.playing :
+			day_bgm.play()
+			night_bgm.stop()
 
 func _process(delta: float) -> void:
 	_refresh_day_state()
