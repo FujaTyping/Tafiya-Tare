@@ -2,6 +2,7 @@ extends Control
 
 @onready var pause: Control = $"."
 @onready var open: AnimationPlayer = $Open
+@onready var resume: Button = $MarginContainer/VBoxContainer/VBoxContainer/Resume
 var paused = false
 
 
@@ -37,6 +38,7 @@ func pauseMenu() :
 		#self.show()
 		open.play("PauseAnimation")
 		get_tree().paused = true
+		resume.grab_focus()
 	paused = !paused  # Flip the paused state
 
 func _on_back_pressed() -> void:
