@@ -4,6 +4,7 @@ extends VehicleBody3D
 @export var ENGINE_POWER = 200
 
 @onready var title_action: Label3D = $TitleAction
+@onready var display: AnimationPlayer = $Display
 
 var is_driven: bool = false 
 
@@ -21,7 +22,10 @@ func _physics_process(delta):
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") :
 		title_action.show()
+		display.play("In")
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player") :
+		display.play("Out")
+		await display.animation_finished
 		title_action.hide()
