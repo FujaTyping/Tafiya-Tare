@@ -13,6 +13,7 @@ albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 
 [node name="Car" type="VehicleBody3D"]
 collision_layer = 2
+collision_mask = 3
 can_sleep = false
 script = ExtResource("1_0yxxq")
 
@@ -22,6 +23,14 @@ mesh = SubResource("BoxMesh_24jkt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.9748777, 0, 0, 0, 0.7094479, 0, 0, 0, 2.7167485, 0.00013871132, 0.21099842, 0)
+shape = SubResource("BoxShape3D_24jkt")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.2259686, 0, 0, 0, 1.2999612, 0, 0, 0, 3.792434, 0.00013871132, 0.5310596, 0)
 shape = SubResource("BoxShape3D_24jkt")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
@@ -66,7 +75,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_24jkt")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.462, 0.968)
+spring_length = -0.4
 
 [node name="CarCam" type="Camera3D" parent="SpringArm3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.97912717, 0.20324875, 0, -0.20324875, 0.97912717, 0, 0.0003157854, 0.00034338236)
+
+[node name="TitleAction" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71022, 0)
+text = "Press E to ride and exit"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
