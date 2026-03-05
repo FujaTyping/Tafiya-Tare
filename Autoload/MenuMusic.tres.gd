@@ -6,3 +6,6 @@ func playmenumusic() :
 	
 func stopmenumusic() :
 	audio_stream_player.stop()
+
+func getmusicplaying() :
+	return audio_stream_player.playing

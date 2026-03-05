@@ -7,7 +7,8 @@ extends Control
 
 func _ready():
 	play.grab_focus()
-	MenuMusic.playmenumusic()
+	if not MenuMusic.getmusicplaying() :
+		MenuMusic.playmenumusic()
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/player_selection.tscn")
