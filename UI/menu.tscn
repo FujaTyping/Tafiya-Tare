@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1160, 0), Vector2(0, 0)]
+"values": [Vector2(-1930, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_e05sn"]
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-1160, 0)]
+"values": [Vector2(0, 0), Vector2(-1930, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wfiwe"]
@@ -95,7 +95,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1160, 111.125), Vector2(698.5, 111.125)]
+"values": [Vector2(1930, 0), Vector2(1244, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_kfjwn"]
@@ -111,7 +111,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(698.5, 111.125), Vector2(1160, 111.125)]
+"values": [Vector2(1244, 0), Vector2(1930, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_4hkxj"]
@@ -150,7 +150,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1160, 0)]
+"values": [Vector2(-1930, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -162,7 +162,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(698.5, 111.125)]
+"values": [Vector2(1244, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qmqfe"]
@@ -204,25 +204,22 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918062, 0.012961894, 0.9901818, 0, 0.99991435, -0.013089288, -0.9902666, 0.0018217764, 0.1391687, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918059, 0.012961894, 0.9901816, 0, 0.99991435, -0.013089285, -0.99026644, 0.0018217764, 0.13916866, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 122.5
-offset_top = -212.875
-offset_right = 453.50024
-offset_bottom = 212.875
-grow_horizontal = 2
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -676.0
+offset_right = -112.99951
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -272,8 +269,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1160.0
-offset_right = -1160.0
+offset_left = -1930.0
+offset_right = -1930.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 0
