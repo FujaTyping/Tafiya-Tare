@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfkogsgju8c3l"]
+
+[ext_resource type="PackedScene" uid="uid://bgakusem1idm8" path="res://Model/Players/woman_player.glb" id="1_g0sxa"]
+
+[node name="woman_player" instance=ExtResource("1_g0sxa")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(-3.697785e-32, 1.1102229e-16, 1.1102229e-16, 1)
+bones/2/rotation = Quaternion(0.7071068, -3.0908623e-08, -3.0908623e-08, 0.7071068)
+bones/3/rotation = Quaternion(0.60616255, -0.006412315, 0.0036770792, 0.7953064)
+bones/7/rotation = Quaternion(-0.7038409, 6.965276e-24, -1.5628408e-16, 0.71035767)
+bones/8/rotation = Quaternion(-0.58266157, 0.004337957, 0.0024593128, 0.8126997)
+bones/10/rotation = Quaternion(-0.0124053545, 0.20126897, 0.9789325, -0.03206577)
+bones/11/rotation = Quaternion(-0.033120062, 1.6713435e-09, 1.412329e-08, 0.99945146)
+bones/12/rotation = Quaternion(-0.029138146, 0.00931513, -0.6553056, 0.7547442)
+bones/13/rotation = Quaternion(0.97841674, 0.03328077, -0.013667405, -0.20348541)
+bones/14/rotation = Quaternion(-0.045131553, 0.00014633306, 0.0023024708, 0.9989784)
+bones/15/rotation = Quaternion(-0.046285104, -0.009055047, 0.65985465, 0.7499117)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=10 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
 [ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="2_c8du1"]
+[ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="3_ieuix"]
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
 
@@ -29,6 +30,10 @@ mesh = SubResource("CapsuleMesh_4flbx")
 
 [node name="playerAnimation" parent="." instance=ExtResource("2_5xjvv")]
 transform = Transform3D(-5.780226e-09, 0, -0.1162554, 0, 0.12203301, 0, 0.13223617, 0, -5.0816853e-09, 0, 0, 0)
+
+[node name="woman_player" parent="." instance=ExtResource("3_ieuix")]
+transform = Transform3D(1.08123395e-08, 0, -0.108337075, 0, 0.116785966, 0, 0.096225515, 0, 1.2173513e-08, 0, 0.006185621, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.738862, 0, 0, 0, 0.7011021, 0, 0, 0, 0.71398246, 0, 0, 0)

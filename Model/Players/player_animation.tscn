@@ -339,15 +339,15 @@ _data = {
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/1/rotation = Quaternion(-3.697785e-32, 1.1102229e-16, 1.1102229e-16, 1)
 bones/2/rotation = Quaternion(0.7071068, -3.0908623e-08, -3.0908623e-08, 0.7071068)
-bones/3/rotation = Quaternion(0.5530021, -6.290335e-08, -9.009548e-08, 0.8331799)
+bones/3/rotation = Quaternion(0.552987, -0.0061587635, 0.004087578, 0.83315706)
 bones/7/rotation = Quaternion(-0.7038409, 6.965276e-24, -1.5628408e-16, 0.71035767)
-bones/8/rotation = Quaternion(-0.5425636, 3.6518477e-18, -1.0704176e-16, 0.8400148)
-bones/10/rotation = Quaternion(1.8680039e-07, 0.28207758, 0.95939165, 5.4922484e-08)
-bones/11/rotation = Quaternion(-0.14094666, 6.99988e-17, 5.4886613e-08, 0.9900172)
-bones/12/rotation = Quaternion(-0.019974139, -1.11996805e-07, -0.6901614, 0.7233798)
-bones/13/rotation = Quaternion(0.95611286, 3.330703e-17, 5.886388e-17, -0.2929989)
-bones/14/rotation = Quaternion(-0.16078515, 8.380845e-24, -3.5701476e-17, 0.98698944)
-bones/15/rotation = Quaternion(-0.03564175, -7.5238525e-08, 0.6749065, 0.737042)
+bones/8/rotation = Quaternion(-0.5425568, 0.0042135655, 0.0026668247, 0.84000427)
+bones/10/rotation = Quaternion(-0.009698168, 0.2819109, 0.95882434, -0.032985628)
+bones/11/rotation = Quaternion(-0.14094663, -1.380733e-09, 5.414036e-08, 0.9900172)
+bones/12/rotation = Quaternion(-0.019974133, -1.0932908e-07, -0.6901614, 0.7233798)
+bones/13/rotation = Quaternion(0.9554938, 0.034399, -0.0105415005, -0.2928092)
+bones/14/rotation = Quaternion(-0.16078515, -4.4733928e-10, -2.3208855e-09, 0.98698944)
+bones/15/rotation = Quaternion(-0.035641756, -6.5359735e-08, 0.6749065, 0.737042)
 
 [node name="AnimationPlayerJ" type="AnimationPlayer" parent="." index="2"]
 libraries = {

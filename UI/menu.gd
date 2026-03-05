@@ -7,9 +7,10 @@ extends Control
 
 func _ready():
 	play.grab_focus()
+	MenuMusic.playmenumusic()
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://UI/player_selection.tscn")
 
 func _on_option_pressed() -> void:
 	pass # Replace with function body.

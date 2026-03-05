@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5812c46x3g8"]
+
+[ext_resource type="Script" uid="uid://32eheebn1iml" path="res://Autoload/MenuMusic.tres.gd" id="1_6i3pu"]
+[ext_resource type="AudioStream" uid="uid://b55ww8sh6iako" path="res://Sound/Pitstop Playtime.mp3" id="1_hun00"]
+
+[node name="MenuMusic" type="Node"]
+script = ExtResource("1_6i3pu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_hun00")
+volume_db = -8.0
