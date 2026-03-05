@@ -117,8 +117,8 @@ libraries = {
 
 [node name="nightBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ryrav")
-volume_db = -5.0
+volume_db = -9.0
 
 [node name="dayBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eow3j")
-volume_db = -5.0
+volume_db = -9.0

@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 4.5
 @onready var pivot = $CamOrigin
 @export var sens = 0.2
 @export var joy_sens = 3.0
+@onready var walking: AudioStreamPlayer3D = $Walking
+@onready var jump: AudioStreamPlayer3D = $Jump
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -37,6 +39,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jump.play()
 		velocity.y = JUMP_VELOCITY
 
 	# As good practice, you should replace UI actions with custom gameplay actions. 
@@ -47,6 +50,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
+		walking.play()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 

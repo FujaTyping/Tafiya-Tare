@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=8 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="2_c8du1"]
+[ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
+[ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -37,3 +39,11 @@ margin = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.735679)
 
 [node name="Pause" parent="." instance=ExtResource("2_c8du1")]
+
+[node name="Walking" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_qsoau")
+volume_db = -11.0
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ixqkf")
+volume_db = -11.0
