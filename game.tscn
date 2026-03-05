@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=14 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://ca5073hui4bqu" path="res://Model/can.tscn" id="1_fc0e3"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="PackedScene" uid="uid://b27eq4lmgnk1l" path="res://Model/car.tscn" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cp5v6jobv00qh" path="res://Terrain/plain.glb" id="3_j5wjh"]
@@ -105,14 +104,11 @@ transform = Transform3D(2.820359, 0, 0, 0, 2.096896, 0, 0, 0, 2.590889, 0, 0, 0)
 [node name="Mt" parent="." instance=ExtResource("3_vef74")]
 transform = Transform3D(12.76089, 0, 0, 0, 13.049737, 0, 0, 0, 13.452707, 35.23807, 0.070560455, 0)
 
-[node name="Can" parent="." instance=ExtResource("1_fc0e3")]
-transform = Transform3D(0.2572342, 0.094039746, 0.14983664, -0.12448027, 0.25568277, 0, -0.14453617, -0.05283957, 0.2666676, 2.6922104, 2.9034936, -4.059444)
-
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1376195, 1.9775217, 0)
 
 [node name="Car" parent="." instance=ExtResource("3_feb5d")]
-transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.7842027, 6.9001656, 3.360696, 3.0233765)
+transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.7842027, 1.6850595, 3.360696, -1.9620814)
 
 [node name="DayNight" type="AnimationPlayer" parent="."]
 libraries = {

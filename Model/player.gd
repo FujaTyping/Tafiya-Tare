@@ -9,7 +9,16 @@ const JUMP_VELOCITY = 4.5
 @onready var walking: AudioStreamPlayer3D = $Walking
 @onready var jump: AudioStreamPlayer3D = $Jump
 
+@onready var camera_3d: Camera3D = $CamOrigin/SpringArm3D/Camera3D
+
+# --- CAR VARIABLES ---
+@onready var car_cam: Camera3D = $"../Car/SpringArm3D/%CarCam"
+@onready var car_node: Node3D = $"../Car"
+
+var is_in_car: bool = false
+
 func _ready():
+	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
@@ -19,12 +28,44 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not is_in_car:
 		rotate_y(deg_to_rad(-event.relative.x * sens))
 		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+	
+	# --- INTERACTION LOGIC ---
+	if Input.is_action_just_pressed("interaction"):
+		if car_cam != null and car_node != null:
+			
+			if not is_in_car:
+				var distance_to_car = global_position.distance_to(car_node.global_position)
+				
+				if distance_to_car < 2:
+					# GET IN THE CAR
+					is_in_car = true
+					car_cam.current = true
+					camera_3d.current = false
+					visible = false 
+					$CollisionShape3D.disabled = true 
+					
+					# ### NEW ### Tell the car to turn on!
+					car_node.is_driven = true 
+					
+			else:
+				# GET OUT OF THE CAR
+				is_in_car = false
+				car_cam.current = false
+				camera_3d.current = true
+				visible = true
+				$CollisionShape3D.disabled = false
+				
+				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(0, 2, 0)
+				car_node.is_driven = false
 
 func _physics_process(delta: float) -> void:
+	if is_in_car:
+		return 
+
 	# --- Controller Look ---
 	var look_dir := Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	if look_dir.length() > 0:
@@ -42,7 +83,6 @@ func _physics_process(delta: float) -> void:
 		jump.play()
 		velocity.y = JUMP_VELOCITY
 
-	# As good practice, you should replace UI actions with custom gameplay actions. 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

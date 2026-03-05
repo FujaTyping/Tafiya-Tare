@@ -1,6 +1,9 @@
 extends Control
 
-@onready var play: Button = $MarginContainer/VBoxContainer/VBoxContainer/Play
+@onready var play: Button = $Main/VBoxContainer/VBoxContainer/Play
+@onready var credit_animation: AnimationPlayer = $CreditAnimation
+@onready var menu_animation: AnimationPlayer = $MenuAnimation
+@onready var close_credit: Button = $Credit/VBoxContainer/CloseCredit
 
 func _ready():
 	play.grab_focus()
@@ -13,3 +16,15 @@ func _on_option_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_credit_pressed() -> void:
+	menu_animation.play("MenuOut")
+	credit_animation.play("CreditIn")
+	close_credit.grab_focus()
+
+
+func _on_close_credit_pressed() -> void:
+	credit_animation.play("CreditOut")
+	menu_animation.play("MenuIn")
+	play.grab_focus()

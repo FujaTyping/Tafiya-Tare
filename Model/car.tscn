@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b27eq4lmgnk1l"]
+[gd_scene load_steps=6 format=3 uid="uid://b27eq4lmgnk1l"]
+
+[ext_resource type="Script" uid="uid://u42bojysw1n0" path="res://Model/car.gd" id="1_0yxxq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_24jkt"]
 
@@ -10,13 +12,16 @@
 albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 
 [node name="Car" type="VehicleBody3D"]
+collision_layer = 2
+can_sleep = false
+script = ExtResource("1_0yxxq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.2960749, 0, 0, 0, 0.31893033, 0, 0, 0, 2.256856, 0.00013871132, 0, 0)
+transform = Transform3D(1.2960749, 0, 0, 0, 0.31893033, 0, 0, 0, 2.256856, 0.00013871132, 0.11433518, 0)
 mesh = SubResource("BoxMesh_24jkt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.9748777, 0, 0, 0, 0.7094479, 0, 0, 0, 2.7167485, 0.00013871132, 0, 0)
+transform = Transform3D(1.9748777, 0, 0, 0, 0.7094479, 0, 0, 0, 2.7167485, 0.00013871132, 0.21099842, 0)
 shape = SubResource("BoxShape3D_24jkt")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
@@ -58,3 +63,10 @@ wheel_radius = 0.3
 transform = Transform3D(-2.59416e-08, -0.065788776, -5.118416e-08, 0.59347475, -2.8757186e-09, 5.118416e-08, -5.188321e-08, -5.7514375e-09, 0.58547854, 0, 0, 0)
 mesh = SubResource("CylinderMesh_24jkt")
 surface_material_override/0 = SubResource("StandardMaterial3D_24jkt")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.462, 0.968)
+
+[node name="CarCam" type="Camera3D" parent="SpringArm3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.97912717, 0.20324875, 0, -0.20324875, 0.97912717, 0, 0.0003157854, 0.00034338236)
