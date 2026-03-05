@@ -10,11 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
-sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
-sky_horizon_color = Color(0.48235294, 0.7490196, 1, 1)
+sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
+sky_horizon_color = Color(0.003921569, 0, 0.28627452, 1)
 sky_curve = 0.160766
-ground_bottom_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
-ground_horizon_color = Color(0.48235294, 0.7490196, 1, 1)
+ground_bottom_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
+ground_horizon_color = Color(0.003921569, 0, 0.28627452, 1)
 ground_curve = 0.04287107
 
 [sub_resource type="Sky" id="Sky_7jktm"]
@@ -121,8 +121,8 @@ libraries = {
 
 [node name="nightBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ryrav")
-volume_db = -9.0
+volume_db = -11.0
 
 [node name="dayBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eow3j")
-volume_db = -9.0
+volume_db = -11.0
