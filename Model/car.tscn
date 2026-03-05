@@ -27,21 +27,6 @@ tracks/0/keys = {
 "values": [0.0001, 0.005]
 }
 
-[sub_resource type="Animation" id="Animation_k01r6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TitleAction:pixel_size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.005]
-}
-
 [sub_resource type="Animation" id="Animation_f8bnc"]
 resource_name = "Out"
 length = 0.15
@@ -56,6 +41,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.005, 0.0001]
+}
+
+[sub_resource type="Animation" id="Animation_k01r6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleAction:pixel_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.005]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f8bnc"]
@@ -137,6 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 0.97912717, 0.20324875, 0, -0.20324875, 0.97
 
 [node name="TitleAction" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71022, 0)
+billboard = 1
 text = "Press E to ride and exit"
 
 [node name="Display" type="AnimationPlayer" parent="."]

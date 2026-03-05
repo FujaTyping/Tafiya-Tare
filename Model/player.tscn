@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=9 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
 [ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="2_c8du1"]
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
@@ -18,25 +19,30 @@ script = ExtResource("1_4flbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7206, 0, 0, 0, 0.68326414, 0, 0, 0, 0.7014749, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
 transform = Transform3D(-1.8053353e-08, 0.4167771, 0, -0.4130126, -1.8217905e-08, 0, 0, 0, 0.4060781, 0, 0.49113628, -0.40994745)
+visible = false
 mesh = SubResource("CapsuleMesh_4flbx")
+
+[node name="playerAnimation" parent="." instance=ExtResource("2_5xjvv")]
+transform = Transform3D(-5.780226e-09, 0, -0.1162554, 0, 0.12203301, 0, 0.13223617, 0, -5.0816853e-09, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.738862, 0, 0, 0, 0.7011021, 0, 0, 0, 0.71398246, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_4flbx")
 
 [node name="CamOrigin" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35959023, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4666838, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CamOrigin"]
-spring_length = 2.0
+spring_length = 1.2
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.735679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3043615)
 
 [node name="Pause" parent="." instance=ExtResource("2_c8du1")]
 

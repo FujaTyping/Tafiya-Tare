@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 3.0
+const JUMP_VELOCITY = 4.0
 
 @onready var pivot = $CamOrigin
 @export var sens = 0.2
@@ -10,6 +10,9 @@ const JUMP_VELOCITY = 4.5
 @onready var jump: AudioStreamPlayer3D = $Jump
 
 @onready var camera_3d: Camera3D = $CamOrigin/SpringArm3D/Camera3D
+@onready var animation_player: AnimationPlayer = $playerAnimation/AnimationPlayer
+@onready var animation_player_j: AnimationPlayer = $playerAnimation/AnimationPlayerJ
+@onready var animation_player_i: AnimationPlayer = $playerAnimation/AnimationPlayerI
 
 # --- CAR VARIABLES ---
 @onready var car_cam: Camera3D = $"../Car/SpringArm3D/%CarCam"
@@ -81,6 +84,8 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump.play()
+		animation_player_j.play("ArmatureAction_003")
+		#animation_player_i.stop()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -89,8 +94,12 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		#animation_player_i.stop()
+		animation_player.play("ArmatureAction_002")
 	else:
 		walking.play()
+		animation_player.stop()
+		#animation_player_i.play("ArmatureAction_004")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
