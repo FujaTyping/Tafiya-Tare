@@ -12,15 +12,24 @@ const JUMP_VELOCITY = 4.0
 @onready var camera_3d: Camera3D = $CamOrigin/SpringArm3D/Camera3D
 @onready var animation_player: AnimationPlayer = $playerAnimation/AnimationPlayer
 @onready var animation_player_j: AnimationPlayer = $playerAnimation/AnimationPlayerJ
-@onready var animation_player_i: AnimationPlayer = $playerAnimation/AnimationPlayerI
+#@onready var animation_player_i: AnimationPlayer = $playerAnimation/AnimationPlayerI
+@onready var Wanimation_player: AnimationPlayer = $woman_player/AnimationPlayer
+@onready var Wanimation_player_j: AnimationPlayer = $woman_player/AnimationPlayerJ
 
 # --- CAR VARIABLES ---
 @onready var car_cam: Camera3D = $"../Car/SpringArm3D/%CarCam"
 @onready var car_node: Node3D = $"../Car"
 
+@onready var player_animation: Node3D = $playerAnimation
+@onready var woman_player: Node3D = $woman_player
+
 var is_in_car: bool = false
 
 func _ready():
+	if Varibles.playerSelection == "joker" :
+		player_animation.visible = true
+	else :
+		woman_player.visible = true
 	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -84,7 +93,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump.play()
-		animation_player_j.play("ArmatureAction_003")
+		if Varibles.playerSelection == "joker":
+			animation_player_j.play("ArmatureAction_003")
+		else :
+			Wanimation_player_j.play("ArmatureAction_003")
 		#animation_player_i.stop()
 		velocity.y = JUMP_VELOCITY
 
@@ -95,7 +107,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		#animation_player_i.stop()
-		animation_player.play("ArmatureAction_002")
+		if Varibles.playerSelection == "joker":
+			animation_player.play("ArmatureAction_002")
+		else :
+			Wanimation_player.play("ArmatureAction_002")
 	else:
 		walking.play()
 		animation_player.stop()

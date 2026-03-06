@@ -12,7 +12,8 @@ func _ready() -> void:
 		animation_player.play("ArmatureAction_004")
 		animation_player_i.play("ArmatureAction_004")
 
-func _on_m_pressed() -> void:
+func _on_m_pressed() -> void:	
+	Varibles.playerSelection = "joker"
 	select_man.play("Man")
 	await select_man.animation_finished
 	animation_player_j.speed_scale = 0.3
@@ -23,3 +24,13 @@ func _on_m_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/menu.tscn")
+
+func _on_wm_pressed() -> void:	
+	Varibles.playerSelection = "sophia"
+	select_man.play("WM")
+	await select_man.animation_finished
+	animation_player.speed_scale = 0.3
+	animation_player.play("ArmatureAction_003")
+	await animation_player.animation_finished
+	MenuMusic.stopmenumusic()
+	get_tree().change_scene_to_file("res://game.tscn")

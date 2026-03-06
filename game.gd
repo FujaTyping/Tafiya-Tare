@@ -20,7 +20,8 @@ extends Node3D
 
 @onready var night_bgm: AudioStreamPlayer = $nightBGM
 @onready var day_bgm: AudioStreamPlayer = $dayBGM
-@onready var dn: Label = $Control/MarginContainer/DN
+@onready var dn: Label = $Control/MarginContainer/HBoxContainer/DN
+@onready var time: Label = $Control/MarginContainer/HBoxContainer/Time
 
 var dayDuration = 600
 var dayColorList = [
@@ -96,3 +97,13 @@ func _day_change_animation():
 
 func _process(delta: float) -> void:
 	_refresh_day_state()
+	_update_time_display()
+	
+func _update_time_display() -> void:
+	var current_time_sec = day_night.current_animation_position
+	current_time_sec = fmod(current_time_sec, float(dayDuration))
+	var day_fraction = current_time_sec / float(dayDuration)
+	var total_minutes = day_fraction * 24.0 * 60.0
+	var hours = int(total_minutes / 60.0)
+	var minutes = int(total_minutes) % 60
+	time.text = "%02d:%02d" % [hours, minutes]

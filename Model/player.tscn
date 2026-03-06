@@ -30,6 +30,7 @@ mesh = SubResource("CapsuleMesh_4flbx")
 
 [node name="playerAnimation" parent="." instance=ExtResource("2_5xjvv")]
 transform = Transform3D(-5.780226e-09, 0, -0.1162554, 0, 0.12203301, 0, 0.13223617, 0, -5.0816853e-09, 0, 0, 0)
+visible = false
 
 [node name="woman_player" parent="." instance=ExtResource("3_ieuix")]
 transform = Transform3D(1.08123395e-08, 0, -0.108337075, 0, 0.116785966, 0, 0.096225515, 0, 1.2173513e-08, 0, 0.006185621, 0)

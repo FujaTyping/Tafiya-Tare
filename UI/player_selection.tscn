@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3mj2fiee0xht"]
+[gd_scene load_steps=12 format=3 uid="uid://c3mj2fiee0xht"]
 
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="1_6py08"]
 [ext_resource type="Script" uid="uid://fk2ayj7lo450" path="res://UI/player_selection.gd" id="1_hipr5"]
@@ -75,10 +75,39 @@ tracks/1/keys = {
 "values": [Vector3(-0.14313838, 0.044015396, -0.0038074253)]
 }
 
+[sub_resource type="Animation" id="Animation_8djgy"]
+resource_name = "WM"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.14313838, 0.044015396, -0.0038074253), Vector3(-0.14313838, -0.18792139, -0.003807425), Vector3(-0.1431384, 0.446244, -0.0038074222)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8djgy"]
 _data = {
 &"Man": SubResource("Animation_hipr5"),
-&"RESET": SubResource("Animation_p6sbq")
+&"RESET": SubResource("Animation_p6sbq"),
+&"WM": SubResource("Animation_8djgy")
 }
 
 [node name="Control" type="Control"]
@@ -121,7 +150,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.9990479, -0.0024729986, 0.043551184, -0.0037684771, 0.9897657, 0.14265007, -0.04345825, -0.1426784, 0.98881435, -0.13619223, 0.38182935, -0.34718132)
+transform = Transform3D(0.99904805, -0.002472999, 0.04355119, -0.0037684778, 0.9897659, 0.1426501, -0.043458257, -0.14267841, 0.98881453, -0.13619223, 0.38182935, -0.34718132)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -169,7 +198,6 @@ size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 18
-disabled = true
 text = "Select Sophia"
 
 [node name="M" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
@@ -198,5 +226,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_8djgy")
 }
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/WM" to="." method="_on_wm_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/M" to="." method="_on_m_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Button" to="." method="_on_button_pressed"]
