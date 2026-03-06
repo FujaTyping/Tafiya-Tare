@@ -104,6 +104,26 @@ transform = Transform3D(2.820359, 0, 0, 0, 2.096896, 0, 0, 0, 2.590889, 0, 0, 0)
 [node name="Mt" parent="." instance=ExtResource("3_vef74")]
 transform = Transform3D(12.76089, 0, 0, 0, 13.049737, 0, 0, 0, 13.452707, 35.23807, 0.070560455, 0)
 
+[node name="Control" type="Control" parent="."]
+z_index = -1
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DN" type="Label" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1376195, 1.9775217, 0)
 

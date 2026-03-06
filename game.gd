@@ -20,13 +20,14 @@ extends Node3D
 
 @onready var night_bgm: AudioStreamPlayer = $nightBGM
 @onready var day_bgm: AudioStreamPlayer = $dayBGM
+@onready var dn: Label = $Control/MarginContainer/DN
 
 var dayDuration = 600
 var dayColorList = [
-	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165},
-	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190 },
-	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470},
-	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485}
+	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "Morning"},
+	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "Day" },
+	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "Afternoon"},
+	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "Night"}
 ]
 var currentDayState = 0
 var durationMultiplier = 1.0
@@ -83,6 +84,7 @@ func _day_change_animation():
 	tween.parallel()
 	tween.tween_property(environment, "environment:sky:sky_material:ground_horizon_color", hoirzonColor, duration)
 	
+	dn.text = dayColorList[currentDayState]["name"]
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
 			night_bgm.play()
