@@ -75,6 +75,9 @@ func _input(event):
 				car_node.is_driven = false
 
 func _physics_process(delta: float) -> void:
+	if is_in_car:
+		return 
+	
 	# --- Controller Look ---
 	var look_dir := Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	if look_dir.length() > 0:
@@ -82,9 +85,6 @@ func _physics_process(delta: float) -> void:
 		pivot.rotate_x(-look_dir.y * joy_sens * delta)
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 	# -----------------------
-	
-	if is_in_car:
-		return 
 
 	# Add the gravity.
 	if not is_on_floor():
