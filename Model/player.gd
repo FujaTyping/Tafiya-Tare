@@ -17,8 +17,8 @@ const JUMP_VELOCITY = 4.0
 @onready var Wanimation_player_j: AnimationPlayer = $woman_player/AnimationPlayerJ
 
 # --- CAR VARIABLES ---
-@onready var car_cam: Camera3D = $"../Car/SpringArm3D/%CarCam"
-@onready var car_node: Node3D = $"../Car"
+@onready var car_cam: Camera3D = $"../VehicleBody3D/CamArm/Camera3D"
+@onready var car_node: Node3D = $"../VehicleBody3D"
 
 @onready var player_animation: Node3D = $playerAnimation
 @onready var woman_player: Node3D = $woman_player

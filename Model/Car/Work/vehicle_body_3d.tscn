@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj65117odtqjs"]
+
+[ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="1_3wmsh"]
+[ext_resource type="Script" uid="uid://m5hrm1oydqio" path="res://Model/Car/Work/vehicle_body_3d.gd" id="1_d41w2"]
+[ext_resource type="PackedScene" uid="uid://gxa06s2g6hor" path="res://Model/Car/Car.glb" id="2_d41w2"]
+[ext_resource type="Script" uid="uid://oq3ry17qhyql" path="res://Model/Car/Work/cam.gd" id="4_uq1ss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
+
+[node name="VehicleBody3D" type="VehicleBody3D"]
+mass = 240.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0, 0.2)
+script = ExtResource("1_d41w2")
+
+[node name="Car" parent="." instance=ExtResource("2_d41w2")]
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8820586, -1.0033783, 2.3181944)
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.44
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="CarCenterTire" parent="VehicleWheel3D" instance=ExtResource("1_3wmsh")]
+transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
+
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8786659, -1.0033783, 2.3181944)
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.44
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="CarCenterTire2" parent="VehicleWheel3D2" instance=ExtResource("1_3wmsh")]
+transform = Transform3D(-1, 0, -1.307845e-07, 0, 0.8277551, 0, 1.509958e-07, 0, -0.8661466, 0, 0, 0)
+
+[node name="WBL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8820586, -1.0033783, -2.3616412)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.44
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="CarCenterTire3" parent="WBL" instance=ExtResource("1_3wmsh")]
+transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
+
+[node name="WBR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8786659, -1.0033783, -2.3616412)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.44
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="CarCenterTire4" parent="WBR" instance=ExtResource("1_3wmsh")]
+transform = Transform3D(-1, 0, -7.572094e-08, 0, 0.8277551, 0, 8.742278e-08, 0, -0.8661466, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.7111087, 0, 0, 0, 2.1083996, 0, 0, 0, 4.8493567, 0, 0.047240615, 0)
+shape = SubResource("BoxShape3D_3wmsh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.7111087, 0, 0, 0, 1.0832384, 0, 0, 0, 1.8132384, 0, -0.46696502, 3.3370492)
+shape = SubResource("BoxShape3D_3wmsh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.7111087, 0, 0, 0, 1.0832384, 0, 0, 0, 2.4662232, 0, -0.46696502, -3.6621232)
+shape = SubResource("BoxShape3D_3wmsh")
+
+[node name="CamArm" type="SpringArm3D" parent="."]
+collision_mask = 0
+spring_length = 5.0
+script = ExtResource("4_uq1ss")
+
+[node name="Camera3D" type="Camera3D" parent="CamArm"]

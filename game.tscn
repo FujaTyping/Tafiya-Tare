@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
-[ext_resource type="PackedScene" uid="uid://b27eq4lmgnk1l" path="res://Model/car.tscn" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://cp5v6jobv00qh" path="res://Terrain/plain.glb" id="3_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_vef74"]
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bg4l86s7iwjuj" path="res://Terrain/Tree/Tree1.glb" id="8_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://bn2w4w1eqgmpg" path="res://Terrain/Rock/rock1.glb" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://dqlrid0vud0hj" path="res://Model/Lakkilo.glb" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -110,7 +110,7 @@ top_level = true
 shadow_enabled = true
 
 [node name="plain" parent="." instance=ExtResource("3_j5wjh")]
-transform = Transform3D(2.820359, 0, 0, 0, 2.096896, 0, 0, 0, 2.590889, 0, 0, 0)
+transform = Transform3D(2.820359, 0, 0, 0, 2.096896, 0, 0, 0, 2.590889, 0, 0, -0.30755234)
 
 [node name="Mt" parent="." instance=ExtResource("3_vef74")]
 transform = Transform3D(12.76089, 0, 0, 0, 13.049737, 0, 0, 0, 13.452707, 35.23807, 0.070560455, 0)
@@ -148,9 +148,6 @@ text = "Day"
 
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1376195, 1.9775217, 0)
-
-[node name="Car" parent="." instance=ExtResource("3_feb5d")]
-transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.7842027, 1.6850595, 3.360696, -11.990927)
 
 [node name="DayNight" type="AnimationPlayer" parent="."]
 libraries = {
@@ -196,3 +193,10 @@ transform = Transform3D(-0.05629748, 0, -0.3159167, 0, 0.30512974, 0, 0.27264106
 
 [node name="Lakkilo" parent="AssetsTerrain" instance=ExtResource("11_mfdv2")]
 transform = Transform3D(-0.20408554, 0, 0.13267483, 0, 0.23856938, 0, -0.1295866, 0, -0.2089492, 12.769215, 0.26227897, 14.445601)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(79.13744, 0, 0, 0, 1, 0, 0, 0, 52.58241, 0, -39.848877, 0)
+use_collision = true
+
+[node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
