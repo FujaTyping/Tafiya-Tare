@@ -52,7 +52,7 @@ func _input(event):
 			if not is_in_car:
 				var distance_to_car = global_position.distance_to(car_node.global_position)
 				
-				if distance_to_car < 2:
+				if distance_to_car < 2.5:
 					# GET IN THE CAR
 					is_in_car = true
 					car_cam.current = true

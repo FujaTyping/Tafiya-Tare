@@ -150,7 +150,7 @@ text = "Day"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1376195, 1.9775217, 0)
 
 [node name="Car" parent="." instance=ExtResource("3_feb5d")]
-transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.7842027, 1.6850595, 3.360696, -1.9620814)
+transform = Transform3D(0.7842027, 0, 0.62050474, 0, 1, 0, -0.62050474, 0, 0.7842027, 1.6850595, 3.360696, -11.990927)
 
 [node name="DayNight" type="AnimationPlayer" parent="."]
 libraries = {

@@ -111,6 +111,7 @@ click={
 
 [physics]
 
+common/max_physics_steps_per_frame=24
 common/physics_interpolation=true
 
 [rendering]

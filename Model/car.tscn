@@ -1,15 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b27eq4lmgnk1l"]
+[gd_scene load_steps=9 format=3 uid="uid://b27eq4lmgnk1l"]
 
 [ext_resource type="Script" uid="uid://u42bojysw1n0" path="res://Model/car.gd" id="1_0yxxq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_24jkt"]
+[ext_resource type="PackedScene" uid="uid://gxa06s2g6hor" path="res://Model/Car/Car.glb" id="2_f8bnc"]
+[ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="2_k01r6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_24jkt"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_24jkt"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24jkt"]
-albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+size = Vector3(1.1473389, 1, 1)
 
 [sub_resource type="Animation" id="Animation_0yxxq"]
 resource_name = "In"
@@ -71,12 +67,12 @@ collision_mask = 3
 can_sleep = false
 script = ExtResource("1_0yxxq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.2960749, 0, 0, 0, 0.31893033, 0, 0, 0, 2.256856, 0.00013871132, 0.11433518, 0)
-mesh = SubResource("BoxMesh_24jkt")
+[node name="Car" parent="." instance=ExtResource("2_f8bnc")]
+transform = Transform3D(-0.4752545, 0, -4.4769447e-08, 0, 0.5295187, 0, 4.1548066e-08, 0, -0.5121027, 0, 0.39907926, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.9748777, 0, 0, 0, 0.7094479, 0, 0, 0, 2.7167485, 0.00013871132, 0.21099842, 0)
+transform = Transform3D(2.163253, 0, 0, 0, 1.2964467, 0, 0, 0, 4.8904033, 0.00013871132, 0.4651643, -0.18941122)
+visible = false
 shape = SubResource("BoxShape3D_24jkt")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -84,59 +80,52 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(2.2259686, 0, 0, 0, 1.2999612, 0, 0, 0, 3.792434, 0.00013871132, 0.5310596, 0)
+transform = Transform3D(3.208427, 0, 0, 0, 1.4258592, 0, 0, 0, 4.9673276, 0.16412456, 0.5310596, 0)
+visible = false
 shape = SubResource("BoxShape3D_24jkt")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, 0.84869426, 0, -0.8338307)
+transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, 0.84869426, -0.19294982, -1.2099195)
 use_as_steering = true
 wheel_radius = 0.3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D"]
-transform = Transform3D(-2.59416e-08, -0.065788776, -5.118416e-08, 0.59347475, -2.8757186e-09, 5.118416e-08, -5.188321e-08, -5.7514375e-09, 0.58547854, 0, 0, 0)
-mesh = SubResource("CylinderMesh_24jkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_24jkt")
+[node name="CarCenterTire" parent="VehicleWheel3D" instance=ExtResource("2_k01r6")]
+transform = Transform3D(-0.29730713, 0, 5.0733213e-08, 0, 0.56876945, 0, -2.5991415e-08, 0, -0.5803199, 0, 0.0013954703, 0)
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, -0.8495302, 0, -0.8338307)
+transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, -0.8495302, -0.19294982, -1.2099195)
 use_as_steering = true
 wheel_radius = 0.3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D2"]
-transform = Transform3D(-2.59416e-08, -0.065788776, -5.118416e-08, 0.59347475, -2.8757186e-09, 5.118416e-08, -5.188321e-08, -5.7514375e-09, 0.58547854, 0, 0, 0)
-mesh = SubResource("CylinderMesh_24jkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_24jkt")
+[node name="CarCenterTire2" parent="VehicleWheel3D2" instance=ExtResource("2_k01r6")]
+transform = Transform3D(0.29730713, 0, -1.0146636e-07, 0, 0.56876945, 0, 5.1982827e-08, 0, 0.58031964, 0.0035138726, 0.0013954703, 0)
 
 [node name="VehicleWheel3D3" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, 0.84869426, 0, 0.83723575)
+transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, 0.84869426, -0.17546794, 1.1660523)
 use_as_traction = true
 wheel_radius = 0.3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D3"]
-transform = Transform3D(-2.59416e-08, -0.065788776, -5.118416e-08, 0.59347475, -2.8757186e-09, 5.118416e-08, -5.188321e-08, -5.7514375e-09, 0.58547854, 0, 0, 0)
-mesh = SubResource("CylinderMesh_24jkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_24jkt")
+[node name="CarCenterTire2" parent="VehicleWheel3D3" instance=ExtResource("2_k01r6")]
+transform = Transform3D(-0.29730713, 0, 5.0733213e-08, 0, 0.56876945, 0, -2.599142e-08, 0, -0.5803197, 0, 0.0013954703, -0.0076655746)
 
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, -0.8495302, 0, 0.83723575)
+transform = Transform3D(-1.5968174, 0, -8.742278e-08, 0, 1.0855708, 0, 1.3959821e-07, 0, -1, -0.8495302, -0.17546794, 1.1660523)
 use_as_traction = true
 wheel_radius = 0.3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D4"]
-transform = Transform3D(-2.59416e-08, -0.065788776, -5.118416e-08, 0.59347475, -2.8757186e-09, 5.118416e-08, -5.188321e-08, -5.7514375e-09, 0.58547854, 0, 0, 0)
-mesh = SubResource("CylinderMesh_24jkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_24jkt")
+[node name="CarCenterTire3" parent="VehicleWheel3D4" instance=ExtResource("2_k01r6")]
+transform = Transform3D(0.29730713, 0, -1.01466355e-07, 0, 0.56876945, 0, 5.1982827e-08, 0, 0.58031946, 0.0035139918, 0.0013954703, -0.0076655746)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.462, 0.968)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.462, 0.11511934)
 spring_length = -0.4
 
 [node name="CarCam" type="Camera3D" parent="SpringArm3D"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.97912717, 0.20324875, 0, -0.20324875, 0.97912717, 0, 0.0003157854, 0.00034338236)
+transform = Transform3D(1, 0, 0, 0, 0.97912717, 0.20324875, 0, -0.20324875, 0.97912717, 0, 0.0003157854, 0.0032301545)
 
 [node name="TitleAction" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71022, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3379542, 0)
 billboard = 1
 text = "Press E to ride and exit"
 
