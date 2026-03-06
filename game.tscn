@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=19 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -8,8 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bwgom6evidtgx" path="res://Terrain/Tree/tree2.glb" id="8_hve3p"]
+[ext_resource type="PackedScene" uid="uid://04xwde2wwh2x" path="res://Model/WaySign.glb" id="8_iotsf"]
 [ext_resource type="PackedScene" uid="uid://bg4l86s7iwjuj" path="res://Terrain/Tree/Tree1.glb" id="8_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://bn2w4w1eqgmpg" path="res://Terrain/Rock/rock1.glb" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://dqlrid0vud0hj" path="res://Model/Lakkilo.glb" id="11_mfdv2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -165,6 +167,9 @@ volume_db = -11.0
 
 [node name="AssetsTerrain" type="Node3D" parent="."]
 
+[node name="WaySign" parent="AssetsTerrain" instance=ExtResource("8_iotsf")]
+transform = Transform3D(0.28453815, 0, 0.09641815, 0.005062094, 0.34949946, -0.019683097, -0.083845146, 0.021100793, 0.32601768, 12.573067, 0.3046844, 9.689616)
+
 [node name="tree2" parent="AssetsTerrain" instance=ExtResource("8_hve3p")]
 transform = Transform3D(0.5382335, 0, 0, 0, 0.5497348, 0, 0, 0, 0.47693327, -10.213392, 0.15431519, 8.797432)
 
@@ -188,3 +193,6 @@ transform = Transform3D(0.16119595, 0.039051138, 0.2597436, -0.020801252, 0.3026
 
 [node name="rock2" parent="AssetsTerrain" instance=ExtResource("9_vef74")]
 transform = Transform3D(-0.05629748, 0, -0.3159167, 0, 0.30512974, 0, 0.27264106, 0, -0.06523347, -9.762349, 0.3583097, -3.0182612)
+
+[node name="Lakkilo" parent="AssetsTerrain" instance=ExtResource("11_mfdv2")]
+transform = Transform3D(-0.20408554, 0, 0.13267483, 0, 0.23856938, 0, -0.1295866, 0, -0.2089492, 12.769215, 0.26227897, 14.445601)
