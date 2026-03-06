@@ -14,9 +14,10 @@ center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_d41w2")
 
 [node name="Car" parent="." instance=ExtResource("2_d41w2")]
+transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 0.00032175955, -0.21726587, -0.019244011)
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8820586, -1.0033783, 2.3181944)
+transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 1.1684117, -0.8647407, 1.4326421)
 use_as_steering = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.44
@@ -29,7 +30,7 @@ damping_relaxation = 2.0
 transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8786659, -1.0033783, 2.3181944)
+transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, -1.1656625, -0.8647407, 1.4326421)
 use_as_steering = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.44
@@ -42,7 +43,7 @@ damping_relaxation = 2.0
 transform = Transform3D(-1, 0, -1.307845e-07, 0, 0.8277551, 0, 1.509958e-07, 0, -0.8661466, 0, 0, 0)
 
 [node name="WBL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8820586, -1.0033783, -2.3616412)
+transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 1.1684117, -0.8647407, -1.4983407)
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.44
@@ -55,7 +56,7 @@ damping_relaxation = 2.0
 transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
 
 [node name="WBR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8786659, -1.0033783, -2.3616412)
+transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, -1.1656625, -0.8647407, -1.4983407)
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.44
@@ -68,15 +69,15 @@ damping_relaxation = 2.0
 transform = Transform3D(-1, 0, -7.572094e-08, 0, 0.8277551, 0, 8.742278e-08, 0, -0.8661466, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(3.7111087, 0, 0, 0, 2.1083996, 0, 0, 0, 4.8493567, 0, 0.047240615, 0)
+transform = Transform3D(2.3032806, 0, 0, 0, 1.3605394, 0, 0, 0, 3.037154, 0.00032175955, -0.18678173, -0.019244011)
 shape = SubResource("BoxShape3D_3wmsh")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(3.7111087, 0, 0, 0, 1.0832384, 0, 0, 0, 1.8132384, 0, -0.46696502, 3.3370492)
+transform = Transform3D(2.3032806, 0, 0, 0, 0.69900817, 0, 0, 0, 1.1356319, 0.00032175955, -0.518596, 2.0707512)
 shape = SubResource("BoxShape3D_3wmsh")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(3.7111087, 0, 0, 0, 1.0832384, 0, 0, 0, 2.4662232, 0, -0.46696502, -3.6621232)
+transform = Transform3D(2.3032806, 0, 0, 0, 0.69900817, 0, 0, 0, 1.5445966, 0.00032175955, -0.518596, -2.3128333)
 shape = SubResource("BoxShape3D_3wmsh")
 
 [node name="CamArm" type="SpringArm3D" parent="."]

@@ -133,17 +133,17 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 14
 
 [node name="Time" type="Label" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 38
 text = "00:00"
 
 [node name="DN" type="Label" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 28
 text = "Day"
 
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
@@ -193,10 +193,6 @@ transform = Transform3D(-0.05629748, 0, -0.3159167, 0, 0.30512974, 0, 0.27264106
 
 [node name="Lakkilo" parent="AssetsTerrain" instance=ExtResource("11_mfdv2")]
 transform = Transform3D(-0.20408554, 0, 0.13267483, 0, 0.23856938, 0, -0.1295866, 0, -0.2089492, 12.769215, 0.26227897, 14.445601)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(79.13744, 0, 0, 0, 1, 0, 0, 0, 52.58241, 0, -39.848877, 0)
-use_collision = true
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)

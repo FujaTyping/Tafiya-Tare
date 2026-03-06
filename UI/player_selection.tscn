@@ -150,7 +150,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.99904805, -0.002472999, 0.04355119, -0.0037684778, 0.9897659, 0.1426501, -0.043458257, -0.14267841, 0.98881453, -0.13619223, 0.38182935, -0.34718132)
+transform = Transform3D(0.999048, -0.002472999, 0.043551188, -0.0037684776, 0.9897658, 0.14265008, -0.043458257, -0.14267841, 0.9888145, -0.13619223, 0.38182935, -0.34718132)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -159,15 +159,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 870
+theme_override_constants/separation = 795
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -177,16 +177,18 @@ theme_override_constants/separation = 8
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 44
 text = "Choose your Character"
 
 [node name="Decs" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
 text = "The character that you want to start your Journey"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 9
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -197,7 +199,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 24
 text = "Select Sophia"
 
 [node name="M" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
@@ -206,18 +208,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 24
 text = "Select Joker"
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../HBoxContainer/WM")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 24
 text = "Back"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 19
 text = "If you don't choose the game will be select the default character"
 
 [node name="SelectMan" type="AnimationPlayer" parent="."]

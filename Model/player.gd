@@ -40,7 +40,7 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not is_in_car:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(-event.relative.x * sens))
 		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
@@ -52,7 +52,7 @@ func _input(event):
 			if not is_in_car:
 				var distance_to_car = global_position.distance_to(car_node.global_position)
 				
-				if distance_to_car < 2.5:
+				if distance_to_car < 3:
 					# GET IN THE CAR
 					is_in_car = true
 					car_cam.current = true
@@ -71,13 +71,10 @@ func _input(event):
 				visible = true
 				$CollisionShape3D.disabled = false
 				
-				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(0, 2, 0)
+				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(1, 0, 0.25)
 				car_node.is_driven = false
 
 func _physics_process(delta: float) -> void:
-	if is_in_car:
-		return 
-
 	# --- Controller Look ---
 	var look_dir := Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	if look_dir.length() > 0:
@@ -85,6 +82,9 @@ func _physics_process(delta: float) -> void:
 		pivot.rotate_x(-look_dir.y * joy_sens * delta)
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 	# -----------------------
+	
+	if is_in_car:
+		return 
 
 	# Add the gravity.
 	if not is_on_floor():
