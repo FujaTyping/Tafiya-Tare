@@ -208,7 +208,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918059, 0.012961894, 0.9901816, 0, 0.99991435, -0.013089285, -0.99026644, 0.0018217764, 0.13916866, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918057, 0.012961894, 0.99018157, 0, 0.99991435, -0.013089285, -0.9902664, 0.0018217764, 0.13916865, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -246,6 +246,11 @@ theme_override_constants/separation = 15
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Option")
 text = "Play"
+
+[node name="Play2" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Option")
+text = "Mutiplayer"
 
 [node name="Option" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=17 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_vef74"]
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://bwgom6evidtgx" path="res://Terrain/Tree/tree2.glb" id="8_hve3p"]
 [ext_resource type="PackedScene" uid="uid://bg4l86s7iwjuj" path="res://Terrain/Tree/Tree1.glb" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://bn2w4w1eqgmpg" path="res://Terrain/Rock/rock1.glb" id="9_vef74"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -94,6 +96,12 @@ script = ExtResource("1_ryrav")
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ryrav")
 
+[node name="SunDemo" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.5354347, -0.8403626, -0.08426326, 0.42214334, -0.35270324, 0.83510184, -0.7315085, 0.41157138, 0.5436032, 0, 0, 0)
+top_level = true
+visible = false
+shadow_enabled = true
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.53543454, -0.84036267, -0.08426322, -0.16323088, 0.20085558, -0.9659255, 0.8286526, -0.50343585, -0.24471813, 0, 0, 0)
 top_level = true
@@ -157,8 +165,26 @@ volume_db = -11.0
 
 [node name="AssetsTerrain" type="Node3D" parent="."]
 
+[node name="tree2" parent="AssetsTerrain" instance=ExtResource("8_hve3p")]
+transform = Transform3D(0.5382335, 0, 0, 0, 0.5497348, 0, 0, 0, 0.47693327, -10.213392, 0.15431519, 8.797432)
+
+[node name="tree4" parent="AssetsTerrain" instance=ExtResource("8_hve3p")]
+transform = Transform3D(0.41771567, 0, 0, 0, 0.4352878, 0, 0, 0, 0.37694463, -12.424948, 0.21603872, 11.942564)
+
+[node name="tree3" parent="AssetsTerrain" instance=ExtResource("8_hve3p")]
+transform = Transform3D(0.37482658, 0, -0.3422723, 0, 0.6445535, 0, 0.38626462, 0, 0.33213705, -13.330401, 0.114096, 7.632865)
+
 [node name="Tree1" parent="AssetsTerrain" instance=ExtResource("8_j5wjh")]
 transform = Transform3D(0.91843677, 0, 0, 0, 0.945633, 0, 0, 0, 0.8795617, -8.680696, 0.09044647, -3.0709515)
 
 [node name="Tree2" parent="AssetsTerrain" instance=ExtResource("8_j5wjh")]
 transform = Transform3D(-0.6475144, 0, 0.6237759, 0, 0.945633, 0, -0.6513457, 0, -0.62010676, -11.228506, 0.09044647, 2.1545043)
+
+[node name="rock1" parent="AssetsTerrain" instance=ExtResource("9_vef74")]
+transform = Transform3D(0.21071021, 0, -0.21082394, 0, 0.30512974, 0, 0.18194437, 0, 0.24415572, -9.394879, 0.3583098, -2.116286)
+
+[node name="rock3" parent="AssetsTerrain" instance=ExtResource("9_vef74")]
+transform = Transform3D(0.16119595, 0.039051138, 0.2597436, -0.020801252, 0.3026205, -0.033518165, -0.22602148, 0, 0.18833095, -8.245811, 0.1826176, 4.0687094)
+
+[node name="rock2" parent="AssetsTerrain" instance=ExtResource("9_vef74")]
+transform = Transform3D(-0.05629748, 0, -0.3159167, 0, 0.30512974, 0, 0.27264106, 0, -0.06523347, -9.762349, 0.3583097, -3.0182612)
