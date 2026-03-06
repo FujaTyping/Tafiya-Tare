@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=15 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_vef74"]
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://bg4l86s7iwjuj" path="res://Terrain/Tree/Tree1.glb" id="8_j5wjh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -153,3 +154,11 @@ volume_db = -11.0
 [node name="dayBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eow3j")
 volume_db = -11.0
+
+[node name="AssetsTerrain" type="Node3D" parent="."]
+
+[node name="Tree1" parent="AssetsTerrain" instance=ExtResource("8_j5wjh")]
+transform = Transform3D(0.91843677, 0, 0, 0, 0.945633, 0, 0, 0, 0.8795617, -8.680696, 0.09044647, -3.0709515)
+
+[node name="Tree2" parent="AssetsTerrain" instance=ExtResource("8_j5wjh")]
+transform = Transform3D(-0.6475144, 0, 0.6237759, 0, 0.945633, 0, -0.6513457, 0, -0.62010676, -11.228506, 0.09044647, 2.1545043)
