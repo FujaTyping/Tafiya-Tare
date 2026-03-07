@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=25 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://x0nwxuls06g4" path="res://UI/Dialog.tscn" id="13_215e1"]
 [ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
+[ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -229,6 +230,9 @@ transform = Transform3D(-0.29105568, 0, -0.1485691, 0, 0.30736333, 0, 0.28220034
 
 [node name="Fence3" parent="AssetsTerrain" instance=ExtResource("17_e8heu")]
 transform = Transform3D(-0.40055436, 0, -0.0329058, 0, 0.30736336, 0, 0.06250311, 0, -0.21087857, 2.017894, 0.13785368, -15.435932)
+
+[node name="House1" parent="AssetsTerrain" instance=ExtResource("18_rvswv")]
+transform = Transform3D(-0.87587196, 0, -0.8143679, 0, 1.1885941, 0, 0.6817003, 0, -1.046328, -3.81748, 1.2349907, -15.625711)
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)

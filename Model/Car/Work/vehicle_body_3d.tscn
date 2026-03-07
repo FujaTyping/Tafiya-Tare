@@ -10,7 +10,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
 
-[node name="VehicleBody3D" type="VehicleBody3D"]
+[node name="VehicleBody3D" type="VehicleBody3D" groups=["Interaction"]]
+collision_layer = 3
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)

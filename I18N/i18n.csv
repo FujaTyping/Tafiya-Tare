@@ -25,3 +25,4 @@ TIME_MORNING,Morning,ตอนเช้า
 TIME_DAY,Day,กลางวัน
 TIME_AFTERNOON,Afternoon,ตอนเย็น
 TIME_NIGHT,Night,กลางคืน
+ON_INTERACTION_AVALABLE,Press E to interact,กด E เพื่อโต้ตอบ

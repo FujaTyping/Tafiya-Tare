@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=15 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
@@ -6,12 +6,67 @@
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="3_ieuix"]
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
+[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="7_416l5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="Animation" id="Animation_b3xkm"]
+resource_name = "Hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interact:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.001358e-05, 1.001358e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_p21r4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interact:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_416l5"]
+resource_name = "Show"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interact:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3xkm"]
+_data = {
+&"Hide": SubResource("Animation_b3xkm"),
+&"RESET": SubResource("Animation_p21r4"),
+&"Show": SubResource("Animation_416l5")
+}
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
@@ -61,3 +116,37 @@ bus = &"SFX"
 stream = ExtResource("4_ixqkf")
 volume_db = -18.0
 bus = &"SFX"
+
+[node name="LookingCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -6.084655e-08, -1, 0, 1.3920069, -4.371139e-08, 0, 0.49794918, 0)
+collision_mask = 2
+
+[node name="Interact" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.80200005
+anchor_right = 0.499
+anchor_bottom = 0.80200005
+offset_left = -121.16754
+offset_top = -36.660034
+offset_right = 119.83246
+offset_bottom = 36.339966
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120.39, 36.785)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Interact"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 28
+text = "ON_INTERACTION_AVALABLE"
+
+[node name="InterShow" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b3xkm")
+}

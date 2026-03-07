@@ -8,6 +8,12 @@ var turn_amount = 0.3
 var is_driven: bool = false 
 #@onready var car_idle: AudioStreamPlayer3D = $CarIdle
 
+func interact() :
+	pass
+
+func canDrive() :
+	pass
+
 func _physics_process(delta: float) -> void:
 	$CamArm.position = position
 	

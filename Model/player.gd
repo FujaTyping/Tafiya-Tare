@@ -26,7 +26,12 @@ var JUMP_VELOCITY = 4.0
 @onready var engine_stop: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStop"
 @onready var engine_idle: AudioStreamPlayer3D = $"../VehicleBody3D/CarIdle"
 
+@onready var looking_cast: RayCast3D = $LookingCast
+@onready var interact: MarginContainer = $Interact
+@onready var inter_show: AnimationPlayer = $InterShow
+
 var is_in_car: bool = false
+var isInViewInteract = false
 
 func _ready():
 	sens = Varibles.MouseSens
@@ -51,12 +56,11 @@ func _input(event):
 	
 	# --- INTERACTION LOGIC ---
 	if Input.is_action_just_pressed("interaction"):
-		if car_cam != null and car_node != null:
+		if car_cam != null:
 			
 			if not is_in_car:
-				var distance_to_car = global_position.distance_to(car_node.global_position)
 				
-				if distance_to_car < 3:
+				if looking_cast.is_colliding() and looking_cast.get_collider().has_method("canDrive") :
 					# GET IN THE CAR
 					is_in_car = true
 					car_cam.current = true
@@ -83,6 +87,18 @@ func _input(event):
 				engine_stop.play()
 
 func _physics_process(delta: float) -> void:
+	if looking_cast.is_colliding() and looking_cast.get_collider().has_method("interact") :
+		if not isInViewInteract :
+			interact.show()
+			inter_show.play("Show")
+			isInViewInteract = true
+	else :
+		if isInViewInteract :
+			isInViewInteract = false
+			inter_show.play("Hide")
+			await inter_show.animation_finished
+			interact.hide()
+		
 	if is_in_car:
 		return 
 	
