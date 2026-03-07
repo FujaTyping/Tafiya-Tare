@@ -1,0 +1,174 @@
+[gd_scene load_steps=8 format=3 uid="uid://x0nwxuls06g4"]
+
+[sub_resource type="Animation" id="Animation_mr2uq"]
+resource_name = "Writer"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Context/MarginContainer/Dialoge:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_h03or"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Context/MarginContainer/Dialoge:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ll08"]
+_data = {
+&"RESET": SubResource("Animation_h03or"),
+&"Writer": SubResource("Animation_mr2uq")
+}
+
+[sub_resource type="Animation" id="Animation_7ll08"]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Transform2D(1, 0.135, 0, 1.545, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_il1we"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Transform2D(1, 0, 0, 1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5w7iy"]
+resource_name = "Out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0.135, 6.906688e-08, 1.545, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5w7iy"]
+_data = {
+&"In": SubResource("Animation_7ll08"),
+&"Out": SubResource("Animation_5w7iy"),
+&"RESET": SubResource("Animation_il1we")
+}
+
+[node name="Dialoges" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Context" type="ColorRect" parent="CanvasLayer"]
+offset_left = 248.0
+offset_top = 817.0
+offset_right = 1652.0
+offset_bottom = 1018.0
+size_flags_horizontal = 4
+color = Color(1, 1, 1, 0.17254902)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Context"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer/Context/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Speaker Text..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Next" type="Button" parent="CanvasLayer/Context"]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = 131.0
+offset_right = 1378.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 24
+text = "Continue"
+
+[node name="Name" type="ColorRect" parent="CanvasLayer"]
+offset_left = 250.0
+offset_top = 729.0
+offset_right = 670.0
+offset_bottom = 802.0
+size_flags_horizontal = 0
+color = Color(1, 1, 1, 0.17254902)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SP" type="Label" parent="CanvasLayer/Name/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Speaker Name"
+
+[node name="Typing" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7ll08")
+}
+
+[node name="IN_Out" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5w7iy")
+}

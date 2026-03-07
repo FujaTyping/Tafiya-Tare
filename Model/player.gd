@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 3.0
-const JUMP_VELOCITY = 4.0
+var SPEED = 3.0
+var JUMP_VELOCITY = 4.0
 
 @onready var pivot = $CamOrigin
 @export var sens = 0.2
