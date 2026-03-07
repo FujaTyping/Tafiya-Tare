@@ -22,6 +22,7 @@ extends Node3D
 @onready var day_bgm: AudioStreamPlayer = $dayBGM
 @onready var dn: Label = $Control/MarginContainer/HBoxContainer/DN
 @onready var time: Label = $Control/MarginContainer/HBoxContainer/Time
+@onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
 
 var dayDuration = 600
 var dayColorList = [
@@ -90,10 +91,14 @@ func _day_change_animation():
 		if not night_bgm.playing :
 			night_bgm.play()
 			day_bgm.stop()
+			for light in everyNightLight :
+				light.visible = true
 	else :
 		if not day_bgm.playing :
 			day_bgm.play()
 			night_bgm.stop()
+			for light in everyNightLight :
+				light.visible = false
 
 func _process(delta: float) -> void:
 	_refresh_day_state()
