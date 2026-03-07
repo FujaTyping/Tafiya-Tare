@@ -120,12 +120,6 @@ theme_override_fonts/font = ExtResource("3_ocodi")
 theme_override_font_sizes/font_size = 25
 text = "Resume"
 
-[node name="Option" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ocodi")
-theme_override_font_sizes/font_size = 25
-text = "Option"
-
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ocodi")
@@ -144,6 +138,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

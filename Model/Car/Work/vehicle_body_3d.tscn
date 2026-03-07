@@ -93,11 +93,14 @@ script = ExtResource("4_uq1ss")
 [node name="EngineStart" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_thola")
 volume_db = -7.0
+bus = &"SFX"
 
 [node name="CarIdle" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_vda12")
 volume_db = -7.0
+bus = &"SFX"
 
 [node name="EngineStop" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_7diub")
 volume_db = 4.0
+bus = &"SFX"

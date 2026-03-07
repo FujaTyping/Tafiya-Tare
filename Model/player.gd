@@ -29,6 +29,7 @@ var JUMP_VELOCITY = 4.0
 var is_in_car: bool = false
 
 func _ready():
+	sens = Varibles.MouseSens
 	if Varibles.playerSelection == "joker" :
 		player_animation.visible = true
 	else :
