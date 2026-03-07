@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://vje0m8kysudw"]
+[gd_scene load_steps=8 format=3 uid="uid://vje0m8kysudw"]
 
 [ext_resource type="Script" uid="uid://djtj7t0j0u5a4" path="res://UI/pause.gd" id="1_6wphx"]
+[ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="2_jl6cd"]
+[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="3_ocodi"]
 
 [sub_resource type="Animation" id="Animation_jl6cd"]
 resource_name = "CloseAnimation"
@@ -102,7 +104,8 @@ theme_override_constants/separation = 30
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("2_jl6cd")
+theme_override_font_sizes/font_size = 43
 text = "Pause"
 horizontal_alignment = 1
 
@@ -112,22 +115,26 @@ theme_override_constants/separation = 15
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_ocodi")
+theme_override_font_sizes/font_size = 25
 text = "Resume"
 
 [node name="Option" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_ocodi")
+theme_override_font_sizes/font_size = 25
 text = "Option"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_ocodi")
+theme_override_font_sizes/font_size = 25
 text = "Back to menu"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_ocodi")
+theme_override_font_sizes/font_size = 25
 text = "Exit"
 
 [node name="Open" type="AnimationPlayer" parent="."]

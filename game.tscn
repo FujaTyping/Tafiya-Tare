@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=22 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="PackedScene" uid="uid://cp5v6jobv00qh" path="res://Terrain/plain.glb" id="3_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_vef74"]
+[ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="4_7sc4i"]
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bwgom6evidtgx" path="res://Terrain/Tree/tree2.glb" id="8_hve3p"]
@@ -139,13 +140,15 @@ theme_override_constants/separation = 14
 
 [node name="Time" type="Label" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 38
+theme_override_fonts/font = ExtResource("4_7sc4i")
+theme_override_font_sizes/font_size = 42
 text = "00:00"
 
 [node name="DN" type="Label" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("4_7sc4i")
+theme_override_font_sizes/font_size = 30
 text = "Day"
 
 [node name="Dialoges" parent="." instance=ExtResource("13_215e1")]
