@@ -263,7 +263,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.1391805, 0.012961894, 0.99018097, 0, 0.99991435, -0.013089277, -0.9902658, 0.0018217764, 0.13916858, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918048, 0.012961894, 0.9901809, 0, 0.99991435, -0.013089276, -0.9902657, 0.0018217764, 0.13916856, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -292,7 +292,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_e05sn")
 theme_override_font_sizes/font_size = 52
-text = "Project Catalyst"
+text = "TITLE"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main/VBoxContainer"]
 layout_mode = 2
@@ -303,7 +303,7 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../Option")
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Play"
+text = "PLAY_BUTTON"
 
 [node name="Play2" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 visible = false
@@ -319,7 +319,7 @@ focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Credit")
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Option"
+text = "OPTION_BUTTON"
 
 [node name="Credit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -327,14 +327,14 @@ focus_neighbor_top = NodePath("../Option")
 focus_neighbor_bottom = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Credits"
+text = "CREDIT_BUTTON"
 
 [node name="Quit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credit")
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Quit"
+text = "QUIT_BUTTON"
 
 [node name="Credit" type="MarginContainer" parent="."]
 visible = false
@@ -367,7 +367,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_e05sn")
 theme_override_font_sizes/font_size = 48
-text = "Credits"
+text = "CREDIT_BUTTON"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credit/VBoxContainer"]
 layout_mode = 2
@@ -414,7 +414,7 @@ text = "FR- Car engine, start, stop, engine (SFX) by Dan_AudioFile"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Close"
+text = "CLOSE_BUTTON"
 
 [node name="Option" type="MarginContainer" parent="."]
 visible = false
@@ -443,7 +443,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_e05sn")
 theme_override_font_sizes/font_size = 48
-text = "Option"
+text = "OPTION_BUTTON"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Option/VBoxContainer"]
 layout_mode = 2
@@ -458,7 +458,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Sensitivity"
+text = "OPTION_SENSITIVITY"
 
 [node name="HSlider" type="HSlider" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -475,7 +475,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Backgroud Music"
+text = "OPTION_BGM"
 
 [node name="CheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -489,7 +489,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Sound Effect"
+text = "OPTION_SFX"
 
 [node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
@@ -503,10 +503,11 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Language"
+text = "OPTION_LANGUAGE"
 
 [node name="OptionButton" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 20
 selected = 0
@@ -520,7 +521,7 @@ popup/item_1/id = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
-text = "Close"
+text = "CLOSE_BUTTON"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -553,4 +554,5 @@ libraries = {
 [connection signal="value_changed" from="Option/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer4/SCheckButton" to="." method="_on_s_check_button_toggled"]
+[connection signal="item_selected" from="Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Option/VBoxContainer/CloseOption" to="." method="_on_close_option_pressed"]

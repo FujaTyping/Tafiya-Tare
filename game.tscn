@@ -237,5 +237,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.7633
 
 [node name="DialogeTrigged" parent="DialogeTriggers" instance=ExtResource("13_7sc4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.732776, 1.1294843, 14.437897)
-dialoguesLine = Array[String](["Welcome to Project Catalyst!", "This is a project for the first place of NSC", "..."])
-charLine = Array[String](["Lakkilo", "Lakkilo", "Player"])
+dialoguesLine = Array[String](["DIALOGE_1_1", "This is a project for the first place of NSC", "..."])
+charLine = Array[String](["Lakkilo", "Lakkilo", "PLAYER_DIALOGE_NAME"])

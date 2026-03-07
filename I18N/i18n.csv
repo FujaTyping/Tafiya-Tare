@@ -1,0 +1,27 @@
+﻿key,en,th
+TITLE,Project Catalyst,โปรเจกต์ คาตาลิสต์
+PLAY_BUTTON,Play,เล่น
+OPTION_BUTTON,Option,ตั้งค่า
+CREDIT_BUTTON,Credits,เครดิต
+QUIT_BUTTON,Quit,ออก
+BY,by,โดย
+CLOSE_BUTTON,Close,ปิด
+OPTION_SENSITIVITY,Sensitivity,ความไวกล้อง
+OPTION_BGM,Background Music,เพลง
+OPTION_SFX,Sound Effect,เสียงเอฟเฟ็กต์
+OPTION_LANGUAGE,Language,ภาษา
+CHOOSE_CHAR_TITLE,Choose your Character,เลือกตัวละครของคุณ
+CHOOSE_CHAR_DESC,The character that you want to start your Journey,ตัวละครที่คุณต้องการเริ่มต้นการเดินทางของคุณ
+SELECT_FM,Select Sophia,เลือก โซเฟีย
+SELECT_M,Select Joker,เลือก โจ๊กเกอร์
+BACK_BUTTON,Back,ย้อนกลับ
+PAUSE_TITLE,Pause,หยุดเกม
+RESUME_BUTTON,Resume,เล่นต่อ
+BACK_TO_MENU_BUTTON,Back to menu,กลับไปหน้าเมนู
+CONTINUE_BUTTON,Continue,ต่อไป
+PLAYER_DIALOGE_NAME,Player,ผู้เล่น
+DIALOGE_1_1,Welcome to Project Catalyst!,ยินดีต้องรับเข้าสู่ โปรเจกต์ คาตาลิสต์!
+TIME_MORNING,Morning,ตอนเช้า
+TIME_DAY,Day,กลางวัน
+TIME_AFTERNOON,Afternoon,ตอนเย็น
+TIME_NIGHT,Night,กลางคืน

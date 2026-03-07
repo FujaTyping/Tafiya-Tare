@@ -152,7 +152,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.99904794, -0.0024729988, 0.043551188, -0.0037684774, 0.98976576, 0.14265008, -0.043458253, -0.1426784, 0.9888144, -0.13619223, 0.38182935, -0.34718132)
+transform = Transform3D(0.9990479, -0.0024729986, 0.043551184, -0.0037684771, 0.9897657, 0.14265007, -0.04345825, -0.1426784, 0.98881435, -0.13619223, 0.38182935, -0.34718132)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -181,14 +181,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_8djgy")
 theme_override_font_sizes/font_size = 50
-text = "Choose your Character"
+text = "CHOOSE_CHAR_TITLE"
 
 [node name="Decs" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_01cfg")
 theme_override_font_sizes/font_size = 27
-text = "The character that you want to start your Journey"
+text = "CHOOSE_CHAR_DESC"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -205,7 +205,7 @@ focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("6_01cfg")
 theme_override_font_sizes/font_size = 24
-text = "Select Sophia"
+text = "SELECT_FM"
 
 [node name="M" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
@@ -215,7 +215,7 @@ focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("6_01cfg")
 theme_override_font_sizes/font_size = 24
-text = "Select Joker"
+text = "SELECT_M"
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -223,7 +223,7 @@ size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../HBoxContainer/WM")
 theme_override_fonts/font = ExtResource("6_01cfg")
 theme_override_font_sizes/font_size = 24
-text = "Back"
+text = "BACK_BUTTON"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 visible = false

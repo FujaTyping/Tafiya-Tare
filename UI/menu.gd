@@ -17,12 +17,14 @@ extends Control
 @onready var SFXBus = AudioServer.get_bus_index("SFX")
 @onready var s_check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer4/SCheckButton
 @onready var check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton
+@onready var option_button: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton
 
 func _ready():
 	play.grab_focus()
 	h_slider.value = Varibles.MouseSens
 	check_button.button_pressed = Varibles.BGM
 	s_check_button.button_pressed = Varibles.SFX
+	option_button.selected = Varibles.LangIndex
 	
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
@@ -80,3 +82,11 @@ func _on_s_check_button_toggled(toggled_on: bool) -> void:
 		AudioServer.set_bus_volume_db(SFXBus, -80)
 	else :
 		AudioServer.set_bus_volume_db(SFXBus, 0)
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	Varibles.LangIndex = index
+	if index == 0 :
+		TranslationServer.set_locale("en")
+	else :
+		TranslationServer.set_locale("th")

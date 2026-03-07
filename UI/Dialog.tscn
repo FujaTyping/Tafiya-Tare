@@ -141,7 +141,7 @@ offset_right = 1378.0
 offset_bottom = 185.0
 theme_override_fonts/font = ExtResource("1_7ll08")
 theme_override_font_sizes/font_size = 26
-text = "Continue"
+text = "CONTINUE_BUTTON"
 
 [node name="Name" type="ColorRect" parent="CanvasLayer"]
 offset_left = 250.0

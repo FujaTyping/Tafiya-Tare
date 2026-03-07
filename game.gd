@@ -26,10 +26,10 @@ extends Node3D
 
 var dayDuration = 600
 var dayColorList = [
-	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "Morning"},
-	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "Day" },
-	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "Afternoon"},
-	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "Night"}
+	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING"},
+	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "TIME_DAY" },
+	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "TIME_AFTERNOON"},
+	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "TIME_NIGHT"}
 ]
 var currentDayState = 0
 var durationMultiplier = 1.0

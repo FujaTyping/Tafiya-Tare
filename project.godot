@@ -109,6 +109,10 @@ click={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://I18N/i18n.en.translation", "res://I18N/i18n.th.translation")
+
 [physics]
 
 common/max_physics_steps_per_frame=24
