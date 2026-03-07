@@ -22,6 +22,8 @@ var JUMP_VELOCITY = 4.0
 
 @onready var player_animation: Node3D = $playerAnimation
 @onready var woman_player: Node3D = $woman_player
+@onready var engine_start: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStart"
+@onready var engine_stop: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStop"
 
 var is_in_car: bool = false
 
@@ -62,6 +64,7 @@ func _input(event):
 					
 					# ### NEW ### Tell the car to turn on!
 					car_node.is_driven = true 
+					engine_start.play()
 					
 			else:
 				# GET OUT OF THE CAR
@@ -73,6 +76,7 @@ func _input(event):
 				
 				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(1, 0, 0.25)
 				car_node.is_driven = false
+				engine_stop.play()
 
 func _physics_process(delta: float) -> void:
 	if is_in_car:

@@ -29,15 +29,16 @@ func _on_option_pressed() -> void:
 
 func pauseMenu() :
 	if paused:
+		get_tree().paused = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		open.play("CloseAnimation")
-		#self.hide()
-		get_tree().paused = false
+		await open.animation_finished
+		pause.visible = false
 	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#self.show()
-		open.play("PauseAnimation")
 		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		pause.visible = true
+		open.play("PauseAnimation")
 		resume.grab_focus()
 	paused = !paused  # Flip the paused state
 

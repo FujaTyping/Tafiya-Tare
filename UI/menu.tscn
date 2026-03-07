@@ -210,7 +210,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918056, 0.012961894, 0.99018145, 0, 0.99991435, -0.013089283, -0.99026626, 0.0018217764, 0.13916864, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918054, 0.012961894, 0.9901813, 0, 0.99991435, -0.0130892815, -0.99026614, 0.0018217764, 0.13916862, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -283,6 +283,7 @@ theme_override_font_sizes/font_size = 24
 text = "Quit"
 
 [node name="Credit" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -333,6 +334,27 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 23
 text = "Knight Right Footstep on Gravel 3 (SFX) by Ali_6868"
+
+[node name="Label3" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_font_sizes/font_size = 23
+text = "FR- Car engine, start, revs, idle (SFX) by Dan_AudioFile"
+
+[node name="Label4" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_font_sizes/font_size = 23
+text = "Old big Toyota car idle (SFX) by chiliwau"
+
+[node name="Label5" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_font_sizes/font_size = 23
+text = "FR- Car engine, start, stop, engine (SFX) by Dan_AudioFile"
 
 [node name="CloseCredit" type="Button" parent="Credit/VBoxContainer"]
 layout_mode = 2

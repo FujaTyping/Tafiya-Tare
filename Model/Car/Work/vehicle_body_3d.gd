@@ -6,6 +6,7 @@ var turn_speed = 3
 var turn_amount = 0.3
 
 var is_driven: bool = false 
+@onready var car_idle: AudioStreamPlayer3D = $CarIdle
 
 func _physics_process(delta: float) -> void:
 	$CamArm.position = position
@@ -25,3 +26,5 @@ func _physics_process(delta: float) -> void:
 		
 		if dir == 0 :
 			brake = 2
+	else :
+		car_idle.play()

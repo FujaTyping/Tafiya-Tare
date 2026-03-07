@@ -60,6 +60,7 @@ _data = {
 
 [node name="Pause" type="Control"]
 process_mode = 3
+visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
