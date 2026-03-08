@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=29 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
 [ext_resource type="PackedScene" uid="uid://bfyfdhft6hy5k" path="res://Model/Trash/Can1.glb" id="18_e36ub"]
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
+[ext_resource type="PackedScene" uid="uid://c2tgniy3ropf1" path="res://Model/Trash/Chips1.glb" id="19_x5p1p"]
 [ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="21_hb5m1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
@@ -254,6 +255,9 @@ transform = Transform3D(0.11212733, 0, 0, 0, 0.07513901, 0, 0, 0, 0.12583812, -4
 
 [node name="Can1" parent="AssetsTerrain" instance=ExtResource("18_e36ub")]
 transform = Transform3D(-0.050454523, -0.013326916, 0.09002083, -0.006215597, 0.10817999, 0.011089851, -0.09357363, 0, -0.04927553, 11.382173, 0.41630936, -10.20048)
+
+[node name="Chips1" parent="AssetsTerrain" instance=ExtResource("19_x5p1p")]
+transform = Transform3D(0.090256125, 0.16527455, 0.0030510537, -0.034799192, 0.024873931, -0.1950872, -0.15108894, 0.093001164, 0.046755582, 11.634357, 0.23135805, -10.622768)
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
