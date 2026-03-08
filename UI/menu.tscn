@@ -62,7 +62,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 10, 19.998116, 30),
@@ -74,7 +74,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 10, 19.998116, 30),
@@ -263,7 +263,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918048, 0.012961894, 0.99018085, 0, 0.99991435, -0.013089276, -0.99026567, 0.0018217764, 0.13916856, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918047, 0.012961894, 0.9901808, 0, 0.99991435, -0.013089275, -0.9902656, 0.0018217764, 0.13916855, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -494,6 +494,20 @@ text = "OPTION_SFX"
 [node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 
+[node name="HBoxContainer5" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 54
+
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_font_sizes/font_size = 24
+text = "OPTION_CINEMATIC"
+
+[node name="CNCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 54
@@ -554,5 +568,6 @@ libraries = {
 [connection signal="value_changed" from="Option/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer4/SCheckButton" to="." method="_on_s_check_button_toggled"]
+[connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer5/CNCheckButton" to="." method="_on_cn_check_button_toggled"]
 [connection signal="item_selected" from="Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Option/VBoxContainer/CloseOption" to="." method="_on_close_option_pressed"]

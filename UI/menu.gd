@@ -18,6 +18,7 @@ extends Control
 @onready var s_check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer4/SCheckButton
 @onready var check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton
 @onready var option_button: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton
+@onready var cn_check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer5/CNCheckButton
 
 func _ready():
 	play.grab_focus()
@@ -25,6 +26,7 @@ func _ready():
 	check_button.button_pressed = Varibles.BGM
 	s_check_button.button_pressed = Varibles.SFX
 	option_button.selected = Varibles.LangIndex
+	cn_check_button.button_pressed = Varibles.wantCinematic
 	
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
@@ -95,3 +97,7 @@ func _on_option_button_item_selected(index: int) -> void:
 		TranslationServer.set_locale("en")
 	else :
 		TranslationServer.set_locale("th")
+
+
+func _on_cn_check_button_toggled(toggled_on: bool) -> void:
+	Varibles.wantCinematic = toggled_on
