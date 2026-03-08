@@ -34,6 +34,7 @@ var JUMP_VELOCITY = 4.0
 
 var is_in_car: bool = false
 var isInViewInteract = false
+var interActionJustPress = false
 
 func _ready():
 	sens = Varibles.MouseSens
@@ -59,7 +60,11 @@ func _input(event):
 	# --- INTERACTION LOGIC ---
 	if Input.is_action_just_pressed("interaction"):
 		if looking_cast.is_colliding() and looking_cast.get_collider().has_method("addFuel") :
-			looking_cast.get_collider().addFuel()
+			interActionJustPress = true
+			sens = 0
+			await looking_cast.get_collider().addFuel()
+			sens = Varibles.MouseSens
+			interActionJustPress = false
 			
 		if car_cam != null:
 			
@@ -94,13 +99,13 @@ func _input(event):
 				engine_stop.play()
 
 func _physics_process(delta: float) -> void:
-	if looking_cast.is_colliding() :
-		if looking_cast.get_collider().has_method("interact") :
-			if not isInViewInteract :
-				label.text = looking_cast.get_collider().interact()
-				interact.show()
-				inter_show.play("Show")
-				isInViewInteract = true
+	if looking_cast.is_colliding() and not interActionJustPress:
+		if looking_cast.get_collider() :
+			if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
+					label.text = looking_cast.get_collider().interact()
+					interact.show()
+					inter_show.play("Show")
+					isInViewInteract = true
 	else :
 		if isInViewInteract :
 			isInViewInteract = false

@@ -63,10 +63,10 @@ tracks/1/path = NodePath("Sun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 600),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 165, 485),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_7jktm"]

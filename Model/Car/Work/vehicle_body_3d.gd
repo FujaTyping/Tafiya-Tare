@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		
 		# --- CONTINUOUS FUEL DRAIN & UI UPDATE ---
 		if dir != 0:
-			carFuel -= 0.5 * delta 
+			carFuel -= 0.05 * delta 
 			if carFuel < 0 :
 				cnt.text = str(0)
 			else :

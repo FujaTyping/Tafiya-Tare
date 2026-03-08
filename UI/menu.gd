@@ -29,6 +29,11 @@ func _ready():
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("down") and Input.is_action_pressed("shift") and Input.is_action_pressed("ctrl") :
+		get_tree().change_scene_to_file("res://game.tscn")
+		MenuMusic.stopmenumusic()
+		
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/player_selection.tscn")
 

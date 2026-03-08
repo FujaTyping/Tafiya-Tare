@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 162
+@export var startTime = 455
 @export var dayLengthInSeconds:float = 300 #155
 
 @export var morningColorTop: Color = Color("5897fa")
@@ -24,6 +24,8 @@ extends Node3D
 @onready var time: Label = $Control/MarginContainer/HBoxContainer/Time
 @onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
 
+@onready var sun: DirectionalLight3D = $Sun
+
 var dayDuration = 600
 var dayColorList = [
 	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING"},
@@ -35,6 +37,7 @@ var currentDayState = 0
 var durationMultiplier = 1.0
 
 func _ready() -> void:
+	#sun.visible = false
 	_change_duration()
 	
 	_set_sun()
@@ -91,10 +94,12 @@ func _day_change_animation():
 		if not night_bgm.playing :
 			night_bgm.play()
 			day_bgm.stop()
+			#sun.visible = false
 			for light in everyNightLight :
 				light.visible = true
 	else :
 		if not day_bgm.playing :
+			#sun.visible = true
 			day_bgm.play()
 			night_bgm.stop()
 			for light in everyNightLight :
