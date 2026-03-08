@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://f47ybfdl1grn" path="res://Terrain/Grass/Grass1.glb" id="17_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
-[ext_resource type="PackedScene" uid="uid://dc4aslmc3g8vy" path="res://Model/Trash/Can1.glb" id="18_e36ub"]
+[ext_resource type="PackedScene" uid="uid://bfyfdhft6hy5k" path="res://Model/Trash/Can1.glb" id="18_e36ub"]
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
