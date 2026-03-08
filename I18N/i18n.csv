@@ -26,3 +26,5 @@ TIME_DAY,Day,กลางวัน
 TIME_AFTERNOON,Afternoon,ตอนเย็น
 TIME_NIGHT,Night,กลางคืน
 ON_INTERACTION_AVALABLE,Press E to interact,กด E เพื่อโต้ตอบ
+ON_INTERACTION_CAR,Press E to drive,กด E เพื่อขับรถ
+ON_INTERACTION_COLLECT,Press E to collect,กด E เพื่อเก็บ

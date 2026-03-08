@@ -9,7 +9,7 @@ var is_driven: bool = false
 #@onready var car_idle: AudioStreamPlayer3D = $CarIdle
 
 func interact() :
-	pass
+	return "ON_INTERACTION_CAR"
 
 func canDrive() :
 	pass

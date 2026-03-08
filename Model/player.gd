@@ -29,6 +29,7 @@ var JUMP_VELOCITY = 4.0
 @onready var looking_cast: RayCast3D = $LookingCast
 @onready var interact: MarginContainer = $Interact
 @onready var inter_show: AnimationPlayer = $InterShow
+@onready var label: Label = $Interact/Label
 
 var is_in_car: bool = false
 var isInViewInteract = false
@@ -89,6 +90,7 @@ func _input(event):
 func _physics_process(delta: float) -> void:
 	if looking_cast.is_colliding() and looking_cast.get_collider().has_method("interact") :
 		if not isInViewInteract :
+			label.text = looking_cast.get_collider().interact()
 			interact.show()
 			inter_show.play("Show")
 			isInViewInteract = true
