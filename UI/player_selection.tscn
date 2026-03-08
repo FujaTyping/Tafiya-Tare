@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3mj2fiee0xht"]
+[gd_scene load_steps=16 format=3 uid="uid://c3mj2fiee0xht"]
 
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="1_6py08"]
 [ext_resource type="Script" uid="uid://fk2ayj7lo450" path="res://UI/player_selection.gd" id="1_hipr5"]
 [ext_resource type="PackedScene" uid="uid://cp5v6jobv00qh" path="res://Terrain/plain.glb" id="1_uam36"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="2_8xxhs"]
+[ext_resource type="PackedScene" uid="uid://bwgom6evidtgx" path="res://Terrain/Tree/tree2.glb" id="3_2euh0"]
 [ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="5_8djgy"]
 [ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="6_01cfg"]
+[ext_resource type="PackedScene" uid="uid://bg4l86s7iwjuj" path="res://Terrain/Tree/Tree1.glb" id="7_01cfg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uam36"]
 sky_top_color = Color(0.12156863, 0.42745098, 0.8745098, 1)
@@ -128,6 +130,29 @@ environment = SubResource("Environment_8xxhs")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.7012578, 0.71290785, 0, -0.71290785, 0.7012578, 0, 0, 0)
 
+[node name="TerrainAssets" type="Node3D" parent="."]
+
+[node name="Tree1" parent="TerrainAssets" instance=ExtResource("7_01cfg")]
+transform = Transform3D(-0.06136033, 0, -0.14018488, 0, 0.15060942, 0, 0.11786206, 0, -0.07298184, -1.0919006, 0.26169166, -1.8743321)
+
+[node name="Tree2" parent="TerrainAssets" instance=ExtResource("7_01cfg")]
+transform = Transform3D(-0.05283607, 0, 0.14501342, 0, 0.1506094, 0, -0.12192171, 0, -0.0628431, 0.60766816, 0.12158382, -1.3388923)
+
+[node name="Tree3" parent="TerrainAssets" instance=ExtResource("7_01cfg")]
+transform = Transform3D(-0.07339917, 0, -0.08151482, 0, 0.111508824, 0, 0.09174509, 0, -0.065214634, 0.7381573, 0.119152576, -0.93241936)
+
+[node name="tree2" parent="TerrainAssets" instance=ExtResource("3_2euh0")]
+transform = Transform3D(0.052535154, 0, 0.083380185, 0, 0.091897324, 0, -0.08723648, 0, 0.050212827, 0.40327868, 0.22300327, -2.1437569)
+
+[node name="tree3" parent="TerrainAssets" instance=ExtResource("3_2euh0")]
+transform = Transform3D(0.10183392, 0, 0, 0, 0.09189733, 0, 0, 0, 0.097332336, -0.15469125, 0.22300327, -2.7757936)
+
+[node name="tree4" parent="TerrainAssets" instance=ExtResource("3_2euh0")]
+transform = Transform3D(0.037424322, 0, -0.063856944, 0, 0.06040742, 0, 0.06302975, 0, 0.037915476, -1.1217978, 0.22300327, -1.3445655)
+
+[node name="tree5" parent="TerrainAssets" instance=ExtResource("3_2euh0")]
+transform = Transform3D(0.048041206, 0, 0.04039123, 0, 0.041650023, 0, -0.041937076, 0, 0.04627035, -1.3260314, 0.18378446, -0.9612836)
+
 [node name="playerAnimation" parent="." instance=ExtResource("1_6py08")]
 transform = Transform3D(0.017059123, 0, 0.033220224, 0, 0.032493502, 0, -0.036615107, 0, 0.015477433, 0, 0.31011856, -0.7248769)
 
@@ -152,7 +177,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.9990479, -0.0024729986, 0.043551184, -0.0037684771, 0.9897657, 0.14265007, -0.04345825, -0.1426784, 0.98881435, -0.13619223, 0.38182935, -0.34718132)
+transform = Transform3D(0.9990478, -0.0024729986, 0.04355118, -0.003768477, 0.98976564, 0.14265007, -0.04345825, -0.14267838, 0.9888143, -0.13619223, 0.38182935, -0.34718132)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

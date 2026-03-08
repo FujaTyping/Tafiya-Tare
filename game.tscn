@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=26 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://gcud7fvankq" path="res://Model/Dialoge/DialogTrigger.tscn" id="13_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://x0nwxuls06g4" path="res://UI/Dialog.tscn" id="13_215e1"]
 [ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
+[ext_resource type="PackedScene" uid="uid://f47ybfdl1grn" path="res://Terrain/Grass/Grass1.glb" id="17_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
 
@@ -226,13 +227,28 @@ transform = Transform3D(-0.20408554, 0, 0.13267483, 0, 0.23856938, 0, -0.1295866
 transform = Transform3D(-0.21156228, 0, -0.18206303, 0, 0.30736333, 0, 0.34582055, 0, -0.1113805, -11.063597, 0.312482, -2.4934134)
 
 [node name="Fence2" parent="AssetsTerrain" instance=ExtResource("17_e8heu")]
-transform = Transform3D(-0.29105568, 0, -0.1485691, 0, 0.30736333, 0, 0.28220034, 0, -0.15323114, 0.5039966, 0.13785368, -15.053887)
+transform = Transform3D(-0.21832316, 0, -0.17983711, 0, 0.30736336, 0, 0.3415925, 0, -0.1149399, 0.6568119, 0.13785368, -14.900938)
 
 [node name="Fence3" parent="AssetsTerrain" instance=ExtResource("17_e8heu")]
 transform = Transform3D(-0.40055436, 0, -0.0329058, 0, 0.30736336, 0, 0.06250311, 0, -0.21087857, 2.017894, 0.13785368, -15.435932)
 
 [node name="House1" parent="AssetsTerrain" instance=ExtResource("18_rvswv")]
-transform = Transform3D(-0.87587196, 0, -0.8143679, 0, 1.1885941, 0, 0.6817003, 0, -1.046328, -3.81748, 1.2349907, -15.625711)
+transform = Transform3D(-1.0541283, 0, -0.85499185, 0, 1.3607327, 0, 0.820439, 0, -1.0985231, -3.81748, 1.492081, -15.625711)
+
+[node name="Grass1" parent="AssetsTerrain" instance=ExtResource("17_boyg6")]
+transform = Transform3D(0.11212733, 0, 0, 0, 0.07513901, 0, 0, 0, 0.12583812, -3.872333, 0.19981432, -12.485672)
+
+[node name="Grass3" parent="AssetsTerrain" instance=ExtResource("17_boyg6")]
+transform = Transform3D(0.033623993, 0, 0.12004691, 0, 0.07513901, 0, -0.106967114, 0, 0.0377355, -0.72858524, 0.22444081, -15.243574)
+
+[node name="Grass4" parent="AssetsTerrain" instance=ExtResource("17_boyg6")]
+transform = Transform3D(0.033623993, 0, 0.12004691, 0, 0.07513901, 0, -0.106967114, 0, 0.0377355, 2.6242085, 0.2627774, -15.265126)
+
+[node name="Grass5" parent="AssetsTerrain" instance=ExtResource("17_boyg6")]
+transform = Transform3D(0.033623993, 0, 0.12004691, 0, 0.07513901, 0, -0.106967114, 0, 0.0377355, 3.0958486, 0.2627774, -15.863182)
+
+[node name="Grass2" parent="AssetsTerrain" instance=ExtResource("17_boyg6")]
+transform = Transform3D(0.11212733, 0, 0, 0, 0.07513901, 0, 0, 0, 0.12583812, -4.562408, 0.19981432, -12.901899)
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
