@@ -25,6 +25,7 @@ var JUMP_VELOCITY = 4.0
 @onready var engine_start: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStart"
 @onready var engine_stop: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStop"
 @onready var engine_idle: AudioStreamPlayer3D = $"../VehicleBody3D/CarIdle"
+@onready var Fuelmargin_container: MarginContainer = $"../VehicleBody3D/MarginContainer"
 
 @onready var looking_cast: RayCast3D = $LookingCast
 @onready var interact: MarginContainer = $Interact
@@ -57,6 +58,9 @@ func _input(event):
 	
 	# --- INTERACTION LOGIC ---
 	if Input.is_action_just_pressed("interaction"):
+		if looking_cast.is_colliding() and looking_cast.get_collider().has_method("addFuel") :
+			looking_cast.get_collider().addFuel()
+			
 		if car_cam != null:
 			
 			if not is_in_car:
@@ -73,6 +77,7 @@ func _input(event):
 					car_node.is_driven = true 
 					engine_start.play()
 					engine_idle.play()
+					Fuelmargin_container.visible = true
 					
 			else:
 				# GET OUT OF THE CAR
@@ -81,6 +86,7 @@ func _input(event):
 				camera_3d.current = true
 				visible = true
 				$CollisionShape3D.disabled = false
+				Fuelmargin_container.visible = false
 				
 				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(1, 0, 0.25)
 				car_node.is_driven = false
@@ -88,12 +94,13 @@ func _input(event):
 				engine_stop.play()
 
 func _physics_process(delta: float) -> void:
-	if looking_cast.is_colliding() and looking_cast.get_collider().has_method("interact") :
-		if not isInViewInteract :
-			label.text = looking_cast.get_collider().interact()
-			interact.show()
-			inter_show.play("Show")
-			isInViewInteract = true
+	if looking_cast.is_colliding() :
+		if looking_cast.get_collider().has_method("interact") :
+			if not isInViewInteract :
+				label.text = looking_cast.get_collider().interact()
+				interact.show()
+				inter_show.play("Show")
+				isInViewInteract = true
 	else :
 		if isInViewInteract :
 			isInViewInteract = false

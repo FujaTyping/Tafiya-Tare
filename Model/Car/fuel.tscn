@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr747landsx8y"]
+
+[ext_resource type="Script" uid="uid://rulfggervalr" path="res://Model/Car/fuel.gd" id="1_mcafy"]
+[ext_resource type="PackedScene" uid="uid://bhl4yhmmf5ad8" path="res://Model/Car/Fuel.glb" id="1_mmlrl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mcafy"]
+size = Vector3(1, 1.2930908, 0.3552246)
+
+[node name="Fuel" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_mcafy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4130346, 0.010131836)
+shape = SubResource("BoxShape3D_mcafy")
+
+[node name="Fuel" parent="." instance=ExtResource("1_mmlrl")]
+transform = Transform3D(0.19182149, 0, 0, 0, 0.20692605, 0, 0, 0, 0.16044319, 0, 0, 0)
