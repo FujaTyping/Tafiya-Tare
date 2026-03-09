@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
-[ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="3_e05sn"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_qmqfe"]
-[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="4_kfjwn"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_dte3n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -263,7 +263,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918045, 0.012961894, 0.9901807, 0, 0.99991435, -0.013089273, -0.9902655, 0.0018217764, 0.13916853, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918042, 0.012961894, 0.9901805, 0, 0.99991435, -0.013089271, -0.9902653, 0.0018217764, 0.1391685, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -290,7 +290,7 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_e05sn")
+theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 52
 text = "TITLE"
 
@@ -301,7 +301,7 @@ theme_override_constants/separation = 15
 [node name="Play" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Option")
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "PLAY_BUTTON"
 
@@ -309,7 +309,7 @@ text = "PLAY_BUTTON"
 visible = false
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Option")
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "Mutiplayer"
 
@@ -317,7 +317,7 @@ text = "Mutiplayer"
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Credit")
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_BUTTON"
 
@@ -325,14 +325,14 @@ text = "OPTION_BUTTON"
 layout_mode = 2
 focus_neighbor_top = NodePath("../Option")
 focus_neighbor_bottom = NodePath("../Quit")
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CREDIT_BUTTON"
 
 [node name="Quit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credit")
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "QUIT_BUTTON"
 
@@ -355,6 +355,22 @@ theme_override_constants/margin_bottom = 0
 layout_mode = 2
 color = Color(1, 1, 1, 0.14901961)
 
+[node name="MarginContainer" type="MarginContainer" parent="Credit"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CloseCredit" type="Button" parent="Credit/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "CLOSE_BUTTON"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Credit"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -365,56 +381,71 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_e05sn")
+theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 48
 text = "CREDIT_BUTTON"
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credit/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 6
+theme_override_constants/separation = 21
 
 [node name="Label" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_kfjwn")
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Footstep Dirt (SFX) by FallujahQc"
 
 [node name="Label2" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_kfjwn")
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Knight Right Footstep on Gravel 3 (SFX) by Ali_6868"
 
 [node name="Label3" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_kfjwn")
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "FR- Car engine, start, revs, idle (SFX) by Dan_AudioFile"
 
 [node name="Label4" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_kfjwn")
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Old big Toyota car idle (SFX) by chiliwau"
 
 [node name="Label5" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_kfjwn")
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "FR- Car engine, start, stop, engine (SFX) by Dan_AudioFile"
 
-[node name="CloseCredit" type="Button" parent="Credit/VBoxContainer"]
+[node name="Label6" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_kfjwn")
-theme_override_font_sizes/font_size = 24
-text = "CLOSE_BUTTON"
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Sarabun Font
+Copyright 2018 The Sarabun Project Authors (https://github.com/cadsondemak/Sarabun)
+This Font Software is licensed under the SIL Open Font License, 
+Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
+
+[node name="Label7" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Playpen Sans Font
+Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether/Playpen-Sans)
+This Font Software is licensed under the SIL Open Font License, 
+Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
 
 [node name="Option" type="MarginContainer" parent="."]
 visible = false
@@ -441,7 +472,7 @@ theme_override_constants/separation = 30
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_e05sn")
+theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 48
 text = "OPTION_BUTTON"
 
@@ -456,7 +487,7 @@ theme_override_constants/separation = 54
 [node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_SENSITIVITY"
 
@@ -473,7 +504,7 @@ theme_override_constants/separation = 54
 [node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_BGM"
 
@@ -487,7 +518,7 @@ theme_override_constants/separation = 54
 [node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_SFX"
 
@@ -502,7 +533,6 @@ theme_override_constants/separation = 54
 [node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("4_kfjwn")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_CINEMATIC"
 
@@ -516,14 +546,14 @@ theme_override_constants/separation = 54
 [node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_LANGUAGE"
 
 [node name="OptionButton" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 20
 selected = 0
 item_count = 2
@@ -534,7 +564,7 @@ popup/item_1/id = 1
 
 [node name="CloseOption" type="Button" parent="Option/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_kfjwn")
+theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
@@ -565,7 +595,7 @@ libraries = {
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Credit/VBoxContainer/CloseCredit" to="." method="_on_close_credit_pressed"]
+[connection signal="pressed" from="Credit/MarginContainer/CloseCredit" to="." method="_on_close_credit_pressed"]
 [connection signal="value_changed" from="Option/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer4/SCheckButton" to="." method="_on_s_check_button_toggled"]

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cqg5cwd2nkpx3"
-path="res://.godot/imported/RobotoCondensed-Regular.ttf-40822e1f94a808f5861aa7670163c9b2.fontdata"
+uid="uid://bb7olwpe2vhxd"
+path="res://.godot/imported/PlaypenSansThai-SemiBold.ttf-b2378df577c638c405fb4acf2834d20b.fontdata"
 
 [deps]
 
-source_file="res://UI/Font/RobotoCondensed-Regular.ttf"
-dest_files=["res://.godot/imported/RobotoCondensed-Regular.ttf-40822e1f94a808f5861aa7670163c9b2.fontdata"]
+source_file="res://UI/Font/PlaypenSansThai-SemiBold.ttf"
+dest_files=["res://.godot/imported/PlaypenSansThai-SemiBold.ttf-b2378df577c638c405fb4acf2834d20b.fontdata"]
 
 [params]
 

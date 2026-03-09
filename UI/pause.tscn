@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://vje0m8kysudw"]
 
 [ext_resource type="Script" uid="uid://djtj7t0j0u5a4" path="res://UI/pause.gd" id="1_6wphx"]
-[ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="2_jl6cd"]
-[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="3_ocodi"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_jl6cd"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="3_ocodi"]
 
 [sub_resource type="Animation" id="Animation_jl6cd"]
 resource_name = "CloseAnimation"
@@ -60,6 +60,7 @@ _data = {
 
 [node name="Pause" type="Control"]
 process_mode = 3
+visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 15

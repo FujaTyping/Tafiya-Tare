@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="3_ieuix"]
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
-[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="7_416l5"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="7_416l5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -106,7 +106,6 @@ margin = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3043615)
 
 [node name="Pause" parent="." instance=ExtResource("2_c8du1")]
-visible = false
 
 [node name="Walking" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_qsoau")

@@ -3,7 +3,7 @@ extends Control
 @onready var play: Button = $Main/VBoxContainer/VBoxContainer/Play
 @onready var credit_animation: AnimationPlayer = $CreditAnimation
 @onready var menu_animation: AnimationPlayer = $MenuAnimation
-@onready var close_credit: Button = $Credit/VBoxContainer/CloseCredit
+@onready var close_credit: Button = $Credit/MarginContainer/CloseCredit
 @onready var option: MarginContainer = $Option
 @onready var option_animation: AnimationPlayer = $OptionAnimation
 
@@ -19,6 +19,7 @@ extends Control
 @onready var check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton
 @onready var option_button: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton
 @onready var cn_check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer5/CNCheckButton
+@onready var close_option: Button = $Option/VBoxContainer/CloseOption
 
 func _ready():
 	play.grab_focus()
@@ -43,6 +44,7 @@ func _on_option_pressed() -> void:
 	menu_animation.play("MenuOut")
 	option.visible = true
 	option_animation.play("OptIn")
+	close_option.grab_focus()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

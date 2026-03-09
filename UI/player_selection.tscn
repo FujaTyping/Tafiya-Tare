@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cp5v6jobv00qh" path="res://Terrain/plain.glb" id="1_uam36"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="2_8xxhs"]
 [ext_resource type="PackedScene" uid="uid://bwgom6evidtgx" path="res://Terrain/Tree/tree2.glb" id="3_2euh0"]
-[ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="5_8djgy"]
-[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="6_01cfg"]
 [ext_resource type="PackedScene" uid="uid://bg4l86s7iwjuj" path="res://Terrain/Tree/Tree1.glb" id="7_01cfg"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="7_c40gl"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="8_ttpy0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uam36"]
 sky_top_color = Color(0.12156863, 0.42745098, 0.8745098, 1)
@@ -177,7 +177,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.9990478, -0.0024729986, 0.04355118, -0.003768477, 0.98976564, 0.14265007, -0.04345825, -0.14267838, 0.9888143, -0.13619223, 0.38182935, -0.34718132)
+transform = Transform3D(0.9990477, -0.0024729983, 0.043551177, -0.0037684764, 0.9897655, 0.14265005, -0.043458242, -0.14267837, 0.9888142, -0.13619223, 0.38182935, -0.34718132)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -204,14 +204,14 @@ theme_override_constants/separation = 8
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("5_8djgy")
+theme_override_fonts/font = ExtResource("7_c40gl")
 theme_override_font_sizes/font_size = 50
 text = "CHOOSE_CHAR_TITLE"
 
 [node name="Decs" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("6_01cfg")
+theme_override_fonts/font = ExtResource("8_ttpy0")
 theme_override_font_sizes/font_size = 27
 text = "CHOOSE_CHAR_DESC"
 
@@ -228,7 +228,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("6_01cfg")
+theme_override_fonts/font = ExtResource("8_ttpy0")
 theme_override_font_sizes/font_size = 24
 text = "SELECT_FM"
 
@@ -238,7 +238,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("6_01cfg")
+theme_override_fonts/font = ExtResource("8_ttpy0")
 theme_override_font_sizes/font_size = 24
 text = "SELECT_M"
 
@@ -246,14 +246,14 @@ text = "SELECT_M"
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../HBoxContainer/WM")
-theme_override_fonts/font = ExtResource("6_01cfg")
+theme_override_fonts/font = ExtResource("8_ttpy0")
 theme_override_font_sizes/font_size = 24
 text = "BACK_BUTTON"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_01cfg")
+theme_override_fonts/font = ExtResource("8_ttpy0")
 theme_override_font_sizes/font_size = 19
 text = "If you don't choose the game will be select the default character"
 

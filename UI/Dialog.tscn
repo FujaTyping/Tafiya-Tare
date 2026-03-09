@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://x0nwxuls06g4"]
 
-[ext_resource type="FontFile" uid="uid://cqg5cwd2nkpx3" path="res://UI/Font/RobotoCondensed-Regular.ttf" id="1_7ll08"]
-[ext_resource type="FontFile" uid="uid://cu0k5774l1hxj" path="res://UI/Font/JotiOne-Regular.ttf" id="2_il1we"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="1_7ll08"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_il1we"]
 
 [sub_resource type="Animation" id="Animation_h03or"]
 length = 0.001
@@ -135,10 +135,10 @@ visible_ratio = 0.0
 
 [node name="Next" type="Button" parent="CanvasLayer/Context"]
 layout_mode = 0
-offset_left = 1187.0
-offset_top = 131.0
-offset_right = 1378.0
-offset_bottom = 185.0
+offset_left = 1148.0
+offset_top = 132.0
+offset_right = 1382.0
+offset_bottom = 186.0
 theme_override_fonts/font = ExtResource("1_7ll08")
 theme_override_font_sizes/font_size = 26
 text = "CONTINUE_BUTTON"
