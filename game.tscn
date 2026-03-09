@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=32 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
 [ext_resource type="PackedScene" uid="uid://c2tgniy3ropf1" path="res://Model/Trash/Chips1.glb" id="19_x5p1p"]
 [ext_resource type="PackedScene" uid="uid://b6ufy7b3waog6" path="res://Model/Barrel.glb" id="20_qhcbd"]
+[ext_resource type="PackedScene" uid="uid://cj1i3hl4rv4pw" path="res://Terrain/Bush/bush.glb" id="21_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="21_hb5m1"]
+[ext_resource type="PackedScene" uid="uid://m12kghl86ot7" path="res://Model/Crate.glb" id="25_vaj68"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -186,6 +188,7 @@ transform = Transform3D(0.5140499, 0, -0.048923448, 0, 0.54560614, 0, 0.04626668
 
 [node name="SpotLight3D" type="SpotLight3D" parent="AssetsTerrain/ModernLightPole" groups=["lightFromPole"]]
 transform = Transform3D(1.7621938, 3.4871853e-08, -0.8053547, 0.7618427, -7.218045e-08, 1.6669853, 7.448621e-22, -1.832288, -7.9338065e-08, 1.004143, 10.339152, 0)
+visible = false
 layers = 3
 light_energy = 2.485
 light_volumetric_fog_energy = 1.99
@@ -266,8 +269,17 @@ transform = Transform3D(-0.2303227, 0, 0, 0, 0.2622185, 0, 0, 0, -0.2354192, -6.
 [node name="Barrel2" parent="AssetsTerrain" instance=ExtResource("20_qhcbd")]
 transform = Transform3D(-0.2303227, 0, 0, 0, 0.2622185, 0, 0, 0, -0.2354192, -6.2522078, 0.5573656, -15.006408)
 
+[node name="bush" parent="AssetsTerrain" instance=ExtResource("21_f1jbl")]
+transform = Transform3D(0.20884573, 0, -0.187074, 0, 0.31940374, 0, 0.36138174, 0, 0.10811173, 12.653774, 0.7038996, 8.279786)
+
+[node name="bush2" parent="AssetsTerrain" instance=ExtResource("21_f1jbl")]
+transform = Transform3D(-0.049479824, 0, -0.17601536, 0, 0.23974343, 0, 0.3338268, 0, -0.026089005, 13.24956, 0.51576674, 9.416955)
+
 [node name="Fuel" parent="AssetsTerrain" instance=ExtResource("21_hb5m1")]
 transform = Transform3D(-0.48713806, 0.03410298, 0.48632628, 0.028685374, 0.5791403, -0.028637573, -0.36143044, 0, -0.65774614, 11.255049, 0.44033176, -9.358533)
+
+[node name="Crate" parent="AssetsTerrain" instance=ExtResource("25_vaj68")]
+transform = Transform3D(0.115500405, 0, 0, 0, 0.118968375, -0.006242159, 0, 0.00623695, 0.11906771, -5.713899, 0.47445244, -14.516255)
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
