@@ -13,6 +13,7 @@ config_version=5
 config/name="Project-Catalyst"
 run/main_scene="uid://bk2eqtj4bowsx"
 config/features=PackedStringArray("4.5", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]

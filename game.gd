@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 455
+@export var startTime = 160
 @export var dayLengthInSeconds:float = 300 #155
 
 @export var morningColorTop: Color = Color("5897fa")
