@@ -77,11 +77,14 @@ func _input(event):
 					camera_3d.current = false
 					visible = false 
 					$CollisionShape3D.disabled = true 
+					if car_node.canOpenLight :
+						car_node.openLight(true)
 					
 					# ### NEW ### Tell the car to turn on!
 					car_node.is_driven = true 
-					engine_start.play()
-					engine_idle.play()
+					if car_node.carFuel > 0 :
+						engine_start.play()
+						engine_idle.play()
 					Fuelmargin_container.visible = true
 					
 			else:
@@ -93,10 +96,13 @@ func _input(event):
 				$CollisionShape3D.disabled = false
 				Fuelmargin_container.visible = false
 				
+				car_node.openLight(false)
+				
 				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(1, 0, 0.25)
 				car_node.is_driven = false
-				engine_idle.stop()
-				engine_stop.play()
+				if car_node.carFuel > 0 :
+					engine_idle.stop()
+					engine_stop.play()
 
 func _physics_process(delta: float) -> void:
 	if looking_cast.is_colliding() and not interActionJustPress:

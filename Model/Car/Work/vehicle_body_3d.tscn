@@ -136,3 +136,19 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_hpwcy")
 theme_override_font_sizes/font_size = 42
 text = "0"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9426589, 0.33375755, 0, -0.33375755, -0.9426589, -0.6461761, -0.4961285, 2.562558)
+visible = false
+light_energy = 3.054
+shadow_enabled = true
+spot_range = 4.6654825
+spot_angle = 51.244904
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.94265896, 0.33375758, 0, -0.33375758, -0.94265896, 0.6625953, -0.4961285, 2.562558)
+visible = false
+light_energy = 3.054
+shadow_enabled = true
+spot_range = 4.6624236
+spot_angle = 51.244904

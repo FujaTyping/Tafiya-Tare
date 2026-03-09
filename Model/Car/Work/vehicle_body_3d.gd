@@ -7,8 +7,16 @@ var turn_amount = 0.3
 var carFuel = 50
 
 var is_driven: bool = false 
+var canOpenLight = false
 #@onready var car_idle: AudioStreamPlayer3D = $CarIdle
 @onready var cnt: Label = $MarginContainer/HBoxContainer/CNT
+
+@onready var spot_light_3d: SpotLight3D = $SpotLight3D
+@onready var spot_light_3d_2: SpotLight3D = $SpotLight3D2
+
+@onready var engine_start: AudioStreamPlayer3D = $EngineStart
+@onready var car_idle: AudioStreamPlayer3D = $CarIdle
+@onready var engine_stop: AudioStreamPlayer3D = $EngineStop
 
 func _ready() -> void:
 	fuelUpdate()
@@ -21,6 +29,15 @@ func interact() :
 
 func canDrive() :
 	pass
+	
+func openLight(value:bool) :
+	if value and carFuel > 0 :
+		spot_light_3d.visible = true
+		spot_light_3d_2.visible = true
+	else :
+		spot_light_3d.visible = false
+		spot_light_3d_2.visible = false
+	
 
 #func _input(event: InputEvent) -> void:
 	#if is_driven:
@@ -40,9 +57,13 @@ func _physics_process(delta: float) -> void:
 		
 		# --- CONTINUOUS FUEL DRAIN & UI UPDATE ---
 		if dir != 0:
-			carFuel -= 0.05 * delta 
+			carFuel -= 1 * delta #0.05
 			if carFuel < 0 :
 				cnt.text = str(0)
+				car_idle.stop()
+				engine_start.stop()
+				engine_stop.play()
+				openLight(false)
 			else :
 				cnt.text = str(snapped(carFuel, 0.1)) 
 		# -----------------------------------------

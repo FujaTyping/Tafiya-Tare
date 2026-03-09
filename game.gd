@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 160
+@export var startTime = 480
 @export var dayLengthInSeconds:float = 300 #155
 
 @export var morningColorTop: Color = Color("5897fa")
@@ -23,6 +23,7 @@ extends Node3D
 @onready var dn: Label = $Control/MarginContainer/HBoxContainer/DN
 @onready var time: Label = $Control/MarginContainer/HBoxContainer/Time
 @onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
+@onready var carInstant : VehicleBody3D = $VehicleBody3D
 
 @onready var sun: DirectionalLight3D = $Sun
 
@@ -92,6 +93,9 @@ func _day_change_animation():
 	dn.text = dayColorList[currentDayState]["name"]
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
+			carInstant.canOpenLight = true
+			if carInstant.is_driven :
+				carInstant.openLight(true)
 			night_bgm.play()
 			day_bgm.stop()
 			#sun.visible = false
@@ -100,6 +104,9 @@ func _day_change_animation():
 	else :
 		if not day_bgm.playing :
 			#sun.visible = true
+			carInstant.canOpenLight = false
+			if carInstant.is_driven :
+				carInstant.openLight(false)
 			day_bgm.play()
 			night_bgm.stop()
 			for light in everyNightLight :
