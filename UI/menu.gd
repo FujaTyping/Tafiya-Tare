@@ -20,6 +20,10 @@ extends Control
 @onready var option_button: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton
 @onready var cn_check_button: CheckButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer5/CNCheckButton
 @onready var close_option: Button = $Option/VBoxContainer/CloseOption
+@onready var fps_selector: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer6/FPSSelector
+@onready var version: Label = $Main/VBoxContainer2/HBoxContainer/Version
+
+const fpsList = [30,60,120]
 
 func _ready():
 	play.grab_focus()
@@ -28,6 +32,8 @@ func _ready():
 	s_check_button.button_pressed = Varibles.SFX
 	option_button.selected = Varibles.LangIndex
 	cn_check_button.button_pressed = Varibles.wantCinematic
+	fps_selector.selected = Varibles.maxFPSindex
+	version.text = str(ProjectSettings.get_setting("application/config/version"))
 	
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
@@ -103,3 +109,7 @@ func _on_option_button_item_selected(index: int) -> void:
 
 func _on_cn_check_button_toggled(toggled_on: bool) -> void:
 	Varibles.wantCinematic = toggled_on
+	
+func _on_fps_selector_item_selected(index: int) -> void:
+	Engine.max_fps = fpsList[index]
+	Varibles.maxFPSindex = index

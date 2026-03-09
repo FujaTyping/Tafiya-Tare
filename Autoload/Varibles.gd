@@ -8,3 +8,4 @@ var BGM = true
 var SFX = true
 var LangIndex = 0
 var wantCinematic = true
+var maxFPSindex = 1

@@ -30,3 +30,5 @@ ON_INTERACTION_CAR,Press E to drive,กด E เพื่อขับรถ
 ON_INTERACTION_COLLECT,Press E to collect,กด E เพื่อเก็บ
 OPTION_CINEMATIC,Cutscene,คัตซีน
 CAR_FUEL,Fuel,น้ำมัน
+OPTION_MAX_FPS,Max FPS,จำนวนเฟรมสูงสุด
+BUTTON_REPORT_BUG,Report BUG,รานงานปัญหา
