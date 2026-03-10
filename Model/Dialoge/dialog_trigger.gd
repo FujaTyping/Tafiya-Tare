@@ -9,6 +9,8 @@ extends Node3D
 
 @export var dialoguesLine: Array[String]
 @export var charLine: Array[String]
+@export var isBody: bool
+@export var animationBody : AnimationPlayer
 #@export var speaker: Node3D
 
 var current_dialogue = -1
@@ -28,6 +30,8 @@ func startDialoge(body):
 		#speaker.look_at(player.global_transform.origin)
 		#speaker.rotation_degrees.x = 0
 		#speaker.rotation_degrees.z = 0
+		if isBody :
+			animationBody.play("dialogeAnimate")
 		continume_dialoge()
 		
 func endDialoge() :

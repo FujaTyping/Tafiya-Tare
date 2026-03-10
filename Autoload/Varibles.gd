@@ -9,3 +9,7 @@ var SFX = true
 var LangIndex = 0
 var wantCinematic = true
 var maxFPSindex = 1
+var questAvalable = true
+var questState = ""
+var isQuestDone = false
+var Coins = 0
