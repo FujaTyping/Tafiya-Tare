@@ -10,8 +10,12 @@ extends Node3D
 @export var dialoguesLine: Array[String]
 @export var charLine: Array[String]
 @export var isBody: bool
-@export var animationBody : AnimationPlayer
+@export var animationBody : Node
+@export var helloAnimation: String
+@export var talkingAnimation:	String
 #@export var speaker: Node3D
+
+var isHelloplaying
 
 var current_dialogue = -1
 var started = false
@@ -31,7 +35,7 @@ func startDialoge(body):
 		#speaker.rotation_degrees.x = 0
 		#speaker.rotation_degrees.z = 0
 		if isBody :
-			animationBody.play("dialogeAnimate")
+			animationBody.get_node("AnimationPlayer").play(helloAnimation)
 		continume_dialoge()
 		
 func endDialoge() :
@@ -52,5 +56,7 @@ func continume_dialoge() :
 		spearker_name.text = charLine[current_dialogue]
 		typingEffect.play("RESET")
 		typingEffect.play("Writer")
+		if not charLine[current_dialogue] == "PLAYER_DIALOGE_NAME" and not animationBody.get_node("AnimationPlayer").is_playing() :
+			animationBody.get_node("AnimationPlayer").play(talkingAnimation)
 	else :
 		endDialoge()

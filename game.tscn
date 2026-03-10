@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=35 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="21_hb5m1"]
 [ext_resource type="PackedScene" uid="uid://dc4kohl5jb51e" path="res://Terrain/Log/WoodLog.glb" id="24_i2p71"]
 [ext_resource type="PackedScene" uid="uid://m12kghl86ot7" path="res://Model/Crate.glb" id="25_vaj68"]
+[ext_resource type="PackedScene" uid="uid://348yv8yghgp4" path="res://Model/Village/Villager1 Animation.glb" id="26_5b14r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -291,12 +292,19 @@ transform = Transform3D(0.3490833, 0, 0, 0, 0.40890545, 0.09553495, 0, -0.102042
 [node name="WoodLog2" parent="AssetsTerrain" instance=ExtResource("24_i2p71")]
 transform = Transform3D(0.20370519, 0.36194703, 0.102099374, -0.354187, 0.186235, 0.13245493, 0.057378482, -0.13538985, 0.45514712, -5.757751, 1.1355027, 10.298092)
 
+[node name="Villager1 Animation" parent="AssetsTerrain" instance=ExtResource("26_5b14r")]
+transform = Transform3D(0.12108113, 0, 0.09127185, 0, 0.14852384, 0, -0.0826424, 0, 0.13372432, 12.321246, 0.7165495, 16.572353)
+
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
 
 [node name="DialogeTriggers" type="Node3D" parent="."]
 
-[node name="DialogeTrigged" parent="DialogeTriggers" instance=ExtResource("13_7sc4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.732776, 1.1294843, 14.437897)
-dialoguesLine = Array[String](["DIALOGE_1_1", "This is a project for the first place of NSC", "..."])
-charLine = Array[String](["Lakkilo", "Lakkilo", "PLAYER_DIALOGE_NAME"])
+[node name="DialogeTrigged" parent="DialogeTriggers" node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.283724, 0.4474063, 16.539227)
+dialoguesLine = Array[String](["DIALOGE_1_1", "DIALOGE_1_2", "DIALOGE_1_3", "DIALOGE_1_4", "DIALOGE_1_5"])
+charLine = Array[String](["VILLAGER_BEN", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME"])
+isBody = true
+animationBody = NodePath("../../AssetsTerrain/Villager1 Animation")
+helloAnimation = "ArmatureAction"
+talkingAnimation = "ArmatureAction_001"

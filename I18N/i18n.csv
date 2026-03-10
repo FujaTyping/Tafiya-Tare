@@ -20,7 +20,11 @@ RESUME_BUTTON,Resume,เล่นต่อ
 BACK_TO_MENU_BUTTON,Back to menu,กลับไปหน้าเมนู
 CONTINUE_BUTTON,Continue,ต่อไป
 PLAYER_DIALOGE_NAME,Player,ผู้เล่น
-DIALOGE_1_1,Welcome to Project Catalyst!,ยินดีต้องรับเข้าสู่ โปรเจกต์ คาตาลิสต์!
+DIALOGE_1_1,Hello player !,สวัสดี ผู้เล่น !
+DIALOGE_1_2,It is believed that those who bathe in the elixir of immortality will be cured of their illness.,เข้าว่ากันว่าคนที่ได้แช่น้ำอมฤตแล้วจะอยู่ได้ตลอดการไม่มีวันเจ็บป่วย
+DIALOGE_1_3,Are you bragging? I don't believe it.,โม้ป่าว ไม่เชื่อ
+DIALOGE_1_4,"I'm not bragging, I'm telling the truth.",ไม่ได้โม้ พูดจริง
+DIALOGE_1_5,Ok,โอเค
 TIME_MORNING,Morning,ตอนเช้า
 TIME_DAY,Day,กลางวัน
 TIME_AFTERNOON,Afternoon,ตอนเย็น
@@ -32,3 +36,4 @@ OPTION_CINEMATIC,Cutscene,คัตซีน
 CAR_FUEL,Fuel,น้ำมัน
 OPTION_MAX_FPS,Max FPS,จำนวนเฟรมสูงสุด
 BUTTON_REPORT_BUG,Report BUG,รานงานปัญหา
+VILLAGER_BEN,Ben,เบ็น
