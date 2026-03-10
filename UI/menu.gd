@@ -27,6 +27,7 @@ const fpsList = [30,60,120]
 
 func _ready():
 	play.grab_focus()
+	DiscordRpc.updateRPC("In main menu")
 	h_slider.value = Varibles.MouseSens
 	check_button.button_pressed = Varibles.BGM
 	s_check_button.button_pressed = Varibles.SFX

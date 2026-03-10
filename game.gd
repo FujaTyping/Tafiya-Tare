@@ -20,12 +20,14 @@ extends Node3D
 
 @onready var night_bgm: AudioStreamPlayer = $nightBGM
 @onready var day_bgm: AudioStreamPlayer = $dayBGM
-@onready var dn: Label = $Control/MarginContainer/HBoxContainer/DN
-@onready var time: Label = $Control/MarginContainer/HBoxContainer/Time
+@onready var dn: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer/DN
+@onready var time: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer/Time
 @onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
 @onready var carInstant : VehicleBody3D = $VehicleBody3D
 
 @onready var sun: DirectionalLight3D = $Sun
+
+@onready var m_value: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer2/MValue
 
 var dayDuration = 600
 var dayColorList = [
@@ -39,6 +41,7 @@ var durationMultiplier = 1.0
 
 func _ready() -> void:
 	#sun.visible = false
+	DiscordRpc.updateRPC("In game")
 	_change_duration()
 	
 	_set_sun()
@@ -113,6 +116,7 @@ func _day_change_animation():
 				light.visible = false
 
 func _process(delta: float) -> void:
+	m_value.text = str(Varibles.Coins) + " ฿"
 	_refresh_day_state()
 	_update_time_display()
 	

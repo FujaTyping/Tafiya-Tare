@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cexawobvrhujg"]
+
+[ext_resource type="Script" uid="uid://dpitphklgnf8a" path="res://Item/coke_can.gd" id="1_lgw4g"]
+[ext_resource type="PackedScene" uid="uid://bfyfdhft6hy5k" path="res://Model/Trash/Can1.glb" id="1_s3l8e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lgw4g"]
+size = Vector3(0.38867188, 1.0328674, 0.5878906)
+
+[node name="CokeCan" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_lgw4g")
+
+[node name="Can1" parent="." instance=ExtResource("1_s3l8e")]
+transform = Transform3D(0.08295864, 0, 0, 0, 0.094897605, 0, 0, 0, 0.081186146, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.75327647, 0, 0, 0, 0.75327647, 0, 0, 0, 0.75327647, 0, 0.22308943, 0)
+shape = SubResource("BoxShape3D_lgw4g")

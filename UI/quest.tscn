@@ -73,7 +73,7 @@ layout_mode = 0
 offset_left = 1437.0
 offset_top = 241.0
 offset_right = 1920.0009
-offset_bottom = 428.0
+offset_bottom = 618.0
 theme_override_constants/margin_left = 0
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]

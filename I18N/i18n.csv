@@ -37,3 +37,5 @@ CAR_FUEL,Fuel,น้ำมัน
 OPTION_MAX_FPS,Max FPS,จำนวนเฟรมสูงสุด
 BUTTON_REPORT_BUG,Report BUG,รานงานปัญหา
 VILLAGER_BEN,Ben,เบ็น
+UI_MONEY_INDICATOR,Money,เงิน
+ON_INTERACTION_COLLECT_TRASH,Press E to clean up,กด E เพื่อเก็บขยะ

@@ -137,6 +137,12 @@ theme_override_fonts/font = ExtResource("8_hpwcy")
 theme_override_font_sizes/font_size = 42
 text = "0"
 
+[node name="CNT2" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_hpwcy")
+theme_override_font_sizes/font_size = 42
+text = "%"
+
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.9426589, 0.33375755, 0, -0.33375755, -0.9426589, -0.6461761, -0.4961285, 2.562558)
 visible = false

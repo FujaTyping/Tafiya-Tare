@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=17 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="7_416l5"]
+[ext_resource type="AudioStream" uid="uid://ci3r5045b5l45" path="res://SFX/Trash.wav" id="7_p21r4"]
+[ext_resource type="AudioStream" uid="uid://bdb3dwlwidgma" path="res://SFX/FuelTankCollect.wav" id="8_b3xkm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -116,6 +118,14 @@ bus = &"SFX"
 stream = ExtResource("4_ixqkf")
 volume_db = -18.0
 bus = &"SFX"
+
+[node name="TrashCollect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_p21r4")
+volume_db = -10.0
+
+[node name="FuelCollect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_b3xkm")
+volume_db = -12.0
 
 [node name="LookingCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -6.084655e-08, -1, 0, 1.3920069, -4.371139e-08, 0, -0.110643744, 0)

@@ -9,6 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 		wm.grab_focus()
+		DiscordRpc.updateRPC("Selecting character")
 		animation_player.play("ArmatureAction_004")
 		animation_player_i.play("ArmatureAction_004")
 

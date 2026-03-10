@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 
 MenuMusic="*res://Autoload/MenuMusic.tscn"
 Varibles="*res://Autoload/Varibles.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+DiscordRpc="*res://Autoload/discordRPC.gd"
 
 [display]
 
@@ -29,6 +31,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://bh220tagubfbn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
 [input]
 

@@ -32,6 +32,10 @@ var JUMP_VELOCITY = 4.0
 @onready var inter_show: AnimationPlayer = $InterShow
 @onready var label: Label = $Interact/Label
 
+# Trash Collect
+@onready var trash_collect: AudioStreamPlayer3D = $TrashCollect
+@onready var fuel_collect: AudioStreamPlayer3D = $FuelCollect
+
 var is_in_car: bool = false
 var isInViewInteract = false
 var interActionJustPress = false
@@ -59,12 +63,17 @@ func _input(event):
 	
 	# --- INTERACTION LOGIC ---
 	if Input.is_action_just_pressed("interaction"):
-		if looking_cast.is_colliding() and looking_cast.get_collider().has_method("addFuel") :
-			interActionJustPress = true
-			sens = 0
-			await looking_cast.get_collider().addFuel()
-			sens = Varibles.MouseSens
-			interActionJustPress = false
+		if looking_cast.is_colliding() :
+			if looking_cast.get_collider().has_method("addFuel") :
+				#interActionJustPress = true
+				#sens = 0
+				fuel_collect.play()
+				looking_cast.get_collider().addFuel()
+				#sens = Varibles.MouseSens
+				#interActionJustPress = false
+			if looking_cast.get_collider().has_method("clear_trash") :
+				trash_collect.play()
+				looking_cast.get_collider().clear_trash()
 			
 		if car_cam != null:
 			

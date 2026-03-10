@@ -19,15 +19,15 @@
 [ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://f47ybfdl1grn" path="res://Terrain/Grass/Grass1.glb" id="17_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
-[ext_resource type="PackedScene" uid="uid://bfyfdhft6hy5k" path="res://Model/Trash/Can1.glb" id="18_e36ub"]
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
-[ext_resource type="PackedScene" uid="uid://c2tgniy3ropf1" path="res://Model/Trash/Chips1.glb" id="19_x5p1p"]
 [ext_resource type="PackedScene" uid="uid://b6ufy7b3waog6" path="res://Model/Barrel.glb" id="20_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://cj1i3hl4rv4pw" path="res://Terrain/Bush/bush.glb" id="21_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="21_hb5m1"]
 [ext_resource type="PackedScene" uid="uid://dc4kohl5jb51e" path="res://Terrain/Log/WoodLog.glb" id="24_i2p71"]
 [ext_resource type="PackedScene" uid="uid://m12kghl86ot7" path="res://Model/Crate.glb" id="25_vaj68"]
 [ext_resource type="PackedScene" uid="uid://348yv8yghgp4" path="res://Model/Village/Villager1 Animation.glb" id="26_5b14r"]
+[ext_resource type="PackedScene" uid="uid://cxfe6aiiyhi7f" path="res://Item/chips.tscn" id="27_5b14r"]
+[ext_resource type="PackedScene" uid="uid://cexawobvrhujg" path="res://Item/coke_can.tscn" id="28_5b14r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -147,22 +147,42 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Time" type="Label" parent="Control/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Time" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_vaj68")
 theme_override_font_sizes/font_size = 42
 text = "00:00"
 
-[node name="DN" type="Label" parent="Control/MarginContainer/HBoxContainer"]
+[node name="DN" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_vaj68")
 theme_override_font_sizes/font_size = 30
 text = "Day"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vaj68")
+theme_override_font_sizes/font_size = 20
+text = "UI_MONEY_INDICATOR"
+
+[node name="MValue" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_vaj68")
+theme_override_font_sizes/font_size = 20
+text = "0"
 
 [node name="Dialoges" parent="." instance=ExtResource("13_215e1")]
 
@@ -262,12 +282,6 @@ transform = Transform3D(0.033623993, 0, 0.12004691, 0, 0.07513901, 0, -0.1069671
 [node name="Grass2" parent="AssetsTerrain" instance=ExtResource("17_boyg6")]
 transform = Transform3D(0.11212733, 0, 0, 0, 0.07513901, 0, 0, 0, 0.12583812, -4.562408, 0.19981432, -12.901899)
 
-[node name="Can1" parent="AssetsTerrain" instance=ExtResource("18_e36ub")]
-transform = Transform3D(-0.050454523, -0.013326916, 0.09002083, -0.006215597, 0.10817999, 0.011089851, -0.09357363, 0, -0.04927553, 11.382173, 0.41630936, -10.20048)
-
-[node name="Chips1" parent="AssetsTerrain" instance=ExtResource("19_x5p1p")]
-transform = Transform3D(0.090256125, 0.16527455, 0.0030510537, -0.034799192, 0.024873931, -0.1950872, -0.15108894, 0.093001164, 0.046755582, 11.634357, 0.23135805, -10.622768)
-
 [node name="Barrel" parent="AssetsTerrain" instance=ExtResource("20_qhcbd")]
 transform = Transform3D(-0.2303227, 0, 0, 0, 0.2622185, 0, 0, 0, -0.2354192, -6.6005335, 0.6326468, -15.678359)
 
@@ -308,3 +322,13 @@ isBody = true
 animationBody = NodePath("../../AssetsTerrain/Villager1 Animation")
 helloAnimation = "ArmatureAction"
 talkingAnimation = "ArmatureAction_001"
+
+[node name="ItemAll" type="Node3D" parent="."]
+
+[node name="chips" parent="ItemAll" instance=ExtResource("27_5b14r")]
+transform = Transform3D(0.98697114, -0.16089761, -1.8520884e-09, 0.15715148, 0.9639917, 0.21453077, -0.034517493, -0.21173568, 0.97671723, 11.393917, 0.31012565, -10.428252)
+CoinReward = 5
+
+[node name="CokeCan" parent="ItemAll" instance=ExtResource("28_5b14r")]
+transform = Transform3D(0.72007895, 0, 0.6938921, -0.11537321, 0.98608035, 0.11972728, -0.68423337, -0.16626966, 0.7100557, 11.212196, 0.42407525, -9.894573)
+CoinReward = 10
