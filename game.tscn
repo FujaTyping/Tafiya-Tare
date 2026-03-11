@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=36 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://348yv8yghgp4" path="res://Model/Village/Villager1 Animation.glb" id="26_5b14r"]
 [ext_resource type="PackedScene" uid="uid://cxfe6aiiyhi7f" path="res://Item/chips.tscn" id="27_5b14r"]
 [ext_resource type="PackedScene" uid="uid://cexawobvrhujg" path="res://Item/coke_can.tscn" id="28_5b14r"]
+[ext_resource type="PackedScene" uid="uid://d3lui4rtyxcu" path="res://Item/trash_bag.tscn" id="29_bnpwn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -324,6 +325,10 @@ helloAnimation = "ArmatureAction"
 talkingAnimation = "ArmatureAction_001"
 
 [node name="ItemAll" type="Node3D" parent="."]
+
+[node name="TrashBag" parent="ItemAll" instance=ExtResource("29_bnpwn")]
+transform = Transform3D(-0.4182001, 0, 0.90835494, 0, 1, 0, -0.90835494, 0, -0.4182001, -1.8311251, 0.38323092, -16.613436)
+CoinReward = 15
 
 [node name="chips" parent="ItemAll" instance=ExtResource("27_5b14r")]
 transform = Transform3D(0.98697114, -0.16089761, -1.8520884e-09, 0.15715148, 0.9639917, 0.21453077, -0.034517493, -0.21173568, 0.97671723, 11.393917, 0.31012565, -10.428252)

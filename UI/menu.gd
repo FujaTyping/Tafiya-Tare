@@ -56,6 +56,7 @@ func _on_option_pressed() -> void:
 	close_option.grab_focus()
 
 func _on_quit_pressed() -> void:
+	Input.set_custom_mouse_cursor(null)
 	get_tree().quit()
 
 func _on_credit_pressed() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxfe6aiiyhi7f"]
 
 [ext_resource type="PackedScene" uid="uid://c2tgniy3ropf1" path="res://Model/Trash/Chips1.glb" id="1_6sdso"]
-[ext_resource type="Script" uid="uid://daepbp8rbdj2c" path="res://Item/chips.gd" id="1_ki241"]
+[ext_resource type="Script" uid="uid://daepbp8rbdj2c" path="res://Item/trashManger.gd" id="1_ki241"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ki241"]
 size = Vector3(0.8925781, 1.1389923, 0.779541)

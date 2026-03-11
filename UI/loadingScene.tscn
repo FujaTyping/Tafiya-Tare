@@ -82,7 +82,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -113.0
-offset_right = 154.0
+offset_right = 323.0
 offset_bottom = 37.0
 grow_vertical = 0
 size_flags_vertical = 0
@@ -100,7 +100,7 @@ theme_override_constants/separation = -6
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k03du")
 theme_override_font_sizes/font_size = 24
-text = "Loading"
+text = "ON_SCENE_LOADING"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cexawobvrhujg"]
 
-[ext_resource type="Script" uid="uid://dpitphklgnf8a" path="res://Item/coke_can.gd" id="1_lgw4g"]
+[ext_resource type="Script" uid="uid://daepbp8rbdj2c" path="res://Item/trashManger.gd" id="1_lgw4g"]
 [ext_resource type="PackedScene" uid="uid://bfyfdhft6hy5k" path="res://Model/Trash/Can1.glb" id="1_s3l8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lgw4g"]
