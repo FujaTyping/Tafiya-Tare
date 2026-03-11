@@ -10,8 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Project-Catalyst"
-config/version="v.0.0.1 Indev"
+config/name="Tafiya Tare"
+config/name_localized={
+"th": "ทาฟิยา ทาเร"
+}
+config/version="0.0.1.1 alpha"
 run/main_scene="uid://bk2eqtj4bowsx"
 config/features=PackedStringArray("4.5", "Mobile")
 run/max_fps=60
@@ -133,6 +136,7 @@ shift={
 [internationalization]
 
 locale/translations=PackedStringArray("res://I18N/i18n.en.translation", "res://I18N/i18n.th.translation")
+locale/locale_filter_mode=1
 
 [physics]
 

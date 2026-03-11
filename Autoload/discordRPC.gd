@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	DiscordRPC.app_id = 1480961958734860459
+	DiscordRPC.app_id = 1481374632601714688
 	DiscordRPC.details = "Driving to the Peak of Immortality"
 	DiscordRPC.state = "In main menu"
 	#DiscordRPC.large_image = "example_game"
