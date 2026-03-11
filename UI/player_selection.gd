@@ -21,10 +21,12 @@ func _on_m_pressed() -> void:
 	animation_player_j.play("ArmatureAction_003")
 	await animation_player_j.animation_finished
 	MenuMusic.stopmenumusic()
-	get_tree().change_scene_to_file("res://game.tscn")
+	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
+	#get_tree().change_scene_to_file("res://game.tscn")
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/menu.tscn")
+	ScenesLoader.load_scene("uid://bk2eqtj4bowsx")
+	#get_tree().change_scene_to_file("res://UI/menu.tscn")
 
 func _on_wm_pressed() -> void:	
 	Varibles.playerSelection = "sophia"
@@ -34,4 +36,5 @@ func _on_wm_pressed() -> void:
 	animation_player.play("ArmatureAction_003")
 	await animation_player.animation_finished
 	MenuMusic.stopmenumusic()
-	get_tree().change_scene_to_file("res://game.tscn")
+	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
+	#get_tree().change_scene_to_file("res://game.tscn")

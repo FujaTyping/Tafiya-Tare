@@ -41,11 +41,13 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("down") and Input.is_action_pressed("shift") and Input.is_action_pressed("ctrl") :
-		get_tree().change_scene_to_file("res://game.tscn")
+		ScenesLoader.load_scene("uid://dm0rxd10m14f3")
+		#get_tree().change_scene_to_file("res://game.tscn")
 		MenuMusic.stopmenumusic()
 		
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/player_selection.tscn")
+	#get_tree().change_scene_to_file("res://UI/player_selection.tscn")
+	ScenesLoader.load_scene("uid://c3mj2fiee0xht")
 
 func _on_option_pressed() -> void:
 	menu_animation.play("MenuOut")
