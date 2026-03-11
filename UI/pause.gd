@@ -21,6 +21,7 @@ func _on_resume_pressed() -> void:
 		paused = false
 
 func _on_exit_pressed() -> void:
+	Input.set_custom_mouse_cursor(null)
 	get_tree().quit()
 
 func pauseMenu() :
