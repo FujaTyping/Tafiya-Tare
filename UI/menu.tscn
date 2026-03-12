@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bk2eqtj4bowsx"]
+[gd_scene load_steps=20 format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_qmqfe"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_dte3n"]
+[ext_resource type="Texture2D" uid="uid://ce01n6j36k6k6" path="res://Model/Trash/Can1_CokeCan.png" id="5_e05sn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -263,7 +264,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918033, 0.012961894, 0.9901798, 0, 0.99991435, -0.013089261, -0.9902646, 0.0018217764, 0.13916841, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918032, 0.012961894, 0.9901797, 0, 0.99991435, -0.013089261, -0.99026453, 0.0018217764, 0.1391684, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -335,6 +336,11 @@ focus_neighbor_top = NodePath("../Credit")
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "QUIT_BUTTON"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Main/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_e05sn")
+region_rect = Rect2(-1.5616455, -0.26455688, 1025.5616, 1024.2645)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Main"]
 layout_mode = 2

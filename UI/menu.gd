@@ -83,6 +83,7 @@ func _on_close_option_pressed() -> void:
 	option_animation.play("OptOut")
 	await option_animation.animation_finished
 	option.visible = false
+	play.grab_focus()
 
 
 func _on_h_slider_value_changed(value: float) -> void:
