@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=38 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cexawobvrhujg" path="res://Item/coke_can.tscn" id="28_5b14r"]
 [ext_resource type="PackedScene" uid="uid://d3lui4rtyxcu" path="res://Item/trash_bag.tscn" id="29_bnpwn"]
 [ext_resource type="PackedScene" uid="uid://03cpm1d8s7dn" path="res://Item/bottle.tscn" id="30_36jdj"]
+[ext_resource type="PackedScene" uid="uid://5g4bkxju8e3x" path="res://Item/apple.tscn" id="31_xfvwf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -342,3 +343,7 @@ CoinReward = 10
 [node name="Bottle" parent="ItemAll" instance=ExtResource("30_36jdj")]
 transform = Transform3D(-0.047179803, 0.06636928, -0.9966792, -0.08880187, 0.99356073, 0.070365265, 0.9949312, 0.09182674, -0.040982284, 10.961126, 0.5088601, -4.790741)
 CoinReward = 7
+
+[node name="Apple" parent="ItemAll" instance=ExtResource("31_xfvwf")]
+transform = Transform3D(0.7761956, 0.28165492, 0.56408405, -0.11731644, 0.94356734, -0.3097054, -0.61948144, 0.17421563, 0.7654357, -9.321548, 0.62985426, -2.0215745)
+CoinReward = 3

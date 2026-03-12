@@ -41,6 +41,7 @@ var durationMultiplier = 1.0
 
 func _ready() -> void:
 	#sun.visible = false
+	Varibles.Coins = 0
 	DiscordRpc.updateRPC("In game")
 	_change_duration()
 	
