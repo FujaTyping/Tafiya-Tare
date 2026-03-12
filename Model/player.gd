@@ -66,17 +66,22 @@ func _input(event):
 	# --- INTERACTION LOGIC ---
 	if Input.is_action_just_pressed("interaction"):
 		if looking_cast.is_colliding() :
-			if looking_cast.get_collider().has_method("addFuel") :
+			if looking_cast.get_collider().has_method("buyItem") :
 				#interActionJustPress = true
 				#sens = 0
 				if looking_cast.get_collider().checkCanBuy() :
 					fuel_collect.play()
-					looking_cast.get_collider().addFuel()
+					looking_cast.get_collider().buyItem()
 				else :
+					label.add_theme_color_override("font_color",Color.RED)
+					label_2.add_theme_color_override("font_color",Color.RED)
 					wrong.play()
+					await wrong.finished
+					label.add_theme_color_override("font_color",Color.WHITE)
+					label_2.add_theme_color_override("font_color",Color.WHITE)
 				#sens = Varibles.MouseSens
 				#interActionJustPress = false
-			if looking_cast.get_collider().has_method("clear_trash") :
+			elif looking_cast.get_collider().has_method("clear_trash") :
 				trash_collect.play()
 				looking_cast.get_collider().clear_trash()
 			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=41 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://5g4bkxju8e3x" path="res://Item/apple.tscn" id="31_xfvwf"]
 [ext_resource type="PackedScene" uid="uid://cb43njorwr4fs" path="res://Item/fishBone.tscn" id="32_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://cf88lgopr2n3r" path="res://Model/table.glb" id="33_7knny"]
+[ext_resource type="PackedScene" uid="uid://ci8rcmccas0hw" path="res://Model/WayWarningSign.glb" id="34_082n1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -357,3 +358,6 @@ CoinReward = 1
 
 [node name="table" parent="." instance=ExtResource("33_7knny")]
 transform = Transform3D(0.43306673, 0, 0.2508872, 0, 0.64651465, 0, -0.31617996, 0, 0.34363627, -6.1579866, 1.0192943, -18.799953)
+
+[node name="WayWarningSign" parent="." instance=ExtResource("34_082n1")]
+transform = Transform3D(-0.13990669, 0, -0.50085026, 0, 0.4244017, 0, 0.4040265, 0, -0.17343491, 19.977833, 2.7222662, 19.875084)

@@ -11,6 +11,9 @@ func addFuel() :
 		self.visible = false
 		self.set_collision_layer_value(2,false)
 		self.queue_free()
+
+func buyItem() :
+	addFuel()
 		
 func checkCanBuy() :
 	if Varibles.Coins - valueOfItem > 0 :
