@@ -40,3 +40,4 @@ VILLAGER_BEN,Ben,เบ็น
 UI_MONEY_INDICATOR,Money,เงิน
 ON_INTERACTION_COLLECT_TRASH,Press E to clean up,กด E เพื่อเก็บขยะ
 ON_SCENE_LOADING,Loading,กำลังโหลด
+ON_INTERACTION_BUY_FUEL,Press E to buy fuel,กด E เพื่อชื้อน้ำมัน

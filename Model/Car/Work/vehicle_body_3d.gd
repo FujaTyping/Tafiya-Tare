@@ -9,7 +9,8 @@ var carFuel = 50
 var is_driven: bool = false 
 var canOpenLight = false
 #@onready var car_idle: AudioStreamPlayer3D = $CarIdle
-@onready var cnt: Label = $MarginContainer/HBoxContainer/CNT
+#@onready var cnt: Label = $MarginContainer/HBoxContainer/CNT
+@onready var fuel_bar: ProgressBar = $CanvasLayer/FuelBar
 
 @onready var spot_light_3d: SpotLight3D = $SpotLight3D
 @onready var spot_light_3d_2: SpotLight3D = $SpotLight3D2
@@ -22,7 +23,7 @@ func _ready() -> void:
 	fuelUpdate()
 	
 func fuelUpdate() :
-	cnt.text = str(snapped(carFuel, 0.1)) 
+	fuel_bar.value = snapped(carFuel, 0.1)
 	
 func interact() :
 	return "ON_INTERACTION_CAR"
@@ -59,13 +60,13 @@ func _physics_process(delta: float) -> void:
 		if dir != 0:
 			carFuel -= 0.08 * delta #0.05
 			if carFuel < 0 :
-				cnt.text = str(0)
+				fuel_bar.value = 0
 				car_idle.stop()
 				engine_start.stop()
 				engine_stop.play()
 				openLight(false)
 			else :
-				cnt.text = str(snapped(carFuel, 0.1)) 
+				fuel_bar.value = snapped(carFuel, 0.1)
 		# -----------------------------------------
 		
 		var RPM_left = abs($WBL.get_rpm())

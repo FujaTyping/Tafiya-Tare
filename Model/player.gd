@@ -25,12 +25,14 @@ var JUMP_VELOCITY = 4.0
 @onready var engine_start: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStart"
 @onready var engine_stop: AudioStreamPlayer3D = $"../VehicleBody3D/EngineStop"
 @onready var engine_idle: AudioStreamPlayer3D = $"../VehicleBody3D/CarIdle"
-@onready var Fuelmargin_container: MarginContainer = $"../VehicleBody3D/MarginContainer"
+@onready var Fuelmargin_container: CanvasLayer = $"../VehicleBody3D/CanvasLayer"
 
 @onready var looking_cast: RayCast3D = $LookingCast
 @onready var interact: MarginContainer = $Interact
 @onready var inter_show: AnimationPlayer = $InterShow
-@onready var label: Label = $Interact/Label
+@onready var label: Label = $Interact/HBoxContainer/Label
+@onready var label_2: Label = $Interact/HBoxContainer/Label2
+@onready var wrong: AudioStreamPlayer3D = $Wrong
 
 # Trash Collect
 @onready var trash_collect: AudioStreamPlayer3D = $TrashCollect
@@ -67,8 +69,11 @@ func _input(event):
 			if looking_cast.get_collider().has_method("addFuel") :
 				#interActionJustPress = true
 				#sens = 0
-				fuel_collect.play()
-				looking_cast.get_collider().addFuel()
+				if looking_cast.get_collider().checkCanBuy() :
+					fuel_collect.play()
+					looking_cast.get_collider().addFuel()
+				else :
+					wrong.play()
 				#sens = Varibles.MouseSens
 				#interActionJustPress = false
 			if looking_cast.get_collider().has_method("clear_trash") :
@@ -117,13 +122,18 @@ func _physics_process(delta: float) -> void:
 	if looking_cast.is_colliding() and not interActionJustPress:
 		if looking_cast.get_collider() :
 			if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
-					label.text = looking_cast.get_collider().interact()
+					var interactText = looking_cast.get_collider().interact()
+					if "BUY" in interactText :
+						label_2.visible = true
+						label_2.text= looking_cast.get_collider().getbuyvalue() + " ฿"
+					label.text = interactText
 					interact.show()
 					inter_show.play("Show")
 					isInViewInteract = true
 	else :
 		if isInViewInteract :
 			isInViewInteract = false
+			label_2.visible = false
 			inter_show.play("Hide")
 			await inter_show.animation_finished
 			interact.hide()

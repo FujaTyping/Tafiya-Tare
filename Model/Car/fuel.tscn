@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bhl4yhmmf5ad8" path="res://Model/Car/Fuel.glb" id="1_mmlrl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mcafy"]
-size = Vector3(1, 1.2930908, 0.3552246)
+size = Vector3(1, 1.8613281, 0.7265625)
 
 [node name="Fuel" type="StaticBody3D"]
 collision_layer = 3

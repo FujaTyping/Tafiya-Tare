@@ -264,7 +264,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918032, 0.012961894, 0.9901797, 0, 0.99991435, -0.013089261, -0.99026453, 0.0018217764, 0.1391684, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918032, 0.012961894, 0.99017966, 0, 0.99991435, -0.01308926, -0.9902645, 0.0018217764, 0.1391684, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -377,7 +377,6 @@ theme_override_font_sizes/font_size = 16
 text = "0"
 
 [node name="Credit" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -466,6 +465,13 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "replacing_gas_nozzle.wav by joedeshon -- https://freesound.org/s/117420/ -- License: Attribution 4.0"
+
+[node name="Label9" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Dat's Wrong! by Beetlemuse -- https://freesound.org/s/587253/ -- License: Attribution 4.0"
 
 [node name="Label6" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
 layout_mode = 2
