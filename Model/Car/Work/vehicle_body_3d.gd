@@ -20,6 +20,10 @@ var canOpenLight = false
 @onready var engine_stop: AudioStreamPlayer3D = $EngineStop
 
 func _ready() -> void:
+	if Varibles.isFromLoadSaved :
+		self.global_position = Varibles.saved_data.car_position
+		self.rotation_degrees = Varibles.saved_data.car_rotation
+		carFuel = Varibles.saved_data.car_fuel
 	fuelUpdate()
 	
 func fuelUpdate() :

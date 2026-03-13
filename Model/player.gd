@@ -43,6 +43,10 @@ var isInViewInteract = false
 var interActionJustPress = false
 
 func _ready():
+	if Varibles.isFromLoadSaved :
+		self.global_position = Varibles.saved_data.player_position
+		self.rotation_degrees = Varibles.saved_data.player_rotation
+		Varibles.Coins = Varibles.saved_data.player_coins
 	sens = Varibles.MouseSens
 	if Varibles.playerSelection == "joker" :
 		player_animation.visible = true

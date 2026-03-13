@@ -13,3 +13,8 @@ var questAvalable = true
 var questState = ""
 var isQuestDone = false
 var Coins = 0
+var isFromLoadSaved = false
+var saved_data : gameData
+
+func wait(seconds):
+	await get_tree().create_timer(seconds).timeout

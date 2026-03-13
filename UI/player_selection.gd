@@ -20,9 +20,7 @@ func _on_m_pressed() -> void:
 	animation_player_j.speed_scale = 0.3
 	animation_player_j.play("ArmatureAction_003")
 	await animation_player_j.animation_finished
-	MenuMusic.stopmenumusic()
-	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
-	#get_tree().change_scene_to_file("res://game.tscn")
+	next()
 
 func _on_button_pressed() -> void:
 	ScenesLoader.load_scene("uid://bk2eqtj4bowsx")
@@ -35,6 +33,9 @@ func _on_wm_pressed() -> void:
 	animation_player.speed_scale = 0.3
 	animation_player.play("ArmatureAction_003")
 	await animation_player.animation_finished
-	MenuMusic.stopmenumusic()
-	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
+	next()
+	
+func next() :
+	#MenuMusic.stopmenumusic()
+	ScenesLoader.load_scene("uid://cofsjencilm7y")
 	#get_tree().change_scene_to_file("res://game.tscn")

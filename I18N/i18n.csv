@@ -41,3 +41,7 @@ UI_MONEY_INDICATOR,Money,เงิน
 ON_INTERACTION_COLLECT_TRASH,Press E to clean up,กด E เพื่อเก็บขยะ
 ON_SCENE_LOADING,Loading,กำลังโหลด
 ON_INTERACTION_BUY_FUEL,Press E to buy fuel,กด E เพื่อชื้อน้ำมัน
+UI_CINEMATIC_SKTP,Press ESC to skip,กด ESC เพื่อข้าม
+ON_LOAD_CONTENT_CINEMATIC,Loading cinematic,กำลังโหลด คัตซีน
+BUTTON_SAVE,Save,บันทึก
+BUTTON_LOAD,Load,เล่นต่อ

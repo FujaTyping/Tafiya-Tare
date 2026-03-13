@@ -22,6 +22,7 @@ extends Control
 @onready var close_option: Button = $Option/VBoxContainer/CloseOption
 @onready var fps_selector: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer6/FPSSelector
 @onready var version: Label = $Main/VBoxContainer2/HBoxContainer/Version
+@onready var load: Button = $Main/VBoxContainer/VBoxContainer/Load
 
 const fpsList = [30,60,120]
 
@@ -35,6 +36,8 @@ func _ready():
 	cn_check_button.button_pressed = Varibles.wantCinematic
 	fps_selector.selected = Varibles.maxFPSindex
 	version.text = str(ProjectSettings.get_setting("application/config/version"))
+	if FileAccess.file_exists("user://save_data.res") :
+		load.show()
 	
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
@@ -47,6 +50,7 @@ func _input(event: InputEvent) -> void:
 		
 func _on_play_pressed() -> void:
 	#get_tree().change_scene_to_file("res://UI/player_selection.tscn")
+	Varibles.isFromLoadSaved = false
 	ScenesLoader.load_scene("uid://c3mj2fiee0xht")
 
 func _on_option_pressed() -> void:
@@ -118,3 +122,13 @@ func _on_cn_check_button_toggled(toggled_on: bool) -> void:
 func _on_fps_selector_item_selected(index: int) -> void:
 	Engine.max_fps = fpsList[index]
 	Varibles.maxFPSindex = index
+
+
+func _on_play_2_pressed() -> void:
+	Varibles.saved_data = null
+	Varibles.isFromLoadSaved = true
+	var data = ResourceLoader.load("user://save_data.res") as gameData
+	Varibles.saved_data = data
+	Varibles.playerSelection = data.player_selection
+	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
+	MenuMusic.stopmenumusic()

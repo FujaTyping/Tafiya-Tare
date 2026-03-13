@@ -41,7 +41,10 @@ var durationMultiplier = 1.0
 
 func _ready() -> void:
 	#sun.visible = false
-	Varibles.Coins = 0
+	if Varibles.isFromLoadSaved :
+		startTime = Varibles.saved_data.game_time
+	else :
+		Varibles.Coins = 0
 	DiscordRpc.updateRPC("In game")
 	_change_duration()
 	
@@ -115,6 +118,9 @@ func _day_change_animation():
 			night_bgm.stop()
 			for light in everyNightLight :
 				light.visible = false
+
+func getDN() :
+	return day_night.current_animation_position
 
 func _process(delta: float) -> void:
 	m_value.text = str(Varibles.Coins) + " ฿"
