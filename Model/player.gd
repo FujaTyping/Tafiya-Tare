@@ -42,6 +42,12 @@ var is_in_car: bool = false
 var isInViewInteract = false
 var interActionJustPress = false
 
+# Help
+@onready var tutorial: MarginContainer = $Tutorial
+@onready var control_sh: AnimationPlayer = $Tutorial/ControlSH
+@onready var help: MarginContainer = $Help
+@onready var help_me: AnimationPlayer = $Help/HelpMe
+
 func _ready():
 	if Varibles.isFromLoadSaved :
 		self.global_position = Varibles.saved_data.player_position
@@ -54,6 +60,10 @@ func _ready():
 		woman_player.visible = true
 	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	await Varibles.wait(5)
+	help_me.play("Hide")
+	await help_me.animation_finished
+	help.hide()
 	
 func _input(event):
 	if Input.is_action_just_pressed("toogleMouse"):
@@ -61,7 +71,16 @@ func _input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			
+	
+	if Input.is_action_just_pressed("Help") :
+		if not tutorial.visible :
+			tutorial.visible = true
+			control_sh.play("ShowH")
+		else :
+			control_sh.play_backwards("ShowH")
+			await control_sh.animation_finished
+			tutorial.visible = false
+  			
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(-event.relative.x * sens))
 		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))

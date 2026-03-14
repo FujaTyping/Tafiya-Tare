@@ -49,3 +49,13 @@ OPTION_AUTO_SAVE,Autosave,บันทึกอัตโนมัติ
 TIME_SECOND,Second,วินาที
 UI_CREDIT_SOUND,Sound,เสียง
 UI_CREDIT_FONT,Font,ฟอนต์
+UI_HELP_HINT,Press H to show controls,กด H เพื่อแสดงการควบคุม
+TITLE_CONTROL,Controls,การควบคุม
+CONTROL_W,Move forward,เดินหน้า
+CONTROL_A,Move left,เดินไปทางซ้าย
+CONTROL_S,Move backward,ถอยหลัง
+CONTROL_D,Move right,เดินไปทางขวา
+CONTROL_E,Interaction,โต้ตอบ
+CONTROL_H,Show control,แสดงการควบคุม
+CONTROL_ESC,Pause game,หยุดเกมชั่วคราว
+UI_CONTROL_HIDE,Press H to hide,กด H เพื่อซ่อน

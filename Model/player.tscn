@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=25 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
 [ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="2_c8du1"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="3_ieuix"]
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="4_1yulc"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="7_416l5"]
 [ext_resource type="AudioStream" uid="uid://ci3r5045b5l45" path="res://SFX/Trash.wav" id="7_p21r4"]
@@ -16,6 +17,80 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="Animation" id="Animation_1yulc"]
+resource_name = "ShowH"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ff0io"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5hd5c"]
+_data = {
+&"RESET": SubResource("Animation_ff0io"),
+&"ShowH": SubResource("Animation_1yulc")
+}
+
+[sub_resource type="Animation" id="Animation_5hd5c"]
+resource_name = "Hide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1607, 1005), Vector2(1930, 1005)]
+}
+
+[sub_resource type="Animation" id="Animation_fi0my"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1607, 1005)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qve47"]
+_data = {
+&"Hide": SubResource("Animation_5hd5c"),
+&"RESET": SubResource("Animation_fi0my")
+}
 
 [sub_resource type="Animation" id="Animation_b3xkm"]
 resource_name = "Hide"
@@ -108,6 +183,162 @@ margin = 0.5
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3043615)
 
+[node name="Tutorial" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+layout_mode = 2
+color = Color(1, 1, 1, 0.14117648)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 36
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_1yulc")
+theme_override_font_sizes/font_size = 48
+text = "TITLE_CONTROL"
+
+[node name="GridContainer" type="GridContainer" parent="Tutorial/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 44
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "W"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_W"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "A"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_A"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "S"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_S"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "D"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_D"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "E"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_E"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "H"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_H"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "ESC"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_ESC"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "UI_CONTROL_HIDE"
+
+[node name="ControlSH" type="AnimationPlayer" parent="Tutorial"]
+libraries = {
+&"": SubResource("AnimationLibrary_5hd5c")
+}
+
 [node name="Pause" parent="." instance=ExtResource("2_c8du1")]
 
 [node name="Walking" type="AudioStreamPlayer3D" parent="."]
@@ -174,6 +405,33 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 28
 text = "0฿"
+
+[node name="Help" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -313.0
+offset_top = -75.0
+offset_right = 3.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Help"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 26
+text = "UI_HELP_HINT"
+
+[node name="HelpMe" type="AnimationPlayer" parent="Help"]
+libraries = {
+&"": SubResource("AnimationLibrary_qve47")
+}
 
 [node name="InterShow" type="AnimationPlayer" parent="."]
 libraries = {
