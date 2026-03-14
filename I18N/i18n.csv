@@ -1,6 +1,6 @@
 ﻿key,en,th
 TITLE,Tafiya Tare,ทาฟิยา ทาเร
-PLAY_BUTTON,Play,เล่น
+PLAY_BUTTON,New game,เล่นใหม่
 OPTION_BUTTON,Option,ตั้งค่า
 CREDIT_BUTTON,Credits,เครดิต
 QUIT_BUTTON,Quit,ออก
@@ -44,7 +44,7 @@ ON_INTERACTION_BUY_FUEL,Press E to buy fuel,กด E เพื่อชื้อ
 UI_CINEMATIC_SKTP,Press ESC to skip,กด ESC เพื่อข้าม
 ON_LOAD_CONTENT_CINEMATIC,Loading cinematic,กำลังโหลด คัตซีน
 BUTTON_SAVE,Save,บันทึก
-BUTTON_LOAD,Load,เล่นต่อ
+BUTTON_LOAD,Load game,เล่นต่อ
 OPTION_AUTO_SAVE,Autosave,บันทึกอัตโนมัติ
 TIME_SECOND,Second,วินาที
 UI_CREDIT_SOUND,Sound,เสียง
