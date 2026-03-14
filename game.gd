@@ -29,6 +29,11 @@ extends Node3D
 
 @onready var m_value: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer2/MValue
 
+# Save Stuff
+@onready var player : CharacterBody3D = get_tree().current_scene.get_node("player")
+@onready var car: VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
+@onready var gameInstance: Node3D = self
+
 var dayDuration = 600
 var dayColorList = [
 	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING"},
@@ -135,3 +140,16 @@ func _update_time_display() -> void:
 	var hours = int(total_minutes / 60.0)
 	var minutes = int(total_minutes) % 60
 	time.text = "%02d:%02d" % [hours, minutes]
+
+func saveDat() :
+	var data = gameData.new()
+	data.player_position = player.global_position
+	data.player_rotation = player.rotation_degrees
+	data.car_position = car.global_position
+	data.car_rotation = car.rotation_degrees
+	data.car_fuel = car.carFuel
+	data.player_coins = Varibles.Coins
+	data.game_time = gameInstance.getDN()
+	data.player_selection = Varibles.playerSelection
+	
+	ResourceSaver.save(data,"user://save_data.res")

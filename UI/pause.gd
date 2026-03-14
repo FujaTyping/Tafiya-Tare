@@ -5,10 +5,7 @@ extends Control
 @onready var resume: Button = $MarginContainer/VBoxContainer/VBoxContainer/Resume
 var paused = false
 
-# Save Stuff
-@export var player : CharacterBody3D
-@onready var car: VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
-@onready var gameInstance: Node3D = get_tree().current_scene
+@onready var gameInstant = get_tree().current_scene
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,14 +46,4 @@ func _on_back_pressed() -> void:
 	#get_tree().change_scene_to_file("res://UI/menu.tscn")
 
 func _on_save_pressed() -> void:
-	var data = gameData.new()
-	data.player_position = player.global_position
-	data.player_rotation = player.rotation_degrees
-	data.car_position = car.global_position
-	data.car_rotation = car.rotation_degrees
-	data.car_fuel = car.carFuel
-	data.player_coins = Varibles.Coins
-	data.game_time = gameInstance.getDN()
-	data.player_selection = Varibles.playerSelection
-	
-	ResourceSaver.save(data,"user://save_data.res")
+	gameInstant.saveDat()

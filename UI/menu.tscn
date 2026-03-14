@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bk2eqtj4bowsx"]
+[gd_scene load_steps=20 format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
@@ -21,6 +21,9 @@ background_mode = 2
 sky = SubResource("Sky_7jktm")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmqfe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_qmqfe"]
 resource_name = "CreditIn"
@@ -263,7 +266,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.1391803, 0.012961894, 0.9901796, 0, 0.99991435, -0.013089259, -0.9902644, 0.0018217764, 0.13916838, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918029, 0.012961894, 0.9901795, 0, 0.99991435, -0.013089257, -0.9902643, 0.0018217764, 0.13916837, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -322,6 +325,7 @@ theme_override_font_sizes/font_size = 24
 text = "OPTION_BUTTON"
 
 [node name="Credit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Option")
 focus_neighbor_bottom = NodePath("../Quit")
@@ -341,7 +345,12 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 6
 
-[node name="LinkButton" type="LinkButton" parent="Main/VBoxContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 39
+
+[node name="LinkButton" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -350,6 +359,15 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "BUTTON_REPORT_BUG"
 uri = "https://nas.siraphop.me/apps/forms/s/Czofop4CWsGpxkqGx3ZX8esf"
+
+[node name="LinkButton2" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_default_cursor_shape = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "CREDIT_BUTTON"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer2"]
 layout_mode = 2
@@ -389,6 +407,141 @@ theme_override_constants/margin_bottom = 0
 layout_mode = 2
 color = Color(1, 1, 1, 0.14901961)
 
+[node name="MarginContainer3" type="MarginContainer" parent="Credit"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 255
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="Label" parent="Credit/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kfjwn")
+theme_override_font_sizes/font_size = 48
+text = "CREDIT_BUTTON"
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Credit"]
+layout_mode = 2
+theme_override_constants/margin_left = 385
+theme_override_constants/margin_top = 395
+theme_override_constants/margin_right = 385
+theme_override_constants/margin_bottom = 155
+
+[node name="TabContainer" type="TabContainer" parent="Credit/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmqfe")
+current_tab = 0
+
+[node name="UI_CREDIT_SOUND" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Sound" type="VBoxContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Footstep_Dirt.wav by FallujahQc -- https://freesound.org/s/403164/ -- License: Attribution 3.0"
+
+[node name="Label3" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "FR- Car engine, start, stop, engine.wav by Dan_AudioFile -- https://freesound.org/s/592403/ -- License: 
+Attribution 4.0"
+
+[node name="Label4" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "FR- Car engine, start, revs, idle .wav by Dan_AudioFile -- https://freesound.org/s/592406/ -- License: 
+Attribution 4.0"
+
+[node name="Label5" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Coins / Selling sound by williamornelas -- https://freesound.org/s/525147/ -- License: Attribution 4.0"
+
+[node name="Label8" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "replacing_gas_nozzle.wav by joedeshon -- https://freesound.org/s/117420/ -- License: Attribution 4.0"
+
+[node name="Label9" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Dat's Wrong! by Beetlemuse -- https://freesound.org/s/587253/ -- License: Attribution 4.0"
+
+[node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Fonts" type="VBoxContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label6" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer/Fonts"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Sarabun Font
+Copyright 2018 The Sarabun Project Authors (https://github.com/cadsondemak/Sarabun)
+This Font Software is licensed under the SIL Open Font License, 
+Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
+
+[node name="Label7" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer/Fonts"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Playpen Sans Font
+Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether/Playpen-Sans)
+This Font Software is licensed under the SIL Open Font License, 
+Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
+
 [node name="MarginContainer" type="MarginContainer" parent="Credit"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -404,89 +557,6 @@ size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Credit"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 30
-
-[node name="Title" type="Label" parent="Credit/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_kfjwn")
-theme_override_font_sizes/font_size = 48
-text = "CREDIT_BUTTON"
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Credit/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 21
-
-[node name="Label" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "Footstep_Dirt.wav by FallujahQc -- https://freesound.org/s/403164/ -- License: Attribution 3.0"
-
-[node name="Label3" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "FR- Car engine, start, stop, engine.wav by Dan_AudioFile -- https://freesound.org/s/592403/ -- License: Attribution 4.0"
-
-[node name="Label4" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "FR- Car engine, start, revs, idle .wav by Dan_AudioFile -- https://freesound.org/s/592406/ -- License: Attribution 4.0"
-
-[node name="Label5" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "Coins / Selling sound by williamornelas -- https://freesound.org/s/525147/ -- License: Attribution 4.0"
-
-[node name="Label8" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "replacing_gas_nozzle.wav by joedeshon -- https://freesound.org/s/117420/ -- License: Attribution 4.0"
-
-[node name="Label9" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "Dat's Wrong! by Beetlemuse -- https://freesound.org/s/587253/ -- License: Attribution 4.0"
-
-[node name="Label6" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "Sarabun Font
-Copyright 2018 The Sarabun Project Authors (https://github.com/cadsondemak/Sarabun)
-This Font Software is licensed under the SIL Open Font License, 
-Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
-
-[node name="Label7" type="Label" parent="Credit/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 23
-text = "Playpen Sans Font
-Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether/Playpen-Sans)
-This Font Software is licensed under the SIL Open Font License, 
-Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
 
 [node name="Option" type="MarginContainer" parent="."]
 visible = false
@@ -588,6 +658,20 @@ text = "OPTION_SFX"
 [node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 
+[node name="HBoxContainer7" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 54
+
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "OPTION_AUTO_SAVE"
+
+[node name="SaveCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+
 [node name="HBoxContainer5" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -659,6 +743,7 @@ libraries = {
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/LinkButton2" to="." method="_on_link_button_2_pressed"]
 [connection signal="pressed" from="Credit/MarginContainer/CloseCredit" to="." method="_on_close_credit_pressed"]
 [connection signal="value_changed" from="Option/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="item_selected" from="Option/VBoxContainer/VBoxContainer/HBoxContainer6/FPSSelector" to="." method="_on_fps_selector_item_selected"]

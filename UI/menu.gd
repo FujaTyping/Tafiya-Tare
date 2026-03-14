@@ -132,3 +132,11 @@ func _on_play_2_pressed() -> void:
 	Varibles.playerSelection = data.player_selection
 	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
 	MenuMusic.stopmenumusic()
+
+func _on_link_button_2_pressed() -> void:
+	menu_animation.play("MenuOut")
+	credit.visible = true
+	credit_animation.play("CreditIn")
+	await credit_animation.animation_finished
+	main.visible = false
+	close_credit.grab_focus()
