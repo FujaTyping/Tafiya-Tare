@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=45 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="PackedScene" uid="uid://cp5v6jobv00qh" path="res://Terrain/plain.glb" id="3_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_vef74"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="4_vaj68"]
+[ext_resource type="Texture2D" uid="uid://bewbcwlvv167l" path="res://UI/Texture/SaveIcon.png" id="5_xex6t"]
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://ykye4tnm0it7" path="res://UI/quest.tscn" id="6_xa8c5"]
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
@@ -51,6 +52,43 @@ background_mode = 2
 sky = SubResource("Sky_7jktm")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_xex6t"]
+resource_name = "Saving"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SaveIconIndicator:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aa0lp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SaveIconIndicator:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iu0sx"]
+_data = {
+&"RESET": SubResource("Animation_aa0lp"),
+&"Saving": SubResource("Animation_xex6t")
+}
 
 [sub_resource type="Animation" id="Animation_fc0e3"]
 resource_name = "DayAndNight"
@@ -190,9 +228,37 @@ theme_override_fonts/font = ExtResource("4_vaj68")
 theme_override_font_sizes/font_size = 20
 text = "0"
 
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_top = 15.095
+offset_right = -6.660034
+offset_bottom = 105.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="SaveIconIndicator" type="TextureRect" parent="Control/MarginContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("5_xex6t")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/MarginContainer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_iu0sx")
+}
+
 [node name="Dialoges" parent="." instance=ExtResource("13_215e1")]
+visible = false
 
 [node name="Quest" parent="." instance=ExtResource("6_xa8c5")]
+visible = false
 
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1376195, 1.9775217, 0)
@@ -329,6 +395,7 @@ isBody = true
 animationBody = NodePath("../../AssetsTerrain/Villager1 Animation")
 helloAnimation = "ArmatureAction"
 talkingAnimation = "ArmatureAction_001"
+saveAfter = true
 
 [node name="ItemAll" type="Node3D" parent="."]
 

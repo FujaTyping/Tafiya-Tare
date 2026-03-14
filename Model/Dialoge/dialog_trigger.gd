@@ -14,6 +14,7 @@ extends Node3D
 @export var helloAnimation: String
 @export var talkingAnimation:	String
 #@export var speaker: Node3D
+@export var saveAfter : bool
 
 var isHelloplaying
 
@@ -47,6 +48,10 @@ func endDialoge() :
 		started = false
 		current_dialogue = -1
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if saveAfter :
+			await Varibles.wait(2)
+			var gameInstance = get_tree().current_scene
+			gameInstance.saveDat()
 
 
 func continume_dialoge() :

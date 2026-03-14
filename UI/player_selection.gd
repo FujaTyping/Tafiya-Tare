@@ -16,7 +16,7 @@ func _ready() -> void:
 func _on_m_pressed() -> void:	
 	Varibles.playerSelection = "joker"
 	select_man.play("Man")
-	await select_man.animation_finished
+	await Varibles.wait(0.5)
 	animation_player_j.speed_scale = 0.3
 	animation_player_j.play("ArmatureAction_003")
 	await animation_player_j.animation_finished
@@ -29,7 +29,7 @@ func _on_button_pressed() -> void:
 func _on_wm_pressed() -> void:	
 	Varibles.playerSelection = "sophia"
 	select_man.play("WM")
-	await select_man.animation_finished
+	await Varibles.wait(0.5)
 	animation_player.speed_scale = 0.3
 	animation_player.play("ArmatureAction_003")
 	await animation_player.animation_finished

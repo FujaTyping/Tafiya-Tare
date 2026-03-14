@@ -26,7 +26,7 @@ sky = SubResource("Sky_6py08")
 
 [sub_resource type="Animation" id="Animation_hipr5"]
 resource_name = "Man"
-length = 0.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,10 +34,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.24, 0.37),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.24, 0.37, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132)]
+"values": [Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.05691603, 0.4334016, -0.5389192)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -46,10 +46,22 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.24, 0.37),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.24, 0.37, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.14313838, 0.044015396, -0.0038074253), Vector3(-0.14313838, 0.28160706, -0.0038074262), Vector3(-0.14313842, -0.2640702, -0.0038074204)]
+"values": [Vector3(-0.14313838, 0.044015396, -0.0038074253), Vector3(-0.14313838, 0.28160706, -0.0038074262), Vector3(-0.14313842, -0.2640702, -0.0038074204), Vector3(-0.14313845, -0.2640702, -0.0038074204)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_p6sbq"]
@@ -78,10 +90,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.14313838, 0.044015396, -0.0038074253)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_8djgy"]
 resource_name = "WM"
-length = 0.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -89,10 +113,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.38, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132)]
+"values": [Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.13619223, 0.38182935, -0.34718132), Vector3(-0.2385951, 0.42839572, -0.5483404)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -101,10 +125,22 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.38, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.14313838, 0.044015396, -0.0038074253), Vector3(-0.14313838, -0.18792139, -0.003807425), Vector3(-0.1431384, 0.446244, -0.0038074222)]
+"values": [Vector3(-0.14313838, 0.044015396, -0.0038074253), Vector3(-0.14313838, -0.18792139, -0.003807425), Vector3(-0.1431384, 0.446244, -0.0038074222), Vector3(-0.1431384, 0.44624403, -0.003807422)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../MarginContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8djgy"]
@@ -177,7 +213,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.99904764, -0.002472998, 0.043551173, -0.0037684762, 0.98976547, 0.14265004, -0.04345824, -0.14267835, 0.9888141, -0.13619223, 0.38182935, -0.34718132)
+transform = Transform3D(0.9990481, -0.0024729993, 0.04355119, -0.003768478, 0.98976594, 0.1426501, -0.04345826, -0.14267842, 0.98881453, -0.13619223, 0.38182935, -0.34718132)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -266,7 +266,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918029, 0.012961894, 0.9901795, 0, 0.99991435, -0.013089257, -0.9902643, 0.0018217764, 0.13916837, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918027, 0.012961894, 0.9901794, 0, 0.99991435, -0.013089256, -0.99026424, 0.0018217764, 0.13916835, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -559,7 +559,6 @@ theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
 [node name="Option" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -659,6 +658,7 @@ text = "OPTION_SFX"
 layout_mode = 2
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 54
 

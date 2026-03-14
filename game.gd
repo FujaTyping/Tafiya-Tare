@@ -28,6 +28,8 @@ extends Node3D
 @onready var sun: DirectionalLight3D = $Sun
 
 @onready var m_value: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer2/MValue
+@onready var save_icon_indicator: TextureRect = $Control/MarginContainer2/SaveIconIndicator
+@onready var animation_player: AnimationPlayer = $Control/MarginContainer2/AnimationPlayer
 
 # Save Stuff
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("player")
@@ -142,6 +144,8 @@ func _update_time_display() -> void:
 	time.text = "%02d:%02d" % [hours, minutes]
 
 func saveDat() :
+	save_icon_indicator.show()
+	animation_player.play("Saving")
 	var data = gameData.new()
 	data.player_position = player.global_position
 	data.player_rotation = player.rotation_degrees
@@ -153,3 +157,5 @@ func saveDat() :
 	data.player_selection = Varibles.playerSelection
 	
 	ResourceSaver.save(data,"user://save_data.res")
+	await animation_player.animation_finished
+	save_icon_indicator.hide()

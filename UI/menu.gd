@@ -27,6 +27,17 @@ extends Control
 const fpsList = [30,60,120]
 
 func _ready():
+	if FileAccess.file_exists("user://setting_data.tres") :
+		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
+		Varibles.LangIndex = data.languageIndex
+		if data.languageIndex == 0 :
+			TranslationServer.set_locale("en")
+		else :
+			TranslationServer.set_locale("th")
+		Varibles.MouseSens = data.camSens
+		Varibles.maxFPSindex = data.gameFPSIndex
+		_on_check_button_toggled(data.musicEnable)
+		_on_s_check_button_toggled(data.effectEnable)
 	play.grab_focus()
 	DiscordRpc.updateRPC("In main menu")
 	h_slider.value = Varibles.MouseSens
@@ -83,6 +94,7 @@ func _on_close_credit_pressed() -> void:
 
 
 func _on_close_option_pressed() -> void:
+	saveSetting()
 	menu_animation.play("MenuIn")
 	option_animation.play("OptOut")
 	await option_animation.animation_finished
@@ -140,3 +152,13 @@ func _on_link_button_2_pressed() -> void:
 	await credit_animation.animation_finished
 	main.visible = false
 	close_credit.grab_focus()
+
+func saveSetting() :
+	var data = settingSave.new()
+	data.languageIndex = Varibles.LangIndex
+	data.gameFPSIndex = Varibles.maxFPSindex
+	data.camSens = Varibles.MouseSens
+	data.effectEnable = Varibles.SFX
+	data.musicEnable = Varibles.BGM
+	
+	ResourceSaver.save(data,"user://setting_data.tres")
