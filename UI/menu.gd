@@ -72,6 +72,7 @@ func _on_option_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	Input.set_custom_mouse_cursor(null)
+	MenuMusic.stopmenumusic()
 	get_tree().quit()
 
 func _on_credit_pressed() -> void:

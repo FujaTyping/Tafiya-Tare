@@ -22,6 +22,12 @@ func _on_resume_pressed() -> void:
 		paused = false
 
 func _on_exit_pressed() -> void:
+	var day_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("dayBGM")
+	var night_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("nightBGM")
+	var footsteps: AudioStreamPlayer3D = get_tree().current_scene.get_node("player/Walking")
+	footsteps.stop()
+	day_bgm.stop()
+	night_bgm.stop()
 	Input.set_custom_mouse_cursor(null)
 	get_tree().quit()
 

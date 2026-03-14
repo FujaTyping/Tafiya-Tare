@@ -37,17 +37,23 @@ extends Node3D
 @onready var gameInstance: Node3D = self
 @onready var texture_rect: TextureRect = $Control/TextureRect
 
+# Image set
+@export var dayIcon: CompressedTexture2D
+@export var morningIcon: CompressedTexture2D
+@export var nightIcon: CompressedTexture2D
+
 var dayDuration = 600
-var dayColorList = [
-	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING","icon": "uid://b0qdofvjj720f"},
-	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "TIME_DAY","icon": "uid://d4clw34ovo3y1" },
-	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "TIME_AFTERNOON", "icon": "uid://b0qdofvjj720f"},
-	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "TIME_NIGHT", "icon": "uid://ca7cyeosong7l"}
-]
+var dayColorList = []
 var currentDayState = 0
 var durationMultiplier = 1.0
 
 func _ready() -> void:
+	dayColorList = [
+		{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING","icon": morningIcon},
+		{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "TIME_DAY","icon": dayIcon },
+		{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "TIME_AFTERNOON", "icon": morningIcon},
+		{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "TIME_NIGHT", "icon": nightIcon}
+	]
 	#sun.visible = false
 	if Varibles.isFromLoadSaved :
 		startTime = Varibles.saved_data.game_time
@@ -106,9 +112,10 @@ func _day_change_animation():
 	tween.tween_property(environment, "environment:sky:sky_material:ground_horizon_color", hoirzonColor, duration)
 	
 	dn.text = dayColorList[currentDayState]["name"]
-	var dnIcon = Image.load_from_file(dayColorList[currentDayState]["icon"])
-	var dnTexture = ImageTexture.create_from_image(dnIcon)
+	#var dnIcon = Image.load_from_file()
+	var dnTexture = dayColorList[currentDayState]["icon"]
 	texture_rect.texture = dnTexture
+	
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
 			carInstant.canOpenLight = true
