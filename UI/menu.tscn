@@ -266,7 +266,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918027, 0.012961894, 0.9901794, 0, 0.99991435, -0.013089256, -0.99026424, 0.0018217764, 0.13916835, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918027, 0.012961894, 0.99017936, 0, 0.99991435, -0.013089256, -0.9902642, 0.0018217764, 0.13916835, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -283,6 +283,19 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="Main"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 630
+
+[node name="GameIcon" type="TextureRect" parent="Main/MarginContainer"]
+visible = false
+layout_mode = 2
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main"]
 layout_mode = 2
@@ -559,6 +572,7 @@ theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
 [node name="Option" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

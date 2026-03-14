@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj65117odtqjs"]
+[gd_scene load_steps=11 format=3 uid="uid://bj65117odtqjs"]
 
 [ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="1_3wmsh"]
 [ext_resource type="Script" uid="uid://m5hrm1oydqio" path="res://Model/Car/Work/vehicle_body_3d.gd" id="1_d41w2"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dliwxoqdubwq4" path="res://SFX/CarIdle.wav" id="6_vda12"]
 [ext_resource type="AudioStream" uid="uid://b8tymwy27govf" path="res://SFX/EngineStop.wav" id="7_7diub"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="8_hpwcy"]
+[ext_resource type="Texture2D" uid="uid://d00jdgildfd4f" path="res://UI/Texture/FuelBg.png" id="9_qbuse"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
 
@@ -112,24 +113,32 @@ layer = 2
 visible = false
 
 [node name="Text" type="Label" parent="CanvasLayer"]
-offset_left = 27.0
-offset_top = 722.0
-offset_right = 250.0
-offset_bottom = 796.0
+offset_left = 18.0
+offset_top = 746.0
+offset_right = 173.0
+offset_bottom = 800.0
 theme_override_fonts/font = ExtResource("8_hpwcy")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 28
 text = "CAR_FUEL"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 83.0
+offset_top = 799.0
+offset_right = 344.61157
+offset_bottom = 865.57025
+rotation = 1.5707964
+texture = ExtResource("9_qbuse")
 
 [node name="FuelBar" type="ProgressBar" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = -31.0
-offset_right = 279.34875
-offset_bottom = 19.817871
+offset_left = 32.0
+offset_top = -32.0
+offset_right = 234.76202
+offset_bottom = 3.9418945
 grow_vertical = 0
-rotation = -1.5707964
+rotation = -1.5620697
 step = 0.1
 show_percentage = false
 

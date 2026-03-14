@@ -3,8 +3,8 @@ extends Node3D
 @onready var dialogCanvas: CanvasLayer = get_tree().current_scene.get_node("Dialoges/CanvasLayer")
 @onready var typingEffect: AnimationPlayer = get_tree().current_scene.get_node("Dialoges/Typing")
 @onready var AniIO : AnimationPlayer = get_tree().current_scene.get_node("Dialoges/IN_Out")
-@onready var spearker_name: Label = get_tree().current_scene.get_node("Dialoges/CanvasLayer/Name/MarginContainer/SP")
-@onready var dialogText: RichTextLabel = get_tree().current_scene.get_node("Dialoges/CanvasLayer/Context/MarginContainer/Dialoge")
+@onready var spearker_name: Label = get_tree().current_scene.get_node("Dialoges/CanvasLayer/MarginContainer2/SP")
+@onready var dialogText: RichTextLabel = get_tree().current_scene.get_node("Dialoges/CanvasLayer/MarginContainer/Dialoge")
 @onready var player: CharacterBody3D = get_tree().current_scene.get_node("player")
 
 @export var dialoguesLine: Array[String]
@@ -22,7 +22,7 @@ var current_dialogue = -1
 var started = false
 
 func _ready() -> void:
-	dialogCanvas.get_node("Context/Next").connect("pressed", Callable(self,"continume_dialoge"))
+	dialogCanvas.get_node("TNext").connect("pressed", Callable(self,"continume_dialoge"))
 
 func startDialoge(body):
 	if body == player and not started :

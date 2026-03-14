@@ -27,7 +27,7 @@ extends Node3D
 
 @onready var sun: DirectionalLight3D = $Sun
 
-@onready var m_value: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer2/MValue
+@onready var m_value: Label = $Control/HBoxContainer2/MValue
 @onready var save_icon_indicator: TextureRect = $Control/MarginContainer2/SaveIconIndicator
 @onready var animation_player: AnimationPlayer = $Control/MarginContainer2/AnimationPlayer
 
@@ -35,13 +35,14 @@ extends Node3D
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("player")
 @onready var car: VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 @onready var gameInstance: Node3D = self
+@onready var texture_rect: TextureRect = $Control/TextureRect
 
 var dayDuration = 600
 var dayColorList = [
-	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING"},
-	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "TIME_DAY" },
-	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "TIME_AFTERNOON"},
-	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "TIME_NIGHT"}
+	{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING","icon": "uid://b0qdofvjj720f"},
+	{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "TIME_DAY","icon": "uid://d4clw34ovo3y1" },
+	{"top": afternoonColorTop, "horizon": afternoonColorHorizon, "startTime": 470,"name": "TIME_AFTERNOON", "icon": "uid://b0qdofvjj720f"},
+	{"top": nightColorTop, "horizon": nightColorHorizon, "startTime": 485, "name": "TIME_NIGHT", "icon": "uid://ca7cyeosong7l"}
 ]
 var currentDayState = 0
 var durationMultiplier = 1.0
@@ -105,6 +106,9 @@ func _day_change_animation():
 	tween.tween_property(environment, "environment:sky:sky_material:ground_horizon_color", hoirzonColor, duration)
 	
 	dn.text = dayColorList[currentDayState]["name"]
+	var dnIcon = Image.load_from_file(dayColorList[currentDayState]["icon"])
+	var dnTexture = ImageTexture.create_from_image(dnIcon)
+	texture_rect.texture = dnTexture
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
 			carInstant.canOpenLight = true

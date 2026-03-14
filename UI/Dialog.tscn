@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://x0nwxuls06g4"]
+[gd_scene load_steps=13 format=3 uid="uid://x0nwxuls06g4"]
 
+[ext_resource type="Texture2D" uid="uid://d0a5h8p0qtlq6" path="res://UI/Texture/DialogeBg.png" id="1_5w7iy"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="1_7ll08"]
+[ext_resource type="Texture2D" uid="uid://c6fplpr2vedte" path="res://UI/Texture/BackIcon.png" id="2_5w7iy"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_il1we"]
+[ext_resource type="Texture2D" uid="uid://e2nnohl7ydrk" path="res://UI/Texture/DialogSpeakerBg.png" id="4_gxqm6"]
 
 [sub_resource type="Animation" id="Animation_h03or"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Context/MarginContainer/Dialoge:visible_ratio")
+tracks/0/path = NodePath("CanvasLayer/MarginContainer/Dialoge:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +27,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Context/MarginContainer/Dialoge:visible_ratio")
+tracks/0/path = NodePath("CanvasLayer/MarginContainer/Dialoge:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -103,21 +106,25 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 visible = false
 
-[node name="Context" type="ColorRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.15686275)
 offset_left = 248.0
-offset_top = 817.0
-offset_right = 1652.0
-offset_bottom = 1018.0
-size_flags_horizontal = 4
-color = Color(1, 1, 1, 0.17254902)
+offset_top = 792.0
+offset_right = 1653.0
+offset_bottom = 1052.0
+texture = ExtResource("1_5w7iy")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Context"]
-layout_mode = 1
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = 838.0
+offset_right = -304.0
+offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 15
@@ -125,7 +132,7 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer/Context/MarginContainer"]
+[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_7ll08")
 theme_override_font_sizes/normal_font_size = 28
@@ -133,17 +140,44 @@ text = "Speaker Text..."
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Next" type="Button" parent="CanvasLayer/Context"]
-layout_mode = 0
-offset_left = 1148.0
-offset_top = 132.0
-offset_right = 1382.0
-offset_bottom = 186.0
+[node name="Next" type="Button" parent="CanvasLayer"]
+visible = false
+offset_left = 1396.0
+offset_top = 949.0
+offset_right = 1630.0
+offset_bottom = 1003.0
 theme_override_fonts/font = ExtResource("1_7ll08")
 theme_override_font_sizes/font_size = 26
 text = "CONTINUE_BUTTON"
 
+[node name="TNext" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1583.0
+offset_top = 931.0
+offset_right = 1675.0
+offset_bottom = 1014.0
+texture_normal = ExtResource("2_5w7iy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Context" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_left = 248.0
+offset_top = 817.0
+offset_right = 1652.0
+offset_bottom = 1018.0
+size_flags_horizontal = 4
+color = Color(1, 1, 1, 0.17254902)
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.15686275)
+offset_left = 206.95
+offset_top = 710.0
+offset_right = 676.95013
+offset_bottom = 818.0
+texture = ExtResource("4_gxqm6")
+
 [node name="Name" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_left = 250.0
 offset_top = 729.0
 offset_right = 670.0
@@ -151,11 +185,14 @@ offset_bottom = 802.0
 size_flags_horizontal = 0
 color = Color(1, 1, 1, 0.17254902)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Name"]
-layout_mode = 1
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 722.0
+offset_right = -1283.0
+offset_bottom = -271.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
@@ -163,7 +200,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="SP" type="Label" parent="CanvasLayer/Name/MarginContainer"]
+[node name="SP" type="Label" parent="CanvasLayer/MarginContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_il1we")
 theme_override_font_sizes/font_size = 38
