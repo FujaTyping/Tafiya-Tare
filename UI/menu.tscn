@@ -266,7 +266,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918026, 0.012961894, 0.99017924, 0, 0.99991435, -0.0130892545, -0.99026406, 0.0018217764, 0.13916834, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918024, 0.012961894, 0.9901792, 0, 0.99991435, -0.013089254, -0.990264, 0.0018217764, 0.13916832, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]

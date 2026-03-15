@@ -35,7 +35,7 @@ func _ready():
 		else :
 			TranslationServer.set_locale("th")
 		Varibles.MouseSens = data.camSens
-		Varibles.maxFPSindex = data.gameFPSIndex
+		_on_fps_selector_item_selected(data.gameFPSIndex)
 		_on_check_button_toggled(data.musicEnable)
 		_on_s_check_button_toggled(data.effectEnable)
 	play.grab_focus()
