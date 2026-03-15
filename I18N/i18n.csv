@@ -59,3 +59,4 @@ CONTROL_E,Interaction,โต้ตอบ
 CONTROL_H,Show control,แสดงการควบคุม
 CONTROL_ESC,Pause game,หยุดเกมชั่วคราว
 UI_CONTROL_HIDE,Press H to hide,กด H เพื่อซ่อน
+CONTROL_ALT,Show cursor,แสดงเคอร์เซอร์

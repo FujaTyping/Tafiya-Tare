@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=51 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -36,8 +36,11 @@
 [ext_resource type="PackedScene" uid="uid://03cpm1d8s7dn" path="res://Item/bottle.tscn" id="30_36jdj"]
 [ext_resource type="PackedScene" uid="uid://5g4bkxju8e3x" path="res://Item/apple.tscn" id="31_xfvwf"]
 [ext_resource type="PackedScene" uid="uid://cb43njorwr4fs" path="res://Item/fishBone.tscn" id="32_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://bsvep1pcekrnq" path="res://Model/Board/FuelAds.glb" id="32_klri6"]
 [ext_resource type="PackedScene" uid="uid://cf88lgopr2n3r" path="res://Model/table.glb" id="33_7knny"]
+[ext_resource type="PackedScene" uid="uid://clrepykatgbvv" path="res://Model/Board/NewsPapers.glb" id="33_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://ci8rcmccas0hw" path="res://Model/WayWarningSign.glb" id="34_082n1"]
+[ext_resource type="PackedScene" uid="uid://bhkbyqw3gv6w5" path="res://Model/missionBoard.glb" id="39_l1i01"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -318,6 +321,23 @@ spot_range = 7.8687944
 spot_angle = 36.092773
 spot_angle_attenuation = 0.6830198
 
+[node name="ModernLightPole2" parent="AssetsTerrain" instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.27930287, 0, 0.45894846, 0, 0.54560614, 0, -0.43402517, 0, -0.29534146, 12.173826, 0.07914287, -9.738768)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="AssetsTerrain/ModernLightPole2" groups=["lightFromPole"]]
+transform = Transform3D(1.7621938, 3.4871853e-08, -0.8053547, 0.7618427, -7.218045e-08, 1.6669853, 7.448621e-22, -1.832288, -7.9338065e-08, 1.004143, 10.339152, 0)
+visible = false
+layers = 3
+light_energy = 2.485
+light_volumetric_fog_energy = 1.99
+light_size = 0.144
+light_specular = 2.314
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 7.8687944
+spot_angle = 36.092773
+spot_angle_attenuation = 0.6830198
+
 [node name="WaySign" parent="AssetsTerrain" instance=ExtResource("8_iotsf")]
 transform = Transform3D(0.28453815, 0, 0.09641815, 0.005062094, 0.34949946, -0.019683097, -0.083845146, 0.021100793, 0.32601768, 12.573067, 0.3046844, 9.689616)
 
@@ -403,6 +423,21 @@ transform = Transform3D(0.20370519, 0.36194703, 0.102099374, -0.354187, 0.186235
 [node name="Villager1 Animation" parent="AssetsTerrain" instance=ExtResource("26_5b14r")]
 transform = Transform3D(0.12108113, 0, 0.09127185, 0, 0.14852384, 0, -0.0826424, 0, 0.13372432, 12.321246, 0.7165495, 16.572353)
 
+[node name="WayWarningSign" parent="AssetsTerrain" instance=ExtResource("34_082n1")]
+transform = Transform3D(-0.13990669, 0, -0.50085026, 0, 0.4244017, 0, 0.4040265, 0, -0.17343491, 19.977833, 2.7222662, 19.875084)
+
+[node name="table" parent="AssetsTerrain" instance=ExtResource("33_7knny")]
+transform = Transform3D(0.43306673, 0, 0.2508872, 0, 0.64651465, 0, -0.31617996, 0, 0.34363627, -6.1579866, 1.0192943, -18.799953)
+
+[node name="missionBoard" parent="AssetsTerrain" instance=ExtResource("39_l1i01")]
+transform = Transform3D(-0.23646045, -0.028242555, 0.13966356, -0.012224959, 0.39513916, 0.011190702, -0.35824347, 0.005157633, -0.09256754, 12.105214, -0.0062725097, -11.926379)
+
+[node name="FuelAds" parent="AssetsTerrain/missionBoard" instance=ExtResource("32_klri6")]
+transform = Transform3D(1.2811285, -0.09464429, -0.0045917034, 0.110377505, 1.2827271, -0.16841482, 0.023887446, 0.20189235, 5.9416428, 0.23220158, 3.3918166, -0.49606323)
+
+[node name="NewsPapers" parent="AssetsTerrain/missionBoard" instance=ExtResource("33_eu6ph")]
+transform = Transform3D(1.1953506, 0.040141992, -0.020192385, -0.048327502, 1.1796697, -0.16888931, 0.018918872, 0.18753713, 5.9413548, 0.2159977, 3.3164291, -0.45191956)
+
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
 
@@ -443,9 +478,3 @@ CoinReward = 3
 [node name="fishBone" parent="ItemAll" instance=ExtResource("32_dhpj7")]
 transform = Transform3D(-0.9592825, 0.0890422, 0.26804549, 0.047577295, 0.9863883, -0.15739928, -0.27841213, -0.13823752, -0.95046157, -6.8493133, 0.28317276, 8.187019)
 CoinReward = 1
-
-[node name="table" parent="." instance=ExtResource("33_7knny")]
-transform = Transform3D(0.43306673, 0, 0.2508872, 0, 0.64651465, 0, -0.31617996, 0, 0.34363627, -6.1579866, 1.0192943, -18.799953)
-
-[node name="WayWarningSign" parent="." instance=ExtResource("34_082n1")]
-transform = Transform3D(-0.13990669, 0, -0.50085026, 0, 0.4244017, 0, 0.4040265, 0, -0.17343491, 19.977833, 2.7222662, 19.875084)
