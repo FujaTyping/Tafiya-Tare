@@ -9,3 +9,4 @@ class_name gameData
 @export var game_time : int
 @export var car_fuel : int
 @export var player_selection: String
+@export var collectItem: Array[NodePath]

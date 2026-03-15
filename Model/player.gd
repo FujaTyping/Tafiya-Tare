@@ -48,6 +48,8 @@ var interActionJustPress = false
 @onready var help: MarginContainer = $Help
 @onready var help_me: AnimationPlayer = $Help/HelpMe
 
+@onready var paper: AudioStreamPlayer3D = $Paper
+
 func _ready():
 	if Varibles.isFromLoadSaved :
 		self.global_position = Varibles.saved_data.player_position
@@ -88,6 +90,10 @@ func _input(event):
 	
 	# --- INTERACTION LOGIC ---
 	if Input.is_action_just_pressed("interaction"):
+		var viewUI : Control = get_tree().current_scene.get_node("ViewPaper")
+		if viewUI.visible :
+			viewUI._on_close_pressed()
+			return
 		if looking_cast.is_colliding() :
 			if looking_cast.get_collider().has_method("buyItem") :
 				#interActionJustPress = true
@@ -107,6 +113,15 @@ func _input(event):
 			elif looking_cast.get_collider().has_method("clear_trash") :
 				trash_collect.play()
 				looking_cast.get_collider().clear_trash()
+			elif looking_cast.get_collider().has_method("openViewImage") :
+				looking_cast.get_collider().openViewImage()
+				paper.play()
+				if isInViewInteract :
+					isInViewInteract = false
+					label_2.visible = false
+					inter_show.play("Hide")
+					await inter_show.animation_finished
+					interact.hide()
 			
 		if car_cam != null:
 			
@@ -147,24 +162,27 @@ func _input(event):
 					engine_stop.play()
 
 func _physics_process(delta: float) -> void:
-	if looking_cast.is_colliding() and not interActionJustPress:
-		if looking_cast.get_collider() :
-			if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
-					var interactText = looking_cast.get_collider().interact()
-					if "BUY" in interactText :
-						label_2.visible = true
-						label_2.text= looking_cast.get_collider().getbuyvalue() + " ฿"
-					label.text = interactText
-					interact.show()
-					inter_show.play("Show")
-					isInViewInteract = true
-	else :
-		if isInViewInteract :
-			isInViewInteract = false
-			label_2.visible = false
-			inter_show.play("Hide")
-			await inter_show.animation_finished
-			interact.hide()
+	var viewUI : Control = get_tree().current_scene.get_node("ViewPaper")
+	if not viewUI.visible :
+		if looking_cast.is_colliding() and not interActionJustPress:
+			if looking_cast.get_collider() :
+				if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
+						var interactText = looking_cast.get_collider().interact()
+						if "BUY" in interactText :
+							label_2.visible = true
+							label_2.text= looking_cast.get_collider().getbuyvalue() + " ฿"
+						label.text = interactText
+						interact.show()
+						inter_show.play_backwards("Hide")
+						#inter_show.play("Show")
+						isInViewInteract = true
+		else :
+			if isInViewInteract :
+				isInViewInteract = false
+				label_2.visible = false
+				inter_show.play("Hide")
+				await inter_show.animation_finished
+				interact.hide()
 		
 	if is_in_car:
 		return 

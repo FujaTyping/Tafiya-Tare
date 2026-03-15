@@ -60,3 +60,5 @@ CONTROL_H,Show control,แสดงการควบคุม
 CONTROL_ESC,Pause game,หยุดเกมชั่วคราว
 UI_CONTROL_HIDE,Press H to hide,กด H เพื่อซ่อน
 CONTROL_ALT,Show cursor,แสดงเคอร์เซอร์
+ON_INTERACTION_VIEW,Press E to view,กด E เพื่อดู
+UI_IMAGE_VIEW_CLOSE,Press E to close,กด E เพื่อปิด

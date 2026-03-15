@@ -47,6 +47,8 @@ var dayColorList = []
 var currentDayState = 0
 var durationMultiplier = 1.0
 
+var collectedItem:Array[NodePath] = []
+
 func _ready() -> void:
 	dayColorList = [
 		{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING","icon": morningIcon},
@@ -57,6 +59,11 @@ func _ready() -> void:
 	#sun.visible = false
 	if Varibles.isFromLoadSaved :
 		startTime = Varibles.saved_data.game_time
+		if Varibles.saved_data.collectItem.size() > 0 :
+			collectedItem = Varibles.saved_data.collectItem
+			for item in Varibles.saved_data.collectItem :
+				var removeItem = get_tree().current_scene.get_node(item)
+				removeItem.queue_free()
 	else :
 		Varibles.Coins = 0
 	DiscordRpc.updateRPC("In game")
@@ -166,6 +173,7 @@ func saveDat() :
 	data.player_coins = Varibles.Coins
 	data.game_time = gameInstance.getDN()
 	data.player_selection = Varibles.playerSelection
+	data.collectItem = collectedItem
 	
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished
