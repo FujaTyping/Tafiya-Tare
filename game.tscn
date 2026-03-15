@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=62 format=3 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -42,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://c7njlohyguner" path="res://Item/View/news_paper.tscn" id="34_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://bhkbyqw3gv6w5" path="res://Model/missionBoard.glb" id="39_l1i01"]
 [ext_resource type="PackedScene" uid="uid://d2l171r04i8x4" path="res://Item/View/fuel_ads_paper.tscn" id="42_eu6ph"]
+[ext_resource type="PackedScene" uid="uid://cexpg3pjkibu4" path="res://Terrain/Pond.glb" id="43_edr7y"]
+[ext_resource type="PackedScene" uid="uid://cpxutwmwlv5xe" path="res://Terrain/PondNoBase.glb" id="44_kq12w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -59,6 +61,172 @@ background_mode = 2
 sky = SubResource("Sky_7jktm")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Shader" id="Shader_edr7y"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.5.1.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_always, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform ivec2 albedo_texture_size;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform sampler2D texture_refraction : filter_linear_mipmap, repeat_enable;
+uniform float refraction : hint_range(-1.0, 1.0, 0.001);
+uniform vec4 refraction_texture_channel;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
+uniform sampler2D depth_texture : hint_depth_texture, repeat_disable, filter_nearest;
+
+uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;
+uniform float normal_scale : hint_range(-16.0, 16.0);
+varying vec3 uv1_triplanar_pos;
+
+uniform float uv1_blend_sharpness : hint_range(0.0, 150.0, 0.001);
+varying vec3 uv1_power_normal;
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	vec3 normal = MODEL_NORMAL_MATRIX * NORMAL;
+
+	TANGENT = vec3(0.0, 0.0, -1.0) * abs(normal.x);
+	TANGENT += vec3(1.0, 0.0, 0.0) * abs(normal.y);
+	TANGENT += vec3(1.0, 0.0, 0.0) * abs(normal.z);
+	TANGENT = inverse(MODEL_NORMAL_MATRIX) * normalize(TANGENT);
+
+	BINORMAL = vec3(0.0, 1.0, 0.0) * abs(normal.x);
+	BINORMAL += vec3(0.0, 0.0, -1.0) * abs(normal.y);
+	BINORMAL += vec3(0.0, 1.0, 0.0) * abs(normal.z);
+	BINORMAL = inverse(MODEL_NORMAL_MATRIX) * normalize(BINORMAL);
+
+	// UV1 Triplanar: Enabled (with World Triplanar)
+	uv1_power_normal = pow(abs(normal), vec3(uv1_blend_sharpness));
+	uv1_triplanar_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz * uv1_scale + uv1_offset + TIME * 0.05;
+	uv1_power_normal /= dot(uv1_power_normal, vec3(1.0));
+	uv1_triplanar_pos *= vec3(1.0, -1.0, 1.0);
+}
+
+vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos) {
+	vec4 samp = vec4(0.0);
+	samp += texture(p_sampler, p_triplanar_pos.xy) * p_weights.z;
+	samp += texture(p_sampler, p_triplanar_pos.xz) * p_weights.y;
+	samp += texture(p_sampler, p_triplanar_pos.zy * vec2(-1.0, 1.0)) * p_weights.x;
+	return samp;
+}
+
+void fragment() {
+	vec4 albedo_tex = triplanar_texture(texture_albedo, uv1_power_normal, uv1_triplanar_pos);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(triplanar_texture(texture_metallic, uv1_power_normal, uv1_triplanar_pos), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(triplanar_texture(texture_roughness, uv1_power_normal, uv1_triplanar_pos), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+
+	// Normal Map: Enabled
+	NORMAL_MAP = triplanar_texture(texture_normal, uv1_power_normal, uv1_triplanar_pos).rgb;
+	NORMAL_MAP_DEPTH = normal_scale;
+
+	// Refraction: Enabled (with normal map texture)
+	vec3 unpacked_normal = NORMAL_MAP;
+	unpacked_normal.xy = unpacked_normal.xy * 2.0 - 1.0;
+	unpacked_normal.z = sqrt(max(0.0, 1.0 - dot(unpacked_normal.xy, unpacked_normal.xy)));
+	vec3 ref_normal = normalize(mix(
+			NORMAL,
+			TANGENT * unpacked_normal.x + BINORMAL * unpacked_normal.y + NORMAL * unpacked_normal.z,
+			NORMAL_MAP_DEPTH));
+	vec2 ref_ofs = SCREEN_UV - ref_normal.xy * dot(triplanar_texture(texture_refraction, uv1_power_normal, uv1_triplanar_pos), refraction_texture_channel) * refraction;
+
+	float ref_amount = 1.0 - albedo.a * albedo_tex.a;
+
+	float refraction_depth_tex = textureLod(depth_texture, ref_ofs, 0.0).r;
+	vec4 refraction_view_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, refraction_depth_tex, 1.0);
+	refraction_view_pos.xyz /= refraction_view_pos.w;
+
+	// If the depth buffer is lower then the model's Z position, use the refracted UV, otherwise use the normal screen UV.
+	// At low depth differences, decrease refraction intensity to avoid sudden discontinuities.
+	EMISSION += textureLod(screen_texture, mix(SCREEN_UV, ref_ofs, smoothstep(0.0, 1.0, VERTEX.z - refraction_view_pos.z)), ROUGHNESS * 8.0).rgb * ref_amount * EXPOSURE;
+	ALBEDO *= 1.0 - ref_amount;
+	// Force transparency on the material (required for refraction).
+	ALPHA = 1.0;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_edr7y"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kq12w"]
+noise = SubResource("FastNoiseLite_edr7y")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t46w6"]
+noise = SubResource("FastNoiseLite_edr7y")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kq12w"]
+render_priority = 0
+shader = SubResource("Shader_edr7y")
+shader_parameter/albedo = Color(0.24313726, 0.8117647, 1, 0.23137255)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_t46w6")
+shader_parameter/refraction = 0.05
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_kq12w")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.1, 0.1, 0.1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t46w6"]
+material = SubResource("ShaderMaterial_kq12w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t46w6"]
+render_priority = 0
+shader = SubResource("Shader_edr7y")
+shader_parameter/albedo = Color(0.24313726, 0.8117647, 1, 0.18431373)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_t46w6")
+shader_parameter/refraction = 0.05
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_kq12w")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.2, 0.1, 0.1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kq12w"]
+material = SubResource("ShaderMaterial_t46w6")
 
 [sub_resource type="Animation" id="Animation_aa0lp"]
 length = 0.001
@@ -184,6 +352,22 @@ transform = Transform3D(2.820359, 0, 0, 0, 2.096896, 0, 0, 0, 2.590889, 0, 0, -0
 
 [node name="Mt" parent="." instance=ExtResource("3_vef74")]
 transform = Transform3D(12.76089, 0, 0, 0, 13.049737, 0, 0, 0, 13.452707, 35.18969, 0.10323334, 0.021086693)
+
+[node name="Pond" parent="." instance=ExtResource("43_edr7y")]
+transform = Transform3D(8.890164, 0, 0, 0, 4.484465, 0, 0, 0, 8.062844, 73.47545, 0.07259989, -14.772969)
+
+[node name="Water" type="MeshInstance3D" parent="Pond"]
+transform = Transform3D(1.4131066, 0, 0, 0, 0.22299203, 0, 0, 0, 1.4056039, -0.011738777, -0.022881504, 0.008489251)
+mesh = SubResource("PlaneMesh_t46w6")
+skeleton = NodePath("../..")
+
+[node name="PondNoBase" parent="." instance=ExtResource("44_kq12w")]
+transform = Transform3D(8.890164, 0, 0, 0, 4.484465, 0, 0, 0, 8.062844, 73.47545, 0.07259989, 9.041026)
+
+[node name="Water2" type="MeshInstance3D" parent="PondNoBase"]
+transform = Transform3D(1.4131066, 0, 0, 0, 0.22299203, 0, 0, 0, 1.4056039, -0.011738777, -0.022881504, 0.023782969)
+mesh = SubResource("PlaneMesh_kq12w")
+skeleton = NodePath("../..")
 
 [node name="Control" type="Control" parent="."]
 z_index = -1
@@ -477,8 +661,8 @@ CoinReward = 3
 transform = Transform3D(-0.9592825, 0.0890422, 0.26804549, 0.047577295, 0.9863883, -0.15739928, -0.27841213, -0.13823752, -0.95046157, -6.8493133, 0.28317276, 8.187019)
 CoinReward = 1
 
+[node name="Fuel_Ads" parent="ItemAll" instance=ExtResource("42_eu6ph")]
+transform = Transform3D(-0.56750536, 0.036927693, 0.8225413, 0.0649329, 0.99788964, -1.8626451e-09, -0.82080543, 0.053409982, -0.5687055, 11.991693, 1.3093314, -11.789692)
+
 [node name="NewsPaper" parent="ItemAll" instance=ExtResource("34_eu6ph")]
 transform = Transform3D(-0.54436153, -0.06735042, 0.83614266, -0.12278743, 0.992433, 0, -0.82981557, -0.102667786, -0.5485121, 11.691956, 1.2602812, -12.252267)
-
-[node name="Fuel_Ads" parent="." instance=ExtResource("42_eu6ph")]
-transform = Transform3D(-0.56750536, 0.036927693, 0.8225413, 0.0649329, 0.99788964, -1.8626451e-09, -0.82080543, 0.053409982, -0.5687055, 11.991693, 1.3093314, -11.789692)

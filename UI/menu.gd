@@ -55,6 +55,7 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("down") and Input.is_action_pressed("shift") and Input.is_action_pressed("ctrl") :
+		Varibles.isFromLoadSaved = false
 		ScenesLoader.load_scene("uid://dm0rxd10m14f3")
 		#get_tree().change_scene_to_file("res://game.tscn")
 		MenuMusic.stopmenumusic()
