@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_lgw4g"]
 size = Vector3(0.38867188, 1.1153946, 0.38500977)
 
-[node name="Apple" type="StaticBody3D"]
+[node name="Apple" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4lw4q")

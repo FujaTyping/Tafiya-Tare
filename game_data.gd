@@ -10,3 +10,4 @@ class_name gameData
 @export var car_fuel : int
 @export var player_selection: String
 @export var collectItem: Array[NodePath]
+@export var miniGameLevel1State : bool

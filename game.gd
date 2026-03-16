@@ -37,6 +37,7 @@ extends Node3D
 @onready var car: VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 @onready var gameInstance: Node3D = self
 @onready var texture_rect: TextureRect = $Control/TextureRect
+@onready var level1Minigame : Node3D = get_tree().current_scene.get_node("StatueOfCatalyst")
 
 # Image set
 @export var dayIcon: CompressedTexture2D
@@ -179,6 +180,7 @@ func saveDat() :
 	data.game_time = gameInstance.getDN()
 	data.player_selection = Varibles.playerSelection
 	data.collectItem = collectedItem
+	data.miniGameLevel1State = level1Minigame.isUsed
 	
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished

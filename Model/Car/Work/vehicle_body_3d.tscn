@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d00jdgildfd4f" path="res://UI/Texture/FuelBg.png" id="9_qbuse"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
+size = Vector3(1, 1.0080566, 1)
 
 [node name="VehicleBody3D" type="VehicleBody3D" groups=["Interaction"]]
 collision_layer = 3
@@ -75,7 +76,7 @@ damping_relaxation = 2.0
 transform = Transform3D(-1, 0, -7.572094e-08, 0, 0.8277551, 0, 8.742278e-08, 0, -0.8661466, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.3032806, 0, 0, 0, 1.3605394, 0, 0, 0, 3.037154, 0.00032175955, -0.18678173, -0.019244011)
+transform = Transform3D(2.3032806, 0, 0, 0, 1.3605394, 0, 0, 0, 3.037154, 0.00032175955, -0.19226243, -0.019244011)
 shape = SubResource("BoxShape3D_3wmsh")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]

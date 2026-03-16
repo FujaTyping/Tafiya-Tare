@@ -18,3 +18,7 @@ var saved_data : gameData
 
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
+	
+func tweenCam(node,property,targetNode,duration) :
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(node, property, targetNode, duration)

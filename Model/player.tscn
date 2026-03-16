@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene load_steps=25 format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
-[ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="2_c8du1"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="3_ieuix"]
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="4_1yulc"]
@@ -356,8 +355,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_5hd5c")
 }
 
-[node name="Pause" parent="." instance=ExtResource("2_c8du1")]
-
 [node name="Walking" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_qsoau")
 volume_db = -20.0
@@ -389,7 +386,7 @@ volume_db = -10.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -6.084655e-08, -1, 0, 1.3920069, -4.371139e-08, 0, -0.110643744, 0)
+transform = Transform3D(1, 0, 0, 0, -0.27311578, -0.98056334, 0, 1.3649509, -0.1962029, 0, -0.3794979, 0)
 collision_mask = 2
 
 [node name="Interact" type="MarginContainer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=75 format=4 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -10,7 +10,6 @@
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="4_vaj68"]
 [ext_resource type="Texture2D" uid="uid://bewbcwlvv167l" path="res://UI/Texture/SaveIcon.png" id="5_xex6t"]
 [ext_resource type="AudioStream" uid="uid://c53hh3y5pe3xm" path="res://Sound/Midnight Mist Drive.mp3" id="6_ryrav"]
-[ext_resource type="PackedScene" uid="uid://ykye4tnm0it7" path="res://UI/quest.tscn" id="6_xa8c5"]
 [ext_resource type="AudioStream" uid="uid://dlinmocgjn065" path="res://Sound/Emerald Oasis Drive.mp3" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bwgom6evidtgx" path="res://Terrain/Tree/tree2.glb" id="8_hve3p"]
 [ext_resource type="PackedScene" uid="uid://04xwde2wwh2x" path="res://Model/WaySign.glb" id="8_iotsf"]
@@ -34,8 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://dc4kohl5jb51e" path="res://Terrain/Log/WoodLog.glb" id="24_i2p71"]
 [ext_resource type="PackedScene" uid="uid://m12kghl86ot7" path="res://Model/Crate.glb" id="25_vaj68"]
 [ext_resource type="PackedScene" uid="uid://348yv8yghgp4" path="res://Model/Village/Villager1 Animation.glb" id="26_5b14r"]
-[ext_resource type="PackedScene" uid="uid://cxfe6aiiyhi7f" path="res://Item/chips.tscn" id="27_5b14r"]
-[ext_resource type="PackedScene" uid="uid://cexawobvrhujg" path="res://Item/coke_can.tscn" id="28_5b14r"]
 [ext_resource type="PackedScene" uid="uid://d3lui4rtyxcu" path="res://Item/trash_bag.tscn" id="29_bnpwn"]
 [ext_resource type="PackedScene" uid="uid://03cpm1d8s7dn" path="res://Item/bottle.tscn" id="30_36jdj"]
 [ext_resource type="PackedScene" uid="uid://5g4bkxju8e3x" path="res://Item/apple.tscn" id="31_xfvwf"]
@@ -49,6 +46,8 @@
 [ext_resource type="PackedScene" uid="uid://cpxutwmwlv5xe" path="res://Terrain/PondNoBase.glb" id="44_kq12w"]
 [ext_resource type="PackedScene" uid="uid://cnnq5bl7ii2mu" path="res://Terrain/WaterFall.glb" id="45_t46w6"]
 [ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="49_87ddb"]
+[ext_resource type="PackedScene" uid="uid://des4vigigk2pd" path="res://Model/Statue/statue_of_catalyst.tscn" id="50_mljfx"]
+[ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="50_qpefm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -622,14 +621,8 @@ libraries = {
 [node name="Dialoges" parent="." instance=ExtResource("13_215e1")]
 visible = false
 
-[node name="Quest" parent="." instance=ExtResource("6_xa8c5")]
-visible = false
-
 [node name="ViewPaper" parent="." instance=ExtResource("9_edr7y")]
 visible = false
-
-[node name="player" parent="." instance=ExtResource("1_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1376195, 1.9775217, 0)
 
 [node name="DayNight" type="AnimationPlayer" parent="."]
 libraries = {
@@ -776,9 +769,6 @@ transform = Transform3D(0.43306673, 0, 0.2508872, 0, 0.64651465, 0, -0.31617996,
 [node name="missionBoard" parent="AssetsTerrain" instance=ExtResource("39_l1i01")]
 transform = Transform3D(-0.23646045, -0.028242555, 0.13966356, -0.012224959, 0.39513916, 0.011190702, -0.35824347, 0.005157633, -0.09256754, 12.105214, -0.0062725097, -11.926379)
 
-[node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
-
 [node name="DialogeTriggers" type="Node3D" parent="."]
 
 [node name="DialogeTrigged" parent="DialogeTriggers" node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
@@ -794,27 +784,19 @@ saveAfter = true
 [node name="ItemAll" type="Node3D" parent="."]
 
 [node name="TrashBag" parent="ItemAll" instance=ExtResource("29_bnpwn")]
-transform = Transform3D(-0.4182001, 0, 0.90835494, 0, 1, 0, -0.90835494, 0, -0.4182001, -1.8311251, 0.38323092, -16.613436)
+transform = Transform3D(-0.4182001, 0, 0.90835494, 0, 1, 0, -0.90835494, 0, -0.4182001, -1.8311251, 0.37867546, -16.613436)
 CoinReward = 15
 
-[node name="chips" parent="ItemAll" instance=ExtResource("27_5b14r")]
-transform = Transform3D(0.98697114, -0.16089761, -1.8520884e-09, 0.15715148, 0.9639917, 0.21453077, -0.034517493, -0.21173568, 0.97671723, 11.393917, 0.31012565, -10.428252)
-CoinReward = 5
-
-[node name="CokeCan" parent="ItemAll" instance=ExtResource("28_5b14r")]
-transform = Transform3D(0.72007895, 0, 0.6938921, -0.11537321, 0.98608035, 0.11972728, -0.68423337, -0.16626966, 0.7100557, 11.212196, 0.42407525, -9.894573)
-CoinReward = 10
-
 [node name="Bottle" parent="ItemAll" instance=ExtResource("30_36jdj")]
-transform = Transform3D(-0.047179803, 0.06636928, -0.9966792, -0.08880187, 0.99356073, 0.070365265, 0.9949312, 0.09182674, -0.040982284, 10.961126, 0.5088601, -4.790741)
+transform = Transform3D(-0.047179803, 0.06636928, -0.9966792, -0.08880187, 0.99356073, 0.070365265, 0.9949312, 0.09182674, -0.040982284, 10.960824, 0.504334, -4.7911596)
 CoinReward = 7
 
 [node name="Apple" parent="ItemAll" instance=ExtResource("31_xfvwf")]
-transform = Transform3D(0.7761956, 0.28165492, 0.56408405, -0.11731644, 0.94356734, -0.3097054, -0.61948144, 0.17421563, 0.7654357, -9.321548, 0.62985426, -2.0215745)
+transform = Transform3D(0.7761956, 0.28165492, 0.56408405, -0.11731644, 0.94356734, -0.3097054, -0.61948144, 0.17421563, 0.7654357, -9.322831, 0.6255558, -2.022368)
 CoinReward = 3
 
 [node name="fishBone" parent="ItemAll" instance=ExtResource("32_dhpj7")]
-transform = Transform3D(-0.9592825, 0.0890422, 0.26804549, 0.047577295, 0.9863883, -0.15739928, -0.27841213, -0.13823752, -0.95046157, -6.8493133, 0.28317276, 8.187019)
+transform = Transform3D(-0.9592825, 0.0890422, 0.26804549, 0.047577295, 0.9863883, -0.15739928, -0.27841213, -0.13823752, -0.95046157, -6.8497186, 0.2786793, 8.18765)
 CoinReward = 1
 
 [node name="Fuel_Ads" parent="ItemAll" instance=ExtResource("42_eu6ph")]
@@ -823,4 +805,18 @@ transform = Transform3D(-0.56750536, 0.036927693, 0.8225413, 0.0649329, 0.997889
 [node name="NewsPaper" parent="ItemAll" instance=ExtResource("34_eu6ph")]
 transform = Transform3D(-0.54436153, -0.06735042, 0.83614266, -0.12278743, 0.992433, 0, -0.82981557, -0.102667786, -0.5485121, 11.691956, 1.2602812, -12.252267)
 
+[node name="player" parent="." instance=ExtResource("1_e2o6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7237935, 1.9775217, -10.718853)
+
+[node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
+
+[node name="StatueOfCatalyst" parent="." instance=ExtResource("50_mljfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.08801, 1.1061949, -1.1220629)
+RewardItem = ExtResource("32_dhpj7")
+
+[node name="Pause" parent="." instance=ExtResource("50_qpefm")]
+
 [editable path="WaterFall"]
+[editable path="StatueOfCatalyst"]
+[editable path="StatueOfCatalyst/StatueL"]
