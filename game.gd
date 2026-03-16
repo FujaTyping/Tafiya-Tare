@@ -23,6 +23,7 @@ extends Node3D
 @onready var dn: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer/DN
 @onready var time: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer/Time
 @onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
+@onready var waterFlow = get_tree().get_nodes_in_group("waterFlow")
 @onready var carInstant : VehicleBody3D = $VehicleBody3D
 
 @onready var sun: DirectionalLight3D = $Sun
@@ -133,6 +134,8 @@ func _day_change_animation():
 			#sun.visible = false
 			for light in everyNightLight :
 				light.visible = true
+			for patical:GPUParticles3D in waterFlow :
+				patical.process_material.color = "ffffff05"
 	else :
 		if not day_bgm.playing :
 			#sun.visible = true
@@ -143,6 +146,8 @@ func _day_change_animation():
 			night_bgm.stop()
 			for light in everyNightLight :
 				light.visible = false
+			for patical:GPUParticles3D in waterFlow :
+				patical.process_material.color = "ffffffb4"
 
 func getDN() :
 	return day_night.current_animation_position

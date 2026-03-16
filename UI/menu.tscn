@@ -266,7 +266,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.13918024, 0.012961894, 0.9901792, 0, 0.99991435, -0.013089253, -0.99026394, 0.0018217764, 0.13916832, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918023, 0.012961894, 0.9901792, 0, 0.99991435, -0.013089253, -0.99026394, 0.0018217764, 0.13916832, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -513,6 +513,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Dat's Wrong! by Beetlemuse -- https://freesound.org/s/587253/ -- License: Attribution 4.0"
+
+[node name="Label10" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "small_water_fall_in_the_woods_2.wav by volivieri -- https://freesound.org/s/38390/ -- License: Attribution 4.0"
 
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
 visible = false
