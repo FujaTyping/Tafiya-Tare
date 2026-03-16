@@ -386,7 +386,12 @@ volume_db = -10.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.27311578, -0.98056334, 0, 1.3649509, -0.1962029, 0, -0.3794979, 0)
+transform = Transform3D(1, 0, 0, 0, -0.6361106, -0.8894802, 0, 1.2381625, -0.4569738, 0, -0.47261807, -0.15921128)
+collision_mask = 2
+
+[node name="LookingCastUp" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.35092932, -0.9677003, 0, 1.3470454, -0.25210315, 0, -0.20638645, 0)
+visible = false
 collision_mask = 2
 
 [node name="Interact" type="MarginContainer" parent="."]

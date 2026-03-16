@@ -14,7 +14,8 @@
 size = Vector3(1, 1.0080566, 1)
 
 [node name="VehicleBody3D" type="VehicleBody3D" groups=["Interaction"]]
-collision_layer = 3
+collision_layer = 2
+collision_mask = 3
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
