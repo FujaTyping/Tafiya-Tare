@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://des4vigigk2pd"]
+[gd_scene load_steps=15 format=3 uid="uid://des4vigigk2pd"]
 
 [ext_resource type="PackedScene" uid="uid://badtt32ivc0l1" path="res://Model/Statue/StatueL.glb" id="1_7epxp"]
 [ext_resource type="Script" uid="uid://crw65xfb86trh" path="res://Model/Statue/statue_of_catalyst.gd" id="1_dmw5n"]
+[ext_resource type="Texture2D" uid="uid://deukxeb2t18a6" path="res://UI/Texture/MiniStatueBg.png" id="2_sw38c"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_wusbh"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="3_161kg"]
 [ext_resource type="AudioStream" uid="uid://xnvnbbtmojot" path="res://SFX/rockMoving.wav" id="5_8qyid"]
+[ext_resource type="Texture2D" uid="uid://cbq5r2v7bs14s" path="res://UI/Texture/pencilIcon.png" id="5_wbtqi"]
 [ext_resource type="AudioStream" uid="uid://diw2mvbg2afrn" path="res://SFX/sparkle.wav" id="6_sw38c"]
+[ext_resource type="Texture2D" uid="uid://c6fplpr2vedte" path="res://UI/Texture/BackIcon.png" id="6_vhihj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_161kg"]
 
@@ -25,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Transform2D(1.885, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
+"values": [Transform2D(2.05, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nvj68"]
@@ -57,6 +60,7 @@ layer = 0
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -69,6 +73,15 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 color = Color(1, 1, 1, 0.22745098)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.23921569)
+offset_left = 1024.0
+offset_top = 331.0
+offset_right = 1931.0
+offset_bottom = 776.0
+texture = ExtResource("2_sw38c")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
@@ -90,10 +103,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
-offset_left = 1064.0
-offset_top = 370.0
-offset_right = 1920.0
-offset_bottom = 656.0
+offset_left = 1079.0
+offset_top = 388.0
+offset_right = 1904.0
+offset_bottom = 730.0
 focus_neighbor_bottom = NodePath("../HBoxContainer/Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
@@ -105,6 +118,7 @@ alignment = 1
 clear_button_enabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -152,6 +166,25 @@ theme_override_fonts/font = ExtResource("3_161kg")
 theme_override_font_sizes/font_size = 20
 text = "MINIGAME_LEVEL_1_LIMIT_PLAY"
 horizontal_alignment = 1
+
+[node name="Write" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1784.0
+offset_top = 590.0
+offset_right = 1917.0
+offset_bottom = 732.0
+texture_normal = ExtResource("5_wbtqi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1091.0
+offset_top = 774.0
+offset_right = 1192.1819
+offset_bottom = 876.9092
+rotation = -3.1415927
+texture_normal = ExtResource("6_vhihj")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="StatueL" parent="." instance=ExtResource("1_7epxp")]
 transform = Transform3D(-1.4950032e-08, 0, 0.3599136, 0, 0.39428616, 0, -0.34201688, 0, -1.5732322e-08, 0, 0, 0)
@@ -211,6 +244,8 @@ bus = &"SFX"
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Write" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_close_pressed"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 
