@@ -80,12 +80,12 @@ func _input(event):
 	
 	if Input.is_action_pressed("scrollDown") :
 		if pivot.spring_length < 2.20000004768372 :
-			pivot.spring_length += 0.5
+			pivot.spring_length += 0.25
 	if Input.is_action_pressed("scrollUp") :
 		if pivot.spring_length > -0.29999995231628 :
-			pivot.spring_length -= 0.5
+			pivot.spring_length -= 0.25
 		
-	if Input.is_action_just_pressed("Help") :
+	if Input.is_action_just_pressed("Help") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
 		if not tutorial.visible :
 			tutorial.visible = true
 			control_sh.play("ShowH")

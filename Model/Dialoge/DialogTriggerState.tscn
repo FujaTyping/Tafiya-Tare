@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsrn5mdufc2ee"]
+
+[ext_resource type="Script" uid="uid://c6pr4vesx001o" path="res://Model/Dialoge/dialog_trigger.gd" id="1_ygo6r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t52wg"]
+radius = 0.6640625
+
+[node name="DialogeTrigged" type="Node3D"]
+script = ExtResource("1_ygo6r")
+
+[node name="Trigger" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_t52wg")
+
+[connection signal="body_entered" from="Trigger" to="." method="startDialoge"]

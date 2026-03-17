@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x0nwxuls06g4"]
+[gd_scene load_steps=14 format=3 uid="uid://x0nwxuls06g4"]
 
 [ext_resource type="Texture2D" uid="uid://d0a5h8p0qtlq6" path="res://UI/Texture/DialogeBg.png" id="1_5w7iy"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="1_7ll08"]
@@ -6,12 +6,14 @@
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_il1we"]
 [ext_resource type="Texture2D" uid="uid://e2nnohl7ydrk" path="res://UI/Texture/DialogSpeakerBg.png" id="4_gxqm6"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxqm6"]
+
 [sub_resource type="Animation" id="Animation_h03or"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MarginContainer/Dialoge:visible_ratio")
+tracks/0/path = NodePath("CanvasLayer/Dialoge:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,15 +25,14 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mr2uq"]
 resource_name = "Writer"
-length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MarginContainer/Dialoge:visible_ratio")
+tracks/0/path = NodePath("CanvasLayer/Dialoge:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -117,28 +118,31 @@ offset_right = 1653.0
 offset_bottom = 1052.0
 texture = ExtResource("1_5w7iy")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 280.0
-offset_top = 838.0
-offset_right = -304.0
-offset_bottom = -86.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer/MarginContainer"]
-layout_mode = 2
+[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 295.0
+offset_top = 853.0
+offset_right = 1601.0
+offset_bottom = 990.0
 theme_override_fonts/normal_font = ExtResource("1_7ll08")
 theme_override_font_sizes/normal_font_size = 28
 text = "Speaker Text..."
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+visible = false
+offset_left = 295.0
+offset_top = 853.0
+offset_right = 1601.0
+offset_bottom = 990.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7ll08")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gxqm6")
+placeholder_text = "TEXTAREA_PLACEHOLDER"
+alignment = 1
+clear_button_enabled = true
 
 [node name="Next" type="Button" parent="CanvasLayer"]
 visible = false

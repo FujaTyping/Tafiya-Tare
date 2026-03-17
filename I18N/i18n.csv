@@ -20,11 +20,16 @@ RESUME_BUTTON,Resume,เล่นต่อ
 BACK_TO_MENU_BUTTON,Back to menu,กลับไปหน้าเมนู
 CONTINUE_BUTTON,Continue,ต่อไป
 PLAYER_DIALOGE_NAME,Player,ผู้เล่น
-DIALOGE_1_1,Hello player !,สวัสดี ผู้เล่น !
-DIALOGE_1_2,It is believed that those who bathe in the elixir of immortality will be cured of their illness.,เข้าว่ากันว่าคนที่ได้แช่น้ำอมฤตแล้วจะอยู่ได้ตลอดการไม่มีวันเจ็บป่วย
-DIALOGE_1_3,Are you bragging? I don't believe it.,โม้ป่าว ไม่เชื่อ
-DIALOGE_1_4,"I'm not bragging, I'm telling the truth.",ไม่ได้โม้ พูดจริง
-DIALOGE_1_5,Ok,โอเค
+DIALOGE_1_1,"Hello, Traveler!",สวัสดี นักเดินทาง!
+DIALOGE_1_2,"Everyone has their own destination... so, what is it that you desire?",ทุกคนย่อมมี จุดหมาย เป็นของตนเอง... แล้วคุณหล่ะ ปรารถนาสิ่งใด
+DIALOGE_1_3,How much do you want it?,คุณต้องการมากแค่ไหน?
+DIALOGE_1_4,I want it very much,ต้องการมาก
+DIALOGE_1_5,How confident are you in yourself?,คุณมั่นใจในตนเองมากแค่ไหน?
+DIALOGE_1_6,I am most confident,มั่นใจมากที่สุด
+DIALOGE_1_7,"Believe in your goals and in yourself. Anything can happen, as long as there is still a tomorrow to use!",จงเชื่อในเป้าหมายและตัวของคุณเอง อะไรก็เกิดขึ้นได้ หากพรุ่งนี้ยังมีให้ใช้!
+DIALOGE_1_TEXT_PLACEHOLDER,Write down your goals...,เขียนเป้าหมายของคุณ...
+DIALOGE_2_1,What is this statue?,นี้มันเป็นรูปปั้นอะไรกัน?
+DIALOGE_2_2,It looks like it's a symbol of the City of Faith,ดูเหมือนว่ามันจะเป็นสัญลักษณ์ของ เมืองแห่งศรัทธา
 TIME_MORNING,Morning,ตอนเช้า
 TIME_DAY,Day,กลางวัน
 TIME_AFTERNOON,Afternoon,ตอนเย็น

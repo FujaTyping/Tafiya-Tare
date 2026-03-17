@@ -773,13 +773,20 @@ transform = Transform3D(-0.23646045, -0.028242555, 0.13966356, -0.012224959, 0.3
 
 [node name="DialogeTrigged" parent="DialogeTriggers" node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.283724, 0.4474063, 16.539227)
-dialoguesLine = Array[String](["DIALOGE_1_1", "DIALOGE_1_2", "DIALOGE_1_3", "DIALOGE_1_4", "DIALOGE_1_5"])
-charLine = Array[String](["VILLAGER_BEN", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME"])
+dialoguesLine = Array[String](["DIALOGE_1_1", "DIALOGE_1_2", "[INPUT]", "[RESULT]", "DIALOGE_1_3", "DIALOGE_1_4", "DIALOGE_1_5", "DIALOGE_1_6", "DIALOGE_1_7"])
+charLine = Array[String](["VILLAGER_BEN", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME", "VILLAGER_BEN", "PLAYER_DIALOGE_NAME", "VILLAGER_BEN"])
 isBody = true
 animationBody = NodePath("../../AssetsTerrain/Villager1 Animation")
 helloAnimation = "ArmatureAction"
 talkingAnimation = "ArmatureAction_001"
 saveAfter = true
+useTyping = true
+typingPlaceholder = "DIALOGE_1_TEXT_PLACEHOLDER"
+
+[node name="DialogeTrigged2" parent="DialogeTriggers" instance=ExtResource("13_7sc4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.12141, 0.16264407, -0.2640612)
+dialoguesLine = Array[String](["DIALOGE_2_1", "DIALOGE_2_2"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
 
 [node name="ItemAll" type="Node3D" parent="."]
 
