@@ -109,6 +109,7 @@ func display_current_line():
 		typingEffect.play("Writer")
 		
 		if isBody and animationBody:
-			var ap = animationBody.get_node("AnimationPlayer")
-			if not ap.is_playing():
-				ap.play(talkingAnimation)
+			if not spearker_name.text == "PLAYER_DIALOGE_NAME" :
+				var ap = animationBody.get_node("AnimationPlayer")
+				if not ap.is_playing():
+					ap.play(talkingAnimation)
