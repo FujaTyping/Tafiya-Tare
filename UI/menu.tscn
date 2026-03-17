@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bk2eqtj4bowsx"]
+[gd_scene load_steps=23 format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1930, 0), Vector2(1244, 0)]
+"values": [Vector2(1930, 0), Vector2(1202.88, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_kfjwn"]
@@ -115,7 +115,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1244, 0), Vector2(1930, 0)]
+"values": [Vector2(1202.88, 0), Vector2(1930, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_4hkxj"]
@@ -166,7 +166,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1244, 0)]
+"values": [Vector2(1202.88, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qmqfe"]
@@ -233,6 +233,43 @@ _data = {
 &"RESET": SubResource("Animation_cvc1e")
 }
 
+[sub_resource type="Animation" id="Animation_1qvof"]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("License:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1090), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wcfn6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("License:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vso1l"]
+_data = {
+&"In": SubResource("Animation_1qvof"),
+&"RESET": SubResource("Animation_wcfn6")
+}
+
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -275,8 +312,8 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -676.0
-offset_right = -16.0
+offset_left = -717.12
+offset_right = -6.119385
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -385,6 +422,16 @@ mouse_default_cursor_shape = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CREDIT_BUTTON"
+
+[node name="LinkButton3" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_neighbor_left = NodePath("../LinkButton")
+mouse_default_cursor_shape = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "LICENSE_BUTTON"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer2"]
 layout_mode = 2
@@ -581,6 +628,105 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
+[node name="License" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="ColorRect" type="ColorRect" parent="License"]
+layout_mode = 2
+color = Color(1, 1, 1, 0.14901961)
+
+[node name="MarginContainer3" type="MarginContainer" parent="License"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 140
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="Label" parent="License/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kfjwn")
+theme_override_font_sizes/font_size = 48
+text = "LICENSE_BUTTON"
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="License"]
+layout_mode = 2
+theme_override_constants/margin_left = 480
+theme_override_constants/margin_top = 295
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 155
+
+[node name="ScrollContainer" type="ScrollContainer" parent="License/MarginContainer2"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="License/MarginContainer2/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="License/MarginContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "ข้อตกลงในการใช้ซอฟต์แวร์   
+ซอฟต์แวร์นี้เป็นผลงานที่พัฒนาขึ้นโดย สิรภพ สุขชู, ธาราวดี ศรีอ่อน   
+และ พรรษสรณ์ ทองนวลอินทร์  จาก โรงเรียนหาดใหญ่วิทยาลัย   
+ภายใต้การ ดูแลของ อนุรักษ์ ปานบุญ ภายใต้โครงการ Tafiya Tare   
+ซึ่งสนับสนุนโดย สานักงาน พัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ   
+โดยมีวัตถุประสงค์เพื่อส่งเสริมให้นักเรียนและ นักศึกษาได้เรียนรู้และ  
+ฝึกทักษะในการพัฒนาซอฟต์แวร์ ลิขสิทธิ์ของซอฟต์แวร์นี้จึงเป็นของ   
+ผู้พัฒนา ซึ่งผู้พัฒนาได้อนุญาตให้สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ   
+เผยแพร่ซอฟต์แวร์นี้ตาม “ต้นฉบับ” โดยไม่มีการแก้ไขดัดแปลงใด ๆ ทั้งสิ้น ให้แก่บุคคลทั่วไป   
+ได้ใช้เพื่อประโยชน์ส่วนบุคคลหรือประโยชน์ทางการศึกษาที่ไม่มีวัตถุประสงค์ในเชิงพาณิชย์  
+โดยไม่คิดค่าตอบแทนการใช้ซอฟต์แวร์ ดังนั้น สานักงานพัฒนาวิทยาศาสตร์และเทคโนโลยี   
+แห่งชาติ จึงไม่มีหน้าที่ในการดูแล บำรุงรักษา จัดการอบรมการใช้งาน หรือพัฒนา   
+ประสิทธิภาพซอฟต์แวร์ รวมทั้งไม่รับรองความถูกต้องหรือประสิทธิภาพการทำงานของ   
+ซอฟต์แวร์ ตลอดจนไม่รับประกันความเสียหายต่าง ๆ อันเกิดจากการใช้ซอฟต์แวร์นี้ทั้งสิ้น
+
+License Agreement   
+This software is a work developed by Sirapop Sukchu, Tharawadee Srion,   
+and Phansorn Thongnuanin from Hatyaiwittayalai school under   
+the provision of Anurak Panbun under Tafiya Tare, which has been supported by  
+ the National Science and Technology Development Agency (NSTDA), in order to   
+encourage pupils and students to learn and practice their skills in developing software.   
+Therefore, the intellectual property of this software shall belong to the developer and   
+the developer gives NSTDA a permission to distribute this software as an “as is” and   
+non-modified software for a temporary and non -exclusive use without remuneration  
+to anyone for his or her own purpose or academic purpose, which are not commercial purposes.  
+In this connection, NSTDA shall not be responsible to the user for taking care, maintaining,  
+training, or developing the efficiency of this software. Moreover, NSTDA shall not be liable  
+for any error, software efficiency and damages in connection with or arising out of the use of the software.”"
+
+[node name="MarginContainer" type="MarginContainer" parent="License"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CloseCredit" type="Button" parent="License/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "CLOSE_BUTTON"
+
 [node name="Option" type="MarginContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -762,13 +908,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_1qvof")
 }
 
+[node name="LicenseAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vso1l")
+}
+
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Load" to="." method="_on_play_2_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/LinkButton2" to="." method="_on_link_button_2_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/LinkButton3" to="." method="_on_link_button_3_pressed"]
 [connection signal="pressed" from="Credit/MarginContainer/CloseCredit" to="." method="_on_close_credit_pressed"]
+[connection signal="pressed" from="License/MarginContainer/CloseCredit" to="." method="_on_close_license_pressed"]
 [connection signal="value_changed" from="Option/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="item_selected" from="Option/VBoxContainer/VBoxContainer/HBoxContainer6/FPSSelector" to="." method="_on_fps_selector_item_selected"]
 [connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]

@@ -23,6 +23,9 @@ extends Control
 @onready var fps_selector: OptionButton = $Option/VBoxContainer/VBoxContainer/HBoxContainer6/FPSSelector
 @onready var version: Label = $Main/VBoxContainer2/HBoxContainer/Version
 @onready var load: Button = $Main/VBoxContainer/VBoxContainer/Load
+@onready var license_animation: AnimationPlayer = $LicenseAnimation
+@onready var license: MarginContainer = $License
+@onready var close_lisense: Button = $License/MarginContainer/CloseCredit
 
 const fpsList = [30,60,120]
 const langList = ["en","th","jp"]
@@ -159,3 +162,20 @@ func saveSetting() :
 	data.musicEnable = Varibles.BGM
 	
 	ResourceSaver.save(data,"user://setting_data.tres")
+
+
+func _on_link_button_3_pressed() -> void:
+	menu_animation.play("MenuOut")
+	license.visible = true
+	license_animation.play("In")
+	await license_animation.animation_finished
+	main.visible = false
+	close_lisense.grab_focus()
+
+func _on_close_license_pressed() -> void:
+	menu_animation.play("MenuIn")
+	main.visible = true
+	license_animation.play_backwards("In")
+	await license_animation.animation_finished
+	license.visible = false
+	play.grab_focus()
