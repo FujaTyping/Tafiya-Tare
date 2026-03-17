@@ -316,7 +316,7 @@ theme_override_constants/separation = 15
 
 [node name="Play" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../Option")
+focus_neighbor_bottom = NodePath("../Load")
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "PLAY_BUTTON"
@@ -324,6 +324,7 @@ text = "PLAY_BUTTON"
 [node name="Load" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Option")
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
@@ -331,7 +332,7 @@ text = "BUTTON_LOAD"
 
 [node name="Option" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Play")
+focus_neighbor_top = NodePath("../Load")
 focus_neighbor_bottom = NodePath("../Credit")
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
@@ -349,6 +350,7 @@ text = "CREDIT_BUTTON"
 [node name="Quit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credit")
+focus_neighbor_bottom = NodePath("../../../VBoxContainer2/HBoxContainer2/LinkButton")
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "QUIT_BUTTON"
@@ -367,6 +369,7 @@ theme_override_constants/separation = 39
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+focus_neighbor_right = NodePath("../LinkButton2")
 mouse_default_cursor_shape = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
@@ -377,6 +380,7 @@ uri = "https://nas.siraphop.me/apps/forms/s/Czofop4CWsGpxkqGx3ZX8esf"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+focus_neighbor_left = NodePath("../LinkButton")
 mouse_default_cursor_shape = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
@@ -723,11 +727,13 @@ size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 20
 selected = 0
-item_count = 2
+item_count = 3
 popup/item_0/text = "English"
 popup/item_0/id = 0
 popup/item_1/text = "ภาษาไทย"
 popup/item_1/id = 1
+popup/item_2/text = "日本語"
+popup/item_2/id = 2
 
 [node name="CloseOption" type="Button" parent="Option/VBoxContainer"]
 layout_mode = 2

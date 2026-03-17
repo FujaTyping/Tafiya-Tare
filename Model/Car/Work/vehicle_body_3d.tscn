@@ -26,6 +26,7 @@ transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 0.0
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 1.1684117, -0.8647407, 1.4326421)
+use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.44
@@ -39,6 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, -1.1656625, -0.8647407, 1.4326421)
+use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.44

@@ -21,6 +21,8 @@ var isHelloplaying
 var current_dialogue = -1
 var started = false
 
+var playerSpeedBefore:float = 0.0
+
 func _ready() -> void:
 	dialogCanvas.get_node("TNext").connect("pressed", Callable(self,"continume_dialoge"))
 
@@ -28,6 +30,7 @@ func startDialoge(body):
 	if body == player and not started :
 		started = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		playerSpeedBefore = player.SPEED
 		player.SPEED = 0.0
 		#player.sens = 0.0
 		dialogCanvas.visible = true
@@ -40,7 +43,7 @@ func startDialoge(body):
 		continume_dialoge()
 		
 func endDialoge() :
-		player.SPEED = 3.0
+		player.SPEED = playerSpeedBefore
 		#player.sens = 0.2
 		AniIO.play("Out")
 		await AniIO.animation_finished
@@ -53,6 +56,9 @@ func endDialoge() :
 			var gameInstance = get_tree().current_scene
 			gameInstance.saveDat()
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("interaction") and started :
+		continume_dialoge()
 
 func continume_dialoge() :
 	current_dialogue += 1

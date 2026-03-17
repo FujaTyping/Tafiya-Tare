@@ -25,15 +25,13 @@ extends Control
 @onready var load: Button = $Main/VBoxContainer/VBoxContainer/Load
 
 const fpsList = [30,60,120]
+const langList = ["en","th","jp"]
 
 func _ready():
 	if FileAccess.file_exists("user://setting_data.tres") :
 		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
 		Varibles.LangIndex = data.languageIndex
-		if data.languageIndex == 0 :
-			TranslationServer.set_locale("en")
-		else :
-			TranslationServer.set_locale("th")
+		TranslationServer.set_locale(langList[data.languageIndex])
 		Varibles.MouseSens = data.camSens
 		_on_fps_selector_item_selected(data.gameFPSIndex)
 		_on_check_button_toggled(data.musicEnable)
@@ -124,10 +122,7 @@ func _on_s_check_button_toggled(toggled_on: bool) -> void:
 
 func _on_option_button_item_selected(index: int) -> void:
 	Varibles.LangIndex = index
-	if index == 0 :
-		TranslationServer.set_locale("en")
-	else :
-		TranslationServer.set_locale("th")
+	TranslationServer.set_locale(langList[index])
 
 
 func _on_cn_check_button_toggled(toggled_on: bool) -> void:

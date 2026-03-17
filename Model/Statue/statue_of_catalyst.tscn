@@ -94,6 +94,7 @@ offset_left = 1064.0
 offset_top = 370.0
 offset_right = 1920.0
 offset_bottom = 656.0
+focus_neighbor_bottom = NodePath("../HBoxContainer/Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_161kg")
@@ -120,6 +121,8 @@ theme_override_constants/separation = 29
 [node name="Close" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../../LineEdit")
+focus_neighbor_right = NodePath("../Button")
 theme_override_fonts/font = ExtResource("3_161kg")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
@@ -127,9 +130,28 @@ text = "CLOSE_BUTTON"
 [node name="Button" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Close")
+focus_neighbor_top = NodePath("../../LineEdit")
 theme_override_fonts/font = ExtResource("3_161kg")
 theme_override_font_sizes/font_size = 24
 text = "SUBMIT_BUTTON"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -842.0
+offset_top = 226.0
+offset_right = -18.0
+offset_bottom = 253.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_161kg")
+theme_override_font_sizes/font_size = 20
+text = "MINIGAME_LEVEL_1_LIMIT_PLAY"
+horizontal_alignment = 1
 
 [node name="StatueL" parent="." instance=ExtResource("1_7epxp")]
 transform = Transform3D(-1.4950032e-08, 0, 0.3599136, 0, 0.39428616, 0, -0.34201688, 0, -1.5732322e-08, 0, 0, 0)

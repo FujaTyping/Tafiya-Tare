@@ -34,6 +34,7 @@ extends Node3D
 
 # Save Stuff
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("player")
+@onready var playerCamPivot: SpringArm3D = player.get_node("SpringArm3D")
 @onready var car: VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 @onready var gameInstance: Node3D = self
 @onready var texture_rect: TextureRect = $Control/TextureRect
@@ -173,6 +174,7 @@ func saveDat() :
 	var data = gameData.new()
 	data.player_position = player.global_position
 	data.player_rotation = player.rotation_degrees
+	data.playerSpeed = player.DSPEED
 	data.car_position = car.global_position
 	data.car_rotation = car.rotation_degrees
 	data.car_fuel = car.carFuel
@@ -181,6 +183,7 @@ func saveDat() :
 	data.player_selection = Varibles.playerSelection
 	data.collectItem = collectedItem
 	data.miniGameLevel1State = level1Minigame.isUsed
+	data.playerSpringArmLength = playerCamPivot.spring_length
 	
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished

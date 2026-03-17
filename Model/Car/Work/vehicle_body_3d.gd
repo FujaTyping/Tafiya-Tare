@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
-var max_RPM = 500
-var max_torque = 300
+var max_RPM = 200 # 500
+var max_torque = 80 # 300
 var turn_speed = 3
 var turn_amount = 0.3
 var carFuel = 50

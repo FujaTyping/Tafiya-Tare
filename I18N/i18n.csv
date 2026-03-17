@@ -58,6 +58,8 @@ CONTROL_D,Move right,เดินไปทางขวา
 CONTROL_E,Interaction,โต้ตอบ
 CONTROL_H,Show control,แสดงการควบคุม
 CONTROL_ESC,Pause game,หยุดเกมชั่วคราว
+CONTROL_MOUSE_SCROLL,Mouse scroll,ลูกกลิ้งเมาส์
+CONTROL_ZOOM_CAMERA,Zoom camera in/out,ซูมกล้องเข้า/ออก
 UI_CONTROL_HIDE,Press H to hide,กด H เพื่อซ่อน
 CONTROL_ALT,Show cursor,แสดงเคอร์เซอร์
 ON_INTERACTION_VIEW,Press E to view,กด E เพื่อดู
@@ -65,3 +67,4 @@ UI_IMAGE_VIEW_CLOSE,Press E to close,กด E เพื่อปิด
 SUBMIT_BUTTON,Submit,ส่ง
 TEXTAREA_PLACEHOLDER,Type something...,เขียนอะไรสักอย่าง...
 MINIGAME_LEVEL_1_TITLE,Let it out,ปล่อยมันออกมา
+MINIGAME_LEVEL_1_LIMIT_PLAY,The statue can only be used once,สามารถใช้รูปปั้นได้แค่ครั้งเดียวเท่านั้น

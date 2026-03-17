@@ -11,3 +11,5 @@ class_name gameData
 @export var player_selection: String
 @export var collectItem: Array[NodePath]
 @export var miniGameLevel1State : bool
+@export var playerSpringArmLength: float
+@export var playerSpeed: float

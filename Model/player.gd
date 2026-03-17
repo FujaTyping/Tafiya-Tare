@@ -1,15 +1,16 @@
 extends CharacterBody3D
 
-var SPEED = 3.0
+var DSPEED = 2.5
+var SPEED = 0
 var JUMP_VELOCITY = 4.0
 
-@onready var pivot = $CamOrigin
+@onready var pivot = $SpringArm3D
 @export var sens = 0.2
 @export var joy_sens = 3.0
 @onready var walking: AudioStreamPlayer3D = $Walking
 @onready var jump: AudioStreamPlayer3D = $Jump
 
-@onready var camera_3d: Camera3D = $CamOrigin/SpringArm3D/Camera3D
+@onready var camera_3d: Camera3D = $SpringArm3D/Camera3D
 @onready var animation_player: AnimationPlayer = $playerAnimation/AnimationPlayer
 @onready var animation_player_j: AnimationPlayer = $playerAnimation/AnimationPlayerJ
 #@onready var animation_player_i: AnimationPlayer = $playerAnimation/AnimationPlayerI
@@ -54,7 +55,10 @@ func _ready():
 	if Varibles.isFromLoadSaved :
 		self.global_position = Varibles.saved_data.player_position
 		self.rotation_degrees = Varibles.saved_data.player_rotation
+		pivot.spring_length = Varibles.saved_data.playerSpringArmLength
 		Varibles.Coins = Varibles.saved_data.player_coins
+		DSPEED = Varibles.saved_data.playerSpeed
+	SPEED = DSPEED
 	sens = Varibles.MouseSens
 	if Varibles.playerSelection == "joker" :
 		player_animation.visible = true
@@ -74,6 +78,13 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	if Input.is_action_pressed("scrollDown") :
+		if pivot.spring_length < 2.20000004768372 :
+			pivot.spring_length += 0.5
+	if Input.is_action_pressed("scrollUp") :
+		if pivot.spring_length > -0.29999995231628 :
+			pivot.spring_length -= 0.5
+		
 	if Input.is_action_just_pressed("Help") :
 		if not tutorial.visible :
 			tutorial.visible = true

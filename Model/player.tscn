@@ -173,15 +173,12 @@ visible = false
 transform = Transform3D(0.738862, 0, 0, 0, 0.7011021, 0, 0, 0, 0.71398246, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_4flbx")
 
-[node name="CamOrigin" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4666838, 0)
-
-[node name="SpringArm3D" type="SpringArm3D" parent="CamOrigin"]
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.467, 0)
 spring_length = 1.2
 margin = 0.5
 
-[node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.3043615)
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
 [node name="Tutorial" type="MarginContainer" parent="."]
 visible = false
@@ -343,6 +340,22 @@ theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_ALT"
 
+[node name="HBoxContainer9" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer9"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_MOUSE_SCROLL"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer9"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_ZOOM_CAMERA"
+
 [node name="Label2" type="Label" parent="Tutorial/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -386,7 +399,7 @@ volume_db = -10.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.6361106, -0.8894802, 0, 1.2381625, -0.4569738, 0, -0.47261807, -0.15921128)
+transform = Transform3D(1, 0, 0, 0, 1.1568441, -0.5561797, 0, 0.77420586, 0.8310621, 0, 0.48375693, -0.15921128)
 collision_mask = 2
 
 [node name="LookingCastUp" type="RayCast3D" parent="."]

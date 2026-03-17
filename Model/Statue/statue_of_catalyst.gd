@@ -10,6 +10,7 @@ extends Node3D
 @onready var bt_marker_3d: Marker3D = $BTMarker3D
 @onready var reward_spawn: Marker3D = $RewardSpawn
 @onready var area_3d: Area3D = $Area3D
+@onready var button: Button = $CanvasLayer/HBoxContainer/Button
 
 # Sound
 @onready var rock_moving: AudioStreamPlayer3D = $RockMoving
@@ -20,6 +21,8 @@ extends Node3D
 
 @onready var isUsed = false
 var playercamOrigin
+
+var playerSpeedBefore: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,8 +35,9 @@ func _ready() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and not isUsed :
+		playerSpeedBefore = playerNode.SPEED
 		playerNode.SPEED = 0.0
-		var playerCam: Camera3D = playerNode.get_node("CamOrigin/SpringArm3D/Camera3D")
+		var playerCam: Camera3D = playerNode.get_node("SpringArm3D/Camera3D")
 		# -- Cam --
 		playercamOrigin = playerCam.global_transform
 		camera_3d.global_transform = playerCam.global_transform
@@ -42,6 +46,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		await Varibles.wait(0.05)
 		# ---------		
 		canvas_layer.show()
+		button.grab_focus()
 		camera_3d.make_current()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		animation_player.play("ArmatureAction_001")
@@ -56,7 +61,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		#playerCam.make_current()
 
 func _on_close_pressed(wantAnimation: bool = true) -> void:
-	var playerCam: Camera3D = playerNode.get_node("CamOrigin/SpringArm3D/Camera3D")
+	var playerCam: Camera3D = playerNode.get_node("SpringArm3D/Camera3D")
 	if wantAnimation :
 		animation_player.play_backwards("ArmatureAction_001")
 		rock_moving.play()
@@ -67,7 +72,7 @@ func _on_close_pressed(wantAnimation: bool = true) -> void:
 	canvas_layer.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	playerCam.make_current()
-	playerNode.SPEED = 3.0
+	playerNode.SPEED = playerSpeedBefore
 
 func _on_button_pressed() -> void:
 	if line_edit.text.length() > 5 :
