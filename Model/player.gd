@@ -78,21 +78,22 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-	if Input.is_action_pressed("scrollDown") :
-		if pivot.spring_length < 2.20000004768372 :
-			pivot.spring_length += 0.25
-	if Input.is_action_pressed("scrollUp") :
-		if pivot.spring_length > -0.29999995231628 :
-			pivot.spring_length -= 0.25
-		
-	if Input.is_action_just_pressed("Help") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
-		if not tutorial.visible :
-			tutorial.visible = true
-			control_sh.play("ShowH")
-		else :
-			control_sh.play_backwards("ShowH")
-			await control_sh.animation_finished
-			tutorial.visible = false
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
+		if Input.is_action_pressed("scrollDown") :
+			if pivot.spring_length < 2.20000004768372 :
+				pivot.spring_length += 0.25
+		if Input.is_action_pressed("scrollUp") :
+			if pivot.spring_length > -0.29999995231628 :
+				pivot.spring_length -= 0.25
+			
+		if Input.is_action_just_pressed("Help") :
+			if not tutorial.visible :
+				tutorial.visible = true
+				control_sh.play("ShowH")
+			else :
+				control_sh.play_backwards("ShowH")
+				await control_sh.animation_finished
+				tutorial.visible = false
   			
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(-event.relative.x * sens))

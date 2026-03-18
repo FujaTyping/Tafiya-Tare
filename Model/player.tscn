@@ -308,6 +308,22 @@ theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_H"
 
+[node name="HBoxContainer10" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer10"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "M"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer10"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_M"
+
 [node name="HBoxContainer6" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/separation = 14
