@@ -21,6 +21,7 @@ func playIdle() :
 	animation_player_i.play("ArmatureAction_004")
 
 func _on_m_pressed() -> void:	
+	UiSound.ui_whoose()
 	player_selection_2.play_backwards("In")
 	Varibles.playerSelection = "joker"
 	animation_player_j.speed_scale = 0.3
@@ -28,6 +29,7 @@ func _on_m_pressed() -> void:
 	await Varibles.wait(0.5)
 	animation_player_j.play("ArmatureAction_003")
 	await animation_player_j.animation_finished
+	await Varibles.wait(0.25)
 	next()
 
 func _on_button_pressed() -> void:
@@ -35,6 +37,7 @@ func _on_button_pressed() -> void:
 	#get_tree().change_scene_to_file("res://UI/menu.tscn")
 
 func _on_wm_pressed() -> void:	
+	UiSound.ui_whoose()
 	player_selection_2.play_backwards("In")
 	Varibles.playerSelection = "sophia"
 	animation_player.speed_scale = 0.3
@@ -42,6 +45,7 @@ func _on_wm_pressed() -> void:
 	await Varibles.wait(0.5)
 	animation_player.play("ArmatureAction_003")
 	await animation_player.animation_finished
+	await Varibles.wait(0.25)
 	next()
 	
 func next() :

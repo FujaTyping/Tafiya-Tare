@@ -71,6 +71,7 @@ func _input(event: InputEvent) -> void:
 		MenuMusic.stopmenumusic()
 		
 func _on_play_pressed() -> void:
+	UiSound.ui_click()
 	#get_tree().change_scene_to_file("res://UI/player_selection.tscn")
 	Varibles.isFromLoadSaved = false
 	animation_player.pause()
@@ -86,6 +87,7 @@ func _on_play_pressed() -> void:
 	#ScenesLoader.load_scene("uid://c3mj2fiee0xht")
 
 func _on_option_pressed() -> void:
+	UiSound.ui_click()
 	menu_animation.play("MenuOut")
 	option.visible = true
 	option_animation.play("OptIn")
@@ -97,6 +99,7 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_credit_pressed() -> void:
+	UiSound.ui_click()
 	menu_animation.play("MenuOut")
 	#await menu_animation.animation_finished
 	credit.visible = true
@@ -107,6 +110,7 @@ func _on_credit_pressed() -> void:
 
 
 func _on_close_credit_pressed() -> void:
+	UiSound.ui_click()
 	credit_animation.play("CreditOut")
 	menu_animation.play("MenuIn")
 	main.visible = true
@@ -116,6 +120,7 @@ func _on_close_credit_pressed() -> void:
 
 
 func _on_close_option_pressed() -> void:
+	UiSound.ui_click()
 	saveSetting()
 	menu_animation.play("MenuIn")
 	option_animation.play("OptOut")
@@ -156,6 +161,7 @@ func _on_fps_selector_item_selected(index: int) -> void:
 
 
 func _on_play_2_pressed() -> void:
+	UiSound.ui_click()
 	Varibles.saved_data = null
 	Varibles.isFromLoadSaved = true
 	var data = ResourceLoader.load("user://save_data.res") as gameData
@@ -165,6 +171,7 @@ func _on_play_2_pressed() -> void:
 	MenuMusic.stopmenumusic()
 
 func _on_link_button_2_pressed() -> void:
+	UiSound.ui_click()
 	menu_animation.play("MenuOut")
 	credit.visible = true
 	credit_animation.play("CreditIn")
@@ -184,6 +191,7 @@ func saveSetting() :
 
 
 func _on_link_button_3_pressed() -> void:
+	UiSound.ui_click()
 	menu_animation.play("MenuOut")
 	license.visible = true
 	license_animation.play("In")
@@ -192,6 +200,7 @@ func _on_link_button_3_pressed() -> void:
 	close_lisense.grab_focus()
 
 func _on_close_license_pressed() -> void:
+	UiSound.ui_click()
 	menu_animation.play("MenuIn")
 	main.visible = true
 	license_animation.play_backwards("In")
@@ -200,6 +209,7 @@ func _on_close_license_pressed() -> void:
 	play.grab_focus()
 
 func _on_back_selection_pressed() -> void:
+	UiSound.ui_click()
 	player_selection_2.play_backwards("In")
 	Varibles.tweenCam(camera_3d,"global_transform",previousCamPost,3.0)
 	await Varibles.wait(3)

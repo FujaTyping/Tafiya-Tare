@@ -15,11 +15,14 @@ func _process(delta: float) -> void:
 
 func _on_resume_pressed() -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		UiSound.ui_click()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		open.play("CloseAnimation")
 		#self.hide()
 		get_tree().paused = false
 		paused = false
+		await open.animation_finished
+		self.hide()
 
 func _on_exit_pressed() -> void:
 	var day_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("dayBGM")
@@ -49,9 +52,11 @@ func pauseMenu() :
 	paused = !paused  # Flip the paused state
 
 func _on_back_pressed() -> void:
+	UiSound.ui_click()
 	get_tree().paused = false
 	ScenesLoader.load_scene("uid://bk2eqtj4bowsx")
 	#get_tree().change_scene_to_file("res://UI/menu.tscn")
 
 func _on_save_pressed() -> void:
+	UiSound.ui_click()
 	gameInstant.saveDat()

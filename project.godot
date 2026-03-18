@@ -29,6 +29,7 @@ Varibles="*res://Autoload/Varibles.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 DiscordRpc="*res://Autoload/discordRPC.gd"
 ScenesLoader="*res://Autoload/scenesLoader.gd"
+UiSound="*res://Autoload/ui_sound.tscn"
 
 [display]
 

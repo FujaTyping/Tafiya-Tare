@@ -15,7 +15,7 @@ func _input(event: InputEvent) -> void:
 	if camera_3d and not camera_3d.current:
 		return
 
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotation_degrees.x -= event.relative.y * MouseSensitivity
 		rotation_degrees.x = clamp(rotation_degrees.x, -90.0, -10.0)
 		
