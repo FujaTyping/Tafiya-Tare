@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 160
+@export var startTime = 155 #465
 @export var dayLengthInSeconds:float = 300 #155
 
 @export var morningColorTop: Color = Color("5897fa")
@@ -24,6 +24,7 @@ extends Node3D
 @onready var time: Label = $Control/MarginContainer/VBoxContainer/HBoxContainer/Time
 @onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
 @onready var waterFlow = get_tree().get_nodes_in_group("waterFlow")
+@onready var fireflyPatical = get_tree().get_nodes_in_group("firefly")
 @onready var carInstant : VehicleBody3D = $VehicleBody3D
 @onready var day_effect: AudioStreamPlayer = $dayEffect
 @onready var night_effect: AudioStreamPlayer = $nightEffect
@@ -128,6 +129,13 @@ func _day_change_animation():
 	var dnTexture = dayColorList[currentDayState]["icon"]
 	texture_rect.texture = dnTexture
 	
+	if dayColorList[currentDayState]["name"] == "TIME_DAY" :
+		for firefire:GPUParticles3D in fireflyPatical :
+			firefire.emitting = false
+	else :
+		for firefire:GPUParticles3D in fireflyPatical :
+			firefire.emitting = true
+	
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
 			carInstant.canOpenLight = true
@@ -137,14 +145,15 @@ func _day_change_animation():
 			if dayColorList[currentDayState]["name"] == "TIME_NIGHT":
 				night_effect.play()
 			day_bgm.stop()
-			#sun.visible = false
+			#sun.visible = false			
+			for patical:GPUParticles3D in waterFlow :
+				patical.amount_ratio = 0.3
 			for light in everyNightLight :
 				if light is OmniLight3D :
 					light.light_energy = 1
 					return
 				light.visible = true
-			for patical:GPUParticles3D in waterFlow :
-				patical.process_material.color = "ffffff05"
+
 	else :
 		if not day_bgm.playing :
 			#sun.visible = true
@@ -155,13 +164,13 @@ func _day_change_animation():
 			if dayColorList[currentDayState]["name"] == "TIME_MORNING" :
 				day_effect.play()
 			night_bgm.stop()
+			for patical:GPUParticles3D in waterFlow :
+				patical.amount_ratio = 1
 			for light in everyNightLight :
 				if light is OmniLight3D :
 					light.light_energy = 0.1
 					return
 				light.visible = false
-			for patical:GPUParticles3D in waterFlow :
-				patical.process_material.color = "ffffffb4"
 
 func getDN() :
 	return day_night.current_animation_position
