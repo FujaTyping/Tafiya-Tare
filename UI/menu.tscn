@@ -619,7 +619,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 255
+theme_override_constants/margin_top = 210
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
@@ -635,9 +635,9 @@ metadata/_edit_use_anchors_ = true
 [node name="MarginContainer2" type="MarginContainer" parent="Credit"]
 layout_mode = 2
 theme_override_constants/margin_left = 385
-theme_override_constants/margin_top = 395
+theme_override_constants/margin_top = 340
 theme_override_constants/margin_right = 385
-theme_override_constants/margin_bottom = 155
+theme_override_constants/margin_bottom = 95
 
 [node name="TabContainer" type="TabContainer" parent="Credit/MarginContainer2"]
 layout_mode = 2
@@ -713,6 +713,18 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "small_water_fall_in_the_woods_2.wav by volivieri -- https://freesound.org/s/38390/ -- License: Attribution 4.0"
+
+[node name="Label11" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "owl hooting by mokasza -- https://freesound.org/s/810336/ -- License: Attribution 4.0"
+
+[node name="Label12" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "birds chirping by mokasza -- https://freesound.org/s/810331/ -- License: Attribution 4.0"
 
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
 visible = false

@@ -7,6 +7,14 @@ radius = 0.6640625
 
 [node name="DialogeTrigged" type="Node3D"]
 script = ExtResource("1_ygo6r")
+dialoguesLine = null
+charLine = null
+isBody = null
+helloAnimation = null
+talkingAnimation = null
+saveAfter = null
+useTyping = null
+typingPlaceholder = null
 
 [node name="Trigger" type="Area3D" parent="."]
 collision_layer = 2

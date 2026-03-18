@@ -25,6 +25,8 @@ extends Node3D
 @onready var everyNightLight = get_tree().get_nodes_in_group("lightFromPole")
 @onready var waterFlow = get_tree().get_nodes_in_group("waterFlow")
 @onready var carInstant : VehicleBody3D = $VehicleBody3D
+@onready var day_effect: AudioStreamPlayer = $dayEffect
+@onready var night_effect: AudioStreamPlayer = $nightEffect
 
 @onready var sun: DirectionalLight3D = $Sun
 
@@ -132,6 +134,8 @@ func _day_change_animation():
 			if carInstant.is_driven :
 				carInstant.openLight(true)
 			night_bgm.play()
+			if dayColorList[currentDayState]["name"] == "TIME_NIGHT":
+				night_effect.play()
 			day_bgm.stop()
 			#sun.visible = false
 			for light in everyNightLight :
@@ -145,6 +149,8 @@ func _day_change_animation():
 			if carInstant.is_driven :
 				carInstant.openLight(false)
 			day_bgm.play()
+			if dayColorList[currentDayState]["name"] == "TIME_MORNING" :
+				day_effect.play()
 			night_bgm.stop()
 			for light in everyNightLight :
 				light.visible = false

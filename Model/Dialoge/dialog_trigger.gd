@@ -75,7 +75,7 @@ func _input(event: InputEvent) -> void:
 
 func continume_dialoge():
 	# Validation for Input field
-	if dialoguesLine[current_dialogue] == "[INPUT]" and typingContainer.text.length() < 2:
+	if dialoguesLine[current_dialogue] == "[INPUT]" and typingContainer.text.length() < 6:
 		return
 		
 	current_dialogue += 1

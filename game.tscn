@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=77 format=4 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -27,9 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://f47ybfdl1grn" path="res://Terrain/Grass/Grass1.glb" id="17_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
+[ext_resource type="AudioStream" uid="uid://bai7bj41w6y1f" path="res://SFX/morningEffect.wav" id="20_87ddb"]
 [ext_resource type="PackedScene" uid="uid://b6ufy7b3waog6" path="res://Model/Barrel.glb" id="20_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://cj1i3hl4rv4pw" path="res://Terrain/Bush/bush.glb" id="21_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="21_hb5m1"]
+[ext_resource type="AudioStream" uid="uid://ce3df83yubd5x" path="res://SFX/nightEffect.wav" id="21_mljfx"]
 [ext_resource type="PackedScene" uid="uid://dc4kohl5jb51e" path="res://Terrain/Log/WoodLog.glb" id="24_i2p71"]
 [ext_resource type="PackedScene" uid="uid://m12kghl86ot7" path="res://Model/Crate.glb" id="25_vaj68"]
 [ext_resource type="PackedScene" uid="uid://348yv8yghgp4" path="res://Model/Village/Villager1 Animation.glb" id="26_5b14r"]
@@ -638,6 +640,16 @@ bus = &"BGM"
 stream = ExtResource("7_eow3j")
 volume_db = -14.0
 bus = &"BGM"
+
+[node name="dayEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_87ddb")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="nightEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_mljfx")
+volume_db = -20.0
+bus = &"SFX"
 
 [node name="AssetsTerrain" type="Node3D" parent="."]
 
