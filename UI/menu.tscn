@@ -1,9 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://bk2eqtj4bowsx"]
+[gd_scene load_steps=29 format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
+[ext_resource type="Script" uid="uid://fk2ayj7lo450" path="res://UI/player_selection.gd" id="3_dte3n"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_qmqfe"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_dte3n"]
+[ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="5_kfjwn"]
+[ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="6_dte3n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -270,6 +273,43 @@ _data = {
 &"RESET": SubResource("Animation_wcfn6")
 }
 
+[sub_resource type="Animation" id="Animation_vso1l"]
+resource_name = "In"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSelection:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_22gd7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSelection:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60j7a"]
+_data = {
+&"In": SubResource("Animation_vso1l"),
+&"RESET": SubResource("Animation_22gd7")
+}
+
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -288,6 +328,21 @@ transform = Transform3D(0.82258326, 0, 0, 0, 0.55367327, 0, 0, 0, 0.7233943, 0, 
 [node name="sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0367001, 0.20293762, -0.9785037, 0.03095014, 0.97892445, 0.20186405, 0.998847, -0.02287639, -0.042207614, 0, 0, 0)
 
+[node name="Marker" type="Node3D" parent="."]
+
+[node name="PlayerSelection" type="Marker3D" parent="Marker"]
+transform = Transform3D(-0.76649296, 0, -0.6422527, 0, 1, 0, 0.6422527, 0, -0.76649296, -1.3697425, 0.08811866, -1.3735877)
+
+[node name="SelectWM" type="Marker3D" parent="Marker"]
+transform = Transform3D(-0.3280754, 0, -0.94465154, 0, 1, 0, 0.94465154, 0, -0.3280754, -1.2422471, 0.12613215, -1.2211908)
+
+[node name="SelectM" type="Marker3D" parent="Marker"]
+transform = Transform3D(-0.9794276, 0, -0.20179594, 0, 1, 0, 0.20179594, 0, -0.9794276, -1.2422471, 0.12613215, -1.2211908)
+
+[node name="Camera3D" type="Camera3D" parent="Marker"]
+transform = Transform3D(-0.40130842, 0, -0.91594297, 0, 1, 0, 0.91594297, 0, -0.40130842, -1.2422471, 0.12613215, -1.2211908)
+visible = false
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -305,6 +360,94 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.13918023, 0.012961894, 0.9901792, 0, 0.99991435, -0.013089253, -0.99026394, 0.0018217764, 0.13916832, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
+
+[node name="PlayerSelection" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("3_dte3n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelection"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 830
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelection/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_kfjwn")
+theme_override_font_sizes/font_size = 50
+text = "CHOOSE_CHAR_TITLE"
+
+[node name="Decs" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 27
+text = "CHOOSE_CHAR_DESC"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PlayerSelection/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSelection/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="WM" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../../Button")
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "SELECT_FM"
+
+[node name="M" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../../Button")
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "SELECT_M"
+
+[node name="Button" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../HBoxContainer/WM")
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "BACK_BUTTON"
+
+[node name="Label" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 19
+text = "If you don't choose the game will be select the default character"
+
+[node name="playerAnimation" parent="PlayerSelection" instance=ExtResource("5_kfjwn")]
+transform = Transform3D(0.008245158, 0, -0.017923066, 0, 0.01719056, 0, 0.0198928, 0, 0.007428744, -1.2066778, 0.071113154, -1.0555601)
+
+[node name="woman_player" parent="PlayerSelection" instance=ExtResource("6_dte3n")]
+transform = Transform3D(0.019427536, 0, -0.004682883, 0, 0.016090848, 0, 0.0064913146, 0, 0.01401517, -1.0746584, 0.07535243, -1.1638544)
 
 [node name="Main" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -682,34 +825,34 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
-text = "ข้อตกลงในการใช้ซอฟต์แวร์   
-ซอฟต์แวร์นี้เป็นผลงานที่พัฒนาขึ้นโดย สิรภพ สุขชู, ธาราวดี ศรีอ่อน   
-และ พรรษสรณ์ ทองนวลอินทร์  จาก โรงเรียนหาดใหญ่วิทยาลัย   
-ภายใต้การ ดูแลของ อนุรักษ์ ปานบุญ ภายใต้โครงการ Tafiya Tare   
-ซึ่งสนับสนุนโดย สานักงาน พัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ   
+text = "ข้อตกลงในการใช้ซอฟต์แวร์  
+ซอฟต์แวร์นี้เป็นผลงานที่พัฒนาขึ้นโดย สิรภพ สุขชู, ธาราวดี ศรีอ่อน  
+และ พรรษสรณ์ ทองนวลอินทร์  จาก โรงเรียนหาดใหญ่วิทยาลัย  
+ภายใต้การ ดูแลของ อนุรักษ์ ปานบุญ ภายใต้โครงการ Tafiya Tare  
+ซึ่งสนับสนุนโดย สำนักงาน พัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ  
 โดยมีวัตถุประสงค์เพื่อส่งเสริมให้นักเรียนและ นักศึกษาได้เรียนรู้และ  
-ฝึกทักษะในการพัฒนาซอฟต์แวร์ ลิขสิทธิ์ของซอฟต์แวร์นี้จึงเป็นของ   
-ผู้พัฒนา ซึ่งผู้พัฒนาได้อนุญาตให้สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ   
-เผยแพร่ซอฟต์แวร์นี้ตาม “ต้นฉบับ” โดยไม่มีการแก้ไขดัดแปลงใด ๆ ทั้งสิ้น ให้แก่บุคคลทั่วไป   
+ฝึกทักษะในการพัฒนาซอฟต์แวร์ ลิขสิทธิ์ของซอฟต์แวร์นี้จึงเป็นของ  
+ผู้พัฒนา ซึ่งผู้พัฒนาได้อนุญาตให้สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ  
+เผยแพร่ซอฟต์แวร์นี้ตาม “ต้นฉบับ” โดยไม่มีการแก้ไขดัดแปลงใด ๆ ทั้งสิ้น ให้แก่บุคคลทั่วไป  
 ได้ใช้เพื่อประโยชน์ส่วนบุคคลหรือประโยชน์ทางการศึกษาที่ไม่มีวัตถุประสงค์ในเชิงพาณิชย์  
-โดยไม่คิดค่าตอบแทนการใช้ซอฟต์แวร์ ดังนั้น สานักงานพัฒนาวิทยาศาสตร์และเทคโนโลยี   
-แห่งชาติ จึงไม่มีหน้าที่ในการดูแล บำรุงรักษา จัดการอบรมการใช้งาน หรือพัฒนา   
-ประสิทธิภาพซอฟต์แวร์ รวมทั้งไม่รับรองความถูกต้องหรือประสิทธิภาพการทำงานของ   
+โดยไม่คิดค่าตอบแทนการใช้ซอฟต์แวร์ ดังนั้น สานักงานพัฒนาวิทยาศาสตร์และเทคโนโลยี  
+แห่งชาติ จึงไม่มีหน้าที่ในการดูแล บำรุงรักษา จัดการอบรมการใช้งาน หรือพัฒนา  
+ประสิทธิภาพซอฟต์แวร์ รวมทั้งไม่รับรองความถูกต้องหรือประสิทธิภาพการทำงานของ  
 ซอฟต์แวร์ ตลอดจนไม่รับประกันความเสียหายต่าง ๆ อันเกิดจากการใช้ซอฟต์แวร์นี้ทั้งสิ้น
 
-License Agreement   
-This software is a work developed by Sirapop Sukchu, Tharawadee Srion,   
-and Phansorn Thongnuanin from Hatyaiwittayalai school under   
+License Agreement  
+This software is a work developed by Sirapop Sukchu, Tharawadee Srion,  
+and Phansorn Thongnuanin from Hatyaiwittayalai school under  
 the provision of Anurak Panbun under Tafiya Tare, which has been supported by  
- the National Science and Technology Development Agency (NSTDA), in order to   
-encourage pupils and students to learn and practice their skills in developing software.   
-Therefore, the intellectual property of this software shall belong to the developer and   
-the developer gives NSTDA a permission to distribute this software as an “as is” and   
-non-modified software for a temporary and non -exclusive use without remuneration  
+the National Science and Technology Development Agency (NSTDA), in order to  
+encourage pupils and students to learn and practice their skills in developing software.  
+Therefore, the intellectual property of this software shall belong to the developer and  
+the developer gives NSTDA a permission to distribute this software as an “as is” and  
+non-modified software for a temporary and non-exclusive use without remuneration  
 to anyone for his or her own purpose or academic purpose, which are not commercial purposes.  
 In this connection, NSTDA shall not be responsible to the user for taking care, maintaining,  
 training, or developing the efficiency of this software. Moreover, NSTDA shall not be liable  
-for any error, software efficiency and damages in connection with or arising out of the use of the software.”"
+for any error, software efficiency and damages in connection with or arising out of the use of the software."
 
 [node name="MarginContainer" type="MarginContainer" parent="License"]
 layout_mode = 2
@@ -889,19 +1032,16 @@ text = "CLOSE_BUTTON"
 libraries = {
 &"": SubResource("AnimationLibrary_qmqfe")
 }
-autoplay = "Intro"
 
 [node name="CreditAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_qmqfe")
 }
-autoplay = "Intro"
 
 [node name="MenuAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_qmqfe")
 }
-autoplay = "Intro"
 
 [node name="OptionAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -913,6 +1053,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_vso1l")
 }
 
+[node name="PlayerSelection2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_60j7a")
+}
+
+[connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/WM" to="PlayerSelection" method="_on_wm_pressed"]
+[connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/M" to="PlayerSelection" method="_on_m_pressed"]
+[connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/Button" to="." method="_on_back_selection_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Load" to="." method="_on_play_2_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]

@@ -26,11 +26,20 @@ extends Control
 @onready var license_animation: AnimationPlayer = $LicenseAnimation
 @onready var license: MarginContainer = $License
 @onready var close_lisense: Button = $License/MarginContainer/CloseCredit
+@onready var player_selectionC: MarginContainer = $PlayerSelection
+@onready var player_selection_2: AnimationPlayer = $PlayerSelection2
+
+# Animate cam
+@onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/Camera3D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var player_selection: Marker3D = $Marker/PlayerSelection
+var previousCamPost
 
 const fpsList = [30,60,120]
 const langList = ["en","th","jp"]
 
 func _ready():
+	animation_player.play("Intro")
 	if FileAccess.file_exists("user://setting_data.tres") :
 		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
 		Varibles.LangIndex = data.languageIndex
@@ -64,7 +73,17 @@ func _input(event: InputEvent) -> void:
 func _on_play_pressed() -> void:
 	#get_tree().change_scene_to_file("res://UI/player_selection.tscn")
 	Varibles.isFromLoadSaved = false
-	ScenesLoader.load_scene("uid://c3mj2fiee0xht")
+	animation_player.pause()
+	previousCamPost = camera_3d.global_transform
+	menu_animation.play("MenuOut")
+	Varibles.tweenCam(camera_3d,"global_transform",player_selection.global_transform,3.0)
+	await Varibles.wait(3)
+	player_selectionC.playIdle()
+	main.hide()	
+	player_selection_2.play("In")
+	await Varibles.wait(0.05)
+	player_selectionC.show()
+	#ScenesLoader.load_scene("uid://c3mj2fiee0xht")
 
 func _on_option_pressed() -> void:
 	menu_animation.play("MenuOut")
@@ -179,3 +198,11 @@ func _on_close_license_pressed() -> void:
 	await license_animation.animation_finished
 	license.visible = false
 	play.grab_focus()
+
+func _on_back_selection_pressed() -> void:
+	player_selection_2.play_backwards("In")
+	Varibles.tweenCam(camera_3d,"global_transform",previousCamPost,3.0)
+	await Varibles.wait(3)
+	menu_animation.play("MenuIn")
+	main.show()
+	animation_player.play_section()
