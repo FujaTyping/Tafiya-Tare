@@ -139,6 +139,9 @@ func _day_change_animation():
 			day_bgm.stop()
 			#sun.visible = false
 			for light in everyNightLight :
+				if light is OmniLight3D :
+					light.light_energy = 1
+					return
 				light.visible = true
 			for patical:GPUParticles3D in waterFlow :
 				patical.process_material.color = "ffffff05"
@@ -153,6 +156,9 @@ func _day_change_animation():
 				day_effect.play()
 			night_bgm.stop()
 			for light in everyNightLight :
+				if light is OmniLight3D :
+					light.light_energy = 0.1
+					return
 				light.visible = false
 			for patical:GPUParticles3D in waterFlow :
 				patical.process_material.color = "ffffffb4"

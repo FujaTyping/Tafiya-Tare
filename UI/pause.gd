@@ -32,11 +32,12 @@ func _on_exit_pressed() -> void:
 	var day_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("dayBGM")
 	var night_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("nightBGM")
 	var footsteps: AudioStreamPlayer3D = get_tree().current_scene.get_node("player/Walking")
-	var waterFall: AudioStreamPlayer3D = get_tree().current_scene.get_node("WaterFall/Landscape_001/AudioStreamPlayer3D")
+	var ab_Sound = get_tree().get_nodes_in_group("ambientSound")
 	footsteps.stop()
 	day_bgm.stop()
 	night_bgm.stop()
-	waterFall.stop()
+	for sound:AudioStreamPlayer3D in ab_Sound :
+		sound.stop()
 	Input.set_custom_mouse_cursor(null)
 	get_tree().quit()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=88 format=4 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -43,13 +43,17 @@
 [ext_resource type="PackedScene" uid="uid://ci8rcmccas0hw" path="res://Model/WayWarningSign.glb" id="34_082n1"]
 [ext_resource type="PackedScene" uid="uid://c7njlohyguner" path="res://Item/View/news_paper.tscn" id="34_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://bhkbyqw3gv6w5" path="res://Model/missionBoard.glb" id="39_l1i01"]
+[ext_resource type="PackedScene" uid="uid://by01wyvxy8wyb" path="res://Model/Campfire/campfire.glb" id="41_tb2lt"]
+[ext_resource type="Texture2D" uid="uid://iyi5ebrcot4x" path="res://Terrain/Texture/fire.png" id="42_cfc7e"]
 [ext_resource type="PackedScene" uid="uid://d2l171r04i8x4" path="res://Item/View/fuel_ads_paper.tscn" id="42_eu6ph"]
 [ext_resource type="PackedScene" uid="uid://cexpg3pjkibu4" path="res://Terrain/Pond.glb" id="43_edr7y"]
+[ext_resource type="AudioStream" uid="uid://butv3xv5yqkh6" path="res://SFX/campfireBurn.wav" id="43_gh0px"]
 [ext_resource type="PackedScene" uid="uid://cpxutwmwlv5xe" path="res://Terrain/PondNoBase.glb" id="44_kq12w"]
 [ext_resource type="PackedScene" uid="uid://cnnq5bl7ii2mu" path="res://Terrain/WaterFall.glb" id="45_t46w6"]
 [ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="49_87ddb"]
 [ext_resource type="PackedScene" uid="uid://des4vigigk2pd" path="res://Model/Statue/statue_of_catalyst.tscn" id="50_mljfx"]
 [ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="50_qpefm"]
+[ext_resource type="PackedScene" uid="uid://cmdt7ahj7pqvq" path="res://Model/Tent/tent.glb" id="51_qpefm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -437,6 +441,49 @@ _data = {
 &"RESET": SubResource("Animation_7jktm")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb2lt"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("42_cfc7e")
+emission_enabled = true
+emission = Color(1, 0.84705883, 0, 1)
+billboard_mode = 1
+point_size = 0.1
+
+[sub_resource type="Gradient" id="Gradient_tb2lt"]
+offsets = PackedFloat32Array(0, 0.4301887, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cfc7e"]
+gradient = SubResource("Gradient_tb2lt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cfc7e"]
+emission_shape_scale = Vector3(0.8, 0.2, 0.8)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.0
+scale_max = 0.0
+color_ramp = SubResource("GradientTexture1D_cfc7e")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gh0px"]
+size = Vector2(0.505, 0.52)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfc7e"]
+render_priority = -1
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
+albedo_texture = ExtResource("42_cfc7e")
+emission_enabled = true
+emission = Color(0.41598046, 0.41598046, 0.41598028, 1)
+billboard_mode = 1
+point_size = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gh0px"]
+height = 1.7163696
+radius = 2.081543
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_ryrav")
 dayIcon = ExtResource("4_aa0lp")
@@ -488,7 +535,7 @@ mesh = SubResource("ArrayMesh_m28ev")
 [node name="Landscape_001" parent="WaterFall" index="1"]
 material_override = ExtResource("11_lwlx3")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="WaterFall/Landscape_001" index="0"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="WaterFall/Landscape_001" index="0" groups=["ambientSound"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09558487, 0.22966051, 0.80952454)
 stream = ExtResource("12_0de7l")
 volume_db = -2.0
@@ -781,6 +828,43 @@ transform = Transform3D(0.43306673, 0, 0.2508872, 0, 0.64651465, 0, -0.31617996,
 [node name="missionBoard" parent="AssetsTerrain" instance=ExtResource("39_l1i01")]
 transform = Transform3D(-0.23646045, -0.028242555, 0.13966356, -0.012224959, 0.39513916, 0.011190702, -0.35824347, 0.005157633, -0.09256754, 12.105214, -0.0062725097, -11.926379)
 
+[node name="tent" parent="AssetsTerrain" instance=ExtResource("51_qpefm")]
+transform = Transform3D(0.29185444, 0, -0.7480135, 0, 0.7919146, 0, 0.7379304, 0, 0.29584235, 71.428635, 1.6400683, -3.0814562)
+
+[node name="campfire" parent="AssetsTerrain" instance=ExtResource("41_tb2lt")]
+transform = Transform3D(0.26058, 0, 0, 0, 0.23255481, 0, 0, 0, 0.27027342, 68.329926, 0.08382419, -2.21105)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="AssetsTerrain/campfire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7587901, 0)
+material_override = SubResource("StandardMaterial3D_tb2lt")
+amount = 20
+lifetime = 0.8
+collision_base_size = 0.1
+process_material = SubResource("ParticleProcessMaterial_cfc7e")
+draw_pass_1 = SubResource("QuadMesh_gh0px")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="AssetsTerrain/campfire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7587901, 0)
+material_override = SubResource("StandardMaterial3D_cfc7e")
+amount = 15
+collision_base_size = 0.1
+process_material = SubResource("ParticleProcessMaterial_cfc7e")
+draw_pass_1 = SubResource("QuadMesh_gh0px")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AssetsTerrain/campfire" groups=["ambientSound"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.904283, 0)
+stream = ExtResource("43_gh0px")
+volume_db = 8.0
+autoplay = true
+max_distance = 6.0
+bus = &"SFX"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AssetsTerrain/campfire" groups=["lightFromPole"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.443352, 0)
+light_color = Color(1, 0.8509804, 0.3019608, 1)
+shadow_enabled = true
+omni_range = 2.762321
+
 [node name="DialogeTriggers" type="Node3D" parent="."]
 
 [node name="DialogeTrigged" parent="DialogeTriggers" node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
@@ -825,7 +909,7 @@ transform = Transform3D(-0.56750536, 0.036927693, 0.8225413, 0.0649329, 0.997889
 transform = Transform3D(-0.54436153, -0.06735042, 0.83614266, -0.12278743, 0.992433, 0, -0.82981557, -0.102667786, -0.5485121, 11.691956, 1.2602812, -12.252267)
 
 [node name="player" parent="." instance=ExtResource("1_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7237935, 1.9775217, -10.718853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.98485, 1.9775217, -4.972585)
 
 [node name="VehicleBody3D" parent="." instance=ExtResource("13_lc2xo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
@@ -833,6 +917,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.7633
 [node name="StatueOfCatalyst" parent="." instance=ExtResource("50_mljfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.08801, 1.1061949, -1.1220629)
 RewardItem = ExtResource("32_dhpj7")
+
+[node name="CollisionShape3D" parent="StatueOfCatalyst/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26882935, 0.15466309)
+shape = SubResource("CylinderShape3D_gh0px")
 
 [node name="Pause" parent="." instance=ExtResource("50_qpefm")]
 
