@@ -76,3 +76,4 @@ MINIGAME_LEVEL_1_TITLE,Let it out,ปล่อยมันออกมา
 MINIGAME_LEVEL_1_LIMIT_PLAY,The statue can only be used once,สามารถใช้รูปปั้นได้แค่ครั้งเดียวเท่านั้น
 LICENSE_BUTTON,License,ใบอนุญาต
 UI_MAP_CANT_MOVE,You can't move while open the map,คุณไม่สามารถขยับตัวได้ขณะที่เปิดแผนที่อยู่
+UI_MAP_GOAL,Goal,เป้าหมาย

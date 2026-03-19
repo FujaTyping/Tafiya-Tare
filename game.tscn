@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=4 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=104 format=4 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -28,6 +28,7 @@
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="16_ib7ph"]
 [ext_resource type="PackedScene" uid="uid://f47ybfdl1grn" path="res://Terrain/Grass/Grass1.glb" id="17_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
+[ext_resource type="Texture2D" uid="uid://cg74kt1g0h2b5" path="res://UI/Texture/mapGoal.png" id="17_vuohh"]
 [ext_resource type="PackedScene" uid="uid://uonvka7tplnl" path="res://Model/House/House1.glb" id="18_rvswv"]
 [ext_resource type="Script" uid="uid://dkqxrvhki4g5d" path="res://maps.gd" id="19_2tki7"]
 [ext_resource type="AudioStream" uid="uid://bai7bj41w6y1f" path="res://SFX/morningEffect.wav" id="20_87ddb"]
@@ -396,30 +397,30 @@ material = SubResource("StandardMaterial3D_mljfx")
 
 [sub_resource type="Animation" id="Animation_2tki7"]
 resource_name = "In"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("CanvasLayer:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Transform2D(1.12, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer:transform")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Transform2D(1.09, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ib7ph"]
@@ -427,26 +428,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("CanvasLayer:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Transform2D(1.09, 0, 0, 1, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer:transform")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Transform2D(1.09, 0, 0, 1, 0, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vuohh"]
@@ -761,43 +762,41 @@ visible = false
 scale = Vector2(1.09, 1)
 transform = Transform2D(1.09, 0, 0, 1, 0, 0)
 
-[node name="ColorRect" type="ColorRect" parent="Maps/CanvasLayer"]
+[node name="Label" type="Label" parent="Maps/CanvasLayer"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = -199.0
-offset_bottom = 233.0
-grow_horizontal = 0
-grow_vertical = 2
-color = Color(1, 1, 1, 0.16078432)
-
-[node name="Label" type="Label" parent="Maps/CanvasLayer/ColorRect"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = -259.0
-offset_right = -18.0
-offset_bottom = -227.0
+offset_left = -197.0
+offset_top = -192.0
+offset_right = -11.743164
+offset_bottom = -160.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("16_ib7ph")
 theme_override_font_sizes/font_size = 24
-text = "Progress"
+text = "UI_MAP_GOAL"
+horizontal_alignment = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Maps/CanvasLayer/ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="Maps/CanvasLayer"]
+offset_left = 1839.0
+offset_top = 381.0
+offset_right = 1925.0
+offset_bottom = 740.0
+texture = ExtResource("17_vuohh")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Maps/CanvasLayer/TextureRect"]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 415.0
-offset_right = 418.09
-offset_bottom = 457.0
+offset_left = 27.999994
+offset_top = 319.27277
+offset_right = 321.02274
+offset_bottom = 354.27277
 rotation = -1.5707964
+max_value = 9.0
+step = 1.0
+value = 1.0
 show_percentage = false
 
 [node name="In" type="AnimationPlayer" parent="Maps"]
