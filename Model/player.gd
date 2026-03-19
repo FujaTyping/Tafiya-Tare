@@ -57,7 +57,11 @@ var prevSpringArm: float
 
 @onready var canvas_layer: CanvasLayer = $Sleep
 @onready var sleep: AnimationPlayer = $Sleep/Sleep
+@onready var ingredient: AudioStreamPlayer3D = $Ingredient
 
+@onready var cooking_put: StaticBody3D = get_tree().current_scene.get_node("cookingPut")
+@onready var cooking: AudioStreamPlayer3D = $Cooking
+@onready var dish: AudioStreamPlayer3D = $Dish
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -115,17 +119,18 @@ func _input(event):
 			viewUI._on_close_pressed()
 			return
 		if looking_cast.is_colliding() :
-			if looking_cast.get_collider().has_method("buyItem") :
+			var colliderView = looking_cast.get_collider()
+			if colliderView.has_method("buyItem") :
 				#interActionJustPress = true
 				#sens = 0
-				if looking_cast.get_collider().checkCanBuy() :
+				if colliderView.checkCanBuy() :
 					fuel_collect.play()
-					looking_cast.get_collider().buyItem()
+					colliderView.buyItem()
 				else :
 					wrongInteraction()
 				#sens = Varibles.MouseSens
 				#interActionJustPress = false
-			elif looking_cast.get_collider().has_method("daySkipSleep") :
+			elif colliderView.has_method("daySkipSleep") :
 				if gameInstance.get_day_time() == "TIME_NIGHT" :
 					prevSpringArm = pivot.spring_length
 					canvas_layer.show()
@@ -139,13 +144,31 @@ func _input(event):
 						Varibles.tweenCam(pivot,"spring_length",prevSpringArm,1.5)
 					await sleep.animation_finished
 					canvas_layer.hide()
+					await Varibles.wait(3)
+					gameInstance.saveDat()
 				else :
 					wrongInteraction()
-			elif looking_cast.get_collider().has_method("clear_trash") :
+			elif colliderView.has_method("clear_trash") :
 				trash_collect.play()
-				looking_cast.get_collider().clear_trash()
-			elif looking_cast.get_collider().has_method("openViewImage") :
-				looking_cast.get_collider().openViewImage()
+				colliderView.clear_trash()
+			elif colliderView.has_method("add_ingredientLevel3") :
+				ingredient.play()
+				cooking_put.isInpot.append(colliderView.InName)
+				colliderView.add_ingredientLevel3()
+			elif colliderView.has_method("getFood") :
+				dish.play()
+				colliderView.getFood()
+			elif colliderView.has_method("level3cooking") :
+				if not colliderView.isCooking :
+					if colliderView.isInpot.size() > 0 :
+						cooking.play()
+						colliderView.level3cooking()
+						var interactText = colliderView.interact()
+						label.text = interactText
+					else :
+						wrongInteraction()
+			elif colliderView.has_method("openViewImage") :
+				colliderView.openViewImage()
 				paper.play()
 				if isInViewInteract :
 					isInViewInteract = false

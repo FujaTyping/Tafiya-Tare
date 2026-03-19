@@ -13,3 +13,4 @@ class_name gameData
 @export var miniGameLevel1State : bool
 @export var playerSpringArmLength: float
 @export var playerSpeed: float
+@export var dayCount: int

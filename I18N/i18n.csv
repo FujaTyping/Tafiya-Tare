@@ -78,3 +78,7 @@ LICENSE_BUTTON,License,ใบอนุญาต
 UI_MAP_CANT_MOVE,You can't move while open the map,คุณไม่สามารถขยับตัวได้ขณะที่เปิดแผนที่อยู่
 UI_MAP_GOAL,Goal,เป้าหมาย
 ON_INTERACTION_COLLECT,Press E to sleep,กด E เพื่อนอน
+ON_INTERACTION_ADD_INGREDIENT,Press E to add ingredient,กด E เพื่อเพิ่มส่วนผสม
+ON_INTERACTION_COOK,Press E to cook,กด E เพื่อปรุงอาหาร
+COOKING_POT_COOKING,Cooking,กำลังทำอาหาร
+ON_INTERACTION_FOOD_COLLECT,Press E to collect food,กด E เพื่อเก็บอาหาร

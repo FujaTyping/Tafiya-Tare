@@ -738,6 +738,18 @@ theme_override_font_sizes/font_size = 23
 text = "FIREBurn_Burning Campfire.Flashing.Decay and Sustain_EM_(15lrs).wav by newlocknew 
 -- https://freesound.org/s/636707/ -- License: Attribution NonCommercial 4.0"
 
+[node name="Label14" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "CauldronBubbling_ByOdzta2023.wav by odzta1 -- https://freesound.org/s/689096/ -- License: Attribution 4.0"
+
+[node name="Label15" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "ceramic dishes.wav by calopa310 -- https://freesound.org/s/186419/ -- License: Attribution 3.0"
+
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
 visible = false
 layout_mode = 2

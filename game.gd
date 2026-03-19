@@ -2,6 +2,7 @@ extends Node3D
 
 @export var startTime = 465 #155
 @export var dayLengthInSeconds:float = 300 #155
+var day = 0
 
 @export var morningColorTop: Color = Color("5897fa")
 @export var morningColorHorizon: Color = Color("d3916b")
@@ -52,6 +53,7 @@ var dayDuration = 600
 var dayColorList = []
 var currentDayState = 0
 var durationMultiplier = 1.0
+var dayFromSave = false
 
 var collectedItem:Array[NodePath] = []
 
@@ -65,6 +67,8 @@ func _ready() -> void:
 	#sun.visible = false
 	if Varibles.isFromLoadSaved :
 		startTime = Varibles.saved_data.game_time
+		day = Varibles.saved_data.dayCount
+		dayFromSave = true
 		if Varibles.saved_data.collectItem.size() > 0 :
 			collectedItem = Varibles.saved_data.collectItem
 			for item in Varibles.saved_data.collectItem :
@@ -82,6 +86,7 @@ func _ready() -> void:
 	_refresh_day_state()
 	
 	_day_change_animation()
+	print(day)
 
 func _change_duration():
 	durationMultiplier = dayLengthInSeconds/180
@@ -138,6 +143,8 @@ func _day_change_animation():
 	
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
+			if dayFromSave :
+				dayFromSave = not dayFromSave
 			carInstant.canOpenLight = true
 			if carInstant.is_driven :
 				carInstant.openLight(true)
@@ -161,6 +168,8 @@ func _day_change_animation():
 			if carInstant.is_driven :
 				carInstant.openLight(false)
 			day_bgm.play()
+			if not dayFromSave :
+				day += 1
 			if dayColorList[currentDayState]["name"] == "TIME_MORNING" :
 				day_effect.play()
 			night_bgm.stop()
@@ -205,7 +214,8 @@ func saveDat() :
 	data.collectItem = collectedItem
 	data.miniGameLevel1State = level1Minigame.isUsed
 	data.playerSpringArmLength = playerCamPivot.spring_length
-	
+	data.dayCount = day	
+
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished
 	save_icon_indicator.hide()

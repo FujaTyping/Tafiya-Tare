@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://o1rgucnj08gm"]
+
+[ext_resource type="Script" uid="uid://cfms4diaqv8nd" path="res://Item/Food/foodManager.gd" id="1_s1y0a"]
+[ext_resource type="PackedScene" uid="uid://cwqrylige1f15" path="res://Model/Food/burnt.glb" id="2_s1y0a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghrs3"]
+size = Vector3(0.62475586, 0.22167969, 0.6533203)
+
+[node name="burnt" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_s1y0a")
+
+[node name="burnt" parent="." instance=ExtResource("2_s1y0a")]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.038644552, 0)
+shape = SubResource("BoxShape3D_ghrs3")

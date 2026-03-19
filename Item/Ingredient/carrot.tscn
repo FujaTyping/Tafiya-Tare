@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://lc2hoebrugjs"]
+
+[ext_resource type="Script" uid="uid://b003o7apxisk1" path="res://Item/Ingredient/minigameLevel3Manager.gd" id="1_2nji5"]
+[ext_resource type="PackedScene" uid="uid://bvsbhwjwprgh2" path="res://Model/Ingredient/carrot.glb" id="2_2nji5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k65nt"]
+size = Vector3(0.37890625, 0.15722656, 0.14453125)
+
+[node name="carrot" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_2nji5")
+InName = "carrot"
+
+[node name="carrot" parent="." instance=ExtResource("2_2nji5")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020996094, 0, 0)
+shape = SubResource("BoxShape3D_k65nt")

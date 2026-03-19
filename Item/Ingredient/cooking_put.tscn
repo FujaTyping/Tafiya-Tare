@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkhbju0n3koqo"]
+
+[ext_resource type="Script" uid="uid://bbjaxwa5jf00p" path="res://Item/Ingredient/cooking_put.gd" id="1_hecax"]
+[ext_resource type="PackedScene" uid="uid://d2d02fnly7kmn" path="res://Model/Campfire/pot/pot.glb" id="1_skmlr"]
+[ext_resource type="PackedScene" uid="uid://drv5ewrbyfuk4" path="res://Item/Food/kaojii.tscn" id="2_00hxo"]
+[ext_resource type="PackedScene" uid="uid://o1rgucnj08gm" path="res://Item/Food/burnt.tscn" id="2_5v5fc"]
+[ext_resource type="AudioStream" uid="uid://mstcvgdskdeh" path="res://SFX/cookingDone.wav" id="3_qmqnk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_todtx"]
+size = Vector3(0.87890625, 0.71643066, 0.8701172)
+
+[node name="cookingPut" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_hecax")
+listArrayMenu = Array[PackedScene]([ExtResource("2_5v5fc"), ExtResource("2_00hxo")])
+
+[node name="Finish" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0048922, 0)
+stream = ExtResource("3_qmqnk")
+max_distance = 5.0
+
+[node name="pot" parent="." instance=ExtResource("1_skmlr")]
+transform = Transform3D(0.23649858, 0, 0, 0, 0.23153666, 0, 0, 0, 0.254129, 0, 0, 0)
+
+[node name="ItemSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9078061, 1.1847345, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24395752, 0)
+shape = SubResource("BoxShape3D_todtx")
