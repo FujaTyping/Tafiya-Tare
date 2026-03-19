@@ -8,7 +8,6 @@ var isCooking = false
 @onready var finish: AudioStreamPlayer3D = $Finish
 
 func level3cooking() :
-	print(isInpot)
 	isCooking = true
 	await Varibles.wait(10)
 	if "floor" in isInpot and "egg" in isInpot and isInpot.size() == 2 :
