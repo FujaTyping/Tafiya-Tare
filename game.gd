@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 155 #465
+@export var startTime = 465 #155
 @export var dayLengthInSeconds:float = 300 #155
 
 @export var morningColorTop: Color = Color("5897fa")
@@ -75,7 +75,7 @@ func _ready() -> void:
 	DiscordRpc.updateRPC("In game")
 	_change_duration()
 	
-	_set_sun()
+	_set_sun(startTime)
 	
 	_set_current_state()
 	
@@ -87,7 +87,7 @@ func _change_duration():
 	durationMultiplier = dayLengthInSeconds/180
 	day_night.speed_scale = 1.0 / durationMultiplier
 
-func _set_sun():
+func _set_sun(startTime:int):
 	day_night.play("DayAndNight")
 	day_night.seek(startTime)
 
@@ -209,3 +209,18 @@ func saveDat() :
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished
 	save_icon_indicator.hide()
+	
+func get_day_time() :
+	return dayColorList[currentDayState]["name"]	
+
+func instanceDaySkip (time:int) :
+	startTime = time
+	_change_duration()
+		
+	_set_sun(time)
+	
+	_set_current_state()
+	
+	_refresh_day_state()
+	
+	_day_change_animation()

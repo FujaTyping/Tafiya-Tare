@@ -43,6 +43,8 @@ var is_in_car: bool = false
 var isInViewInteract = false
 var interActionJustPress = false
 
+var prevSpringArm: float
+
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
 @onready var control_sh: AnimationPlayer = $Tutorial/ControlSH
@@ -50,6 +52,12 @@ var interActionJustPress = false
 @onready var help_me: AnimationPlayer = $Help/HelpMe
 
 @onready var paper: AudioStreamPlayer3D = $Paper
+
+@onready var gameInstance : Node3D = get_tree().current_scene
+
+@onready var canvas_layer: CanvasLayer = $Sleep
+@onready var sleep: AnimationPlayer = $Sleep/Sleep
+
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -114,14 +122,25 @@ func _input(event):
 					fuel_collect.play()
 					looking_cast.get_collider().buyItem()
 				else :
-					label.add_theme_color_override("font_color",Color.RED)
-					label_2.add_theme_color_override("font_color",Color.RED)
-					wrong.play()
-					await wrong.finished
-					label.add_theme_color_override("font_color",Color.WHITE)
-					label_2.add_theme_color_override("font_color",Color.WHITE)
+					wrongInteraction()
 				#sens = Varibles.MouseSens
 				#interActionJustPress = false
+			elif looking_cast.get_collider().has_method("daySkipSleep") :
+				if gameInstance.get_day_time() == "TIME_NIGHT" :
+					prevSpringArm = pivot.spring_length
+					canvas_layer.show()
+					sleep.play("Sleep")
+					if prevSpringArm > 0.25555555231628 :
+						Varibles.tweenCam(pivot,"spring_length",pivot.spring_length-0.6,1.5)
+					await Varibles.wait(4)
+					gameInstance.instanceDaySkip(165)
+					sleep.play_backwards("Sleep")
+					if prevSpringArm > 0.25555555231628 :
+						Varibles.tweenCam(pivot,"spring_length",prevSpringArm,1.5)
+					await sleep.animation_finished
+					canvas_layer.hide()
+				else :
+					wrongInteraction()
 			elif looking_cast.get_collider().has_method("clear_trash") :
 				trash_collect.play()
 				looking_cast.get_collider().clear_trash()
@@ -172,6 +191,14 @@ func _input(event):
 				if car_node.carFuel > 0 :
 					engine_idle.stop()
 					engine_stop.play()
+
+func wrongInteraction() :
+	label.add_theme_color_override("font_color",Color.RED)
+	label_2.add_theme_color_override("font_color",Color.RED)
+	wrong.play()
+	await wrong.finished
+	label.add_theme_color_override("font_color",Color.WHITE)
+	label_2.add_theme_color_override("font_color",Color.WHITE)
 
 func _physics_process(delta: float) -> void:
 	var viewUI : Control = get_tree().current_scene.get_node("ViewPaper")

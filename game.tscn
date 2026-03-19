@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=111 format=4 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -54,10 +54,17 @@
 [ext_resource type="AudioStream" uid="uid://butv3xv5yqkh6" path="res://SFX/campfireBurn.wav" id="43_gh0px"]
 [ext_resource type="PackedScene" uid="uid://cpxutwmwlv5xe" path="res://Terrain/PondNoBase.glb" id="44_kq12w"]
 [ext_resource type="PackedScene" uid="uid://cnnq5bl7ii2mu" path="res://Terrain/WaterFall.glb" id="45_t46w6"]
+[ext_resource type="PackedScene" uid="uid://d2d02fnly7kmn" path="res://Model/Campfire/pot/pot.glb" id="48_3gvs5"]
 [ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="49_87ddb"]
+[ext_resource type="PackedScene" uid="uid://c6sijptii2d3u" path="res://Model/Ingredient/beaf.glb" id="49_ple6s"]
+[ext_resource type="PackedScene" uid="uid://b1o0r155yi37n" path="res://Model/Ingredient/bellPeper.glb" id="50_jo4nb"]
 [ext_resource type="PackedScene" uid="uid://des4vigigk2pd" path="res://Model/Statue/statue_of_catalyst.tscn" id="50_mljfx"]
 [ext_resource type="PackedScene" uid="uid://vje0m8kysudw" path="res://UI/pause.tscn" id="50_qpefm"]
+[ext_resource type="PackedScene" uid="uid://bvsbhwjwprgh2" path="res://Model/Ingredient/carrot.glb" id="51_56gn1"]
 [ext_resource type="PackedScene" uid="uid://cmdt7ahj7pqvq" path="res://Model/Tent/tent.glb" id="51_qpefm"]
+[ext_resource type="PackedScene" uid="uid://21k8715nb46f" path="res://Model/Ingredient/egg.glb" id="52_avmo2"]
+[ext_resource type="PackedScene" uid="uid://rlhjcqixm4n5" path="res://Model/Ingredient/flour.glb" id="53_vyqle"]
+[ext_resource type="PackedScene" uid="uid://bq8v1loj4e7nb" path="res://Interaction/sleep_interact.tscn" id="65_jo4nb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1096,6 +1103,30 @@ light_color = Color(1, 0.8509804, 0.3019608, 1)
 shadow_enabled = true
 omni_range = 2.762321
 
+[node name="pot" parent="AssetsTerrain" instance=ExtResource("48_3gvs5")]
+transform = Transform3D(0.23649858, 0, 0, 0, 0.23153666, 0, 0, 0, 0.254129, 68.308685, 0.6320473, -2.2022016)
+
+[node name="table2" parent="AssetsTerrain" instance=ExtResource("33_7knny")]
+transform = Transform3D(0.47010842, 0, -0.24659483, 0, 0.5824839, 0, 0.26310092, 0, 0.44061536, 66.84496, 0.64321744, -3.898796)
+
+[node name="beaf" parent="AssetsTerrain" instance=ExtResource("49_ple6s")]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 66.47109, 0.691885, -4.1779833)
+
+[node name="bellPeper" parent="AssetsTerrain" instance=ExtResource("50_jo4nb")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 67.26724, 0.71616447, -3.8159783)
+
+[node name="carrot" parent="AssetsTerrain" instance=ExtResource("51_56gn1")]
+transform = Transform3D(0.013159134, 0, -0.026959918, 0, 0.03, 0, 0.026959918, 0, 0.013159134, 66.8934, 0.698476, -4.1282125)
+
+[node name="egg" parent="AssetsTerrain" instance=ExtResource("52_avmo2")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 67.053215, 0.7013358, -3.921672)
+
+[node name="egg2" parent="AssetsTerrain" instance=ExtResource("52_avmo2")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 67.07884, 0.717605, -3.8031096)
+
+[node name="flour" parent="AssetsTerrain" instance=ExtResource("53_vyqle")]
+transform = Transform3D(0.13382086, 0, -0.07821112, 0, 0.155, 0, 0.07821112, 0, 0.13382086, 66.66389, 0.82386386, -3.8147151)
+
 [node name="DialogeTriggers" type="Node3D" parent="."]
 
 [node name="DialogeTrigged" parent="DialogeTriggers" node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
@@ -1155,6 +1186,9 @@ shape = SubResource("CylinderShape3D_gh0px")
 
 [node name="Pause" parent="." instance=ExtResource("50_qpefm")]
 z_index = 99
+
+[node name="SleepInteract" parent="." instance=ExtResource("65_jo4nb")]
+transform = Transform3D(0.34370887, 0, -0.93907624, 0, 1, 0, 0.93907624, 0, 0.34370887, 71.38817, 0.7820504, -3.085044)
 
 [editable path="WaterFall"]
 [editable path="StatueOfCatalyst"]
