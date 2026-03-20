@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://d1hw3josgfsc8" path="res://SFX/ingredient.wav" id="12_5hd5c"]
 [ext_resource type="AudioStream" uid="uid://d5cege6kfscb" path="res://SFX/openPaper.wav" id="12_ff0io"]
 [ext_resource type="AudioStream" uid="uid://dejv506q6mbp" path="res://SFX/bubble.wav" id="13_5hd5c"]
-[ext_resource type="AudioStream" uid="uid://cp27uw18ndyg" path="res://SFX/dish.wav" id="14_fi0my"]
+[ext_resource type="AudioStream" uid="uid://cmhyce62xxdaq" path="res://SFX/bowl.wav" id="14_fi0my"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -561,7 +561,7 @@ bus = &"SFX"
 
 [node name="Dish" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("14_fi0my")
-volume_db = -10.0
+volume_db = 5.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="."]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3sr5qktffj5v"]
+
+[ext_resource type="Script" uid="uid://b003o7apxisk1" path="res://Item/Ingredient/minigameLevel3Manager.gd" id="1_nyqbv"]
+[ext_resource type="PackedScene" uid="uid://cxinxvaxs6wiq" path="res://Model/Ingredient/cucumber.glb" id="2_nyqbv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k65nt"]
+size = Vector3(0.12988281, 0.14257813, 0.26171875)
+
+[node name="cucumber" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_nyqbv")
+InName = "cucumber"
+
+[node name="cucumber" parent="." instance=ExtResource("2_nyqbv")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010375977, 0, -0.016601563)
+shape = SubResource("BoxShape3D_k65nt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://dm0rxd10m14f3"]
+[gd_scene load_steps=115 format=4 uid="uid://dm0rxd10m14f3"]
 
 [ext_resource type="PackedScene" uid="uid://4pwsgsmth51f" path="res://Model/player.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bbx4b13b70cqs" path="res://game.gd" id="1_ryrav"]
@@ -66,6 +66,9 @@
 [ext_resource type="PackedScene" uid="uid://cvnuoo6w5y4dp" path="res://Item/Ingredient/egg.tscn" id="64_ple6s"]
 [ext_resource type="PackedScene" uid="uid://bq8v1loj4e7nb" path="res://Interaction/sleep_interact.tscn" id="65_jo4nb"]
 [ext_resource type="PackedScene" uid="uid://3gtyg5y75i2w" path="res://Item/View/recipie.tscn" id="67_avmo2"]
+[ext_resource type="PackedScene" uid="uid://dyth15afgbaso" path="res://Model/bowl.glb" id="67_vyqle"]
+[ext_resource type="PackedScene" uid="uid://3sr5qktffj5v" path="res://Item/Ingredient/cucumber.tscn" id="68_vyqle"]
+[ext_resource type="PackedScene" uid="uid://v8r2fsxw6aqh" path="res://Item/Ingredient/potato.tscn" id="69_xoeau"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1107,6 +1110,9 @@ omni_range = 2.762321
 [node name="table2" parent="AssetsTerrain" instance=ExtResource("33_7knny")]
 transform = Transform3D(0.47010842, 0, -0.24659483, 0, 0.5824839, 0, 0.26310092, 0, 0.44061536, 66.84496, 0.64321744, -3.898796)
 
+[node name="bowl" parent="AssetsTerrain" instance=ExtResource("67_vyqle")]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 67.67874, 0.059171613, -1.1531135)
+
 [node name="DialogeTriggers" type="Node3D" parent="."]
 
 [node name="DialogeTrigged" parent="DialogeTriggers" node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
@@ -1170,6 +1176,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.14732, 0.7213521, -3.46746
 
 [node name="recipie" parent="ItemAll" instance=ExtResource("67_avmo2")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 68.23447, 1.0654687, -1.1941869)
+
+[node name="cucumber" parent="ItemAll" instance=ExtResource("68_vyqle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.52545, 0.7020468, -3.7594078)
+
+[node name="potato" parent="ItemAll" instance=ExtResource("69_xoeau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.33507, 0.71578753, -3.9531791)
 
 [node name="cookingPut" parent="." instance=ExtResource("49_jo4nb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.308685, 0.6320473, -2.2022016)

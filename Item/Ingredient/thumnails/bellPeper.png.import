@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5qt7b72w7m1l"
-path.s3tc="res://.godot/imported/recipe_recipie.png-09fbda69a3c8f9b43f1a2c84e182e708.s3tc.ctex"
+uid="uid://b18eyupjhq7h5"
+path.s3tc="res://.godot/imported/bellPeper.png-984d9799704b5c3ba472e73899dfa7b9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "0f94ddc4cb33717d98dc835bea218b42"
-}
 
 [deps]
 
-source_file="res://Model/Board/recipe_recipie.png"
-dest_files=["res://.godot/imported/recipe_recipie.png-09fbda69a3c8f9b43f1a2c84e182e708.s3tc.ctex"]
+source_file="res://Item/Ingredient/thumnails/bellPeper.png"
+dest_files=["res://.godot/imported/bellPeper.png-984d9799704b5c3ba472e73899dfa7b9.s3tc.ctex"]
 
 [params]
 

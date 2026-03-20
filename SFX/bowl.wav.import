@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cp27uw18ndyg"
-path="res://.godot/imported/dish.wav-18929d191ada81c78f0551a27428f4f9.sample"
+uid="uid://cmhyce62xxdaq"
+path="res://.godot/imported/bowl.wav-07043fc7eaa103a1241bdbff3e8aecc5.sample"
 
 [deps]
 
-source_file="res://SFX/dish.wav"
-dest_files=["res://.godot/imported/dish.wav-18929d191ada81c78f0551a27428f4f9.sample"]
+source_file="res://SFX/bowl.wav"
+dest_files=["res://.godot/imported/bowl.wav-07043fc7eaa103a1241bdbff3e8aecc5.sample"]
 
 [params]
 

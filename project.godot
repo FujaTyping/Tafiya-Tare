@@ -43,6 +43,10 @@ mouse_cursor/custom_image="uid://bh220tagubfbn"
 
 enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ui_accept={

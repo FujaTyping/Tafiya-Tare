@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://drv5ewrbyfuk4"]
+[gd_scene load_steps=8 format=3 uid="uid://bdw2svoi2xv6n"]
 
-[ext_resource type="Script" uid="uid://cfms4diaqv8nd" path="res://Item/Food/foodManager.gd" id="1_ghrs3"]
-[ext_resource type="PackedScene" uid="uid://bk4cgmcre4vc" path="res://Model/Food/KaoJii.glb" id="1_mywdx"]
-[ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="3_5dmmg"]
+[ext_resource type="Script" uid="uid://cfms4diaqv8nd" path="res://Item/Food/foodManager.gd" id="1_gjlq4"]
+[ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="2_1hr1j"]
+[ext_resource type="PackedScene" uid="uid://pbe6bublot3j" path="res://Model/Food/vegetSoup.glb" id="3_gjlq4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dmmg"]
 transparency = 1
-albedo_texture = ExtResource("3_5dmmg")
+albedo_texture = ExtResource("2_1hr1j")
 billboard_mode = 1
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_idbro"]
@@ -20,11 +20,11 @@ size = Vector2(0.2, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghrs3"]
 size = Vector3(0.47485352, 0.22839355, 0.4482422)
 
-[node name="Kaojii" type="RigidBody3D"]
+[node name="VetgetSoup" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_ghrs3")
-completeQuestReward = 20
+script = ExtResource("1_gjlq4")
+completeQuestReward = 25
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19026355, 0)
@@ -33,7 +33,7 @@ amount = 4
 process_material = SubResource("ParticleProcessMaterial_idbro")
 draw_pass_1 = SubResource("QuadMesh_8twun")
 
-[node name="KaoJii" parent="." instance=ExtResource("1_mywdx")]
+[node name="vegetSoup" parent="." instance=ExtResource("3_gjlq4")]
 transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
