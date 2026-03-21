@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://f47ybfdl1grn"
-path="res://.godot/imported/Grass1.glb-01450627fd9da6b359ed6514b5d82ad2.scn"
+uid="uid://c7se604a8nmbe"
+path="res://.godot/imported/Grass2.glb-6ca4899f3ca84d1b2d63fd5318d0a65a.scn"
 
 [deps]
 
-source_file="res://Terrain/Grass/Grass1.glb"
-dest_files=["res://.godot/imported/Grass1.glb-01450627fd9da6b359ed6514b5d82ad2.scn"]
+source_file="res://Terrain/Grass/Grass2.glb"
+dest_files=["res://.godot/imported/Grass2.glb-6ca4899f3ca84d1b2d63fd5318d0a65a.scn"]
 
 [params]
 
@@ -37,18 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"meshes": {
-"Grass1_Cylinder_001": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Terrain/Grass/Mesh/Grass1.res",
-"save_to_file/path": "uid://0pfsdxgyktpk"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

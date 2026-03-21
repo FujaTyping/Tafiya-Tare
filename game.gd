@@ -86,7 +86,7 @@ func _ready() -> void:
 	_refresh_day_state()
 	
 	_day_change_animation()
-	print(day)
+	#print(day)
 
 func _change_duration():
 	durationMultiplier = dayLengthInSeconds/180

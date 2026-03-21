@@ -31,9 +31,10 @@ var JUMP_VELOCITY = 4.0
 @onready var looking_cast: RayCast3D = $LookingCast
 @onready var interact: MarginContainer = $Interact
 @onready var inter_show: AnimationPlayer = $InterShow
-@onready var label: Label = $Interact/HBoxContainer/Label
-@onready var label_2: Label = $Interact/HBoxContainer/Label2
+@onready var label: Label = $Interact/VBoxContainer/HBoxContainer/Label
+@onready var label_2: Label = $Interact/VBoxContainer/HBoxContainer/Label2
 @onready var wrong: AudioStreamPlayer3D = $Wrong
+@onready var more_info_hint: Label = $Interact/VBoxContainer/MoreInfoHint
 
 # Trash Collect
 @onready var trash_collect: AudioStreamPlayer3D = $TrashCollect
@@ -127,7 +128,7 @@ func _input(event):
 					fuel_collect.play()
 					colliderView.buyItem()
 				else :
-					wrongInteraction()
+					wrongInteraction("INTERACTION_FAIL_NEED_MONEY")
 				#sens = Varibles.MouseSens
 				#interActionJustPress = false
 			elif colliderView.has_method("daySkipSleep") :
@@ -147,7 +148,7 @@ func _input(event):
 					await Varibles.wait(3)
 					gameInstance.saveDat()
 				else :
-					wrongInteraction()
+					wrongInteraction("INTERACTION_FAIL_ONLY_SLEEP_AT_NIGHT")
 			elif colliderView.has_method("clear_trash") :
 				trash_collect.play()
 				colliderView.clear_trash()
@@ -166,7 +167,7 @@ func _input(event):
 						var interactText = colliderView.interact()
 						label.text = interactText
 					else :
-						wrongInteraction()
+						wrongInteraction("INTERACTION_FAIL_NO_INGREDIENT")
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()
@@ -215,11 +216,16 @@ func _input(event):
 					engine_idle.stop()
 					engine_stop.play()
 
-func wrongInteraction() :
+func wrongInteraction(moreInfo:String = "") :
 	label.add_theme_color_override("font_color",Color.RED)
 	label_2.add_theme_color_override("font_color",Color.RED)
+	if moreInfo != "" :
+		more_info_hint.text = moreInfo
+		more_info_hint.show()
 	wrong.play()
-	await wrong.finished
+	await Varibles.wait(4)
+	if moreInfo != "" :
+		more_info_hint.hide()
 	label.add_theme_color_override("font_color",Color.WHITE)
 	label_2.add_theme_color_override("font_color",Color.WHITE)
 
@@ -237,6 +243,10 @@ func _physics_process(delta: float) -> void:
 						interact.show()
 						inter_show.play_backwards("Hide")
 						#inter_show.play("Show")
+						if more_info_hint.visible :
+							more_info_hint.hide()
+						label.add_theme_color_override("font_color",Color.WHITE)
+						label_2.add_theme_color_override("font_color",Color.WHITE)
 						isInViewInteract = true
 		else :
 			if isInViewInteract :

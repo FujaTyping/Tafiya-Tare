@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://f47ybfdl1grn"
-path="res://.godot/imported/Grass1.glb-01450627fd9da6b359ed6514b5d82ad2.scn"
+uid="uid://baw712irbh1sf"
+path="res://.godot/imported/Tree3.glb-28798a84fd0ed5f3ae1df33f9d937294.scn"
 
 [deps]
 
-source_file="res://Terrain/Grass/Grass1.glb"
-dest_files=["res://.godot/imported/Grass1.glb-01450627fd9da6b359ed6514b5d82ad2.scn"]
+source_file="res://Terrain/Tree/Tree3.glb"
+dest_files=["res://.godot/imported/Tree3.glb-28798a84fd0ed5f3ae1df33f9d937294.scn"]
 
 [params]
 
@@ -38,15 +38,12 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"meshes": {
-"Grass1_Cylinder_001": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Terrain/Grass/Mesh/Grass1.res",
-"save_to_file/path": "uid://0pfsdxgyktpk"
+"nodes": {
+"PATH:Icosphere": {
+"generate/physics": true
+},
+"PATH:Plane": {
+"generate/physics": true
 }
 }
 }
