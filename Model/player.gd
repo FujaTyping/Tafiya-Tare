@@ -210,7 +210,7 @@ func _input(event):
 				
 				car_node.openLight(false)
 				
-				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(1, 0, 0.25)
+				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(0.5, 0.5, 2)
 				car_node.is_driven = false
 				if car_node.carFuel > 0 :
 					engine_idle.stop()

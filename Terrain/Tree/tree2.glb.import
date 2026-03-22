@@ -38,11 +38,19 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"meshes": {
+"tree2_Cylinder": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Terrain/Tree/Mesh/tree2.res",
+"save_to_file/path": "uid://cyw64fsvxbdb5"
+}
+},
 "nodes": {
 "PATH:Cylinder": {
-"generate/physics": true
-},
-"PATH:Cylinder_001": {
 "generate/physics": true
 }
 }
