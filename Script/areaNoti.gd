@@ -10,5 +10,5 @@ func _ready() -> void:
 	
 func bodyEnter(body) :
 	if not AreaNoti.visible :
-		if body == player or body == vehicle_body_3d:
+		if body == player: #or body == vehicle_body_3d
 			AreaNoti.playEnterNoti(Areaname)

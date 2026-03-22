@@ -74,6 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://v8r2fsxw6aqh" path="res://Item/Ingredient/potato.tscn" id="69_xoeau"]
 [ext_resource type="PackedScene" uid="uid://de0ykhir3bu5d" path="res://Model/bucket.glb" id="70_6qn5j"]
 [ext_resource type="PackedScene" uid="uid://baw712irbh1sf" path="res://Terrain/Tree/Tree3.glb" id="71_wj41c"]
+[ext_resource type="PackedScene" uid="uid://dtvcduq7l6afd" path="res://Terrain/baseTerrain.glb" id="75_3xib3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -728,6 +729,9 @@ amount = 40
 process_material = SubResource("ParticleProcessMaterial_87ddb")
 draw_pass_1 = SubResource("QuadMesh_qpefm")
 
+[node name="baseTerrain" parent="." unique_id=1226912708 instance=ExtResource("75_3xib3")]
+transform = Transform3D(-1.5298986e-07, 0, -3.5, 0, 3.5, 0, 3.5, 0, -1.5298986e-07, 32.040054, 0, 91.07761)
+
 [node name="Maps" type="Control" parent="." unique_id=895358471]
 visible = false
 layout_mode = 3
@@ -1240,10 +1244,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.33507, 0.71578753, -3.9531
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.308685, 0.6320473, -2.2022016)
 
 [node name="player" parent="." unique_id=1390491364 instance=ExtResource("1_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.38406, 1.9775217, 3.127451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.52817, 3.0388467, 2.594406)
 
 [node name="VehicleBody3D" parent="." unique_id=2079832606 instance=ExtResource("13_lc2xo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0061157, 1.894974, -10.763393)
+transform = Transform3D(0.8576164, 0, 0.51428986, 0, 1, 0, -0.51428986, 0, 0.8576164, 3.3395848, 2.5680163, -11.768486)
 
 [node name="StatueOfCatalyst" parent="." unique_id=1506623155 instance=ExtResource("50_mljfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.08801, 1.1061949, -1.1220629)

@@ -19,7 +19,7 @@ config/name_localized={
 "th": "ทาฟิยา ทาเร"
 }
 config/description="A journey to bathe in the legendary elixir pond, believed to grant eternal life. But the long road ahead is filled with people, diverse ways of life, and countless stories. It seems I won't be seeking immortality alone, as I now have a whole truckload of travel companions. Ready to hit the road and reach our destination together!"
-config/version="0.0.1.3 alpha"
+config/version="0.0.1.2 alpha"
 run/main_scene="uid://bk2eqtj4bowsx"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
