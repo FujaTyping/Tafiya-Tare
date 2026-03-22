@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtvcduq7l6afd"
+uid="uid://bxavtc65fjx6l"
 path="res://.godot/imported/baseTerrain.glb-6e08be87c8cd38b31243318458b31e61.scn"
 
 [deps]
@@ -39,7 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Landscape_004": {
+"PATH:Landscape_001": {
+"generate/physics": true
+},
+"PATH:Landscape_002": {
 "generate/physics": true
 }
 }
