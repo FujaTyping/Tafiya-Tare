@@ -74,7 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://v8r2fsxw6aqh" path="res://Item/Ingredient/potato.tscn" id="69_xoeau"]
 [ext_resource type="PackedScene" uid="uid://de0ykhir3bu5d" path="res://Model/bucket.glb" id="70_6qn5j"]
 [ext_resource type="PackedScene" uid="uid://baw712irbh1sf" path="res://Terrain/Tree/Tree3.glb" id="71_wj41c"]
-[ext_resource type="PackedScene" uid="uid://bxavtc65fjx6l" path="res://Terrain/baseTerrain.glb" id="75_3xib3"]
+[ext_resource type="PackedScene" uid="uid://bll4s0ipw5u2k" path="res://Terrain/realBase.glb" id="75_3xib3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -639,6 +639,7 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(-0.5354347, -0.8403626, -0.08426326, 0.42214334, -0.35270324, 0.83510184, -0.7315085, 0.41157138, 0.5436032, 0, 0, 0)
 top_level = true
+visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
@@ -1240,10 +1241,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.33507, 0.71578753, -3.9531
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.308685, 0.6320473, -2.2022016)
 
 [node name="player" parent="." unique_id=1390491364 instance=ExtResource("1_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.089848, 3.0388467, 55.975834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -258.19684, 3.0388467, 70.351685)
 
 [node name="VehicleBody3D" parent="." unique_id=2079832606 instance=ExtResource("13_lc2xo")]
-transform = Transform3D(-0.17314973, 0, 0.98489547, 0, 1, 0, -0.98489547, 0, -0.17314973, -14.384293, 4.0004444, 54.17478)
+transform = Transform3D(-0.17314973, 0, 0.98489547, 0, 1, 0, -0.98489547, 0, -0.17314973, -247.4913, 4.0004444, 69.64931)
 
 [node name="StatueOfCatalyst" parent="." unique_id=1506623155 instance=ExtResource("50_mljfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.08801, 1.1061949, -1.1220629)
@@ -1268,8 +1269,8 @@ shape = SubResource("CylinderShape3D_gh0px")
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99
 
-[node name="baseTerrain" parent="." unique_id=23429410 instance=ExtResource("75_3xib3")]
-transform = Transform3D(-8.589288e-08, 0, -1.965, 0, 1.965, 0, 1.965, 0, -8.589288e-08, 16.318867, -0.03484726, 92.43451)
+[node name="base" parent="." unique_id=1542691254 instance=ExtResource("75_3xib3")]
+transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 31.75774, -0.08194733, 146.48769)
 
 [editable path="PondNoBase"]
 [editable path="WaterFall"]
