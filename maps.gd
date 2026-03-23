@@ -33,7 +33,7 @@ func _input(event: InputEvent) -> void:
 			if camera_3d.global_position.y > 5.42806816101074 :
 				camera_3d.global_position.y -= 0.5
 		if Input.is_action_just_pressed("scrollDown") :
-			if camera_3d.global_position.y < 30.4280681610107 :
+			if camera_3d.global_position.y < 60.4280681610107 :
 				camera_3d.global_position.y += 0.5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

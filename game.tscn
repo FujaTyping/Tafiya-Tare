@@ -75,6 +75,7 @@
 [ext_resource type="PackedScene" uid="uid://de0ykhir3bu5d" path="res://Model/bucket.glb" id="70_6qn5j"]
 [ext_resource type="PackedScene" uid="uid://baw712irbh1sf" path="res://Terrain/Tree/Tree3.glb" id="71_wj41c"]
 [ext_resource type="PackedScene" uid="uid://bll4s0ipw5u2k" path="res://Terrain/realBase.glb" id="75_3xib3"]
+[ext_resource type="Script" uid="uid://cfwkwanmbvo16" path="res://Script/areaWater.gd" id="76_5628o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -626,6 +627,12 @@ size = Vector3(32.52539, 12.422852, 52.2334)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gh0px"]
 height = 1.7163696
 radius = 2.081543
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3xib3"]
+material = ExtResource("9_lwlx3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xib3"]
+size = Vector3(536.7323, 13.74379, 925.58203)
 
 [node name="Main" type="Node3D" unique_id=183536831]
 script = ExtResource("1_ryrav")
@@ -1241,10 +1248,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.33507, 0.71578753, -3.9531
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.308685, 0.6320473, -2.2022016)
 
 [node name="player" parent="." unique_id=1390491364 instance=ExtResource("1_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -258.19684, 3.0388467, 70.351685)
+transform = Transform3D(-0.34698468, 0, -0.9378708, 0, 1, 0, 0.9378708, 0, -0.34698468, 178.74219, 3.0388467, 689.0677)
 
 [node name="VehicleBody3D" parent="." unique_id=2079832606 instance=ExtResource("13_lc2xo")]
-transform = Transform3D(-0.17314973, 0, 0.98489547, 0, 1, 0, -0.98489547, 0, -0.17314973, -247.4913, 4.0004444, 69.64931)
+transform = Transform3D(0.98378515, 0, -0.1793516, 0, 1, 0, 0.1793516, 0, 0.98378515, 176.75916, 4.0004444, 694.34784)
 
 [node name="StatueOfCatalyst" parent="." unique_id=1506623155 instance=ExtResource("50_mljfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.08801, 1.1061949, -1.1220629)
@@ -1269,8 +1276,23 @@ shape = SubResource("CylinderShape3D_gh0px")
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99
 
-[node name="base" parent="." unique_id=1542691254 instance=ExtResource("75_3xib3")]
-transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 31.75774, -0.08194733, 146.48769)
+[node name="base" parent="." unique_id=417140591 instance=ExtResource("75_3xib3")]
+transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 31.75774, -0.08194733, 538.32104)
+
+[node name="Water2" type="MeshInstance3D" parent="base" unique_id=1147071751]
+transform = Transform3D(207.64395, -6.933347e-10, -5.9117156e-10, 9.314523e-08, 1.5455338, 2.6416206, -4.820322e-10, -0.015861653, 257.3952, 1.8043823, -3.4176025, -68.17122)
+mesh = SubResource("PlaneMesh_3xib3")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=424930667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 539.84485, 0, 539.84485)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("76_5628o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=355542927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.66217, -17.627129, 0)
+shape = SubResource("BoxShape3D_3xib3")
 
 [editable path="PondNoBase"]
 [editable path="WaterFall"]

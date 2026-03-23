@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj65117odtqjs"]
+[gd_scene format=3 uid="uid://bj65117odtqjs"]
 
 [ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="1_3wmsh"]
 [ext_resource type="Script" uid="uid://m5hrm1oydqio" path="res://Model/Car/Work/vehicle_body_3d.gd" id="1_d41w2"]
@@ -13,7 +13,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
 size = Vector3(1, 1.0080566, 1)
 
-[node name="VehicleBody3D" type="VehicleBody3D" groups=["Interaction"]]
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1682748158 groups=["Interaction"]]
 collision_layer = 2
 collision_mask = 3
 mass = 240.0
@@ -21,10 +21,10 @@ center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_d41w2")
 
-[node name="Car" parent="." instance=ExtResource("2_d41w2")]
+[node name="Car" parent="." unique_id=2130415608 instance=ExtResource("2_d41w2")]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 0.00032175955, -0.21726587, -0.019244011)
 
-[node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=165002852]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 1.1684117, -0.8647407, 1.4326421)
 use_as_traction = true
 use_as_steering = true
@@ -35,10 +35,10 @@ suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="CarCenterTire" parent="VehicleWheel3D" instance=ExtResource("1_3wmsh")]
+[node name="CarCenterTire" parent="VehicleWheel3D" unique_id=1676692757 instance=ExtResource("1_3wmsh")]
 transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
 
-[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="." unique_id=679232422]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, -1.1656625, -0.8647407, 1.4326421)
 use_as_traction = true
 use_as_steering = true
@@ -49,10 +49,10 @@ suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="CarCenterTire2" parent="VehicleWheel3D2" instance=ExtResource("1_3wmsh")]
+[node name="CarCenterTire2" parent="VehicleWheel3D2" unique_id=703428421 instance=ExtResource("1_3wmsh")]
 transform = Transform3D(-1, 0, -1.307845e-07, 0, 0.8277551, 0, 1.509958e-07, 0, -0.8661466, 0, 0, 0)
 
-[node name="WBL" type="VehicleWheel3D" parent="."]
+[node name="WBL" type="VehicleWheel3D" parent="." unique_id=1805551876]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, 1.1684117, -0.8647407, -1.4983407)
 use_as_traction = true
 wheel_roll_influence = 0.0
@@ -62,10 +62,10 @@ suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="CarCenterTire3" parent="WBL" instance=ExtResource("1_3wmsh")]
+[node name="CarCenterTire3" parent="WBL" unique_id=2082438361 instance=ExtResource("1_3wmsh")]
 transform = Transform3D(1, 0, 0, 0, 0.8277551, 0, 0, 0, 0.8661466, 0, 0, 0)
 
-[node name="WBR" type="VehicleWheel3D" parent="."]
+[node name="WBR" type="VehicleWheel3D" parent="." unique_id=336332512]
 transform = Transform3D(0.62064487, 0, 0, 0, 0.64529485, 0, 0, 0, 0.6263004, -1.1656625, -0.8647407, -1.4983407)
 use_as_traction = true
 wheel_roll_influence = 0.0
@@ -75,48 +75,48 @@ suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
 
-[node name="CarCenterTire4" parent="WBR" instance=ExtResource("1_3wmsh")]
+[node name="CarCenterTire4" parent="WBR" unique_id=1458172327 instance=ExtResource("1_3wmsh")]
 transform = Transform3D(-1, 0, -7.572094e-08, 0, 0.8277551, 0, 8.742278e-08, 0, -0.8661466, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1034068415]
 transform = Transform3D(2.3032806, 0, 0, 0, 1.3605394, 0, 0, 0, 3.037154, 0.00032175955, -0.19226243, -0.019244011)
 shape = SubResource("BoxShape3D_3wmsh")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1870002181]
 transform = Transform3D(2.3032806, 0, 0, 0, 0.69900817, 0, 0, 0, 1.1356319, 0.00032175955, -0.518596, 2.0707512)
 shape = SubResource("BoxShape3D_3wmsh")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1164265237]
 transform = Transform3D(2.3032806, 0, 0, 0, 0.69900817, 0, 0, 0, 1.5445966, 0.00032175955, -0.518596, -2.3128333)
 shape = SubResource("BoxShape3D_3wmsh")
 
-[node name="CamArm" type="SpringArm3D" parent="."]
+[node name="CamArm" type="SpringArm3D" parent="." unique_id=1627234161]
 collision_mask = 0
 spring_length = 5.0
 script = ExtResource("4_uq1ss")
 
-[node name="Camera3D" type="Camera3D" parent="CamArm"]
+[node name="Camera3D" type="Camera3D" parent="CamArm" unique_id=1775982360]
 
-[node name="EngineStart" type="AudioStreamPlayer3D" parent="."]
+[node name="EngineStart" type="AudioStreamPlayer3D" parent="." unique_id=1695581881]
 stream = ExtResource("5_thola")
 volume_db = -7.0
 bus = &"SFX"
 
-[node name="CarIdle" type="AudioStreamPlayer3D" parent="."]
+[node name="CarIdle" type="AudioStreamPlayer3D" parent="." unique_id=1641160534]
 stream = ExtResource("6_vda12")
 volume_db = -7.0
 bus = &"SFX"
 
-[node name="EngineStop" type="AudioStreamPlayer3D" parent="."]
+[node name="EngineStop" type="AudioStreamPlayer3D" parent="." unique_id=672538036]
 stream = ExtResource("7_7diub")
 volume_db = 4.0
 bus = &"SFX"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=247510756]
 layer = 2
 visible = false
 
-[node name="Text" type="Label" parent="CanvasLayer"]
+[node name="Text" type="Label" parent="CanvasLayer" unique_id=1902662472]
 offset_left = 18.0
 offset_top = 746.0
 offset_right = 173.0
@@ -125,7 +125,7 @@ theme_override_fonts/font = ExtResource("8_hpwcy")
 theme_override_font_sizes/font_size = 28
 text = "CAR_FUEL"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=966413353]
 offset_left = 83.0
 offset_top = 799.0
 offset_right = 344.61157
@@ -133,7 +133,7 @@ offset_bottom = 865.57025
 rotation = 1.5707964
 texture = ExtResource("9_qbuse")
 
-[node name="FuelBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="FuelBar" type="ProgressBar" parent="CanvasLayer" unique_id=524855174]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -146,7 +146,7 @@ rotation = -1.5620697
 step = 0.1
 show_percentage = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1429677512]
 visible = false
 offset_left = 20.0
 offset_top = 964.0
@@ -154,30 +154,30 @@ offset_right = 374.0
 offset_bottom = 1038.0
 theme_override_constants/separation = 24
 
-[node name="CNT" type="Label" parent="CanvasLayer/HBoxContainer"]
+[node name="CNT" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=210273127]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_hpwcy")
 theme_override_font_sizes/font_size = 42
 text = "0"
 
-[node name="CNT2" type="Label" parent="CanvasLayer/HBoxContainer"]
+[node name="CNT2" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1820462131]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_hpwcy")
 theme_override_font_sizes/font_size = 42
 text = "%"
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.9426589, 0.33375755, 0, -0.33375755, -0.9426589, -0.6461761, -0.4961285, 2.562558)
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1120169093]
+transform = Transform3D(1, 0, 0, 0, -0.98875904, 0.14951819, 0, -0.14951819, -0.98875904, -0.6461761, -0.4961285, 2.562558)
 visible = false
 light_energy = 3.054
 shadow_enabled = true
 spot_range = 4.6654825
 spot_angle = 51.244904
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.94265896, 0.33375758, 0, -0.33375758, -0.94265896, 0.6625953, -0.4961285, 2.562558)
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=2020560190]
+transform = Transform3D(1, 0, 0, 0, -0.988759, 0.14951818, 0, -0.14951818, -0.988759, 0.6625953, -0.4961285, 2.562558)
 visible = false
 light_energy = 3.054
 shadow_enabled = true
