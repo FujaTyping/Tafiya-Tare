@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var DSPEED = 2.5
+var DSPEED = 2
 var SPEED = 0
 var JUMP_VELOCITY = 4.0
 

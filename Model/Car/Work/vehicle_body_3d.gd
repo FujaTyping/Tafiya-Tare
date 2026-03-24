@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		
 		# --- CONTINUOUS FUEL DRAIN & UI UPDATE ---
 		if dir != 0:
-			#carFuel -= 1 * delta #0.08 #0.05
+			carFuel -= 0.8 * delta #0.08 #0.05
 			if carFuel < 0 :
 				fuel_bar.value = 0
 				car_idle.stop()

@@ -49,6 +49,10 @@ var day = 0
 @export var morningIcon: CompressedTexture2D
 @export var nightIcon: CompressedTexture2D
 
+# lightSource
+#@onready var everyLight = get_tree().get_nodes_in_group("lightPole")
+#@onready var lightPoleScript = load("uid://bp7a0lbo1koi8")
+
 var dayDuration = 600
 var dayColorList = []
 var currentDayState = 0
@@ -58,6 +62,9 @@ var dayFromSave = false
 var collectedItem:Array[NodePath] = []
 
 func _ready() -> void:
+	#for pole in everyLight :
+		#pole.set_script(lightPoleScript)
+	
 	dayColorList = [
 		{"top": morningColorTop, "horizon": morningColorHorizon, "startTime": 165,"name": "TIME_MORNING","icon": morningIcon},
 		{"top": dayColorTop, "horizon": dayColorHorizon, "startTime": 190,"name": "TIME_DAY","icon": dayIcon },
@@ -158,7 +165,7 @@ func _day_change_animation():
 			for light in everyNightLight :
 				if light is OmniLight3D :
 					light.light_energy = 1
-					return
+					continue
 				light.visible = true
 
 	else :
@@ -178,7 +185,7 @@ func _day_change_animation():
 			for light in everyNightLight :
 				if light is OmniLight3D :
 					light.light_energy = 0.1
-					return
+					continue
 				light.visible = false
 
 func getDN() :

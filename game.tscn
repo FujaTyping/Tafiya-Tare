@@ -77,6 +77,8 @@
 [ext_resource type="PackedScene" uid="uid://baw712irbh1sf" path="res://Terrain/Tree/Tree3.glb" id="71_wj41c"]
 [ext_resource type="PackedScene" uid="uid://bll4s0ipw5u2k" path="res://Terrain/realBase.glb" id="75_3xib3"]
 [ext_resource type="Script" uid="uid://cfwkwanmbvo16" path="res://Script/areaWater.gd" id="76_5628o"]
+[ext_resource type="PackedScene" uid="uid://foj5ilt70b4t" path="res://Terrain/baseLevel.glb" id="78_cwgap"]
+[ext_resource type="Script" uid="uid://bp7a0lbo1koi8" path="res://Script/lightPole.gd" id="79_svdf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -684,6 +686,7 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(-0.5354347, -0.8403626, -0.08426326, 0.42214334, -0.35270324, 0.83510184, -0.7315085, 0.41157138, 0.5436032, 0, 0, 0)
 top_level = true
+visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
@@ -1020,9 +1023,8 @@ bus = &"SFX"
 [node name="ModernLightPole" parent="AssetsTerrain" unique_id=266341233 instance=ExtResource("9_80cx4")]
 transform = Transform3D(0.5140499, 0, -0.048923448, 0, 0.54560614, 0, 0.046266682, 0, 0.5435685, 9.19797, 0, 12.042849)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="AssetsTerrain/ModernLightPole" unique_id=629477119 groups=["lightFromPole"]]
+[node name="SpotLight3D" type="SpotLight3D" parent="AssetsTerrain/ModernLightPole" unique_id=629477119]
 transform = Transform3D(1.7621938, 3.4871853e-08, -0.8053547, 0.7618427, -7.218045e-08, 1.6669853, 7.448621e-22, -1.832288, -7.9338065e-08, 1.004143, 10.339152, 0)
-visible = false
 layers = 3
 light_energy = 2.485
 light_volumetric_fog_energy = 1.99
@@ -1037,9 +1039,8 @@ spot_angle_attenuation = 0.6830198
 [node name="ModernLightPole2" parent="AssetsTerrain" unique_id=145048396 instance=ExtResource("9_80cx4")]
 transform = Transform3D(-0.27930287, 0, 0.45894846, 0, 0.54560614, 0, -0.43402517, 0, -0.29534146, 12.173826, 0.07914287, -9.738768)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="AssetsTerrain/ModernLightPole2" unique_id=23040814 groups=["lightFromPole"]]
+[node name="SpotLight3D" type="SpotLight3D" parent="AssetsTerrain/ModernLightPole2" unique_id=23040814]
 transform = Transform3D(1.7621938, 3.4871853e-08, -0.8053547, 0.7618427, -7.218045e-08, 1.6669853, 7.448621e-22, -1.832288, -7.9338065e-08, 1.004143, 10.339152, 0)
-visible = false
 layers = 3
 light_energy = 2.485
 light_volumetric_fog_energy = 1.99
@@ -1298,10 +1299,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.33507, 0.71578753, -3.9531
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.308685, 0.6320473, -2.2022016)
 
 [node name="player" parent="." unique_id=1390491364 instance=ExtResource("1_e2o6t")]
-transform = Transform3D(-0.34698468, 0, -0.9378708, 0, 1, 0, 0.9378708, 0, -0.34698468, 178.74219, 3.0388467, 689.0677)
+transform = Transform3D(-0.9477015, 0, -0.3191579, 0, 1, 0, 0.3191579, 0, -0.9477015, -300.73895, 3.0388467, 186.04109)
 
 [node name="VehicleBody3D" parent="." unique_id=2079832606 instance=ExtResource("13_lc2xo")]
-transform = Transform3D(0.98378515, 0, -0.1793516, 0, 1, 0, 0.1793516, 0, 0.98378515, 176.75916, 4.0004444, 694.34784)
+transform = Transform3D(0.2522888, 0, 0.96765214, 0, 1, 0, -0.96765214, 0, 0.2522888, -296.15872, 4.0004444, 194.98563)
 
 [node name="StatueOfCatalyst" parent="." unique_id=1506623155 instance=ExtResource("50_mljfx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.08801, 1.1061949, -1.1220629)
@@ -1326,11 +1327,11 @@ shape = SubResource("CylinderShape3D_gh0px")
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99
 
-[node name="base" parent="." unique_id=417140591 instance=ExtResource("75_3xib3")]
+[node name="base" parent="." unique_id=194050465 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 31.75774, -0.08194733, 538.32104)
 
 [node name="Water2" type="MeshInstance3D" parent="base" unique_id=1147071751]
-transform = Transform3D(207.64395, -6.933347e-10, -5.9117156e-10, 9.314523e-08, 1.5455338, 2.6416206, -4.820322e-10, -0.015861653, 257.3952, 1.8043823, -3.4176025, -68.17122)
+transform = Transform3D(207.64395, 0, 0, 0, 1.5456152, 0, 0, 0, 257.40875, 1.8043823, -3.4176025, -68.17122)
 mesh = SubResource("PlaneMesh_3xib3")
 skeleton = NodePath("../..")
 
@@ -1343,6 +1344,131 @@ script = ExtResource("76_5628o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InWater" unique_id=355542927]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.66217, -17.627129, 0)
 shape = SubResource("BoxShape3D_3xib3")
+
+[node name="baseLevel" parent="." unique_id=2035506039 instance=ExtResource("78_cwgap")]
+transform = Transform3D(0.26914138, 0, -2.4150493, 0, 2.43, 0, 2.4150493, 0, 0.26914138, -294.49265, 1.1228011, 197.51277)
+
+[node name="TerrainLight" type="Node3D" parent="." unique_id=630847828]
+
+[node name="ModernLightPole10" parent="TerrainLight" unique_id=688800251 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(0.034520365, 0, -0.54454374, 0, 0.54560614, 0, 0.51497215, 0, 0.03650268, -295.64038, 0.8920987, 183.45903)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole10" unique_id=904225036 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole12" parent="TerrainLight" unique_id=720906548 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(0.060136475, 0, -0.5420486, 0, 0.54560614, 0, 0.51261246, 0, 0.06358976, -300.6532, 0.8920987, 184.04367)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole12" unique_id=1777034199 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole3" parent="TerrainLight" unique_id=918883153 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -289.93408, 0.8920987, 183.50241)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole3" unique_id=1347831199 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole11" parent="TerrainLight" unique_id=1395594301 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.03452041, 0, 0.54454374, 0, 0.54560614, 0, -0.51497215, 0, -0.03650273, -293.2359, 0.8920987, 211.49547)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole11" unique_id=1807456153 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole4" parent="TerrainLight" unique_id=545657392 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -289.62817, 0.8920987, 188.06581)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole4" unique_id=1303384467 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole5" parent="TerrainLight" unique_id=1739802900 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -289.34897, 0.8920987, 192.23125)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole5" unique_id=655580574 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole6" parent="TerrainLight" unique_id=1578630376 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -289.04306, 0.8920987, 196.79465)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole6" unique_id=1608468964 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole7" parent="TerrainLight" unique_id=1491856888 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -288.78787, 0.8920987, 200.60172)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole7" unique_id=1322903052 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole8" parent="TerrainLight" unique_id=389643231 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -288.48196, 0.8920987, 205.16512)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole8" unique_id=1390801968 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
+
+[node name="ModernLightPole9" parent="TerrainLight" unique_id=863731753 groups=["lightPole"] instance=ExtResource("9_80cx4")]
+transform = Transform3D(-0.51497215, 0, -0.03650266, 0, 0.54560614, 0, 0.034520343, 0, -0.54454374, -288.20044, 0.8920987, 209.36504)
+script = ExtResource("79_svdf4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TerrainLight/ModernLightPole9" unique_id=1247649531 groups=["lightFromPole"]]
+transform = Transform3D(1.6978809, 5.638429e-08, -0.88265544, 0.9333407, -8.011527e-08, 1.6056771, 1.1435329e-08, -1.832824, -9.734005e-08, 1.0231018, 10.114233, -0.03967285)
+visible = false
+light_energy = 2.56
+shadow_enabled = true
+spot_range = 9.018124
+spot_angle = 41.750698
 
 [editable path="PondNoBase"]
 [editable path="WaterFall"]
