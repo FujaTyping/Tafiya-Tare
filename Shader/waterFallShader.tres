@@ -121,7 +121,7 @@ as_normal_map = true
 [resource]
 render_priority = 1
 shader = SubResource("Shader_odyqk")
-shader_parameter/albedo = Color(0.24313726, 0.8117647, 1, 0.18431373)
+shader_parameter/albedo = Color(0.24313726, 0.8117647, 1, 0.20392157)
 shader_parameter/albedo_texture_size = Vector2i(0, 0)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 0.0

@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://gcud7fvankq" path="res://Model/Dialoge/DialogTrigger.tscn" id="13_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://x0nwxuls06g4" path="res://UI/Dialog.tscn" id="13_215e1"]
 [ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://dbfcqt41880xn" path="res://UI/Texture/WaterView.png" id="16_fuuk6"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="16_ib7ph"]
 [ext_resource type="PackedScene" uid="uid://f47ybfdl1grn" path="res://Terrain/Grass/Grass1.glb" id="17_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dmdasux6q8wgy" path="res://Model/Fence/Fence1.glb" id="17_e8heu"]
@@ -419,6 +420,43 @@ proximity_fade_distance = 2.0
 [sub_resource type="QuadMesh" id="QuadMesh_qpefm"]
 material = SubResource("StandardMaterial3D_mljfx")
 
+[sub_resource type="Animation" id="Animation_cwgap"]
+resource_name = "0.3"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_svdf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lh772"]
+_data = {
+&"0.3": SubResource("Animation_cwgap"),
+&"RESET": SubResource("Animation_svdf4")
+}
+
 [sub_resource type="Animation" id="Animation_2tki7"]
 resource_name = "In"
 length = 0.6
@@ -646,7 +684,6 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(-0.5354347, -0.8403626, -0.08426326, 0.42214334, -0.35270324, 0.83510184, -0.7315085, 0.41157138, 0.5436032, 0, 0, 0)
 top_level = true
-visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
@@ -735,6 +772,19 @@ transform = Transform3D(-0.11968552, 0, 0.114749886, 0, 0.1813672, 0, -0.1450662
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_87ddb")
 draw_pass_1 = SubResource("QuadMesh_qpefm")
+
+[node name="WaterView" type="TextureRect" parent="." unique_id=888665765]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_fuuk6")
+expand_mode = 1
+
+[node name="ViewWOn" type="AnimationPlayer" parent="WaterView" unique_id=1277995754]
+libraries/ = SubResource("AnimationLibrary_lh772")
 
 [node name="Maps" type="Control" parent="." unique_id=895358471]
 visible = false
@@ -1284,13 +1334,13 @@ transform = Transform3D(207.64395, -6.933347e-10, -5.9117156e-10, 9.314523e-08, 
 mesh = SubResource("PlaneMesh_3xib3")
 skeleton = NodePath("../..")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=424930667]
+[node name="InWater" type="Area3D" parent="." unique_id=424930667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 539.84485, 0, 539.84485)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("76_5628o")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=355542927]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InWater" unique_id=355542927]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.66217, -17.627129, 0)
 shape = SubResource("BoxShape3D_3xib3")
 
