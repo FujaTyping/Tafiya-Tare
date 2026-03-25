@@ -63,6 +63,7 @@ var prevSpringArm: float
 @onready var cooking_put: StaticBody3D = get_tree().current_scene.get_node("cookingPut")
 @onready var cooking: AudioStreamPlayer3D = $Cooking
 @onready var dish: AudioStreamPlayer3D = $Dish
+@onready var fuel_fill: AudioStreamPlayer3D = $FuelFill
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -125,7 +126,10 @@ func _input(event):
 				#interActionJustPress = true
 				#sens = 0
 				if colliderView.checkCanBuy() :
-					fuel_collect.play()
+					if colliderView.getbuyvalue() > 0 :
+						fuel_collect.play()
+					else :
+						fuel_fill.play()
 					colliderView.buyItem()
 				else :
 					wrongInteraction("INTERACTION_FAIL_NEED_MONEY")
@@ -237,8 +241,9 @@ func _physics_process(delta: float) -> void:
 				if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
 						var interactText = looking_cast.get_collider().interact()
 						if "BUY" in interactText :
-							label_2.visible = true
-							label_2.text= looking_cast.get_collider().getbuyvalue() + " ฿"
+							if looking_cast.get_collider().getbuyvalue() > 0 :
+								label_2.visible = true
+								label_2.text= str(looking_cast.get_collider().getbuyvalue()) + " ฿"
 						label.text = interactText
 						interact.show()
 						inter_show.play_backwards("Hide")

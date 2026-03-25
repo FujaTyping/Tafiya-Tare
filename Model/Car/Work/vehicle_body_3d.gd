@@ -4,7 +4,7 @@ var max_RPM = 200 # 500
 var max_torque = 80 # 300
 var turn_speed = 3
 var turn_amount = 0.3
-var carFuel = 50
+var carFuel = 10
 
 var is_driven: bool = false 
 var canOpenLight = false
@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		
 		# --- CONTINUOUS FUEL DRAIN & UI UPDATE ---
 		if dir != 0:
-			#carFuel -= 0.8 * delta #0.08 #0.05
+			carFuel -= 0.8 * delta #0.08 #0.05
 			if carFuel < 0 :
 				fuel_bar.value = 0
 				car_idle.stop()

@@ -42,8 +42,6 @@ func _ready():
 	animation_player.play("Intro")
 	if FileAccess.file_exists("user://setting_data.tres") :
 		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
-		Varibles.LangIndex = data.languageIndex
-		TranslationServer.set_locale(langList[data.languageIndex])
 		Varibles.MouseSens = data.camSens
 		_on_fps_selector_item_selected(data.gameFPSIndex)
 		_on_check_button_toggled(data.musicEnable)

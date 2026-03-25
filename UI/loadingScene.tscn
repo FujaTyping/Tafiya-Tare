@@ -127,10 +127,11 @@ _data = {
 &"Spinn": SubResource("Animation_8atyx")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=51012446 node_paths=PackedStringArray("animation_player", "textLabel")]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=51012446 node_paths=PackedStringArray("animation_player", "textLabel", "loading_icon")]
 script = ExtResource("1_nkc8s")
 animation_player = NodePath("AnimationPlayer")
 textLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Label")
+loading_icon = NodePath("LoadingIcon")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=122800900]
 anchors_preset = 15
@@ -182,6 +183,7 @@ theme_override_font_sizes/font_size = 30
 text = "%"
 
 [node name="LoadingIcon" type="TextureRect" parent="." unique_id=1538871951]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 35.0
 offset_top = 976.0

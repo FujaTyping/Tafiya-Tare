@@ -2,30 +2,40 @@ extends StaticBody3D
 
 @onready var carInstanst: VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 @export var valueOfItem: int = 0
+@export var fuelValue :int = 0
+@export var saveAfterCollect :bool = true
 
 @onready var gameInstant = get_tree().current_scene
 
 func addFuel() :
 	if checkCanBuy() :
-		carInstanst.carFuel += 20
+		carInstanst.carFuel += fuelValue
 		Varibles.Coins -= valueOfItem
 		carInstanst.fuelUpdate()
 		self.visible = false
 		self.set_collision_layer_value(2,false)
 		gameInstant.collectedItem.append(self.get_path())
+		if saveAfterCollect :
+			gameInstant.saveDat()
 		self.queue_free()
 
 func buyItem() :
 	addFuel()
 		
 func checkCanBuy() :
-	if Varibles.Coins - valueOfItem > 0 :
-		return true
+	if valueOfItem > 0 :
+		if Varibles.Coins - valueOfItem > 0 :
+			return true
+		else :
+			return false
 	else :
-		return false
+		return true
 
 func getbuyvalue() :
-	return str(valueOfItem)
+	return valueOfItem
 	
 func interact() :
-	return "ON_INTERACTION_BUY_FUEL"
+	if valueOfItem > 0 :
+		return "ON_INTERACTION_BUY_FUEL"
+	else :
+		return "ON_INTERACTION_COLLECT"

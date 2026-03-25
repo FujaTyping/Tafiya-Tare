@@ -1128,10 +1128,6 @@ transform = Transform3D(0.20884573, 0, -0.187074, 0, 0.31940374, 0, 0.36138174, 
 [node name="bush2" parent="AssetsTerrain" unique_id=1911400213 instance=ExtResource("21_f1jbl")]
 transform = Transform3D(-0.049479824, 0, -0.17601536, 0, 0.23974343, 0, 0.3338268, 0, -0.026089005, 13.24956, 0.51576674, 9.416955)
 
-[node name="Fuel" parent="AssetsTerrain" unique_id=1568720873 instance=ExtResource("21_hb5m1")]
-transform = Transform3D(-0.48772806, 0.018708523, 0.48691538, 0.015736481, 0.57984173, -0.015710263, -0.36143044, -1.016348e-09, -0.65774614, -201.19719, 2.0863683, 379.23618)
-valueOfItem = 5
-
 [node name="Crate" parent="AssetsTerrain" unique_id=539818970 instance=ExtResource("25_vaj68")]
 transform = Transform3D(0.115500405, 0, 0, 0, 0.118968375, -0.006242159, 0, 0.00623695, 0.11906771, -5.713899, 0.47445244, -14.516255)
 
@@ -1257,6 +1253,10 @@ usedGravity = true
 
 [node name="NewsPaper" parent="AssetsTerrain/BaseLevel" unique_id=944588080 instance=ExtResource("34_eu6ph")]
 transform = Transform3D(-0.98759973, -0.122189425, -0.098572865, -0.122787446, 0.99243313, 0, 0.09782701, 0.012103559, -0.99512994, -300.64584, 2.9324124, 184.13731)
+
+[node name="Fuel" parent="AssetsTerrain/BaseLevel" unique_id=1568720873 instance=ExtResource("21_hb5m1")]
+transform = Transform3D(-0.537453, 0.018486546, 0.38011515, 0.015736483, 0.5798418, -0.015710266, -0.28223208, -0.0028734324, -0.72472686, -292.17767, 2.0851777, 199.04272)
+fuelValue = 70
 
 [node name="DialogeTriggers" type="Node3D" parent="." unique_id=1978415879]
 

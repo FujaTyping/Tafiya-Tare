@@ -5,8 +5,13 @@ signal loading_screen_ready
 @export var animation_player: AnimationPlayer
 @export var progressBar : ProgressBar
 @export var textLabel: Label
+@export var loading_icon: TextureRect
 
 func _ready() -> void:
+	if get_tree().current_scene.name == "BeforeMenu" :
+		loading_icon.hide()
+	else :
+		loading_icon.show()
 	textLabel.text = str(0)
 	await animation_player.animation_finished
 	loading_screen_ready.emit()
