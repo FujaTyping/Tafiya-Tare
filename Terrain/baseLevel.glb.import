@@ -51,7 +51,16 @@ _subresources={
 "PATH:Cube_003": {
 "generate/physics": true
 },
+"PATH:Cube_006": {
+"generate/physics": true
+},
+"PATH:Cube_007": {
+"generate/physics": true
+},
 "PATH:Plane_001": {
+"generate/physics": true
+},
+"PATH:Plane_002": {
 "generate/physics": true
 }
 }

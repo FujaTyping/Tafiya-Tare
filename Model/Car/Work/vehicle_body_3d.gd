@@ -18,6 +18,11 @@ var canOpenLight = false
 @onready var engine_start: AudioStreamPlayer3D = $EngineStart
 @onready var car_idle: AudioStreamPlayer3D = $CarIdle
 @onready var engine_stop: AudioStreamPlayer3D = $EngineStop
+@onready var fuel_out: AudioStreamPlayer3D = $FuelOut
+@onready var fuel_icon: TextureRect = $CanvasLayer/FuelIcon
+@onready var fuel_animation: AnimationPlayer = $CanvasLayer/FuelAnimation
+
+var isOutFuel: bool = false
 
 func _ready() -> void:
 	if Varibles.isFromLoadSaved :
@@ -28,6 +33,9 @@ func _ready() -> void:
 	
 func fuelUpdate() :
 	fuel_bar.value = snapped(carFuel, 0.1)
+	if carFuel > 15 :
+		isOutFuel = false
+		fuel_icon.hide()
 	
 func interact() :
 	return "ON_INTERACTION_CAR"
@@ -62,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		
 		# --- CONTINUOUS FUEL DRAIN & UI UPDATE ---
 		if dir != 0:
-			carFuel -= 0.8 * delta #0.08 #0.05
+			#carFuel -= 0.8 * delta #0.08 #0.05
 			if carFuel < 0 :
 				fuel_bar.value = 0
 				car_idle.stop()
@@ -70,6 +78,15 @@ func _physics_process(delta: float) -> void:
 				engine_stop.play()
 				openLight(false)
 			else :
+				if carFuel < 15 :
+					if not isOutFuel :
+						isOutFuel = true
+						fuel_out.play()
+						fuel_icon.show()
+						fuel_animation.play("3")
+				else :
+					isOutFuel = false
+					fuel_icon.hide()
 				fuel_bar.value = snapped(carFuel, 0.1)
 		# -----------------------------------------
 		

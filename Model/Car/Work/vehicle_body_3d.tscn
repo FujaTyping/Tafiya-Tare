@@ -7,11 +7,50 @@
 [ext_resource type="AudioStream" uid="uid://c8wkpoqskjv2t" path="res://SFX/CarEngineStart.wav" id="5_thola"]
 [ext_resource type="AudioStream" uid="uid://dliwxoqdubwq4" path="res://SFX/CarIdle.wav" id="6_vda12"]
 [ext_resource type="AudioStream" uid="uid://b8tymwy27govf" path="res://SFX/EngineStop.wav" id="7_7diub"]
+[ext_resource type="AudioStream" uid="uid://cfepa716wxkp3" path="res://SFX/lowFuel.wav" id="8_00hye"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="8_hpwcy"]
 [ext_resource type="Texture2D" uid="uid://d00jdgildfd4f" path="res://UI/Texture/FuelBg.png" id="9_qbuse"]
+[ext_resource type="Texture2D" uid="uid://dtg54qw2gdjp0" path="res://UI/Texture/caroilIcon.png" id="11_4hprx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
 size = Vector3(1, 1.0080566, 1)
+
+[sub_resource type="Animation" id="Animation_4hprx"]
+resource_name = "3"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FuelIcon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cwpbu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FuelIcon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gj6qa"]
+_data = {
+&"3": SubResource("Animation_4hprx"),
+&"RESET": SubResource("Animation_cwpbu")
+}
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1682748158 groups=["Interaction"]]
 collision_layer = 2
@@ -112,6 +151,11 @@ stream = ExtResource("7_7diub")
 volume_db = 4.0
 bus = &"SFX"
 
+[node name="FuelOut" type="AudioStreamPlayer3D" parent="." unique_id=1559695773]
+stream = ExtResource("8_00hye")
+volume_db = 4.0
+bus = &"SFX"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=247510756]
 layer = 2
 visible = false
@@ -167,6 +211,19 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_hpwcy")
 theme_override_font_sizes/font_size = 42
 text = "%"
+
+[node name="FuelIcon" type="TextureRect" parent="CanvasLayer" unique_id=328539031]
+visible = false
+modulate = Color(1, 0, 0, 1)
+offset_left = 97.0
+offset_top = 1012.0
+offset_right = 144.0
+offset_bottom = 1060.0
+texture = ExtResource("11_4hprx")
+expand_mode = 1
+
+[node name="FuelAnimation" type="AnimationPlayer" parent="CanvasLayer" unique_id=1189295687]
+libraries/ = SubResource("AnimationLibrary_gj6qa")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1120169093]
 transform = Transform3D(1, 0, 0, 0, -0.98875904, 0.14951819, 0, -0.14951819, -0.98875904, -0.6461761, -0.4961285, 2.562558)

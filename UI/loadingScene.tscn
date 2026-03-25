@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xdi33cxrxj5q"]
+[gd_scene format=3 uid="uid://xdi33cxrxj5q"]
 
 [ext_resource type="Script" uid="uid://d4lbg0ymv3k0m" path="res://UI/loading_screen.gd" id="1_nkc8s"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_k03du"]
+[ext_resource type="Texture2D" uid="uid://tb40l5i4pn8k" path="res://UI/Texture/carIcon.png" id="3_hxixc"]
 
 [sub_resource type="Animation" id="Animation_8rmg3"]
 resource_name = "FadeIn"
@@ -30,6 +31,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-180, 930), Vector2(0, 930)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LoadingIcon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_1j043"]
 length = 0.001
@@ -57,6 +70,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 967)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LoadingIcon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pnnle"]
 _data = {
@@ -64,12 +89,50 @@ _data = {
 &"RESET": SubResource("Animation_1j043")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("animation_player", "textLabel")]
+[sub_resource type="Animation" id="Animation_hxixc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingIcon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.18325958]
+}
+
+[sub_resource type="Animation" id="Animation_8atyx"]
+resource_name = "Spinn"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingIcon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.18325958, -0.18325958, 0.18325958]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljes3"]
+_data = {
+&"RESET": SubResource("Animation_hxixc"),
+&"Spinn": SubResource("Animation_8atyx")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=51012446 node_paths=PackedStringArray("animation_player", "textLabel")]
 script = ExtResource("1_nkc8s")
 animation_player = NodePath("AnimationPlayer")
 textLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Label")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=122800900]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -77,7 +140,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1680742299]
 visible = false
 anchors_preset = 2
 anchor_top = 1.0
@@ -92,34 +155,47 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1061002053]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = -6
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1384611750]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k03du")
 theme_override_font_sizes/font_size = 24
 text = "ON_SCENE_LOADING"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=462292349]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1078768718]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k03du")
 theme_override_font_sizes/font_size = 30
 text = "0"
 
-[node name="Percentage" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Percentage" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=302089427]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k03du")
 theme_override_font_sizes/font_size = 30
 text = "%"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pnnle")
-}
-autoplay = "FadeIn"
+[node name="LoadingIcon" type="TextureRect" parent="." unique_id=1538871951]
+modulate = Color(1, 1, 1, 0)
+offset_left = 35.0
+offset_top = 976.0
+offset_right = 107.724
+offset_bottom = 1053.0264
+rotation = 0.18325958
+pivot_offset = Vector2(36.362, 38.513)
+texture = ExtResource("3_hxixc")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1532719199]
+libraries/ = SubResource("AnimationLibrary_pnnle")
+autoplay = &"FadeIn"
+
+[node name="Spinnger" type="AnimationPlayer" parent="." unique_id=1854888442]
+libraries/ = SubResource("AnimationLibrary_ljes3")
+autoplay = &"Spinn"

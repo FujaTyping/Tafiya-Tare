@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://4pwsgsmth51f"]
+[gd_scene format=3 uid="uid://4pwsgsmth51f"]
 
 [ext_resource type="Script" uid="uid://bmktbtq8nojtm" path="res://Model/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="2_5xjvv"]
@@ -281,41 +281,41 @@ _data = {
 &"Show": SubResource("Animation_416l5")
 }
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" unique_id=2133112265]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4flbx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1716350539]
 transform = Transform3D(0.7206, 0, 0, 0, 0.68326414, 0, 0, 0, 0.7014749, 0, 0, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_sh265")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=66928639]
 transform = Transform3D(-1.8053353e-08, 0.4167771, 0, -0.4130126, -1.8217905e-08, 0, 0, 0, 0.4060781, 0, 0.49113628, -0.40994745)
 visible = false
 mesh = SubResource("CapsuleMesh_4flbx")
 
-[node name="playerAnimation" parent="." instance=ExtResource("2_5xjvv")]
+[node name="playerAnimation" parent="." unique_id=839030366 instance=ExtResource("2_5xjvv")]
 transform = Transform3D(-5.780226e-09, 0, -0.1162554, 0, 0.12203301, 0, 0.13223617, 0, -5.0816853e-09, 0, 0, 0)
 visible = false
 
-[node name="woman_player" parent="." instance=ExtResource("3_ieuix")]
+[node name="woman_player" parent="." unique_id=669057689 instance=ExtResource("3_ieuix")]
 transform = Transform3D(1.08123395e-08, 0, -0.108337075, 0, 0.116785966, 0, 0.096225515, 0, 1.2173513e-08, 0, 0.006185621, 0)
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=203843518]
 transform = Transform3D(0.738862, 0, 0, 0, 0.7011021, 0, 0, 0, 0.71398246, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_4flbx")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=189259949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.467, 0)
 spring_length = 1.2
 margin = 0.5
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1481727040]
 
-[node name="Tutorial" type="MarginContainer" parent="."]
+[node name="Tutorial" type="MarginContainer" parent="." unique_id=370067742]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -323,257 +323,255 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+[node name="ColorRect" type="ColorRect" parent="Tutorial" unique_id=1276346054]
 layout_mode = 2
 color = Color(1, 1, 1, 0.14117648)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial" unique_id=1683419601]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 36
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer" unique_id=189940894]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_1yulc")
 theme_override_font_sizes/font_size = 48
 text = "TITLE_CONTROL"
 
-[node name="GridContainer" type="GridContainer" parent="Tutorial/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Tutorial/VBoxContainer" unique_id=63335057]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 44
 theme_override_constants/v_separation = 14
 columns = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=1211013493]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer" unique_id=1647035902]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "W"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer" unique_id=870157901]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_W"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=1177943328]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer2" unique_id=452538519]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "A"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer2"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer2" unique_id=219205239]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_A"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=971712619]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer3" unique_id=1062182542]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "S"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer3"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer3" unique_id=927098645]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_S"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=1502211914]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer4"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer4" unique_id=588095020]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "D"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer4"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer4" unique_id=275955198]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_D"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=1462328097]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer5"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer5" unique_id=216091209]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "E"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer5"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer5" unique_id=1940426369]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_E"
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=595170156]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer7"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer7" unique_id=350414348]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "H"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer7"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer7" unique_id=34136638]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_H"
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer10" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=2087900698]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer10"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer10" unique_id=1224544515]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "M"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer10"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer10" unique_id=539637733]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_M"
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=2054839862]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer6"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer6" unique_id=374802066]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "ESC"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer6"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer6" unique_id=414410111]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_ESC"
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=1056604115]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer8"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer8" unique_id=1976560484]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "ALT"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer8"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer8" unique_id=1425080457]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_ALT"
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=1924892377]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer9"]
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer9" unique_id=2126133051]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_MOUSE_SCROLL"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer9"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer9" unique_id=1035874945]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_ZOOM_CAMERA"
 
-[node name="Label2" type="Label" parent="Tutorial/VBoxContainer"]
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer" unique_id=470282729]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "UI_CONTROL_HIDE"
 
-[node name="ControlSH" type="AnimationPlayer" parent="Tutorial"]
-libraries = {
-&"": SubResource("AnimationLibrary_5hd5c")
-}
+[node name="ControlSH" type="AnimationPlayer" parent="Tutorial" unique_id=1579102782]
+libraries/ = SubResource("AnimationLibrary_5hd5c")
 
-[node name="Walking" type="AudioStreamPlayer3D" parent="."]
+[node name="Walking" type="AudioStreamPlayer3D" parent="." unique_id=794730842]
 stream = ExtResource("3_qsoau")
 volume_db = -20.0
 bus = &"SFX"
 
-[node name="Jump" type="AudioStreamPlayer3D" parent="."]
+[node name="Jump" type="AudioStreamPlayer3D" parent="." unique_id=1100887027]
 stream = ExtResource("4_ixqkf")
 volume_db = -18.0
 bus = &"SFX"
 
-[node name="TrashCollect" type="AudioStreamPlayer3D" parent="."]
+[node name="TrashCollect" type="AudioStreamPlayer3D" parent="." unique_id=164928844]
 stream = ExtResource("7_p21r4")
 volume_db = -12.0
 bus = &"SFX"
 
-[node name="FuelCollect" type="AudioStreamPlayer3D" parent="."]
+[node name="FuelCollect" type="AudioStreamPlayer3D" parent="." unique_id=147898774]
 stream = ExtResource("8_b3xkm")
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="Wrong" type="AudioStreamPlayer3D" parent="."]
+[node name="Wrong" type="AudioStreamPlayer3D" parent="." unique_id=325294904]
 stream = ExtResource("9_fjqy1")
 volume_db = -12.0
 bus = &"SFX"
 
-[node name="Paper" type="AudioStreamPlayer3D" parent="."]
+[node name="Paper" type="AudioStreamPlayer3D" parent="." unique_id=8770040]
 stream = ExtResource("12_ff0io")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="Ingredient" type="AudioStreamPlayer3D" parent="."]
+[node name="Ingredient" type="AudioStreamPlayer3D" parent="." unique_id=1807072646]
 stream = ExtResource("12_5hd5c")
 volume_db = 2.0
 bus = &"SFX"
 
-[node name="Cooking" type="AudioStreamPlayer3D" parent="."]
+[node name="Cooking" type="AudioStreamPlayer3D" parent="." unique_id=1888501108]
 stream = ExtResource("13_5hd5c")
 volume_db = 80.0
 bus = &"SFX"
 
-[node name="Dish" type="AudioStreamPlayer3D" parent="."]
+[node name="Dish" type="AudioStreamPlayer3D" parent="." unique_id=703584555]
 stream = ExtResource("14_fi0my")
 volume_db = 5.0
 bus = &"SFX"
 
-[node name="LookingCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.1568441, -0.5561797, 0, 0.77420586, 0.8310621, 0, 0.48375693, -0.15921128)
+[node name="LookingCast" type="RayCast3D" parent="." unique_id=421009574]
+transform = Transform3D(1, 0, 0, 0, 1.2536726, -0.43460256, 0, 0.6049696, 0.90062237, 0, 0.48375693, -0.15921128)
 collision_mask = 2
 
-[node name="LookingCastUp" type="RayCast3D" parent="."]
+[node name="LookingCastUp" type="RayCast3D" parent="." unique_id=1696170325]
 transform = Transform3D(1, 0, 0, 0, -0.35092932, -0.9677003, 0, 1.3470454, -0.25210315, 0, -0.20638645, 0)
 visible = false
 collision_mask = 2
 
-[node name="Interact" type="MarginContainer" parent="."]
+[node name="Interact" type="MarginContainer" parent="." unique_id=1681825233]
 visible = false
 anchors_preset = -1
 anchor_left = 0.499
@@ -593,24 +591,24 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Interact"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Interact" unique_id=999011595]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Interact/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Interact/VBoxContainer" unique_id=1974136549]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 19
 
-[node name="Label" type="Label" parent="Interact/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Interact/VBoxContainer/HBoxContainer" unique_id=1568866914]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 28
 text = "ON_INTERACTION_AVALABLE"
 
-[node name="Label2" type="Label" parent="Interact/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="Interact/VBoxContainer/HBoxContainer" unique_id=385232441]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -618,7 +616,7 @@ theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 28
 text = "0฿"
 
-[node name="MoreInfoHint" type="Label" parent="Interact/VBoxContainer"]
+[node name="MoreInfoHint" type="Label" parent="Interact/VBoxContainer" unique_id=1565331764]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -628,7 +626,7 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Help" type="MarginContainer" parent="."]
+[node name="Help" type="MarginContainer" parent="." unique_id=360626853]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -644,21 +642,19 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="Help"]
+[node name="Label" type="Label" parent="Help" unique_id=1637054031]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 26
 text = "UI_HELP_HINT"
 
-[node name="HelpMe" type="AnimationPlayer" parent="Help"]
-libraries = {
-&"": SubResource("AnimationLibrary_qve47")
-}
+[node name="HelpMe" type="AnimationPlayer" parent="Help" unique_id=27558032]
+libraries/ = SubResource("AnimationLibrary_qve47")
 
-[node name="Sleep" type="CanvasLayer" parent="."]
+[node name="Sleep" type="CanvasLayer" parent="." unique_id=1818803801]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="Sleep"]
+[node name="ColorRect" type="ColorRect" parent="Sleep" unique_id=588830463]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -670,7 +666,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Sleep"]
+[node name="ColorRect2" type="ColorRect" parent="Sleep" unique_id=1902171988]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -682,12 +678,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Sleep" type="AnimationPlayer" parent="Sleep"]
-libraries = {
-&"": SubResource("AnimationLibrary_00t8u")
-}
+[node name="Sleep" type="AnimationPlayer" parent="Sleep" unique_id=1004343103]
+libraries/ = SubResource("AnimationLibrary_00t8u")
 
-[node name="InterShow" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_b3xkm")
-}
+[node name="InterShow" type="AnimationPlayer" parent="." unique_id=1078385493]
+libraries/ = SubResource("AnimationLibrary_b3xkm")

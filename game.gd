@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 155 #465 #155
+@export var startTime = 150 #465 #155
 @export var dayLengthInSeconds:float = 300 #155
 var day = 0
 
@@ -163,9 +163,9 @@ func _day_change_animation():
 			for patical:GPUParticles3D in waterFlow :
 				patical.amount_ratio = 0.3
 			for light in everyNightLight :
-				if light is OmniLight3D :
-					light.light_energy = 1
-					continue
+				#if light is OmniLight3D :
+					#light.light_energy = 1
+					#continue
 				light.visible = true
 
 	else :
@@ -183,9 +183,9 @@ func _day_change_animation():
 			for patical:GPUParticles3D in waterFlow :
 				patical.amount_ratio = 1
 			for light in everyNightLight :
-				if light is OmniLight3D :
-					light.light_energy = 0.1
-					continue
+				#if light is OmniLight3D :
+					#light.light_energy = 0.1
+					#continue
 				light.visible = false
 
 func getDN() :
