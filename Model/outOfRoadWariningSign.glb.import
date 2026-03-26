@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://foj5ilt70b4t"
-path="res://.godot/imported/baseLevel.glb-4d025b1546517013619d5e20d8ab3f2c.scn"
+uid="uid://b0aw34whp7xc7"
+path="res://.godot/imported/outOfRoadWariningSign.glb-e6a67508371fcd2dbfa3e30f740f3a2f.scn"
 
 [deps]
 
-source_file="res://Terrain/baseLevel.glb"
-dest_files=["res://.godot/imported/baseLevel.glb-4d025b1546517013619d5e20d8ab3f2c.scn"]
+source_file="res://Model/outOfRoadWariningSign.glb"
+dest_files=["res://.godot/imported/outOfRoadWariningSign.glb-e6a67508371fcd2dbfa3e30f740f3a2f.scn"]
 
 [params]
 
@@ -39,31 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
+"PATH:Circle": {
+"generate/physics": true
+},
 "PATH:Cube": {
-"generate/physics": true
-},
-"PATH:Cube_001": {
-"generate/physics": true
-},
-"PATH:Cube_002": {
-"generate/physics": true
-},
-"PATH:Cube_003": {
-"generate/physics": true
-},
-"PATH:Cube_006": {
-"generate/physics": true
-},
-"PATH:Cube_007": {
-"generate/physics": true
-},
-"PATH:Cube_011": {
-"generate/physics": true
-},
-"PATH:Plane_001": {
-"generate/physics": true
-},
-"PATH:Plane_002": {
 "generate/physics": true
 }
 }

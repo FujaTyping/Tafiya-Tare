@@ -20,7 +20,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qve47"]
+size = Vector3(0.9350586, 1.6874695, 0.6798096)
 
 [sub_resource type="Animation" id="Animation_ff0io"]
 length = 0.001
@@ -306,8 +307,8 @@ transform = Transform3D(1.08123395e-08, 0, -0.108337075, 0, 0.116785966, 0, 0.09
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=203843518]
-transform = Transform3D(0.738862, 0, 0, 0, 0.7011021, 0, 0, 0, 0.71398246, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_4flbx")
+transform = Transform3D(0.738862, 0, 0, 0, 0.7011021, 0, 0, 0, 0.71398246, 0.011003559, 0.04168999, -0.06270879)
+shape = SubResource("BoxShape3D_qve47")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=189259949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.467, 0)

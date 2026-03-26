@@ -83,6 +83,10 @@
 [ext_resource type="Script" uid="uid://x2cum2ogyc17" path="res://Script/OnilightPole.gd" id="81_66xay"]
 [ext_resource type="PackedScene" uid="uid://3464ttvcxm3s" path="res://Model/warningSleep.glb" id="82_0s2o4"]
 [ext_resource type="PackedScene" uid="uid://ch73enkqbxb8u" path="res://Terrain/Base/baseLevelTunnel.glb" id="83_4mai8"]
+[ext_resource type="PackedScene" uid="uid://c347p7mo65srp" path="res://Model/NPC/NPCNABRO3.glb" id="84_w37fy"]
+[ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="85_7x3ck"]
+[ext_resource type="PackedScene" uid="uid://b0aw34whp7xc7" path="res://Model/outOfRoadWariningSign.glb" id="86_vvpk2"]
+[ext_resource type="PackedScene" uid="uid://bqx0nrcwkrl48" path="res://Model/misMtSign.glb" id="87_o46vb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1258,7 +1262,27 @@ transform = Transform3D(-0.98759973, -0.122189425, -0.098572865, -0.122787446, 0
 transform = Transform3D(-0.537453, 0.018486546, 0.38011515, 0.015736483, 0.5798418, -0.015710266, -0.28223208, -0.0028734324, -0.72472686, -292.17767, 2.0851777, 199.04272)
 fuelValue = 70
 
+[node name="outOfRoadWariningSign" parent="AssetsTerrain" unique_id=320216069 instance=ExtResource("86_vvpk2")]
+transform = Transform3D(-0.69909924, 0, 0.14995033, 0, 0.715, 0, -0.14995033, 0, -0.69909924, -305.87552, 0.9436226, 220.69337)
+
+[node name="misMtSign" parent="AssetsTerrain" unique_id=1129887680 instance=ExtResource("87_o46vb")]
+transform = Transform3D(0.4951037, 0, -0.35633177, 0, 0.61, 0, 0.35633177, 0, 0.4951037, -279.22238, 0.63527656, 294.2861)
+
 [node name="DialogeTriggers" type="Node3D" parent="." unique_id=1978415879]
+
+[node name="DialogeTrigged3" parent="DialogeTriggers" unique_id=1075768147 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -293.28464, 2.6263468, 209.76)
+dialoguesLine = Array[String](["DIALOGE_BASE_1_1", "DIALOGE_BASE_1_2", "DIALOGE_BASE_1_3", "DIALOGE_BASE_1_4", "DIALOGE_BASE_1_5"])
+charLine = Array[String](["NPC_STRANGER", "PLAYER_DIALOGE_NAME", "NPC_STRANGER", "NPC_STRANGER", "NPC_STRANGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "ArmatureAction"
+animationBody = NodePath("../../NPC/Base")
+helloAnimation = "ArmatureAction_001"
+talkingAnimation = "ArmatureAction_002"
+saveAfter = true
+useTyping = false
+typingPlaceholder = ""
 
 [node name="DialogeTrigged" parent="DialogeTriggers" unique_id=1664467449 node_paths=PackedStringArray("animationBody") instance=ExtResource("13_7sc4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.283724, 0.4474063, 16.539227)
@@ -1373,9 +1397,6 @@ bones/13/rotation = Quaternion(0.90708023, 5.3970435e-17, 5.397044e-17, -0.42095
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26882935, 0.15466309)
 shape = SubResource("CylinderShape3D_gh0px")
 
-[node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
-z_index = 99
-
 [node name="base" parent="." unique_id=630397233 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
@@ -1383,6 +1404,9 @@ transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02
 transform = Transform3D(207.64395, 0, 0, 0, 1.5456152, 0, 0, 0, 257.40875, 1.8043823, -3.4176025, -68.17122)
 mesh = SubResource("PlaneMesh_3xib3")
 skeleton = NodePath("../..")
+
+[node name="baseLevel" parent="." unique_id=1608689245 instance=ExtResource("78_cwgap")]
+transform = Transform3D(0.26914138, 0, -2.4150493, 0, 2.43, 0, 2.4150493, 0, 0.26914138, -294.3115, 1.4696629, 197.51277)
 
 [node name="InWater" type="Area3D" parent="." unique_id=424930667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 539.84485, 0, 539.84485)
@@ -1393,9 +1417,6 @@ script = ExtResource("76_5628o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InWater" unique_id=355542927]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.66217, -16.664135, 0)
 shape = SubResource("BoxShape3D_3xib3")
-
-[node name="baseLevel" parent="." unique_id=2004882037 instance=ExtResource("78_cwgap")]
-transform = Transform3D(0.26914138, 0, -2.4150493, 0, 2.43, 0, 2.4150493, 0, 0.26914138, -294.3115, 1.4696629, 197.51277)
 
 [node name="TerrainLight" type="Node3D" parent="." unique_id=630847828]
 
@@ -1519,8 +1540,17 @@ shadow_enabled = true
 spot_range = 9.018124
 spot_angle = 41.750698
 
+[node name="NPC" type="Node3D" parent="." unique_id=1826007391]
+
+[node name="Base" parent="NPC" unique_id=1091833146 instance=ExtResource("84_w37fy")]
+transform = Transform3D(0.122111216, 0, -0.8512866, 0, 0.86, 0, 0.8512866, 0, 0.122111216, -293.25488, 2.162463, 209.75185)
+
+[node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
+z_index = 99
+
 [editable path="PondNoBase"]
 [editable path="WaterFall"]
 [editable path="AssetsTerrain/BaseLevel/baseLevelTunnel"]
 [editable path="StatueOfCatalyst"]
 [editable path="StatueOfCatalyst/StatueL"]
+[editable path="NPC/Base"]

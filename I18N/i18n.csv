@@ -84,8 +84,22 @@ COOKING_POT_COOKING,Cooking,กำลังทำอาหาร
 ON_INTERACTION_FOOD_COLLECT,Press E to collect food,กด E เพื่อเก็บอาหาร
 COOKING_POT_WAITING_INGREDIENT,Waiting for ingredient,กำลังรอส่วนผสม
 ON_AREA_ENTERED_BASE_LEVEL,A rest stop,จุดพักรถแห่งหนึ่ง
+ON_AREA_ENTERED_LEVEL_1,Village of Lumina,หมู่บ้านลูมินา
+ON_AREA_ENTERED_LEVEL_2,The Gearwood Settlement,ชุมชนเกียร์วูด
+ON_AREA_ENTERED_LEVEL_3,Eden’s Village,หมู่บ้านอีเดน
+ON_AREA_ENTERED_LEVEL_4,Artifice Hamlet,แฮมเล็ตจอมปลอม
+ON_AREA_ENTERED_LEVEL_5,The Resonance Keep,ป้อมปราการเรโซแนนซ์
+ON_AREA_ENTERED_LEVEL_6,Ocean’s Grave,สุสานมหาสมุทร
+ON_AREA_ENTERED_LEVEL_7,Oblivion Cave,ถ้ำแห่งความลืมเลือน
+ON_AREA_ENTERED_PEAK_MOUTANT,Peak of Desire,ยอดเขาแห่งความปรารถนา
 ON_AREA_ENTERED_CLVL,Catalyst Village & Forest,หมู่บ้านและป่า คาตาลิสต์
 INTERACTION_FAIL_NEED_MONEY,You need more money,คุณต้องการเงินเพิ่ม
 INTERACTION_FAIL_ONLY_SLEEP_AT_NIGHT,You can only slepp at night,คุณสามารถนอนได้เฉพาะตอนกลางคืนเท่านั้น
 INTERACTION_FAIL_NO_INGREDIENT,Add more ingredient,เพิ่มส่วนผสมเพิ่มเติม
 WELCOME_HEADSET_RECOMMEND,Use headphone for better experience,ใช้หูฟังเพื่อประสบการณ์การฟังที่ดีกว่า
+DIALOGE_BASE_1_1,"Hee hee... The elixir of immortality... Eternal life... Everyone wants it, right? You too?",ฮี่ๆ... น้ำอมฤต... ชีวิตนิรันดร์... ใครๆ ก็อยากได้มันทั้งนั้นแหละ เอ็งเองก็เหมือนกันใช่ไหม?
+DIALOGE_BASE_1_2,.....,.....
+DIALOGE_BASE_1_3,"Look up that mountain. Everyone's just trampling and scrambling to get up there, leaving behind a trail of carelessness on both sides of the path. Nobody cares if the ground is dry or the water is polluted.",มองขึ้นไปบนเขานั่นสิ ทุกคนเอาแต่เหยียบย่ำแย่งชิงกันขึ้นไป ทิ้งเศษซากความมักง่ายไว้เต็มสองข้างทาง ไม่มีใครสนหรอกว่าดินจะแห้ง หรือน้ำจะเสีย
+DIALOGE_BASE_1_4,"Drive up there. Take those hopeful people with you, but remember my words.",ขับรถขึ้นไปสิ พาพวกคนที่มีความหวังติดรถเอ็งไปด้วย แต่จงจำคำข้าไว้ให้ดีนะ
+DIALOGE_BASE_1_5,"Even if you live for a million years, if the world you live in dies, immortality is just a curse.",ต่อให้เอ็งมีชีวิตอยู่ไปเป็นล้านปี แต่ถ้าโลกที่เอ็งอยู่มันตายไปแล้ว ความอมตะนั่นมันก็คือคำสาปดีๆ นี่เอง
+NPC_STRANGER,Stranger,คนแปลกหน้า
