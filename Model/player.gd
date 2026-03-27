@@ -20,6 +20,7 @@ var JUMP_VELOCITY = 4.0
 # --- CAR VARIABLES ---
 @onready var car_cam: Camera3D = $"../VehicleBody3D/CamArm/Camera3D"
 @onready var car_node: Node3D = $"../VehicleBody3D"
+@onready var exitCar: Marker3D = car_node.get_node("Exit")
 
 @onready var player_animation: Node3D = $playerAnimation
 @onready var woman_player: Node3D = $woman_player
@@ -39,6 +40,9 @@ var JUMP_VELOCITY = 4.0
 # Trash Collect
 @onready var trash_collect: AudioStreamPlayer3D = $TrashCollect
 @onready var fuel_collect: AudioStreamPlayer3D = $FuelCollect
+
+# Spawn
+@onready var default_spawn: Marker3D = $"../AllMarker/DefaultSpawn"
 
 var is_in_car: bool = false
 var isInViewInteract = false
@@ -72,6 +76,8 @@ func _ready():
 		pivot.spring_length = Varibles.saved_data.playerSpringArmLength
 		Varibles.Coins = Varibles.saved_data.player_coins
 		DSPEED = Varibles.saved_data.playerSpeed
+	else :
+		self.global_position = default_spawn.global_position
 	SPEED = DSPEED
 	sens = Varibles.MouseSens
 	if Varibles.playerSelection == "joker" :
@@ -92,13 +98,14 @@ func _input(event):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
-		if Input.is_action_pressed("scrollDown") :
-			if pivot.spring_length < 2.20000004768372 :
-				pivot.spring_length += 0.25
-		if Input.is_action_pressed("scrollUp") :
-			if pivot.spring_length > -0.29999995231628 :
-				pivot.spring_length -= 0.25
+	if not is_in_car :
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
+			if Input.is_action_pressed("scrollDown") :
+				if pivot.spring_length < 2.20000004768372 :
+					pivot.spring_length += 0.25
+			if Input.is_action_pressed("scrollUp") :
+				if pivot.spring_length > -0.29999995231628 :
+					pivot.spring_length -= 0.25
 			
 		if Input.is_action_just_pressed("Help") :
 			if not tutorial.visible :
@@ -214,7 +221,7 @@ func _input(event):
 				
 				car_node.openLight(false)
 				
-				global_position = car_node.global_position + (car_node.transform.basis.x * 0.5) + Vector3(0.5, 0.5, 2)
+				#global_position = exitCar.global_position
 				car_node.is_driven = false
 				if car_node.carFuel > 0 :
 					engine_idle.stop()
@@ -232,6 +239,10 @@ func wrongInteraction(moreInfo:String = "") :
 		more_info_hint.hide()
 	label.add_theme_color_override("font_color",Color.WHITE)
 	label_2.add_theme_color_override("font_color",Color.WHITE)
+
+func _process(delta: float) -> void:
+	if is_in_car :
+		global_position = exitCar.global_position
 
 func _physics_process(delta: float) -> void:
 	var viewUI : Control = get_tree().current_scene.get_node("ViewPaper")

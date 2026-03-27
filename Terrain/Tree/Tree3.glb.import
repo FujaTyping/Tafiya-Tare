@@ -38,10 +38,18 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"nodes": {
-"PATH:Icosphere": {
-"generate/physics": true
+"meshes": {
+"Tree3_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Terrain/Tree/Mesh/Tree3.res",
+"save_to_file/path": "uid://b65seyi1rqvvn"
+}
 },
+"nodes": {
 "PATH:Plane": {
 "generate/physics": true
 }

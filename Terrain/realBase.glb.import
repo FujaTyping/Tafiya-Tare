@@ -56,6 +56,12 @@ _subresources={
 },
 "PATH:Landscape": {
 "generate/physics": true
+},
+"PATH:Landscape_003": {
+"generate/physics": true
+},
+"PATH:Landscape_004": {
+"generate/physics": true
 }
 }
 }

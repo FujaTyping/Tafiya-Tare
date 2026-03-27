@@ -129,6 +129,9 @@ shape = SubResource("BoxShape3D_3wmsh")
 transform = Transform3D(2.3032806, 0, 0, 0, 0.69900817, 0, 0, 0, 1.5445966, 0.00032175955, -0.518596, -2.3128333)
 shape = SubResource("BoxShape3D_3wmsh")
 
+[node name="Exit" type="Marker3D" parent="." unique_id=1036430489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.261166, 0.089083314, 0.63776535)
+
 [node name="CamArm" type="SpringArm3D" parent="." unique_id=1627234161]
 collision_mask = 0
 spring_length = 5.0
