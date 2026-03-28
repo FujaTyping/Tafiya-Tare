@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var startTime = 145 #465 #155
+@export var startTime:int = 145 #465 #155
 @export var dayLengthInSeconds:float = 300 #155
 var day = 0
 

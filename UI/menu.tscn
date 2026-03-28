@@ -1,9 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://bk2eqtj4bowsx"]
+[gd_scene format=3 uid="uid://bk2eqtj4bowsx"]
 
 [ext_resource type="Script" uid="uid://i7suxu8ebn53" path="res://UI/menu.gd" id="1_0h2wq"]
 [ext_resource type="Script" uid="uid://fk2ayj7lo450" path="res://UI/player_selection.gd" id="3_dte3n"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
-[ext_resource type="PackedScene" uid="uid://dls1dsimcv06t" path="res://Terrain/Mt.glb" id="3_qmqfe"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_dte3n"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="5_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="6_dte3n"]
@@ -310,7 +309,7 @@ _data = {
 &"RESET": SubResource("Animation_22gd7")
 }
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" unique_id=1451827100]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -319,31 +318,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0h2wq")
 
-[node name="Environment" type="WorldEnvironment" parent="."]
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=596315165]
 environment = SubResource("Environment_4hkxj")
 
-[node name="Mt" parent="." instance=ExtResource("3_qmqfe")]
-transform = Transform3D(0.82258326, 0, 0, 0, 0.55367327, 0, 0, 0, 0.7233943, 0, 0, 0)
-
-[node name="sun" type="DirectionalLight3D" parent="."]
+[node name="sun" type="DirectionalLight3D" parent="." unique_id=352622605]
 transform = Transform3D(-0.0367001, 0.20293762, -0.9785037, 0.03095014, 0.97892445, 0.20186405, 0.998847, -0.02287639, -0.042207614, 0, 0, 0)
 
-[node name="Marker" type="Node3D" parent="."]
+[node name="Marker" type="Node3D" parent="." unique_id=1411335512]
 
-[node name="PlayerSelection" type="Marker3D" parent="Marker"]
+[node name="PlayerSelection" type="Marker3D" parent="Marker" unique_id=85094731]
 transform = Transform3D(-0.76649296, 0, -0.6422527, 0, 1, 0, 0.6422527, 0, -0.76649296, -1.3697425, 0.08811866, -1.3735877)
 
-[node name="SelectWM" type="Marker3D" parent="Marker"]
+[node name="SelectWM" type="Marker3D" parent="Marker" unique_id=462824274]
 transform = Transform3D(-0.3280754, 0, -0.94465154, 0, 1, 0, 0.94465154, 0, -0.3280754, -1.2422471, 0.12613215, -1.2211908)
 
-[node name="SelectM" type="Marker3D" parent="Marker"]
+[node name="SelectM" type="Marker3D" parent="Marker" unique_id=1912026583]
 transform = Transform3D(-0.9794276, 0, -0.20179594, 0, 1, 0, 0.20179594, 0, -0.9794276, -1.2422471, 0.12613215, -1.2211908)
 
-[node name="Camera3D" type="Camera3D" parent="Marker"]
+[node name="Camera3D" type="Camera3D" parent="Marker" unique_id=1383753690]
 transform = Transform3D(-0.40130842, 0, -0.91594297, 0, 1, 0, 0.91594297, 0, -0.40130842, -1.2422471, 0.12613215, -1.2211908)
 visible = false
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1224414148]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -352,16 +348,16 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1789283491]
 handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
 transform = Transform3D(0.13918023, 0.012961894, 0.9901792, 0, 0.99991435, -0.013089253, -0.99026394, 0.0018217764, 0.13916832, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
-[node name="PlayerSelection" type="MarginContainer" parent="."]
+[node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -377,38 +373,38 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 script = ExtResource("3_dte3n")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelection" unique_id=802804487]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 830
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelection/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelection/VBoxContainer" unique_id=16953105]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 8
 
-[node name="Title" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer" unique_id=25769639]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 50
 text = "CHOOSE_CHAR_TITLE"
 
-[node name="Decs" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer"]
+[node name="Decs" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer" unique_id=411395623]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 27
 text = "CHOOSE_CHAR_DESC"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PlayerSelection/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PlayerSelection/VBoxContainer" unique_id=1294291767]
 layout_mode = 2
 theme_override_constants/separation = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSelection/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSelection/VBoxContainer/VBoxContainer2" unique_id=350688824]
 layout_mode = 2
 
-[node name="WM" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="WM" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=112817657]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -418,7 +414,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "SELECT_FM"
 
-[node name="M" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="M" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1458660513]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -428,7 +424,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "SELECT_M"
 
-[node name="Button" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2"]
+[node name="Button" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2" unique_id=1638359194]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../HBoxContainer/WM")
@@ -436,20 +432,20 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "BACK_BUTTON"
 
-[node name="Label" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer2" unique_id=1238810097]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 19
 text = "If you don't choose the game will be select the default character"
 
-[node name="playerAnimation" parent="PlayerSelection" instance=ExtResource("5_kfjwn")]
+[node name="playerAnimation" parent="PlayerSelection" unique_id=936525454 instance=ExtResource("5_kfjwn")]
 transform = Transform3D(0.008245158, 0, -0.017923066, 0, 0.01719056, 0, 0.0198928, 0, 0.007428744, -1.2066778, 0.071113154, -1.0555601)
 
-[node name="woman_player" parent="PlayerSelection" instance=ExtResource("6_dte3n")]
+[node name="woman_player" parent="PlayerSelection" unique_id=838836043 instance=ExtResource("6_dte3n")]
 transform = Transform3D(0.019427536, 0, -0.004682883, 0, 0.016090848, 0, 0.0064913146, 0, 0.01401517, -1.0746584, 0.07535243, -1.1638544)
 
-[node name="Main" type="MarginContainer" parent="."]
+[node name="Main" type="MarginContainer" parent="." unique_id=2088852749]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -464,7 +460,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="Main"]
+[node name="MarginContainer" type="MarginContainer" parent="Main" unique_id=426333179]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 100
@@ -472,17 +468,17 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 630
 
-[node name="GameIcon" type="TextureRect" parent="Main/MarginContainer"]
+[node name="GameIcon" type="TextureRect" parent="Main/MarginContainer" unique_id=1142730830]
 visible = false
 layout_mode = 2
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1686386208]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="Title" type="Label" parent="Main/VBoxContainer"]
+[node name="Title" type="Label" parent="Main/VBoxContainer" unique_id=1217717798]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -490,18 +486,18 @@ theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 52
 text = "TITLE"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/VBoxContainer" unique_id=534268851]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Play" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=1008272392]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Load")
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "PLAY_BUTTON"
 
-[node name="Load" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+[node name="Load" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=1954982274]
 visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
@@ -510,7 +506,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "BUTTON_LOAD"
 
-[node name="Option" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+[node name="Option" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=345375739]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Load")
 focus_neighbor_bottom = NodePath("../Credit")
@@ -518,7 +514,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_BUTTON"
 
-[node name="Credit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+[node name="Credit" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=2003642075]
 visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Option")
@@ -527,7 +523,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CREDIT_BUTTON"
 
-[node name="Quit" type="Button" parent="Main/VBoxContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=177273776]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credit")
 focus_neighbor_bottom = NodePath("../../../VBoxContainer2/HBoxContainer2/LinkButton")
@@ -535,17 +531,17 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "QUIT_BUTTON"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Main"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main" unique_id=969318315]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 6
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Main/VBoxContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main/VBoxContainer2" unique_id=195770128]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 39
 
-[node name="LinkButton" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2"]
+[node name="LinkButton" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2" unique_id=374789994]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -556,7 +552,7 @@ theme_override_font_sizes/font_size = 24
 text = "BUTTON_REPORT_BUG"
 uri = "https://nas.siraphop.me/apps/forms/s/Czofop4CWsGpxkqGx3ZX8esf"
 
-[node name="LinkButton2" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2"]
+[node name="LinkButton2" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2" unique_id=558025210]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -566,7 +562,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CREDIT_BUTTON"
 
-[node name="LinkButton3" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2"]
+[node name="LinkButton3" type="LinkButton" parent="Main/VBoxContainer2/HBoxContainer2" unique_id=1269545334]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -576,26 +572,26 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "LICENSE_BUTTON"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer2" unique_id=1423694255]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Main/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="Main/VBoxContainer2/HBoxContainer" unique_id=335001063]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 16
 text = "VERSION"
 
-[node name="Version" type="Label" parent="Main/VBoxContainer2/HBoxContainer"]
+[node name="Version" type="Label" parent="Main/VBoxContainer2/HBoxContainer" unique_id=1026252249]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 16
 text = "0"
 
-[node name="Credit" type="MarginContainer" parent="."]
+[node name="Credit" type="MarginContainer" parent="." unique_id=575068540]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -610,11 +606,11 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="ColorRect" type="ColorRect" parent="Credit"]
+[node name="ColorRect" type="ColorRect" parent="Credit" unique_id=158617183]
 layout_mode = 2
 color = Color(1, 1, 1, 0.14901961)
 
-[node name="MarginContainer3" type="MarginContainer" parent="Credit"]
+[node name="MarginContainer3" type="MarginContainer" parent="Credit" unique_id=1799418975]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -623,7 +619,7 @@ theme_override_constants/margin_top = 210
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Title" type="Label" parent="Credit/MarginContainer3"]
+[node name="Title" type="Label" parent="Credit/MarginContainer3" unique_id=1601105935]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -632,28 +628,28 @@ theme_override_font_sizes/font_size = 48
 text = "CREDIT_BUTTON"
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="Credit"]
+[node name="MarginContainer2" type="MarginContainer" parent="Credit" unique_id=1528221207]
 layout_mode = 2
 theme_override_constants/margin_left = 385
 theme_override_constants/margin_top = 340
 theme_override_constants/margin_right = 385
 theme_override_constants/margin_bottom = 95
 
-[node name="TabContainer" type="TabContainer" parent="Credit/MarginContainer2"]
+[node name="TabContainer" type="TabContainer" parent="Credit/MarginContainer2" unique_id=406983319]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/panel = SubResource("StyleBoxFlat_qmqfe")
 current_tab = 0
 
-[node name="UI_CREDIT_SOUND" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
+[node name="UI_CREDIT_SOUND" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=865205008]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND"]
+[node name="MarginContainer" type="MarginContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND" unique_id=1814418579]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -665,92 +661,92 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = -340
 theme_override_constants/margin_bottom = 105
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer" unique_id=1676508968]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="Sound" type="VBoxContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer"]
+[node name="Sound" type="VBoxContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer" unique_id=552214911]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1116224270]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Footstep_Dirt.wav by FallujahQc -- https://freesound.org/s/403164/ -- License: Attribution 3.0"
 
-[node name="Label3" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label3" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1045870102]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "FR- Car engine, start, stop, engine.wav by Dan_AudioFile -- https://freesound.org/s/592403/ -- License: 
 Attribution 4.0"
 
-[node name="Label4" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label4" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=830326727]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "FR- Car engine, start, revs, idle .wav by Dan_AudioFile -- https://freesound.org/s/592406/ -- License: 
 Attribution 4.0"
 
-[node name="Label5" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label5" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=305853000]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Coins / Selling sound by williamornelas -- https://freesound.org/s/525147/ -- License: Attribution 4.0"
 
-[node name="Label8" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label8" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=700404362]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "replacing_gas_nozzle.wav by joedeshon -- https://freesound.org/s/117420/ -- License: Attribution 4.0"
 
-[node name="Label9" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label9" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1101075659]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Dat's Wrong! by Beetlemuse -- https://freesound.org/s/587253/ -- License: Attribution 4.0"
 
-[node name="Label10" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label10" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1506856861]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "small_water_fall_in_the_woods_2.wav by volivieri -- https://freesound.org/s/38390/ -- License: Attribution 4.0"
 
-[node name="Label11" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label11" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=474974972]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "owl hooting by mokasza -- https://freesound.org/s/810336/ -- License: Attribution 4.0"
 
-[node name="Label12" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label12" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1474522795]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "birds chirping by mokasza -- https://freesound.org/s/810331/ -- License: Attribution 4.0"
 
-[node name="Label13" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label13" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1675289404]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "FIREBurn_Burning Campfire.Flashing.Decay and Sustain_EM_(15lrs).wav by newlocknew 
 -- https://freesound.org/s/636707/ -- License: Attribution NonCommercial 4.0"
 
-[node name="Label14" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label14" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=455202171]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "CauldronBubbling_ByOdzta2023.wav by odzta1 -- https://freesound.org/s/689096/ -- License: Attribution 4.0"
 
-[node name="Label15" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound"]
+[node name="Label15" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1830044353]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "wooden object set on table 2 by youandbiscuitme -- https://freesound.org/s/258243/ -- License: Attribution 3.0"
 
-[node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer"]
+[node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=164242972]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -758,7 +754,7 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT"]
+[node name="MarginContainer" type="MarginContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT" unique_id=453585493]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -767,11 +763,11 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Fonts" type="VBoxContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer"]
+[node name="Fonts" type="VBoxContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer" unique_id=2001647065]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label6" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer/Fonts"]
+[node name="Label6" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer/Fonts" unique_id=781015057]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
@@ -781,7 +777,7 @@ Copyright 2018 The Sarabun Project Authors (https://github.com/cadsondemak/Sarab
 This Font Software is licensed under the SIL Open Font License, 
 Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
 
-[node name="Label7" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer/Fonts"]
+[node name="Label7" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_FONT/MarginContainer/Fonts" unique_id=157343888]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
@@ -791,7 +787,7 @@ Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether
 This Font Software is licensed under the SIL Open Font License, 
 Version 1.1. This license is copied below, and is also available with a FAQ at: https://openfontlicense.org"
 
-[node name="MarginContainer" type="MarginContainer" parent="Credit"]
+[node name="MarginContainer" type="MarginContainer" parent="Credit" unique_id=1202924558]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -800,14 +796,14 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="CloseCredit" type="Button" parent="Credit/MarginContainer"]
+[node name="CloseCredit" type="Button" parent="Credit/MarginContainer" unique_id=1307210313]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
-[node name="License" type="MarginContainer" parent="."]
+[node name="License" type="MarginContainer" parent="." unique_id=1271339890]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -820,11 +816,11 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="ColorRect" type="ColorRect" parent="License"]
+[node name="ColorRect" type="ColorRect" parent="License" unique_id=5263528]
 layout_mode = 2
 color = Color(1, 1, 1, 0.14901961)
 
-[node name="MarginContainer3" type="MarginContainer" parent="License"]
+[node name="MarginContainer3" type="MarginContainer" parent="License" unique_id=251425722]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -833,7 +829,7 @@ theme_override_constants/margin_top = 140
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Title" type="Label" parent="License/MarginContainer3"]
+[node name="Title" type="Label" parent="License/MarginContainer3" unique_id=168458145]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -842,22 +838,22 @@ theme_override_font_sizes/font_size = 48
 text = "LICENSE_BUTTON"
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="License"]
+[node name="MarginContainer2" type="MarginContainer" parent="License" unique_id=643370780]
 layout_mode = 2
 theme_override_constants/margin_left = 480
 theme_override_constants/margin_top = 295
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 155
 
-[node name="ScrollContainer" type="ScrollContainer" parent="License/MarginContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="License/MarginContainer2" unique_id=2034547818]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="License/MarginContainer2/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="License/MarginContainer2/ScrollContainer" unique_id=1246440534]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="License/MarginContainer2/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="License/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=680764741]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
@@ -890,7 +886,7 @@ In this connection, NSTDA shall not be responsible to the user for taking care, 
 training, or developing the efficiency of this software. Moreover, NSTDA shall not be liable  
 for any error, software efficiency and damages in connection with or arising out of the use of the software."
 
-[node name="MarginContainer" type="MarginContainer" parent="License"]
+[node name="MarginContainer" type="MarginContainer" parent="License" unique_id=1870161598]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -899,14 +895,14 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="CloseCredit" type="Button" parent="License/MarginContainer"]
+[node name="CloseCredit" type="Button" parent="License/MarginContainer" unique_id=1056618504]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
-[node name="Option" type="MarginContainer" parent="."]
+[node name="Option" type="MarginContainer" parent="." unique_id=1329197415]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -917,17 +913,17 @@ offset_bottom = 1090.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Option"]
+[node name="ColorRect" type="ColorRect" parent="Option" unique_id=2020179973]
 layout_mode = 2
 color = Color(1, 1, 1, 0.14901961)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Option"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Option" unique_id=1622721568]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="Title" type="Label" parent="Option/VBoxContainer"]
+[node name="Title" type="Label" parent="Option/VBoxContainer" unique_id=633927457]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -935,39 +931,39 @@ theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 48
 text = "OPTION_BUTTON"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Option/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Option/VBoxContainer" unique_id=123559146]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=1991927685]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=988451101]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_SENSITIVITY"
 
-[node name="HSlider" type="HSlider" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="HSlider" type="HSlider" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1903615121]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.1
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=1527973648]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6" unique_id=491858006]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_MAX_FPS"
 
-[node name="FPSSelector" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6"]
+[node name="FPSSelector" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6" unique_id=1983104824]
 layout_mode = 2
 selected = 1
 item_count = 3
@@ -978,75 +974,75 @@ popup/item_1/id = 1
 popup/item_2/text = "120"
 popup/item_2/id = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=728743970]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=227109097]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_BGM"
 
-[node name="CheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="CheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=2092783573]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=568067502]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=1034205817]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_SFX"
 
-[node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4"]
+[node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=2098882901]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=541745227]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7" unique_id=1492073968]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_AUTO_SAVE"
 
-[node name="SaveCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="SaveCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7" unique_id=1899713279]
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=319963306]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5" unique_id=1015464853]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "OPTION_CINEMATIC"
 
-[node name="CNCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5"]
+[node name="CNCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5" unique_id=682850757]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=1832663285]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2030951324]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_LANGUAGE"
 
-[node name="OptionButton" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="OptionButton" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=164003922]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("4_dte3n")
@@ -1058,41 +1054,29 @@ popup/item_0/id = 0
 popup/item_1/text = "ภาษาไทย"
 popup/item_1/id = 1
 
-[node name="CloseOption" type="Button" parent="Option/VBoxContainer"]
+[node name="CloseOption" type="Button" parent="Option/VBoxContainer" unique_id=2038740582]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qmqfe")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=966691310]
+libraries/ = SubResource("AnimationLibrary_qmqfe")
 
-[node name="CreditAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qmqfe")
-}
+[node name="CreditAnimation" type="AnimationPlayer" parent="." unique_id=263483261]
+libraries/ = SubResource("AnimationLibrary_qmqfe")
 
-[node name="MenuAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qmqfe")
-}
+[node name="MenuAnimation" type="AnimationPlayer" parent="." unique_id=269259746]
+libraries/ = SubResource("AnimationLibrary_qmqfe")
 
-[node name="OptionAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_1qvof")
-}
+[node name="OptionAnimation" type="AnimationPlayer" parent="." unique_id=672391062]
+libraries/ = SubResource("AnimationLibrary_1qvof")
 
-[node name="LicenseAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_vso1l")
-}
+[node name="LicenseAnimation" type="AnimationPlayer" parent="." unique_id=785991845]
+libraries/ = SubResource("AnimationLibrary_vso1l")
 
-[node name="PlayerSelection2" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_60j7a")
-}
+[node name="PlayerSelection2" type="AnimationPlayer" parent="." unique_id=1699605192]
+libraries/ = SubResource("AnimationLibrary_60j7a")
 
 [connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/WM" to="PlayerSelection" method="_on_wm_pressed"]
 [connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/M" to="PlayerSelection" method="_on_m_pressed"]
