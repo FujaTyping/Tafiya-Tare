@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @export var CoinReward: int
 @export var savedItem: bool = true
-@export var usedGravity: bool = false
+@export var usedGravity: bool = true
 @onready var gameInstant = get_tree().current_scene
 	
 func _ready() -> void:
