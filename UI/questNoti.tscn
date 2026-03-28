@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dnv78bcmoe356"]
+
+[ext_resource type="Script" uid="uid://ctvi8lbsoxwno" path="res://UI/quest_noti.gd" id="1_1l4qp"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="1_52np0"]
+[ext_resource type="AudioStream" uid="uid://bs63ha4wdy2nq" path="res://SFX/questSUF.wav" id="2_lqmhd"]
+[ext_resource type="Texture2D" uid="uid://bbq1wttsmwqha" path="res://UI/Texture/questBg.png" id="2_nm586"]
+[ext_resource type="Texture2D" uid="uid://cbb6cff0xpa8i" path="res://UI/Texture/exclimination.png" id="3_txsl4"]
+
+[sub_resource type="Animation" id="Animation_lqmhd"]
+resource_name = "In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.485, 2.485), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1l4qp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xah6u"]
+_data = {
+&"In": SubResource("Animation_lqmhd"),
+&"RESET": SubResource("Animation_1l4qp")
+}
+
+[node name="QuestNoti" type="CanvasLayer" unique_id=1956805159]
+visible = false
+script = ExtResource("1_1l4qp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=967264372]
+modulate = Color(1, 1, 1, 0.2784314)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -431.0
+offset_top = -257.0
+offset_right = 431.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_nm586")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=120449942]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -469.90338
+offset_top = -246.00452
+offset_right = -343.37488
+offset_bottom = -105.02991
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.29670596
+texture = ExtResource("3_txsl4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1646392579]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.5
+offset_top = -233.0
+offset_right = 350.5
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_52np0")
+theme_override_font_sizes/font_size = 24
+text = "CONTENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Start" type="AudioStreamPlayer" parent="." unique_id=326078101]
+stream = ExtResource("2_lqmhd")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1635053876]
+libraries/ = SubResource("AnimationLibrary_xah6u")

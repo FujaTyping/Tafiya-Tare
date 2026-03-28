@@ -103,3 +103,5 @@ DIALOGE_BASE_1_3,"Look up that mountain. Everyone's just trampling and scramblin
 DIALOGE_BASE_1_4,"Drive up there. Take those hopeful people with you, but remember my words.",ขับรถขึ้นไปสิ พาพวกคนที่มีความหวังติดรถเอ็งไปด้วย แต่จงจำคำข้าไว้ให้ดีนะ
 DIALOGE_BASE_1_5,"Even if you live for a million years, if the world you live in dies, immortality is just a curse.",ต่อให้เอ็งมีชีวิตอยู่ไปเป็นล้านปี แต่ถ้าโลกที่เอ็งอยู่มันตายไปแล้ว ความอมตะนั่นมันก็คือคำสาปดีๆ นี่เอง
 NPC_STRANGER,Stranger,คนแปลกหน้า
+QUEST_STARTED_LEVEL_1,Investigate the parking area for fuel before we push to the next village,ตรวจสอบบริเวณที่จอดรถเพื่อเติมน้ำมันก่อนที่เราจะเดินทางไปยังหมู่บ้านถัดไป
+QUEST_STARTED_LEVEL_2,Talk to the people in the village and find out about the statue,พูดคุยกับชาวบ้านและหาข้อมูลเกี่ยวกับรูปปั้นนั้น

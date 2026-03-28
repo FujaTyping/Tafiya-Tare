@@ -746,6 +746,12 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "wooden object set on table 2 by youandbiscuitme -- https://freesound.org/s/258243/ -- License: Attribution 3.0"
 
+[node name="Label16" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1497713363]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Notification (Strange Pulse) by SilverIllusionist -- https://freesound.org/s/669852/ -- License: Attribution 4.0"
+
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=164242972]
 visible = false
 layout_mode = 2

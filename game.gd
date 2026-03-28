@@ -222,6 +222,7 @@ func saveDat() :
 	data.miniGameLevel1State = level1Minigame.isUsed
 	data.playerSpringArmLength = playerCamPivot.spring_length
 	data.dayCount = day	
+	data.quest_State = Varibles.quest_State
 
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished

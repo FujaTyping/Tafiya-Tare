@@ -14,3 +14,4 @@ class_name gameData
 @export var playerSpringArmLength: float
 @export var playerSpeed: float
 @export var dayCount: int
+@export var quest_State: int
