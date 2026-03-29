@@ -105,3 +105,10 @@ DIALOGE_BASE_1_5,"Even if you live for a million years, if the world you live in
 NPC_STRANGER,Stranger,คนแปลกหน้า
 QUEST_STARTED_LEVEL_1,Investigate the parking area for fuel before we push to the next village,ตรวจสอบบริเวณที่จอดรถเพื่อเติมน้ำมันก่อนที่เราจะเดินทางไปยังหมู่บ้านถัดไป
 QUEST_STARTED_LEVEL_2,Talk to the people in the village and find out about the statue,พูดคุยกับชาวบ้านและหาข้อมูลเกี่ยวกับรูปปั้นนั้น
+NPC_VILLAGER,Villager,ชาวบ้าน
+DIALOGE_V1_1_1,Zzz... The road is long... better catch some Z's... Zzz...,Zzz... หนทางอีกไกล... ขอนอนหวา... Zzz...
+NPC_LEADER,Village Leader,ผู้นำหมู่บ้าน
+DIALOGE_V1_2_1,Do you see that bewildered-looking stone statue over there? That's our village's statue of faith.,เห็นรูปปั้นหินหน้าตามึนๆ ที่ตั้งอยู่ตรงนั้นไหม? นั่นคือ รูปปั้นแห่งศรัทธา ประจำหมู่บ้านของเรา
+DIALOGE_V1_2_2,"Yes, I saw it. I thought it was just decoration. What does it do?",เห็นสิพี่ ผมนึกว่าของตกแต่งซะอีก มันทำอะไรได้เหรอ?
+DIALOGE_V1_2_3,"It's not just any ordinary stone, you know. If you go and talk to it, tell it your travel goals, the statue will randomly grant you a magical item for free to help you on your journey. That's all. Try talking to it!",มันไม่ใช่หินธรรมดานะเว้ย ถ้าเอ็งเดินเข้าไปคุยด้วย เล่าเป้าหมายการเดินทางของเอ็งให้มันฟัง รูปปั้นจะสุ่มประทาน ของวิเศษ ให้เอ็งฟรีๆ เพื่อช่วยในการเดินทาง เท่านั้นนะ ลองไปคุยดูสิ
+

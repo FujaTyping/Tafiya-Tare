@@ -38,22 +38,26 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"meshes": {
-"village1_Plane_001": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "",
-"save_to_file/path": ""
-}
-},
 "nodes": {
+"PATH:Cube": {
+"generate/physics": true
+},
 "PATH:Cube_018": {
 "generate/physics": true
 },
+"PATH:Cylinder_001": {
+"generate/physics": true
+},
+"PATH:Cylinder_002": {
+"generate/physics": true
+},
+"PATH:Plane": {
+"generate/physics": true
+},
 "PATH:Plane_002": {
+"generate/physics": true
+},
+"PATH:Plane_004": {
 "generate/physics": true
 }
 }

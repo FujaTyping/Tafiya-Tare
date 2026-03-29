@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://gcud7fvankq"]
+[gd_scene format=3 uid="uid://gcud7fvankq"]
 
 [ext_resource type="Script" uid="uid://c6pr4vesx001o" path="res://Model/Dialoge/dialog_trigger.gd" id="1_uslxy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t52wg"]
-radius = 0.6640625
+radius = 0.4951172
 
-[node name="DialogeTrigged" type="Node3D"]
+[node name="DialogeTrigged" type="Node3D" unique_id=1675563045]
 script = ExtResource("1_uslxy")
 
-[node name="Trigger" type="Area3D" parent="."]
+[node name="Trigger" type="Area3D" parent="." unique_id=1522903101]
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=25215453]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_t52wg")
 

@@ -3,7 +3,7 @@ extends Area3D
 @onready var player: CharacterBody3D = get_tree().current_scene.get_node("player")
 @onready var AreaNoti:Control = get_tree().current_scene.get_node("Notification")
 @export var Areaname:String
-@onready var vehicle_body_3d: VehicleBody3D = $"../../VsehicleBody3D"
+@onready var vehicle_body_3d: VehicleBody3D = $"../../VehicleBody3D"
 @export var questName: int
 @onready var questInstant : CanvasLayer = get_tree().current_scene.get_node("QuestNoti")
 

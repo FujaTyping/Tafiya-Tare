@@ -54,6 +54,9 @@ _subresources={
 "PATH:Cylinder": {
 "generate/physics": true
 },
+"PATH:Icosphere_007": {
+"generate/physics": true
+},
 "PATH:Landscape": {
 "generate/physics": true
 },
