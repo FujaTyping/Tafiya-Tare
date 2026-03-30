@@ -15,3 +15,4 @@ class_name gameData
 @export var playerSpeed: float
 @export var dayCount: int
 @export var quest_State: int
+@export var carNPCBackList: Array[String]

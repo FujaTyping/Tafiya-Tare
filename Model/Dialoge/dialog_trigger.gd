@@ -8,6 +8,7 @@ extends Node3D
 @onready var dialogText: RichTextLabel = get_tree().current_scene.get_node("Dialoges/CanvasLayer/Dialoge")
 @onready var player: CharacterBody3D = get_tree().current_scene.get_node("player")
 @onready var typingContainer: LineEdit = get_tree().current_scene.get_node("Dialoges/CanvasLayer/LineEdit")
+@onready var gameInstant: Node3D = get_tree().current_scene
 
 @export var dialoguesLine: Array[String]
 @export var charLine: Array[String]
@@ -20,10 +21,13 @@ extends Node3D
 @export var saveAfter : bool
 @export var useTyping: bool
 @export var typingPlaceholder: String
+@export var warpOnCar: bool = false
+@export var viewDetect:VisibleOnScreenNotifier3D
 
 var current_dialogue = 0 # Start at 0
 var started = false
 var playerSpeedBefore: float = 0.0
+var finishDialogeToHide = false
 
 func _ready() -> void:
 	if initAnimation :
@@ -35,7 +39,15 @@ func _ready() -> void:
 	var btn = dialogCanvas.get_node("TNext")
 	if not btn.is_connected("pressed", _on_next_pressed):
 		btn.pressed.connect(_on_next_pressed)
+	
+	if warpOnCar :
+		viewDetect.screen_exited.connect(hideThisNPC)
 
+func hideThisNPC() :
+	if finishDialogeToHide :
+		self.queue_free()
+		animationBody.queue_free()
+	
 func _on_next_pressed():
 	if started: # Only trigger if THIS specific instance is active
 		continume_dialoge()
@@ -63,6 +75,14 @@ func endDialoge():
 	dialogCanvas.visible = false        
 	started = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if warpOnCar :
+		gameInstant.collectedItem.append(self.get_path())
+		gameInstant.collectedItem.append(animationBody.get_path())
+		var carInstant:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
+		Varibles.ListNPCbackCar.append(animationBody.name)
+		carInstant.updateBackNPC()
+		finishDialogeToHide = true
 	
 	if saveAfter:
 		await get_tree().create_timer(2.0).timeout

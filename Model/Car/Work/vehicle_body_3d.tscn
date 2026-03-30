@@ -11,6 +11,8 @@
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="8_hpwcy"]
 [ext_resource type="Texture2D" uid="uid://d00jdgildfd4f" path="res://UI/Texture/FuelBg.png" id="9_qbuse"]
 [ext_resource type="Texture2D" uid="uid://dtg54qw2gdjp0" path="res://UI/Texture/caroilIcon.png" id="11_4hprx"]
+[ext_resource type="PackedScene" uid="uid://bx1jc5otvvk72" path="res://Model/NPC/V1NPC02.glb" id="12_cwpbu"]
+[ext_resource type="Script" uid="uid://dht6p1nujksr2" path="res://Model/NPC/v_1npc_02.gd" id="13_gj6qa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
 size = Vector3(1, 1.0080566, 1)
@@ -243,3 +245,24 @@ light_energy = 3.054
 shadow_enabled = true
 spot_range = 4.6624236
 spot_angle = 51.244904
+
+[node name="V1NPC02" parent="." unique_id=1698864314 node_paths=PackedStringArray("animation") instance=ExtResource("12_cwpbu")]
+transform = Transform3D(0.62436056, 0, 0.08410614, -0.005612124, 0.6285959, 0.041661516, -0.08391869, -0.042037807, 0.62296903, 0.8634123, -0.83680063, -2.2156634)
+visible = false
+script = ExtResource("13_gj6qa")
+animation = NodePath("AnimationPlayer")
+sittAnimationName = "ArmatureAction_003"
+
+[node name="Skeleton3D" parent="V1NPC02/Armature" parent_id_path=PackedInt32Array(1698864314, 1534083922) index="0" unique_id=596551899]
+bones/5/rotation = Quaternion(-0.34806702, -0.79672176, -0.16175316, 0.46681863)
+bones/6/rotation = Quaternion(-0.0016597952, 0.01855015, 0.0030719815, 0.9998219)
+bones/8/rotation = Quaternion(0.13221964, 0.95456064, -0.10355201, 0.24618915)
+bones/9/rotation = Quaternion(-0.0023201257, -0.015561813, 0.00061571354, 0.999876)
+bones/10/rotation = Quaternion(0.10385607, 0.100608274, 0.6884761, 0.7106987)
+bones/11/rotation = Quaternion(0.050018188, -0.07344446, 0.007277483, 0.99601763)
+bones/12/rotation = Quaternion(-0.0230307, -0.0019371588, -0.68858427, 0.724788)
+bones/13/rotation = Quaternion(0.64965856, -0.68112195, 0.23887716, -0.23865132)
+bones/14/rotation = Quaternion(-0.11826563, 0.10238458, -0.0242428, 0.98739207)
+bones/15/rotation = Quaternion(-0.0514382, -0.024859298, 0.6858935, 0.725456)
+
+[editable path="V1NPC02"]

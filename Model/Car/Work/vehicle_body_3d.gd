@@ -29,7 +29,16 @@ func _ready() -> void:
 		self.global_position = Varibles.saved_data.car_position
 		self.rotation_degrees = Varibles.saved_data.car_rotation
 		carFuel = Varibles.saved_data.car_fuel
+		Varibles.ListNPCbackCar = Varibles.saved_data.carNPCBackList
 	fuelUpdate()
+	updateBackNPC()
+	
+func updateBackNPC() :
+	var ListOfNPC:Array[String] = Varibles.ListNPCbackCar
+	if ListOfNPC.size() > 0 :
+		for i in ListOfNPC :
+			var NPC : Node3D = get_node(i)
+			NPC.show()
 	
 func fuelUpdate() :
 	fuel_bar.value = snapped(carFuel, 0.1)

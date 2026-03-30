@@ -83,6 +83,8 @@ func _ready() -> void:
 				removeItem.queue_free()
 	else :
 		Varibles.Coins = 0
+		Varibles.quest_State = 0
+		Varibles.ListNPCbackCar = []
 	DiscordRpc.updateRPC("In game")
 	_change_duration()
 	
@@ -223,6 +225,7 @@ func saveDat() :
 	data.playerSpringArmLength = playerCamPivot.spring_length
 	data.dayCount = day	
 	data.quest_State = Varibles.quest_State
+	data.carNPCBackList = Varibles.ListNPCbackCar
 
 	ResourceSaver.save(data,"user://save_data.res")
 	await animation_player.animation_finished
