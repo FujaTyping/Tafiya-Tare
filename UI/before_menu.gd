@@ -8,6 +8,7 @@ const langList = ["en","th","jp"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if FileAccess.file_exists("user://setting_data.tres") :
 		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
 		Varibles.LangIndex = data.languageIndex

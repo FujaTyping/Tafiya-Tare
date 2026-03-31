@@ -24,6 +24,7 @@ extends Node3D
 @export var typingPlaceholder: String
 @export var warpOnCar: bool = false
 @export var viewDetect:VisibleOnScreenNotifier3D
+@export var destroyAfterFinish:bool = false
 
 var current_dialogue = 0 # Start at 0
 var started = false
@@ -79,12 +80,16 @@ func endDialoge():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	if warpOnCar :
-		gameInstant.collectedItem.append(self.get_path())
-		gameInstant.collectedItem.append(animationBody.get_path())
-		var carInstant:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
-		Varibles.ListNPCbackCar.append(animationBody.name)
-		carInstant.updateBackNPC()
-		finishDialogeToHide = true
+		if not animationBody.name in Varibles.ListNPCbackCar :
+			gameInstant.collectedItem.append(self.get_path())
+			gameInstant.collectedItem.append(animationBody.get_path())
+			var carInstant:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
+			Varibles.ListNPCbackCar.append(animationBody.name)
+			carInstant.updateBackNPC()
+			finishDialogeToHide = true
+	
+	if destroyAfterFinish :
+		self.queue_free()
 	
 	if saveAfter:
 		await get_tree().create_timer(2.0).timeout

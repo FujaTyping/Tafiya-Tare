@@ -44,6 +44,8 @@ var JUMP_VELOCITY = 4.0
 # Spawn
 @onready var default_spawn: Marker3D = $"../AllMarker/DefaultSpawn"
 
+@onready var NeedNPCbackCar: Node3D = get_tree().current_scene.get_node("SpawnAssets/NeedNPC")
+
 var is_in_car: bool = false
 var isInViewInteract = false
 var interActionJustPress = false
@@ -90,6 +92,13 @@ func _ready():
 	help_me.play("Hide")
 	await help_me.animation_finished
 	help.hide()
+	
+func hideInteraction() :
+	isInViewInteract = false
+	label_2.visible = false
+	inter_show.play("Hide")
+	await inter_show.animation_finished
+	interact.hide()
 	
 func _input(event):
 	if Input.is_action_just_pressed("toogleMouse"):
@@ -183,11 +192,7 @@ func _input(event):
 				colliderView.openViewImage()
 				paper.play()
 				if isInViewInteract :
-					isInViewInteract = false
-					label_2.visible = false
-					inter_show.play("Hide")
-					await inter_show.animation_finished
-					interact.hide()
+					hideInteraction()
 			
 		if car_cam != null:
 			
@@ -195,6 +200,13 @@ func _input(event):
 				
 				if looking_cast.is_colliding() and looking_cast.get_collider().has_method("canDrive") :
 					# GET IN THE CAR
+					if Varibles.quest_State > 1 and Varibles.ListNPCbackCar.size() <= 5  :
+						if Varibles.ListNPCbackCar.size() < Varibles.quest_State - 1  :
+							hideInteraction()
+							var needDialoge = NeedNPCbackCar.duplicate()
+							add_child(needDialoge)
+							needDialoge.global_position = self.global_position
+							return
 					is_in_car = true
 					car_cam.current = true
 					camera_3d.current = false

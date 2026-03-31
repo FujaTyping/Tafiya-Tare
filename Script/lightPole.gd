@@ -5,6 +5,8 @@ extends Node3D
 @onready var gameInstance:Node3D = get_tree().current_scene
 @onready var car:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 
+@export var rangeTrigged: int = 14
+
 func _process(delta: float) -> void:
 	if gameInstance.get_day_time() == "TIME_NIGHT" :
 		var posOg:Vector3		
@@ -15,10 +17,15 @@ func _process(delta: float) -> void:
 		else :
 			posOg = car.global_position
 
-		if posOg.distance_to(lightPos) < 14 :			
+		if posOg.distance_to(lightPos) < rangeTrigged :			
 			lightSource.visible = true
 			Varibles.tweenCam(lightSource,"light_energy",2.56,0.2)
 		else :
-			Varibles.tweenCam(lightSource,"light_energy",0.0,0.2)
-			await Varibles.wait(0.21)
-			lightSource.visible = false
+			closeLight()
+	else :
+		closeLight()
+			
+func closeLight() :
+	Varibles.tweenCam(lightSource,"light_energy",0.0,0.2)
+	await Varibles.wait(0.21)
+	lightSource.visible = false

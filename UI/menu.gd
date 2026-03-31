@@ -40,6 +40,7 @@ const langList = ["en","th","jp"]
 
 func _ready():
 	animation_player.play("Intro")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if FileAccess.file_exists("user://setting_data.tres") :
 		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
 		Varibles.MouseSens = data.camSens
