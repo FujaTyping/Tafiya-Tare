@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://des4vigigk2pd"]
+[gd_scene format=3 uid="uid://des4vigigk2pd"]
 
 [ext_resource type="PackedScene" uid="uid://badtt32ivc0l1" path="res://Model/Statue/StatueL.glb" id="1_7epxp"]
 [ext_resource type="Script" uid="uid://crw65xfb86trh" path="res://Model/Statue/statue_of_catalyst.gd" id="1_dmw5n"]
@@ -52,14 +52,14 @@ _data = {
 &"RESET": SubResource("Animation_nvj68")
 }
 
-[node name="StatueOfCatalyst" type="Node3D"]
+[node name="StatueOfCatalyst" type="Node3D" unique_id=1547289178]
 script = ExtResource("1_dmw5n")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1113724057]
 layer = 0
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=31113923]
 visible = false
 anchors_preset = 6
 anchor_left = 1.0
@@ -74,7 +74,7 @@ grow_vertical = 2
 size_flags_horizontal = 8
 color = Color(1, 1, 1, 0.22745098)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1274038668]
 modulate = Color(1, 1, 1, 0.23921569)
 offset_left = 1024.0
 offset_top = 331.0
@@ -83,7 +83,7 @@ offset_bottom = 776.0
 texture = ExtResource("2_sw38c")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=785486754]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -102,7 +102,7 @@ text = "MINIGAME_LEVEL_1_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=1411849025]
 offset_left = 1079.0
 offset_top = 388.0
 offset_right = 1904.0
@@ -117,7 +117,7 @@ placeholder_text = "TEXTAREA_PLACEHOLDER"
 alignment = 1
 clear_button_enabled = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2141405614]
 visible = false
 anchors_preset = 6
 anchor_left = 1.0
@@ -132,7 +132,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 29
 
-[node name="Close" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Close" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=1777428847]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_top = NodePath("../../LineEdit")
@@ -141,7 +141,7 @@ theme_override_fonts/font = ExtResource("3_161kg")
 theme_override_font_sizes/font_size = 24
 text = "CLOSE_BUTTON"
 
-[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=573143912]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Close")
@@ -150,7 +150,7 @@ theme_override_fonts/font = ExtResource("3_161kg")
 theme_override_font_sizes/font_size = 24
 text = "SUBMIT_BUTTON"
 
-[node name="Label2" type="Label" parent="CanvasLayer"]
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=197923456]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -167,7 +167,7 @@ theme_override_font_sizes/font_size = 20
 text = "MINIGAME_LEVEL_1_LIMIT_PLAY"
 horizontal_alignment = 1
 
-[node name="Write" type="TextureButton" parent="CanvasLayer"]
+[node name="Write" type="TextureButton" parent="CanvasLayer" unique_id=736112816]
 offset_left = 1784.0
 offset_top = 590.0
 offset_right = 1917.0
@@ -176,7 +176,7 @@ texture_normal = ExtResource("5_wbtqi")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Back" type="TextureButton" parent="CanvasLayer"]
+[node name="Back" type="TextureButton" parent="CanvasLayer" unique_id=1954162768]
 offset_left = 1091.0
 offset_top = 774.0
 offset_right = 1192.1819
@@ -186,7 +186,7 @@ texture_normal = ExtResource("6_vhihj")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="StatueL" parent="." instance=ExtResource("1_7epxp")]
+[node name="StatueL" parent="." unique_id=1660084992 instance=ExtResource("1_7epxp")]
 transform = Transform3D(-1.4950032e-08, 0, 0.3599136, 0, 0.39428616, 0, -0.34201688, 0, -1.5732322e-08, 0, 0, 0)
 
 [node name="Skeleton3D" parent="StatueL/Armature" index="0"]
@@ -201,42 +201,40 @@ bones/9/rotation = Quaternion(-0.058500715, 0.05514572, 0.3175148, 0.9448391)
 bones/10/rotation = Quaternion(-0.0046069412, 0.18642838, 0.9823917, -0.011389448)
 bones/13/rotation = Quaternion(0.9782645, 0.016339393, -0.0066511896, -0.20660901)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=578859364]
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=476062649]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36956787, 0.15466309)
 shape = SubResource("BoxShape3D_dmw5n")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1212583926]
 transform = Transform3D(0.9106981, 0.042324513, -0.4108986, 0.04459008, 0.97885144, 0.19965391, 0.41065893, -0.20014644, 0.88955086, -0.12120855, 2.6414583, 3.0385685)
 
-[node name="BTMarker3D" type="Marker3D" parent="."]
+[node name="BTMarker3D" type="Marker3D" parent="." unique_id=1187180732]
 transform = Transform3D(1, 0, 0, 0, 0.92316324, 0.38440812, 0, -0.38440812, 0.92316324, 0, 3.67866, 1.7031014)
 
-[node name="RewardSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0924561, 1.926677)
+[node name="RewardSpawn" type="Marker3D" parent="." unique_id=1319600460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1632552, 1.926677)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=324438619]
 transform = Transform3D(0.9106981, 0.042324524, -0.41089854, 0.04459008, 0.9788515, 0.19965395, 0.41065893, -0.20014645, 0.8895508, -0.12120855, 2.6414583, 3.0385685)
 
-[node name="Camera3D2" type="Camera3D" parent="."]
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=1147226996]
 transform = Transform3D(1, 0, 0, 0, 0.92316324, 0.38440812, 0, -0.38440812, 0.92316324, 0, 3.67866, 1.7031014)
 visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8qyid")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1713375719]
+libraries/ = SubResource("AnimationLibrary_8qyid")
 
-[node name="RockMoving" type="AudioStreamPlayer3D" parent="."]
+[node name="RockMoving" type="AudioStreamPlayer3D" parent="." unique_id=611187254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5077105)
 stream = ExtResource("5_8qyid")
 max_distance = 10.0
 bus = &"SFX"
 
-[node name="SP" type="AudioStreamPlayer3D" parent="."]
+[node name="SP" type="AudioStreamPlayer3D" parent="." unique_id=149552764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5077105)
 stream = ExtResource("6_sw38c")
 max_distance = 10.0

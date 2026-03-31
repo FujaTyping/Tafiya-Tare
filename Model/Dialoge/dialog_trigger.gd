@@ -9,6 +9,7 @@ extends Node3D
 @onready var player: CharacterBody3D = get_tree().current_scene.get_node("player")
 @onready var typingContainer: LineEdit = get_tree().current_scene.get_node("Dialoges/CanvasLayer/LineEdit")
 @onready var gameInstant: Node3D = get_tree().current_scene
+@onready var questUI: CanvasLayer = get_tree().current_scene.get_node("QuestNoti")
 
 @export var dialoguesLine: Array[String]
 @export var charLine: Array[String]
@@ -54,6 +55,7 @@ func _on_next_pressed():
 
 func startDialoge(body):
 	if body == player and not started:
+		questUI.hideQuest()
 		started = true
 		current_dialogue = 0 # Reset here
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

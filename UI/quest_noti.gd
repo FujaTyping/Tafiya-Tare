@@ -10,7 +10,13 @@ func _ready() -> void:
 	else :
 		Varibles.quest_State = 0
 
-func startQuest(questState: int,VisibleTime: int = 10) :
+func hideQuest() :
+	if self.visible :
+		animation_player.play_backwards("In")
+		await animation_player.animation_finished
+		self.visible = false
+
+func startQuest(questState: int,VisibleTime: int = 8) :
 	if questState - Varibles.quest_State == 1 :
 		Varibles.quest_State += 1
 		label.text = "QUEST_STARTED_LEVEL_" + str(questState)

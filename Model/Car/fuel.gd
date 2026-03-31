@@ -4,6 +4,7 @@ extends StaticBody3D
 @export var valueOfItem: int = 0
 @export var fuelValue :int = 0
 @export var saveAfterCollect :bool = true
+@export var saveToremoveList : bool = true
 
 @onready var gameInstant = get_tree().current_scene
 
@@ -14,7 +15,8 @@ func addFuel() :
 		carInstanst.fuelUpdate()
 		self.visible = false
 		self.set_collision_layer_value(2,false)
-		gameInstant.collectedItem.append(self.get_path())
+		if saveToremoveList :
+			gameInstant.collectedItem.append(self.get_path())
 		if saveAfterCollect :
 			gameInstant.saveDat()
 		self.queue_free()

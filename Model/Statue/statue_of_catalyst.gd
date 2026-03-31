@@ -86,9 +86,8 @@ func _on_button_pressed() -> void:
 		_on_close_pressed(true)
 		var rewardItem = RewardItem.instantiate()
 		get_tree().current_scene.add_child(rewardItem)
-		rewardItem.savedItem = false
-		rewardItem.CoinReward = 3
-		rewardItem.enableGavity()
+		rewardItem.fuelValue = 65
+		rewardItem.saveToremoveList = false
 		rewardItem.global_transform = reward_spawn.global_transform
 		await Varibles.wait(5)
 		var gameInstance = get_tree().current_scene
