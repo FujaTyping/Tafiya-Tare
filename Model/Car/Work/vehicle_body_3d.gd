@@ -21,6 +21,7 @@ var canOpenLight = false
 @onready var fuel_out: AudioStreamPlayer3D = $FuelOut
 @onready var fuel_icon: TextureRect = $CanvasLayer/FuelIcon
 @onready var fuel_animation: AnimationPlayer = $CanvasLayer/FuelAnimation
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 var isOutFuel: bool = false
 
@@ -114,3 +115,13 @@ func _physics_process(delta: float) -> void:
 	elif is_driven and carFuel <= 0:
 		engine_force = 0
 		brake = 2
+
+var prevToggle: bool = false
+
+func checkHUD(state:bool = prevToggle) :
+	if is_driven :
+		if not state :
+			canvas_layer.hide()
+		else :
+			canvas_layer.show()
+	prevToggle = state

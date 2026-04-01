@@ -10,6 +10,7 @@ var prevPlayerSpeed: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	camera_3d.global_position.y = 15
 	prevPlayerSpeed = player.DSPEED
 
 func _input(event: InputEvent) -> void:
@@ -30,10 +31,10 @@ func _input(event: InputEvent) -> void:
 	
 	if self.visible == true :
 		if Input.is_action_just_pressed("scrollUp") :
-			if camera_3d.global_position.y > 5.42806816101074 :
+			if camera_3d.global_position.y > 10.42806816101074 :
 				camera_3d.global_position.y -= 0.5
 		if Input.is_action_just_pressed("scrollDown") :
-			if camera_3d.global_position.y < 60.4280681610107 :
+			if camera_3d.global_position.y < 70.4280681610107 :
 				camera_3d.global_position.y += 0.5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

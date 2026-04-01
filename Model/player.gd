@@ -70,6 +70,8 @@ var prevSpringArm: float
 @onready var cooking: AudioStreamPlayer3D = $Cooking
 @onready var dish: AudioStreamPlayer3D = $Dish
 @onready var fuel_fill: AudioStreamPlayer3D = $FuelFill
+@onready var wash_body_bubble: Node3D = $WashBodyBubble
+@onready var wash: AudioStreamPlayer3D = $Wash
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -92,6 +94,17 @@ func _ready():
 	help_me.play("Hide")
 	await help_me.animation_finished
 	help.hide()
+	
+func washBody() :
+	if not wash_body_bubble.visible :
+		wash_body_bubble.scale = Vector3(0,0,0)
+		wash_body_bubble.show()
+		wash.play()
+		Varibles.tweenCam(wash_body_bubble,"scale",Vector3(0.11,0.11,0.11),3)
+		await Varibles.wait(10)
+		Varibles.tweenCam(wash_body_bubble,"scale",Vector3(0,0,0),3)
+		await Varibles.wait(3)
+		wash_body_bubble.hide()
 	
 func hideInteraction() :
 	isInViewInteract = false
@@ -172,6 +185,8 @@ func _input(event):
 			elif colliderView.has_method("clear_trash") :
 				trash_collect.play()
 				colliderView.clear_trash()
+			elif colliderView.has_method("wash_body") :
+				washBody()
 			elif colliderView.has_method("add_ingredientLevel3") :
 				ingredient.play()
 				cooking_put.isInpot.append(colliderView.InName)
@@ -221,6 +236,7 @@ func _input(event):
 						engine_start.play()
 						engine_idle.play()
 					Fuelmargin_container.visible = true
+					car_node.checkHUD()
 					
 			else:
 				# GET OUT OF THE CAR
@@ -256,33 +272,37 @@ func _process(delta: float) -> void:
 	if is_in_car :
 		global_position = exitCar.global_position
 
+func hideHUDInteract() :
+	interact.hide()
+
 func _physics_process(delta: float) -> void:
 	var viewUI : Control = get_tree().current_scene.get_node("ViewPaper")
-	if not viewUI.visible :
-		if looking_cast.is_colliding() and not interActionJustPress:
-			if looking_cast.get_collider() :
-				if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
-						var interactText = looking_cast.get_collider().interact()
-						if "BUY" in interactText :
-							if looking_cast.get_collider().getbuyvalue() > 0 :
-								label_2.visible = true
-								label_2.text= str(looking_cast.get_collider().getbuyvalue()) + " ฿"
-						label.text = interactText
-						interact.show()
-						inter_show.play_backwards("Hide")
-						#inter_show.play("Show")
-						if more_info_hint.visible :
-							more_info_hint.hide()
-						label.add_theme_color_override("font_color",Color.WHITE)
-						label_2.add_theme_color_override("font_color",Color.WHITE)
-						isInViewInteract = true
-		else :
-			if isInViewInteract :
-				isInViewInteract = false
-				label_2.visible = false
-				inter_show.play("Hide")
-				await inter_show.animation_finished
-				interact.hide()
+	if not gameInstance.isHudHide :
+		if not viewUI.visible :
+			if looking_cast.is_colliding() and not interActionJustPress:
+				if looking_cast.get_collider() :
+					if looking_cast.get_collider().has_method("interact") and not isInViewInteract:
+							var interactText = looking_cast.get_collider().interact()
+							if "BUY" in interactText :
+								if looking_cast.get_collider().getbuyvalue() > 0 :
+									label_2.visible = true
+									label_2.text= str(looking_cast.get_collider().getbuyvalue()) + " ฿"
+							label.text = interactText
+							interact.show()
+							inter_show.play_backwards("Hide")
+							#inter_show.play("Show")
+							if more_info_hint.visible :
+								more_info_hint.hide()
+							label.add_theme_color_override("font_color",Color.WHITE)
+							label_2.add_theme_color_override("font_color",Color.WHITE)
+							isInViewInteract = true
+			else :
+				if isInViewInteract :
+					isInViewInteract = false
+					label_2.visible = false
+					inter_show.play("Hide")
+					await inter_show.animation_finished
+					interact.hide()
 		
 	if is_in_car:
 		return 

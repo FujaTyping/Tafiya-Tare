@@ -150,3 +150,5 @@ PEAK_OF_DESIRE_DATA,Peak of Desire,ยอดเขาแห่งความป
 CONFIRM_DELETE_SAVE_TITLE,Confirm Delete Save,ยืนยันการลบข้อมูล
 CONFIRM_DELETE_SAVE_DECS,Are you sure you want to delete all save file? This action cannot be undone,คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลการเล่นทั้งหมด? การดำเนินการนี้ไม่สามารถย้อนกลับได้
 CONFIRM_BUTTON,Confirm,ยืนยัน
+ON_INTERACTION_WASH_BODY,Press E to wash body,กด E เพื่ออาบน้ำ
+CONTROL_U,Hide HUD,ช่อน HUD

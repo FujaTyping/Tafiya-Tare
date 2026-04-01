@@ -48,6 +48,8 @@ var day = 0
 @export var dayIcon: CompressedTexture2D
 @export var morningIcon: CompressedTexture2D
 @export var nightIcon: CompressedTexture2D
+@onready var control: Control = $Control
+#@onready var carUI:CanvasLayer = get_tree().current_scene.get_node("VehicleBody3D/CanvasLayer")
 
 # lightSource
 #@onready var everyLight = get_tree().get_nodes_in_group("lightPole")
@@ -238,6 +240,18 @@ func saveDat() :
 	
 func get_day_time() :
 	return dayColorList[currentDayState]["name"]	
+
+var isHudHide: bool = false
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("hide_hud") :
+		carInstant.checkHUD(isHudHide)
+		if not isHudHide :
+			control.hide()
+			player.hideHUDInteract()
+		else :
+			control.show()
+		isHudHide = !isHudHide
 
 func instanceDaySkip (time:int) :
 	startTime = time

@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dl1t2ap5m1xkc" path="res://SFX/Footstep.wav" id="3_qsoau"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="4_1yulc"]
 [ext_resource type="AudioStream" uid="uid://d0vatsw2v0dtn" path="res://SFX/Jump.wav" id="4_ixqkf"]
+[ext_resource type="PackedScene" uid="uid://cycykm2iaqdnf" path="res://Model/Effect/WashBodyBubble.glb" id="4_lfogq"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="7_416l5"]
 [ext_resource type="AudioStream" uid="uid://ci3r5045b5l45" path="res://SFX/Trash.wav" id="7_p21r4"]
 [ext_resource type="AudioStream" uid="uid://dvylq8nvihyaj" path="res://SFX/SellCoin.wav" id="8_b3xkm"]
@@ -15,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://d5cege6kfscb" path="res://SFX/openPaper.wav" id="12_ff0io"]
 [ext_resource type="AudioStream" uid="uid://dejv506q6mbp" path="res://SFX/bubble.wav" id="13_5hd5c"]
 [ext_resource type="AudioStream" uid="uid://cmhyce62xxdaq" path="res://SFX/bowl.wav" id="14_fi0my"]
+[ext_resource type="AudioStream" uid="uid://dexre4bhtaajc" path="res://SFX/bubbles.wav" id="17_00t8u"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -300,10 +302,13 @@ mesh = SubResource("CapsuleMesh_4flbx")
 
 [node name="playerAnimation" parent="." unique_id=839030366 instance=ExtResource("2_5xjvv")]
 transform = Transform3D(-5.780226e-09, 0, -0.1162554, 0, 0.12203301, 0, 0.13223617, 0, -5.0816853e-09, 0, 0, 0)
-visible = false
 
 [node name="woman_player" parent="." unique_id=669057689 instance=ExtResource("3_ieuix")]
 transform = Transform3D(1.08123395e-08, 0, -0.108337075, 0, 0.116785966, 0, 0.096225515, 0, 1.2173513e-08, 0, 0.006185621, 0)
+visible = false
+
+[node name="WashBodyBubble" parent="." unique_id=917332630 instance=ExtResource("4_lfogq")]
+transform = Transform3D(-4.808253e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.808253e-09, 0, 0, 0)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=203843518]
@@ -445,6 +450,22 @@ theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 24
 text = "CONTROL_H"
 
+[node name="HBoxContainer11" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=102444619]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer11" unique_id=35940953]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "U"
+
+[node name="Label2" type="Label" parent="Tutorial/VBoxContainer/GridContainer/HBoxContainer11" unique_id=1965165905]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 24
+text = "CONTROL_U"
+
 [node name="HBoxContainer10" type="HBoxContainer" parent="Tutorial/VBoxContainer/GridContainer" unique_id=2087900698]
 layout_mode = 2
 theme_override_constants/separation = 14
@@ -566,6 +587,11 @@ bus = &"SFX"
 
 [node name="Dish" type="AudioStreamPlayer3D" parent="." unique_id=703584555]
 stream = ExtResource("14_fi0my")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Wash" type="AudioStreamPlayer3D" parent="." unique_id=1323114016]
+stream = ExtResource("17_00t8u")
 volume_db = 5.0
 bus = &"SFX"
 

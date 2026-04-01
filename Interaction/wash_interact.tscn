@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bugy5b7sk4hwp"]
+
+[ext_resource type="Script" uid="uid://cvv1q2lro6420" path="res://Interaction/wash_interact.gd" id="1_g7e08"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c650r"]
+size = Vector3(1.7028809, 0.2998047, 0.8066406)
+
+[node name="WashInteract" type="StaticBody3D" unique_id=1482202713]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_g7e08")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=856749707]
+shape = SubResource("BoxShape3D_c650r")
