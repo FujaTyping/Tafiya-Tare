@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://bmhva1b7v55s7"]
+
+[ext_resource type="Script" uid="uid://jl1gn04gtl8t" path="res://UI/select_save.gd" id="1_7grwk"]
+[ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="1_tkfn1"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="2_7grwk"]
+[ext_resource type="Texture2D" uid="uid://caojr72gneu66" path="res://UI/Texture/delSaveConfirnBG.png" id="2_s07w0"]
+[ext_resource type="Script" uid="uid://b4t3yldpxpwbw" path="res://Script/buttonLoadsaveFromArea.gd" id="4_osi7q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54w6a"]
+sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
+sky_horizon_color = Color(0.48235294, 0.7490196, 1, 1)
+sky_curve = 0.160766
+ground_bottom_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
+ground_horizon_color = Color(0.48235294, 0.7490196, 1, 1)
+ground_curve = 0.04287107
+
+[sub_resource type="Sky" id="Sky_7jktm"]
+sky_material = SubResource("ProceduralSkyMaterial_54w6a")
+
+[sub_resource type="Environment" id="Environment_dddg7"]
+background_mode = 2
+sky = SubResource("Sky_7jktm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_osi7q"]
+resource_name = "On"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.54901963)]
+}
+
+[sub_resource type="Animation" id="Animation_s07w0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.54901963)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s07w0"]
+_data = {
+&"On": SubResource("Animation_osi7q"),
+&"RESET": SubResource("Animation_s07w0")
+}
+
+[node name="SelectSave" type="Control" unique_id=1387389547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7grwk")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=126870104]
+environment = SubResource("Environment_dddg7")
+
+[node name="sun" type="DirectionalLight3D" parent="." unique_id=1100751010]
+transform = Transform3D(-0.0367001, 0.20293762, -0.9785037, 0.03095014, 0.97892445, 0.20186405, 0.998847, -0.02287639, -0.042207614, 0, 0, 0)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1003854108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=582088605]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1689030968]
+transform = Transform3D(-0.5886321, 0, 0.808401, 0, 1, 0, -0.808401, 0, -0.5886321, 0, 0, 0)
+
+[node name="DelConfirm" type="CanvasLayer" parent="." unique_id=833440950]
+layer = 0
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="DelConfirm" unique_id=1167082257]
+modulate = Color(1, 1, 1, 0.54901963)
+offset_left = 1413.0
+offset_top = 861.0
+offset_right = 1852.0
+offset_bottom = 1008.0
+texture = ExtResource("2_s07w0")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="DelConfirm" unique_id=15402477]
+visible = false
+offset_left = 1430.0
+offset_top = 881.0
+offset_right = 1836.0
+offset_bottom = 990.0
+color = Color(0, 0, 0, 0.54901963)
+
+[node name="MarginContainer" type="MarginContainer" parent="DelConfirm" unique_id=1913926289]
+offset_left = 1430.0
+offset_top = 880.0
+offset_right = 1837.0
+offset_bottom = 991.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DelConfirm/MarginContainer" unique_id=1954250478]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DelConfirm/MarginContainer/VBoxContainer" unique_id=1132376868]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7grwk")
+theme_override_font_sizes/font_size = 24
+text = "CONFIRM_DELETE_SAVE_TITLE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="DelConfirm/MarginContainer/VBoxContainer" unique_id=1410956977]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7grwk")
+theme_override_font_sizes/font_size = 18
+text = "CONFIRM_DELETE_SAVE_DECS"
+autowrap_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DelConfirm" unique_id=52797509]
+libraries/ = SubResource("AnimationLibrary_s07w0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1815902313]
+layout_mode = 1
+offset_right = 946.0
+offset_bottom = 63.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer" unique_id=2020632324]
+layout_mode = 2
+theme_override_constants/separation = 51
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer3" unique_id=1067105540]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer" unique_id=1702105255]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_tkfn1")
+theme_override_font_sizes/font_size = 52
+text = "LOAD_SELECTION_TITLE"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer3/VBoxContainer" unique_id=847610208]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_7grwk")
+theme_override_font_sizes/font_size = 27
+text = "LOAD_SELECTION_DECS"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer3" unique_id=837082976]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Button_TEMP" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1196991663]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7grwk")
+theme_override_font_sizes/font_size = 24
+script = ExtResource("4_osi7q")
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=2094817302]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2" unique_id=1421024652]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DelButton2" type="Button" parent="MarginContainer2/HBoxContainer" unique_id=2097503369]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7grwk")
+theme_override_font_sizes/font_size = 24
+text = "DELETE_ALL_SAVE_BUTTON"
+
+[node name="CButton" type="Button" parent="MarginContainer2/HBoxContainer" unique_id=1503871154]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7grwk")
+theme_override_font_sizes/font_size = 24
+text = "CLOSE_BUTTON"
+
+[connection signal="pressed" from="MarginContainer2/HBoxContainer/DelButton2" to="." method="_on_del_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/HBoxContainer/CButton" to="." method="_on_c_button_pressed"]

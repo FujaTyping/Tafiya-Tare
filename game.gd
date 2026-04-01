@@ -60,6 +60,7 @@ var durationMultiplier = 1.0
 var dayFromSave = false
 
 var collectedItem:Array[NodePath] = []
+var currentGameSaveArea: String
 
 func _ready() -> void:
 	#for pole in everyLight :
@@ -227,7 +228,11 @@ func saveDat() :
 	data.quest_State = Varibles.quest_State
 	data.carNPCBackList = Varibles.ListNPCbackCar
 
-	ResourceSaver.save(data,"user://save_data.res")
+	var dirAccess = DirAccess.open("user://")
+	if not dirAccess.dir_exists("saves") :
+		dirAccess.make_dir("saves")
+
+	ResourceSaver.save(data,"user://saves/"+ str(currentGameSaveArea) + ".res")
 	await animation_player.animation_finished
 	save_icon_indicator.hide()
 	

@@ -134,3 +134,19 @@ DIALOGE_V1_6_4,But whatever. Just thinking about the answer is exhausting. I'll 
 DIALOGE_NEED_NPC_1,"We're about to leave this village, but the back of the pickup truck is still completely empty.",จะออกจากหมู่บ้านนี้แล้วแฮะ แต่กระบะหลังยังโล่งโจ้งอยู่เลย
 DIALOGE_NEED_NPC_2,"The journey to the mountaintop is not short, traveling alone would be terribly lonely, and besides, we don't know what we'll encounter along the way.",หนทางไปยอดเขาก็ไม่ใช่ใกล้ๆ เดินทางคนเดียวมันคงจะเหงาแย่ แถมทางข้างหน้าก็ไม่รู้จะเจออะไรบ้าง
 DIALOGE_NEED_NPC_3,"Since I've come all this way, I should try asking a local to hitch a ride with me in search of the elixir of immortality... I should go back and ask again!",อุตส่าห์แวะมาทั้งที น่าจะมีชาวบ้านจากที่นี่ติดรถไปตามหาน้ำอมฤตด้วยกันสักคนนะ... ลองเดินกลับไปชวนดูอีกรอบดีกว่า!
+VERSION,Version,เวอร์ชั่น
+LOAD_SELECTION_TITLE,Continue Journey,เดินทางต่อ
+LOAD_SELECTION_DECS,Your journey is safely recorded whenever you rest at a village,การเดินทางของคุณจะถูกบันทึกไว้อย่างปลอดภัย ทุกครั้งที่แวะพักในหมู่บ้าน
+DELETE_ALL_SAVE_BUTTON,Delete all save,ลบข้อมูลทั้งหมด
+REST_STOP_DATA,A rest stop,จุดพักรถแห่งหนึ่ง
+LUMINA_DATA,Village of Lumina,หมู่บ้านลูมินา
+GEARWOOD_DATA,The Gearwood Settlement,ชุมชนเกียร์วูด
+EDEN_DATA,Eden’s Village,หมู่บ้านอีเดน
+FAKE_CITY_DATA,Fake City,เมืองจอมปลอม
+RESONANCE_DATA,The Resonance,เรโซแนนซ์
+GROUND_DUST_DATA,Ground dust,ธุลีบาดาล
+OBLIVION_CAVE_DATA,Oblivion Cave,ถ้ำแห่งความลืมเลือน
+PEAK_OF_DESIRE_DATA,Peak of Desire,ยอดเขาแห่งความปรารถนา
+CONFIRM_DELETE_SAVE_TITLE,Confirm Delete Save,ยืนยันการลบข้อมูล
+CONFIRM_DELETE_SAVE_DECS,Are you sure you want to delete all save file? This action cannot be undone,คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลการเล่นทั้งหมด? การดำเนินการนี้ไม่สามารถย้อนกลับได้
+CONFIRM_BUTTON,Confirm,ยืนยัน

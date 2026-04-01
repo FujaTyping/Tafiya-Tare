@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cofsjencilm7y"]
+[gd_scene format=3 uid="uid://cofsjencilm7y"]
 
 [ext_resource type="Script" uid="uid://etojjyedg0b3" path="res://UI/Cinimatic/cutscene.gd" id="1_o4lkf"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="3_p602v"]
+
+[sub_resource type="Animation" id="Animation_tpxfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1635, 1003)]
+}
 
 [sub_resource type="Animation" id="Animation_p602v"]
 resource_name = "SlideOut"
@@ -19,28 +34,13 @@ tracks/0/keys = {
 "values": [Vector2(1635, 1003), Vector2(1930, 1003)]
 }
 
-[sub_resource type="Animation" id="Animation_tpxfx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1635, 1003)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4k3tr"]
 _data = {
 &"RESET": SubResource("Animation_tpxfx"),
 &"SlideOut": SubResource("Animation_p602v")
 }
 
-[node name="Cutscene" type="Control"]
+[node name="Cutscene" type="Control" unique_id=275233179]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o4lkf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=158273195]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,7 +58,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="ColorRect" unique_id=1312290749]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,7 +75,7 @@ theme_override_fonts/font = ExtResource("3_p602v")
 theme_override_font_sizes/font_size = 28
 text = "ON_LOAD_CONTENT_CINEMATIC"
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=754674643]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,7 +85,7 @@ grow_vertical = 2
 autoplay = true
 expand = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1617742562]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -101,16 +101,14 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1356588284]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p602v")
 theme_override_font_sizes/font_size = 28
 text = "UI_CINEMATIC_SKTP"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_4k3tr")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1091398591]
+libraries/ = SubResource("AnimationLibrary_4k3tr")
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

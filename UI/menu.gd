@@ -56,8 +56,11 @@ func _ready():
 	cn_check_button.button_pressed = Varibles.wantCinematic
 	fps_selector.selected = Varibles.maxFPSindex
 	version.text = str(ProjectSettings.get_setting("application/config/version"))
-	if FileAccess.file_exists("user://save_data.res") :
-		load.show()
+	var dirAccess = DirAccess.open("user://")
+	if dirAccess.dir_exists("saves") :
+		dirAccess.change_dir("saves")
+		if dirAccess.get_files().size() > 0 :
+			load.show()
 	
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
@@ -72,6 +75,7 @@ func _input(event: InputEvent) -> void:
 func _on_play_pressed() -> void:
 	UiSound.ui_click()
 	#get_tree().change_scene_to_file("res://UI/player_selection.tscn")
+	Varibles.saved_data = null
 	Varibles.isFromLoadSaved = false
 	animation_player.pause()
 	previousCamPost = camera_3d.global_transform
@@ -161,13 +165,14 @@ func _on_fps_selector_item_selected(index: int) -> void:
 
 func _on_play_2_pressed() -> void:
 	UiSound.ui_click()
-	Varibles.saved_data = null
-	Varibles.isFromLoadSaved = true
-	var data = ResourceLoader.load("user://save_data.res") as gameData
-	Varibles.saved_data = data
-	Varibles.playerSelection = data.player_selection
-	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
-	MenuMusic.stopmenumusic()
+	ScenesLoader.load_scene("uid://bmhva1b7v55s7")
+	#Varibles.saved_data = null
+	#Varibles.isFromLoadSaved = true
+	#var data = ResourceLoader.load("user://save_data.res") as gameData
+	#Varibles.saved_data = data
+	#Varibles.playerSelection = data.player_selection
+	#ScenesLoader.load_scene("uid://dm0rxd10m14f3")
+	#MenuMusic.stopmenumusic()
 
 func _on_link_button_2_pressed() -> void:
 	UiSound.ui_click()

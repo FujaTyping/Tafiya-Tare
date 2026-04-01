@@ -4,6 +4,7 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	MenuMusic.stopmenumusic()
 	await Varibles.wait(5)
 	animation_player.play("SlideOut")
