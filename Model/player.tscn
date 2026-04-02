@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dejv506q6mbp" path="res://SFX/bubble.wav" id="13_5hd5c"]
 [ext_resource type="AudioStream" uid="uid://cmhyce62xxdaq" path="res://SFX/bowl.wav" id="14_fi0my"]
 [ext_resource type="AudioStream" uid="uid://dexre4bhtaajc" path="res://SFX/bubbles.wav" id="17_00t8u"]
+[ext_resource type="Script" uid="uid://c2s6m87ww67ld" path="res://Script/notiItem.gd" id="18_qk1vb"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -302,6 +303,7 @@ mesh = SubResource("CapsuleMesh_4flbx")
 
 [node name="playerAnimation" parent="." unique_id=839030366 instance=ExtResource("2_5xjvv")]
 transform = Transform3D(-5.780226e-09, 0, -0.1162554, 0, 0.12203301, 0, 0.13223617, 0, -5.0816853e-09, 0, 0, 0)
+visible = false
 
 [node name="woman_player" parent="." unique_id=669057689 instance=ExtResource("3_ieuix")]
 transform = Transform3D(1.08123395e-08, 0, -0.108337075, 0, 0.116785966, 0, 0.096225515, 0, 1.2173513e-08, 0, 0.006185621, 0)
@@ -683,6 +685,32 @@ text = "UI_HELP_HINT"
 
 [node name="HelpMe" type="AnimationPlayer" parent="Help" unique_id=27558032]
 libraries/ = SubResource("AnimationLibrary_qve47")
+
+[node name="NotiItem" type="MarginContainer" parent="." unique_id=238698824]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -279.0
+offset_right = 450.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("18_qk1vb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NotiItem" unique_id=1652885332]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="NotiItem/VBoxContainer" unique_id=1264341571]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 26
+text = "ITEM_TEMPLATE"
 
 [node name="Sleep" type="CanvasLayer" parent="." unique_id=1818803801]
 visible = false

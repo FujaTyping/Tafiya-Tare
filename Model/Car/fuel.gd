@@ -5,8 +5,10 @@ extends StaticBody3D
 @export var fuelValue :int = 0
 @export var saveAfterCollect :bool = true
 @export var saveToremoveList : bool = true
+@export var showNotiItem: bool = true
 
 @onready var gameInstant = get_tree().current_scene
+@onready var notiContainer:MarginContainer = get_tree().current_scene.get_node("player/NotiItem")
 
 func addFuel() :
 	if checkCanBuy() :
@@ -15,6 +17,7 @@ func addFuel() :
 		carInstanst.fuelUpdate()
 		self.visible = false
 		self.set_collision_layer_value(2,false)
+		notiContainer.notiNewItem("FUEL_COLLECT_NOTIFY")
 		if saveToremoveList :
 			gameInstant.collectedItem.append(self.get_path())
 		if saveAfterCollect :

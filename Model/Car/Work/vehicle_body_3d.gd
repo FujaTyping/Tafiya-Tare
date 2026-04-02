@@ -116,9 +116,9 @@ func _physics_process(delta: float) -> void:
 		engine_force = 0
 		brake = 2
 
-var prevToggle: bool = false
+var prevToggle: bool = true
 
-func checkHUD(state:bool = prevToggle) :
+func checkHUD(state:bool) :
 	if is_driven :
 		if not state :
 			canvas_layer.hide()

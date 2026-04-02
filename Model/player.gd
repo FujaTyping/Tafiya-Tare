@@ -89,6 +89,7 @@ func _ready():
 	else :
 		woman_player.visible = true
 	add_to_group("player")
+	camera_3d.make_current()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	await Varibles.wait(5)
 	help_me.play("Hide")
@@ -236,7 +237,7 @@ func _input(event):
 						engine_start.play()
 						engine_idle.play()
 					Fuelmargin_container.visible = true
-					car_node.checkHUD()
+					car_node.checkHUD(car_node.prevToggle)
 					
 			else:
 				# GET OUT OF THE CAR
