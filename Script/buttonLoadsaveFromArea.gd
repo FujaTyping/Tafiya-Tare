@@ -1,5 +1,7 @@
 extends Button
 
+@onready var UIInstant: Control = get_tree().current_scene
+
 func _ready() -> void:
 	self.pressed.connect(loadThisState)
 
@@ -10,5 +12,7 @@ func loadThisState() :
 	var data = ResourceLoader.load("user://saves/"+self.text.to_lower()+".res") as gameData
 	Varibles.saved_data = data
 	Varibles.playerSelection = data.player_selection
+	UIInstant.goThrough()
+	await Varibles.wait(3.5)
 	ScenesLoader.load_scene("uid://dm0rxd10m14f3")
 	MenuMusic.stopmenumusic()

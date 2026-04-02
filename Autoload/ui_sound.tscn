@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dau7f7wt8buux"]
+[gd_scene format=3 uid="uid://dau7f7wt8buux"]
 
 [ext_resource type="Script" uid="uid://dixxuhka3ilbw" path="res://Autoload/ui_sound.gd" id="1_hqjhl"]
 [ext_resource type="AudioStream" uid="uid://dgoqgbe2k4nyd" path="res://SFX/click.wav" id="1_htfnl"]
 [ext_resource type="AudioStream" uid="uid://blhdm2lwsjsru" path="res://SFX/whoosh.wav" id="3_51nt0"]
 
-[node name="UI Sound" type="Node"]
+[node name="UI Sound" type="Node" unique_id=2086019092]
 script = ExtResource("1_hqjhl")
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=767486515]
 stream = ExtResource("1_htfnl")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="Whoose" type="AudioStreamPlayer" parent="."]
+[node name="Whoose" type="AudioStreamPlayer" parent="." unique_id=937382764]
 stream = ExtResource("3_51nt0")
 volume_db = -10.0
 pitch_scale = 1.25

@@ -5,6 +5,10 @@ extends Control
 @onready var del_confirm: CanvasLayer = $DelConfirm
 @onready var animation_player: AnimationPlayer = $DelConfirm/AnimationPlayer
 @onready var del_button_2: Button = $MarginContainer2/HBoxContainer/DelButton2
+@onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/Camera3D
+@onready var marker_3d: Marker3D = $Marker3D
+@onready var GOanimation_player: AnimationPlayer = $AnimationPlayer
+@onready var margin_container_2: MarginContainer = $MarginContainer2
 
 func _ready() -> void:
 	del_confirm.hide()
@@ -32,3 +36,9 @@ func _on_del_button_2_pressed() -> void:
 		var file_to_remove = "user://saves"
 		OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
 		ScenesLoader.load_scene("uid://bk2eqtj4bowsx")
+		
+func goThrough() :
+	GOanimation_player.play("Out")
+	Varibles.tweenCam(margin_container_2,"position",Vector2(1930,1000),0.3)
+	UiSound.ui_whoose()
+	Varibles.tweenCam(camera_3d,"global_transform",marker_3d.global_transform,4)
