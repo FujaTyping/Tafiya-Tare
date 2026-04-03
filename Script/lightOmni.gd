@@ -5,7 +5,7 @@ extends Node3D
 @onready var gameInstance:Node3D = get_tree().current_scene
 @onready var car:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 
-@export var rangeTrigged: int = 38
+@export var rangeTrigged: int = 32
 
 func _process(delta: float) -> void:
 	if gameInstance.get_day_time() == "TIME_NIGHT" :
