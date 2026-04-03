@@ -17,15 +17,15 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("map") :
 		if self.visible == false and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :			
 			player.SPEED = 0
-			AIn.play("In") 
-			canvas_layer.show()
+			AIn.play("In")
+			#canvas_layer.show()
 			self.show()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else :
 			AIn.play_backwards("In")
 			await AIn.animation_finished
 			self.hide()
-			canvas_layer.hide()
+			#canvas_layer.hide()
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			player.SPEED = prevPlayerSpeed
 	

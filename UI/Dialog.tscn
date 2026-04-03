@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://x0nwxuls06g4"]
+[gd_scene format=3 uid="uid://x0nwxuls06g4"]
 
 [ext_resource type="Texture2D" uid="uid://d0a5h8p0qtlq6" path="res://UI/Texture/DialogeBg.png" id="1_5w7iy"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="1_7ll08"]
@@ -98,7 +98,7 @@ _data = {
 &"RESET": SubResource("Animation_il1we")
 }
 
-[node name="Dialoges" type="Control"]
+[node name="Dialoges" type="Control" unique_id=671862486]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,35 +106,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1779981103]
 layer = 0
 visible = false
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=494779232]
 modulate = Color(1, 1, 1, 0.15686275)
-offset_left = 248.0
+offset_left = 351.0
 offset_top = 792.0
-offset_right = 1653.0
+offset_right = 1756.0
 offset_bottom = 1052.0
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_5w7iy")
 
-[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 295.0
+[node name="Dialoge" type="RichTextLabel" parent="CanvasLayer" unique_id=297767835]
+offset_left = 398.0
 offset_top = 853.0
-offset_right = 1601.0
+offset_right = 1704.0
 offset_bottom = 990.0
+scale = Vector2(0.9, 0.9)
 theme_override_fonts/normal_font = ExtResource("1_7ll08")
 theme_override_font_sizes/normal_font_size = 28
 text = "Speaker Text..."
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=442876805]
 visible = false
 offset_left = 295.0
 offset_top = 853.0
 offset_right = 1601.0
 offset_bottom = 990.0
+scale = Vector2(0.9, 0.9)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_7ll08")
@@ -144,78 +147,80 @@ placeholder_text = "TEXTAREA_PLACEHOLDER"
 alignment = 1
 clear_button_enabled = true
 
-[node name="Next" type="Button" parent="CanvasLayer"]
+[node name="Next" type="Button" parent="CanvasLayer" unique_id=2062370490]
 visible = false
 offset_left = 1396.0
 offset_top = 949.0
 offset_right = 1630.0
 offset_bottom = 1003.0
+scale = Vector2(0.9, 0.9)
 theme_override_fonts/font = ExtResource("1_7ll08")
 theme_override_font_sizes/font_size = 26
 text = "CONTINUE_BUTTON"
 
-[node name="TNext" type="TextureButton" parent="CanvasLayer"]
-offset_left = 1583.0
-offset_top = 931.0
-offset_right = 1675.0
-offset_bottom = 1014.0
+[node name="TNext" type="TextureButton" parent="CanvasLayer" unique_id=2060696288]
+offset_left = 1564.0
+offset_top = 922.0
+offset_right = 1656.0
+offset_bottom = 1005.0
+scale = Vector2(0.9, 0.9)
 texture_normal = ExtResource("2_5w7iy")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Context" type="ColorRect" parent="CanvasLayer"]
+[node name="Context" type="ColorRect" parent="CanvasLayer" unique_id=476390090]
 visible = false
 offset_left = 248.0
 offset_top = 817.0
 offset_right = 1652.0
 offset_bottom = 1018.0
+scale = Vector2(0.9, 0.9)
 size_flags_horizontal = 4
 color = Color(1, 1, 1, 0.17254902)
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=1524862254]
 modulate = Color(1, 1, 1, 0.15686275)
-offset_left = 206.95
+offset_left = 309.95
 offset_top = 710.0
-offset_right = 676.95013
+offset_right = 779.95013
 offset_bottom = 818.0
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_gxqm6")
 
-[node name="Name" type="ColorRect" parent="CanvasLayer"]
+[node name="Name" type="ColorRect" parent="CanvasLayer" unique_id=196808418]
 visible = false
 offset_left = 250.0
 offset_top = 729.0
 offset_right = 670.0
 offset_bottom = 802.0
+scale = Vector2(0.9, 0.9)
 size_flags_horizontal = 0
 color = Color(1, 1, 1, 0.17254902)
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=1240147844]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 250.0
+offset_left = 353.0
 offset_top = 722.0
-offset_right = -1283.0
+offset_right = -1180.0
 offset_bottom = -271.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9, 0.9)
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="SP" type="Label" parent="CanvasLayer/MarginContainer2"]
+[node name="SP" type="Label" parent="CanvasLayer/MarginContainer2" unique_id=424219760]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_il1we")
 theme_override_font_sizes/font_size = 38
 text = "Speaker Name"
 
-[node name="Typing" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_7ll08")
-}
+[node name="Typing" type="AnimationPlayer" parent="." unique_id=2108592722]
+libraries/ = SubResource("AnimationLibrary_7ll08")
 
-[node name="IN_Out" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5w7iy")
-}
+[node name="IN_Out" type="AnimationPlayer" parent="." unique_id=1204967805]
+libraries/ = SubResource("AnimationLibrary_5w7iy")

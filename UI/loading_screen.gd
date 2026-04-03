@@ -10,15 +10,19 @@ signal loading_screen_ready
 func _ready() -> void:
 	if get_tree().current_scene.name == "BeforeMenu" :
 		loading_icon.hide()
+		progressBar.hide()
 	else :
 		loading_icon.show()
+		progressBar.show()
 	textLabel.text = str(0)
+	progressBar.value = 0
 	await animation_player.animation_finished
 	loading_screen_ready.emit()
 	
 func _on_progress_changed(new_value:float) -> void:
 	if new_value > 0 :
 		textLabel.text = str(snapped(new_value*100,0))
+		progressBar.value = snapped(new_value*100,0)
 	
 func _on_load_finished() -> void:
 	animation_player.play_backwards("FadeIn")

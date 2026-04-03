@@ -52,6 +52,7 @@ func hideThisNPC() :
 	
 func _on_next_pressed():
 	if started: # Only trigger if THIS specific instance is active
+		UiSound.ui_click()
 		continume_dialoge()
 
 func startDialoge(body):

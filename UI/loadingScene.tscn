@@ -43,6 +43,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ProgressBar:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_1j043"]
 length = 0.001
@@ -81,6 +93,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ProgressBar:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pnnle"]
@@ -127,9 +151,16 @@ _data = {
 &"Spinn": SubResource("Animation_8atyx")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=51012446 node_paths=PackedStringArray("animation_player", "textLabel", "loading_icon")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxixc"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8atyx"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=51012446 node_paths=PackedStringArray("animation_player", "progressBar", "textLabel", "loading_icon")]
 script = ExtResource("1_nkc8s")
 animation_player = NodePath("AnimationPlayer")
+progressBar = NodePath("ProgressBar")
 textLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Label")
 loading_icon = NodePath("LoadingIcon")
 
@@ -183,7 +214,6 @@ theme_override_font_sizes/font_size = 30
 text = "%"
 
 [node name="LoadingIcon" type="TextureRect" parent="." unique_id=1538871951]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 35.0
 offset_top = 976.0
@@ -201,3 +231,12 @@ autoplay = &"FadeIn"
 [node name="Spinnger" type="AnimationPlayer" parent="." unique_id=1854888442]
 libraries/ = SubResource("AnimationLibrary_ljes3")
 autoplay = &"Spinn"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1726697960]
+offset_top = 1071.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hxixc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8atyx")
+step = 1.0
+show_percentage = false
