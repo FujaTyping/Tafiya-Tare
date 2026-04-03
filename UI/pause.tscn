@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://vje0m8kysudw"]
+[gd_scene format=3 uid="uid://vje0m8kysudw"]
 
 [ext_resource type="Script" uid="uid://djtj7t0j0u5a4" path="res://UI/pause.gd" id="1_6wphx"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_jl6cd"]
-[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="3_ocodi"]
+[ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="3_85lix"]
 
 [sub_resource type="Animation" id="Animation_jl6cd"]
 resource_name = "CloseAnimation"
@@ -58,7 +58,7 @@ _data = {
 &"RESET": SubResource("Animation_jixca")
 }
 
-[node name="Pause" type="Control"]
+[node name="Pause" type="Control" unique_id=47465175]
 process_mode = 3
 visible = false
 z_index = 1
@@ -72,7 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wphx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2026426989]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.14901961)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1382049655]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,49 +99,43 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=20884088]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=177694860]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jl6cd")
 theme_override_font_sizes/font_size = 43
 text = "PAUSE_TITLE"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2026821113]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1779243246]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ocodi")
-theme_override_font_sizes/font_size = 25
+theme = ExtResource("3_85lix")
 text = "RESUME_BUTTON"
 
-[node name="Save" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1785241352]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ocodi")
-theme_override_font_sizes/font_size = 25
+theme = ExtResource("3_85lix")
 text = "BUTTON_SAVE"
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1853824070]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ocodi")
-theme_override_font_sizes/font_size = 25
+theme = ExtResource("3_85lix")
 text = "BACK_TO_MENU_BUTTON"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1606528984]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ocodi")
-theme_override_font_sizes/font_size = 25
+theme = ExtResource("3_85lix")
 text = "QUIT_BUTTON"
 
-[node name="Open" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_jl6cd")
-}
+[node name="Open" type="AnimationPlayer" parent="." unique_id=1926776139]
+libraries/ = SubResource("AnimationLibrary_jl6cd")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]

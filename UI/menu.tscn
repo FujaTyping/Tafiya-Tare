@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_dte3n"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="5_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="6_dte3n"]
+[ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="7_dte3n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -23,9 +24,6 @@ background_mode = 2
 sky = SubResource("Sky_7jktm")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmqfe"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_qmqfe"]
 resource_name = "CreditIn"
@@ -409,9 +407,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
+theme = ExtResource("7_dte3n")
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
 text = "SELECT_FM"
 
 [node name="M" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1458660513]
@@ -419,17 +416,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_bottom = NodePath("../../Button")
+theme = ExtResource("7_dte3n")
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
 text = "SELECT_M"
 
 [node name="Button" type="Button" parent="PlayerSelection/VBoxContainer/VBoxContainer2" unique_id=1638359194]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../HBoxContainer/WM")
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "BACK_BUTTON"
 
 [node name="Label" type="Label" parent="PlayerSelection/VBoxContainer/VBoxContainer2" unique_id=1238810097]
@@ -494,8 +489,7 @@ theme_override_constants/separation = 15
 [node name="Play" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=1008272392]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Load")
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "PLAY_BUTTON"
 
 [node name="Load" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=1954982274]
@@ -503,16 +497,14 @@ visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Option")
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "BUTTON_LOAD"
 
 [node name="Option" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=345375739]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Load")
 focus_neighbor_bottom = NodePath("../Credit")
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "OPTION_BUTTON"
 
 [node name="Credit" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=2003642075]
@@ -528,8 +520,7 @@ text = "CREDIT_BUTTON"
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credit")
 focus_neighbor_bottom = NodePath("../../../VBoxContainer2/HBoxContainer2/LinkButton")
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "QUIT_BUTTON"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Main" unique_id=969318315]
@@ -638,9 +629,7 @@ theme_override_constants/margin_bottom = 95
 
 [node name="TabContainer" type="TabContainer" parent="Credit/MarginContainer2" unique_id=406983319]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/panel = SubResource("StyleBoxFlat_qmqfe")
+theme = ExtResource("7_dte3n")
 current_tab = 0
 
 [node name="UI_CREDIT_SOUND" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=865205008]
@@ -664,6 +653,7 @@ theme_override_constants/margin_bottom = 105
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer" unique_id=1676508968]
 layout_mode = 2
+theme = ExtResource("7_dte3n")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
@@ -806,8 +796,7 @@ theme_override_constants/margin_bottom = 20
 [node name="CloseCredit" type="Button" parent="Credit/MarginContainer" unique_id=1307210313]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "CLOSE_BUTTON"
 
 [node name="License" type="MarginContainer" parent="." unique_id=1271339890]
@@ -854,6 +843,7 @@ theme_override_constants/margin_bottom = 155
 
 [node name="ScrollContainer" type="ScrollContainer" parent="License/MarginContainer2" unique_id=2034547818]
 layout_mode = 2
+theme = ExtResource("7_dte3n")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
@@ -905,8 +895,7 @@ theme_override_constants/margin_bottom = 20
 [node name="CloseCredit" type="Button" parent="License/MarginContainer" unique_id=1056618504]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "CLOSE_BUTTON"
 
 [node name="Option" type="MarginContainer" parent="." unique_id=1329197415]
@@ -956,6 +945,7 @@ text = "OPTION_SENSITIVITY"
 [node name="HSlider" type="HSlider" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1903615121]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("7_dte3n")
 max_value = 1.0
 step = 0.1
 
@@ -972,6 +962,7 @@ text = "OPTION_MAX_FPS"
 
 [node name="FPSSelector" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6" unique_id=1983104824]
 layout_mode = 2
+theme = ExtResource("7_dte3n")
 selected = 1
 item_count = 3
 popup/item_0/text = "30"
@@ -994,6 +985,7 @@ text = "OPTION_BGM"
 
 [node name="CheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=2092783573]
 layout_mode = 2
+theme = ExtResource("7_dte3n")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=568067502]
 layout_mode = 2
@@ -1008,6 +1000,7 @@ text = "OPTION_SFX"
 
 [node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=2098882901]
 layout_mode = 2
+theme = ExtResource("7_dte3n")
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=541745227]
 visible = false
@@ -1052,8 +1045,7 @@ text = "OPTION_LANGUAGE"
 [node name="OptionButton" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=164003922]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("7_dte3n")
 selected = 0
 item_count = 2
 popup/item_0/text = "English"
@@ -1070,8 +1062,7 @@ text = "LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM 
 
 [node name="CloseOption" type="Button" parent="Option/VBoxContainer" unique_id=2038740582]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_dte3n")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("7_dte3n")
 text = "CLOSE_BUTTON"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=966691310]

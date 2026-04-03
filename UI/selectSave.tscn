@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d25im63mknfa3" path="res://Terrain/Grass/Mesh/Grass1.res" id="4_cfwur"]
 [ext_resource type="Script" uid="uid://b4t3yldpxpwbw" path="res://Script/buttonLoadsaveFromArea.gd" id="4_osi7q"]
 [ext_resource type="PackedScene" uid="uid://ch73enkqbxb8u" path="res://Terrain/Base/baseLevelTunnel.glb" id="7_pruub"]
+[ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="10_612j2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54w6a"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -323,8 +324,7 @@ theme_override_constants/separation = 8
 [node name="Button_TEMP" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1196991663]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7grwk")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("10_612j2")
 script = ExtResource("4_osi7q")
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=2094817302]
@@ -349,14 +349,12 @@ theme_override_constants/separation = 10
 
 [node name="DelButton2" type="Button" parent="MarginContainer2/HBoxContainer" unique_id=2097503369]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7grwk")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("10_612j2")
 text = "DELETE_ALL_SAVE_BUTTON"
 
 [node name="CButton" type="Button" parent="MarginContainer2/HBoxContainer" unique_id=1503871154]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7grwk")
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("10_612j2")
 text = "CLOSE_BUTTON"
 
 [node name="baseLevelTunnel" parent="." unique_id=920513363 instance=ExtResource("7_pruub")]
