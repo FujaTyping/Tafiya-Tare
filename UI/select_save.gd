@@ -42,3 +42,10 @@ func goThrough() :
 	Varibles.tweenCam(margin_container_2,"position",Vector2(1930,1000),0.3)
 	UiSound.ui_whoose()
 	Varibles.tweenCam(camera_3d,"global_transform",marker_3d.global_transform,4)
+
+func _on_close_pressed() -> void:
+	UiSound.ui_click()
+	del_button_2.text = "DELETE_ALL_SAVE_BUTTON"
+	animation_player.play_backwards("On")
+	await animation_player.animation_finished
+	del_confirm.hide()

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="5_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="6_dte3n"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="7_dte3n"]
+[ext_resource type="Texture2D" uid="uid://mfgttr18njs2" path="res://UI/Texture/Stretch Icon 32x32.png" id="8_dhncy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
 sky_top_color = Color(0.14509805, 0.60784316, 0.90588236, 1)
@@ -913,13 +914,11 @@ grow_vertical = 2
 layout_mode = 2
 color = Color(1, 1, 1, 0.14901961)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Option" unique_id=1622721568]
+[node name="MarginContainer2" type="MarginContainer" parent="Option" unique_id=46396304]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 30
+theme_override_constants/margin_bottom = 457
 
-[node name="Title" type="Label" parent="Option/VBoxContainer" unique_id=633927457]
+[node name="Title" type="Label" parent="Option/MarginContainer2" unique_id=633927457]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -927,40 +926,52 @@ theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 48
 text = "OPTION_BUTTON"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Option/VBoxContainer" unique_id=123559146]
+[node name="MarginContainer" type="MarginContainer" parent="Option" unique_id=1979312860]
+layout_mode = 2
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = 422
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 270
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option/MarginContainer" unique_id=123559146]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=1991927685]
+[node name="HBoxContainer" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=1991927685]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=988451101]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer" unique_id=988451101]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_SENSITIVITY"
 
-[node name="HSlider" type="HSlider" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1903615121]
+[node name="MarginContainer" type="MarginContainer" parent="Option/MarginContainer/VBoxContainer/HBoxContainer" unique_id=523818852]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="HSlider" type="HSlider" parent="Option/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1903615121]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("7_dte3n")
 max_value = 1.0
 step = 0.1
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=1527973648]
+[node name="HBoxContainer6" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=1527973648]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6" unique_id=491858006]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=491858006]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_MAX_FPS"
 
-[node name="FPSSelector" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer6" unique_id=1983104824]
+[node name="FPSSelector" type="OptionButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1983104824]
 layout_mode = 2
 theme = ExtResource("7_dte3n")
 selected = 1
@@ -972,77 +983,118 @@ popup/item_1/id = 1
 popup/item_2/text = "120"
 popup/item_2/id = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=728743970]
+[node name="HBoxContainer9" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=1287883551]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=227109097]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer9" unique_id=649128711]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "OPTION_VSYNC"
+
+[node name="VSCheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer9" unique_id=1322660437]
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=728743970]
+layout_mode = 2
+theme_override_constants/separation = 54
+
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=227109097]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_BGM"
 
-[node name="CheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=2092783573]
+[node name="MarginContainer2" type="MarginContainer" parent="Option/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1624649824]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="HSlider" type="HSlider" parent="Option/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer2" unique_id=475470079]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_dte3n")
+min_value = -80.0
+max_value = 6.0
+
+[node name="CheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2092783573]
+visible = false
 layout_mode = 2
 theme = ExtResource("7_dte3n")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=568067502]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=568067502]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=1034205817]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1034205817]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_SFX"
 
-[node name="SCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=2098882901]
+[node name="MarginContainer3" type="MarginContainer" parent="Option/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1207820572]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="HSlider" type="HSlider" parent="Option/MarginContainer/VBoxContainer/HBoxContainer4/MarginContainer3" unique_id=2114584053]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_dte3n")
+min_value = -80.0
+max_value = 6.0
+
+[node name="SCheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2098882901]
+visible = false
 layout_mode = 2
 theme = ExtResource("7_dte3n")
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=541745227]
+[node name="HBoxContainer7" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=541745227]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7" unique_id=1492073968]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=1492073968]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_AUTO_SAVE"
 
-[node name="SaveCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer7" unique_id=1899713279]
+[node name="SaveCheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=1899713279]
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=319963306]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=319963306]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5" unique_id=1015464853]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1015464853]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "OPTION_CINEMATIC"
 
-[node name="CNCheckButton" type="CheckButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer5" unique_id=682850757]
+[node name="CNCheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=682850757]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Option/VBoxContainer/VBoxContainer" unique_id=1832663285]
+[node name="HBoxContainer8" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=524391371]
 layout_mode = 2
 theme_override_constants/separation = 54
 
-[node name="Label" type="Label" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2030951324]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer8" unique_id=239416269]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "OPTION_LANGUAGE"
 
-[node name="OptionButton" type="OptionButton" parent="Option/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=164003922]
+[node name="OptionButton" type="OptionButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer8" unique_id=164003922]
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("7_dte3n")
@@ -1053,15 +1105,44 @@ popup/item_0/id = 0
 popup/item_1/text = "ภาษาไทย"
 popup/item_1/id = 1
 
-[node name="Sperate" type="Label" parent="Option/VBoxContainer" unique_id=58352984]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="HBoxContainer2" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=1832663285]
 layout_mode = 2
-theme_override_font_sizes/font_size = 5
-text = "LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM "
+theme_override_constants/separation = 54
 
-[node name="CloseOption" type="Button" parent="Option/VBoxContainer" unique_id=2038740582]
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2030951324]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "OPTION_WINDOWS_MODE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=887705487]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="WindowOptionButton" type="OptionButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=923543707]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("7_dte3n")
+selected = 0
+item_count = 3
+popup/item_0/text = "WINDOWS_MODE_MAXIMIZED"
+popup/item_0/id = 0
+popup/item_1/text = "WINDOWS_MODE_WINDOWED"
+popup/item_1/id = 1
+popup/item_2/text = "WINDOWS_MODE_FULLSCREEN"
+popup/item_2/id = 2
+
+[node name="ForceFullUI" type="TextureButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1366868028]
+visible = false
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("8_dhncy")
+
+[node name="CloseOption" type="Button" parent="Option/MarginContainer" unique_id=2038740582]
+layout_mode = 2
+size_flags_vertical = 8
 theme = ExtResource("7_dte3n")
 text = "CLOSE_BUTTON"
 
@@ -1095,10 +1176,15 @@ libraries/ = SubResource("AnimationLibrary_60j7a")
 [connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/LinkButton3" to="." method="_on_link_button_3_pressed"]
 [connection signal="pressed" from="Credit/MarginContainer/CloseCredit" to="." method="_on_close_credit_pressed"]
 [connection signal="pressed" from="License/MarginContainer/CloseCredit" to="." method="_on_close_license_pressed"]
-[connection signal="value_changed" from="Option/VBoxContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="item_selected" from="Option/VBoxContainer/VBoxContainer/HBoxContainer6/FPSSelector" to="." method="_on_fps_selector_item_selected"]
-[connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer4/SCheckButton" to="." method="_on_s_check_button_toggled"]
-[connection signal="toggled" from="Option/VBoxContainer/VBoxContainer/HBoxContainer5/CNCheckButton" to="." method="_on_cn_check_button_toggled"]
-[connection signal="item_selected" from="Option/VBoxContainer/VBoxContainer/HBoxContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="Option/VBoxContainer/CloseOption" to="." method="_on_close_option_pressed"]
+[connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="item_selected" from="Option/MarginContainer/VBoxContainer/HBoxContainer6/FPSSelector" to="." method="_on_fps_selector_item_selected"]
+[connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer9/VSCheckButton" to="." method="_on_vs_check_button_toggled"]
+[connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer2/HSlider" to="." method="_on_h_BGM_slider_value_changed"]
+[connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer4/MarginContainer3/HSlider" to="." method="_on_h_SFX_slider_value_changed"]
+[connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer4/SCheckButton" to="." method="_on_s_check_button_toggled"]
+[connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer5/CNCheckButton" to="." method="_on_cn_check_button_toggled"]
+[connection signal="item_selected" from="Option/MarginContainer/VBoxContainer/HBoxContainer8/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/WindowOptionButton" to="." method="_on_window_option_button_item_selected"]
+[connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/ForceFullUI" to="." method="_on_force_full_ui_toggled"]
+[connection signal="pressed" from="Option/MarginContainer/CloseOption" to="." method="_on_close_option_pressed"]

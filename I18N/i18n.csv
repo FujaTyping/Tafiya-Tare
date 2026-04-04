@@ -155,3 +155,8 @@ CONTROL_U,Hide HUD,ช่อน HUD
 FUEL_COLLECT_NOTIFY,The fuel tank has been refilled,เติมน้ำมันลงถังเรียบร้อย
 FOOD_COLLECT_NOTIFY,Packed food supplies into bag,เก็บเสบียงอาหารลงกระเป๋าเรียบร้อย
 WASH_BODY_NOTIFY,Body feels clean and refreshed now,ร่างกายสะอาดและสดชื่นขึ้นแล้ว
+OPTION_WINDOWS_MODE,Window Mode,โหมดหน้าต่าง
+WINDOWS_MODE_MAXIMIZED,Maximized,เต็มจอแบบไร้ขอบ
+WINDOWS_MODE_WINDOWED,Windowed,แบบหน้าต่าง
+WINDOWS_MODE_FULLSCREEN,Fullscreen,เต็มจอ
+OPTION_VSYNC,VSync,วีซิงค์

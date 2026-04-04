@@ -17,6 +17,8 @@ var isFromLoadSaved = false
 var saved_data : gameData
 var quest_State: int = 0
 var ListNPCbackCar: Array[String] = []
+var BGMValueSetting: float = 0
+var SFXValueSetting: float = 0
 
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout

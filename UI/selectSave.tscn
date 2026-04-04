@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dvshph0h6bup6" path="res://Model/LightPole/ModernLightPole.glb" id="4_24v06"]
 [ext_resource type="ArrayMesh" uid="uid://d25im63mknfa3" path="res://Terrain/Grass/Mesh/Grass1.res" id="4_cfwur"]
 [ext_resource type="Script" uid="uid://b4t3yldpxpwbw" path="res://Script/buttonLoadsaveFromArea.gd" id="4_osi7q"]
+[ext_resource type="Texture2D" uid="uid://cbu8n8wanen0g" path="res://UI/Texture/CloseIcon.png" id="7_4itj5"]
 [ext_resource type="PackedScene" uid="uid://ch73enkqbxb8u" path="res://Terrain/Base/baseLevelTunnel.glb" id="7_pruub"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="10_612j2"]
 
@@ -80,6 +81,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.54901963)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Close:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_s07w0"]
 length = 0.001
@@ -118,6 +131,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.54901963)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Close:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s07w0"]
@@ -186,7 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.138, 0)
 multimesh = SubResource("MultiMesh_pruub")
 
 [node name="Grass" type="MultiMeshInstance3D" parent="." unique_id=1256409728]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48, 8.843, -3.45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.535, 0)
 multimesh = SubResource("MultiMesh_cfwur")
 
 [node name="Light" type="Node3D" parent="." unique_id=804678930]
@@ -255,6 +280,25 @@ offset_top = 881.0
 offset_right = 1836.0
 offset_bottom = 990.0
 color = Color(0, 0, 0, 0.54901963)
+
+[node name="Close" type="TextureButton" parent="DelConfirm" unique_id=1502708771]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = 316.0
+offset_right = -79.0
+offset_bottom = 354.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("7_4itj5")
+texture_pressed = ExtResource("7_4itj5")
+texture_hover = ExtResource("7_4itj5")
+texture_focused = ExtResource("7_4itj5")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="DelConfirm" unique_id=1913926289]
 offset_left = 1430.0
@@ -369,6 +413,7 @@ visible = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1524170564]
 libraries/ = SubResource("AnimationLibrary_612j2")
 
+[connection signal="pressed" from="DelConfirm/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/DelButton2" to="." method="_on_del_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/CButton" to="." method="_on_c_button_pressed"]
 

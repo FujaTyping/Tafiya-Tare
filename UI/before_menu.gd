@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var intro: AnimationPlayer = $Intro
 
 const langList = ["en","th","jp"]
+const windowList = [DisplayServer.WINDOW_MODE_MAXIMIZED,DisplayServer.WINDOW_MODE_WINDOWED,DisplayServer.WINDOW_MODE_FULLSCREEN]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _ready() -> void:
 		var data = ResourceLoader.load("user://setting_data.tres") as settingSave
 		Varibles.LangIndex = data.languageIndex
 		TranslationServer.set_locale(langList[data.languageIndex])
+		DisplayServer.window_set_mode(windowList[data.windowsModeIndex])
 	await Varibles.wait(0.25)	
 	intro.play("In")
 	await Varibles.wait(0.025)
