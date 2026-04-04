@@ -73,6 +73,8 @@ var prevSpringArm: float
 @onready var wash_body_bubble: Node3D = $WashBodyBubble
 @onready var wash: AudioStreamPlayer3D = $Wash
 
+@onready var noti_item: MarginContainer = $NotiItem
+
 func _ready():
 	if Varibles.isFromLoadSaved :
 		self.global_position = Varibles.saved_data.player_position
@@ -103,6 +105,7 @@ func washBody() :
 		wash.play()
 		Varibles.tweenCam(wash_body_bubble,"scale",Vector3(0.11,0.11,0.11),3)
 		await Varibles.wait(10)
+		noti_item.notiNewItem("WASH_BODY_NOTIFY")
 		Varibles.tweenCam(wash_body_bubble,"scale",Vector3(0,0,0),3)
 		await Varibles.wait(3)
 		wash_body_bubble.hide()

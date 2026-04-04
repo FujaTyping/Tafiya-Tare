@@ -19,13 +19,13 @@ func _process(delta: float) -> void:
 
 		if posOg.distance_to(lightPos) < rangeTrigged :			
 			lightSource.visible = true
-			Varibles.tweenCam(lightSource,"light_energy",2.56,0.2)
+			Varibles.tweenCam(lightSource,"light_energy",2.56,0.3)
 		else :
 			closeLight()
 	else :
 		closeLight()
 			
 func closeLight() :
-	Varibles.tweenCam(lightSource,"light_energy",0.0,0.2)
-	await Varibles.wait(0.21)
+	Varibles.tweenCam(lightSource,"light_energy",0.0,0.3)
+	await Varibles.wait(0.31)
 	lightSource.visible = false
