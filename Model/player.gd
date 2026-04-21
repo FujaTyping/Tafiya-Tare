@@ -75,6 +75,8 @@ var prevSpringArm: float
 
 @onready var noti_item: MarginContainer = $NotiItem
 
+@onready var testing_marker: Marker3D = $"../TestingMarker"
+
 func _ready():
 	if Varibles.isFromLoadSaved :
 		self.global_position = Varibles.saved_data.player_position
@@ -123,6 +125,10 @@ func _input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
+	# Testing only - In prod will be remove
+	if Input.is_action_just_pressed("teleportTest") :
+		self.global_position = testing_marker.global_position
 	
 	if not is_in_car :
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
