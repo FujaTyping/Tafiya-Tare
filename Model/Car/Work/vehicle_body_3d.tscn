@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dtg54qw2gdjp0" path="res://UI/Texture/caroilIcon.png" id="11_4hprx"]
 [ext_resource type="PackedScene" uid="uid://bx1jc5otvvk72" path="res://Model/NPC/V1NPC02.glb" id="12_cwpbu"]
 [ext_resource type="Script" uid="uid://dht6p1nujksr2" path="res://Model/NPC/v_1npc_02.gd" id="13_gj6qa"]
+[ext_resource type="PackedScene" uid="uid://4aa8u0x2w3sg" path="res://Model/NPC/V2/V20001.glb" id="14_ojv2x"]
+[ext_resource type="Script" uid="uid://rxbhbfcswmxl" path="res://Model/NPC/V2/v_20001.gd" id="15_sjakl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wmsh"]
 size = Vector3(1, 1.0080566, 1)
@@ -265,4 +267,36 @@ bones/13/rotation = Quaternion(0.64965856, -0.68112195, 0.23887716, -0.23865132)
 bones/14/rotation = Quaternion(-0.11826563, 0.10238458, -0.0242428, 0.98739207)
 bones/15/rotation = Quaternion(-0.0514382, -0.024859298, 0.6858935, 0.725456)
 
+[node name="V20001" parent="." unique_id=1161141074 node_paths=PackedStringArray("animation") instance=ExtResource("14_ojv2x")]
+transform = Transform3D(-0.63, 0, 9.5127355e-08, -6.435329e-09, 0.6285568, -0.04261926, -9.490943e-08, -0.04261926, -0.6285568, -0.980096, -0.5588641, -1.9370313)
+visible = false
+script = ExtResource("15_sjakl")
+animation = NodePath("AnimationPlayer")
+sittAnimationName = "CarSit"
+
+[node name="Skeleton3D" parent="V20001/Armature" parent_id_path=PackedInt32Array(1161141074, 1579336527) index="0" unique_id=175163637]
+bones/0/rotation = Quaternion(1.6170736e-10, -2.6196403e-09, 0.006298876, 0.99998015)
+bones/1/rotation = Quaternion(-8.202018e-11, -1.9769613e-09, 0.02834323, 0.99959826)
+bones/2/rotation = Quaternion(0.7232542, -4.2098817e-11, 4.019728e-11, 0.6905819)
+bones/3/rotation = Quaternion(0.59364665, 0.01312892, -0.026701907, 0.8041755)
+bones/4/rotation = Quaternion(0.13215807, -0.02892025, 0.112196356, 0.9844338)
+bones/5/rotation = Quaternion(-0.04124194, -0.022733102, 0.20172016, 0.9783104)
+bones/7/rotation = Quaternion(-0.7136188, 0.03673053, 0.0365092, 0.69861734)
+bones/8/rotation = Quaternion(-0.5141814, 0.2071104, -0.32119492, 0.7678259)
+bones/9/rotation = Quaternion(-0.23428142, -0.022392366, 0.08374349, 0.96829635)
+bones/10/rotation = Quaternion(-0.2534308, 0.054631926, 0.3100956, 0.9146743)
+bones/11/rotation = Quaternion(-0.08937057, 0.1569413, 0.18482831, 0.9660336)
+bones/12/rotation = Quaternion(-4.0950026e-09, 1.14523495e-07, 0.03435139, 0.99940985)
+bones/13/rotation = Quaternion(-2.8924342e-08, -1.6300085e-08, 0.065935254, 0.9978239)
+bones/14/rotation = Quaternion(0.4293542, 0.256132, 0.5465488, 0.6718153)
+bones/15/rotation = Quaternion(-0.43711656, 0.5388966, 0.376389, 0.6138819)
+bones/16/rotation = Quaternion(-0.021830648, -0.4912857, -0.20720653, 0.8457112)
+bones/17/rotation = Quaternion(0.6903336, -0.6653059, 0.21140297, -0.190043)
+bones/18/rotation = Quaternion(0.1463215, 0.20226409, -0.6595347, 0.7090087)
+bones/19/rotation = Quaternion(-0.14557071, -0.5615864, 0.5904617, 0.56105703)
+
+[node name="AnimationPlayer" parent="V20001" index="1" unique_id=1577909486]
+autoplay = &"CarSit"
+
 [editable path="V1NPC02"]
+[editable path="V20001"]

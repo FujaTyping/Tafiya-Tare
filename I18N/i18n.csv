@@ -160,3 +160,10 @@ WINDOWS_MODE_MAXIMIZED,Maximized,เต็มจอแบบไร้ขอบ
 WINDOWS_MODE_WINDOWED,Windowed,แบบหน้าต่าง
 WINDOWS_MODE_FULLSCREEN,Fullscreen,เต็มจอ
 OPTION_VSYNC,VSync,วีซิงค์
+DIALOGE_V2_1_1,"Hey bro, wanna hitch a ride to the mountaintop?",เฮ้ น้องชาย สนใจติดรถไปยอดเขาด้วยกันไหม?
+DIALOGE_V2_1_2,"The Peak of Truth, huh? Sounds interesting!",ยอดเขาแห่งสัจธรรมน่ะเหรอ? น่าสนนะ!
+DIALOGE_V2_1_3,"Yes, it's a long journey. It would be better if we went together.",ใช่ ทางมันไกล ไปด้วยกันน่าจะดีกว่า
+DIALOGE_V2_1_4,Then I'll come too!,งั้นผมขอไปด้วย!
+DIALOGE_V2_1_5,"Great! Climb into the back of the pickup truck, kid!",เยี่ยมเลย ขึ้นท้ายกระบะมาเลยน้อง!
+QUEST_STARTED_LEVEL_3,Explore the village and find the person who built this robot.,สำรวจหมู่บ้านและหาคนที่สร้างหุ่นนยนต์นี้
+QUEST_STARTED_LEVEL_4,Gather ingredients in the village to prepare a special meal for the village leader,ตามหาวัตถุดิบในหมู่บ้านมาทำอาหารมื้อพิเศษให้ผู้นำหมู่บ้าน
