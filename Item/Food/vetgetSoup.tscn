@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdw2svoi2xv6n"]
+[gd_scene format=3 uid="uid://bdw2svoi2xv6n"]
 
 [ext_resource type="Script" uid="uid://cfms4diaqv8nd" path="res://Item/Food/foodManager.gd" id="1_gjlq4"]
 [ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="2_1hr1j"]
@@ -18,24 +18,24 @@ gravity = Vector3(0, 1, 0)
 size = Vector2(0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghrs3"]
-size = Vector3(0.47485352, 0.22839355, 0.4482422)
+size = Vector3(0.4182129, 0.16085815, 0.42871094)
 
-[node name="VetgetSoup" type="RigidBody3D"]
+[node name="VetgetSoup" type="RigidBody3D" unique_id=2055057552]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_gjlq4")
 completeQuestReward = 25
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=272501607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19026355, 0)
 material_override = SubResource("StandardMaterial3D_5dmmg")
 amount = 4
 process_material = SubResource("ParticleProcessMaterial_idbro")
 draw_pass_1 = SubResource("QuadMesh_8twun")
 
-[node name="vegetSoup" parent="." instance=ExtResource("3_gjlq4")]
+[node name="vegetSoup" parent="." unique_id=648306609 instance=ExtResource("3_gjlq4")]
 transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07618117, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1585463584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07311416, 0)
 shape = SubResource("BoxShape3D_ghrs3")
