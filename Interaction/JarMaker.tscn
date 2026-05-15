@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://1lduyly87yp5"]
+
+[ext_resource type="PackedScene" uid="uid://dgona2bu4q2ab" path="res://Model/L3/Foodie stuff/Jar Make.glb" id="1_2d5gn"]
+[ext_resource type="Script" uid="uid://dykrd3vuxcgs6" path="res://Interaction/jar_maker.gd" id="1_78juc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78juc"]
+size = Vector3(0.3479004, 0.2331543, 0.4543457)
+
+[node name="JarMaker" type="StaticBody3D" unique_id=1979976088]
+script = ExtResource("1_78juc")
+
+[node name="Jar Make" parent="." unique_id=352228080 instance=ExtResource("1_2d5gn")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="cap" parent="Jar Make" index="1" unique_id=924114709]
+transform = Transform3D(0.39804763, 0, 0, 0, 0.39804763, 0, 0, 0, 0.39804763, 1.0116689, -1.2978896, 1.7913614e-07)
+
+[node name="Water" parent="Jar Make" index="2" unique_id=1333813142]
+transform = Transform3D(0.3556766, 0, 0, 0, 0.14459765, 0, 0, 0, 0.3556766, 0.0046840906, -0.3496119, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=966119752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0033111572, 0.04787168, -0.041625977)
+shape = SubResource("BoxShape3D_78juc")
+
+[editable path="Jar Make"]
