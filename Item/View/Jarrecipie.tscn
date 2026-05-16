@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cabi8pyhr766a"]
+
+[ext_resource type="Script" uid="uid://de2riqusrt3u1" path="res://Item/View/viewMoreManager.gd" id="1_1xbwf"]
+[ext_resource type="Texture2D" uid="uid://wfyxp4oe1iyr" path="res://Item/View/Image/JarrecipiePaper.png" id="2_1xbwf"]
+[ext_resource type="PackedScene" uid="uid://dkbmf7urrxbkg" path="res://Model/Board/Dongrecipe.glb" id="3_1xbwf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an0si"]
+size = Vector3(0.34277344, 0.42645264, 0.03955078)
+
+[node name="recipie" type="StaticBody3D" unique_id=865504212]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_1xbwf")
+ImagetoView = ExtResource("2_1xbwf")
+
+[node name="Dongrecipe" parent="." unique_id=198172929 instance=ExtResource("3_1xbwf")]
+transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615513184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12527466, -0.018493652)
+shape = SubResource("BoxShape3D_an0si")

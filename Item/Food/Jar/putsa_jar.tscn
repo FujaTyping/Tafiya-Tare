@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwx7e1ch2ugqy"]
+
+[ext_resource type="Script" uid="uid://dvxbs6a4mybyd" path="res://Item/Food/foodManager_static.gd" id="1_04iv6"]
+[ext_resource type="PackedScene" uid="uid://cpp6n4c6ole8q" path="res://Model/Food/Jar/PutSa Jar.glb" id="2_04iv6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0mu8"]
+size = Vector3(0.42773438, 0.32481384, 0.40625)
+
+[node name="PutSaJar" type="StaticBody3D" unique_id=14239072]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_04iv6")
+completeQuestReward = 15
+isJar = true
+
+[node name="PutSa Jar2" parent="." unique_id=311156702 instance=ExtResource("2_04iv6")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1592967334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0043945313, 0.008918762, -0.001953125)
+shape = SubResource("BoxShape3D_w0mu8")

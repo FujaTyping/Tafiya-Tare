@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://r8ynxoexmjdn"]
+
+[ext_resource type="Script" uid="uid://b003o7apxisk1" path="res://Item/Ingredient/minigameLevel3Manager.gd" id="1_t7kht"]
+[ext_resource type="PackedScene" uid="uid://bdl4ndrspdcp0" path="res://Model/Ingredient/PutSa ingre.glb" id="2_t7kht"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k65nt"]
+size = Vector3(0.3635254, 0.19467926, 0.35839844)
+
+[node name="putsa" type="StaticBody3D" unique_id=1338407637]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_t7kht")
+InName = "putsa"
+
+[node name="PutSa ingre" parent="." unique_id=523530357 instance=ExtResource("2_t7kht")]
+transform = Transform3D(0.455, 0, 0, 0, 0.455, 0, 0, 0, 0.455, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1544531986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00015258789, 0.086307526, -0.002380371)
+shape = SubResource("BoxShape3D_k65nt")

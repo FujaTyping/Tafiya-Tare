@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bhso62b7wroyv" path="res://Item/Food/Jar/failed_jar.tscn" id="2_ruvsc"]
 [ext_resource type="PackedScene" uid="uid://c7k0dc0ncth6t" path="res://Item/Food/Jar/gurfa_jar.tscn" id="3_pcxtx"]
 [ext_resource type="AudioStream" uid="uid://mstcvgdskdeh" path="res://SFX/cookingDone.wav" id="3_yvnju"]
+[ext_resource type="PackedScene" uid="uid://bwx7e1ch2ugqy" path="res://Item/Food/Jar/putsa_jar.tscn" id="4_jvn10"]
+[ext_resource type="PackedScene" uid="uid://co28oe5f36t5y" path="res://Item/Food/Jar/mango_jar.tscn" id="5_f4oyb"]
 [ext_resource type="AudioStream" uid="uid://cbmivwiqtr23v" path="res://SFX/GlassJar.wav" id="5_uhcar"]
 
 [sub_resource type="Animation" id="Animation_ut1rb"]
@@ -70,7 +72,7 @@ size = Vector3(0.3479004, 0.4769287, 0.40686035)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_78juc")
-listMenu = Array[PackedScene]([ExtResource("2_ruvsc"), ExtResource("3_pcxtx")])
+listMenu = Array[PackedScene]([ExtResource("2_ruvsc"), ExtResource("3_pcxtx"), ExtResource("4_jvn10"), ExtResource("5_f4oyb")])
 
 [node name="Jar Make" parent="." unique_id=352228080 instance=ExtResource("1_2d5gn")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

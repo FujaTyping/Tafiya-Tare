@@ -33,6 +33,10 @@ func level3cooking() :
 	await Varibles.wait(15)
 	if inIngreInv.size() == 1 and "guava" in inIngreInv :
 		spwanItem(listMenu[1])
+	elif inIngreInv.size() == 1 and "putsa" in inIngreInv :
+		spwanItem(listMenu[2])
+	elif inIngreInv.size() == 1 and "mango" in inIngreInv :
+		spwanItem(listMenu[3])
 	else :
 		spwanItem(listMenu[0])
 	isCooking = false
