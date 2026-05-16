@@ -1,6 +1,5 @@
 extends StaticBody3D
 
-var isInpot = []
 var isCooking = false
 
 @export var listArrayMenu: Array[PackedScene]
@@ -8,6 +7,7 @@ var isCooking = false
 @onready var finish: AudioStreamPlayer3D = $Finish
 
 func level3cooking() :
+	var isInpot:Array[String] = get_tree().current_scene.get_node("player").IngreInv
 	isCooking = true
 	await Varibles.wait(10)
 	if "floor" in isInpot and "egg" in isInpot and isInpot.size() == 2 :
@@ -20,7 +20,7 @@ func level3cooking() :
 		rewardItem.global_transform = item_spawn.global_transform
 	finish.play()
 	isCooking = false
-	isInpot = []
+	get_tree().current_scene.get_node("player").resetIngreInv()
 
 func spawnFood(ArrayIndex: PackedScene) :
 	var rewardItem = ArrayIndex.instantiate()

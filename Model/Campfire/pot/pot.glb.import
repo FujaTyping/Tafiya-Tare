@@ -41,12 +41,6 @@ _subresources={
 "nodes": {
 "PATH:Circle_001": {
 "generate/physics": true
-},
-"PATH:Cylinder_001": {
-"generate/physics": true
-},
-"PATH:Cylinder_003": {
-"generate/physics": true
 }
 }
 }

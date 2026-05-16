@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bhso62b7wroyv"]
+
+[ext_resource type="Script" uid="uid://dvxbs6a4mybyd" path="res://Item/Food/foodManager_static.gd" id="1_p6ri4"]
+[ext_resource type="PackedScene" uid="uid://ctrk4e4c7hlop" path="res://Model/Food/Jar/FailedJar.glb" id="1_w0mu8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0mu8"]
+size = Vector3(0.42773438, 0.32481384, 0.40625)
+
+[node name="FailedJar" type="StaticBody3D" unique_id=14239072]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_p6ri4")
+isJar = true
+
+[node name="FailedJar" parent="." unique_id=1913747930 instance=ExtResource("1_w0mu8")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1592967334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0043945313, 0.008918762, -0.001953125)
+shape = SubResource("BoxShape3D_w0mu8")

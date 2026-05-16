@@ -8,9 +8,7 @@ size = Vector3(0.44274902, 1.409668, 1.1606445)
 [node name="Shelf With Jarrs" unique_id=1005706786 instance=ExtResource("1_exwp8")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=381506559]
-visible = false
-collision_layer = 2
-collision_mask = 3
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=340307536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014465332, -0.47875977, -0.013427734)

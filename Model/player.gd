@@ -52,6 +52,8 @@ var interActionJustPress = false
 
 var prevSpringArm: float
 
+var IngreInv:Array[String] = [];
+
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
 @onready var control_sh: AnimationPlayer = $Tutorial/ControlSH
@@ -199,14 +201,14 @@ func _input(event):
 				washBody()
 			elif colliderView.has_method("add_ingredientLevel3") :
 				ingredient.play()
-				cooking_put.isInpot.append(colliderView.InName)
+				IngreInv.append(colliderView.InName)
 				colliderView.add_ingredientLevel3()
 			elif colliderView.has_method("getFood") :
 				dish.play()
 				colliderView.getFood()
 			elif colliderView.has_method("level3cooking") :
 				if not colliderView.isCooking :
-					if colliderView.isInpot.size() > 0 :
+					if IngreInv.size() > 0 :
 						cooking.play()
 						colliderView.level3cooking()
 						var interactText = colliderView.interact()
@@ -358,3 +360,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func resetIngreInv() :
+	IngreInv = []

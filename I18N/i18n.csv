@@ -167,3 +167,5 @@ DIALOGE_V2_1_4,Then I'll come too!,งั้นผมขอไปด้วย!
 DIALOGE_V2_1_5,"Great! Climb into the back of the pickup truck, kid!",เยี่ยมเลย ขึ้นท้ายกระบะมาเลยน้อง!
 QUEST_STARTED_LEVEL_3,Explore the village and find the person who built this robot.,สำรวจหมู่บ้านและหาคนที่สร้างหุ่นนยนต์นี้
 QUEST_STARTED_LEVEL_4,Gather ingredients in the village to prepare a special meal for the village leader,ตามหาวัตถุดิบในหมู่บ้านมาทำอาหารมื้อพิเศษให้ผู้นำหมู่บ้าน
+ON_INTERACTION_PICKLE,Press E to pickle,กด E เพื่อดองอาหาร
+JAR_PICKLING,Pickling,กำลังดองอาหาร
