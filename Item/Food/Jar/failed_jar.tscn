@@ -11,6 +11,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_p6ri4")
 isJar = true
+foodName = "failedjar"
 
 [node name="FailedJar" parent="." unique_id=1913747930 instance=ExtResource("1_w0mu8")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

@@ -17,6 +17,7 @@ extends Node3D
 @export var initAnimation: bool
 @export var initAnimationName: String
 @export var animationBody : Node
+@export var NoHelloAnimation:bool = false
 @export var helloAnimation: String
 @export var talkingAnimation: String
 @export var saveAfter : bool
@@ -25,6 +26,7 @@ extends Node3D
 @export var warpOnCar: bool = false
 @export var viewDetect:VisibleOnScreenNotifier3D
 @export var destroyAfterFinish:bool = false
+@export var destroyAfterFinishSave:bool = false
 
 var current_dialogue = 0 # Start at 0
 var started = false
@@ -67,8 +69,10 @@ func startDialoge(body):
 		dialogCanvas.visible = true
 		AniIO.play("In")
 		
-		if isBody and animationBody:
+		if isBody and animationBody and not NoHelloAnimation:
 			animationBody.get_node("AnimationPlayer").play(helloAnimation)
+		elif isBody and animationBody :
+			animationBody.get_node("AnimationPlayer").play(talkingAnimation)
 		
 		display_current_line() # New helper function
 
@@ -88,6 +92,10 @@ func endDialoge():
 			Varibles.ListNPCbackCar.append(animationBody.name)
 			carInstant.updateBackNPC()
 			finishDialogeToHide = true
+	
+	if destroyAfterFinishSave :
+		gameInstant.collectedItem.append(self.get_path())
+		self.queue_free()
 	
 	if destroyAfterFinish :
 		self.queue_free()

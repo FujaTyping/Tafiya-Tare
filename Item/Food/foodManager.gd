@@ -2,6 +2,7 @@ extends RigidBody3D
 
 @export var completeQuestReward:int = 0
 @export var isJar: bool = false
+@export var foodName: String;
 
 @onready var gameInstant = get_tree().current_scene
 

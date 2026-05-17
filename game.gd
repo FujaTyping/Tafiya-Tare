@@ -43,8 +43,9 @@ var day = 0
 @onready var gameInstance: Node3D = self
 @onready var texture_rect: TextureRect = $Control/TextureRect
 @onready var level1Minigame : Node3D = get_tree().current_scene.get_node("StatueOfCatalyst")
+@onready var canSubmitQuestLV3: StaticBody3D = get_tree().current_scene.get_node("Level3QuestSubmit/SubmitQuest");
 
-# Image set
+# Image sets
 @export var dayIcon: CompressedTexture2D
 @export var morningIcon: CompressedTexture2D
 @export var nightIcon: CompressedTexture2D
@@ -229,6 +230,9 @@ func saveDat() :
 	data.dayCount = day	
 	data.quest_State = Varibles.quest_State
 	data.carNPCBackList = Varibles.ListNPCbackCar
+	data.enableSubmitQuestLevel3 = canSubmitQuestLV3.enableSubmitQuestLevel3
+	data.ingredient_inventory = player.IngreInv
+	data.food_inventory = player.FoodInv
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :

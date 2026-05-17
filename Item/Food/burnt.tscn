@@ -10,6 +10,7 @@ size = Vector3(0.3720703, 0.21020508, 0.38476563)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_s1y0a")
+foodName = "burnt"
 
 [node name="burnt" parent="." unique_id=789403075 instance=ExtResource("2_s1y0a")]
 transform = Transform3D(0.145, 0, 0, 0, 0.145, 0, 0, 0, 0.145, 0, 0, 0)

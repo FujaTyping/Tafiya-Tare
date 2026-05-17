@@ -16,3 +16,6 @@ class_name gameData
 @export var dayCount: int
 @export var quest_State: int
 @export var carNPCBackList: Array[String]
+@export var enableSubmitQuestLevel3:bool
+@export var ingredient_inventory: Array[String]
+@export var food_inventory: String

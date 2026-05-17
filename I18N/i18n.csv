@@ -169,3 +169,19 @@ QUEST_STARTED_LEVEL_3,Explore the village and find the person who built this rob
 QUEST_STARTED_LEVEL_4,Gather ingredients in the village to prepare a special meal for the village leader,ตามหาวัตถุดิบในหมู่บ้านมาทำอาหารมื้อพิเศษให้ผู้นำหมู่บ้าน
 ON_INTERACTION_PICKLE,Press E to pickle,กด E เพื่อดองอาหาร
 JAR_PICKLING,Pickling,กำลังดองอาหาร
+INTERACTION_FAIL_NO_DISH_TO_SUBMIT_LEVEL_3,Need a dish to submit,ต้องการอาหารเพื่อส่ง
+ON_INTERACTION_SUBMIT_QUEST_LEVEL_3,Press E to submit dish,กด E เพื่อส่งอาหาร
+NPC_CHEF,Chef,เชฟประจำหมู่บ้าน
+DIALOGE_V3_1_1,"Hey! You young man over there! We have plenty of fresh ingredients in our village, but we're short on people to help cook. Can you help me prepare some food?",เฮ้! พ่อหนุ่มตรงนั้นน่ะ! วัตถุดิบสดๆ ในหมู่บ้านเรามีเพียบเลย แต่คนช่วยทำอาหารไม่พอ เอ็งมาช่วยข้าปรุงอาหารหน่อยได้ไหม?
+DIALOGE_V3_1_2,"Sure thing, Chef! But the road to the mountaintop is still long... So, how about I help you cook in exchange for a gallon of oil to fill up my pickup truck?",ได้เลยเชฟ! แต่หนทางไปยอดเขายังอีกไกล... งั้นขอช่วยทำอาหารแลกกับน้ำมันสักแกลลอนไปเติมรถกระบะได้ไหม?
+DIALOGE_V3_1_3,"Haha, that's fair! We have plenty of oil. If you cook something delicious that I like, I'll fill up the whole tank for you!",ฮ่าๆ ยุติธรรมดี! น้ำมันน่ะมีเยอะแยะ ถ้าเอ็งทำอาหารออกมาได้อร่อยถูกใจ ข้าจะจัดน้ำมันให้เต็มถังเลย
+DIALOGE_V3_1_4,Okay! Get the equipment ready!,ตกลง! เตรียมอุปกรณ์ให้พร้อมเลย!
+DIALOGE_V3_2_1,Let me see... Hey! This food is burnt!,ไหนดูสิ... เฮ้ย! นี่มันอาหารไหม้นี่นา!
+DIALOGE_V3_2_2,"This is so burnt, who would want to eat it!",ไหม้เกรียมขนาดนี้ ใครจะไปกินลง!
+DIALOGE_V3_2_3,And what about the fuel for my pickup truck?,แล้วเรื่องน้ำมันรถกระบะผมล่ะครับ?
+DIALOGE_V3_2_4,Go fix it properly first! Then come get the oil!,ไปทำมาใหม่ให้ดีก่อน! แล้วค่อยมาเอาน้ำมัน!
+DIALOGE_V3_3_1,"Wow! That smells amazing! You're a pretty good cook, young man.",โอ้โห! กลิ่นหอมฉุยเลย ฝีมือการปรุงไม่เลวนี่ไอ้หนุ่ม
+DIALOGE_V3_3_2,I'm sure the locals will love it.,รับรองว่าชาวบ้านต้องชอบแน่ๆ ครับ
+DIALOGE_V3_3_3,"Thanks a lot for coming to help! Here... a full gallon of gas, just as promised.",ขอบใจเอ็งมากที่มาช่วย! เอ้า... นี่น้ำมันเต็มแกลลอนตามที่สัญญาไว้
+DIALOGE_V3_3_4,"Thanks, Chef! Now I have the fuel. My car is ready to tackle the mountaintop!",ขอบคุณครับเชฟ! ได้น้ำมันแล้ว รถผมพร้อมลุยขึ้นยอดเขาต่อเลย
+DIALOGE_V3_3_5,"Have a safe journey! Good luck, young man!",เดินทางปลอดภัยล่ะ! โชคดีนะไอ้หนุ่ม!

@@ -12,6 +12,7 @@ collision_mask = 3
 script = ExtResource("1_un1nx")
 completeQuestReward = 15
 isJar = true
+foodName = "gurfajar"
 
 [node name="Gurfa Jar2" parent="." unique_id=2049639041 instance=ExtResource("2_un1nx")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

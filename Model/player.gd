@@ -53,6 +53,7 @@ var interActionJustPress = false
 var prevSpringArm: float
 
 var IngreInv:Array[String] = [];
+var FoodInv: String;
 
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
@@ -86,6 +87,8 @@ func _ready():
 		pivot.spring_length = Varibles.saved_data.playerSpringArmLength
 		Varibles.Coins = Varibles.saved_data.player_coins
 		DSPEED = Varibles.saved_data.playerSpeed
+		IngreInv = Varibles.saved_data.ingredient_inventory
+		FoodInv = Varibles.saved_data.food_inventory
 	else :
 		self.global_position = default_spawn.global_position
 	SPEED = DSPEED
@@ -206,6 +209,12 @@ func _input(event):
 			elif colliderView.has_method("getFood") :
 				dish.play()
 				colliderView.getFood()
+				FoodInv = colliderView.foodName
+			elif colliderView.has_method("submitDish") :
+				if FoodInv :
+					colliderView.submitDish();
+				else :
+					wrongInteraction("INTERACTION_FAIL_NO_DISH_TO_SUBMIT_LEVEL_3");
 			elif colliderView.has_method("level3cooking") :
 				if not colliderView.isCooking :
 					if IngreInv.size() > 0 :
@@ -363,3 +372,6 @@ func _physics_process(delta: float) -> void:
 
 func resetIngreInv() :
 	IngreInv = []
+
+func resetFoodInv() :
+	FoodInv = "";

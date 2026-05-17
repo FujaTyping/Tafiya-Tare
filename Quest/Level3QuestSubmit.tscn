@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://c1g7gfgbx164v"]
+
+[ext_resource type="PackedScene" uid="uid://c447ysmqbmh8v" path="res://Model/NPC/V3/L3ChefNPC.glb" id="1_k8rsk"]
+[ext_resource type="PackedScene" uid="uid://dkkqkbvdcu0lk" path="res://Model/Dialoge/DialogTriggerStateLV3.tscn" id="2_ipudb"]
+[ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="2_r6a5o"]
+[ext_resource type="Script" uid="uid://cb50hyshxpcat" path="res://Quest/submit_quest_lv3.gd" id="4_ipudb"]
+[ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="5_3iip4"]
+[ext_resource type="AudioStream" uid="uid://cw0f1x1d1ygku" path="res://SFX/chefPass.wav" id="6_wa145"]
+[ext_resource type="AudioStream" uid="uid://b7on13hpkv1fh" path="res://SFX/chefFailed.wav" id="7_0pqhp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6a5o"]
+size = Vector3(0.74316406, 1.421814, 0.80371094)
+
+[node name="Level3QuestSubmit" type="Node3D" unique_id=1230114152]
+
+[node name="DialogeTrigged" parent="." unique_id=1658165319 node_paths=PackedStringArray("animationBody") instance=ExtResource("2_ipudb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49058485, 0)
+dialoguesLine = Array[String](["DIALOGE_V3_1_1", "DIALOGE_V3_1_2", "DIALOGE_V3_1_3", "DIALOGE_V3_1_4"])
+charLine = Array[String](["NPC_CHEF", "PLAYER_DIALOGE_NAME", "NPC_CHEF", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../L3ChefNPC")
+helloAnimation = "Hello"
+talkingAnimation = "Talkinh"
+saveAfter = true
+destroyAfterFinishSave = true
+
+[node name="FailedDialog" parent="." unique_id=1894935800 node_paths=PackedStringArray("animationBody") instance=ExtResource("2_r6a5o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -3.8520594, 2.1884916)
+dialoguesLine = Array[String](["DIALOGE_V3_2_1", "DIALOGE_V3_2_2", "DIALOGE_V3_2_3", "DIALOGE_V3_2_4"])
+charLine = Array[String](["NPC_CHEF", "NPC_CHEF", "PLAYER_DIALOGE_NAME", "NPC_CHEF"])
+isBody = true
+animationBody = NodePath("../L3ChefNPC")
+NoHelloAnimation = true
+talkingAnimation = "Talkinh"
+saveAfter = true
+
+[node name="PassDialog" parent="." unique_id=1216372208 node_paths=PackedStringArray("animationBody") instance=ExtResource("2_r6a5o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -3.8520594, 5.000888)
+dialoguesLine = Array[String](["DIALOGE_V3_3_1", "DIALOGE_V3_3_2", "DIALOGE_V3_3_3", "DIALOGE_V3_3_4", "DIALOGE_V3_3_5"])
+charLine = Array[String](["NPC_CHEF", "PLAYER_DIALOGE_NAME", "NPC_CHEF", "PLAYER_DIALOGE_NAME", "NPC_CHEF"])
+isBody = true
+animationBody = NodePath("../L3ChefNPC")
+NoHelloAnimation = true
+talkingAnimation = "Talkinh"
+saveAfter = true
+
+[node name="L3ChefNPC" parent="." unique_id=1608878613 instance=ExtResource("1_k8rsk")]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0, 0, 0)
+
+[node name="Skeleton3D" parent="L3ChefNPC/Armature" parent_id_path=PackedInt32Array(1608878613, 1258285182) index="0" unique_id=146955061]
+bones/0/position = Vector3(0, 0, 0)
+bones/2/rotation = Quaternion(0.7274155, 5.168598e-15, 1.7342936e-07, 0.6861973)
+bones/4/rotation = Quaternion(-0.02109417, 7.0868994e-15, -5.029227e-09, 0.9997775)
+bones/5/rotation = Quaternion(0.027103452, -9.368735e-09, 0.27666235, 0.96058494)
+bones/7/rotation = Quaternion(-0.54416865, 0.17904285, -0.05055447, 0.81808835)
+bones/8/rotation = Quaternion(-0.4095207, 2.0467208e-09, -1.06722865e-07, 0.9123008)
+bones/9/rotation = Quaternion(-0.01854445, 7.414754e-09, -6.421819e-09, 0.99982804)
+bones/10/rotation = Quaternion(-0.05329908, 1.7337024e-08, 0.25633284, 0.965118)
+bones/12/rotation = Quaternion(0, 1.4210855e-14, 0, 1)
+bones/13/rotation = Quaternion(0, -7.1054274e-15, 0, 1)
+bones/14/position = Vector3(9.958304e-09, -1.1876011e-09, 5.959282e-08)
+bones/14/rotation = Quaternion(0.006208541, 0.12866381, 0.99080676, 0.041341152)
+bones/15/rotation = Quaternion(-0.0371268, 5.928542e-10, 2.3281086e-08, 0.9993106)
+bones/16/rotation = Quaternion(-0.018121876, 0.1670981, -0.72418904, 0.668805)
+bones/17/position = Vector3(1.6994767e-14, -6.3975563e-09, -4.0612093e-08)
+bones/17/rotation = Quaternion(0.9847924, -1.2248738e-07, 8.0483865e-08, -0.173735)
+bones/19/rotation = Quaternion(0.026378155, 6.06112e-08, 0.6989425, 0.7146913)
+
+[node name="SubmitQuest" type="StaticBody3D" parent="." unique_id=397072448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8882644, -0.02110672)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("4_ipudb")
+reward = ExtResource("5_3iip4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubmitQuest" unique_id=1235096103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46084595, 0.00048828125)
+shape = SubResource("BoxShape3D_r6a5o")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1877360533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21416956, 0)
+visible = false
+
+[node name="ItemSpawnMarker" type="Marker3D" parent="." unique_id=2084176266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025778234, 0.96119)
+visible = false
+
+[node name="Success" type="AudioStreamPlayer3D" parent="." unique_id=321403601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5100268, 0.8897569, 0)
+stream = ExtResource("6_wa145")
+max_distance = 20.0
+bus = &"SFX"
+
+[node name="Failed" type="AudioStreamPlayer3D" parent="." unique_id=470886309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5100268, 0.8897569, 0)
+stream = ExtResource("7_0pqhp")
+volume_db = -8.0
+max_distance = 20.0
+bus = &"SFX"
+
+[editable path="L3ChefNPC"]
