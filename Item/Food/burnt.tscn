@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwqrylige1f15" path="res://Model/Food/burnt.glb" id="2_s1y0a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghrs3"]
-size = Vector3(0.3720703, 0.21020508, 0.38476563)
+size = Vector3(0.4572754, 0.21020508, 0.47558594)
 
 [node name="burnt" type="RigidBody3D" unique_id=977381211]
 collision_layer = 2

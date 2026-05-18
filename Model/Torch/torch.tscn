@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://s8bfci6vi8m7"]
+
+[ext_resource type="PackedScene" uid="uid://bya8irdfb64ci" path="res://Model/Torch/torch.glb" id="1_llq7d"]
+[ext_resource type="Texture2D" uid="uid://iyi5ebrcot4x" path="res://Terrain/Texture/fire.png" id="2_8e875"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttlnh"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_8e875")
+emission_enabled = true
+emission = Color(1, 0.84705883, 0, 1)
+billboard_mode = 1
+point_size = 0.1
+
+[sub_resource type="Gradient" id="Gradient_08sv1"]
+offsets = PackedFloat32Array(0, 0.4301887, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8e875"]
+gradient = SubResource("Gradient_08sv1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xp3y0"]
+emission_shape_scale = Vector3(0.06, 0.125, 0.07)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.0
+scale_max = 0.0
+color_ramp = SubResource("GradientTexture1D_8e875")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a86eo"]
+size = Vector2(0.23, 0.23)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nem5k"]
+render_priority = -1
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
+albedo_texture = ExtResource("2_8e875")
+emission_enabled = true
+emission = Color(0.41598046, 0.41598046, 0.41598028, 1)
+billboard_mode = 1
+point_size = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8e875"]
+size = Vector3(0.24438477, 1.8656006, 0.31030273)
+
+[node name="Torch" type="Node3D" unique_id=1257916436]
+
+[node name="torch" parent="." unique_id=108214047 instance=ExtResource("1_llq7d")]
+transform = Transform3D(0.26, 0, 0, 0, 0.26, 0, 0, 0, 0.26, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=8865810]
+transform = Transform3D(2.1014519, 0, 0, 0, 1.8754423, 0, 0, 0, 2.1796246, -0.017150879, 0.70391417, 0.0034664795)
+material_override = SubResource("StandardMaterial3D_ttlnh")
+amount = 5
+lifetime = 0.65
+collision_base_size = 0.1
+process_material = SubResource("ParticleProcessMaterial_xp3y0")
+draw_pass_1 = SubResource("QuadMesh_a86eo")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=1099954179]
+transform = Transform3D(2.1014519, 0, 0, 0, 1.8754423, 0, 0, 0, 2.1796246, -0.017150879, 0.7825216, 0.0034664795)
+material_override = SubResource("StandardMaterial3D_nem5k")
+amount = 3
+lifetime = 0.3
+collision_base_size = 0.1
+process_material = SubResource("ParticleProcessMaterial_xp3y0")
+draw_pass_1 = SubResource("QuadMesh_a86eo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=26322581]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1126997885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.024719238, 0)
+shape = SubResource("BoxShape3D_8e875")

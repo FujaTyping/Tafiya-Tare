@@ -18,7 +18,7 @@ gravity = Vector3(0, 1, 0)
 size = Vector2(0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghrs3"]
-size = Vector3(0.4182129, 0.16085815, 0.42871094)
+size = Vector3(0.50097656, 0.16085815, 0.5253906)
 
 [node name="VetgetSoup" type="RigidBody3D" unique_id=2055057552]
 collision_layer = 2

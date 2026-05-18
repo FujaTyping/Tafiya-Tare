@@ -18,7 +18,7 @@ gravity = Vector3(0, 1, 0)
 size = Vector2(0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghrs3"]
-size = Vector3(0.3779297, 0.15145874, 0.3701172)
+size = Vector3(0.4580078, 0.15145874, 0.43554688)
 
 [node name="Kaojii" type="RigidBody3D" unique_id=1431199398]
 collision_layer = 2
