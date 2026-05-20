@@ -17,7 +17,7 @@ script = ExtResource("1_hecax")
 listArrayMenu = Array[PackedScene]([ExtResource("2_5v5fc"), ExtResource("2_00hxo"), ExtResource("4_ry2p2")])
 
 [node name="Finish" type="AudioStreamPlayer3D" parent="." unique_id=959653247]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0048922, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7601541, 0)
 stream = ExtResource("3_qmqnk")
 max_distance = 5.0
 bus = &"SFX"

@@ -15,9 +15,7 @@ func level3cooking() :
 	elif "potato" in isInpot and "cucumber" in isInpot and "bellPeper" in isInpot and isInpot.size() == 3 :
 		spawnFood(listArrayMenu[2])
 	else :
-		var rewardItem = listArrayMenu[0].instantiate()
-		get_tree().current_scene.add_child(rewardItem)
-		rewardItem.global_transform = item_spawn.global_transform
+		spawnFood(listArrayMenu[0])
 	finish.play()
 	isCooking = false
 	get_tree().current_scene.get_node("player").resetIngreInv()
