@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2d02fnly7kmn" path="res://Model/Campfire/pot/pot.glb" id="6_fwqxx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_todtx"]
-size = Vector3(0.5449219, 0.53738403, 0.49902344)
+size = Vector3(0.609375, 0.53738403, 0.49902344)
 
 [node name="cookingPutD" type="StaticBody3D" unique_id=507200049]
 collision_layer = 2
@@ -22,10 +22,10 @@ bus = &"SFX"
 transform = Transform3D(0.146, 0, 0, 0, 0.144, 0, 0, 0, 0.157, 0, 0, 0)
 
 [node name="ItemSpawn" type="Marker3D" parent="." unique_id=2060258525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014255062, 0.5549032, 0.66295886)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026353821, 0.4563536, 0.63574016)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1458367658]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036621094, 0.21821594, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068847656, 0.21821594, 0)
 shape = SubResource("BoxShape3D_todtx")
 
 [editable path="pot"]

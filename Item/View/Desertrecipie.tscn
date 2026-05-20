@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ufb6q7kr15gb" path="res://Model/Board/DesertRecipe.glb" id="3_2iqyt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_an0si"]
-size = Vector3(0.34277344, 0.42645264, 0.03955078)
+size = Vector3(0.34277344, 0.4637146, 0.03955078)
 
 [node name="Desertrecipie" type="StaticBody3D" unique_id=865504212]
 collision_layer = 2
@@ -17,5 +17,5 @@ ImagetoView = ExtResource("2_2iqyt")
 transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615513184]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12527466, -0.018493652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14390564, -0.018493652)
 shape = SubResource("BoxShape3D_an0si")
