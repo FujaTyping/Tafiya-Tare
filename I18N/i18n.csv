@@ -84,13 +84,13 @@ COOKING_POT_COOKING,Cooking,กำลังทำอาหาร
 ON_INTERACTION_FOOD_COLLECT,Press E to collect food,กด E เพื่อเก็บอาหาร
 COOKING_POT_WAITING_INGREDIENT,Waiting for ingredient,กำลังรอส่วนผสม
 ON_AREA_ENTERED_BASE_LEVEL,A rest stop,จุดพักรถแห่งหนึ่ง
-ON_AREA_ENTERED_LEVEL_1,Village of Lumina,หมู่บ้านลูมินา
-ON_AREA_ENTERED_LEVEL_2,The Gearwood Settlement,ชุมชนเกียร์วูด
-ON_AREA_ENTERED_LEVEL_3,Eden’s Village,หมู่บ้านอีเดน
-ON_AREA_ENTERED_LEVEL_4,Fake City,เมืองจอมปลอม
-ON_AREA_ENTERED_LEVEL_5,The Resonance,เรโซแนนซ์
-ON_AREA_ENTERED_LEVEL_6,Ground dust,ธุลีบาดาล
-ON_AREA_ENTERED_LEVEL_7,Oblivion Cave,ถ้ำแห่งความลืมเลือน
+ON_AREA_ENTERED_LEVEL_1,Faith & Trust Village,หมู่บ้านแห่งศรัทธา
+ON_AREA_ENTERED_LEVEL_2,Producer Village,หมู่บ้านผู้ผลิต
+ON_AREA_ENTERED_LEVEL_3,Bon Appétit Village,หมู่บ้านอาหาร
+ON_AREA_ENTERED_LEVEL_4,Art Joker Village,ศิลปินลิ้นปล้น
+ON_AREA_ENTERED_LEVEL_5,Stronger Village,หมู่บ้านผู้แข็งแกร่ง
+ON_AREA_ENTERED_LEVEL_6,Aqua Home,สะดือทะเล
+ON_AREA_ENTERED_LEVEL_7,The Cave,ถ้ำแห่งหนึ่ง
 ON_AREA_ENTERED_PEAK_MOUTANT,Peak of Desire,ยอดเขาแห่งความปรารถนา
 INTERACTION_FAIL_NEED_MONEY,You need more money,คุณต้องการเงินเพิ่ม
 INTERACTION_FAIL_ONLY_SLEEP_AT_NIGHT,You can only slepp at night,คุณสามารถนอนได้เฉพาะตอนกลางคืนเท่านั้น
@@ -139,13 +139,13 @@ LOAD_SELECTION_TITLE,Continue Journey,เดินทางต่อ
 LOAD_SELECTION_DECS,Your journey is safely recorded whenever you rest at a village,การเดินทางของคุณจะถูกบันทึกไว้อย่างปลอดภัย ทุกครั้งที่แวะพักในหมู่บ้าน
 DELETE_ALL_SAVE_BUTTON,Delete all save,ลบข้อมูลทั้งหมด
 REST_STOP_DATA,A rest stop,จุดพักรถแห่งหนึ่ง
-LUMINA_DATA,Village of Lumina,หมู่บ้านลูมินา
-GEARWOOD_DATA,The Gearwood Settlement,ชุมชนเกียร์วูด
-EDEN_DATA,Eden’s Village,หมู่บ้านอีเดน
-FAKE_CITY_DATA,Fake City,เมืองจอมปลอม
-RESONANCE_DATA,The Resonance,เรโซแนนซ์
-GROUND_DUST_DATA,Ground dust,ธุลีบาดาล
-OBLIVION_CAVE_DATA,Oblivion Cave,ถ้ำแห่งความลืมเลือน
+FNT_DATA,Faith & Trust Village,หมู่บ้านแห่งศรัทธา
+PRODUCER_DATA,Producer Village,หมู่บ้านผู้ผลิต
+BON_APPETIT_DATA,Bon Appétit Village,หมู่บ้านอาหาร
+ART_JOKER_DATA,Art Joker Village,ศิลปินลิ้นปล้น
+STRONGER_DATA,Stronger Village,หมู่บ้านผู้แข็งแกร่ง
+AQUA_HOME_DATA,Aqua Home,สะดือทะเล
+THE_CAVE_DATA,The Cave,ถ้ำแห่งหนึ่ง
 PEAK_OF_DESIRE_DATA,Peak of Desire,ยอดเขาแห่งความปรารถนา
 CONFIRM_DELETE_SAVE_TITLE,Confirm Delete Save,ยืนยันการลบข้อมูล
 CONFIRM_DELETE_SAVE_DECS,Are you sure you want to delete all save file? This action cannot be undone,คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลการเล่นทั้งหมด? การดำเนินการนี้ไม่สามารถย้อนกลับได้
