@@ -188,10 +188,6 @@ locale/locale_filter_mode=1
 common/max_physics_steps_per_frame=24
 common/physics_interpolation=true
 
-[rendering]
-
-renderer/rendering_method="mobile"
-
 [steam]
 
 initialization/app_id=0
