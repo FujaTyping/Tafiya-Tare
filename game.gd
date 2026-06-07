@@ -35,6 +35,7 @@ var day = 0
 @onready var m_value: Label = $Control/HBoxContainer2/MValue
 @onready var save_icon_indicator: TextureRect = $Control/MarginContainer2/SaveIconIndicator
 @onready var animation_player: AnimationPlayer = $Control/MarginContainer2/AnimationPlayer
+@onready var fogs_dnbgm: AudioStreamPlayer = $fogsDNBGM
 
 # Save Stuff
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("player")
@@ -49,6 +50,7 @@ var day = 0
 @export var dayIcon: CompressedTexture2D
 @export var morningIcon: CompressedTexture2D
 @export var nightIcon: CompressedTexture2D
+@export var foggyIcon: CompressedTexture2D
 @onready var control: Control = $Control
 #@onready var carUI:CanvasLayer = get_tree().current_scene.get_node("VehicleBody3D/CanvasLayer")
 
@@ -144,8 +146,11 @@ func _day_change_animation():
 	
 	dn.text = dayColorList[currentDayState]["name"]
 	#var dnIcon = Image.load_from_file()
-	var dnTexture = dayColorList[currentDayState]["icon"]
-	texture_rect.texture = dnTexture
+	if fogs_dnbgm.playing :
+		texture_rect.texture = foggyIcon
+	else :
+		var dnTexture = dayColorList[currentDayState]["icon"]
+		texture_rect.texture = dnTexture
 	
 	if dayColorList[currentDayState]["name"] == "TIME_DAY" :
 		for firefire:GPUParticles3D in fireflyPatical :
@@ -156,14 +161,24 @@ func _day_change_animation():
 	
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
+			if dayColorList[currentDayState]["name"] == "TIME_NIGHT":
+				night_effect.play()
+	else :
+		if not day_bgm.playing :
+			if dayColorList[currentDayState]["name"] == "TIME_MORNING" :
+				day_effect.play()
+				
+	changeBGMDN()
+	
+func changeBGMDN() :
+	if dayColorList[currentDayState]["startTime"] >= 485 :
+		if not night_bgm.playing :
 			if dayFromSave :
 				dayFromSave = not dayFromSave
 			carInstant.canOpenLight = true
 			if carInstant.is_driven :
 				carInstant.openLight(true)
 			night_bgm.play()
-			if dayColorList[currentDayState]["name"] == "TIME_NIGHT":
-				night_effect.play()
 			day_bgm.stop()
 			#sun.visible = false			
 			for patical:GPUParticles3D in waterFlow :
@@ -173,7 +188,6 @@ func _day_change_animation():
 					#light.light_energy = 1
 					#continue
 				light.visible = true
-
 	else :
 		if not day_bgm.playing :
 			#sun.visible = true
@@ -183,8 +197,6 @@ func _day_change_animation():
 			day_bgm.play()
 			if not dayFromSave :
 				day += 1
-			if dayColorList[currentDayState]["name"] == "TIME_MORNING" :
-				day_effect.play()
 			night_bgm.stop()
 			for patical:GPUParticles3D in waterFlow :
 				patical.amount_ratio = 1
@@ -193,6 +205,14 @@ func _day_change_animation():
 					#light.light_energy = 0.1
 					#continue
 				light.visible = false
+
+func stopCurrentBGM() :
+	day_bgm.volume_db = -80
+	night_bgm.volume_db = -80
+	
+func enableCurentBGM() :
+	day_bgm.volume_db = -14
+	night_bgm.volume_db = -14
 
 func getDN() :
 	return day_night.current_animation_position
