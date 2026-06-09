@@ -7,13 +7,14 @@ extends Area3D
 @onready var gameInstant:Node3D = get_tree().current_scene
 @onready var fog_view: TextureRect = $"../../FogView"
 @onready var view_w_on: AnimationPlayer = $"../../FogView/ViewWOn"
+@onready var carInsant:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 
 func _ready() -> void:
 	self.body_entered.connect(enableFog);
 	self.body_exited.connect(disableFog);
 
 func enableFog(body) :
-	if body == player :
+	if body == player or body == carInsant :
 		environment.environment.volumetric_fog_density = 0.05
 		FoggyBGM.play()
 		fog_view.show()
@@ -21,7 +22,7 @@ func enableFog(body) :
 		gameInstant.stopCurrentBGM()
 
 func disableFog(body) :
-	if body == player :
+	if body == player and body == carInsant :
 		environment.environment.volumetric_fog_density = 0
 		FoggyBGM.stop()
 		gameInstant.enableCurentBGM()
