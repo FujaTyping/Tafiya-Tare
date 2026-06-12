@@ -17,6 +17,9 @@ importers:
       astro:
         specifier: ^6.3.1
         version: 6.3.1(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)
+      astro-swiper:
+        specifier: ^2.7.0
+        version: 2.7.0
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -954,6 +957,10 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
+  astro-swiper@2.7.0:
+    resolution: {integrity: sha512-tLbk4LORo3hXQCK4+j7XzFJoWRl+eVlzz0bPvqOwEK0AfUQ+NplKoUbiXx/aG17Qu9TOFu4cloO+TkospEn1bg==}
+    engines: {node: '>=18', npm: '>=9.6.5', pnpm: '>=7.1.0'}
+
   astro@6.3.1:
     resolution: {integrity: sha512-atz6dmkE3Gu24bDgb7g2RE/BYnKqPYIHd6hTUM1UXvu/i7qNZOKLAqEHvgYpv9PQVcgWsXpk4/OOXZ0E/FzvSQ==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -1686,6 +1693,10 @@ packages:
     resolution: {integrity: sha512-XDpWUOPC6FEibaLzjfe0ucaV0YrOjYotGJO1WpF0Zd+n6ZGEQUsSugaoLq9QkEZtAfQIxT42UChcssDVPP3+/w==}
     engines: {node: '>=16'}
     hasBin: true
+
+  swiper@12.2.0:
+    resolution: {integrity: sha512-K8uXsBZU6ME97Ia3xbBge8IRCnR1lOmIILzvY/jGVic7dSTQ530s3uO8RvXbPUtkkXLWIwmZLRPbtDxRWVAFdg==}
+    engines: {node: '>= 4.7.0'}
 
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
@@ -2612,6 +2623,10 @@ snapshots:
   aria-query@5.3.2: {}
 
   array-iterate@2.0.1: {}
+
+  astro-swiper@2.7.0:
+    dependencies:
+      swiper: 12.2.0
 
   astro@6.3.1(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3):
     dependencies:
@@ -3745,6 +3760,8 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.6.0
+
+  swiper@12.2.0: {}
 
   tailwindcss@4.3.0: {}
 

@@ -1,10 +1,79 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Logo from "../assets/Logo.png"
+import Layout from "../layouts/Layout.astro";
+import { Swiper, SwiperWrapper, SwiperSlide } from "astro-swiper";
+import Logo from "../assets/Logo.webp";
+import Image from "astro/components/Image.astro";
+
+// Images
+import Showcase1 from "../assets/background/L1.webp";
+import Showcase3 from "../assets/background/L3.webp";
+import Showcase4 from "../assets/background/L4.webp";
+import NSC from "../assets/NSC.webp";
 ---
 
 <Layout>
-	<div>
-		<img src={Logo.src} alt="Icon" loading="eager">
-	</div>
+	<main class="relative">
+		<div
+			class="z-2 absolute top-0 left-0 w-full flex flex-col gap-8 items-center justify-center h-screen backdrop-blur-sm p-4"
+		>
+			<Image
+				src={Logo}
+				alt="Icon"
+				loading="eager"
+				class="w-[400px] md:w-[450px] lg:w-[500px]"
+			/>
+			<div class="flex flex-col md:flex-row items-center gap-3 md:gap-8">
+				<Image
+					src={NSC}
+					alt={"NSC Logo"}
+					loading={"eager"}
+					class={"w-14 md:w-20"}
+				/>
+				<p class="text-sm md:text-base max-w-xl text-white">
+					Tafiya Tare was made possible through the support and
+					funding provided by the 28th National Software Contest (NSC
+					2026), organized by the National Science and Technology
+					Development Agency (NSTDA), Thailand.
+				</p>
+			</div>
+		</div>
+		<Swiper
+			options={{
+				loop: true,
+				effect: "fade",
+				autoplay: {
+					delay: 5000,
+					disableOnInteraction: false,
+					waitForTransition: false,
+				},
+			}}
+		>
+			<SwiperWrapper>
+				<SwiperSlide>
+					<Image
+						src={Showcase1}
+						alt="Background"
+						loading="eager"
+						class="h-screen w-full z-1 blur-sm bg-cover"
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<Image
+						src={Showcase3}
+						alt="Background"
+						loading="eager"
+						class="h-screen w-full z-1 blur-sm bg-cover"
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<Image
+						src={Showcase4}
+						alt="Background"
+						loading="eager"
+						class="h-screen w-full z-1 blur-sm bg-cover"
+					/>
+				</SwiperSlide>
+			</SwiperWrapper>
+		</Swiper>
+	</main>
 </Layout>

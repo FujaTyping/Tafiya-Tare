@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
+import { Font } from "astro:assets";
 ---
 
 <!doctype html>
@@ -11,6 +12,9 @@ import '../styles/global.css'
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Tafiya Tare: Together we can</title>
+		<meta name="description" content="A journey to bathe in the legendary elixir pond, believed to grant eternal life. But the long road ahead is filled with people, diverse ways of life, and countless stories. It seems I won't be seeking immortality alone, as I now have a whole truckload of travel companions. Ready to hit the road and reach our destination together!">
+		<meta name="theme-color" content="#3ab50a">
+		<Font cssVariable="--font-roboto-condensed" />
 	</head>
 	<body>
 		<slot />

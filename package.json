@@ -16,6 +16,7 @@
     "@astrojs/cloudflare": "^13.5.0",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.1",
+    "astro-swiper": "^2.7.0",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
