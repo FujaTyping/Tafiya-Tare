@@ -24,7 +24,8 @@ run/main_scene="uid://crc2n30yd8y3p"
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="uid://dt4rs2ctxb5b"
+config/windows_native_icon="res://icon.ico"
 
 [audio]
 
