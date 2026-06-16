@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="5_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="6_dte3n"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="7_dte3n"]
+[ext_resource type="Texture2D" uid="uid://dl137oixy3yhi" path="res://logo.png" id="8_cvc1e"]
 [ext_resource type="Texture2D" uid="uid://mfgttr18njs2" path="res://UI/Texture/Stretch Icon 32x32.png" id="8_dhncy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
@@ -475,7 +476,13 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
+[node name="Icon" type="TextureRect" parent="Main/VBoxContainer" unique_id=209149290]
+layout_mode = 2
+texture = ExtResource("8_cvc1e")
+stretch_mode = 3
+
 [node name="Title" type="Label" parent="Main/VBoxContainer" unique_id=1217717798]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
