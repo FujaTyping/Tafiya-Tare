@@ -1,17 +1,36 @@
 [gd_scene format=3 uid="uid://bgwfnigsjn4ds"]
 
 [ext_resource type="PackedScene" uid="uid://lihhtjgjfkl7" path="res://Item/L4/KaTongRuuSii.glb" id="1_2vs0l"]
+[ext_resource type="Script" uid="uid://cxum0d3y1otlu" path="res://Item/L4/flower_lv_4.gd" id="1_jcp35"]
+[ext_resource type="PackedScene" uid="uid://8crllixoyit3" path="res://Item/L4/KaTongRuuSii A.glb" id="2_vm1ew"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jcp35"]
-size = Vector3(2.032959, 0.7121544, 2.053711)
+size = Vector3(2.3642578, 0.76959133, 2.4072266)
 
 [node name="FlowerLv4" type="StaticBody3D" unique_id=2104041542]
 collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_jcp35")
+
+[node name="KaTongRuuSii A" parent="." unique_id=1228811781 instance=ExtResource("2_vm1ew")]
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0, 0)
+
+[node name="Skeleton3D" parent="KaTongRuuSii A/Armature" parent_id_path=PackedInt32Array(1228811781, 824867365) index="0" unique_id=50354004]
+bones/0/position = Vector3(0, 0, 0)
+bones/2/rotation = Quaternion(0.37910375, 4.0036774e-14, -1.4762836e-07, 0.9253542)
+bones/4/rotation = Quaternion(0.37188718, -4.9825536e-24, 8.257555e-17, 0.92827797)
+bones/6/rotation = Quaternion(0.36834863, 1.419925e-07, -4.6232355e-08, 0.92968774)
+bones/8/rotation = Quaternion(0.38456216, -4.8843283e-08, 5.1238814e-08, 0.9230991)
 
 [node name="KaTongRuuSii" parent="." unique_id=1660584315 instance=ExtResource("1_2vs0l")]
-transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0, 0, 0)
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1698862565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0049037933, 0.05645752)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01909399, 0.05645752)
 shape = SubResource("BoxShape3D_jcp35")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=15112730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6474841, 0)
+
+[editable path="KaTongRuuSii A"]

@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dejv506q6mbp" path="res://SFX/bubble.wav" id="13_5hd5c"]
 [ext_resource type="AudioStream" uid="uid://cmhyce62xxdaq" path="res://SFX/bowl.wav" id="14_fi0my"]
 [ext_resource type="AudioStream" uid="uid://dexre4bhtaajc" path="res://SFX/bubbles.wav" id="17_00t8u"]
+[ext_resource type="AudioStream" uid="uid://chueh4e3wpww4" path="res://SFX/leaf collect.wav" id="18_a1i2q"]
 [ext_resource type="Script" uid="uid://c2s6m87ww67ld" path="res://Script/notiItem.gd" id="18_qk1vb"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
@@ -595,6 +596,11 @@ bus = &"SFX"
 [node name="Wash" type="AudioStreamPlayer3D" parent="." unique_id=1323114016]
 stream = ExtResource("17_00t8u")
 volume_db = 5.0
+bus = &"SFX"
+
+[node name="LeafCollect" type="AudioStreamPlayer3D" parent="." unique_id=1146719287]
+stream = ExtResource("18_a1i2q")
+volume_db = 10.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="." unique_id=421009574]

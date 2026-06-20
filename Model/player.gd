@@ -40,6 +40,7 @@ var JUMP_VELOCITY = 4.0
 # Trash Collect
 @onready var trash_collect: AudioStreamPlayer3D = $TrashCollect
 @onready var fuel_collect: AudioStreamPlayer3D = $FuelCollect
+@onready var leaf_collect: AudioStreamPlayer3D = $LeafCollect
 
 # Spawn
 @onready var default_spawn: Marker3D = $"../AllMarker/DefaultSpawn"
@@ -224,6 +225,11 @@ func _input(event):
 						label.text = interactText
 					else :
 						wrongInteraction("INTERACTION_FAIL_NO_INGREDIENT")
+			elif colliderView.has_method("brew") :
+				colliderView.brew()
+			elif colliderView.has_method("collectFlower") :
+				leaf_collect.play()
+				colliderView.collectFlower()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()

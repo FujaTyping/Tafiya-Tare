@@ -757,6 +757,18 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Open Jar Plopp by dersuperanton -- https://freesound.org/s/433715/ -- License: Attribution 4.0"
 
+[node name="Label18" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1639257999]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Brewing 02.wav by LG -- https://freesound.org/s/72186/ -- License: Attribution 4.0"
+
+[node name="Label19" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=429655427]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Flower sprayer by MaslovyTygr -- https://freesound.org/s/735984/ -- License: Attribution 4.0"
+
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=164242972]
 visible = false
 layout_mode = 2

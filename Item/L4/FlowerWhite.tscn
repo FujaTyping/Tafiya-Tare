@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dg34g7010uv4m"]
+
+[ext_resource type="Script" uid="uid://xekxdmyf83qh" path="res://Item/L4/flower manager level4.gd" id="1_b78ww"]
+[ext_resource type="PackedScene" uid="uid://boexwigrs0f6t" path="res://Model/L4/LV4Q W Flower.glb" id="1_vp6no"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ao11"]
+size = Vector3(0.42816162, 0.9336395, 1)
+
+[node name="FlowerWhite" type="StaticBody3D" unique_id=1093766806]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_b78ww")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=719159267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021820068, -0.2161789, 0)
+shape = SubResource("BoxShape3D_4ao11")
+
+[node name="LV4Q W Flower" parent="." unique_id=1929087621 instance=ExtResource("1_vp6no")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.650351, -1.9704552, -0.09954618)
