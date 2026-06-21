@@ -14,7 +14,7 @@
 ซอฟต์แวร์ ตลอดจนไม่รับประกันความเสียหายต่าง ๆ อันเกิดจากการใช้ซอฟต์แวร์นี้ทั้งสิ้น
 
 License Agreement  
-This software is a work developed by Sirapop Sukchu, Tharawadee Srion,  
+This software is a work developed by Siraphop Sukchu, Tharawadee Srion,  
 and Phansorn Thongnuanin from Hatyaiwittayalai school under  
 the provision of Anurak Panbun under Tafiya Tare, which has been supported by  
 the National Science and Technology Development Agency (NSTDA), in order to  

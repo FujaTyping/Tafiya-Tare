@@ -9,7 +9,20 @@ import Showcase1 from "../assets/background/L1.webp";
 import Showcase3 from "../assets/background/L3.webp";
 import Showcase4 from "../assets/background/L4.webp";
 import NSC from "../assets/NSC.webp";
+import LinuxPF from "../assets/platform/linux.webp";
+import WindowsPF from "../assets/platform/windows.webp";
 ---
+
+<script>
+	const downloadElement = document.getElementById("platform-download");
+	const isPC =
+		navigator.platform.startsWith("Linux") ||
+		navigator.platform.startsWith("Win");
+
+	if (!isPC && downloadElement) {
+		downloadElement.style.display = "none";
+	}
+</script>
 
 <Layout>
 	<main class="relative">
@@ -22,9 +35,54 @@ import NSC from "../assets/NSC.webp";
 				loading="eager"
 				class="w-[400px] md:w-[450px] lg:w-[500px]"
 			/>
-			<div class="flex flex-col sm:flex-row w-full sm:w-fit items-center gap-4">
-				<a class="btn" href="/License agreement.txt">License agreement</a>
-				<a class="btn" href="https://nas.siraphop.me/apps/forms/s/m7oPyFSXsDR8zNeZ2ZMYQxoc">Apply for testing</a>
+			<div class="flex flex-col items-center justify-center gap-4 w-full">
+				<div
+					class="flex flex-col sm:flex-row w-full sm:w-fit items-center gap-4"
+				>
+					<a class="btn" href="/License agreement.txt"
+						>License agreement</a
+					>
+					<a
+						class="btn"
+						href="https://nas.siraphop.me/apps/forms/s/Nsri5b2egNedRW8qZjNDqnmT"
+						>Feedback form</a
+					>
+				</div>
+				<div
+					id="platform-download"
+					class="text-white flex items-center justify-center gap-4"
+				>
+					<div>
+						<h2 class="font-bold">Download now</h2>
+						<p class="text-sm">alpha 0.1.5</p>
+					</div>
+					<div class="flex items-center gap-3">
+						<a
+							href="https://l.siraphop.me/download-tafiya-tare-linux"
+							target="_blank"
+						>
+							<Image
+								src={LinuxPF}
+								alt={"Linux"}
+								loading={"eager"}
+								width={32}
+								height={32}
+							/>
+						</a>
+						<a
+							href="https://l.siraphop.me/download-tafiya-tare-windows"
+							target="_blank"
+						>
+							<Image
+								src={WindowsPF}
+								alt={"Windows"}
+								loading={"eager"}
+								width={32}
+								height={32}
+							/>
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="flex flex-col md:flex-row items-center gap-3 md:gap-8">
 				<Image

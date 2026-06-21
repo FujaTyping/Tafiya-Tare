@@ -15,3 +15,7 @@ body {
 .btn:hover {
     @apply bg-white text-black
 }
+
+.disabled {
+    @apply cursor-not-allowed
+}
