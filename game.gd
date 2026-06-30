@@ -58,6 +58,9 @@ var day = 0
 #@onready var everyLight = get_tree().get_nodes_in_group("lightPole")
 #@onready var lightPoleScript = load("uid://bp7a0lbo1koi8")
 
+@onready var allDayTrigged = get_tree().get_nodes_in_group("triggedONDAY")
+@onready var allNightTrigged = get_tree().get_nodes_in_group("triggedONNIGHT")
+
 var dayDuration = 600
 var dayColorList = []
 var currentDayState = 0
@@ -169,7 +172,7 @@ func _day_change_animation():
 				day_effect.play()
 				
 	changeBGMDN()
-	
+
 func changeBGMDN() :
 	if dayColorList[currentDayState]["startTime"] >= 485 :
 		if not night_bgm.playing :
@@ -188,6 +191,9 @@ func changeBGMDN() :
 					#light.light_energy = 1
 					#continue
 				light.visible = true
+			for NPCQuest in allNightTrigged :
+				if NPCQuest.has_method("ONNIGHT") :
+					NPCQuest.ONNIGHT()
 	else :
 		if not day_bgm.playing :
 			#sun.visible = true
@@ -205,6 +211,9 @@ func changeBGMDN() :
 					#light.light_energy = 0.1
 					#continue
 				light.visible = false
+			for NPCQuest in allDayTrigged :
+				if NPCQuest.has_method("ONDAY") :
+					NPCQuest.ONDAY()
 
 func stopCurrentBGM() :
 	day_bgm.volume_db = -80
