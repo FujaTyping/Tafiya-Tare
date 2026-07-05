@@ -224,3 +224,6 @@ DIALOGE_V4_4_2,My back hurts every time I lift it!,ยกทีไรปวด�
 DIALOGE_V4_4_3,"Go find me some ""Lightweight Potion""!",ไปหา 'ยาตัวเบาหวิว' มาให้ข้าหน่อย
 DIALOGE_V4_4_4,I'll swing my axe like a whirlwind!,ข้าจะควงขวานเป็นพายุเลย!
 DIALOGE_V4_4_5,"Be careful, sir, you might get blown away with both you and your axe... I'll go brew it for you.",ระวังควงแล้วปลิวไปทั้งคนทั้งขวานนะครับพี่... เดี๋ยวผมไปปรุงให้
+INTERACTION_FAIL_TOO_MUCH_FLOWER,You can hold up to 1 flower,สามารถเก็บดอกไม้ได้สูงสุด 1 ดอก
+INTERACTION_FAIL_NEED_MORE_FLOWER,Need flowerr,ต้องการดอกไม้เพื่อปรุงยา
+ON_INTERACTION_POTION_COLLECT,Press E to collect potion,กด E เพื่อเก็บยา
