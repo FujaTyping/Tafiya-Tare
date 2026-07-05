@@ -232,7 +232,10 @@ func _input(event):
 						wrongInteraction("INTERACTION_FAIL_NO_INGREDIENT")
 			elif colliderView.has_method("brew") :
 				if len(FlowInv) > 0 :
-					colliderView.brew()
+					if not colliderView.isBrewing:
+						colliderView.brew()
+						var interactText = colliderView.interact()
+						label.text = interactText
 				else :
 					wrongInteraction("INTERACTION_FAIL_NEED_MORE_FLOWER")
 			elif colliderView.has_method("collectFlower") :
@@ -245,6 +248,11 @@ func _input(event):
 			elif colliderView.has_method("collectPotion") :
 				potion_collect.play()
 				colliderView.collectPotion()
+			elif colliderView.has_method("submitQuestLevel4") :
+				if PotionInv :
+					colliderView.submitQuestLevel4()
+				else :
+					wrongInteraction("INTERACTION_FAIL_NEED_POTION")
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()

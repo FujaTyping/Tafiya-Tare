@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://wrmwhw5pvmjc"]
+
+[ext_resource type="Script" uid="uid://lhh32x8j77y0" path="res://Item/L4/submit_manager_lv_4.gd" id="1_jtat2"]
+[ext_resource type="PackedScene" uid="uid://ckbsikp0mxset" path="res://Model/NPC/V4/NPC0402 with A.glb" id="2_q0n5i"]
+[ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="3_vvdwg"]
+[ext_resource type="Script" uid="uid://cyb63hjlp4pa5" path="res://Item/L4/submitQuestLV4.gd" id="4_4ndn3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvdwg"]
+size = Vector3(0.71777344, 1.3930664, 0.8161621)
+
+[node name="HokVIL" type="Node3D" unique_id=355667002 node_paths=PackedStringArray("dialogStart", "submitBody")]
+script = ExtResource("1_jtat2")
+dialogStart = NodePath("DialogeTrigged")
+submitBody = NodePath("Submit")
+
+[node name="NPC0402 with A" parent="." unique_id=722897578 instance=ExtResource("2_q0n5i")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=363042299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7146354, 0)
+
+[node name="DialogeTrigged" parent="." unique_id=1658165319 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("3_vvdwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 0)
+dialoguesLine = Array[String](["DIALOGE_V4_3_1", "DIALOGE_V4_3_2", "DIALOGE_V4_3_3", "DIALOGE_V4_3_4"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../NPC0402 with A")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+triggedAfterFinish = true
+triggedBody = NodePath("..")
+
+[node name="Submit" type="StaticBody3D" parent="." unique_id=1613884513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5062013, -2.0345967, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("4_4ndn3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Submit" unique_id=1270471252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04321289, 0)
+shape = SubResource("BoxShape3D_vvdwg")

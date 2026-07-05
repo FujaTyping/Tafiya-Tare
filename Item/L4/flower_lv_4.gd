@@ -7,7 +7,10 @@ extends StaticBody3D
 @onready var done: AudioStreamPlayer3D = $Done
 @onready var marker_3d: Marker3D = $Marker3D
 
+var isBrewing:bool = false;
+
 func brew() :
+	isBrewing = true;
 	animation_player.play("ArmatureAction")
 	audio_stream_player_3d.play()
 	await animation_player.animation_finished
@@ -22,6 +25,7 @@ func brew() :
 		spawnPotion(potionList[2])
 	done.play()
 	player.resetFlowInv()
+	isBrewing = false
 
 func spawnPotion(scence:PackedScene) :
 	var potion = scence.instantiate()
@@ -29,4 +33,7 @@ func spawnPotion(scence:PackedScene) :
 	potion.global_position = marker_3d.global_position
 
 func interact() :
-	return "ON_INTERACTION_SUBMIT_QUEST_LEVEL_4"
+	if isBrewing :
+		return "BREWING_A_POTION"
+	else :
+		return "ON_INTERACTION_SUBMIT_QUEST_LEVEL_4"

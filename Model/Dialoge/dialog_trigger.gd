@@ -27,6 +27,8 @@ extends Node3D
 @export var viewDetect:VisibleOnScreenNotifier3D
 @export var destroyAfterFinish:bool = false
 @export var destroyAfterFinishSave:bool = false
+@export var triggedAfterFinish:bool = false
+@export var triggedBody:Node3D;
 
 var current_dialogue = 0 # Start at 0
 var started = false
@@ -83,6 +85,10 @@ func endDialoge():
 	dialogCanvas.visible = false        
 	started = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if triggedAfterFinish :
+		if triggedBody.has_method("dialogEnd") :
+			triggedBody.dialogEnd()
 	
 	if warpOnCar :
 		if not animationBody.name in Varibles.ListNPCbackCar :

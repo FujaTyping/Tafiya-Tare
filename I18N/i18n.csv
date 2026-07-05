@@ -221,9 +221,22 @@ DIALOGE_V4_3_3,Pineapple Eye Potion?,ยาตาสับปะรด?
 DIALOGE_V4_3_4,"Sure thing, sir!",จัดไปครับพี่
 DIALOGE_V4_4_1,My axe is too heavy!,ขวานข้ามันหนักเกินไป
 DIALOGE_V4_4_2,My back hurts every time I lift it!,ยกทีไรปวดหลังทุกที!
-DIALOGE_V4_4_3,"Go find me some ""Lightweight Potion""!",ไปหา 'ยาตัวเบาหวิว' มาให้ข้าหน่อย
+DIALOGE_V4_4_3,"Go find me some ""Lightweight Potion""!",ไปหา ยาตัวเบาหวิว มาให้ข้าหน่อย
 DIALOGE_V4_4_4,I'll swing my axe like a whirlwind!,ข้าจะควงขวานเป็นพายุเลย!
 DIALOGE_V4_4_5,"Be careful, sir, you might get blown away with both you and your axe... I'll go brew it for you.",ระวังควงแล้วปลิวไปทั้งคนทั้งขวานนะครับพี่... เดี๋ยวผมไปปรุงให้
 INTERACTION_FAIL_TOO_MUCH_FLOWER,You can hold up to 1 flower,สามารถเก็บดอกไม้ได้สูงสุด 1 ดอก
 INTERACTION_FAIL_NEED_MORE_FLOWER,Need flowerr,ต้องการดอกไม้เพื่อปรุงยา
 ON_INTERACTION_POTION_COLLECT,Press E to collect potion,กด E เพื่อเก็บยา
+BREWING_A_POTION,Brewing a potion,กำลังปรุงยา
+DIALOGE_V4_QUEST_FAIL_1,This is not the potion I need.,นี้ไม่ใช่ยาที่ข้าต้องการ
+DIALOGE_V4_QUEST_FAIL_2,"Try showing it to someone else, maybe it's theirs.",ลองเอาไปให้คนอื่นดูสิ เผื่อว่าจะเป็นของเค้า
+DIALOGE_V4_REWARD_QUEST_1,Take your prize and get out of my way!,เอารางวัลของเอ็งไป แล้วหลีกทางข้าซะ!
+DIALOGE_V4_REWARD_QUEST_2,I've placed the reward at the potion-making area.,ข้าตั้งรางวัลไว้ตรงที่ปรุงยาแล้ว
+DIALOGE_V4_QUEST_DONE_1_1,"Here you go, the medicine I ordered!",นี่ครับ ยาวนกลับ ที่สั่งไว้!
+DIALOGE_V4_QUEST_DONE_1_2,"Haha, thanks! This time my boomerang won't end up in the forest!",ฮ่าๆ ขอบใจ! คราวนี้บูมเมอแรงข้าไม่หายเข้าป่าแน่!
+DIALOGE_V4_QUEST_DONE_2_1,"The pineapple eye medicine is ready, sir.",ยาตาสับปะรด เสร็จเรียบร้อยครับพี่
+DIALOGE_V4_QUEST_DONE_2_2,Awesome! My eyes lit up! I can aim right through the tree with ease!,แจ๋ว! ตาข้าสว่างวาบ เล็งเป้าทะลุต้นไม้ได้สบาย!
+DIALOGE_V4_QUEST_DONE_3_1,I've prepared a potion to help you feel light as a feather.,ผมปรุง ยาตัวเบาหวิว มาให้แล้วครับ
+DIALOGE_V4_QUEST_DONE_3_2,Perfect! Watch me wield my axe like a storm!,สมบูรณ์แบบ! ดูข้าควงขวานเป็นพายุได้เลย!
+INTERACTION_SUBMIT_QUEST_LEVEL_4,Press E to submit the mission.,กด E ส่งภารกิจ,
+INTERACTION_FAIL_NEED_POTION,Need a potion to submit,ต้องการยาเพื่อส่ง

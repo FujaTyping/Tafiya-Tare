@@ -21,3 +21,4 @@ class_name gameData
 @export var food_inventory: String
 @export var flower_inventory:Array[String]
 @export var potion_inventory:String
+@export var state_quest_level_4: Array[int]

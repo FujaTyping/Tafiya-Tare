@@ -133,8 +133,8 @@
 [ext_resource type="PackedScene" uid="uid://cb17wpwjgpo12" path="res://Item/L4/FlowerPurple.tscn" id="127_5gs0r"]
 [ext_resource type="PackedScene" uid="uid://dlfs6ttf1psti" path="res://Model/Animals/Pangolins with Kled Merge.glb" id="129_vhk74"]
 [ext_resource type="Script" uid="uid://b3onnxvn48a2a" path="res://Script/quest_npc_level4.gd" id="130_w6gsc"]
-[ext_resource type="PackedScene" uid="uid://ckbsikp0mxset" path="res://Model/NPC/V4/NPC0402 with A.glb" id="133_cvwsf"]
 [ext_resource type="PackedScene" uid="uid://ifms5bjnoyv2" path="res://Model/NPC/V4/NPC0401.glb" id="134_hiqci"]
+[ext_resource type="PackedScene" uid="uid://wrmwhw5pvmjc" path="res://Item/L4/HokViL.tscn" id="134_lmtqe"]
 [ext_resource type="PackedScene" uid="uid://c60ivn3c2peax" path="res://Model/NPC/V4/NPC0403.glb" id="135_w0nw1"]
 [ext_resource type="PackedScene" uid="uid://c4jq3qm8v7q08" path="res://Model/Potion/potion_mt.glb" id="137_hxd3m"]
 
@@ -818,11 +818,10 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(-0.6245747, 0.61039937, -0.48715368, -0.6936698, -0.14702271, 0.70512867, 0.35878766, 0.7783296, 0.5152424, 0, 0, 0)
 top_level = true
-visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -3546,9 +3545,6 @@ transform = Transform3D(0.20971598, 0, 0.047373086, -0.0028516182, 0.21461013, 0
 [node name="QuestNPC" type="Node3D" parent="Village4" unique_id=918875743 groups=["triggedONDAY", "triggedONNIGHT"]]
 script = ExtResource("130_w6gsc")
 
-[node name="NPC0402 with A" parent="Village4/QuestNPC" unique_id=722897578 instance=ExtResource("133_cvwsf")]
-transform = Transform3D(-0.396562, 0, 0.6365835, 0, 0.75, 0, -0.6365835, 0, -0.396562, 223.92833, 1.5493997, 381.97617)
-
 [node name="NPC0401" parent="Village4/QuestNPC" unique_id=189642743 instance=ExtResource("134_hiqci")]
 transform = Transform3D(0.6778548, 0, -0.3209562, 0, 0.75, 0, 0.3209562, 0, 0.6778548, 246.13223, 1.1827649, 375.05145)
 
@@ -3559,17 +3555,8 @@ transform = Transform3D(0.54529065, 0, -0.5149351, 0, 0.75, 0, 0.5149351, 0, 0.5
 script = ExtResource("130_w6gsc")
 MinPosWithOrigin = -4
 
-[node name="Hok" parent="Village4/QuestDialog" unique_id=284593196 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
-transform = Transform3D(0.9999996, 0, 1.0658141e-14, 0, 0.9999996, 0, -1.0658141e-14, 0, 0.9999996, 223.91122, 1.9964978, 381.99225)
-dialoguesLine = Array[String](["DIALOGE_V4_3_1", "DIALOGE_V4_3_2", "DIALOGE_V4_3_3", "DIALOGE_V4_3_4"])
-charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
-isBody = true
-initAnimation = true
-initAnimationName = "Init"
-animationBody = NodePath("../../QuestNPC/NPC0402 with A")
-helloAnimation = "Hello"
-talkingAnimation = "Talking"
-saveAfter = true
+[node name="HokVIL" parent="Village4/QuestDialog" unique_id=355667002 instance=ExtResource("134_lmtqe")]
+transform = Transform3D(-0.47321212, -0.10068857, 0.8751754, 0, 0.99344677, 0.11429563, -0.8809485, 0.05408608, -0.47011104, 223.93994, 1.5698272, 381.98602)
 
 [node name="Boomerange" parent="Village4/QuestDialog" unique_id=1256295299 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 245.9873, 1.5207512, 394.84528)
