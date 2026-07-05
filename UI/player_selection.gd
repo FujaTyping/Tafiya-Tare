@@ -7,7 +7,7 @@ extends Control
 
 # Camera
 @onready var select_wm: Marker3D = $"../Marker/SelectWM"
-@onready var camera_3d: Camera3D = $"../SubViewportContainer/SubViewport/Camera3D"
+@onready var camera_3d: Camera3D = $"../SubViewportContainer/SubViewport/MenuCam"
 @onready var select_m: Marker3D = $"../Marker/SelectM"
 @onready var player_selection_2: AnimationPlayer = $"../PlayerSelection2"
 

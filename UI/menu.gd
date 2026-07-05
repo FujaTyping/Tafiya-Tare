@@ -35,7 +35,7 @@ extends Control
 @onready var force_full_ui: TextureButton = $Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/ForceFullUI
 
 # Animate cam
-@onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/Camera3D
+@onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/MenuCam
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_selection: Marker3D = $Marker/PlayerSelection
 var previousCamPost
