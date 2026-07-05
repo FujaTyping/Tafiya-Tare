@@ -19,3 +19,5 @@ class_name gameData
 @export var enableSubmitQuestLevel3:bool
 @export var ingredient_inventory: Array[String]
 @export var food_inventory: String
+@export var flower_inventory:Array[String]
+@export var potion_inventory:String

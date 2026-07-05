@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dl0c02rlojlni"]
+
+[ext_resource type="PackedScene" uid="uid://irf7nvl20usu" path="res://Item/Potiono/Model/potion_mt with pink.glb" id="1_bvrls"]
+[ext_resource type="Script" uid="uid://d0ne5xmktqish" path="res://Item/Potiono/potion_manager_lv4.gd" id="1_iq7ch"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j266r"]
+radius = 0.1665039
+height = 0.49829102
+
+[node name="PinkP" type="RigidBody3D" unique_id=858016140]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_iq7ch")
+potionName = "pink_potion"
+
+[node name="potion_mt with pink" parent="." unique_id=2053046720 instance=ExtResource("1_bvrls")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=93225684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08605957, 0)
+shape = SubResource("CapsuleShape3D_j266r")

@@ -1,16 +1,11 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@onready var gameInstant:Node3D = get_tree().current_scene
+@export var flower_name:String
 
 func collectFlower() :
-	pass
+	gameInstant.collectedItem.append(self.get_path())
+	self.queue_free()
 
 func interact() :
 	return "ON_INTERACTION_COLLECT_FLOWER"

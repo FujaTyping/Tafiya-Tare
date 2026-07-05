@@ -3524,9 +3524,11 @@ multimesh = SubResource("MultiMesh_wtodx")
 
 [node name="FlowerPink" parent="Village4" unique_id=1093766806 instance=ExtResource("125_wtodx")]
 transform = Transform3D(0.65110546, 0, 0.7589873, 0, 1, 0, -0.7589873, 0, 0.65110546, 226.22017, 4.188685, 377.18982)
+flower_name = "pink"
 
 [node name="FlowerWhite" parent="Village4" unique_id=262783690 instance=ExtResource("126_nimm0")]
 transform = Transform3D(0.63002896, -0.06184149, 0.7741054, 0.097687125, 0.9952172, 0, -0.770403, 0.07562013, 0.63305676, 250.80582, 3.6963453, 378.3119)
+flower_name = "white"
 
 [node name="FlowerPurple" parent="Village4" unique_id=316851000 instance=ExtResource("127_5gs0r")]
 transform = Transform3D(0.22377749, 0, -0.97464025, 0, 1, 0, 0.97464025, 0, 0.22377749, 231.31126, 3.2141826, 385.02878)

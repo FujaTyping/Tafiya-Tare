@@ -262,6 +262,8 @@ func saveDat() :
 	data.enableSubmitQuestLevel3 = canSubmitQuestLV3.enableSubmitQuestLevel3
 	data.ingredient_inventory = player.IngreInv
 	data.food_inventory = player.FoodInv
+	data.flower_inventory = player.FlowInv
+	data.potion_inventory = player.PotionInv
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :

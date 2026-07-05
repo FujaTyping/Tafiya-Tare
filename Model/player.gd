@@ -55,12 +55,15 @@ var prevSpringArm: float
 
 var IngreInv:Array[String] = [];
 var FoodInv: String;
+var FlowInv:Array[String] = [];
+var PotionInv:String;
 
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
 @onready var control_sh: AnimationPlayer = $Tutorial/ControlSH
 @onready var help: MarginContainer = $Help
 @onready var help_me: AnimationPlayer = $Help/HelpMe
+@onready var potion_collect: AudioStreamPlayer3D = $PotionCollect
 
 @onready var paper: AudioStreamPlayer3D = $Paper
 
@@ -90,6 +93,8 @@ func _ready():
 		DSPEED = Varibles.saved_data.playerSpeed
 		IngreInv = Varibles.saved_data.ingredient_inventory
 		FoodInv = Varibles.saved_data.food_inventory
+		FlowInv = Varibles.saved_data.flower_inventory
+		PotionInv = Varibles.saved_data.potion_inventory
 	else :
 		self.global_position = default_spawn.global_position
 	SPEED = DSPEED
@@ -226,10 +231,20 @@ func _input(event):
 					else :
 						wrongInteraction("INTERACTION_FAIL_NO_INGREDIENT")
 			elif colliderView.has_method("brew") :
-				colliderView.brew()
+				if len(FlowInv) > 0 :
+					colliderView.brew()
+				else :
+					wrongInteraction("INTERACTION_FAIL_NEED_MORE_FLOWER")
 			elif colliderView.has_method("collectFlower") :
+				if len(FlowInv) > 0 :
+					wrongInteraction("INTERACTION_FAIL_TOO_MUCH_FLOWER")
+					return
 				leaf_collect.play()
+				FlowInv.append(colliderView.flower_name);
 				colliderView.collectFlower()
+			elif colliderView.has_method("collectPotion") :
+				potion_collect.play()
+				colliderView.collectPotion()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()
@@ -381,3 +396,6 @@ func resetIngreInv() :
 
 func resetFoodInv() :
 	FoodInv = "";
+	
+func resetFlowInv() :
+	FlowInv = []

@@ -2,7 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://lihhtjgjfkl7" path="res://Item/L4/KaTongRuuSii.glb" id="1_2vs0l"]
 [ext_resource type="Script" uid="uid://cxum0d3y1otlu" path="res://Item/L4/flower_lv_4.gd" id="1_jcp35"]
+[ext_resource type="PackedScene" uid="uid://dl0c02rlojlni" path="res://Item/Potiono/pinkP.tscn" id="2_8fby1"]
 [ext_resource type="PackedScene" uid="uid://8crllixoyit3" path="res://Item/L4/KaTongRuuSii A.glb" id="2_vm1ew"]
+[ext_resource type="PackedScene" uid="uid://c74koa6gs1d1h" path="res://Item/Potiono/purpleP.tscn" id="3_sr18k"]
+[ext_resource type="AudioStream" uid="uid://d0ro7k1wc3kqp" path="res://SFX/brewing.wav" id="4_aj6t0"]
+[ext_resource type="PackedScene" uid="uid://vcbhn6fufrd8" path="res://Item/Potiono/whiteP.tscn" id="4_xgrs4"]
+[ext_resource type="AudioStream" uid="uid://b13bspxbukpo2" path="res://SFX/brewDone.wav" id="8_sr18k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jcp35"]
 size = Vector3(2.3642578, 0.76959133, 2.4072266)
@@ -11,6 +16,7 @@ size = Vector3(2.3642578, 0.76959133, 2.4072266)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_jcp35")
+potionList = Array[PackedScene]([ExtResource("2_8fby1"), ExtResource("3_sr18k"), ExtResource("4_xgrs4")])
 
 [node name="KaTongRuuSii A" parent="." unique_id=1228811781 instance=ExtResource("2_vm1ew")]
 transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0, 0)
@@ -32,5 +38,19 @@ shape = SubResource("BoxShape3D_jcp35")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=15112730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6474841, 0)
+stream = ExtResource("4_aj6t0")
+volume_db = 10.0
+max_distance = 8.0
+bus = &"SFX"
+
+[node name="Done" type="AudioStreamPlayer3D" parent="." unique_id=814245029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6474841, 0)
+stream = ExtResource("8_sr18k")
+volume_db = 10.0
+max_distance = 8.0
+bus = &"SFX"
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1313367369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0540515, 0)
 
 [editable path="KaTongRuuSii A"]

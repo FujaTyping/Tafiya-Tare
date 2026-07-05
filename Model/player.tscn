@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dexre4bhtaajc" path="res://SFX/bubbles.wav" id="17_00t8u"]
 [ext_resource type="AudioStream" uid="uid://chueh4e3wpww4" path="res://SFX/leaf collect.wav" id="18_a1i2q"]
 [ext_resource type="Script" uid="uid://c2s6m87ww67ld" path="res://Script/notiItem.gd" id="18_qk1vb"]
+[ext_resource type="AudioStream" uid="uid://bykn78w4taenr" path="res://SFX/potionPickup.wav" id="19_60ii7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -600,6 +601,11 @@ bus = &"SFX"
 
 [node name="LeafCollect" type="AudioStreamPlayer3D" parent="." unique_id=1146719287]
 stream = ExtResource("18_a1i2q")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="PotionCollect" type="AudioStreamPlayer3D" parent="." unique_id=1419243198]
+stream = ExtResource("19_60ii7")
 volume_db = 10.0
 bus = &"SFX"
 
