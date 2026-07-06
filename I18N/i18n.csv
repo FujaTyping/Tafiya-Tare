@@ -240,3 +240,4 @@ DIALOGE_V4_QUEST_DONE_3_1,I've prepared a potion to help you feel light as a fea
 DIALOGE_V4_QUEST_DONE_3_2,Perfect! Watch me wield my axe like a storm!,สมบูรณ์แบบ! ดูข้าควงขวานเป็นพายุได้เลย!
 INTERACTION_SUBMIT_QUEST_LEVEL_4,Press E to submit the mission.,กด E ส่งภารกิจ,
 INTERACTION_FAIL_NEED_POTION,Need a potion to submit,ต้องการยาเพื่อส่ง
+INTERACTION_FAIL_MAX_POTION_LIMIT,You can hold up to 1 potion,เก็บยาได้สูงสุด 1 ขวด

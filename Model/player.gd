@@ -246,8 +246,11 @@ func _input(event):
 				FlowInv.append(colliderView.flower_name);
 				colliderView.collectFlower()
 			elif colliderView.has_method("collectPotion") :
-				potion_collect.play()
-				colliderView.collectPotion()
+				if not PotionInv :
+					potion_collect.play()
+					colliderView.collectPotion()
+				else :
+					wrongInteraction("INTERACTION_FAIL_MAX_POTION_LIMIT")
 			elif colliderView.has_method("submitQuestLevel4") :
 				if PotionInv :
 					colliderView.submitQuestLevel4()
@@ -407,3 +410,6 @@ func resetFoodInv() :
 	
 func resetFlowInv() :
 	FlowInv = []
+	
+func resetPotionInv() :
+	PotionInv = "";

@@ -818,6 +818,7 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(-0.6245747, 0.61039937, -0.48715368, -0.6936698, -0.14702271, 0.70512867, 0.35878766, 0.7783296, 0.5152424, 0, 0, 0)
 top_level = true
+visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
@@ -3551,12 +3552,12 @@ transform = Transform3D(0.6778548, 0, -0.3209562, 0, 0.75, 0, 0.3209562, 0, 0.67
 [node name="NPC0403" parent="Village4/QuestNPC" unique_id=573938142 instance=ExtResource("135_w0nw1")]
 transform = Transform3D(0.54529065, 0, -0.5149351, 0, 0.75, 0, 0.5149351, 0, 0.54529065, 245.98311, 1.0220265, 394.77246)
 
+[node name="HokVIL" parent="Village4" unique_id=355667002 instance=ExtResource("134_lmtqe")]
+transform = Transform3D(-0.47321212, -0.10068857, 0.8751754, 0, 0.99344677, 0.11429563, -0.8809485, 0.05408608, -0.47011104, 223.93994, 1.5698272, 381.98602)
+
 [node name="QuestDialog" type="Node3D" parent="Village4" unique_id=1002252048 groups=["triggedONDAY", "triggedONNIGHT"]]
 script = ExtResource("130_w6gsc")
 MinPosWithOrigin = -4
-
-[node name="HokVIL" parent="Village4/QuestDialog" unique_id=355667002 instance=ExtResource("134_lmtqe")]
-transform = Transform3D(-0.47321212, -0.10068857, 0.8751754, 0, 0.99344677, 0.11429563, -0.8809485, 0.05408608, -0.47011104, 223.93994, 1.5698272, 381.98602)
 
 [node name="Boomerange" parent="Village4/QuestDialog" unique_id=1256295299 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 245.9873, 1.5207512, 394.84528)

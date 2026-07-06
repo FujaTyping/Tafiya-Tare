@@ -8,10 +8,13 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvdwg"]
 size = Vector3(0.71777344, 1.3930664, 0.8161621)
 
-[node name="HokVIL" type="Node3D" unique_id=355667002 node_paths=PackedStringArray("dialogStart", "submitBody")]
+[node name="HokVIL" type="Node3D" unique_id=355667002 node_paths=PackedStringArray("dialogStart", "submitBody", "failedDialog", "passDialog")]
 script = ExtResource("1_jtat2")
+requirePotion = "pink_potion"
 dialogStart = NodePath("DialogeTrigged")
 submitBody = NodePath("Submit")
+failedDialog = NodePath("Failed")
+passDialog = NodePath("Done")
 
 [node name="NPC0402 with A" parent="." unique_id=722897578 instance=ExtResource("2_q0n5i")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
@@ -33,11 +36,36 @@ saveAfter = true
 triggedAfterFinish = true
 triggedBody = NodePath("..")
 
-[node name="Submit" type="StaticBody3D" parent="." unique_id=1613884513]
+[node name="Failed" parent="." unique_id=1384232916 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_vvdwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 1.2303139)
+dialoguesLine = Array[String](["DIALOGE_V4_QUEST_FAIL_1", "DIALOGE_V4_QUEST_FAIL_2"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../NPC0402 with A")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+
+[node name="Done" parent="." unique_id=763555579 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_vvdwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 2.6600423)
+dialoguesLine = Array[String](["DIALOGE_V4_QUEST_DONE_2_1", "DIALOGE_V4_QUEST_DONE_2_2"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../NPC0402 with A")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+
+[node name="Submit" type="StaticBody3D" parent="." unique_id=1613884513 node_paths=PackedStringArray("mainQuestSub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5062013, -2.0345967, 0)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_4ndn3")
+mainQuestSub = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Submit" unique_id=1270471252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04321289, 0)
