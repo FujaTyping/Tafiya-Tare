@@ -29,6 +29,7 @@ extends Node3D
 @export var destroyAfterFinishSave:bool = false
 @export var triggedAfterFinish:bool = false
 @export var triggedBody:Node3D;
+@export var triggedParams:String;
 
 var current_dialogue = 0 # Start at 0
 var started = false
@@ -88,7 +89,7 @@ func endDialoge():
 	
 	if triggedAfterFinish :
 		if triggedBody.has_method("dialogEnd") :
-			triggedBody.dialogEnd()
+			triggedBody.dialogEnd(triggedParams)
 	
 	if warpOnCar :
 		if not animationBody.name in Varibles.ListNPCbackCar :

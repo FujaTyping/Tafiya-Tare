@@ -35,6 +35,7 @@ talkingAnimation = "Talking"
 saveAfter = true
 triggedAfterFinish = true
 triggedBody = NodePath("..")
+triggedParams = "start"
 
 [node name="Failed" parent="." unique_id=1384232916 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_vvdwg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 1.2303139)
@@ -46,19 +47,17 @@ initAnimationName = "Init"
 animationBody = NodePath("../NPC0402 with A")
 helloAnimation = "Hello"
 talkingAnimation = "Talking"
-saveAfter = true
 
 [node name="Done" parent="." unique_id=763555579 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_vvdwg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 2.6600423)
 dialoguesLine = Array[String](["DIALOGE_V4_QUEST_DONE_2_1", "DIALOGE_V4_QUEST_DONE_2_2"])
-charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER"])
 isBody = true
 initAnimation = true
 initAnimationName = "Init"
 animationBody = NodePath("../NPC0402 with A")
 helloAnimation = "Hello"
 talkingAnimation = "Talking"
-saveAfter = true
 
 [node name="Submit" type="StaticBody3D" parent="." unique_id=1613884513 node_paths=PackedStringArray("mainQuestSub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5062013, -2.0345967, 0)

@@ -241,6 +241,7 @@ func _update_time_display() -> void:
 	time.text = "%02d:%02d" % [hours, minutes]
 
 var NPCV4S:Array[int] = [0,0,0]
+var LV4GetReward = true
 
 func saveDat() :
 	save_icon_indicator.show()
@@ -267,6 +268,7 @@ func saveDat() :
 	data.flower_inventory = player.FlowInv
 	data.potion_inventory = player.PotionInv
 	data.state_quest_level_4 = NPCV4S
+	data.can_get_reward_level_4 = LV4GetReward
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :

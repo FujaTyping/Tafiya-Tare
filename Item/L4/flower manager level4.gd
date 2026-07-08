@@ -5,6 +5,7 @@ extends Node
 
 func collectFlower() :
 	gameInstant.collectedItem.append(self.get_path())
+	gameInstant.saveDat()
 	self.queue_free()
 
 func interact() :

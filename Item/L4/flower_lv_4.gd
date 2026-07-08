@@ -6,8 +6,21 @@ extends StaticBody3D
 @onready var player:CharacterBody3D = get_tree().current_scene.get_node('player')
 @onready var done: AudioStreamPlayer3D = $Done
 @onready var marker_3d: Marker3D = $Marker3D
+@onready var gameInstant:Node3D = get_tree().current_scene
 
 var isBrewing:bool = false;
+var canGetReward:bool = true;
+
+func _ready() -> void:
+	if Varibles.isFromLoadSaved :
+		canGetReward = Varibles.saved_data.can_get_reward_level_4
+
+func getRewardState() :
+	return canGetReward
+	
+func getRewardLV4() :
+	canGetReward = false;
+	gameInstant.LV4GetReward = canGetReward
 
 func brew() :
 	isBrewing = true;

@@ -822,7 +822,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -3479,9 +3479,6 @@ aabb = AABB(-0.54504323, -0.89806247, -1.0191567, 1.2863755, 2.8896308, 2.118391
 script = ExtResource("63_o46vb")
 notiShow = NodePath("../AreaNotifier/V4")
 
-[node name="FlowerLv4" parent="Village4" unique_id=2104041542 instance=ExtResource("113_epi3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.51552, 1.3858478, 381.68054)
-
 [node name="SleepInteract" parent="Village4" unique_id=1443776208 instance=ExtResource("65_jo4nb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.70515, 2.0348465, 379.52673)
 
@@ -3606,6 +3603,9 @@ transform = Transform3D(-0.9659168, 0, -0.25885278, 0, 1, 0, 0.25885278, 0, -0.9
 
 [node name="Desertrecipie" parent="." unique_id=874768215 instance=ExtResource("108_y7j3j")]
 transform = Transform3D(-0.9637593, 0.26157048, -0.052428123, 0.06695208, 0.04692071, -0.9966524, -0.25823492, -0.9640432, -0.06273297, 68.6969, 2.5440803, 607.7446)
+
+[node name="FlowerLv4" parent="." unique_id=2104041542 instance=ExtResource("113_epi3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.51552, 1.3858478, 381.68054)
 
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99
