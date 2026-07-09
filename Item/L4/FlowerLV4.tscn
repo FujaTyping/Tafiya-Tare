@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c74koa6gs1d1h" path="res://Item/Potiono/purpleP.tscn" id="3_sr18k"]
 [ext_resource type="AudioStream" uid="uid://d0ro7k1wc3kqp" path="res://SFX/brewing.wav" id="4_aj6t0"]
 [ext_resource type="PackedScene" uid="uid://vcbhn6fufrd8" path="res://Item/Potiono/whiteP.tscn" id="4_xgrs4"]
+[ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="5_xgrs4"]
 [ext_resource type="AudioStream" uid="uid://b13bspxbukpo2" path="res://SFX/brewDone.wav" id="8_sr18k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jcp35"]
@@ -17,6 +18,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_jcp35")
 potionList = Array[PackedScene]([ExtResource("2_8fby1"), ExtResource("3_sr18k"), ExtResource("4_xgrs4")])
+reward = ExtResource("5_xgrs4")
 
 [node name="KaTongRuuSii A" parent="." unique_id=1228811781 instance=ExtResource("2_vm1ew")]
 transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0, 0)
@@ -52,5 +54,8 @@ bus = &"SFX"
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1313367369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0540515, 0)
+
+[node name="rewardSpawner" type="Marker3D" parent="." unique_id=254296190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8401377, -0.5041112, 0)
 
 [editable path="KaTongRuuSii A"]

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://rmp441f2jjh2"]
+
+[ext_resource type="Script" uid="uid://lhh32x8j77y0" path="res://Item/L4/submit_manager_lv_4.gd" id="1_d4mc6"]
+[ext_resource type="PackedScene" uid="uid://ifms5bjnoyv2" path="res://Model/NPC/V4/NPC0401.glb" id="2_d4mc6"]
+[ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="3_1hcf2"]
+[ext_resource type="Script" uid="uid://cyb63hjlp4pa5" path="res://Item/L4/submitQuestLV4.gd" id="4_2o0ny"]
+[ext_resource type="AudioStream" uid="uid://cw0f1x1d1ygku" path="res://SFX/chefPass.wav" id="5_gaaxb"]
+[ext_resource type="AudioStream" uid="uid://b7on13hpkv1fh" path="res://SFX/chefFailed.wav" id="6_ydrj4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvdwg"]
+size = Vector3(0.71777344, 1.3930664, 0.8161621)
+
+[node name="BoomVIL" type="Node3D" unique_id=355667002 node_paths=PackedStringArray("dialogStart", "submitBody", "failedDialog", "passDialog")]
+script = ExtResource("1_d4mc6")
+requirePotion = "purple_potion"
+NPCIndex = 1
+dialogStart = NodePath("DialogeTrigged")
+submitBody = NodePath("Submit")
+failedDialog = NodePath("Failed")
+passDialog = NodePath("Done")
+
+[node name="NPC0401" parent="." unique_id=189642743 instance=ExtResource("2_d4mc6")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=363042299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7146354, 0)
+
+[node name="DialogeTrigged" parent="." unique_id=1658165319 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("3_1hcf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 0)
+dialoguesLine = Array[String](["DIALOGE_V4_4_1", "DIALOGE_V4_4_2", "DIALOGE_V4_4_3", "DIALOGE_V4_4_4", "DIALOGE_V4_4_5"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER", "NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../NPC0401")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+triggedAfterFinish = true
+triggedBody = NodePath("..")
+triggedParams = "start"
+
+[node name="Failed" parent="." unique_id=1384232916 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_1hcf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 1.2303139)
+dialoguesLine = Array[String](["DIALOGE_V4_QUEST_FAIL_1", "DIALOGE_V4_QUEST_FAIL_2"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../NPC0401")
+NoHelloAnimation = true
+talkingAnimation = "Talking"
+
+[node name="Done" parent="." unique_id=763555579 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_1hcf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9930975, 2.6600423)
+dialoguesLine = Array[String](["DIALOGE_V4_QUEST_DONE_3_1", "DIALOGE_V4_QUEST_DONE_3_2"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../NPC0401")
+NoHelloAnimation = true
+talkingAnimation = "Talking"
+
+[node name="Submit" type="StaticBody3D" parent="." unique_id=1613884513 node_paths=PackedStringArray("mainQuestSub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5062013, -2.0345967, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("4_2o0ny")
+mainQuestSub = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Submit" unique_id=1270471252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04321289, 0)
+shape = SubResource("BoxShape3D_vvdwg")
+
+[node name="Success" type="AudioStreamPlayer3D" parent="." unique_id=147531032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4834304, 0.9675325, 0)
+stream = ExtResource("5_gaaxb")
+max_db = 5.0
+max_distance = 3.0
+bus = &"SFX"
+
+[node name="Failed2" type="AudioStreamPlayer3D" parent="." unique_id=906198235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4834304, 0.9675325, 0)
+stream = ExtResource("6_ydrj4")
+max_db = 4.0
+max_distance = 3.0
+bus = &"SFX"

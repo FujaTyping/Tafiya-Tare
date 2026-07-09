@@ -7,6 +7,8 @@ extends StaticBody3D
 @onready var done: AudioStreamPlayer3D = $Done
 @onready var marker_3d: Marker3D = $Marker3D
 @onready var gameInstant:Node3D = get_tree().current_scene
+@export var reward:PackedScene;
+@onready var reward_spawner: Marker3D = $rewardSpawner
 
 var isBrewing:bool = false;
 var canGetReward:bool = true;
@@ -21,6 +23,10 @@ func getRewardState() :
 func getRewardLV4() :
 	canGetReward = false;
 	gameInstant.LV4GetReward = canGetReward
+	var rewardItem = reward.instantiate()
+	gameInstant.add_child(rewardItem)
+	rewardItem.fuelValue = 50
+	rewardItem.global_position = reward_spawner.global_position
 
 func brew() :
 	isBrewing = true;

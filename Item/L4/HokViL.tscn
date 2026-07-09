@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ckbsikp0mxset" path="res://Model/NPC/V4/NPC0402 with A.glb" id="2_q0n5i"]
 [ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="3_vvdwg"]
 [ext_resource type="Script" uid="uid://cyb63hjlp4pa5" path="res://Item/L4/submitQuestLV4.gd" id="4_4ndn3"]
+[ext_resource type="AudioStream" uid="uid://cw0f1x1d1ygku" path="res://SFX/chefPass.wav" id="5_t6fs8"]
+[ext_resource type="AudioStream" uid="uid://b7on13hpkv1fh" path="res://SFX/chefFailed.wav" id="6_ragx5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvdwg"]
 size = Vector3(0.71777344, 1.3930664, 0.8161621)
@@ -45,7 +47,7 @@ isBody = true
 initAnimation = true
 initAnimationName = "Init"
 animationBody = NodePath("../NPC0402 with A")
-helloAnimation = "Hello"
+NoHelloAnimation = true
 talkingAnimation = "Talking"
 
 [node name="Done" parent="." unique_id=763555579 node_paths=PackedStringArray("animationBody") instance=ExtResource("3_vvdwg")]
@@ -56,7 +58,7 @@ isBody = true
 initAnimation = true
 initAnimationName = "Init"
 animationBody = NodePath("../NPC0402 with A")
-helloAnimation = "Hello"
+NoHelloAnimation = true
 talkingAnimation = "Talking"
 
 [node name="Submit" type="StaticBody3D" parent="." unique_id=1613884513 node_paths=PackedStringArray("mainQuestSub")]
@@ -69,3 +71,17 @@ mainQuestSub = NodePath("..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Submit" unique_id=1270471252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04321289, 0)
 shape = SubResource("BoxShape3D_vvdwg")
+
+[node name="Success" type="AudioStreamPlayer3D" parent="." unique_id=147531032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4834304, 0.9675325, 0)
+stream = ExtResource("5_t6fs8")
+max_db = 5.0
+max_distance = 3.0
+bus = &"SFX"
+
+[node name="Failed2" type="AudioStreamPlayer3D" parent="." unique_id=906198235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4834304, 0.9675325, 0)
+stream = ExtResource("6_ragx5")
+max_db = 4.0
+max_distance = 3.0
+bus = &"SFX"

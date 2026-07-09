@@ -212,16 +212,16 @@ DIALOGE_V4_1_1,"Flower...","ดอกไม้..."
 DIALOGE_V4_1_2,"That hunter only comes out when it's dark...","เจ้านักล่านั่นมันจะออกมาตอนฟ้ามืดเท่านั้น..."
 DIALOGE_V4_1_3,You need to have your masterpiece ready.,ต้องเตรียมผลงานชิ้นเอกให้พร้อม
 DIALOGE_V4_2_1,Hey! You!,เฮ้ย! เอ็งน่ะ
-DIALOGE_V4_2_2,"Go brew some ""Returning Potion"" for me!",ไปปรุง ยาวนกลับ มาให้ข้าที
+DIALOGE_V4_2_2,"Go brew some Returning Potion"  me!",ไปปรุง ยาวนกลับ มาให้ข้าที
 DIALOGE_V4_2_3,"Every time I throw a boomerang, it flies off into the forest and never comes back to me!",ขว้างบูมเมอแรงทีไร ปลิวหายเข้าป่าไม่เคยกลับมาหาข้าเลย!
 DIALOGE_V4_2_4,"Okay, sir. Wait a moment, I'll go brew it for you.",ได้ครับพี่ รอเดี๋ยวผมไปปรุงมาให้
 DIALOGE_V4_3_1,My spear has missed its target ten times already!,หอกข้ามันแทงพลาดเป้ามาสิบหนแล้ว!
-DIALOGE_V4_3_2,"Hurry up and brew some ""Pineapple Eye Potion"" for me to drink right now!",เอ็งรีบไปปรุง  ยาตาสับปะรด มาให้ข้าซดเดี๋ยวนี้!
+DIALOGE_V4_3_2,"Hurry up and brew some Pineapple Eye Potion for me to drink right now!",เอ็งรีบไปปรุง  ยาตาสับปะรด มาให้ข้าซดเดี๋ยวนี้!
 DIALOGE_V4_3_3,Pineapple Eye Potion?,ยาตาสับปะรด?
 DIALOGE_V4_3_4,"Sure thing, sir!",จัดไปครับพี่
 DIALOGE_V4_4_1,My axe is too heavy!,ขวานข้ามันหนักเกินไป
 DIALOGE_V4_4_2,My back hurts every time I lift it!,ยกทีไรปวดหลังทุกที!
-DIALOGE_V4_4_3,"Go find me some ""Lightweight Potion""!",ไปหา ยาตัวเบาหวิว มาให้ข้าหน่อย
+DIALOGE_V4_4_3,"Go find me some Lightweight Potion!",ไปหา ยาตัวเบาหวิว มาให้ข้าหน่อย
 DIALOGE_V4_4_4,I'll swing my axe like a whirlwind!,ข้าจะควงขวานเป็นพายุเลย!
 DIALOGE_V4_4_5,"Be careful, sir, you might get blown away with both you and your axe... I'll go brew it for you.",ระวังควงแล้วปลิวไปทั้งคนทั้งขวานนะครับพี่... เดี๋ยวผมไปปรุงให้
 INTERACTION_FAIL_TOO_MUCH_FLOWER,You can hold up to 1 flower,สามารถเก็บดอกไม้ได้สูงสุด 1 ดอก

@@ -37,7 +37,7 @@ var playerSpeedBefore: float = 0.0
 var finishDialogeToHide = false
 
 func _ready() -> void:
-	if initAnimation :
+	if initAnimation and animationBody :
 		animationBody.get_node("AnimationPlayer").play(initAnimationName)
 	if useTyping:
 		typingContainer.placeholder_text = typingPlaceholder

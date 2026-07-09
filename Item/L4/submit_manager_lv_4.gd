@@ -17,6 +17,8 @@ var currentState:int = 0;
 @onready var failedPOS:Vector3 = failedDialog.global_position
 @onready var passPOS:Vector3 = passDialog.global_position
 @onready var marker_3d: Marker3D = $Marker3D
+@onready var success: AudioStreamPlayer3D = $Success
+@onready var failed_2: AudioStreamPlayer3D = $Failed2
 
 var reward_line:Array[String] = ["DIALOGE_V4_REWARD_QUEST_1","DIALOGE_V4_REWARD_QUEST_2"]
 var reward_char:Array[String] = ["NPC_VILLAGER","NPC_VILLAGER"]
@@ -58,12 +60,14 @@ func questDone() :
 		for charLine in reward_char :
 			passDialog.charLine.append(charLine)
 		mainQuestNode.getRewardLV4()
+	success.play()
 	passDialog.global_position = playerInstant.global_position
 	await Varibles.wait(0.25)
 	passDialog.global_position = passPOS
 	changeState(2)
 
 func questFail() :
+	failed_2.play()
 	failedDialog.global_position = playerInstant.global_position
 	await Varibles.wait(0.25)
 	failedDialog.global_position = failedPOS
