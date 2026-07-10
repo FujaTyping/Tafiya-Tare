@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://fk2ayj7lo450" path="res://UI/player_selection.gd" id="3_dte3n"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="3_kfjwn"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_dte3n"]
-[ext_resource type="ArrayMesh" uid="uid://d25im63mknfa3" path="res://Terrain/Grass/Mesh/Grass1.res" id="4_wcfn6"]
+[ext_resource type="ArrayMesh" uid="uid://0pfsdxgyktpk" path="res://Terrain/Grass/Mesh/Grass1.res" id="4_wcfn6"]
 [ext_resource type="PackedScene" uid="uid://dpwhlgk2cdvgf" path="res://Model/Players/player_animation.tscn" id="5_kfjwn"]
 [ext_resource type="PackedScene" uid="uid://cfkogsgju8c3l" path="res://Model/Players/woman_player.tscn" id="6_dte3n"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="7_dte3n"]
@@ -381,7 +381,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
-transform = Transform3D(0.13918065, 0.012961894, 0.99018204, 0, 0.99991435, -0.013089291, -0.9902669, 0.0018217764, 0.13916872, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918063, 0.012961894, 0.9901819, 0, 0.99991435, -0.01308929, -0.9902668, 0.0018217764, 0.13916871, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
