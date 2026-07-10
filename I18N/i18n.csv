@@ -241,3 +241,7 @@ DIALOGE_V4_QUEST_DONE_3_2,Perfect! Watch me wield my axe like a storm!,สมบ
 INTERACTION_SUBMIT_QUEST_LEVEL_4,Press E to submit the mission.,กด E ส่งภารกิจ,
 INTERACTION_FAIL_NEED_POTION,Need a potion to submit,ต้องการยาเพื่อส่ง
 INTERACTION_FAIL_MAX_POTION_LIMIT,You can hold up to 1 potion,เก็บยาได้สูงสุด 1 ขวด
+DIALOGE_V4_5_1,The leader is driving up to the highest point of interest; want to hitch a ride?,ผมกำลังจะขับรถขึ้นไปยอดเขา สนใจติดรถไปด้วยกันไหมครับ?
+DIALOGE_V4_5_2,"Hmph! You're quite bold to invite someone like me... But whatever, I'm bored anyway and wanted to find a place up there to try out my bizarre sword techniques.",หึ! เอ็งกล้าดีนี่ที่มาชวนคนอย่างข้า... แต่ก็เอาเถอะ ข้ากำลังเบื่อและอยากไปหาที่ลองกระบวนท่าดาบพิสดารของข้าบนนั้นอยู่พอดี
+DIALOGE_V4_5_3,"Uh... sure, sir. Just hop in the back of the pickup truck.",เอ่อ... ได้เลยครับพี่ กระโดดขึ้นท้ายกระบะมาเลย
+DIALOGE_V4_5_4,"Move aside! I'm getting in the carriage! I hope there's something strange on the mountaintop for me to try my hand at slashing with... Even if my sword breaks, I don't care! Haha!",หลีกทางไป! ข้าจะขึ้นรถแล้ว! หวังว่าบนยอดเขาจะมีอะไรแปลกๆ ให้ข้าลองฟันเล่นนะ... ถึงฟันแล้วดาบข้าจะหัก ข้าก็ไม่สนหรอก ฮ่าๆๆ!

@@ -134,6 +134,7 @@
 [ext_resource type="PackedScene" uid="uid://dlfs6ttf1psti" path="res://Model/Animals/Pangolins with Kled Merge.glb" id="129_vhk74"]
 [ext_resource type="Script" uid="uid://b3onnxvn48a2a" path="res://Script/quest_npc_level4.gd" id="130_w6gsc"]
 [ext_resource type="PackedScene" uid="uid://bcrovq78lgm6p" path="res://Item/L4/BoomViL.tscn" id="132_hxd3m"]
+[ext_resource type="PackedScene" uid="uid://tcf3rs3vnd8f" path="res://Model/NPC/V4/Huntr_x with A.glb" id="133_lmtqe"]
 [ext_resource type="PackedScene" uid="uid://wrmwhw5pvmjc" path="res://Item/L4/HokViL.tscn" id="134_lmtqe"]
 [ext_resource type="PackedScene" uid="uid://c4jq3qm8v7q08" path="res://Model/Potion/potion_mt.glb" id="137_hxd3m"]
 [ext_resource type="PackedScene" uid="uid://rmp441f2jjh2" path="res://Item/L4/AxeViL.tscn" id="138_lmtqe"]
@@ -822,7 +823,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1312,6 +1313,20 @@ warpOnCar = true
 viewDetect = NodePath("../../../Village3/NPC0304/VisibleOnScreenNotifier3D")
 
 [node name="V4" type="Node3D" parent="DialogeTriggers" unique_id=72377115]
+
+[node name="CarM" parent="DialogeTriggers/V4" unique_id=1945767550 node_paths=PackedStringArray("animationBody", "viewDetect") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.30225345, 0, -0.9532276, 0, 1, 0, 0.9532276, 0, 0.30225345, 220.51491, 1.781035, 363.43832)
+dialoguesLine = Array[String](["DIALOGE_V4_5_1", "DIALOGE_V4_5_2", "DIALOGE_V4_5_3", "DIALOGE_V4_5_4"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Village4/Huntr_x with A")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+warpOnCar = true
+viewDetect = NodePath("../../../Village4/Huntr_x with A/VisibleOnScreenNotifier3D")
 
 [node name="DialogeTrigged" parent="DialogeTriggers/V4" unique_id=2002514677 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
 transform = Transform3D(0.36807588, 0, 0.92979574, 0, 1, 0, -0.92979574, 0, 0.36807588, 228.25279, 1.4111476, 378.89554)
@@ -3551,6 +3566,13 @@ transform = Transform3D(0.84422505, 0, -0.53598887, 0, 1, 0, 0.53598887, 0, 0.84
 
 [node name="BoomVIL2" parent="Village4/QuestNPC" unique_id=2103184101 instance=ExtResource("138_lmtqe")]
 transform = Transform3D(0.9408038, 0, -0.33895132, 0, 0.99999994, 0, 0.33895132, 0, 0.9408038, 246.126, 1.1817746, 375.0432)
+
+[node name="Huntr_x with A" parent="Village4" unique_id=583984542 instance=ExtResource("133_lmtqe")]
+transform = Transform3D(-0.22309369, 0, 0.71605116, 0, 0.75, 0, -0.71605116, 0, -0.22309369, 220.50963, 1.2932204, 363.45306)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Village4/Huntr_x with A" unique_id=446571201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656613e-10, 0.7586387, -0.026508883)
+aabb = AABB(-0.41195828, -0.7872261, -0.6078026, 0.7829009, 1.5744522, 1.2156053)
 
 [node name="potion_mt" parent="Village4" unique_id=305281291 instance=ExtResource("137_hxd3m")]
 transform = Transform3D(0.10965802, 0.27924025, 0, -0.27924025, 0.10965802, 0, 0, 0, 0.29999998, 233.56389, 1.283741, 380.65152)
