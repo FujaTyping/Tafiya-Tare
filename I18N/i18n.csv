@@ -245,3 +245,5 @@ DIALOGE_V4_5_1,The leader is driving up to the highest point of interest; want t
 DIALOGE_V4_5_2,"Hmph! You're quite bold to invite someone like me... But whatever, I'm bored anyway and wanted to find a place up there to try out my bizarre sword techniques.",หึ! เอ็งกล้าดีนี่ที่มาชวนคนอย่างข้า... แต่ก็เอาเถอะ ข้ากำลังเบื่อและอยากไปหาที่ลองกระบวนท่าดาบพิสดารของข้าบนนั้นอยู่พอดี
 DIALOGE_V4_5_3,"Uh... sure, sir. Just hop in the back of the pickup truck.",เอ่อ... ได้เลยครับพี่ กระโดดขึ้นท้ายกระบะมาเลย
 DIALOGE_V4_5_4,"Move aside! I'm getting in the carriage! I hope there's something strange on the mountaintop for me to try my hand at slashing with... Even if my sword breaks, I don't care! Haha!",หลีกทางไป! ข้าจะขึ้นรถแล้ว! หวังว่าบนยอดเขาจะมีอะไรแปลกๆ ให้ข้าลองฟันเล่นนะ... ถึงฟันแล้วดาบข้าจะหัก ข้าก็ไม่สนหรอก ฮ่าๆๆ!
+ON_INTERACTION_GOING_UP,Press E to go to the top,กด E เพื่อขึ้นไปด้านบน
+ON_INTERACTION_GOING_DOWN,Press E to go down,กด E เพื่อลงไปด้านล่าง

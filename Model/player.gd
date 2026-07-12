@@ -256,6 +256,8 @@ func _input(event):
 					colliderView.submitQuestLevel4()
 				else :
 					wrongInteraction("INTERACTION_FAIL_NEED_POTION")
+			elif colliderView.has_method("treeLV2TP") :
+				colliderView.treeLV2TP()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()

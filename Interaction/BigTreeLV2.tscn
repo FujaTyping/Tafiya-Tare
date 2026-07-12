@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dr0nanmisjev6"]
+
+[ext_resource type="PackedScene" uid="uid://cyekwy5nv3jrp" path="res://Model/L2/LV2Tree with hole.glb" id="1_11qx7"]
+[ext_resource type="Script" uid="uid://bg26vetg7pmbf" path="res://Interaction/tp.gd" id="2_h865i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11qx7"]
+size = Vector3(0.890625, 1.2030334, 1)
+
+[node name="BigTreeLv2" type="Node3D" unique_id=1039495945]
+
+[node name="LV2Tree with hole" parent="." unique_id=1632055069 instance=ExtResource("1_11qx7")]
+
+[node name="TP" type="StaticBody3D" parent="." unique_id=1489438709 node_paths=PackedStringArray("destination")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5523636, 0.48355663, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_h865i")
+direction = "UP"
+destination = NodePath("../Des")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TP" unique_id=1015372655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23168945, 0.065216064, 0)
+shape = SubResource("BoxShape3D_11qx7")
+
+[node name="TP2" type="StaticBody3D" parent="." unique_id=935592771 node_paths=PackedStringArray("destination")]
+transform = Transform3D(1, 0, 0, 0, 0.99569243, 0.092718154, 0, -0.092718154, 0.99569243, -0.22667873, 6.6565523, 1.3812155)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_h865i")
+direction = "DOWN"
+destination = NodePath("../Des2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TP2" unique_id=293132282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23168945, 0.10151672, 0)
+shape = SubResource("BoxShape3D_11qx7")
+
+[node name="Des" type="Marker3D" parent="." unique_id=419314157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015751362, 6.906638, 2.4746118)
+
+[node name="Des2" type="Marker3D" parent="." unique_id=958094318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7219882, 0.9795594, 0.006042242)
