@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ct74r0b73ee2s" path="res://UI/view_paper.tscn" id="9_edr7y"]
 [ext_resource type="Material" uid="uid://c7mle0hmpf4wg" path="res://Shader/waterShader.tres" id="9_lwlx3"]
 [ext_resource type="Texture2D" uid="uid://eceyrtke5uy1" path="res://Terrain/Texture/firefly.png" id="10_v33yl"]
-[ext_resource type="ArrayMesh" uid="uid://d25im63mknfa3" path="res://Terrain/Grass/Mesh/Grass1.res" id="11_t2ssd"]
+[ext_resource type="ArrayMesh" uid="uid://0pfsdxgyktpk" path="res://Terrain/Grass/Mesh/Grass1.res" id="11_t2ssd"]
 [ext_resource type="PackedScene" uid="uid://gcud7fvankq" path="res://Model/Dialoge/DialogTrigger.tscn" id="13_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://x0nwxuls06g4" path="res://UI/Dialog.tscn" id="13_215e1"]
 [ext_resource type="PackedScene" uid="uid://bj65117odtqjs" path="res://Model/Car/Work/vehicle_body_3d.tscn" id="13_lc2xo"]
@@ -54,7 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://lc2hoebrugjs" path="res://Item/Ingredient/carrot.tscn" id="63_ra4rb"]
 [ext_resource type="ArrayMesh" uid="uid://cyw64fsvxbdb5" path="res://Terrain/Tree/Mesh/tree2.res" id="64_66xay"]
 [ext_resource type="PackedScene" uid="uid://cvnuoo6w5y4dp" path="res://Item/Ingredient/egg.tscn" id="64_ple6s"]
-[ext_resource type="ArrayMesh" uid="uid://vl1gbrd0io6d" path="res://Terrain/living/mesh/thoopRuSii.res" id="64_t2ssd"]
+[ext_resource type="ArrayMesh" uid="uid://w8yddk7yiwtn" path="res://Terrain/living/mesh/thoopRuSii.res" id="64_t2ssd"]
 [ext_resource type="ArrayMesh" uid="uid://m821orjd8og5" path="res://Terrain/Grass/Mesh/Grass2.res" id="65_7noa1"]
 [ext_resource type="PackedScene" uid="uid://bq8v1loj4e7nb" path="res://Interaction/sleep_interact.tscn" id="65_jo4nb"]
 [ext_resource type="PackedScene" uid="uid://3gtyg5y75i2w" path="res://Item/View/recipie.tscn" id="67_avmo2"]
@@ -76,7 +76,7 @@
 [ext_resource type="Script" uid="uid://x2cum2ogyc17" path="res://Script/OnilightPole.gd" id="81_66xay"]
 [ext_resource type="ArrayMesh" uid="uid://rsxavpraiup" path="res://Terrain/Rock/mesh/tallRock.res" id="81_o46vb"]
 [ext_resource type="Shader" uid="uid://deo8muq24s7t7" path="res://Shader/level1Water.tres" id="81_pwsyv"]
-[ext_resource type="ArrayMesh" uid="uid://dkx6633hyfs4r" path="res://Terrain/Tree/Mesh/Tree3.res" id="81_vvpk2"]
+[ext_resource type="ArrayMesh" uid="uid://b65seyi1rqvvn" path="res://Terrain/Tree/Mesh/Tree3.res" id="81_vvpk2"]
 [ext_resource type="PackedScene" uid="uid://3464ttvcxm3s" path="res://Model/warningSleep.glb" id="82_0s2o4"]
 [ext_resource type="PackedScene" uid="uid://c6y3xsb3kuvub" path="res://Model/Sign/SETSLEEP1A.glb" id="82_4mai8"]
 [ext_resource type="ArrayMesh" uid="uid://bfay5dlqs1fww" path="res://Terrain/Rock/mesh/medRock.res" id="82_vqo61"]
@@ -116,7 +116,7 @@
 [ext_resource type="PackedScene" uid="uid://cutmtyaalfflk" path="res://Item/View/Desertrecipie.tscn" id="108_y7j3j"]
 [ext_resource type="PackedScene" uid="uid://bvxu5s11gb48v" path="res://Item/Ingredient/sugar.tscn" id="109_e3l5k"]
 [ext_resource type="ArrayMesh" uid="uid://dnsgmvjgr5u5n" path="res://Terrain/Tree/L4/mesh/LV43.res" id="110_n2sb7"]
-[ext_resource type="ArrayMesh" uid="uid://c6l7s5kujb6e3" path="res://Terrain/Tree/L4/mesh/LV431.res" id="111_v78r4"]
+[ext_resource type="ArrayMesh" uid="uid://b1nghw7emu04d" path="res://Terrain/Tree/L4/mesh/LV431.res" id="111_v78r4"]
 [ext_resource type="PackedScene" uid="uid://bgwfnigsjn4ds" path="res://Item/L4/FlowerLV4.tscn" id="113_epi3u"]
 [ext_resource type="Script" uid="uid://c8xjj6oqecqmk" path="res://lv_4_fog_trigged.gd" id="115_qqhb5"]
 [ext_resource type="PackedScene" uid="uid://x8ypf4ixohjs" path="res://Model/NPC/V4/NPC4 Underground.glb" id="120_5i2ov"]
@@ -127,7 +127,7 @@
 [ext_resource type="PackedScene" uid="uid://bkyoakt32yfuc" path="res://Model/NPC/V3/NPC0303.glb" id="122_g8r2m"]
 [ext_resource type="PackedScene" uid="uid://b1vndmplxpiv4" path="res://Model/NPC/V3/NPC0304.glb" id="123_08xsp"]
 [ext_resource type="AudioStream" uid="uid://guq1yenqh0fo" path="res://Sound/Ambient/Forest Ambient 3.wav" id="123_d3lbn"]
-[ext_resource type="ArrayMesh" uid="uid://dcao36ldwfv7w" path="res://Terrain/Grass/Mesh/Tall Grass.res" id="124_0cg25"]
+[ext_resource type="ArrayMesh" uid="uid://dqfgx2vty3mff" path="res://Terrain/Grass/Mesh/Tall Grass.res" id="124_0cg25"]
 [ext_resource type="PackedScene" uid="uid://bhxuccja8rae" path="res://Item/L4/FlowerPINK.tscn" id="125_wtodx"]
 [ext_resource type="PackedScene" uid="uid://dg34g7010uv4m" path="res://Item/L4/FlowerWhite.tscn" id="126_nimm0"]
 [ext_resource type="PackedScene" uid="uid://cb17wpwjgpo12" path="res://Item/L4/FlowerPurple.tscn" id="127_5gs0r"]
@@ -823,7 +823,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1506,7 +1506,7 @@ transform = Transform3D(0.2522888, 0, 0.96765214, 0, 1, 0, -0.96765214, 0, 0.252
 transform = Transform3D(-0.9991294, 0, 0.04171869, 0, 1, 0, -0.04171869, 0, -0.9991294, -11.879494, 9.045934, 477.9559)
 RewardItem = ExtResource("21_hb5m1")
 
-[node name="Skeleton3D" parent="StatueOfCatalyst/StatueL/Armature" index="0"]
+[node name="Skeleton3D" parent="StatueOfCatalyst/StatueL/Armature" parent_id_path=PackedInt32Array(1506623155, 1660084992, 1857339873) index="0" unique_id=2100854123]
 bones/0/rotation = Quaternion(-3.835946e-08, 4.2490367e-08, -7.2719187e-16, 1)
 bones/1/rotation = Quaternion(3.552714e-15, -2.5376094e-08, 1.1102236e-16, 1)
 bones/3/rotation = Quaternion(0.47918817, 6.304526e-08, -1.5218313e-07, 0.8777122)
@@ -1981,13 +1981,13 @@ omni_range = 2.762321
 [node name="base" parent="." unique_id=39208368 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
-[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 611454826) index="0" unique_id=1383931423]
+[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 760389770) index="0" unique_id=135921155]
 transform = Transform3D(0.9988351, 0, 0, 0, 0.9988351, 0, 0, 0, 0.9988351, 0.22354126, 6.5267086e-06, 0.13165283)
 
-[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 83982301) index="0" unique_id=1266238197]
+[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 35657573) index="0" unique_id=1551782273]
 transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 0.001013279)
 
-[node name="Landscape_009" parent="base" index="12" unique_id=878497132]
+[node name="Landscape_009" parent="base" index="12" unique_id=1995480174]
 material_override = ExtResource("53_ftkif")
 
 [node name="Water2" type="MeshInstance3D" parent="base" unique_id=1147071751]
@@ -2080,13 +2080,13 @@ transform = Transform3D(0.053390644, 0, 0.28504285, 0, 0.29, 0, -0.28504285, 0, 
 [node name="baseLevelTunnel" parent="baseLevel/BaseLevel" unique_id=1786709167 instance=ExtResource("83_4mai8")]
 transform = Transform3D(0.051935527, 0, -0.83338326, 0, 0.835, 0, 0.83338326, 0, 0.051935527, -307.4068, 0.52692723, 159.77249)
 
-[node name="Cylinder" parent="baseLevel/BaseLevel/baseLevelTunnel" index="0" unique_id=688349755]
+[node name="Cylinder" parent="baseLevel/BaseLevel/baseLevelTunnel" index="0" unique_id=810827832]
 transform = Transform3D(0, 8.306336, 2.9802322e-08, -5.810944, 0, 0, 0, -1.1920929e-07, 5.714149, -1.3351746, 2.2872076, -0.08319092)
 
-[node name="Cylinder_001" parent="baseLevel/BaseLevel/baseLevelTunnel" index="1" unique_id=1434468133]
+[node name="Cylinder_001" parent="baseLevel/BaseLevel/baseLevelTunnel" index="1" unique_id=1616345624]
 visible = false
 
-[node name="Cylinder_002" parent="baseLevel/BaseLevel/baseLevelTunnel" index="2" unique_id=941398070]
+[node name="Cylinder_002" parent="baseLevel/BaseLevel/baseLevelTunnel" index="2" unique_id=1944168280]
 visible = false
 
 [node name="TrashBag" parent="baseLevel/BaseLevel" unique_id=296147440 instance=ExtResource("29_bnpwn")]
@@ -2879,10 +2879,10 @@ transform = Transform3D(0.14621007, 0, -0.03350538, 0, 0.14999999, 0, 0.03350538
 visible = false
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V1/WoodLantern" index="0" unique_id=1873451530]
+[node name="Torus" parent="TerrainLight/V1/WoodLantern" index="0" unique_id=1834588202]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V1/WoodLantern" index="1" unique_id=1362000570]
+[node name="Cube" parent="TerrainLight/V1/WoodLantern" index="1" unique_id=1643635339]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/WoodLantern" unique_id=64119384]
@@ -2898,10 +2898,10 @@ omni_attenuation = 0.8
 transform = Transform3D(-0.018920626, 0.0059654685, -0.12341566, -0.10163483, 0.07025119, 0.01897714, 0.070266426, 0.10321911, -0.005783177, -17.944645, 2.8724782, 441.19095)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly" index="0" unique_id=1179902911]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly" index="0" unique_id=555538047]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly" index="1" unique_id=984298068]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly" index="1" unique_id=1025364299]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly" unique_id=938465147]
@@ -2916,10 +2916,10 @@ omni_range = 7.430518
 transform = Transform3D(-0.039584365, -0.017957915, -0.11719895, 0.002991254, 0.12336737, -0.019913396, 0.11852902, -0.009110653, -0.038637627, -10.409866, 3.353692, 455.04727)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly2" index="0" unique_id=1179902911]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly2" index="0" unique_id=555538047]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly2" index="1" unique_id=984298068]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly2" index="1" unique_id=1025364299]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly2" unique_id=1020982626]
@@ -2934,10 +2934,10 @@ omni_range = 7.430518
 transform = Transform3D(-0.039584365, -0.006625691, -0.11838151, 0.0029912537, 0.12470913, -0.007980065, 0.118529014, -0.0053599644, -0.039333712, -4.6482053, 5.1640353, 477.03964)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly3" index="0" unique_id=1179902911]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly3" index="0" unique_id=555538047]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly3" index="1" unique_id=984298068]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly3" index="1" unique_id=1025364299]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly3" unique_id=2019259183]
@@ -2952,10 +2952,10 @@ omni_range = 7.430518
 transform = Transform3D(0.07927865, 0.053161032, 0.080708124, -0.09456531, 0.06420151, 0.05060201, -0.01993221, -0.09315077, 0.08093602, -43.44664, 2.3275163, 451.07712)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly4" index="0" unique_id=1179902911]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly4" index="0" unique_id=555538047]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly4" index="1" unique_id=984298068]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly4" index="1" unique_id=1025364299]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly4" unique_id=2007319504]
@@ -2970,10 +2970,10 @@ omni_range = 7.430518
 transform = Transform3D(-0.11162341, 0.006051506, -0.05593387, 0.009218182, 0.1245625, -0.004919652, 0.055499904, -0.008518047, -0.11167902, -57.13659, 7.6629887, 466.83667)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly5" index="0" unique_id=1179902911]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly5" index="0" unique_id=555538047]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly5" index="1" unique_id=984298068]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly5" index="1" unique_id=1025364299]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly5" unique_id=103437841]
@@ -2988,10 +2988,10 @@ omni_range = 7.430518
 transform = Transform3D(0.06522931, 0.008186282, 0.10631616, 0.0092181815, 0.123731546, -0.015183006, -0.10623164, 0.015763346, 0.06396368, -17.282196, 8.781667, 476.73563)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly6" index="0" unique_id=1179902911]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly6" index="0" unique_id=555538047]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly6" index="1" unique_id=984298068]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly6" index="1" unique_id=1025364299]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly6" unique_id=825881559]
@@ -3226,43 +3226,43 @@ draw_pass_1 = SubResource("QuadMesh_vuohh")
 [node name="BCapybara" parent="village1/Animals" unique_id=465025353 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.055610362, 0, 0.13931076, 0, 0.15, 0, -0.13931076, 0, -0.055610362, -3.8215637, -0.61532, 4.810768)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_001"
 
 [node name="BCapybara3" parent="village1/Animals" unique_id=553326150 instance=ExtResource("87_vqo61")]
 transform = Transform3D(0.016774971, 0, -0.14905913, 0, 0.15000014, 0, 0.14905913, 0, 0.016774971, 4.825821, 0.21053702, 7.1662426)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara3" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara3" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara5" parent="village1/Animals" unique_id=1579351231 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.13698082, 0, -0.06112531, 0, 0.15000021, 0, 0.06112531, 0, -0.13698082, 17.478714, 3.7106357, -3.8578434)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara5" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara5" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara7" parent="village1/Animals" unique_id=1983831246 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.090243116, 0, -0.11981755, 0, 0.15000032, 0, 0.11981755, 0, -0.090243116, 17.784958, 3.7018523, -4.18664)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara7" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara7" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara6" parent="village1/Animals" unique_id=1874902187 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.08675443, 0, -0.038712658, 0, 0.09500002, 0, 0.038712658, 0, -0.08675443, 17.49907, 3.8441057, -3.8152218)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara6" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara6" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara4" parent="village1/Animals" unique_id=1220208234 instance=ExtResource("87_vqo61")]
 transform = Transform3D(0.03151958, 0, -0.14665106, 0, 0.1500002, 0, 0.14665106, 0, 0.03151958, 1.4936066, 0.2405371, -0.39003944)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara4" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara4" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_002"
 
 [node name="BCapybara2" parent="village1/Animals" unique_id=833901606 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.14671074, 0, -0.031240538, 0, 0.15000007, 0, 0.031240538, 0, -0.14671074, -3.317093, -0.6153203, 4.9820957)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara2" index="1" unique_id=782978351]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara2" index="1" unique_id=98564837]
 autoplay = &"ArmatureAction_001"
 
 [node name="Village2" type="Node3D" parent="." unique_id=1326639925]
@@ -3302,13 +3302,13 @@ transform = Transform3D(0.9766994, 0.07796575, 0.19994943, -0.079572625, 0.99682
 [node name="l3House Only Oong" parent="Village3/Houses" unique_id=684169788 instance=ExtResource("93_qw2kp")]
 transform = Transform3D(1, 0, 0, 0, 0.9999206, 0.012600943, 0, -0.012600943, 0.9999206, 77.29465, 2.5239935, 603.99963)
 
-[node name="Oong" parent="Village3/Houses/l3House Only Oong" index="0" unique_id=695449855]
+[node name="Oong" parent="Village3/Houses/l3House Only Oong" index="0" unique_id=1140993781]
 transform = Transform3D(0.12909383, 0, 0, 0, 0.12909383, 0, 0, 0, 0.12909383, 2.0498998, -1.0749536, -2.578122)
 
 [node name="l3House Only Oong2" parent="Village3/Houses" unique_id=11675222 instance=ExtResource("93_qw2kp")]
 transform = Transform3D(0.48495618, 0.13423748, 0.86417466, -0.01035676, 0.98896164, -0.1478094, -0.874477, 0.06273104, 0.48099336, 69.098305, 2.8218915, 610.0998)
 
-[node name="Oong" parent="Village3/Houses/l3House Only Oong2" index="0" unique_id=695449855]
+[node name="Oong" parent="Village3/Houses/l3House Only Oong2" index="0" unique_id=1140993781]
 transform = Transform3D(0.12909383, 0, 0, 0, 0.12909383, 0, 0, 0, 0.12909383, 1.9842262, -1.0331497, -2.4727733)
 
 [node name="l3House" parent="Village3/Houses" unique_id=2017145087 instance=ExtResource("91_r3ggl")]
@@ -3335,7 +3335,7 @@ transform = Transform3D(0.457098, 0.12479732, 0.88061744, -3.7252903e-09, 0.9901
 [node name="Stove Station" parent="Village3" unique_id=1579290425 instance=ExtResource("98_tssr6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.56796, 2.586281, 604.0302)
 
-[node name="Cube_002" parent="Village3/Stove Station" index="0" unique_id=1137602331]
+[node name="Cube_002" parent="Village3/Stove Station" index="0" unique_id=1592991777]
 transform = Transform3D(0.22606358, 0, 0, 0, 0.36015356, 0, 0, 0, 0.8178957, 1.6850933, -0.7175866, -1.1067117)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Village3/Stove Station" unique_id=1779017494]
@@ -3605,7 +3605,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.51552, 1.3858478, 381.680
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.28532, 3.9584966, 404.2254)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -176.83936, 3.9584966, 629.32574)
 
 [editable path="StatueOfCatalyst"]
 [editable path="StatueOfCatalyst/StatueL"]
