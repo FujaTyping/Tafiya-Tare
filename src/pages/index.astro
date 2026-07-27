@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Swiper, SwiperWrapper, SwiperSlide } from "astro-swiper";
 import Logo from "../assets/Logo.webp";
 import Image from "astro/components/Image.astro";
+import Lore from "../components/lore.astro";
 
 // Images
 import Showcase1 from "../assets/background/L1.webp";
@@ -25,9 +26,9 @@ import WindowsPF from "../assets/platform/windows.webp";
 </script>
 
 <Layout>
-	<main class="relative">
+	<main class="z-2 absolute top-0 left-0 h-screen	overflow-y-auto w-full">
 		<div
-			class="z-2 absolute top-0 left-0 w-full flex flex-col gap-8 items-center justify-center h-screen backdrop-blur-sm p-4"
+			class=" flex flex-col gap-8 items-center justify-center h-screen p-4"
 		>
 			<Image
 				src={Logo}
@@ -99,43 +100,44 @@ import WindowsPF from "../assets/platform/windows.webp";
 				</p>
 			</div>
 		</div>
-		<Swiper
-			options={{
-				loop: true,
-				effect: "fade",
-				autoplay: {
-					delay: 5000,
-					disableOnInteraction: false,
-					waitForTransition: false,
-				},
-			}}
-		>
-			<SwiperWrapper>
-				<SwiperSlide>
-					<Image
-						src={Showcase1}
-						alt="Background"
-						loading="eager"
-						class="h-screen w-full z-1 blur-sm bg-cover"
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						src={Showcase3}
-						alt="Background"
-						loading="eager"
-						class="h-screen w-full z-1 blur-sm bg-cover"
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						src={Showcase4}
-						alt="Background"
-						loading="eager"
-						class="h-screen w-full z-1 blur-sm bg-cover"
-					/>
-				</SwiperSlide>
-			</SwiperWrapper>
-		</Swiper>
+		<div><Lore /></Lore></div>
 	</main>
+	<Swiper
+		options={{
+			loop: true,
+			effect: "fade",
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+				waitForTransition: false,
+			},
+		}}
+	>
+		<SwiperWrapper>
+			<SwiperSlide>
+				<Image
+					src={Showcase1}
+					alt="Background"
+					loading="eager"
+					class="h-screen w-full z-1 blur-sm bg-cover"
+				/>
+			</SwiperSlide>
+			<SwiperSlide>
+				<Image
+					src={Showcase3}
+					alt="Background"
+					loading="eager"
+					class="h-screen w-full z-1 blur-sm bg-cover"
+				/>
+			</SwiperSlide>
+			<SwiperSlide>
+				<Image
+					src={Showcase4}
+					alt="Background"
+					loading="eager"
+					class="h-screen w-full z-1 blur-sm bg-cover"
+				/>
+			</SwiperSlide>
+		</SwiperWrapper>
+	</Swiper>
 </Layout>
