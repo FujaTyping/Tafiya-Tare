@@ -47,6 +47,9 @@ var JUMP_VELOCITY = 4.0
 
 @onready var NeedNPCbackCar: Node3D = get_tree().current_scene.get_node("SpawnAssets/NeedNPC")
 
+@onready var transitionNode:Control = get_tree().current_scene.get_node('Transition')
+@onready var going_direct: AudioStreamPlayer3D = $GoingDirect
+
 var is_in_car: bool = false
 var isInViewInteract = false
 var interActionJustPress = false
@@ -257,6 +260,9 @@ func _input(event):
 				else :
 					wrongInteraction("INTERACTION_FAIL_NEED_POTION")
 			elif colliderView.has_method("treeLV2TP") :
+				transitionNode.onTransition()
+				going_direct.play()
+				await Varibles.wait(0.5)
 				colliderView.treeLV2TP()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()

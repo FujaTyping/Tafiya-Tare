@@ -139,6 +139,8 @@
 [ext_resource type="PackedScene" uid="uid://c4jq3qm8v7q08" path="res://Model/Potion/potion_mt.glb" id="137_hxd3m"]
 [ext_resource type="PackedScene" uid="uid://rmp441f2jjh2" path="res://Item/L4/AxeViL.tscn" id="138_lmtqe"]
 [ext_resource type="PackedScene" uid="uid://dr0nanmisjev6" path="res://Interaction/BigTreeLV2.tscn" id="139_qk0aj"]
+[ext_resource type="Script" uid="uid://c4w4ajcwwsroh" path="res://Script/transitionBLK.gd" id="140_cn87d"]
+[ext_resource type="PackedScene" uid="uid://cd1j6scjr4sih" path="res://Model/L2/LV2TreeCondor.glb" id="141_vm2xw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -809,6 +811,43 @@ size = Vector2(0.495, 0.495)
 
 [sub_resource type="QuadMesh" id="QuadMesh_s2n2m"]
 size = Vector2(0.495, 0.495)
+
+[sub_resource type="Animation" id="Animation_qk0aj"]
+resource_name = "IO"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cn87d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vm2xw"]
+_data = {
+&"IO": SubResource("Animation_qk0aj"),
+&"RESET": SubResource("Animation_cn87d")
+}
 
 [node name="Main" type="Node3D" unique_id=183536831]
 script = ExtResource("1_ryrav")
@@ -1989,13 +2028,13 @@ omni_range = 2.762321
 [node name="base" parent="." unique_id=39208368 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
-[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 312218449) index="0" unique_id=691635835]
+[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1807638705) index="0" unique_id=1713970161]
 transform = Transform3D(0.9988351, 0, 0, 0, 0.9988351, 0, 0, 0, 0.9988351, 0.22354126, 6.5267086e-06, 0.13165283)
 
-[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1726844504) index="0" unique_id=987545919]
+[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1847057007) index="0" unique_id=1127120753]
 transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 0.001013279)
 
-[node name="Landscape_009" parent="base" index="12" unique_id=756278707]
+[node name="Landscape_009" parent="base" index="12" unique_id=1696750461]
 material_override = ExtResource("53_ftkif")
 
 [node name="Water2" type="MeshInstance3D" parent="base" unique_id=1147071751]
@@ -3621,8 +3660,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.51552, 1.3858478, 381.680
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99
 
+[node name="Transition" type="Control" parent="." unique_id=143494358]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("140_cn87d")
+
+[node name="ColorRect" type="ColorRect" parent="Transition" unique_id=362010144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition" unique_id=1490775883]
+libraries/ = SubResource("AnimationLibrary_vm2xw")
+
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -176.83936, 3.9584966, 629.32574)
+
+[node name="LV2TreeCondor" parent="." unique_id=1435811172 instance=ExtResource("141_vm2xw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.95377, 1.6076381, 610.76807)
 
 [editable path="StatueOfCatalyst"]
 [editable path="StatueOfCatalyst/StatueL"]
