@@ -48,6 +48,24 @@ _subresources={
 "PATH:Base_002": {
 "generate/physics": true
 },
+"PATH:Bridge": {
+"generate/physics": true
+},
+"PATH:BridgeIn": {
+"generate/physics": true
+},
+"PATH:BridgeIn_001": {
+"generate/physics": true
+},
+"PATH:BridgeIn_002": {
+"generate/physics": true
+},
+"PATH:BridgeIn_003": {
+"generate/physics": true
+},
+"PATH:Bridge_001": {
+"generate/physics": true
+},
 "PATH:Fence": {
 "generate/physics": true
 },
