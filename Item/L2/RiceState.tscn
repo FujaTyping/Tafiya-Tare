@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bq66pufqxfk13"]
+
+[ext_resource type="PackedScene" uid="uid://cubeaabfjkpdx" path="res://Model/L2/SeedState/RiceSeed.glb" id="1_er8j2"]
+[ext_resource type="Script" uid="uid://dg2a2h4vd5oax" path="res://Item/L2/rice_state.gd" id="1_g2iwh"]
+[ext_resource type="PackedScene" uid="uid://c5a1tj5lfiwwe" path="res://Model/L2/SeedState/Rice Tonkhla.glb" id="2_rdgwf"]
+[ext_resource type="PackedScene" uid="uid://n07ytntg3p8d" path="res://Model/L2/SeedState/Rice Tonkhla Bigger Bad.glb" id="3_g2iwh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5su8"]
+radius = 0.10888672
+height = 0.7602539
+
+[node name="RiceState" type="StaticBody3D" unique_id=1533130064]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_g2iwh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=585918416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3059082, 0)
+shape = SubResource("CapsuleShape3D_x5su8")
+
+[node name="RiceSeed" parent="." unique_id=1655351800 instance=ExtResource("1_er8j2")]
+transform = Transform3D(-0.2, 3.019916e-08, 0, -3.019916e-08, -0.2, 0, 0, 0, 0.2, -5.454651e-09, 0.036124535, 0)
+
+[node name="Rice Tonkhla" parent="." unique_id=1389065704 instance=ExtResource("2_rdgwf")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+visible = false
+
+[node name="Rice Tonkhla Bigger Bad" parent="." unique_id=1990755383 instance=ExtResource("3_g2iwh")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://xu17u405qrhb"]
+
+[ext_resource type="PackedScene" uid="uid://h6in8hf50jyh" path="res://Model/L2/Seed Pot.glb" id="1_d1l7o"]
+[ext_resource type="Script" uid="uid://1py4e3q15do6" path="res://Item/L2/seed_pot.gd" id="1_qch4p"]
+[ext_resource type="AudioStream" uid="uid://c3y0d1xhirob7" path="res://SFX/CollectSeed.wav" id="3_lunvc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qch4p"]
+size = Vector3(0.5205078, 0.122802734, 0.74902344)
+
+[node name="SeedPot" type="StaticBody3D" unique_id=1174352754]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_qch4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1797680771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002105713, 0.021850586, 0.006713867)
+shape = SubResource("BoxShape3D_qch4p")
+
+[node name="Seed Pot" parent="." unique_id=791316373 instance=ExtResource("1_d1l7o")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=258939075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1800715, 0)
+stream = ExtResource("3_lunvc")
+max_distance = 10.0
+bus = &"SFX"

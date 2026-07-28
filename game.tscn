@@ -109,6 +109,7 @@
 [ext_resource type="PackedScene" uid="uid://d2rtthyhpu62s" path="res://Item/Ingredient/guava.tscn" id="100_hl454"]
 [ext_resource type="PackedScene" uid="uid://cdecbnbdaf816" path="res://Item/Ingredient/mango.tscn" id="101_ell1s"]
 [ext_resource type="PackedScene" uid="uid://dcdfppks6w67e" path="res://Model/L3/KhengTakPla with pla.glb" id="102_j4tta"]
+[ext_resource type="PackedScene" uid="uid://dsbygpgqivcuc" path="res://Interaction/LV2/Farmland Interact.tscn" id="103_74iwm"]
 [ext_resource type="PackedScene" uid="uid://cabi8pyhr766a" path="res://Item/View/Jarrecipie.tscn" id="104_hsv4y"]
 [ext_resource type="PackedScene" uid="uid://bhhrwxe7rln5a" path="res://Model/Candle/Candle.glb" id="104_oykgp"]
 [ext_resource type="PackedScene" uid="uid://c1g7gfgbx164v" path="res://Quest/Level3QuestSubmit.tscn" id="105_lrvy0"]
@@ -141,6 +142,8 @@
 [ext_resource type="PackedScene" uid="uid://dr0nanmisjev6" path="res://Interaction/BigTreeLV2.tscn" id="139_qk0aj"]
 [ext_resource type="Script" uid="uid://c4w4ajcwwsroh" path="res://Script/transitionBLK.gd" id="140_cn87d"]
 [ext_resource type="PackedScene" uid="uid://cd1j6scjr4sih" path="res://Model/L2/LV2TreeCondor.glb" id="141_vm2xw"]
+[ext_resource type="PackedScene" uid="uid://b7a3r7shywp7d" path="res://Model/L2/Root Table.glb" id="143_vuo27"]
+[ext_resource type="PackedScene" uid="uid://xu17u405qrhb" path="res://Item/L2/Seed Pot.tscn" id="144_h17um"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -884,13 +887,13 @@ foggyIcon = ExtResource("5_wys8s")
 environment = SubResource("Environment_ryrav")
 
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
-transform = Transform3D(-0.64071226, -0.49441645, 0.5874015, 0.45214492, 0.3753569, 0.809118, -0.6205263, 0.7840023, -0.016947808, 0, 0, 0)
+transform = Transform3D(-0.64071226, -0.7658807, -0.053989843, 0.45214492, -0.4332129, 0.77967376, -0.6205263, 0.4751351, 0.6238538, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -2069,13 +2072,13 @@ omni_range = 2.762321
 [node name="base" parent="." unique_id=39208368 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
-[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1902249421) index="0" unique_id=1406110401]
+[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1715818741) index="0" unique_id=2016984705]
 transform = Transform3D(0.9988351, 0, 0, 0, 0.9988351, 0, 0, 0, 0.9988351, 0.22354126, 6.5267086e-06, 0.13165283)
 
-[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1002315668) index="0" unique_id=1086602075]
+[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 34488425) index="0" unique_id=255061239]
 transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 0.001013279)
 
-[node name="Landscape_009" parent="base" index="12" unique_id=1177506256]
+[node name="Landscape_009" parent="base" index="12" unique_id=320770734]
 material_override = ExtResource("53_ftkif")
 
 [node name="Water2" type="MeshInstance3D" parent="base" unique_id=1147071751]
@@ -3378,6 +3381,29 @@ transform = Transform3D(0.71767646, -0.0042713494, 0.69636375, 0.0059515256, 0.9
 [node name="BigTreeLv4" parent="Village2" unique_id=1594508296 instance=ExtResource("139_qk0aj")]
 transform = Transform3D(-0.47281235, 0, -0.8811631, 0, 1, 0, 0.8811631, 0, -0.47281235, -148.53389, 1.9038757, 639.1388)
 
+[node name="Farmland" type="Node3D" parent="Village2" unique_id=1703591455]
+
+[node name="FarmlandInteract" parent="Village2/Farmland" unique_id=2094219005 instance=ExtResource("103_74iwm")]
+transform = Transform3D(0.17237614, 0, -0.9850312, 0, 1, 0, 0.9850312, 0, 0.17237614, -143.42459, 0.69797575, 607.96375)
+
+[node name="FarmlandInteract2" parent="Village2/Farmland" unique_id=1584235938 instance=ExtResource("103_74iwm")]
+transform = Transform3D(0.32119158, 0, -0.9470142, 0, 1, 0, 0.9470142, 0, 0.32119158, -137.35097, 0.69797575, 614.80396)
+
+[node name="FarmlandInteract3" parent="Village2/Farmland" unique_id=1292741975 instance=ExtResource("103_74iwm")]
+transform = Transform3D(0.1996587, 0, -0.9798655, 0, 1, 0, 0.9798655, 0, 0.1996587, -135.90694, 0.69797575, 622.62585)
+
+[node name="FarmlandInteract4" parent="Village2/Farmland" unique_id=1970864878 instance=ExtResource("103_74iwm")]
+transform = Transform3D(0.30717394, 0, -0.95165336, 0, 1, 0, 0.95165336, 0, 0.30717394, -136.7894, 0.69797575, 629.52515)
+
+[node name="LV2TreeCondor" parent="Village2" unique_id=1435811172 instance=ExtResource("141_vm2xw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.95377, 1.6076381, 610.76807)
+
+[node name="Root Table" parent="Village2" unique_id=231182952 instance=ExtResource("143_vuo27")]
+transform = Transform3D(-0.26609448, 0, 0.96394694, 0, 1, 0, -0.96394694, 0, -0.26609448, -152.6392, 1.528712, 613.99133)
+
+[node name="SeedPot" parent="Village2" unique_id=1174352754 instance=ExtResource("144_h17um")]
+transform = Transform3D(0.68560237, 0, 0.7279762, 0, 1, 0, -0.7279762, 0, 0.68560237, -152.64558, 2.0744364, 613.973)
+
 [node name="Village3" type="Node3D" parent="." unique_id=1857284539 node_paths=PackedStringArray("notiShow")]
 script = ExtResource("63_o46vb")
 notiShow = NodePath("../AreaNotifier/V3")
@@ -3725,10 +3751,7 @@ color = Color(0, 0, 0, 1)
 libraries/ = SubResource("AnimationLibrary_vm2xw")
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -176.83936, 3.9584966, 629.32574)
-
-[node name="LV2TreeCondor" parent="." unique_id=1435811172 instance=ExtResource("141_vm2xw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.95377, 1.6076381, 610.76807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179.48384, 3.9584966, 629.91437)
 
 [editable path="StatueOfCatalyst"]
 [editable path="StatueOfCatalyst/StatueL"]

@@ -60,6 +60,7 @@ var IngreInv:Array[String] = [];
 var FoodInv: String;
 var FlowInv:Array[String] = [];
 var PotionInv:String;
+var RiceSeed:int = 0;
 
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
@@ -86,6 +87,8 @@ var PotionInv:String;
 @onready var noti_item: MarginContainer = $NotiItem
 
 @onready var testing_marker: Marker3D = $"../TestingMarker"
+@onready var planting: AudioStreamPlayer3D = $Planting
+@onready var havest: AudioStreamPlayer3D = $Havest
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -264,6 +267,18 @@ func _input(event):
 				going_direct.play()
 				await Varibles.wait(0.5)
 				colliderView.treeLV2TP()
+			elif colliderView.has_method("collectRiceSeed") :
+				colliderView.collectRiceSeed()
+			elif colliderView.has_method("plantRice"):
+				if RiceSeed >= 1 :
+					planting.play()
+					colliderView.plantRice()
+				else :
+					wrongInteraction("INTERACTION_FAIL_NEED_SEED")
+			elif colliderView.has_method("collectSeedResult") :
+				if label.text != "SEED_GROWING" :
+					havest.play()
+					colliderView.collectSeedResult()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()

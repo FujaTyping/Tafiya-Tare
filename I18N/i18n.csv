@@ -247,3 +247,9 @@ DIALOGE_V4_5_3,"Uh... sure, sir. Just hop in the back of the pickup truck.",เ�
 DIALOGE_V4_5_4,"Move aside! I'm getting in the carriage! I hope there's something strange on the mountaintop for me to try my hand at slashing with... Even if my sword breaks, I don't care! Haha!",หลีกทางไป! ข้าจะขึ้นรถแล้ว! หวังว่าบนยอดเขาจะมีอะไรแปลกๆ ให้ข้าลองฟันเล่นนะ... ถึงฟันแล้วดาบข้าจะหัก ข้าก็ไม่สนหรอก ฮ่าๆๆ!
 ON_INTERACTION_GOING_UP,Press E to go to the top,กด E เพื่อขึ้นไปด้านบน
 ON_INTERACTION_GOING_DOWN,Press E to go down,กด E เพื่อลงไปด้านล่าง
+ON_INTERACTION_PLANT,Press E to plant,กด E เพื่อปลูก
+ON_INTERACTION_COLLECT_SEED,Press E to collect seed,กด E เพื่อเก็บเมล็ด
+INTERACTION_FAIL_NEED_SEED,Need a seed to plant,ต้องการเมล็ดเพื่อปลูก
+SEED_COLLECT_NOTIFY,The seeds have been collected and placed in the bag,เก็บเมล็ดใส่กระเป้าแล้ว
+SEED_GROWING,Growing,กำลังเจริญเติบโต
+ON_INTERACTION_HARVEST,Press E to harvest,กด E เพื่อเก็บเกี่ยว

@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://c2s6m87ww67ld" path="res://Script/notiItem.gd" id="18_qk1vb"]
 [ext_resource type="AudioStream" uid="uid://bykn78w4taenr" path="res://SFX/potionPickup.wav" id="19_60ii7"]
 [ext_resource type="AudioStream" uid="uid://4jdklvxc0i4t" path="res://SFX/GoingDi.wav" id="20_mt0g5"]
+[ext_resource type="AudioStream" uid="uid://bbbt4c2dm6eau" path="res://SFX/Plant.wav" id="21_6u5hv"]
+[ext_resource type="AudioStream" uid="uid://cg33l6va54id1" path="res://SFX/Havest.wav" id="22_k5be8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -613,6 +615,17 @@ bus = &"SFX"
 [node name="GoingDirect" type="AudioStreamPlayer3D" parent="." unique_id=305900517]
 stream = ExtResource("20_mt0g5")
 volume_db = 10.0
+bus = &"SFX"
+
+[node name="Planting" type="AudioStreamPlayer3D" parent="." unique_id=2063477759]
+stream = ExtResource("21_6u5hv")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="Havest" type="AudioStreamPlayer3D" parent="." unique_id=1674730298]
+stream = ExtResource("22_k5be8")
+volume_db = 10.0
+max_db = -2.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="." unique_id=421009574]

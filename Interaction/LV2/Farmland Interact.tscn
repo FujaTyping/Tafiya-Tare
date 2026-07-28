@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dsbygpgqivcuc"]
+
+[ext_resource type="Script" uid="uid://cjcpy3kha01kr" path="res://Interaction/LV2/farmland_interact.gd" id="1_3f8b0"]
+[ext_resource type="PackedScene" uid="uid://ij1oedbpf6jb" path="res://Model/L2/Farmland/Bad Soil.glb" id="1_mbjq7"]
+[ext_resource type="PackedScene" uid="uid://csw3k61aptu2j" path="res://Model/L2/Farmland/Good Soil.glb" id="2_3f8b0"]
+[ext_resource type="PackedScene" uid="uid://bq66pufqxfk13" path="res://Item/L2/RiceState.tscn" id="2_ts40p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mbjq7"]
+size = Vector3(4.9873047, 0.65533066, 2.2541504)
+
+[node name="FarmlandInteract" type="StaticBody3D" unique_id=2094219005]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_3f8b0")
+plantScence = ExtResource("2_ts40p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=827712164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006591797, 0.113874435, 0.012329102)
+shape = SubResource("BoxShape3D_mbjq7")
+
+[node name="Bad Soil" parent="." unique_id=1362828242 instance=ExtResource("1_mbjq7")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+
+[node name="Good Soil" parent="." unique_id=1083599878 instance=ExtResource("2_3f8b0")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+visible = false
