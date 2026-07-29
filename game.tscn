@@ -101,6 +101,7 @@
 [ext_resource type="PackedScene" uid="uid://j2l3djfeqtf8" path="res://Model/L3/l3House With Extended.glb" id="93_qhxlk"]
 [ext_resource type="PackedScene" uid="uid://dsysmmi148smm" path="res://Model/L3/l3House Only Oong.glb" id="93_qw2kp"]
 [ext_resource type="PackedScene" uid="uid://4aa8u0x2w3sg" path="res://Model/NPC/V2/V20001.glb" id="96_71bxy"]
+[ext_resource type="PackedScene" uid="uid://7nhrldylkaxn" path="res://Model/NPC/V2/V20003.glb" id="96_y4uvs"]
 [ext_resource type="PackedScene" uid="uid://m12kghl86ot7" path="res://Model/Crate.glb" id="97_8jd3k"]
 [ext_resource type="PackedScene" uid="uid://tgwq2ok0lq1s" path="res://Inherit Sence/shelf_with_jarrs.tscn" id="97_tssr6"]
 [ext_resource type="PackedScene" uid="uid://c0kgg4oxbd021" path="res://Model/L3/Station/Stove Station.glb" id="98_tssr6"]
@@ -114,8 +115,10 @@
 [ext_resource type="PackedScene" uid="uid://bhhrwxe7rln5a" path="res://Model/Candle/Candle.glb" id="104_oykgp"]
 [ext_resource type="PackedScene" uid="uid://c1g7gfgbx164v" path="res://Quest/Level3QuestSubmit.tscn" id="105_lrvy0"]
 [ext_resource type="PackedScene" uid="uid://s8bfci6vi8m7" path="res://Model/Torch/torch.tscn" id="106_lea4x"]
+[ext_resource type="Script" uid="uid://cf272rbhoe1sn" path="res://Model/NPC/V2/bot_base.gd" id="108_68ii4"]
 [ext_resource type="PackedScene" uid="uid://cutmtyaalfflk" path="res://Item/View/Desertrecipie.tscn" id="108_y7j3j"]
 [ext_resource type="PackedScene" uid="uid://bvxu5s11gb48v" path="res://Item/Ingredient/sugar.tscn" id="109_e3l5k"]
+[ext_resource type="AudioStream" uid="uid://dlhqjvvv3ygpy" path="res://SFX/Collect Powder.wav" id="109_u54ki"]
 [ext_resource type="ArrayMesh" uid="uid://dnsgmvjgr5u5n" path="res://Terrain/Tree/L4/mesh/LV43.res" id="110_n2sb7"]
 [ext_resource type="ArrayMesh" uid="uid://b1nghw7emu04d" path="res://Terrain/Tree/L4/mesh/LV431.res" id="111_v78r4"]
 [ext_resource type="PackedScene" uid="uid://bgwfnigsjn4ds" path="res://Item/L4/FlowerLV4.tscn" id="113_epi3u"]
@@ -144,6 +147,9 @@
 [ext_resource type="PackedScene" uid="uid://cd1j6scjr4sih" path="res://Model/L2/LV2TreeCondor.glb" id="141_vm2xw"]
 [ext_resource type="PackedScene" uid="uid://b7a3r7shywp7d" path="res://Model/L2/Root Table.glb" id="143_vuo27"]
 [ext_resource type="PackedScene" uid="uid://xu17u405qrhb" path="res://Item/L2/Seed Pot.tscn" id="144_h17um"]
+[ext_resource type="PackedScene" uid="uid://ba6bdrg2okcli" path="res://Model/NPC/V2/V20002.glb" id="145_j7epm"]
+[ext_resource type="PackedScene" uid="uid://doje3v3hgo3o6" path="res://Model/NPC/V2/Bot Base.glb" id="147_jicni"]
+[ext_resource type="PackedScene" uid="uid://cpy50iu0d0v34" path="res://Interaction/LV2/SubmitQuestLV2.tscn" id="150_6ayu4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -887,13 +893,13 @@ foggyIcon = ExtResource("5_wys8s")
 environment = SubResource("Environment_ryrav")
 
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
-transform = Transform3D(-0.64071226, -0.7658807, -0.053989843, 0.45214492, -0.4332129, 0.77967376, -0.6205263, 0.4751351, 0.6238538, 0, 0, 0)
+transform = Transform3D(-0.108206674, -0.7362572, 0.66799456, -0.09296655, 0.6764896, 0.7305609, -0.9897719, 0.016950376, -0.14164802, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1352,6 +1358,18 @@ talkingAnimation = "Talking"
 saveAfter = true
 warpOnCar = true
 viewDetect = NodePath("../../../Village2/V20001/VisibleOnScreenNotifier3D")
+
+[node name="DialogeTrigged2" parent="DialogeTriggers/V2" unique_id=1862431491 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.9484288, 0, 0.31699017, 0, 1, 0, -0.31699017, 0, 0.9484288, -151.65329, 2.0180702, 613.9973)
+dialoguesLine = Array[String](["DIALOGE_V2_4_1", "DIALOGE_V2_4_2", "DIALOGE_V2_4_3", "DIALOGE_V2_4_4", "DIALOGE_V2_4_5"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Village2/V20002")
+helloAnimation = "Talking"
+talkingAnimation = "TalkingRN"
+saveAfter = true
 
 [node name="V3" type="Node3D" parent="DialogeTriggers" unique_id=592708626]
 
@@ -3272,6 +3290,36 @@ transform = Transform3D(-0.5745174, 0, 0.6196409, 0, 0.845, 0, -0.6196409, 0, -0
 [node name="V1NPC05glb" parent="NPC" unique_id=2046467360 instance=ExtResource("80_66xay")]
 transform = Transform3D(-0.7918661, 0, -0.070518866, 0, 0.79499984, 0, 0.070518866, 0, -0.7918661, -59.1469, 7.224997, 466.15186)
 
+[node name="V20003" parent="NPC" unique_id=867167271 instance=ExtResource("96_y4uvs")]
+transform = Transform3D(-0.42549735, 0, -0.67745996, 0, 0.8, 0, 0.67745996, 0, -0.42549735, -156.02177, 1.8249285, 625.5255)
+
+[node name="DialogeTrigged" parent="NPC" unique_id=1877250743 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.67094445, 0, 0.7415076, 0, 1, 0, -0.7415076, 0, 0.67094445, -155.9952, 2.1716356, 625.52637)
+dialoguesLine = Array[String](["DIALOGE_V2_2_1", "DIALOGE_V2_2_2", "DIALOGE_V2_2_3", "DIALOGE_V2_2_4", "DIALOGE_V2_2_5", "DIALOGE_V2_2_6"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../V20003")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+
+[node name="DialogeTrigged2" parent="NPC" unique_id=384996034 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.985491, 0, 0.16972792, 0, 1, 0, -0.16972792, 0, 0.985491, -156.21535, 8.330668, 624.6322)
+dialoguesLine = Array[String](["DIALOGE_V2_3_1", "DIALOGE_V2_3_2", "DIALOGE_V2_3_3"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "DIALOGE_BOT_NAME", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../Village2/Bot Base")
+NoHelloAnimation = true
+talkingAnimation = "HnT"
+saveAfter = true
+triggedAfterFinish = true
+triggedBody = NodePath("../../Village2/Bot Base")
+triggedParams = "Give"
+
 [node name="village1" parent="." unique_id=818011749 node_paths=PackedStringArray("notiShow") instance=ExtResource("90_lon8v")]
 transform = Transform3D(-0.27391088, 0, -1.7638588, 0, 1.785, 0, 1.7638588, 0, -0.27391088, -21.669647, 1.7840261, 449.18808)
 script = ExtResource("63_o46vb")
@@ -3368,10 +3416,6 @@ aabb = AABB(-0.46600306, -0.810357, -0.45663232, 0.9320061, 1.620714, 0.91326463
 [node name="Crate" parent="Village2" unique_id=143357088 instance=ExtResource("97_8jd3k")]
 transform = Transform3D(0.075113, -0.006397206, -0.1467723, -0.0018039988, 0.16479091, -0.008105785, 0.14690056, 0.005294702, 0.07494787, -160.89618, 8.050873, 608.3049)
 
-[node name="Fuel" parent="Village2" unique_id=379726085 instance=ExtResource("21_hb5m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -170.26097, 1.3237916, 629.67456)
-fuelValue = 50
-
 [node name="BigTreeLv2" parent="Village2" unique_id=1039495945 instance=ExtResource("139_qk0aj")]
 transform = Transform3D(-0.83586496, 0, -0.5489352, 0, 1, 0, 0.5489352, 0, -0.83586496, -160.92459, 1.6312401, 610.7089)
 
@@ -3388,12 +3432,15 @@ transform = Transform3D(0.17237614, 0, -0.9850312, 0, 1, 0, 0.9850312, 0, 0.1723
 
 [node name="FarmlandInteract2" parent="Village2/Farmland" unique_id=1584235938 instance=ExtResource("103_74iwm")]
 transform = Transform3D(0.32119158, 0, -0.9470142, 0, 1, 0, 0.9470142, 0, 0.32119158, -137.35097, 0.69797575, 614.80396)
+farm_number = 1
 
 [node name="FarmlandInteract3" parent="Village2/Farmland" unique_id=1292741975 instance=ExtResource("103_74iwm")]
 transform = Transform3D(0.1996587, 0, -0.9798655, 0, 1, 0, 0.9798655, 0, 0.1996587, -135.90694, 0.69797575, 622.62585)
+farm_number = 2
 
 [node name="FarmlandInteract4" parent="Village2/Farmland" unique_id=1970864878 instance=ExtResource("103_74iwm")]
 transform = Transform3D(0.30717394, 0, -0.95165336, 0, 1, 0, 0.95165336, 0, 0.30717394, -136.7894, 0.69797575, 629.52515)
+farm_number = 3
 
 [node name="LV2TreeCondor" parent="Village2" unique_id=1435811172 instance=ExtResource("141_vm2xw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.95377, 1.6076381, 610.76807)
@@ -3401,8 +3448,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.95377, 1.6076381, 610.76
 [node name="Root Table" parent="Village2" unique_id=231182952 instance=ExtResource("143_vuo27")]
 transform = Transform3D(-0.26609448, 0, 0.96394694, 0, 1, 0, -0.96394694, 0, -0.26609448, -152.6392, 1.528712, 613.99133)
 
+[node name="Bot Base" parent="Village2" unique_id=1947105796 instance=ExtResource("147_jicni")]
+transform = Transform3D(0.80785847, 0, 0.14058708, 0, 0.82, 0, -0.14058708, 0, 0.80785847, -156.20805, 7.7931476, 624.69385)
+script = ExtResource("108_68ii4")
+
+[node name="RevPowder" type="AudioStreamPlayer3D" parent="Village2/Bot Base" unique_id=1064601265]
+transform = Transform3D(1.2195121, 0, -2.9802322e-08, 0, 1.2195121, 0, 2.9802322e-08, 0, 1.2195121, -0.5541992, 1.1994438, -0.09649658)
+stream = ExtResource("109_u54ki")
+max_distance = 5.0
+
 [node name="SeedPot" parent="Village2" unique_id=1174352754 instance=ExtResource("144_h17um")]
 transform = Transform3D(0.68560237, 0, 0.7279762, 0, 1, 0, -0.7279762, 0, 0.68560237, -152.64558, 2.0744364, 613.973)
+
+[node name="V20002" parent="Village2" unique_id=1796303370 instance=ExtResource("145_j7epm")]
+transform = Transform3D(0.75682753, 0, 0.25925288, 0, 0.8, 0, -0.25925288, 0, 0.75682753, -151.66699, 1.5690264, 613.9748)
 
 [node name="Village3" type="Node3D" parent="." unique_id=1857284539 node_paths=PackedStringArray("notiShow")]
 script = ExtResource("63_o46vb")
@@ -3712,6 +3771,18 @@ dialoguesLine = Array[String](["DIALOGE_NEED_NPC_1", "DIALOGE_NEED_NPC_2", "DIAL
 charLine = Array[String](["PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
 destroyAfterFinish = true
 
+[node name="NewSoil" parent="SpawnAssets" unique_id=2021159492 instance=ExtResource("13_7sc4i")]
+transform = Transform3D(0.99994844, 0, -0.010157645, 0, 1, 0, 0.010157645, 0, 0.99994844, -310.0368, 4.26757, 104.95905)
+dialoguesLine = Array[String](["DIALOGE_REPAIR_SOIL_1", "DIALOGE_REPAIR_SOIL_2", "DIALOGE_REPAIR_SOIL_3"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
+destroyAfterFinish = true
+
+[node name="RottenPlant" parent="SpawnAssets" unique_id=1756464496 instance=ExtResource("13_7sc4i")]
+transform = Transform3D(0.99994844, 0, -0.010157645, 0, 1, 0, 0.010157645, 0, 0.99994844, -306.01608, 4.2675705, 104.9767)
+dialoguesLine = Array[String](["DIALOGE_PLANT_ROTTEN_1", "DIALOGE_PLANT_ROTTEN_2", "DIALOGE_PLANT_ROTTEN_3"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
+destroyAfterFinish = true
+
 [node name="JarMaker" parent="." unique_id=1979976088 instance=ExtResource("99_i3uta")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0.148776, 0.9888708, -6.5032073e-09, 0.9888708, -0.148776, -4.322492e-08, 76.406784, 2.8360465, 626.4471)
 
@@ -3723,6 +3794,9 @@ transform = Transform3D(-0.9637593, 0.26157048, -0.052428123, 0.06695208, 0.0469
 
 [node name="FlowerLv4" parent="." unique_id=2104041542 instance=ExtResource("113_epi3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.51552, 1.3858478, 381.68054)
+
+[node name="SubmitQuestLv2" parent="." unique_id=323060715 instance=ExtResource("150_6ayu4")]
+transform = Transform3D(-0.15553802, 0, -0.9878299, 0, 1, 0, 0.9878299, 0, -0.15553802, -143.62926, 1.8439689, 638.46234)
 
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99

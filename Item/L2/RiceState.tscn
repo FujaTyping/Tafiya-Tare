@@ -4,10 +4,13 @@
 [ext_resource type="Script" uid="uid://dg2a2h4vd5oax" path="res://Item/L2/rice_state.gd" id="1_g2iwh"]
 [ext_resource type="PackedScene" uid="uid://c5a1tj5lfiwwe" path="res://Model/L2/SeedState/Rice Tonkhla.glb" id="2_rdgwf"]
 [ext_resource type="PackedScene" uid="uid://n07ytntg3p8d" path="res://Model/L2/SeedState/Rice Tonkhla Bigger Bad.glb" id="3_g2iwh"]
+[ext_resource type="PackedScene" uid="uid://c5uk57vra6o0h" path="res://Model/L2/SeedState/Rice Bigger Tonkhla.glb" id="5_losga"]
+[ext_resource type="PackedScene" uid="uid://pr1psyqh75cc" path="res://Model/L2/SeedState/Rice Roung.glb" id="6_riuib"]
+[ext_resource type="PackedScene" uid="uid://cf72jr01ksu62" path="res://Model/L2/SeedState/Rice Ready.glb" id="7_vqev7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5su8"]
 radius = 0.10888672
-height = 0.7602539
+height = 0.9544678
 
 [node name="RiceState" type="StaticBody3D" unique_id=1533130064]
 collision_layer = 2
@@ -15,7 +18,7 @@ collision_mask = 3
 script = ExtResource("1_g2iwh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=585918416]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3059082, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40301514, 0)
 shape = SubResource("CapsuleShape3D_x5su8")
 
 [node name="RiceSeed" parent="." unique_id=1655351800 instance=ExtResource("1_er8j2")]
@@ -27,4 +30,16 @@ visible = false
 
 [node name="Rice Tonkhla Bigger Bad" parent="." unique_id=1990755383 instance=ExtResource("3_g2iwh")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="Rice Bigger Tonkhla" parent="." unique_id=995250149 instance=ExtResource("5_losga")]
+transform = Transform3D(1.09, 0, 0, 0, 1.09, 0, 0, 0, 1.09, 0, 0, 0)
+visible = false
+
+[node name="Rice Roung" parent="." unique_id=1533929468 instance=ExtResource("6_riuib")]
+transform = Transform3D(1.195, 0, 0, 0, 1.195, 0, 0, 0, 1.195, 0, 0, 0)
+visible = false
+
+[node name="Rice Ready" parent="." unique_id=1511641766 instance=ExtResource("7_vqev7")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0, 0, 0)
 visible = false

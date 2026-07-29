@@ -165,7 +165,7 @@ DIALOGE_V2_1_2,"The Peak of Truth, huh? Sounds interesting!",ยอดเขา�
 DIALOGE_V2_1_3,"Yes, it's a long journey. It would be better if we went together.",ใช่ ทางมันไกล ไปด้วยกันน่าจะดีกว่า
 DIALOGE_V2_1_4,Then I'll come too!,งั้นผมขอไปด้วย!
 DIALOGE_V2_1_5,"Great! Climb into the back of the pickup truck, kid!",เยี่ยมเลย ขึ้นท้ายกระบะมาเลยน้อง!
-QUEST_STARTED_LEVEL_3,Explore the village and find the person who built this robot.,สำรวจหมู่บ้านและหาคนที่สร้างหุ่นนยนต์นี้
+QUEST_STARTED_LEVEL_3,Explore the village and help the villagers plant rice,สำรวจหมู่บ้านและช่วยวชาวบ้านปลูกข้าว
 QUEST_STARTED_LEVEL_4,Gather ingredients in the village to prepare a special meal for the village leader,ตามหาวัตถุดิบในหมู่บ้านมาทำอาหารมื้อพิเศษให้ผู้นำหมู่บ้าน
 ON_INTERACTION_PICKLE,Press E to pickle,กด E เพื่อดองอาหาร
 JAR_PICKLING,Pickling,กำลังดองอาหาร
@@ -253,3 +253,36 @@ INTERACTION_FAIL_NEED_SEED,Need a seed to plant,ต้องการเมล�
 SEED_COLLECT_NOTIFY,The seeds have been collected and placed in the bag,เก็บเมล็ดใส่กระเป้าแล้ว
 SEED_GROWING,Growing,กำลังเจริญเติบโต
 ON_INTERACTION_HARVEST,Press E to harvest,กด E เพื่อเก็บเกี่ยว
+DIALOGE_PLANT_ROTTEN_1,Is there something wrong with the soil around here?,ทำไมปลูกเท่าไหร่ก็ไม่ขึ้นเลยเนี่ย... เหี่ยวตายหมดเลย
+DIALOGE_PLANT_ROTTEN_2,Is there something wrong with the soil around here?,ดินแถวนี้มันมีปัญหาอะไรหรือเปล่านะ?
+DIALOGE_PLANT_ROTTEN_3,I guess we'll have to try consulting with the farmers on the local side,สงสัยต้องลองไปปรึกษาชาวบ้านฝั่งเกษตรกรดูแล้วล่ะ
+DIALOGE_V2_2_1,"Oh no, they've all withered and died!",อ้าว เหี่ยวตายเกลี้ยงเลยเรอะ!
+DIALOGE_V2_2_2,Don't worry. The soil here is too acidic. Nothing will grow here.,ไม่ต้องตกใจไป ดินตรงนี้มันเปรี้ยวเกินไปน่ะ ปลูกอะไรก็ไม่ขึ้นหรอก
+DIALOGE_V2_2_3,"Wow... Is there any way to fix this, sir?",โห... แล้วแบบนี้พอจะมีวิธีแก้ไหมครับพี่?
+DIALOGE_V2_2_4,Yes!,มีสิ!
+DIALOGE_V2_2_5,Why don't you try climbing that baobab tree and asking the robots up there? They might have some lime powder that you can use to improve the soil. Try asking them!,เอ็งลองปีนต้นเบาบับขึ้นไปหาพวก หุ่นยนต์ ข้างบนดู พวกนั้นน่าจะมี ผงปูนขาว ที่เอามาโรยปรับสภาพดินได้ ลองไปขอพวกมันดูนะ!
+DIALOGE_V2_2_6,They probably have some lime powder that you can use to improve the soil. Try asking them for some!,พวกนั้นน่าจะมี ผงปูนขาว ที่เอามาโรยปรับสภาพดินได้ ลองไปขอพวกมันดูนะ!
+DIALOGE_V2_3_1,"Hello, Mr. Robot. The soil in my vegetable garden is too acidic; everything I plant dies. The villagers suggested I ask you for some lime powder.",สวัสดีครับคุณหุ่นยนต์ พอดีแปลงผักข้างล่างดินมันเปรี้ยวเกินไป ปลูกอะไรก็ตายหมด ชาวบ้านเลยแนะนำให้มาขอ ผงปูนขาว จากคุณครับ
+DIALOGE_V2_3_2,Beep! Problem acknowledged... We have calculated and dispensed the lime powder for soil conditioning. You can now spread it on your planting area.,ปิ๊บ! รับทราบปัญหา... ทำการคำนวณและจ่าย ผงปูนขาว สำหรับปรับสภาพดินให้คุณเรียบร้อยแล้ว นำไปโรยที่แปลงปลูกได้เลย
+DIALOGE_V2_3_3,Thank you so much! I'll sprinkle it on right away.,ขอบคุณมากครับ! เดี๋ยวผมรีบเอาลงไปโรยเลย
+DIALOGE_V2_4_1,"Welcome to the producers' village, young man! I heard you just came from the village of faith. Interested in trying your hand at farming?",ยินดีต้อนรับสู่หมู่บ้านนักผลิตนะไอ้หนุ่ม! ได้ยินว่าเพิ่งมาจากหมู่บ้านศรัทธาล่ะสิ สนใจมาลองทำนาดูไหม?
+DIALOGE_V2_4_2,Here... take these rice seeds and try planting them. Our rice fields are open for everyone to use for free.,เอานี่... รับเมล็ดข้าวพวกนี้ไปลองปลูกดูสิ ที่นาของเราเปิดให้คนนอกใช้ได้ฟรีเลยนะ
+DIALOGE_V2_4_3,"Thank you, sir! Should I sow these in that empty plot of land over there?",ขอบคุณครับพี่! ให้ผมเอาไปหว่านลงแปลงดินว่างๆ ตรงนู้นเลยใช่ไหมครับ?
+DIALOGE_V2_4_4,"Yes! And once you've harvested the rice, please take it and give it to our village chief.",ใช่เลย! แล้วพอเอ็งปลูกจนเก็บเกี่ยวผลผลิตได้แล้ว รบกวนช่วยเอาข้าวไปมอบให้ หัวหน้าหมู่บ้าน ของเราหน่อยนะ
+DIALOGE_V2_4_5,"No problem, sir! I'll make sure to plant them and they grow well!",ไม่มีปัญหาครับพี่! เดี๋ยวผมจัดการปลูกให้งอกงามเลย!
+DIALOGE_BOT_NAME,Robot,หุ่นยนต์
+POON_POWDER_COLLECT,Received the lime powder,ได้รับผงปูนขาวแล้ว
+ON_INTERACTION_SPRINKLE_LIME_POWDER,Press E to sprinkle lime powder,กด E เพื่อโปรยผงปูนขาว
+DIALOGE_REPAIR_SOIL_1,Phew... Finally finished sprinkling the lime powder. Hopefully this helps...,ฟู่... โรยผงปูนขาวเสร็จสักที หวังว่าจะช่วยได้นะ...
+DIALOGE_REPAIR_SOIL_2,Wow! The soil looks so much better now!,โอ้โห! สีของดินดูดีขึ้นมาทันตาเห็นเลยนี่นา
+DIALOGE_REPAIR_SOIL_3,"With this setup, the rice seeds should grow easily. Let's try planting them!",แบบนี้เมล็ดข้าวต้องโตได้สบายแน่ๆ ลองลงมือปลูกกันเลยดีกว่า!
+DIALOGE_V2_5_1,"Hey! Help me fetch some rice, please.",เอ็งนะ! ช่วยไปลูกข้าวให้ข้าหน่อย
+DIALOGE_V2_5_2,"If I've finished growing and harvesting the crop, what should I do next?",ถ้าผมปลูกจนเก็บเกี่ยวได้แล้วต้องทำยังไงต่อครับ?
+DIALOGE_V2_5_3,Bring the produce to me here.,เอาผลผลิตมาส่งให้ข้าที่นี่แหละ
+DIALOGE_V2_5_4,"Make it happen, and I'll have a reward prepared for you!",ทำให้สำเร็จล่ะ แล้วข้าจะมีรางวัลเตรียมไว้ให้!
+DIALOGE_QUEST_DONE_V2_1,Here are the rice stalks that have been harvested. It was exhausting planting them!,นี่ครับรวงข้าวที่เก็บเกี่ยวมาได้ กว่าจะปลูกขึ้นเล่นเอาเหนื่อยเลยครับ!
+DIALOGE_QUEST_DONE_V2_2,Wow! The produce is beautiful!,โอ้โห! ผลผลิตสวยงามมาก!
+DIALOGE_QUEST_DONE_V2_3,"You've probably learned how to solve problems by now, haven't you? Remember... focusing only on the result and forgetting the process might prevent you from reaching your goal.",เอ็งคงได้เรียนรู้วิธีแก้ปัญหามาแล้วสินะ จำไว้ล่ะ... การมองแค่ผลลัพธ์จนลืมวิธีการ อาจทำให้เราไปไม่ถึงเป้าหมายก็ได้นะ
+DIALOGE_QUEST_DONE_V2_4,"Yes, luckily we also got lime powder from the robotics side to help adjust the soil conditions.",ใช่ครับ โชคดีที่ได้ผงปูนขาวจากฝั่งหุ่นยนต์มาช่วยปรับสภาพดินให้ด้วย
+DIALOGE_QUEST_DONE_V2_5,Thanks a lot for your thoughtfulness! Here... take this gallon of fuel and fill up your pickup truck. Consider it a reward from me. Good luck on your journey!,ขอบใจมากสำหรับความตั้งใจ! เอ้านี่... รับน้ำมันแกลลอนนี้ไปเติมรถกระบะซะ ถือเป็นรางวัลจากข้า ขอให้เอ็งโชคดีกับการเดินทางนะ!
+INTERACTION_FAIL_NEED_RICE,Need rice for submit,ต้องการข้าวเพื่อส่ง

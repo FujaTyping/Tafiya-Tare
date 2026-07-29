@@ -60,7 +60,11 @@ var IngreInv:Array[String] = [];
 var FoodInv: String;
 var FlowInv:Array[String] = [];
 var PotionInv:String;
+
+# Level 2
 var RiceSeed:int = 0;
+var haveAPoonPowder:bool = false;
+var collectedRice:bool = false;
 
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
@@ -101,6 +105,9 @@ func _ready():
 		FoodInv = Varibles.saved_data.food_inventory
 		FlowInv = Varibles.saved_data.flower_inventory
 		PotionInv = Varibles.saved_data.potion_inventory
+		RiceSeed = Varibles.saved_data.player_seed_inventory
+		haveAPoonPowder = Varibles.saved_data.player_powder_inventory
+		collectedRice = Varibles.saved_data.player_rice_inventory
 	else :
 		self.global_position = default_spawn.global_position
 	SPEED = DSPEED
@@ -270,15 +277,26 @@ func _input(event):
 			elif colliderView.has_method("collectRiceSeed") :
 				colliderView.collectRiceSeed()
 			elif colliderView.has_method("plantRice"):
-				if RiceSeed >= 1 :
-					planting.play()
+				if haveAPoonPowder :
 					colliderView.plantRice()
+					hideHUDInteract()
 				else :
-					wrongInteraction("INTERACTION_FAIL_NEED_SEED")
+					if RiceSeed >= 1 :
+						planting.play()
+						colliderView.plantRice()
+					else :
+						wrongInteraction("INTERACTION_FAIL_NEED_SEED")
 			elif colliderView.has_method("collectSeedResult") :
 				if label.text != "SEED_GROWING" :
 					havest.play()
+					if not colliderView.getSeedFarmCurrentState() :
+						hideInteraction()
 					colliderView.collectSeedResult()
+			elif colliderView.has_method('submitQuestLV2') :
+				if collectedRice :
+					colliderView.submitQuestLV2()
+				else :
+					wrongInteraction('INTERACTION_FAIL_NEED_RICE')
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()

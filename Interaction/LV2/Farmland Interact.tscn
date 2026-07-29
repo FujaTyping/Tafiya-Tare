@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ij1oedbpf6jb" path="res://Model/L2/Farmland/Bad Soil.glb" id="1_mbjq7"]
 [ext_resource type="PackedScene" uid="uid://csw3k61aptu2j" path="res://Model/L2/Farmland/Good Soil.glb" id="2_3f8b0"]
 [ext_resource type="PackedScene" uid="uid://bq66pufqxfk13" path="res://Item/L2/RiceState.tscn" id="2_ts40p"]
+[ext_resource type="AudioStream" uid="uid://c7md8eigpowpp" path="res://SFX/PowderSprinkle.wav" id="5_7ou0f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbjq7"]
 size = Vector3(4.9873047, 0.65533066, 2.2541504)
@@ -24,3 +25,10 @@ transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
 [node name="Good Soil" parent="." unique_id=1083599878 instance=ExtResource("2_3f8b0")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
 visible = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1117012564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9704493, 0)
+stream = ExtResource("5_7ou0f")
+max_db = 6.0
+max_distance = 20.0
+bus = &"SFX"

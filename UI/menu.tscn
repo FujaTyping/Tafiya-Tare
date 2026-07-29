@@ -381,7 +381,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
-transform = Transform3D(0.13918063, 0.012961894, 0.9901819, 0, 0.99991435, -0.01308929, -0.9902668, 0.0018217764, 0.13916871, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918063, 0.012961894, 0.99018186, 0, 0.99991435, -0.013089289, -0.99026674, 0.0018217764, 0.1391687, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
@@ -795,6 +795,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "Flower sprayer by MaslovyTygr -- https://freesound.org/s/735984/ -- License: Attribution 4.0"
+
+[node name="Label20" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=2102008672]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Shaking powder raw.wav by smnotasmr -- https://freesound.org/s/561821/ -- License: Attribution 3.0"
 
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=164242972]
 visible = false

@@ -69,6 +69,7 @@ var dayFromSave = false
 
 var collectedItem:Array[NodePath] = []
 var currentGameSaveArea: String
+var famelandState:Array[bool] = [false,false,false,false] 
 
 func _ready() -> void:
 	#for pole in everyLight :
@@ -85,6 +86,7 @@ func _ready() -> void:
 		startTime = Varibles.saved_data.game_time
 		day = Varibles.saved_data.dayCount
 		dayFromSave = true
+		famelandState = Varibles.saved_data.farmland_good_state
 		if Varibles.saved_data.collectItem.size() > 0 :
 			collectedItem = Varibles.saved_data.collectItem
 			for item in Varibles.saved_data.collectItem :
@@ -242,6 +244,7 @@ func _update_time_display() -> void:
 
 var NPCV4S:Array[int] = [0,0,0]
 var LV4GetReward = true
+var QLV2State:int = 0
 
 func saveDat() :
 	save_icon_indicator.show()
@@ -269,6 +272,11 @@ func saveDat() :
 	data.potion_inventory = player.PotionInv
 	data.state_quest_level_4 = NPCV4S
 	data.can_get_reward_level_4 = LV4GetReward
+	data.player_powder_inventory = player.haveAPoonPowder
+	data.player_rice_inventory = player.collectedRice
+	data.player_seed_inventory = player.RiceSeed
+	data.quest_level_2_state = QLV2State
+	data.farmland_good_state = famelandState
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :

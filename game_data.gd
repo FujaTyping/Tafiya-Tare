@@ -23,3 +23,8 @@ class_name gameData
 @export var potion_inventory:String
 @export var state_quest_level_4: Array[int]
 @export var can_get_reward_level_4:bool
+@export var player_seed_inventory:int
+@export var player_powder_inventory:bool
+@export var player_rice_inventory:bool
+@export var quest_level_2_state:int
+@export var farmland_good_state:Array[bool]
