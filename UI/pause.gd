@@ -4,6 +4,8 @@ extends Control
 @onready var open: AnimationPlayer = $Open
 @onready var resume: Button = $MarginContainer/VBoxContainer/VBoxContainer/Resume
 var paused = false
+var confirmExit = false
+@onready var exit: Button = $MarginContainer/VBoxContainer/VBoxContainer/Exit
 
 @onready var gameInstant = get_tree().current_scene
 
@@ -27,19 +29,26 @@ func _on_resume_pressed() -> void:
 		paused = false
 		await open.animation_finished
 		self.hide()
+		exit.text = "QUIT_BUTTON"
+		confirmExit = false
 
 func _on_exit_pressed() -> void:
-	var day_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("dayBGM")
-	var night_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("nightBGM")
-	var footsteps: AudioStreamPlayer3D = get_tree().current_scene.get_node("player/Walking")
-	var ab_Sound = get_tree().get_nodes_in_group("ambientSound")
-	footsteps.stop()
-	day_bgm.stop()
-	night_bgm.stop()
-	for sound:AudioStreamPlayer3D in ab_Sound :
-		sound.stop()
-	Input.set_custom_mouse_cursor(null)
-	get_tree().quit()
+	if not confirmExit :
+		UiSound.ui_click()
+		exit.text = "BUTTON_CLICK_AGAIN_FOR_SURE"
+		confirmExit = true
+	else :
+		var day_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("dayBGM")
+		var night_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("nightBGM")
+		var footsteps: AudioStreamPlayer3D = get_tree().current_scene.get_node("player/Walking")
+		var ab_Sound = get_tree().get_nodes_in_group("ambientSound")
+		footsteps.stop()
+		day_bgm.stop()
+		night_bgm.stop()
+		for sound:AudioStreamPlayer3D in ab_Sound :
+			sound.stop()
+		Input.set_custom_mouse_cursor(null)
+		get_tree().quit()
 
 func pauseMenu() :
 	if paused:
@@ -48,6 +57,8 @@ func pauseMenu() :
 		open.play("CloseAnimation")
 		await open.animation_finished
 		pause.visible = false
+		exit.text = "QUIT_BUTTON"
+		confirmExit = false
 	else:
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

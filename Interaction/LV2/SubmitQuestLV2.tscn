@@ -19,7 +19,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 [node name="Default" parent="." unique_id=1658165319 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("2_b6mk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3518953, 0)
 dialoguesLine = Array[String](["DIALOGE_V2_5_1", "DIALOGE_V2_5_2", "DIALOGE_V2_5_3", "DIALOGE_V2_5_4"])
-charLine = Array[String](["NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER"])
+charLine = Array[String](["NPC_LEADER", "PLAYER_DIALOGE_NAME", "NPC_LEADER", "NPC_LEADER"])
 isBody = true
 initAnimation = true
 initAnimationName = "Init"
@@ -34,7 +34,7 @@ triggedParams = "First"
 [node name="Done" parent="." unique_id=2125278295 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("2_b6mk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3518953, -1.2807307)
 dialoguesLine = Array[String](["DIALOGE_QUEST_DONE_V2_1", "DIALOGE_QUEST_DONE_V2_2", "DIALOGE_QUEST_DONE_V2_3", "DIALOGE_QUEST_DONE_V2_4", "DIALOGE_QUEST_DONE_V2_5"])
-charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_LEADER", "NPC_LEADER", "PLAYER_DIALOGE_NAME", "NPC_LEADER"])
 isBody = true
 initAnimation = true
 initAnimationName = "Init"
@@ -61,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5268783, 0)
 
 [node name="RewardSpawner" type="Marker3D" parent="." unique_id=2048102770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06174797, 0.8386147)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=688517197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5291034, 0.95976907, 0)

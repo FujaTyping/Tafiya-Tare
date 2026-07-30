@@ -286,3 +286,10 @@ DIALOGE_QUEST_DONE_V2_3,"You've probably learned how to solve problems by now, h
 DIALOGE_QUEST_DONE_V2_4,"Yes, luckily we also got lime powder from the robotics side to help adjust the soil conditions.",ใช่ครับ โชคดีที่ได้ผงปูนขาวจากฝั่งหุ่นยนต์มาช่วยปรับสภาพดินให้ด้วย
 DIALOGE_QUEST_DONE_V2_5,Thanks a lot for your thoughtfulness! Here... take this gallon of fuel and fill up your pickup truck. Consider it a reward from me. Good luck on your journey!,ขอบใจมากสำหรับความตั้งใจ! เอ้านี่... รับน้ำมันแกลลอนนี้ไปเติมรถกระบะซะ ถือเป็นรางวัลจากข้า ขอให้เอ็งโชคดีกับการเดินทางนะ!
 INTERACTION_FAIL_NEED_RICE,Need rice for submit,ต้องการข้าวเพื่อส่ง
+DIALOGE_V2_6_1,"The fields here look so fertile, sir.",แปลงเพาะปลูกที่นี่ดูอุดมสมบูรณ์มากเลยนะครับพี่
+DIALOGE_V2_6_2,That's right!,ใช่แล้วล่ะ!
+DIALOGE_V2_6_3,"If we take good care of the soil and nature, nature will reward us with good results in return...",ถ้าเราดูแลดินและธรรมชาติดีๆ ธรรมชาติก็จะให้ผลผลิตที่ดีตอบแทนเราเองแหละ...
+DIALOGE_V2_6_4,Have a safe journey up the mountain!,เดินทางขึ้นเขาปลอดภัยนะ!
+DIALOGE_V2_7_1,The handicrafts in this village look so cool and unique!,ของประดิษฐ์ในหมู่บ้านนี้ดูเท่และแปลกตาจังเลยนะครับ
+DIALOGE_V2_7_2,"Of course! We love taking old scraps and turning them into new things. Here, there's no such thing as trash, young man!",แน่นอนสิ! พวกเราชอบเอาเศษวัสดุเก่าๆ มาประกอบเป็นของใช้ใหม่น่ะ สำหรับที่นี่ไม่มีคำว่า ขยะ หรอกนะไอ้หนุ่ม!
+BUTTON_CLICK_AGAIN_FOR_SURE,Press again to confirm,กดอีกครั้งเพื่อยืนยัน
