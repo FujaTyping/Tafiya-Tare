@@ -45,6 +45,8 @@ func startGrow() :
 		state = 1
 	
 func collectSeedResult() :
+	if rice_seed.visible :
+		return
 	if not isFarmLandQLT :
 		var dialog = rottenDialoge.duplicate()
 		dialog.global_position = player.global_position

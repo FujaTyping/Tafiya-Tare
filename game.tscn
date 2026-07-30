@@ -157,6 +157,7 @@
 [ext_resource type="PackedScene" uid="uid://ba6bdrg2okcli" path="res://Model/NPC/V2/V20002.glb" id="145_j7epm"]
 [ext_resource type="PackedScene" uid="uid://doje3v3hgo3o6" path="res://Model/NPC/V2/Bot Base.glb" id="147_jicni"]
 [ext_resource type="PackedScene" uid="uid://cpy50iu0d0v34" path="res://Interaction/LV2/SubmitQuestLV2.tscn" id="150_6ayu4"]
+[ext_resource type="PackedScene" uid="uid://d0hud8gk8p17q" path="res://Model/L2/LV2 Tent.glb" id="158_8f8qe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1604,6 +1605,12 @@ transform = Transform3D(-0.7904971, 0, 0.6124657, 0, 1, 0, -0.6124657, 0, -0.790
 
 [node name="SleepInteract3" parent="InteractionItem" unique_id=804489490 instance=ExtResource("65_jo4nb")]
 transform = Transform3D(-0.4370215, 0, 0.899451, 0, 1, 0, -0.899451, 0, -0.4370215, 70.00223, 2.5029473, 622.8734)
+
+[node name="SleepInteract4" parent="InteractionItem" unique_id=1757745927 instance=ExtResource("65_jo4nb")]
+transform = Transform3D(0.10390358, 0, 0.99458736, 0, 1, 0, -0.99458736, 0, 0.10390358, -146.61038, 2.4097757, 635.54333)
+
+[node name="SleepInteract5" parent="InteractionItem" unique_id=1826626213 instance=ExtResource("65_jo4nb")]
+transform = Transform3D(0.88681734, 0, 0.46212006, 0, 1, 0, -0.46212006, 0, 0.88681734, -158.3961, 2.4097757, 606.5317)
 
 [node name="ItemAll" type="Node3D" parent="." unique_id=1589624013]
 
@@ -5323,6 +5330,12 @@ transform = Transform3D(0.7221224, 0, 0.34429547, 0, 0.8, 0, -0.34429547, 0, 0.7
 
 [node name="V20006" parent="Village2" unique_id=1414128746 instance=ExtResource("118_px3hy")]
 transform = Transform3D(-0.3524152, 0, -0.71819454, 0, 0.7999999, 0, 0.71819454, 0, -0.3524152, -160.0506, 1.7581015, 608.4774)
+
+[node name="LV2 Tent" parent="Village2" unique_id=991324426 instance=ExtResource("158_8f8qe")]
+transform = Transform3D(0.733722, 0, -1.4387068, 0, 1.6149998, 0, 1.4387068, 0, 0.733722, -158.39839, 1.7670196, 606.469)
+
+[node name="LV2 Tent2" parent="Village2" unique_id=345693954 instance=ExtResource("158_8f8qe")]
+transform = Transform3D(1.6121691, 0, -0.09558296, 0, 1.6149997, 0, 0.09558296, 0, 1.6121691, -146.73613, 1.738521, 635.6026)
 
 [node name="Village3" type="Node3D" parent="." unique_id=1857284539 node_paths=PackedStringArray("notiShow")]
 script = ExtResource("63_o46vb")

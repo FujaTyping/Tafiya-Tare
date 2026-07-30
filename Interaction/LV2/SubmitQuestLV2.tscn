@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="2_b6mk4"]
 [ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="2_fktl1"]
 [ext_resource type="Script" uid="uid://kav1ntxky12r" path="res://Interaction/LV2/submit.gd" id="4_lblxp"]
+[ext_resource type="AudioStream" uid="uid://cw0f1x1d1ygku" path="res://SFX/chefPass.wav" id="6_v1ve5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1qqsk"]
 size = Vector3(0.53741455, 1.5031128, 0.8395996)
@@ -64,3 +65,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06174797, 0.8386147)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=688517197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5291034, 0.95976907, 0)
+stream = ExtResource("6_v1ve5")
+max_db = 4.0
+bus = &"SFX"
