@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
 var max_RPM = 200 # 500
-var max_torque = 80 # 300
+var max_torque = 80 # 300 #80-->180
 var turn_speed = 3
 var turn_amount = 0.3
 var carFuel = 10
@@ -22,6 +22,7 @@ var canOpenLight = false
 @onready var fuel_icon: TextureRect = $CanvasLayer/FuelIcon
 @onready var fuel_animation: AnimationPlayer = $CanvasLayer/FuelAnimation
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@export var isInf:bool = false;
 
 var isOutFuel: bool = false
 
@@ -80,7 +81,8 @@ func _physics_process(delta: float) -> void:
 		
 		# --- CONTINUOUS FUEL DRAIN & UI UPDATE ---
 		if dir != 0:
-			carFuel -= 0.8 * delta #0.08 #0.05
+			if not isInf :
+				carFuel -= 0.8 * delta #0.08 #0.05
 			if carFuel < 0 :
 				fuel_bar.value = 0
 				car_idle.stop()

@@ -11,6 +11,9 @@ func _ready() -> void:
 	if get_tree().current_scene.name == "BeforeMenu" :
 		loading_icon.hide()
 		progressBar.hide()
+	elif get_tree().current_scene.name == "game" and get_tree().current_scene.isEnding == true :
+		loading_icon.hide()
+		progressBar.hide()
 	else :
 		loading_icon.show()
 		progressBar.show()

@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://bvlv0jtma8aq6"]
+
+[ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="1_40n0j"]
+[ext_resource type="Script" uid="uid://wi7y1y1n427e" path="res://UI/end_credit.gd" id="1_llvf0"]
+[ext_resource type="Texture2D" uid="uid://dl137oixy3yhi" path="res://logo.png" id="2_l5ro4"]
+[ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="4_l5ro4"]
+
+[sub_resource type="Animation" id="Animation_l5ro4"]
+resource_name = "Play"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 29.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(645.5, 1100), Vector2(645.5, -1200)]
+}
+
+[sub_resource type="Animation" id="Animation_ojn3s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(645.5, 1100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_faerj"]
+_data = {
+&"Play": SubResource("Animation_l5ro4"),
+&"RESET": SubResource("Animation_ojn3s")
+}
+
+[node name="EndCredit" type="Control" unique_id=1165806266]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_llvf0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=249255852]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=581975188]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.5
+offset_top = 560.0
+offset_right = 314.5
+offset_bottom = 1714.0039
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1712398260]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_l5ro4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=734385644]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=206516397]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "PROJECT_LEADER_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=618926173]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "SIRAPHOP_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=2049719962]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer3" unique_id=1181872930]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "PROJECT_ADVISOR_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer3" unique_id=1699721044]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "ANURAK_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=729694932]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=40617803]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "LEAD_PROGRAMER_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=1187382027]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "SIRAPHOP_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer" unique_id=753446717]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer4" unique_id=916243474]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "GAME_DESIGNER_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer4" unique_id=1333199536]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "TARAWADE_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer" unique_id=1437007769]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer5" unique_id=365212286]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "LEAD_3D_MODEL_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer5" unique_id=1744766625]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "SIRAPHOP_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer" unique_id=731250395]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer6" unique_id=1666114510]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "ARTIST_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer6" unique_id=2041142080]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "PHANSORN_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer" unique_id=1625643884]
+layout_mode = 2
+
+[node name="Credit" type="Label" parent="VBoxContainer/VBoxContainer7" unique_id=1837301199]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "SUPPORT_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit3" type="Label" parent="VBoxContainer/VBoxContainer7" unique_id=1154969683]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "SUPPORT_CREDIT_1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit4" type="Label" parent="VBoxContainer/VBoxContainer7" unique_id=1344244817]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "SUPPORT_CREDIT_2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit2" type="Label" parent="VBoxContainer/VBoxContainer7" unique_id=1779812616]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 24
+text = "SUPPORT_CREDIT_3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit3" type="Label" parent="VBoxContainer" unique_id=1778576163]
+layout_mode = 2
+theme = ExtResource("1_40n0j")
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "TAHANKYOU_CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1844812120]
+libraries/ = SubResource("AnimationLibrary_faerj")

@@ -454,3 +454,7 @@ func resetFlowInv() :
 	
 func resetPotionInv() :
 	PotionInv = "";
+
+func ending() :
+	Varibles.tweenCam(pivot,"spring_length", 0.25555555231628,2.5)
+	SPEED = 0

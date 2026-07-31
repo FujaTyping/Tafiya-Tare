@@ -60,10 +60,10 @@ _subresources={
 "PATH:Cube_017": {
 "generate/physics": true
 },
-"PATH:Cylinder": {
+"PATH:Cube_018": {
 "generate/physics": true
 },
-"PATH:Farmland": {
+"PATH:Cylinder": {
 "generate/physics": true
 },
 "PATH:Icosphere_007": {
@@ -80,6 +80,10 @@ _subresources={
 },
 "PATH:Landscape_011": {
 "generate/physics": true
+},
+"PATH:Landscape_038": {
+"generate/physics": true,
+"physics/physics_material_override": null
 },
 "PATH:Plane_003": {
 "generate/physics": true

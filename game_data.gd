@@ -28,3 +28,4 @@ class_name gameData
 @export var player_rice_inventory:bool
 @export var quest_level_2_state:int
 @export var farmland_good_state:Array[bool]
+@export var last_savepoint:bool

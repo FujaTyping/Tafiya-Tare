@@ -66,10 +66,12 @@ var dayColorList = []
 var currentDayState = 0
 var durationMultiplier = 1.0
 var dayFromSave = false
+var isEnding = false
 
 var collectedItem:Array[NodePath] = []
 var currentGameSaveArea: String
 var famelandState:Array[bool] = [false,false,false,false] 
+var mtSavePoint = false
 
 func _ready() -> void:
 	#for pole in everyLight :
@@ -87,6 +89,7 @@ func _ready() -> void:
 		day = Varibles.saved_data.dayCount
 		dayFromSave = true
 		famelandState = Varibles.saved_data.farmland_good_state
+		mtSavePoint = Varibles.saved_data.last_savepoint
 		if Varibles.saved_data.collectItem.size() > 0 :
 			collectedItem = Varibles.saved_data.collectItem
 			for item in Varibles.saved_data.collectItem :
@@ -277,6 +280,7 @@ func saveDat() :
 	data.player_seed_inventory = player.RiceSeed
 	data.quest_level_2_state = QLV2State
 	data.farmland_good_state = famelandState
+	data.last_savepoint = mtSavePoint
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :
@@ -312,3 +316,6 @@ func instanceDaySkip (time:int) :
 	_refresh_day_state()
 	
 	_day_change_animation()
+	
+func hideGameGUI() :
+	control.hide()
