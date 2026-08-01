@@ -14,4 +14,5 @@ bus = &"BGM"
 
 [node name="end" type="AudioStreamPlayer" parent="." unique_id=1981540550]
 stream = ExtResource("3_dek5o")
+volume_db = -8.0
 bus = &"BGM"

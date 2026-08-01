@@ -29,3 +29,4 @@ class_name gameData
 @export var quest_level_2_state:int
 @export var farmland_good_state:Array[bool]
 @export var last_savepoint:bool
+@export var car_max_torque:int

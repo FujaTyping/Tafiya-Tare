@@ -310,5 +310,12 @@ ARTIST_CREDIT,Artist,ศิลปิน
 SUPPORT_CREDIT,Supported By,ได้รับการสนับสนุนจาก
 TAHANKYOU_CREDIT,Thank you for playing,ขอบคุณสำหรับการเล่น
 SUPPORT_CREDIT_1,National Science and Technology Development Agency (NSTDA),สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.)
-SUPPORT_CREDIT_2,28th Thailand Computer Programming Competition,การแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ 28
+SUPPORT_CREDIT_2,28th Thailand National Software Contest (NSC 2026),การแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ 28
 SUPPORT_CREDIT_3,Hatyaiwittayalai School,โรงเรียนหาดใหญ่วิทยาลัย
+ENDING_CINEMATIC_TEXT_1,"Finally, I've reached my destination...",ถึงจุดหมายปลายทางในที่สุด...
+ENDING_CINEMATIC_TEXT_2,Recalling the first day I began my journey alone...,หวนนึกถึงวันแรกที่เริ่มเดินทางเพียงลำพัง...
+ENDING_CINEMATIC_TEXT_3,I only hoped for eternal life...,หวังเพียงครอบครองชีวิตนิรันดร์...
+ENDING_CINEMATIC_TEXT_4,But the cooperation of my fellow travelers...,แต่ความร่วมมือจากเพื่อนร่วมทาง...
+ENDING_CINEMATIC_TEXT_5,Had transformed this world into something even more beautiful than immortality,ได้เปลี่ยนโลกนี้ให้งดงามยิ่งกว่าความเป็นอมตะ
+ENDING_CINEMATIC_TEXT_6,Because we went together... we went further,เพราะไปด้วยกัน... จึงไปได้ไกล
+QUEST_STARTED_LEVEL_6,Explore the beach and play dodgeball with the locals,สำรวจริมชายหาดและเล่นดอดจ์บอลกับชาวบ้าน

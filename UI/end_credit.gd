@@ -5,6 +5,7 @@ extends Control
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	await Varibles.wait(1)
 	animation.play("Play")
 	v_box_container.show()
 	await animation.animation_finished

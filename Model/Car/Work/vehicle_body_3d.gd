@@ -26,12 +26,16 @@ var canOpenLight = false
 
 var isOutFuel: bool = false
 
+func getMTourge() :
+	return max_torque
+
 func _ready() -> void:
 	if Varibles.isFromLoadSaved :
 		self.global_position = Varibles.saved_data.car_position
 		self.rotation_degrees = Varibles.saved_data.car_rotation
 		carFuel = Varibles.saved_data.car_fuel
 		Varibles.ListNPCbackCar = Varibles.saved_data.carNPCBackList
+		max_torque = Varibles.saved_data.car_max_torque
 	fuelUpdate()
 	updateBackNPC()
 	

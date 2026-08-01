@@ -281,6 +281,7 @@ func saveDat() :
 	data.quest_level_2_state = QLV2State
 	data.farmland_good_state = famelandState
 	data.last_savepoint = mtSavePoint
+	data.car_max_torque = carInstant.getMTourge()
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :
