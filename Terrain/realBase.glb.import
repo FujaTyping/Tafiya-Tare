@@ -39,6 +39,9 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
+"PATH:BorderLV6_004": {
+"generate/physics": true
+},
 "PATH:Cube": {
 "generate/physics": true
 },

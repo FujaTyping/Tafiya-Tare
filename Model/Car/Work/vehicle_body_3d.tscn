@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://b1vndmplxpiv4" path="res://Model/NPC/V3/NPC0304.glb" id="16_vkiah"]
 [ext_resource type="Script" uid="uid://d2o44m1d01vyy" path="res://Model/NPC/V3/npc_0304.gd" id="17_caodj"]
 [ext_resource type="PackedScene" uid="uid://tcf3rs3vnd8f" path="res://Model/NPC/V4/Huntr_x with A.glb" id="18_gksc3"]
+[ext_resource type="PackedScene" uid="uid://cmambamwjrdj7" path="res://Model/NPC/V5/V50004.glb" id="19_xmk64"]
+[ext_resource type="Script" uid="uid://dsmpc3bm4e85b" path="res://Model/NPC/V5/v_50004.gd" id="20_nijln"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gksc3"]
 size = Vector3(2.163086, 1.2305298, 3.175537)
@@ -281,6 +283,27 @@ script = ExtResource("17_caodj")
 animation = NodePath("AnimationPlayer")
 sittAnimationName = "Sit"
 
+[node name="Skeleton3D" parent="NPC0304/Armature" parent_id_path=PackedInt32Array(672893614, 241570566) index="0" unique_id=1370013512]
+bones/0/position = Vector3(0.25903642, 0, -0.555078)
+bones/0/rotation = Quaternion(0.5722708, -0.7027801, -0.2668543, 0.32771182)
+bones/1/rotation = Quaternion(3.74184e-08, 1.0426934e-07, 0.07245437, 0.99737173)
+bones/2/rotation = Quaternion(0.7274155, 1.5401114e-09, 1.770978e-07, 0.6861973)
+bones/3/rotation = Quaternion(0.33207, -0.042391468, -0.012132093, 0.9422236)
+bones/4/rotation = Quaternion(0.10672113, 0.11236679, 0.0632343, 0.98589337)
+bones/5/rotation = Quaternion(0.18057272, 0.07557157, 0.3274466, 0.92437077)
+bones/7/rotation = Quaternion(-0.7178568, 1.8310281e-08, -1.6896111e-07, 0.6961908)
+bones/8/rotation = Quaternion(-0.28364956, 0.15347072, 0.047433216, 0.9453781)
+bones/9/rotation = Quaternion(0.21180446, 0.004904991, -0.0039482554, 0.97729176)
+bones/10/rotation = Quaternion(0.17124015, -0.05405103, 0.24582191, 0.9525371)
+bones/12/rotation = Quaternion(5.960269e-09, 8.118458e-09, -0.019951886, 0.999801)
+bones/13/rotation = Quaternion(-0.0005086954, 0.12646964, -0.09077018, 0.98780864)
+bones/14/position = Vector3(0.25903642, 2.7202674e-08, -0.5550782)
+bones/14/rotation = Quaternion(-0.51832676, -0.5578705, 0.45271713, 0.46385887)
+bones/15/rotation = Quaternion(-0.014430709, 0.012693658, 0.02957297, 0.9993779)
+bones/17/position = Vector3(0.25903642, -9.7878115e-09, -0.5550781)
+bones/17/rotation = Quaternion(0.11486305, -0.15904641, 0.6752754, -0.710995)
+bones/18/rotation = Quaternion(-0.01812508, -0.025486141, -0.031793103, 0.99900514)
+
 [node name="Huntr_x with A" parent="." unique_id=583984542 node_paths=PackedStringArray("animation") instance=ExtResource("18_gksc3")]
 transform = Transform3D(-2.7538174e-08, 0, 0.63, 0, 0.63, 0, -0.63, 0, -2.7538174e-08, 0, 0.14697126, 0.865958)
 visible = false
@@ -288,7 +311,34 @@ script = ExtResource("13_gj6qa")
 animation = NodePath("AnimationPlayer")
 sittAnimationName = "Car"
 
+[node name="V50004" parent="." unique_id=1671116145 node_paths=PackedStringArray("animation") instance=ExtResource("19_xmk64")]
+transform = Transform3D(-2.7538174e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, -2.7538174e-08, 0.47320202, -0.5777419, -1.6062267)
+visible = false
+script = ExtResource("20_nijln")
+animation = NodePath("AnimationPlayer")
+sittAnimationName = "Sit"
+
+[node name="Skeleton3D" parent="V50004/Armature" parent_id_path=PackedInt32Array(1671116145, 146792217) index="0" unique_id=795376781]
+bones/0/rotation = Quaternion(-7.1604904e-15, -1.4536996e-09, 0.010819522, 0.99994147)
+bones/3/rotation = Quaternion(0.5110841, 0.08836228, -0.110043816, 0.84786534)
+bones/4/rotation = Quaternion(-0.020969225, 0.06809885, -0.0846828, 0.99385697)
+bones/5/rotation = Quaternion(0.045284964, 0.061350588, 0.19052035, 0.97871727)
+bones/6/rotation = Quaternion(0.17835869, 0.09379206, 0.032037023, 0.97896117)
+bones/8/rotation = Quaternion(-0.5367199, 0.0050703734, -0.0019085892, 0.8437431)
+bones/9/rotation = Quaternion(-0.002249038, -0.117134556, -0.275973, 0.95399857)
+bones/10/rotation = Quaternion(-0.067268744, -0.10733619, -0.02620933, 0.9915982)
+bones/11/rotation = Quaternion(-0.10145269, -0.07930591, 0.1310876, 0.982972)
+bones/12/rotation = Quaternion(0.009048367, 0.2325535, -0.09275778, 0.96810794)
+bones/13/rotation = Quaternion(0.013855304, -0.24032792, 0.034966208, 0.96996284)
+bones/14/rotation = Quaternion(0.1303823, 0.15491487, 0.73911065, 0.6424308)
+bones/15/rotation = Quaternion(-0.05683823, 0.21933988, 0.62533396, 0.7467375)
+bones/16/rotation = Quaternion(0.04254606, 0.040133573, -0.7291517, 0.68184817)
+bones/17/rotation = Quaternion(0.741356, -0.6448812, 0.12193859, -0.14018053)
+bones/18/rotation = Quaternion(-0.0650462, -0.18983373, -0.6464608, 0.73608476)
+bones/19/rotation = Quaternion(0.07995787, -0.10629438, 0.7518347, 0.64579624)
+
 [editable path="V1NPC02"]
 [editable path="V20001"]
 [editable path="NPC0304"]
 [editable path="Huntr_x with A"]
+[editable path="V50004"]

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cofsjencilm7y"]
 
 [ext_resource type="Script" uid="uid://etojjyedg0b3" path="res://UI/Cinimatic/cutscene.gd" id="1_o4lkf"]
+[ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="3_4k3tr"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="3_p602v"]
+[ext_resource type="VideoStream" uid="uid://y4q0iodmttyx" path="res://Ogv/Intro.ogv" id="3_tpxfx"]
 
 [sub_resource type="Animation" id="Animation_tpxfx"]
 length = 0.001
@@ -40,6 +42,80 @@ _data = {
 &"SlideOut": SubResource("Animation_p602v")
 }
 
+[sub_resource type="Animation" id="Animation_4k3tr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VideoStreamPlayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7uw4x"]
+resource_name = "VDO_On"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VideoStreamPlayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k16sm"]
+_data = {
+&"RESET": SubResource("Animation_4k3tr"),
+&"VDO_On": SubResource("Animation_7uw4x")
+}
+
+[sub_resource type="Animation" id="Animation_k16sm"]
+resource_name = "FadeIO"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d0dva"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d0dva"]
+_data = {
+&"FadeIO": SubResource("Animation_k16sm"),
+&"RESET": SubResource("Animation_d0dva")
+}
+
 [node name="Cutscene" type="Control" unique_id=275233179]
 layout_mode = 3
 anchors_preset = 15
@@ -59,6 +135,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=1312290749]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,14 +153,36 @@ theme_override_font_sizes/font_size = 28
 text = "ON_LOAD_CONTENT_CINEMATIC"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=754674643]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-autoplay = true
+stream = ExtResource("3_tpxfx")
 expand = true
+bus = &"BGM"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1233401866]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -285.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer2" unique_id=2095889292]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("3_4k3tr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p602v")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1617742562]
 layout_mode = 1
@@ -110,5 +209,11 @@ text = "UI_CINEMATIC_SKTP"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1091398591]
 libraries/ = SubResource("AnimationLibrary_4k3tr")
+
+[node name="VDO" type="AnimationPlayer" parent="." unique_id=1047579529]
+libraries/ = SubResource("AnimationLibrary_k16sm")
+
+[node name="CC" type="AnimationPlayer" parent="." unique_id=1556549144]
+libraries/ = SubResource("AnimationLibrary_d0dva")
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
