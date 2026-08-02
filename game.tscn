@@ -182,12 +182,16 @@
 [ext_resource type="AudioStream" uid="uid://c408163jlqac6" path="res://Sound/Ambient/BeachAMB.wav" id="175_tt5ve"]
 [ext_resource type="PackedScene" uid="uid://cmambamwjrdj7" path="res://Model/NPC/V5/V50004.glb" id="176_6x0xb"]
 [ext_resource type="PackedScene" uid="uid://ds1sper8wrnup" path="res://Model/NPC/V5/V50001.glb" id="177_33ckb"]
+[ext_resource type="PackedScene" uid="uid://bkefmoj1ti27" path="res://Item/L6/WhrenCHADD.tscn" id="177_v4v7k"]
 [ext_resource type="PackedScene" uid="uid://doxrpoof0e08i" path="res://Model/NPC/V5/V50002.glb" id="178_qqc4h"]
 [ext_resource type="PackedScene" uid="uid://b2ej7ixnhbfs7" path="res://Model/NPC/V5/V50003.glb" id="179_qqc4h"]
 [ext_resource type="PackedScene" uid="uid://b2ttia8k3o77d" path="res://Model/Sign/Chuan Sign.glb" id="180_kp8cn"]
 [ext_resource type="PackedScene" uid="uid://ci8rcmccas0hw" path="res://Model/WayWarningSign.glb" id="181_nc06o"]
 [ext_resource type="PackedScene" uid="uid://du7lo8c5h8xfw" path="res://Model/LV6/HouseLV6.glb" id="182_qnd83"]
 [ext_resource type="PackedScene" uid="uid://bu7pcn3b8p5r" path="res://Model/LV6/UnderWaterFarm.glb" id="183_de524"]
+[ext_resource type="PackedScene" uid="uid://b6ufy7b3waog6" path="res://Model/Barrel.glb" id="189_21r1j"]
+[ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="190_i8wiq"]
+[ext_resource type="PackedScene" uid="uid://bhiwanvp0teoc" path="res://Model/NPC/MT/NPCTireUpgrade.glb" id="192_fa885"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1180,7 +1184,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1858,6 +1862,9 @@ animationBody = NodePath("../../../Village5/V50003")
 helloAnimation = "Hello"
 talkingAnimation = "Talking"
 saveAfter = true
+
+[node name="NPCTireUpgrade" parent="DialogeTriggers" unique_id=1797527674 instance=ExtResource("192_fa885")]
+transform = Transform3D(0.12924169, 0, -0.78949136, 0, 0.8, 0, 0.78949136, 0, 0.12924169, 579.1208, -21.579613, 479.305)
 
 [node name="AreaTrigged" type="Node3D" parent="." unique_id=1288122767]
 
@@ -7444,6 +7451,27 @@ script = ExtResource("158_wp6hd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22979736, 1.2935181, 0.13134766)
 shape = SubResource("BoxShape3D_yf7a7")
 
+[node name="Barrel" parent="MT" unique_id=1707696736 instance=ExtResource("189_21r1j")]
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 580.15576, -21.309149, 478.81668)
+
+[node name="CarCenterTire" parent="MT" unique_id=1027366469 instance=ExtResource("190_i8wiq")]
+transform = Transform3D(-0.47654814, 0.1992174, 0.06011885, 0.2005623, 0.4797653, 4.067999e-10, -0.05546719, 0.023187643, -0.516513, 579.6573, -21.366251, 478.78323)
+
+[node name="WhrenChadd" parent="MT" unique_id=2142865524 instance=ExtResource("177_v4v7k")]
+transform = Transform3D(-0.07772827, 0, -0.9969746, 0, 1, 0, 0.9969746, 0, -0.07772827, 580.1147, -20.966475, 478.8199)
+
+[node name="DialogeTrigged" parent="MT" unique_id=2055569163 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.052754298, 0, -0.9986075, 0, 1, 0, 0.9986075, 0, 0.052754298, 579.09357, -21.055696, 479.29288)
+dialoguesLine = Array[String](["DIALOGE_MT_1_1", "DIALOGE_MT_1_2", "DIALOGE_MT_1_3", "DIALOGE_MT_1_4", "DIALOGE_MT_1_5"])
+charLine = Array[String](["NPC_VILLAGER", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../DialogeTriggers/NPCTireUpgrade")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+
 [node name="SpawnAssets" type="Node3D" parent="." unique_id=1080212399]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -7.6293945e-06, -2.3841858e-07, -3.0517578e-05)
 
@@ -7622,7 +7650,7 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 405.5596, -0.36805546, 528.0735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 573.773, -0.36805546, 475.15887)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

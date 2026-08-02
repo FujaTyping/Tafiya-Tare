@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bkefmoj1ti27"]
+
+[ext_resource type="PackedScene" uid="uid://b1x4mwmllv10q" path="res://Model/LV6/Wrench.glb" id="1_0y4l8"]
+[ext_resource type="Script" uid="uid://so82nwp1smyd" path="res://Item/L6/whren_chadd.gd" id="1_18kk1"]
+[ext_resource type="AudioStream" uid="uid://sqsf6jl26pxj" path="res://SFX/WrenchUpgrrade.wav" id="3_8iybf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18kk1"]
+size = Vector3(0.32006836, 0.17123413, 0.6064453)
+
+[node name="WhrenChadd" type="StaticBody3D" unique_id=2142865524]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_18kk1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=557296040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042282104, -0.041503906)
+shape = SubResource("BoxShape3D_18kk1")
+
+[node name="Wrench" parent="." unique_id=2106155759 instance=ExtResource("1_0y4l8")]
+transform = Transform3D(0.585, 0, 0, 0, 0.585, 0, 0, 0, 0.585, 0, 0, 0)
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=453439588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35317725, 0.22866738, 0)
+stream = ExtResource("3_8iybf")
+max_db = 6.0
+max_distance = 15.0
+bus = &"SFX"

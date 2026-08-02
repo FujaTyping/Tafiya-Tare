@@ -297,6 +297,8 @@ func _input(event):
 					colliderView.submitQuestLV2()
 				else :
 					wrongInteraction('INTERACTION_FAIL_NEED_RICE')
+			elif colliderView.has_method('upgradeTire') :
+				colliderView.upgradeTire()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()
