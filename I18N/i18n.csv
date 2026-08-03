@@ -300,7 +300,7 @@ QUEST_STARTED_LEVEL_9,Explore this area and gather the elixir of immortality to 
 SIRAPHOP_CREDIT,Siraphop Sukchu,สิรภพ สุขชู
 TARAWADE_CREDIT,Tharawadee Srion,ธาราวดี ศรีอ่อน
 PHANSORN_CREDIT,Phatsorn Thongnuanin,พรรษสรณ์ ทองนวลอินทร์
-ANURAK_CREDIT,Anukarak Panbun,อนุกรักษ์ บานบุณ
+ANURAK_CREDIT,Anukarak Panbun,อนุกรักษ์ บานบุญ
 PROJECT_LEADER_CREDIT,Project Leader,หัวหน้าโครงการ
 PROJECT_ADVISOR_CREDIT,Project Advisor,ที่ปรึกษาโครงการ
 LEAD_PROGRAMER_CREDIT,Lead Programmer,โปรแกรมเมอร์
@@ -318,7 +318,7 @@ ENDING_CINEMATIC_TEXT_3,"Along the way, we met many people and experienced diver
 ENDING_CINEMATIC_TEXT_4,We went through various stories and became fellow travelers.,ผ่านเรื่องราวต่างๆ และกลายเป็นเพื่อนร่วมเส้นทาง
 ENDING_CINEMATIC_TEXT_5,This taught us that... longevity is more valuable than immortality.,จนทำให้รู้ว่า...ความยั่งยืนมีค่ากว่าความอมตะ
 ENDING_CINEMATIC_TEXT_6,Together... we can go far.,เราไปด้วยกัน... จึงไปได้ไกล
-QUEST_STARTED_LEVEL_6,Explore the beach and chat with the village leader,สำรวจริมชายหาดและเล่นคุยกับผู้นำหมู่บ้าน
+QUEST_STARTED_LEVEL_6,Explore the beach and chat with the village leader,สำรวจริมชายหาดและคุยกับผู้นำหมู่บ้าน
 DIALOGE_V5_1_1,Hey kid!,เฮ้ยน้องชาย!
 DIALOGE_V5_1_2,"Going to drive up the mountain, huh? There's still space in the back of your truck! Let me hitch a ride!",จะขับรถไต่ขึ้นยอดเขาสินะ ท้ายกระบะยังว่างนี่ ขอพี่ติดไปด้วยคนดิ!
 DIALOGE_V5_1_3,"Sure thing, boss! But the road ahead is really steep and bumpy. Are you sure you can handle it?",ได้เลยครับพี่! แต่ทางข้างหน้ามันชันและเหวี่ยงแรงมากนะ พี่จะไหวเหรอ?
@@ -376,3 +376,14 @@ DIALOGE_V6_3_3,The secret to being a sea person is having lungs of iron! Alright
 DIALOGE_V6_4_1,"What delicious snacks do you have to recommend around here, Auntie?",แถวนี้มีอะไรอร่อยๆ แนะนำบ้างครับป้า?
 DIALOGE_V6_4_2,"You have to try this! Crispy seaweed snacks, a local specialty!",ต้องนี่เลย สาหร่ายอบกรอบสูตรคนทะเล!
 DIALOGE_V6_4_3,"Salty and savory, you'll be so engrossed in crunching that you'll forget all about climbing the mountain! Want to try a bag?""",เค็มๆ มันๆ เคี้ยวเพลินจนลืมทางขึ้นเขาแน่นอน ลองสักถุงมั้ยจ๊ะ?
+DIALOGE_CAVE_1_1,Brother! The well of immortality is within reach!,พี่ครับ! บ่อน้ำอมฤตอยู่แค่เอื้อมแล้ว
+DIALOGE_CAVE_1_2,Why is everyone sitting here so still? Don't you all want to be immortal?,ทำไมทุกคนถึงมานั่งนิ่งอยู่ตรงนี้ล่ะครับ ไม่อยากเป็นอมตะกันแล้วเหรอ?
+DIALOGE_CAVE_1_3,"Immortality, huh?... Look back at the path we've traveled. How much damage has this world suffered?...",อมตะงั้นรึ?... เจ้าลองหันกลับไปมองเส้นทางที่ขับผ่านมาสิ โลกใบนี้มันบอบช้ำแค่ไหน...
+DIALOGE_CAVE_1_4,We've decided to end our journey here...,พวกข้าตัดสินใจหยุดการเดินทางไว้แค่นี้แหละ...
+DIALOGE_CAVE_1_5,Because what good is it to live forever if the world we live in is on the verge of collapse?,เพราะพวกข้าจะมีชีวิตยืนยาวเป็นอมตะไปทำไม หากโลกที่เราอาศัยกำลังจะพังทลายลง?
+DIALOGE_CAVE_1_6,.....,.....
+DIALOGE_CAVE_1_7,The true reward may not be in that well...,รางวัลที่แท้จริงอาจไม่ได้อยู่ในบ่อน้ำนั่นหรอกนะ...
+DIALOGE_CAVE_1_8,"If you're ready, then go and find the answer for yourself.",ถ้าเจ้าพร้อมแล้ว ก็จงเดินเข้าไปค้นหาคำตอบด้วยตัวเองเถอะ
+QUEST_STARTED_LEVEL_10,???,???
+OLD_MAN_NAME,Old man,ผู้เฒ่า
+VOICE_ACTOR_CREDIT,Voice actor,นักพากย์

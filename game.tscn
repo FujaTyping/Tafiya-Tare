@@ -199,8 +199,11 @@
 [ext_resource type="PackedScene" uid="uid://ddnmyrjwfvv27" path="res://Interaction/LV6/SubmitQLV6.tscn" id="190_wr4we"]
 [ext_resource type="PackedScene" uid="uid://bhiwanvp0teoc" path="res://Model/NPC/MT/NPCTireUpgrade.glb" id="192_fa885"]
 [ext_resource type="PackedScene" uid="uid://bn4kh1os0v5nl" path="res://Model/NPC/V6/V60001.glb" id="195_6crov"]
+[ext_resource type="PackedScene" uid="uid://b703kfuyv7g5j" path="res://Model/MT/Carpet.glb" id="195_gu6w2"]
 [ext_resource type="PackedScene" uid="uid://u4itwiq1i2n" path="res://Model/NPC/V6/V60002.glb" id="196_mdjp4"]
 [ext_resource type="PackedScene" uid="uid://b4dhd10ev0m3x" path="res://Model/L4/Magic Grass.glb" id="201_asx6p"]
+[ext_resource type="PackedScene" uid="uid://csxqo455df7t3" path="res://Model/MT/Staktile.glb" id="202_fcb4t"]
+[ext_resource type="PackedScene" uid="uid://bltqynw4x5hls" path="res://Model/MT/CAVE0001.glb" id="203_q587k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -603,6 +606,9 @@ size = Vector3(142.80585, 36.877777, 157.62782)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3erk"]
 size = Vector3(104.242355, 33.94392, 101.400116)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcb4t"]
+size = Vector3(30.671875, 12.655066, 21.186523)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gh0px"]
 height = 1.7163696
@@ -1928,6 +1934,20 @@ animationBody = NodePath("../../../Village 6/V60004")
 helloAnimation = "HnT"
 talkingAnimation = "HnT"
 
+[node name="Cave" type="Node3D" parent="DialogeTriggers" unique_id=186249170]
+
+[node name="DialogeTrigged" parent="DialogeTriggers/Cave" unique_id=784463161 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.82557666, 0, -0.56429, 0, 1, 0, 0.56429, 0, 0.82557666, 658.1103, 16.53236, 469.97095)
+dialoguesLine = Array[String](["DIALOGE_CAVE_1_1", "DIALOGE_CAVE_1_2", "DIALOGE_CAVE_1_3", "DIALOGE_CAVE_1_4", "DIALOGE_CAVE_1_5", "DIALOGE_CAVE_1_6", "DIALOGE_CAVE_1_7", "DIALOGE_CAVE_1_8"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME", "OLD_MAN_NAME", "OLD_MAN_NAME", "OLD_MAN_NAME", "PLAYER_DIALOGE_NAME", "OLD_MAN_NAME", "OLD_MAN_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Cave/CAVE0001")
+helloAnimation = "HnT"
+talkingAnimation = "HnT"
+saveAfter = true
+
 [node name="AreaTrigged" type="Node3D" parent="." unique_id=1288122767]
 
 [node name="Base" type="Area3D" parent="AreaTrigged" unique_id=597092896]
@@ -2057,6 +2077,19 @@ saveGameFile = "PEAK_OF_DESIRE_DATA"
 transform = Transform3D(0.9999759, 0, 1.3783574e-06, 0, 1, 0, -1.3783574e-06, 0, 0.9999759, 4.4628296, -7.48382, -14.142639)
 shape = SubResource("BoxShape3D_o3erk")
 
+[node name="Cave" type="Area3D" parent="AreaTrigged" unique_id=1925156641]
+transform = Transform3D(-0.42522648, 0, 0.90508693, 0, 1, 0, -0.90508693, 0, -0.42522648, 664.81335, 11.353768, 471.48523)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("54_7noa1")
+Areaname = "ON_AREA_ENTERED_LEVEL_7"
+questName = 10
+saveGameFile = "THE_CAVE_DATA"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaTrigged/Cave" unique_id=1047708879]
+transform = Transform3D(0.9999765, 0, 1.4305115e-06, 0, 1, 0, -1.4305115e-06, 0, 0.9999765, 4.463135, 10.736019, -14.142395)
+shape = SubResource("BoxShape3D_fcb4t")
+
 [node name="InteractionItem" type="Node3D" parent="." unique_id=280044299]
 
 [node name="WashInteract" parent="InteractionItem" unique_id=1482202713 instance=ExtResource("86_o46vb")]
@@ -2094,6 +2127,9 @@ transform = Transform3D(0.9910276, 0, 0.13365756, 0, 1, 0, -0.13365756, 0, 0.991
 
 [node name="SleepInteract9" parent="InteractionItem" unique_id=1616261058 instance=ExtResource("65_jo4nb")]
 transform = Transform3D(0.9572236, 0, -0.28934923, 0, 1, 0, 0.28934923, 0, 0.9572236, 420.30655, -20.767546, 536.5753)
+
+[node name="SleepInteract10" parent="InteractionItem" unique_id=439340350 instance=ExtResource("65_jo4nb")]
+transform = Transform3D(0.9064995, 0, 0.42220694, 0, 1, 0, -0.42220694, 0, 0.9064995, 657.2247, 15.770426, 471.38214)
 
 [node name="ItemAll" type="Node3D" parent="." unique_id=1589624013]
 
@@ -3429,16 +3465,16 @@ omni_range = 2.762321
 [node name="base" parent="." unique_id=39208368 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
-[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1420756221) index="0" unique_id=1081409512]
+[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 278146095) index="0" unique_id=233255946]
 transform = Transform3D(0.9988351, 0, 0, 0, 0.9988351, 0, 0, 0, 0.9988351, 0.22354126, 6.5267086e-06, 0.13165283)
 
-[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 222431066) index="0" unique_id=459852491]
+[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 542979086) index="0" unique_id=852675025]
 transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 0.001013279)
 
-[node name="Landscape_009" parent="base" index="12" unique_id=1215297822]
+[node name="Landscape_009" parent="base" index="12" unique_id=1163888131]
 material_override = ExtResource("53_ftkif")
 
-[node name="StaticBody3D" parent="base/Landscape_038" parent_id_path=PackedInt32Array(39208368, 1258461244) index="0" unique_id=1922056199]
+[node name="StaticBody3D" parent="base/Landscape_038" parent_id_path=PackedInt32Array(39208368, 5994589) index="0" unique_id=1206268474]
 collision_layer = 2
 collision_mask = 3
 
@@ -7757,6 +7793,56 @@ saveAfter = true
 [node name="Fuel" parent="MT" unique_id=379726085 instance=ExtResource("21_hb5m1")]
 transform = Transform3D(0.43824568, 0, 0.8988552, 0, 1, 0, -0.8988552, 0, 0.43824568, 580.55286, -21.6443, 478.12738)
 fuelValue = 30
+
+[node name="Cave" type="Node3D" parent="." unique_id=2017833910]
+
+[node name="rock1" parent="Cave" unique_id=321939398 instance=ExtResource("159_ke0um")]
+transform = Transform3D(0.565, 0, 0, 0, 0.565, 0, 0, 0, 0.565, 659.8595, 16.504427, 469.654)
+
+[node name="rock2" parent="Cave" unique_id=1727711771 instance=ExtResource("159_ke0um")]
+transform = Transform3D(0.41860813, -0.0983224, 0, 0.091334224, 0.38885593, -0.15921424, 0.0364054, 0.15499619, 0.39943814, 651.6205, 15.969103, 474.57162)
+
+[node name="rock3" parent="Cave" unique_id=1114475741 instance=ExtResource("159_ke0um")]
+transform = Transform3D(0.07647586, -0.0918478, -0.41305625, -0.11685559, 0.39884058, -0.110322185, 0.40668938, 0.13187186, 0.04597381, 646.4655, 18.337824, 466.10126)
+
+[node name="rock4" parent="Cave" unique_id=994981612 instance=ExtResource("159_ke0um")]
+transform = Transform3D(-0.24374112, -0.071025215, -0.2336037, -0.051958364, 0.3376085, -0.048433855, 0.23856992, 0.00096331997, -0.2492157, 644.8927, 17.623674, 468.13223)
+
+[node name="rock5" parent="Cave" unique_id=264498528 instance=ExtResource("159_ke0um")]
+transform = Transform3D(-0.11908221, -0.040414475, -0.32126483, -0.08832944, 0.33337414, -0.009197024, 0.31151623, 0.07907809, -0.12541662, 640.5219, 18.18994, 463.98993)
+
+[node name="Staktile" parent="Cave" unique_id=5046215 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(1.815, 0, 0, 0, -1.8147274, -0.031454254, 0, 0.031454254, -1.8147274, 657.35767, 15.893332, 473.48972)
+
+[node name="Staktile2" parent="Cave" unique_id=910422000 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(0.26154205, -0.0077213664, 1.7960404, -0.15613824, -1.8082097, 0.014963396, 1.7892573, -0.15666339, -0.26122782, 652.0164, 16.529463, 467.24335)
+
+[node name="Staktile3" parent="Cave" unique_id=626510737 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(0.26154208, -0.0077213706, 1.7960404, -1.0109397, -1.5008041, 0.14076243, 1.4845277, -1.0206633, -0.22056703, 642.85675, 17.036993, 467.7321)
+
+[node name="Staktile4" parent="Cave" unique_id=165837113 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(0.70133585, 0.45572782, 1.6107966, -0.7519047, -1.474609, 0.74457467, 1.4956574, -0.9550208, -0.38100952, 647.00336, 15.063864, 474.64163)
+
+[node name="Staktile5" parent="Cave" unique_id=1323593758 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(2.65, 0, 0, 0, 2.65, 0, 0, 0, 2.65, 655.9444, 28.1288, 468.7935)
+
+[node name="Staktile6" parent="Cave" unique_id=6105245 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(2.65, 0, 0, 0, 2.65, 0, 0, 0, 2.65, 648.76935, 28.944925, 472.02988)
+
+[node name="Staktile7" parent="Cave" unique_id=52848721 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(2.65, 0, 0, 0, 2.65, 0, 0, 0, 2.65, 641.8182, 23.90167, 468.41028)
+
+[node name="Staktile8" parent="Cave" unique_id=158009372 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(2.65, 0, 0, 0, 2.65, 0, 0, 0, 2.65, 650.5008, 30.083311, 474.6707)
+
+[node name="Staktile9" parent="Cave" unique_id=1521809212 instance=ExtResource("202_fcb4t")]
+transform = Transform3D(2.65, 0, 0, 0, 2.65, 0, 0, 0, 2.65, 645.9749, 26.390884, 467.15457)
+
+[node name="CAVE0001" parent="Cave" unique_id=871250694 instance=ExtResource("203_q587k")]
+transform = Transform3D(0.60738075, 0, -0.5206618, 0, 0.8, 0, 0.5206618, 0, 0.60738075, 658.07715, 16.004082, 469.98276)
+
+[node name="Carpet" parent="Cave" unique_id=1973356502 instance=ExtResource("195_gu6w2")]
+transform = Transform3D(0.46608153, 0, 0.21907298, 0, 0.515, 0, -0.21907298, 0, 0.46608153, 657.1448, 16.107119, 470.94867)
 
 [node name="SpawnAssets" type="Node3D" parent="." unique_id=1080212399]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -7.6293945e-06, -2.3841858e-07, -3.0517578e-05)
