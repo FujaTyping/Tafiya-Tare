@@ -200,6 +200,7 @@
 [ext_resource type="PackedScene" uid="uid://bhiwanvp0teoc" path="res://Model/NPC/MT/NPCTireUpgrade.glb" id="192_fa885"]
 [ext_resource type="PackedScene" uid="uid://bn4kh1os0v5nl" path="res://Model/NPC/V6/V60001.glb" id="195_6crov"]
 [ext_resource type="PackedScene" uid="uid://u4itwiq1i2n" path="res://Model/NPC/V6/V60002.glb" id="196_mdjp4"]
+[ext_resource type="PackedScene" uid="uid://b4dhd10ev0m3x" path="res://Model/L4/Magic Grass.glb" id="201_asx6p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1192,7 +1193,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -6127,6 +6128,83 @@ shadow_enabled = true
 spot_range = 9.018124
 spot_angle = 41.750698
 
+[node name="Magic Grass" parent="TerrainLight/V4" unique_id=842853908 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 221.71062, 1.3616797, 393.84164)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass" unique_id=1675537055 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
+[node name="Magic Grass2" parent="TerrainLight/V4" unique_id=263804240 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 224.70016, 1.6263559, 382.158)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass2" unique_id=1439573851 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
+[node name="Magic Grass3" parent="TerrainLight/V4" unique_id=1408227747 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 232.17186, 1.1584002, 383.71478)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass3" unique_id=195797159 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
+[node name="Magic Grass4" parent="TerrainLight/V4" unique_id=139974690 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 246.31773, 1.414044, 375.66824)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass4" unique_id=753150863 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
+[node name="Magic Grass5" parent="TerrainLight/V4" unique_id=1916897568 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 219.97505, 1.3992649, 364.6072)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass5" unique_id=21265640 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
+[node name="Magic Grass6" parent="TerrainLight/V4" unique_id=851591272 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 242.51797, 1.1642797, 395.32715)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass6" unique_id=1702853821 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
+[node name="Magic Grass7" parent="TerrainLight/V4" unique_id=444367765 instance=ExtResource("201_asx6p")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 234.95154, 1.645256, 372.97)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V4/Magic Grass7" unique_id=184037874 groups=["lightFromPole"]]
+transform = Transform3D(5.714286, 0, 0, 0, 5.714286, 0, 0, 0, 5.714286, 0, 3.81242, 0)
+visible = false
+light_color = Color(0.94310576, 0.9246366, 0, 1)
+shadow_enabled = true
+
 [node name="V5" type="Node3D" parent="TerrainLight" unique_id=1624886936]
 
 [node name="BeachTorch" parent="TerrainLight/V5" unique_id=737586623 instance=ExtResource("173_olben")]
@@ -7861,7 +7939,7 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 394.50174, 4.134837, 529.8096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 646.108, 18.88677, 423.65173)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]
