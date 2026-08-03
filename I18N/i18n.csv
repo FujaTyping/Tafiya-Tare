@@ -312,13 +312,13 @@ TAHANKYOU_CREDIT,Thank you for playing,ขอบคุณสำหรับก�
 SUPPORT_CREDIT_1,National Science and Technology Development Agency (NSTDA),สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.)
 SUPPORT_CREDIT_2,28th Thailand National Software Contest (NSC 2026),การแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ 28
 SUPPORT_CREDIT_3,Hatyaiwittayalai School,โรงเรียนหาดใหญ่วิทยาลัย
-ENDING_CINEMATIC_TEXT_1,"Finally, I've reached my destination...",ถึงจุดหมายปลายทางในที่สุด...
-ENDING_CINEMATIC_TEXT_2,Recalling the first day I began my journey alone...,หวนนึกถึงวันแรกที่เริ่มเดินทางเพียงลำพัง...
-ENDING_CINEMATIC_TEXT_3,I only hoped for eternal life...,หวังเพียงครอบครองชีวิตนิรันดร์...
-ENDING_CINEMATIC_TEXT_4,But the cooperation of my fellow travelers...,แต่ความร่วมมือจากเพื่อนร่วมทาง...
-ENDING_CINEMATIC_TEXT_5,Had transformed this world into something even more beautiful than immortality,ได้เปลี่ยนโลกนี้ให้งดงามยิ่งกว่าความเป็นอมตะ
-ENDING_CINEMATIC_TEXT_6,Because we went together... we went further,เพราะไปด้วยกัน... จึงไปได้ไกล
-QUEST_STARTED_LEVEL_6,Explore the beach and play dodgeball with the locals,สำรวจริมชายหาดและเล่นดอดจ์บอลกับชาวบ้าน
+ENDING_CINEMATIC_TEXT_1,"Finally, we've reached our destination...",ถึงจุดหมายปลายทางในที่สุด...
+ENDING_CINEMATIC_TEXT_2,"Recalling the first day we began our journey, solely for the sake of immortality.",หวนนึกถึงวันแรกที่เริ่มเดินทางเพียงเพื่อความอมตะ
+ENDING_CINEMATIC_TEXT_3,"Along the way, we met many people and experienced diverse perspectives.",ระหว่างทางได้พบผู้คนมากมายและมุมมองที่หลากหลาย
+ENDING_CINEMATIC_TEXT_4,We went through various stories and became fellow travelers.,ผ่านเรื่องราวต่างๆ และกลายเป็นเพื่อนร่วมเส้นทาง
+ENDING_CINEMATIC_TEXT_5,This taught us that... longevity is more valuable than immortality.,จนทำให้รู้ว่า...ความยั่งยืนมีค่ากว่าความอมตะ
+ENDING_CINEMATIC_TEXT_6,Together... we can go far.,เราไปด้วยกัน... จึงไปได้ไกล
+QUEST_STARTED_LEVEL_6,Explore the beach and chat with the village leader,สำรวจริมชายหาดและเล่นคุยกับผู้นำหมู่บ้าน
 DIALOGE_V5_1_1,Hey kid!,เฮ้ยน้องชาย!
 DIALOGE_V5_1_2,"Going to drive up the mountain, huh? There's still space in the back of your truck! Let me hitch a ride!",จะขับรถไต่ขึ้นยอดเขาสินะ ท้ายกระบะยังว่างนี่ ขอพี่ติดไปด้วยคนดิ!
 DIALOGE_V5_1_3,"Sure thing, boss! But the road ahead is really steep and bumpy. Are you sure you can handle it?",ได้เลยครับพี่! แต่ทางข้างหน้ามันชันและเหวี่ยงแรงมากนะ พี่จะไหวเหรอ?
@@ -363,3 +363,16 @@ DIALOGE_V5_REWARD_2,Hahaha! Excellent! You're pretty strong! You've passed our v
 DIALOGE_V5_REWARD_3,Here... take this gallon of fuel and fill up your car.,เอ้านี่... รับน้ำมันแกลลอนนี้ไปเติมรถซะ
 DIALOGE_V5_REWARD_4,"And also, take this coconut whey protein. Now that you're energized, floor it and climb the hill, young man!",แล้วก็เอา เวย์โปรตีนมะพร้าวสกัด นี่ไปดกด้วย มีแรงแล้วก็เหยียบขึ้นเขาให้มิดไมล์ไปเลยไอ้หนุ่ม!
 DIALOGE_V5_REWARD_5,"Thanks, boss! I'm fully energized now! Time to get back on my feet!",ขอบคุณครับลูกพี่! พลังมาเต็มรถเต็มคนเลย ขอตัวลุยต่อล่ะครับ!
+DIALOGE_V6_1_1,That pickup truck... is it heading to the spring on the mountaintop?,รถกระบะคันนั้นน่ะ... จะมุ่งหน้าไปที่บ่อน้ำบนยอดเขาใช่ไหม?
+DIALOGE_V6_1_2,"Yes, sir. Would you like a ride with us?",ใช่ครับพี่ พี่สนใจติดรถไปกับพวกเราไหมล่ะ?
+DIALOGE_V6_1_3,I'd love to hitch a ride to see that clear spring on the mountaintop too!,ขอข้าติดรถไปเจอน้ำใสๆ บนยอดเขานั่นด้วยคนนะ
+DIALOGE_V6_1_4,"Certainly, sir! Jump in the back of the truck, I'll give you a ride all the way there!",ยินดีเลยครับพี่! กระโดดขึ้นหลังรถมาเลย เดี๋ยวผมพาไปส่งถึงที่เอง!
+DIALOGE_V6_2_1,"Wow, that suit is so cool! It even has fins on its back!",ชุดพี่เท่จังครับ มีครีบติดที่หลังด้วย!
+DIALOGE_V6_2_2,Isn't that awesome!,เจ๋งใช่มั้ยล่ะ!
+DIALOGE_V6_2_3,"These are the latest invention fins, they're super lightweight. I was thinking of showing them off to those muscle-bound guys in the village next door!",นี่ครีบประดิษฐ์รุ่นใหม่ล่าสุดเลยนะ น้ำหนักเบาหวิว ว่าจะเอาไปอวดพวกบ้ากล้ามที่หมู่บ้านข้างๆ ซะหน่อย!
+DIALOGE_V6_3_1,What are you doing standing here with your cheeks puffed out?,พี่มายืนทำแก้มป่องอะไรตรงนี้ครับเนี่ย?
+DIALOGE_V6_3_2,Shhh! I'm practicing holding my breath.,ชู่ว! ข้ากำลังฝึกกลั้นหายใจอยู่
+DIALOGE_V6_3_3,The secret to being a sea person is having lungs of iron! Alright... Hup!,เคล็ดลับของการเป็นคนทะเลคือต้องปอดเหล็กเว้ย! เอ้า... ฮึบ!
+DIALOGE_V6_4_1,"What delicious snacks do you have to recommend around here, Auntie?",แถวนี้มีอะไรอร่อยๆ แนะนำบ้างครับป้า?
+DIALOGE_V6_4_2,"You have to try this! Crispy seaweed snacks, a local specialty!",ต้องนี่เลย สาหร่ายอบกรอบสูตรคนทะเล!
+DIALOGE_V6_4_3,"Salty and savory, you'll be so engrossed in crunching that you'll forget all about climbing the mountain! Want to try a bag?""",เค็มๆ มันๆ เคี้ยวเพลินจนลืมทางขึ้นเขาแน่นอน ลองสักถุงมั้ยจ๊ะ?

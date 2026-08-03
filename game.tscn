@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://cmxd28lefav5" path="res://Interaction/LV6/coconutQuest.tscn" id="45_2pp1t"]
 [ext_resource type="PackedScene" uid="uid://dg6mf2pjw7yx7" path="res://Item/Ingredient/cooking_put_desert.tscn" id="45_nliq0"]
 [ext_resource type="PackedScene" uid="uid://o1rgucnj08gm" path="res://Item/Food/burnt.tscn" id="46_oo6xx"]
+[ext_resource type="PackedScene" uid="uid://cs26rb6chbac2" path="res://Model/LV6/Jellyfish.glb" id="47_q4l6t"]
 [ext_resource type="PackedScene" uid="uid://b841wtw374goa" path="res://Item/Food/NamDokmai Snack.tscn" id="47_y7j3j"]
 [ext_resource type="Texture2D" uid="uid://2nwwbler27uo" path="res://Terrain/Texture/smoke.png" id="49_87ddb"]
 [ext_resource type="PackedScene" uid="uid://bkhbju0n3koqo" path="res://Item/Ingredient/cooking_put.tscn" id="49_jo4nb"]
@@ -118,6 +119,7 @@
 [ext_resource type="PackedScene" uid="uid://1lduyly87yp5" path="res://Interaction/JarMaker.tscn" id="99_i3uta"]
 [ext_resource type="PackedScene" uid="uid://d2rtthyhpu62s" path="res://Item/Ingredient/guava.tscn" id="100_hl454"]
 [ext_resource type="PackedScene" uid="uid://cdecbnbdaf816" path="res://Item/Ingredient/mango.tscn" id="101_ell1s"]
+[ext_resource type="PackedScene" uid="uid://b3ihlytbexxm4" path="res://Model/LV6/Jellyfish Pink.glb" id="102_0xutx"]
 [ext_resource type="PackedScene" uid="uid://dcdfppks6w67e" path="res://Model/L3/KhengTakPla with pla.glb" id="102_j4tta"]
 [ext_resource type="PackedScene" uid="uid://dsbygpgqivcuc" path="res://Interaction/LV2/Farmland Interact.tscn" id="103_74iwm"]
 [ext_resource type="PackedScene" uid="uid://cabi8pyhr766a" path="res://Item/View/Jarrecipie.tscn" id="104_hsv4y"]
@@ -186,6 +188,8 @@
 [ext_resource type="PackedScene" uid="uid://bkefmoj1ti27" path="res://Item/L6/WhrenCHADD.tscn" id="177_v4v7k"]
 [ext_resource type="PackedScene" uid="uid://doxrpoof0e08i" path="res://Model/NPC/V5/V50002.glb" id="178_qqc4h"]
 [ext_resource type="PackedScene" uid="uid://b2ej7ixnhbfs7" path="res://Model/NPC/V5/V50003.glb" id="179_qqc4h"]
+[ext_resource type="PackedScene" uid="uid://cvkt0jj4dkq1k" path="res://Model/NPC/V6/V60003.glb" id="179_s2tc6"]
+[ext_resource type="PackedScene" uid="uid://dwa2he1mffbh1" path="res://Model/NPC/V6/V60004.glb" id="180_bkby0"]
 [ext_resource type="PackedScene" uid="uid://b2ttia8k3o77d" path="res://Model/Sign/Chuan Sign.glb" id="180_kp8cn"]
 [ext_resource type="PackedScene" uid="uid://ci8rcmccas0hw" path="res://Model/WayWarningSign.glb" id="181_nc06o"]
 [ext_resource type="PackedScene" uid="uid://du7lo8c5h8xfw" path="res://Model/LV6/HouseLV6.glb" id="182_qnd83"]
@@ -194,6 +198,8 @@
 [ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="190_i8wiq"]
 [ext_resource type="PackedScene" uid="uid://ddnmyrjwfvv27" path="res://Interaction/LV6/SubmitQLV6.tscn" id="190_wr4we"]
 [ext_resource type="PackedScene" uid="uid://bhiwanvp0teoc" path="res://Model/NPC/MT/NPCTireUpgrade.glb" id="192_fa885"]
+[ext_resource type="PackedScene" uid="uid://bn4kh1os0v5nl" path="res://Model/NPC/V6/V60001.glb" id="195_6crov"]
+[ext_resource type="PackedScene" uid="uid://u4itwiq1i2n" path="res://Model/NPC/V6/V60002.glb" id="196_mdjp4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -1186,7 +1192,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1870,6 +1876,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.8612, 0.9540539, 744.3757
 
 [node name="NPCTireUpgrade" parent="DialogeTriggers" unique_id=1797527674 instance=ExtResource("192_fa885")]
 transform = Transform3D(0.12924169, 0, -0.78949136, 0, 0.8, 0, 0.78949136, 0, 0.12924169, 579.1208, -21.579613, 479.305)
+
+[node name="V6" type="Node3D" parent="DialogeTriggers" unique_id=1357572686]
+
+[node name="DialogeTrigged" parent="DialogeTriggers/V6" unique_id=716139928 node_paths=PackedStringArray("animationBody", "viewDetect") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.8060626, 0, -0.5918303, 0, 1, 0, 0.5918303, 0, 0.8060626, 387.77588, -20.797129, 525.5237)
+dialoguesLine = Array[String](["DIALOGE_V6_1_1", "DIALOGE_V6_1_2", "DIALOGE_V6_1_3", "DIALOGE_V6_1_4"])
+charLine = Array[String](["NPC_VILLAGER", "PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Village 6/V60001")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+warpOnCar = true
+viewDetect = NodePath("../../../Village 6/V60001/VisibleOnScreenNotifier3D")
+
+[node name="DialogeTrigged2" parent="DialogeTriggers/V6" unique_id=222934936 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.5708282, 0, -0.8210695, 0, 1, 0, 0.8210695, 0, 0.5708282, 418.2513, -21.018017, 538.31964)
+dialoguesLine = Array[String](["DIALOGE_V6_2_1", "DIALOGE_V6_2_2", "DIALOGE_V6_2_3"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Village 6/V60002")
+helloAnimation = "HnT"
+talkingAnimation = "HnT"
+saveAfter = true
+
+[node name="DialogeTrigged3" parent="DialogeTriggers/V6" unique_id=978628242 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(0.9799282, 0, -0.19935083, 0, 1, 0, 0.19935083, 0, 0.9799282, 424.87277, -20.797691, 531.1337)
+dialoguesLine = Array[String](["DIALOGE_V6_3_1", "DIALOGE_V6_3_2", "DIALOGE_V6_3_3"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Village 6/V60003")
+helloAnimation = "HnT"
+talkingAnimation = "HnT"
+
+[node name="DialogeTrigged4" parent="DialogeTriggers/V6" unique_id=98352209 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
+transform = Transform3D(-0.023437662, 0, 0.9997253, 0, 1, 0, -0.9997253, 0, -0.023437662, 405.5042, -20.168564, 539.1241)
+dialoguesLine = Array[String](["DIALOGE_V6_4_1", "DIALOGE_V6_4_2", "DIALOGE_V6_4_3"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../../../Village 6/V60004")
+helloAnimation = "HnT"
+talkingAnimation = "HnT"
 
 [node name="AreaTrigged" type="Node3D" parent="." unique_id=1288122767]
 
@@ -6409,6 +6465,133 @@ shadow_enabled = true
 spot_range = 9.018124
 spot_angle = 41.750698
 
+[node name="V6" type="Node3D" parent="TerrainLight" unique_id=1231786191]
+
+[node name="Jellyfish" parent="TerrainLight/V6" unique_id=863564863 instance=ExtResource("47_q4l6t")]
+transform = Transform3D(0.36517927, -0.16323023, 0, 0.16323023, 0.36517927, 0, 0, 0, 0.4, 404.64, -18.063543, 537.5873)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish" unique_id=2036546355 groups=["lightFromPole"]]
+transform = Transform3D(2.4999998, -1.1920929e-07, 0, 1.1920929e-07, 2.4999998, 0, 0, 0, 2.4999998, -0.23834229, -0.7263794, 0)
+visible = false
+light_color = Color(9.62615e-07, 0.9904968, 0.9961328, 1)
+light_energy = 1.2
+shadow_enabled = true
+omni_range = 6.755511
+
+[node name="Jellyfish3" parent="TerrainLight/V6" unique_id=290233000 instance=ExtResource("47_q4l6t")]
+transform = Transform3D(0.36517927, -0.16323023, 0, 0.16323023, 0.36517927, 0, 0, 0, 0.4, 415.79187, -18.063543, 547.9537)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish3" unique_id=193289329 groups=["lightFromPole"]]
+transform = Transform3D(2.4999998, -1.1920929e-07, 0, 1.1920929e-07, 2.4999998, 0, 0, 0, 2.4999998, -0.23834229, -0.7263794, 0)
+visible = false
+light_color = Color(9.62615e-07, 0.9904968, 0.9961328, 1)
+light_energy = 1.2
+shadow_enabled = true
+omni_range = 6.755511
+
+[node name="Jellyfish2" parent="TerrainLight/V6" unique_id=1158867665 instance=ExtResource("47_q4l6t")]
+transform = Transform3D(-0.01958936, 0.008756182, -0.39942405, 0.16323023, 0.36517924, 0, 0.36465347, -0.1629952, -0.021457255, 389.2943, -18.063543, 525.5946)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish2" unique_id=452381426 groups=["lightFromPole"]]
+transform = Transform3D(2.4999998, -1.1920929e-07, 0, 1.1920929e-07, 2.4999998, 0, 0, 0, 2.4999998, -0.23834229, -0.7263794, 0)
+visible = false
+light_color = Color(9.62615e-07, 0.9904968, 0.9961328, 1)
+light_energy = 1.2
+shadow_enabled = true
+omni_range = 6.755511
+
+[node name="Jellyfish4" parent="TerrainLight/V6" unique_id=990899416 instance=ExtResource("47_q4l6t")]
+transform = Transform3D(-0.3646684, 0.1630019, 0.021150531, 0.16323026, 0.36517927, -6.39476e-10, -0.019309347, 0.008630994, -0.39944047, 380.3171, -18.063543, 537.8426)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish4" unique_id=906903968 groups=["lightFromPole"]]
+transform = Transform3D(2.4999998, -1.1920929e-07, 0, 1.1920929e-07, 2.4999998, 0, 0, 0, 2.4999998, -0.23834229, -0.7263794, 0)
+visible = false
+light_color = Color(9.62615e-07, 0.9904968, 0.9961328, 1)
+light_energy = 1.2
+shadow_enabled = true
+omni_range = 6.755511
+
+[node name="Jellyfish5" parent="TerrainLight/V6" unique_id=973094941 instance=ExtResource("47_q4l6t")]
+transform = Transform3D(-0.30686423, 0.1371642, -0.21684171, 0.16323024, 0.36517924, -5.349361e-10, 0.1979652, -0.08848782, -0.3361245, 417.76636, -18.063543, 538.8627)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish5" unique_id=528960967 groups=["lightFromPole"]]
+transform = Transform3D(2.4999998, -1.1920929e-07, 0, 1.1920929e-07, 2.4999998, 0, 0, 0, 2.4999998, -0.23834229, -0.7263794, 0)
+visible = false
+light_color = Color(9.62615e-07, 0.9904968, 0.9961328, 1)
+light_energy = 1.2
+shadow_enabled = true
+omni_range = 6.755511
+
+[node name="Jellyfish Pink" parent="TerrainLight/V6" unique_id=2038336389 instance=ExtResource("102_0xutx")]
+transform = Transform3D(0.3752876, 0.124921605, 0.05961395, -0.12633249, 0.37952617, 0, -0.056562632, -0.018827947, 0.3955328, 422.35986, -18.888565, 530.725)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish Pink" unique_id=622585755 groups=["lightFromPole"]]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -1.5029106, 0.21765137)
+visible = false
+light_color = Color(0.9965388, 0.48871166, 0.9999998, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Jellyfish Pink4" parent="TerrainLight/V6" unique_id=196154728 instance=ExtResource("102_0xutx")]
+transform = Transform3D(0.08222858, 0.027371347, -0.39049882, -0.12633249, 0.37952617, 0, 0.3705113, 0.12333172, 0.08666448, 423.29132, -18.888565, 517.73474)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish Pink4" unique_id=530028992 groups=["lightFromPole"]]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -1.5029106, 0.21765137)
+visible = false
+light_color = Color(0.9965388, 0.48871166, 0.9999998, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Jellyfish Pink5" parent="TerrainLight/V6" unique_id=977752670 instance=ExtResource("102_0xutx")]
+transform = Transform3D(0.08222858, 0.027371347, -0.39049882, -0.12633249, 0.37952617, 0, 0.3705113, 0.12333172, 0.08666448, 427.7747, -18.888565, 507.0722)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish Pink5" unique_id=1944969108 groups=["lightFromPole"]]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -1.5029106, 0.21765137)
+visible = false
+light_color = Color(0.9965388, 0.48871166, 0.9999998, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Jellyfish Pink2" parent="TerrainLight/V6" unique_id=1437015485 instance=ExtResource("102_0xutx")]
+transform = Transform3D(0.3752876, 0.124921605, 0.05961395, -0.12633249, 0.37952617, 0, -0.056562632, -0.018827947, 0.3955328, 404.39453, -18.651152, 523.627)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish Pink2" unique_id=347391617 groups=["lightFromPole"]]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -1.5029106, 0.21765137)
+visible = false
+light_color = Color(0.9965388, 0.48871166, 0.9999998, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Jellyfish Pink3" parent="TerrainLight/V6" unique_id=1483752553 instance=ExtResource("102_0xutx")]
+transform = Transform3D(0.18282071, 0.06085535, 0.35053283, -0.12633249, 0.37952617, 0, -0.33259094, -0.11070921, 0.19268313, 392.70255, -18.651152, 542.43756)
+script = ExtResource("85_vvpk2")
+defaultLightEnergy = 1.2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V6/Jellyfish Pink3" unique_id=19838491 groups=["lightFromPole"]]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, -1.5029106, 0.21765137)
+visible = false
+light_color = Color(0.9965388, 0.48871166, 0.9999998, 1)
+light_energy = 1.2
+shadow_enabled = true
+
 [node name="NPC" type="Node3D" parent="." unique_id=1826007391]
 
 [node name="Base" parent="NPC" unique_id=1805637270 instance=ExtResource("84_w37fy")]
@@ -7153,6 +7336,22 @@ transform = Transform3D(1.6782396, 0.19935445, -2.073498, 0.049090754, 2.6581964
 [node name="UnderWaterFarm2" parent="Village 6" unique_id=24366516 instance=ExtResource("183_de524")]
 transform = Transform3D(1.596769, 0.08357087, -2.1445208, -0.06174754, 2.6736534, 0.0582148, 2.1452599, 0.014752664, 1.597894, 391.04, -21.075197, 523.0546)
 
+[node name="V60001" parent="Village 6" unique_id=460403000 instance=ExtResource("195_6crov")]
+transform = Transform3D(-0.6049473, 0.07625843, 0.51790285, 0.117085055, 0.7911258, 0.020274619, -0.51022524, 0.09112971, -0.6093977, 387.6839, -21.243975, 525.4265)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Village 6/V60001" unique_id=1003581638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7252903e-09, 0.73719996, 0)
+aabb = AABB(-0.35630974, -0.83143014, -0.579814, 0.7126195, 1.6628603, 1.159628)
+
+[node name="V60002" parent="Village 6" unique_id=1041937346 instance=ExtResource("196_mdjp4")]
+transform = Transform3D(0.47693506, 0, -0.64228725, 0, 0.8, 0, 0.64228725, 0, 0.47693506, 418.22845, -21.509739, 538.3388)
+
+[node name="V60003" parent="Village 6" unique_id=628750616 instance=ExtResource("179_s2tc6")]
+transform = Transform3D(0.78514683, 0, -0.15344208, 0, 0.8, 0, 0.15344208, 0, 0.78514683, 424.88464, -21.266413, 531.1367)
+
+[node name="V60004" parent="Village 6" unique_id=349822098 instance=ExtResource("180_bkby0")]
+transform = Transform3D(0.002764566, 0, -0.79999524, 0, 0.8, 0, 0.79999524, 0, 0.002764566, 405.46765, -20.672466, 539.16425)
+
 [node name="MT" type="Node3D" parent="." unique_id=1279431255]
 
 [node name="RockHOTPond" type="Node3D" parent="MT" unique_id=1417677031]
@@ -7662,7 +7861,7 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.05055, 4.134837, 401.96945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 394.50174, 4.134837, 529.8096)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]
@@ -7691,6 +7890,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.05055, 4.134837, 401.9694
 [editable path="TerrainLight/V2/WoodLantern5"]
 [editable path="TerrainLight/V2/WoodLantern6"]
 [editable path="TerrainLight/V2/WoodLantern12"]
+[editable path="TerrainLight/V6/Jellyfish"]
+[editable path="TerrainLight/V6/Jellyfish3"]
+[editable path="TerrainLight/V6/Jellyfish2"]
+[editable path="TerrainLight/V6/Jellyfish4"]
+[editable path="TerrainLight/V6/Jellyfish5"]
 [editable path="NPC/Base"]
 [editable path="village1"]
 [editable path="village1/Animals/BCapybara"]
