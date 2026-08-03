@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cmxd28lefav5"]
+
+[ext_resource type="PackedScene" uid="uid://cabs03ktjgt7e" path="res://Model/L5/Quest/Coconut ball.glb" id="1_h4am7"]
+[ext_resource type="Script" uid="uid://cxhd37t0gw61n" path="res://Interaction/LV6/coconut_quest.gd" id="1_wujvi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbmww"]
+size = Vector3(0.30688477, 0.35327148, 0.32714844)
+
+[node name="CoconutQuest" type="StaticBody3D" unique_id=58823481]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_wujvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=878912852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12927246, 0)
+shape = SubResource("BoxShape3D_pbmww")
+
+[node name="Coconut ball" parent="." unique_id=873765433 instance=ExtResource("1_h4am7")]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)

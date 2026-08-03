@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://ddnmyrjwfvv27"]
+
+[ext_resource type="Script" uid="uid://cp87ivbprwo1o" path="res://Interaction/LV6/submit_qlv_6.gd" id="1_ed1hq"]
+[ext_resource type="PackedScene" uid="uid://dyagvsd5ildr2" path="res://Model/NPC/V5/V50005.glb" id="1_msg0w"]
+[ext_resource type="PackedScene" uid="uid://dsrn5mdufc2ee" path="res://Model/Dialoge/DialogTriggerState.tscn" id="2_a3w51"]
+[ext_resource type="PackedScene" uid="uid://cr747landsx8y" path="res://Model/Car/fuel.tscn" id="2_y0n33"]
+[ext_resource type="Script" uid="uid://cs8coxrjup3os" path="res://Interaction/LV6/submit.gd" id="4_io2x6"]
+[ext_resource type="AudioStream" uid="uid://cw0f1x1d1ygku" path="res://SFX/chefPass.wav" id="6_7fiab"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ed1hq"]
+size = Vector3(0.8388672, 1.4663086, 1.1123047)
+
+[node name="SubmitQlv6" type="Node3D" unique_id=1797520423]
+script = ExtResource("1_ed1hq")
+rewardScemce = ExtResource("2_y0n33")
+
+[node name="V50005" parent="." unique_id=900375653 instance=ExtResource("1_msg0w")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Start" parent="." unique_id=1658165319 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("2_a3w51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6974036, 0)
+dialoguesLine = Array[String](["DIALOGE_V5_QUEST_1", "DIALOGE_V5_QUEST_2", "DIALOGE_V5_QUEST_3", "DIALOGE_V5_QUEST_4", "DIALOGE_V5_QUEST_5"])
+charLine = Array[String](["NPC_LEADER", "PLAYER_DIALOGE_NAME", "NPC_LEADER", "NPC_LEADER", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../V50005")
+helloAnimation = "Hello"
+talkingAnimation = "Talking"
+saveAfter = true
+triggedAfterFinish = true
+triggedBody = NodePath("..")
+triggedParams = "One"
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1584152348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05249065, 0.6391337, 0)
+
+[node name="reward" type="Marker3D" parent="." unique_id=96053404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.097785234, 1.1111956)
+
+[node name="Done" parent="." unique_id=572278158 node_paths=PackedStringArray("animationBody", "triggedBody") instance=ExtResource("2_a3w51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.705277, -1.3147554)
+dialoguesLine = Array[String](["DIALOGE_V5_REWARD_1", "DIALOGE_V5_REWARD_2", "DIALOGE_V5_REWARD_3", "DIALOGE_V5_REWARD_4", "DIALOGE_V5_REWARD_5"])
+charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_LEADER", "NPC_LEADER", "NPC_LEADER", "PLAYER_DIALOGE_NAME"])
+isBody = true
+initAnimation = true
+initAnimationName = "Init"
+animationBody = NodePath("../V50005")
+NoHelloAnimation = true
+talkingAnimation = "Talking"
+saveAfter = true
+triggedAfterFinish = true
+triggedBody = NodePath("..")
+triggedParams = "Reward"
+
+[node name="Submit" type="StaticBody3D" parent="." unique_id=1524356156 node_paths=PackedStringArray("triggedNode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3170938, 1.555577)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("4_io2x6")
+triggedNode = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Submit" unique_id=1610727110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.066334724, 0)
+shape = SubResource("BoxShape3D_ed1hq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=521058361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6048279, 1.019768, 0)
+stream = ExtResource("6_7fiab")
+max_db = 6.0
+max_distance = 10.0

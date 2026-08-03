@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://iyi5ebrcot4x" path="res://Terrain/Texture/fire.png" id="42_cfc7e"]
 [ext_resource type="ArrayMesh" uid="uid://cnojoabk3ssg1" path="res://Terrain/Coral/Mesh/BlueCoral.res" id="42_swvvi"]
 [ext_resource type="AudioStream" uid="uid://butv3xv5yqkh6" path="res://SFX/campfireBurn.wav" id="43_gh0px"]
+[ext_resource type="PackedScene" uid="uid://cmxd28lefav5" path="res://Interaction/LV6/coconutQuest.tscn" id="45_2pp1t"]
 [ext_resource type="PackedScene" uid="uid://dg6mf2pjw7yx7" path="res://Item/Ingredient/cooking_put_desert.tscn" id="45_nliq0"]
 [ext_resource type="PackedScene" uid="uid://o1rgucnj08gm" path="res://Item/Food/burnt.tscn" id="46_oo6xx"]
 [ext_resource type="PackedScene" uid="uid://b841wtw374goa" path="res://Item/Food/NamDokmai Snack.tscn" id="47_y7j3j"]
@@ -191,6 +192,7 @@
 [ext_resource type="PackedScene" uid="uid://bu7pcn3b8p5r" path="res://Model/LV6/UnderWaterFarm.glb" id="183_de524"]
 [ext_resource type="PackedScene" uid="uid://b6ufy7b3waog6" path="res://Model/Barrel.glb" id="189_21r1j"]
 [ext_resource type="PackedScene" uid="uid://4knlfp32llj7" path="res://Model/Car/CarCenterTire.glb" id="190_i8wiq"]
+[ext_resource type="PackedScene" uid="uid://ddnmyrjwfvv27" path="res://Interaction/LV6/SubmitQLV6.tscn" id="190_wr4we"]
 [ext_resource type="PackedScene" uid="uid://bhiwanvp0teoc" path="res://Model/NPC/MT/NPCTireUpgrade.glb" id="192_fa885"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
@@ -1180,11 +1182,10 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(0.009314772, -0.98311853, -0.18273339, -0.14235416, -0.18218383, 0.9729053, -0.989772, 0.016950397, -0.141648, 0, 0, 0)
 top_level = true
-visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1841,7 +1842,7 @@ talkingAnimation = "Talking"
 saveAfter = true
 
 [node name="DialogeTrigged10" parent="DialogeTriggers/V5" unique_id=164662532 node_paths=PackedStringArray("animationBody") instance=ExtResource("85_7x3ck")]
-transform = Transform3D(0.8055355, 0, 0.59254754, 0, 1, 0, -0.59254754, 0, 0.8055355, 321.4512, -3.2571683, 744.10535)
+transform = Transform3D(0.8055355, 0, 0.59254754, 0, 1, 0, -0.59254754, 0, 0.8055355, 320.94754, -2.8199413, 744.43677)
 dialoguesLine = Array[String](["DIALOGE_V5_4_1", "DIALOGE_V5_4_2", "DIALOGE_V5_4_3"])
 charLine = Array[String](["PLAYER_DIALOGE_NAME", "NPC_VILLAGER", "NPC_VILLAGER"])
 isBody = true
@@ -1862,6 +1863,9 @@ animationBody = NodePath("../../../Village5/V50003")
 helloAnimation = "Hello"
 talkingAnimation = "Talking"
 saveAfter = true
+
+[node name="CoconutQuest" parent="DialogeTriggers/V5" unique_id=58823481 instance=ExtResource("45_2pp1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 323.8612, 0.9540539, 744.3757)
 
 [node name="NPCTireUpgrade" parent="DialogeTriggers" unique_id=1797527674 instance=ExtResource("192_fa885")]
 transform = Transform3D(0.12924169, 0, -0.78949136, 0, 0.8, 0, 0.78949136, 0, 0.12924169, 579.1208, -21.579613, 479.305)
@@ -7121,7 +7125,7 @@ aabb = AABB(-1, -0.59662074, -1, 2, 1.1932415, 2)
 transform = Transform3D(-0.738655, 0.016676743, 0.30677468, -0.014983861, 0.79591465, -0.079345405, -0.306862, -0.079006955, -0.7345703, 319.46957, -3.8508227, 737.58875)
 
 [node name="V50002" parent="Village5" unique_id=212619439 instance=ExtResource("178_qqc4h")]
-transform = Transform3D(-0.5930368, 0.15452081, -0.51422805, 0.111117646, 0.7848901, 0.107705094, 0.5253191, 0.008416612, -0.60329854, 321.50763, -3.7754357, 743.9973)
+transform = Transform3D(-0.59303683, 0.15452081, -0.514228, 0.1469146, 0.78361666, 0.066039346, 0.51645267, -0.04547977, -0.60926867, 320.9041, -3.349811, 744.42255)
 
 [node name="V50003" parent="Village5" unique_id=1988155474 instance=ExtResource("179_qqc4h")]
 transform = Transform3D(0.79802877, 0, -0.056125533, 0, 0.8, 0, 0.056125533, 0, 0.79802877, 333.5519, -7.070752, 738.61676)
@@ -7549,6 +7553,9 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 415.03427, -21.804323, 546.9851)
 fuelValue = 75
 
+[node name="SubmitQlv6" parent="." unique_id=1797520423 instance=ExtResource("190_wr4we")]
+transform = Transform3D(-0.5136161, 0.3006725, -0.80361336, 0.16192283, 0.9537274, 0.2533475, 0.8426028, 0, -0.53853554, 316.35754, -1.6462444, 744.2641)
+
 [node name="Transition" type="Control" parent="." unique_id=143494358]
 visible = false
 z_index = 10
@@ -7650,7 +7657,7 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 573.773, -0.36805546, 475.15887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 317.65656, -0.36805546, 743.35693)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

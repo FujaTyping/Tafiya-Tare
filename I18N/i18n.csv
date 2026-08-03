@@ -351,3 +351,15 @@ DIALOGE_MT_1_2,But you've been helping to pick up trash and taking care of the v
 DIALOGE_MT_1_3,Wow... You even upgraded my car's engine for free!?,โห... พี่ช่วยจูนเครื่องอัปเกรดความเร็วให้รถผมฟรีๆ เลยเหรอครับ!?
 DIALOGE_MT_1_4,Of course! Kindness for kindness!,แน่นอน! น้ำใจแลกน้ำใจไงล่ะ
 DIALOGE_MT_1_5,The engine's in top shape now... Alright! Step on the gas and get us all to the top!,เครื่องฟิตเปรี๊ยะแล้ว... เอ้า! เหยียบให้มิด แล้วพาพวกเราทุกคนไปให้ถึงยอดเขากันเลย!
+DIALOGE_V5_QUEST_1,Hey kid! You've got some muscle. Want to warm up and work up ass sweat?,เฮ้ยน้องชาย! หน่วยก้านไม่เลวเลยนี่ สนใจมาวอร์มอัพเรียกเหงื่อหน่อยมั้ย?
+DIALOGE_V5_QUEST_2,"How do we warm up, boss?",วอร์มอัพยังไงครับลูกพี่?
+DIALOGE_V5_QUEST_3,Come help me collect some coconuts from the beach!,ไปช่วยข้าเก็บ มะพร้าว ริมหาดมาทีสิ!
+DIALOGE_V5_QUEST_4,"We need the coconut water to make whey protein for muscle building, but lately the coconut crabs have been stealing all our coconuts.",พวกเราต้องเอาน้ำมะพร้าวไปทำเวย์โปรตีนปั้นกล้าม แต่ช่วงนี้พวกปูมะพร้าวมันดุ แย่งลูกมะพร้าวพวกเราไปหมดเลย
+DIALOGE_V5_QUEST_5,"Haha, sure! Consider it a stretch before we drive up the mountain.",ฮ่าๆ ได้เลยครับ ถือซะว่ายืดเส้นยืดสายก่อนขับรถขึ้นเขาละกัน
+INTERACTION_FAIL_NEED_COCONUT,Coconuts are needed for delivery,ต้องการมะพร้าวเพื่อส่ง
+INTERACTION_COLLECT_COCONUT,Press E to collect the coconut,กด E เพื่อเก็บมะพร้าว
+DIALOGE_V5_REWARD_1,"Here you go, boss! Coconuts by the beach!",นี่ครับลูกพี่! มะพร้าวริมหาด
+DIALOGE_V5_REWARD_2,Hahaha! Excellent! You're pretty strong! You've passed our village's warm-up test!,ฮ่าๆๆ ยอดเยี่ยม! เอ็งนี่มันแข็งแกร่งใช้ได้! สอบผ่านการวอร์มอัพของหมู่บ้านเราแล้ว!
+DIALOGE_V5_REWARD_3,Here... take this gallon of fuel and fill up your car.,เอ้านี่... รับน้ำมันแกลลอนนี้ไปเติมรถซะ
+DIALOGE_V5_REWARD_4,"And also, take this coconut whey protein. Now that you're energized, floor it and climb the hill, young man!",แล้วก็เอา เวย์โปรตีนมะพร้าวสกัด นี่ไปดกด้วย มีแรงแล้วก็เหยียบขึ้นเขาให้มิดไมล์ไปเลยไอ้หนุ่ม!
+DIALOGE_V5_REWARD_5,"Thanks, boss! I'm fully energized now! Time to get back on my feet!",ขอบคุณครับลูกพี่! พลังมาเต็มรถเต็มคนเลย ขอตัวลุยต่อล่ะครับ!

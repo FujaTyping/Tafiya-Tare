@@ -36,7 +36,6 @@ func _ready() -> void:
 		carFuel = Varibles.saved_data.car_fuel
 		Varibles.ListNPCbackCar = Varibles.saved_data.carNPCBackList
 		max_torque = Varibles.saved_data.car_max_torque
-	print(max_torque)
 	fuelUpdate()
 	updateBackNPC()
 	

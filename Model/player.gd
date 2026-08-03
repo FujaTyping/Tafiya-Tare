@@ -66,6 +66,9 @@ var RiceSeed:int = 0;
 var haveAPoonPowder:bool = false;
 var collectedRice:bool = false;
 
+# Level 5
+var cocoNUTLV5:bool = false
+
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
 @onready var control_sh: AnimationPlayer = $Tutorial/ControlSH
@@ -93,6 +96,7 @@ var collectedRice:bool = false;
 @onready var testing_marker: Marker3D = $"../TestingMarker"
 @onready var planting: AudioStreamPlayer3D = $Planting
 @onready var havest: AudioStreamPlayer3D = $Havest
+@onready var collect_coconut: AudioStreamPlayer3D = $collectCoconut
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -108,6 +112,7 @@ func _ready():
 		RiceSeed = Varibles.saved_data.player_seed_inventory
 		haveAPoonPowder = Varibles.saved_data.player_powder_inventory
 		collectedRice = Varibles.saved_data.player_rice_inventory
+		cocoNUTLV5 = Varibles.saved_data.coconut_inventory
 	else :
 		self.global_position = default_spawn.global_position
 	SPEED = DSPEED
@@ -299,6 +304,14 @@ func _input(event):
 					wrongInteraction('INTERACTION_FAIL_NEED_RICE')
 			elif colliderView.has_method('upgradeTire') :
 				colliderView.upgradeTire()
+			elif colliderView.has_method('submitCOCO') :
+				if not cocoNUTLV5 :
+					wrongInteraction('INTERACTION_FAIL_NEED_COCONUT')
+				else :
+					colliderView.submitCOCO()
+			elif colliderView.has_method('collectCOCO') :
+				collect_coconut.play()
+				colliderView.collectCOCO()
 			elif colliderView.has_method("openViewImage") :
 				colliderView.openViewImage()
 				paper.play()
