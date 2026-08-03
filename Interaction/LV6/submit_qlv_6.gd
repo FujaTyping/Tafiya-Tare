@@ -25,7 +25,7 @@ func dialogEnd(params) :
 		done.global_position = marker_3d.global_position
 	elif params == 'Reward' :
 		var thisReward = rewardScemce.instantiate()
-		thisReward.fuelValue = 25
+		thisReward.fuelValue = 35
 		thisReward.saveToremoveList = false
 		thisReward.global_position = reward.global_position
 		get_tree().current_scene.add_child(thisReward)

@@ -1182,10 +1182,11 @@ environment = SubResource("Environment_ryrav")
 [node name="SunDemo" type="DirectionalLight3D" parent="." unique_id=873820066]
 transform = Transform3D(0.009314772, -0.98311853, -0.18273339, -0.14235416, -0.18218383, 0.9729053, -0.989772, 0.016950397, -0.141648, 0, 0, 0)
 top_level = true
+visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -2100,7 +2101,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300.97675, 3.0388467, 185.92
 transform = Transform3D(-0.9477015, 0, -0.3191579, 0, 1, 0, 0.3191579, 0, -0.9477015, -307.61963, 3.0388467, 154.62164)
 
 [node name="VehicleBody3D" parent="." unique_id=2079832606 instance=ExtResource("13_lc2xo")]
-transform = Transform3D(0.2520694, 0, 0.96770954, 0, 1, 0, -0.96770954, 0, 0.2520694, -295.8, 3.036, 194.98)
+transform = Transform3D(0.25206944, 0, 0.96770966, 0, 1, 0, -0.96770966, 0, 0.25206944, -295.8, 3.036, 194.98)
 
 [node name="StatueOfCatalyst" parent="." unique_id=1506623155 instance=ExtResource("50_mljfx")]
 transform = Transform3D(-0.9991294, 0, 0.04171869, 0, 1, 0, -0.04171869, 0, -0.9991294, -11.879494, 9.045934, 477.9559)
@@ -7476,6 +7477,10 @@ helloAnimation = "Hello"
 talkingAnimation = "Talking"
 saveAfter = true
 
+[node name="Fuel" parent="MT" unique_id=379726085 instance=ExtResource("21_hb5m1")]
+transform = Transform3D(0.43824568, 0, 0.8988552, 0, 1, 0, -0.8988552, 0, 0.43824568, 580.55286, -21.6443, 478.12738)
+fuelValue = 30
+
 [node name="SpawnAssets" type="Node3D" parent="." unique_id=1080212399]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -7.6293945e-06, -2.3841858e-07, -3.0517578e-05)
 
@@ -7549,7 +7554,7 @@ transform = Transform3D(0.9922844, 0, 0.1239825, 0, 1, 0, -0.1239825, 0, 0.99228
 transform = Transform3D(0.9922844, 0, 0.1239825, 0, 1, 0, -0.1239825, 0, 0.9922844, -307.88766, 3.912, 154.66812)
 visible = false
 
-[node name="LV6Fuel" parent="." unique_id=379726085 instance=ExtResource("21_hb5m1")]
+[node name="LV6Fuel" parent="." unique_id=314000550 instance=ExtResource("21_hb5m1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 415.03427, -21.804323, 546.9851)
 fuelValue = 75
 
@@ -7657,7 +7662,7 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 317.65656, -0.36805546, 743.35693)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.05055, 4.134837, 401.96945)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

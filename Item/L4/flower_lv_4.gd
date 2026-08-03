@@ -25,7 +25,7 @@ func getRewardLV4() :
 	gameInstant.LV4GetReward = canGetReward
 	var rewardItem = reward.instantiate()
 	gameInstant.add_child(rewardItem)
-	rewardItem.fuelValue = 50
+	rewardItem.fuelValue = 80
 	rewardItem.global_position = reward_spawner.global_position
 
 func brew() :

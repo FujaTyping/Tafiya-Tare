@@ -22,7 +22,7 @@ func enableFog(body) :
 		gameInstant.stopCurrentBGM()
 
 func disableFog(body) :
-	if body == player and body == carInsant :
+	if carInsant.is_driven and body == carInsant :
 		environment.environment.volumetric_fog_density = 0
 		FoggyBGM.stop()
 		gameInstant.enableCurentBGM()

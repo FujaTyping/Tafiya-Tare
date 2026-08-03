@@ -25,7 +25,7 @@ func InWater(body) -> void:
 		AlreadyEnter = true
 	
 func OutWater(body) -> void :
-	if checkEnti(body) and AlreadyEnter and not player.is_in_car :
+	if checkEnti(body) and AlreadyEnter and car.is_driven :
 		AudioServer.set_bus_effect_enabled(1,0,false)
 		ViewAnimation.play_backwards("0.3")
 		await ViewAnimation.animation_finished
