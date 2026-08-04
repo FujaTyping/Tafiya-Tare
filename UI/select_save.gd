@@ -21,6 +21,10 @@ func _ready() -> void:
 		loadSaveBTN.show()
 		loadSaveBTN.text = i.split(".")[0].to_upper()
 		v_box_container_2.add_child(loadSaveBTN)
+	
+	if v_box_container_2.get_child_count() > 0:
+		v_box_container_2.get_child(0).call_deferred("grab_focus")
+	
 
 func _on_c_button_pressed() -> void:
 	UiSound.ui_click()

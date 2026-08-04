@@ -49,6 +49,7 @@ var currentVSyncMode: bool = true;
 var stretchModeUI: bool = false;
 
 func _ready():
+	AudioServer.set_bus_effect_enabled(1,0,false)
 	animation_player.play("Intro")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if FileAccess.file_exists("user://setting_data.tres") :
