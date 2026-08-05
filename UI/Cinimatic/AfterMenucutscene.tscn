@@ -162,7 +162,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("3_tpxfx")
 expand = true
-bus = &"BGM"
+bus = &"VA"
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1233401866]
 layout_mode = 1

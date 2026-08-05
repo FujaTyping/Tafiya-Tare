@@ -34,11 +34,11 @@ buses/default_bus_layout="uid://2ut030vxfq1t"
 [autoload]
 
 MenuMusic="*res://Autoload/MenuMusic.tscn"
-Varibles="*res://Autoload/Varibles.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 DiscordRpc="*res://Autoload/discordRPC.gd"
+Varibles="*res://Autoload/Varibles.gd"
 ScenesLoader="*res://Autoload/scenesLoader.gd"
 UiSound="*res://Autoload/ui_sound.tscn"
+DiscordRPCLoader="*uid://r050ufymdv8p"
 
 [display]
 
@@ -50,7 +50,7 @@ mouse_cursor/custom_image="uid://bh220tagubfbn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/godotsteam/plugin.cfg")
 
 [filesystem]
 
@@ -195,4 +195,3 @@ common/physics_interpolation=true
 initialization/app_id=0
 initialization/initialize_on_startup=false
 initialization/embed_callbacks=false
-multiplayer_peer/max_channels=4

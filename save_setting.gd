@@ -8,6 +8,7 @@ class_name settingSave
 #@export var effectEnable: bool
 @export var BGMValue: float
 @export var SFXValue: float
+@export var VAValue:float
 @export var windowsModeIndex:int
 @export var isVSyncEnable:bool
 @export var isStretchModeEnable: bool

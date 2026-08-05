@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c3y0d1xhirob7" path="res://SFX/CollectSeed.wav" id="3_lunvc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qch4p"]
-size = Vector3(0.5205078, 0.122802734, 0.74902344)
+size = Vector3(0.795166, 0.31933594, 1.1513672)
 
 [node name="SeedPot" type="StaticBody3D" unique_id=1174352754]
 collision_layer = 2

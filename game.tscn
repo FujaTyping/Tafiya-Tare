@@ -36,12 +36,12 @@
 [ext_resource type="PackedScene" uid="uid://c7njlohyguner" path="res://Item/View/news_paper.tscn" id="34_eu6ph"]
 [ext_resource type="ArrayMesh" uid="uid://dxwm8oalsj01" path="res://Terrain/Rock/mesh/BasicRock.res" id="36_bva1w"]
 [ext_resource type="ArrayMesh" uid="uid://py80x3dwxiua" path="res://Terrain/Grass/L5/Mesh/Kelp.res" id="37_10duq"]
-[ext_resource type="ArrayMesh" uid="uid://b11vimxfocwbg" path="res://Terrain/Coral/Mesh/Coral.res" id="38_0i3gv"]
-[ext_resource type="ArrayMesh" uid="uid://bnsnlumxiw633" path="res://Terrain/Coral/Mesh/PinkCoral.res" id="39_d53yc"]
-[ext_resource type="ArrayMesh" uid="uid://c1a04wd1o6dua" path="res://Terrain/Coral/Mesh/YellowCoral.res" id="40_3i62b"]
-[ext_resource type="ArrayMesh" uid="uid://cpuwartwl8pkh" path="res://Terrain/Coral/Mesh/VYellowCoral.res" id="41_swnqc"]
+[ext_resource type="ArrayMesh" uid="uid://cfr72alxy35jv" path="res://Terrain/Coral/Mesh/Coral.res" id="38_0i3gv"]
+[ext_resource type="ArrayMesh" uid="uid://de1eajm7iv33y" path="res://Terrain/Coral/Mesh/PinkCoral.res" id="39_d53yc"]
+[ext_resource type="ArrayMesh" uid="uid://vsdcixm5y2fu" path="res://Terrain/Coral/Mesh/YellowCoral.res" id="40_3i62b"]
+[ext_resource type="ArrayMesh" uid="uid://fy37yhqhtnqj" path="res://Terrain/Coral/Mesh/VYellowCoral.res" id="41_swnqc"]
 [ext_resource type="Texture2D" uid="uid://iyi5ebrcot4x" path="res://Terrain/Texture/fire.png" id="42_cfc7e"]
-[ext_resource type="ArrayMesh" uid="uid://cnojoabk3ssg1" path="res://Terrain/Coral/Mesh/BlueCoral.res" id="42_swvvi"]
+[ext_resource type="ArrayMesh" uid="uid://cf0nhm0mtsnmd" path="res://Terrain/Coral/Mesh/BlueCoral.res" id="42_swvvi"]
 [ext_resource type="AudioStream" uid="uid://butv3xv5yqkh6" path="res://SFX/campfireBurn.wav" id="43_gh0px"]
 [ext_resource type="PackedScene" uid="uid://cmxd28lefav5" path="res://Interaction/LV6/coconutQuest.tscn" id="45_2pp1t"]
 [ext_resource type="PackedScene" uid="uid://dg6mf2pjw7yx7" path="res://Item/Ingredient/cooking_put_desert.tscn" id="45_nliq0"]
@@ -2260,7 +2260,7 @@ transform = Transform3D(0.25206944, 0, 0.96770966, 0, 1, 0, -0.96770966, 0, 0.25
 transform = Transform3D(-0.9991294, 0, 0.04171869, 0, 1, 0, -0.04171869, 0, -0.9991294, -11.879494, 9.045934, 477.9559)
 RewardItem = ExtResource("21_hb5m1")
 
-[node name="Skeleton3D" parent="StatueOfCatalyst/StatueL/Armature" parent_id_path=PackedInt32Array(1506623155, 1660084992, 1857339873) index="0" unique_id=2100854123]
+[node name="Skeleton3D" parent="StatueOfCatalyst/StatueL/Armature" parent_id_path=PackedInt32Array(1506623155, 1660084992, 909185353) index="0" unique_id=1650936541]
 bones/0/rotation = Quaternion(-3.835946e-08, 4.2490367e-08, -7.2719187e-16, 1)
 bones/1/rotation = Quaternion(3.552714e-15, -2.5376094e-08, 1.1102236e-16, 1)
 bones/3/rotation = Quaternion(0.47918817, 6.304526e-08, -1.5218313e-07, 0.8777122)
@@ -3525,16 +3525,16 @@ omni_range = 2.762321
 [node name="base" parent="." unique_id=39208368 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
-[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 288047302) index="0" unique_id=1368943240]
+[node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 828515135) index="0" unique_id=1881018549]
 transform = Transform3D(0.9988351, 0, 0, 0, 0.9988351, 0, 0, 0, 0.9988351, 0.22354126, 6.5267086e-06, 0.13165283)
 
-[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 234172486) index="0" unique_id=1924730704]
+[node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1468982288) index="0" unique_id=1678653385]
 transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 0.001013279)
 
-[node name="Landscape_009" parent="base" index="12" unique_id=1971599926]
+[node name="Landscape_009" parent="base" index="12" unique_id=1297353464]
 material_override = ExtResource("53_ftkif")
 
-[node name="StaticBody3D" parent="base/Landscape_038" parent_id_path=PackedInt32Array(39208368, 1331472549) index="0" unique_id=1367540607]
+[node name="StaticBody3D" parent="base/Landscape_038" parent_id_path=PackedInt32Array(39208368, 1581292014) index="0" unique_id=1322039981]
 collision_layer = 2
 collision_mask = 3
 
@@ -3625,13 +3625,13 @@ aabb = AABB(-12.394679, -4.1540246, -10.888245, 24.789358, 8.308049, 21.77649)
 [node name="baseLevelTunnel" parent="." unique_id=1786709167 instance=ExtResource("83_4mai8")]
 transform = Transform3D(0.051935524, 0, -0.8333832, 0, 0.835, 0, 0.8333832, 0, 0.051935524, -307.4068, 0.5269271, 159.77249)
 
-[node name="Cylinder" parent="baseLevelTunnel" index="0" unique_id=810827832]
+[node name="Cylinder" parent="baseLevelTunnel" index="0" unique_id=1792232207]
 transform = Transform3D(0, 8.306336, 2.9802322e-08, -5.810944, 0, 0, 0, -1.1920929e-07, 5.714149, -1.3351746, 2.2872076, -0.08319092)
 
-[node name="Cylinder_001" parent="baseLevelTunnel" index="1" unique_id=1616345624]
+[node name="Cylinder_001" parent="baseLevelTunnel" index="1" unique_id=1678951346]
 visible = false
 
-[node name="Cylinder_002" parent="baseLevelTunnel" index="2" unique_id=1944168280]
+[node name="Cylinder_002" parent="baseLevelTunnel" index="2" unique_id=551374707]
 visible = false
 
 [node name="baseLevel" parent="." unique_id=1608689245 node_paths=PackedStringArray("notiShow") instance=ExtResource("78_cwgap")]
@@ -4445,10 +4445,10 @@ transform = Transform3D(0.14621007, 0, -0.03350538, 0, 0.14999999, 0, 0.03350538
 visible = false
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V1/WoodLantern" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V1/WoodLantern" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V1/WoodLantern" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V1/WoodLantern" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/WoodLantern" unique_id=64119384]
@@ -4464,10 +4464,10 @@ omni_attenuation = 0.8
 transform = Transform3D(-0.018920626, 0.0059654685, -0.12341566, -0.10163483, 0.07025119, 0.01897714, 0.070266426, 0.10321911, -0.005783177, -17.944645, 2.8724782, 441.19095)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly" index="0" unique_id=555538047]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly" index="0" unique_id=1337904046]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly" index="1" unique_id=1025364299]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly" index="1" unique_id=1204993031]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly" unique_id=938465147]
@@ -4482,10 +4482,10 @@ omni_range = 7.430518
 transform = Transform3D(-0.039584365, -0.017957915, -0.11719895, 0.002991254, 0.12336737, -0.019913396, 0.11852902, -0.009110653, -0.038637627, -10.409866, 3.353692, 455.04727)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly2" index="0" unique_id=555538047]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly2" index="0" unique_id=1337904046]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly2" index="1" unique_id=1025364299]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly2" index="1" unique_id=1204993031]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly2" unique_id=1020982626]
@@ -4500,10 +4500,10 @@ omni_range = 7.430518
 transform = Transform3D(-0.039584365, -0.006625691, -0.11838151, 0.0029912537, 0.12470913, -0.007980065, 0.118529014, -0.0053599644, -0.039333712, -4.6482053, 5.1640353, 477.03964)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly3" index="0" unique_id=555538047]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly3" index="0" unique_id=1337904046]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly3" index="1" unique_id=1025364299]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly3" index="1" unique_id=1204993031]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly3" unique_id=2019259183]
@@ -4518,10 +4518,10 @@ omni_range = 7.430518
 transform = Transform3D(0.07927865, 0.053161032, 0.080708124, -0.09456531, 0.06420151, 0.05060201, -0.01993221, -0.09315077, 0.08093602, -43.44664, 2.3275163, 451.07712)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly4" index="0" unique_id=555538047]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly4" index="0" unique_id=1337904046]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly4" index="1" unique_id=1025364299]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly4" index="1" unique_id=1204993031]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly4" unique_id=2007319504]
@@ -4536,10 +4536,10 @@ omni_range = 7.430518
 transform = Transform3D(-0.11162341, 0.006051506, -0.05593387, 0.009218182, 0.1245625, -0.004919652, 0.055499904, -0.008518047, -0.11167902, -57.13659, 7.6629887, 466.83667)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly5" index="0" unique_id=555538047]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly5" index="0" unique_id=1337904046]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly5" index="1" unique_id=1025364299]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly5" index="1" unique_id=1204993031]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly5" unique_id=103437841]
@@ -4554,10 +4554,10 @@ omni_range = 7.430518
 transform = Transform3D(0.06522931, 0.008186282, 0.10631616, 0.0092181815, 0.123731546, -0.015183006, -0.10623164, 0.015763346, 0.06396368, -17.282196, 8.781667, 476.73563)
 script = ExtResource("85_vvpk2")
 
-[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly6" index="0" unique_id=555538047]
+[node name="Cylinder" parent="TerrainLight/V1/Merge Firefly6" index="0" unique_id=1337904046]
 layers = 2
 
-[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly6" index="1" unique_id=1025364299]
+[node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly6" index="1" unique_id=1204993031]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly6" unique_id=825881559]
@@ -5422,10 +5422,10 @@ spot_angle = 41.750698
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -152.89957, 2.1069863, 614.1811)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern" unique_id=1795119538]
@@ -5441,10 +5441,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -156.96219, 1.9033902, 623.8328)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern2" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern2" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern2" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern2" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern2" unique_id=1405956285]
@@ -5460,10 +5460,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -144.0388, 1.8034856, 637.7892)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern8" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern8" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern8" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern8" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern8" unique_id=174259825]
@@ -5479,10 +5479,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -144.90033, 1.3980259, 623.6029)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern9" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern9" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern9" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern9" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern9" unique_id=589758690]
@@ -5498,10 +5498,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.14664714, 0, 0.03153749, 0, 0.14999999, 0, -0.03153749, 0, 0.14664714, -138.09557, 1.181344, 625.7563)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern10" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern10" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern10" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern10" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern10" unique_id=928494344]
@@ -5517,10 +5517,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.14664714, 0, 0.03153749, 0, 0.14999999, 0, -0.03153749, 0, 0.14664714, -141.36769, 1.181344, 611.99176)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern11" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern11" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern11" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern11" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern11" unique_id=1310026422]
@@ -5536,10 +5536,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -155.34186, 8.3983555, 626.8249)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern3" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern3" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern3" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern3" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern3" unique_id=398033552]
@@ -5555,10 +5555,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -150.22385, 8.231002, 636.9843)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern7" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern7" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern7" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern7" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern7" unique_id=740332787]
@@ -5574,10 +5574,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -159.05598, 8.232056, 623.3597)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern4" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern4" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern4" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern4" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern4" unique_id=2145401545]
@@ -5593,10 +5593,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -162.31113, 8.386115, 613.5891)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern5" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern5" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern5" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern5" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern5" unique_id=1434946076]
@@ -5612,10 +5612,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -160.9738, 8.393421, 607.61224)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern6" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern6" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern6" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern6" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern6" unique_id=507529778]
@@ -5631,10 +5631,10 @@ omni_attenuation = 0.8
 transform = Transform3D(0.123072185, 0, -0.085751005, 0, 0.14999999, 0, 0.085751005, 0, 0.123072185, -167.79532, 1.3646802, 623.2666)
 script = ExtResource("85_vvpk2")
 
-[node name="Torus" parent="TerrainLight/V2/WoodLantern12" index="0" unique_id=1834588202]
+[node name="Torus" parent="TerrainLight/V2/WoodLantern12" index="0" unique_id=1761936291]
 layers = 2
 
-[node name="Cube" parent="TerrainLight/V2/WoodLantern12" index="1" unique_id=1643635339]
+[node name="Cube" parent="TerrainLight/V2/WoodLantern12" index="1" unique_id=1547911494]
 layers = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern12" unique_id=208568562]
@@ -6962,43 +6962,43 @@ draw_pass_1 = SubResource("QuadMesh_vuohh")
 [node name="BCapybara" parent="village1/Animals" unique_id=465025353 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.055610362, 0, 0.13931076, 0, 0.15, 0, -0.13931076, 0, -0.055610362, -3.8215637, -0.61532, 4.810768)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_001"
 
 [node name="BCapybara3" parent="village1/Animals" unique_id=553326150 instance=ExtResource("87_vqo61")]
 transform = Transform3D(0.016774971, 0, -0.14905913, 0, 0.15000014, 0, 0.14905913, 0, 0.016774971, 4.825821, 0.21053702, 7.1662426)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara3" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara3" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara5" parent="village1/Animals" unique_id=1579351231 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.13698082, 0, -0.06112531, 0, 0.15000021, 0, 0.06112531, 0, -0.13698082, 17.478714, 3.7106357, -3.8578434)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara5" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara5" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara7" parent="village1/Animals" unique_id=1983831246 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.090243116, 0, -0.11981755, 0, 0.15000032, 0, 0.11981755, 0, -0.090243116, 17.784958, 3.7018523, -4.18664)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara7" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara7" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara6" parent="village1/Animals" unique_id=1874902187 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.08675443, 0, -0.038712658, 0, 0.09500002, 0, 0.038712658, 0, -0.08675443, 17.49907, 3.8441057, -3.8152218)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara6" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara6" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_003"
 
 [node name="BCapybara4" parent="village1/Animals" unique_id=1220208234 instance=ExtResource("87_vqo61")]
 transform = Transform3D(0.03151958, 0, -0.14665106, 0, 0.1500002, 0, 0.14665106, 0, 0.03151958, 1.4936066, 0.2405371, -0.39003944)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara4" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara4" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_002"
 
 [node name="BCapybara2" parent="village1/Animals" unique_id=833901606 instance=ExtResource("87_vqo61")]
 transform = Transform3D(-0.14671074, 0, -0.031240538, 0, 0.15000007, 0, 0.031240538, 0, -0.14671074, -3.317093, -0.6153203, 4.9820957)
 
-[node name="AnimationPlayer" parent="village1/Animals/BCapybara2" index="1" unique_id=98564837]
+[node name="AnimationPlayer" parent="village1/Animals/BCapybara2" index="1" unique_id=302692]
 autoplay = &"ArmatureAction_001"
 
 [node name="Village2" type="Node3D" parent="." unique_id=1326639925 node_paths=PackedStringArray("notiShow")]
@@ -7178,13 +7178,13 @@ transform = Transform3D(0.9766994, 0.07796575, 0.19994943, -0.079572625, 0.99682
 [node name="l3House Only Oong" parent="Village3/Houses" unique_id=684169788 instance=ExtResource("93_qw2kp")]
 transform = Transform3D(1, 0, 0, 0, 0.9999206, 0.012600943, 0, -0.012600943, 0.9999206, 77.29465, 2.5239935, 603.99963)
 
-[node name="Oong" parent="Village3/Houses/l3House Only Oong" index="0" unique_id=1140993781]
+[node name="Oong" parent="Village3/Houses/l3House Only Oong" index="0" unique_id=1094586408]
 transform = Transform3D(0.12909383, 0, 0, 0, 0.12909383, 0, 0, 0, 0.12909383, 2.0498998, -1.0749536, -2.578122)
 
 [node name="l3House Only Oong2" parent="Village3/Houses" unique_id=11675222 instance=ExtResource("93_qw2kp")]
 transform = Transform3D(0.48495618, 0.13423748, 0.86417466, -0.01035676, 0.98896164, -0.1478094, -0.874477, 0.06273104, 0.48099336, 69.098305, 2.8218915, 610.0998)
 
-[node name="Oong" parent="Village3/Houses/l3House Only Oong2" index="0" unique_id=1140993781]
+[node name="Oong" parent="Village3/Houses/l3House Only Oong2" index="0" unique_id=1094586408]
 transform = Transform3D(0.12909383, 0, 0, 0, 0.12909383, 0, 0, 0, 0.12909383, 1.9842262, -1.0331497, -2.4727733)
 
 [node name="l3House" parent="Village3/Houses" unique_id=2017145087 instance=ExtResource("91_r3ggl")]
@@ -7211,7 +7211,7 @@ transform = Transform3D(0.457098, 0.12479732, 0.88061744, -3.7252903e-09, 0.9901
 [node name="Stove Station" parent="Village3" unique_id=1579290425 instance=ExtResource("98_tssr6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.56796, 2.586281, 604.0302)
 
-[node name="Cube_002" parent="Village3/Stove Station" index="0" unique_id=1592991777]
+[node name="Cube_002" parent="Village3/Stove Station" index="0" unique_id=294391323]
 transform = Transform3D(0.22606358, 0, 0, 0, 0.36015356, 0, 0, 0, 0.8178957, 1.6850933, -0.7175866, -1.1067117)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Village3/Stove Station" unique_id=1779017494]
@@ -8222,7 +8222,7 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 z_index = 99
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 631.0908, 22.277458, 436.5062)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.07806, 3.2352223, 613.2733)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

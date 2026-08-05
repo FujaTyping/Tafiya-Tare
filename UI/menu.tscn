@@ -381,7 +381,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
-transform = Transform3D(0.13918059, 0.012961894, 0.99018157, 0, 0.99991435, -0.013089285, -0.99026644, 0.0018217764, 0.13916865, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918057, 0.012961894, 0.9901815, 0, 0.99991435, -0.013089284, -0.9902664, 0.0018217764, 0.13916865, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
@@ -987,7 +987,7 @@ color = Color(1, 1, 1, 0.14901961)
 
 [node name="MarginContainer2" type="MarginContainer" parent="Option" unique_id=46396304]
 layout_mode = 2
-theme_override_constants/margin_bottom = 457
+theme_override_constants/margin_bottom = 522
 
 [node name="Title" type="Label" parent="Option/MarginContainer2" unique_id=633927457]
 layout_mode = 2
@@ -1000,9 +1000,9 @@ text = "OPTION_BUTTON"
 [node name="MarginContainer" type="MarginContainer" parent="Option" unique_id=1979312860]
 layout_mode = 2
 theme_override_constants/margin_left = 600
-theme_override_constants/margin_top = 422
+theme_override_constants/margin_top = 381
 theme_override_constants/margin_right = 600
-theme_override_constants/margin_bottom = 270
+theme_override_constants/margin_bottom = 224
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Option/MarginContainer" unique_id=123559146]
 layout_mode = 2
@@ -1068,6 +1068,34 @@ text = "OPTION_VSYNC"
 [node name="VSCheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer9" unique_id=1322660437]
 layout_mode = 2
 button_pressed = true
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=2112583242]
+layout_mode = 2
+theme_override_constants/separation = 54
+
+[node name="Label" type="Label" parent="Option/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1454177875]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 24
+text = "OPTION_VA"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Option/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=2036066873]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="HSlider" type="HSlider" parent="Option/MarginContainer/VBoxContainer/HBoxContainer10/MarginContainer2" unique_id=1364801159]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_dte3n")
+min_value = -80.0
+max_value = 6.0
+
+[node name="CheckButton" type="CheckButton" parent="Option/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1567756813]
+visible = false
+layout_mode = 2
+theme = ExtResource("7_dte3n")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Option/MarginContainer/VBoxContainer" unique_id=728743970]
 layout_mode = 2
@@ -1250,6 +1278,8 @@ libraries/ = SubResource("AnimationLibrary_60j7a")
 [connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="item_selected" from="Option/MarginContainer/VBoxContainer/HBoxContainer6/FPSSelector" to="." method="_on_fps_selector_item_selected"]
 [connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer9/VSCheckButton" to="." method="_on_vs_check_button_toggled"]
+[connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer10/MarginContainer2/HSlider" to="." method="_on_va_slider_value_changed"]
+[connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer10/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer2/HSlider" to="." method="_on_h_BGM_slider_value_changed"]
 [connection signal="toggled" from="Option/MarginContainer/VBoxContainer/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="value_changed" from="Option/MarginContainer/VBoxContainer/HBoxContainer4/MarginContainer3/HSlider" to="." method="_on_h_SFX_slider_value_changed"]

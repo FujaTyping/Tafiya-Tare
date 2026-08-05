@@ -15,6 +15,8 @@ extends Control
 @onready var h_slider: HSlider = $Option/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/HSlider
 @onready var BGMBus = AudioServer.get_bus_index("BGM")
 @onready var SFXBus = AudioServer.get_bus_index("SFX")
+@onready var VABus = AudioServer.get_bus_index("VA")
+
 @onready var s_check_button: CheckButton = $Option/MarginContainer/VBoxContainer/HBoxContainer4/SCheckButton
 @onready var check_button: CheckButton = $Option/MarginContainer/VBoxContainer/HBoxContainer3/CheckButton
 @onready var option_button: OptionButton = $Option/MarginContainer/VBoxContainer/HBoxContainer8/OptionButton
@@ -33,6 +35,7 @@ extends Control
 @onready var window_option_button: OptionButton = $Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/WindowOptionButton
 @onready var vs_check_button: CheckButton = $Option/MarginContainer/VBoxContainer/HBoxContainer9/VSCheckButton
 @onready var force_full_ui: TextureButton = $Option/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/ForceFullUI
+@onready var va_h_slider: HSlider = $Option/MarginContainer/VBoxContainer/HBoxContainer10/MarginContainer2/HSlider
 
 # Animate cam
 @onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/MenuCam
@@ -59,11 +62,14 @@ func _ready():
 		Varibles.MouseSens = data.camSens
 		Varibles.BGMValueSetting = data.BGMValue
 		Varibles.SFXValueSetting = data.SFXValue
+		Varibles.VAValueSetting = data.VAValue
 		_on_fps_selector_item_selected(data.gameFPSIndex)
 		_on_h_BGM_slider_value_changed(data.BGMValue)
 		BGMh_slider.value = Varibles.BGMValueSetting
 		_on_h_SFX_slider_value_changed(data.SFXValue)
 		SFXh_slider.value = Varibles.SFXValueSetting
+		va_h_slider.value = Varibles.VAValueSetting
+		_on_va_slider_value_changed(data.VAValue)
 		window_option_button.selected = data.windowsModeIndex
 		_on_window_option_button_item_selected(data.windowsModeIndex)
 		currentVSyncMode = data.isVSyncEnable
@@ -217,6 +223,7 @@ func saveSetting() :
 	data.camSens = Varibles.MouseSens
 	data.BGMValue = Varibles.BGMValueSetting
 	data.SFXValue = Varibles.SFXValueSetting
+	data.VAValue = Varibles.VAValueSetting
 	#data.effectEnable = Varibles.SFX
 	#data.musicEnable = Varibles.BGM
 	data.windowsModeIndex = currentWindowList
@@ -284,3 +291,7 @@ func _on_force_full_ui_toggled(toggled_on: bool) -> void:
 	else :
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
 	stretchModeUI = toggled_on
+
+func _on_va_slider_value_changed(value: float) -> void:
+	Varibles.VAValueSetting = value
+	AudioServer.set_bus_volume_db(VABus, value)
