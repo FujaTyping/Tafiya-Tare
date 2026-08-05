@@ -9,6 +9,7 @@ extends Control
 @onready var marker_3d: Marker3D = $Marker3D
 @onready var GOanimation_player: AnimationPlayer = $AnimationPlayer
 @onready var margin_container_2: MarginContainer = $MarginContainer2
+@onready var c_button: Button = $MarginContainer2/HBoxContainer/CButton
 
 func _ready() -> void:
 	del_confirm.hide()
@@ -22,6 +23,8 @@ func _ready() -> void:
 		loadSaveBTN.text = i.split(".")[0].to_upper()
 		v_box_container_2.add_child(loadSaveBTN)
 	
+	c_button.grab_focus()
+	return
 	if v_box_container_2.get_child_count() > 0:
 		v_box_container_2.get_child(0).call_deferred("grab_focus")
 	

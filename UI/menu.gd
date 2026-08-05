@@ -48,6 +48,8 @@ var currentWindowList:int = 0;
 var currentVSyncMode: bool = true;
 var stretchModeUI: bool = false;
 
+@onready var m: Button = $PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/M
+
 func _ready():
 	AudioServer.set_bus_effect_enabled(1,0,false)
 	animation_player.play("Intro")
@@ -109,6 +111,7 @@ func _on_play_pressed() -> void:
 	player_selectionC.playIdle()
 	main.hide()	
 	player_selection_2.play("In")
+	m.grab_focus()
 	await Varibles.wait(0.05)
 	player_selectionC.show()
 	#ScenesLoader.load_scene("uid://c3mj2fiee0xht")
