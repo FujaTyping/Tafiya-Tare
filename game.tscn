@@ -1239,7 +1239,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -1555,6 +1555,7 @@ multimesh = SubResource("MultiMesh_71bxy")
 
 [node name="Grass" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=1397206848]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.245, 0)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_8jd3k")
 
 [node name="BoldTee" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=1882996831]
@@ -1567,10 +1568,12 @@ multimesh = SubResource("MultiMesh_qqhb5")
 
 [node name="Grass2" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=1245731441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215, 0)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_d3lbn")
 
 [node name="Tall Grass" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=1543242177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_wtodx")
 
 [node name="WaterLV2" type="MeshInstance3D" parent="AssetsTerrain" unique_id=177272655]
@@ -1597,6 +1600,7 @@ multimesh = SubResource("MultiMesh_vuo27")
 
 [node name="GrassLV2" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=1952860333]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235, 0)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_h17um")
 
 [node name="RockLV2" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=641542805]
@@ -1619,6 +1623,7 @@ multimesh = SubResource("MultiMesh_riv5k")
 
 [node name="LV5Grass" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=94249486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_qqive")
 
 [node name="LV5Rock" type="MultiMeshInstance3D" parent="AssetsTerrain" unique_id=1770332970]
@@ -3540,8 +3545,20 @@ transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 
 [node name="Landscape_004" parent="base" index="7" unique_id=1800193840]
 lod_bias = 0.001
 
+[node name="GrassBase" parent="base" index="8" unique_id=930156658]
+cast_shadow = 0
+
 [node name="Landscape_009" parent="base" index="12" unique_id=1297353464]
 material_override = ExtResource("53_ftkif")
+
+[node name="V1Grass" parent="base" index="15" unique_id=18117843]
+cast_shadow = 0
+
+[node name="LV4 Grass Bush" parent="base" index="22" unique_id=2134022026]
+cast_shadow = 0
+
+[node name="GrassLV2" parent="base" index="30" unique_id=1219646133]
+cast_shadow = 0
 
 [node name="Landscape_038" parent="base" index="32" unique_id=1581292014]
 lod_bias = 0.001
@@ -3549,6 +3566,9 @@ lod_bias = 0.001
 [node name="StaticBody3D" parent="base/Landscape_038" index="0" unique_id=1322039981]
 collision_layer = 2
 collision_mask = 3
+
+[node name="LV5Grass" parent="base" index="39" unique_id=555773182]
+cast_shadow = 0
 
 [node name="Water2" type="MeshInstance3D" parent="base" unique_id=1147071751]
 transform = Transform3D(207.64392, 0, -1.8189894e-12, 0, 1.545615, 0, 0, 0, 319.53415, 1.8043823, -3.417602, -115.267876)
@@ -3570,10 +3590,12 @@ skeleton = NodePath("../..")
 
 [node name="baseGrass" type="MultiMeshInstance3D" parent="GenerateAssets" unique_id=769764367]
 transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 32.056, 1.415, 538.258)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_7x3ck")
 
 [node name="V1Grass" type="MultiMeshInstance3D" parent="GenerateAssets" unique_id=102515159]
 transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 32.056, 2.395, 538.258)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_lh772")
 
 [node name="baseWaterRock" type="MultiMeshInstance3D" parent="GenerateAssets" unique_id=485432443]
@@ -3602,6 +3624,7 @@ multimesh = SubResource("MultiMesh_3xib3")
 
 [node name="V1SeaGrass" type="MultiMeshInstance3D" parent="GenerateAssets" unique_id=890614019]
 transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 32.056, 3.902, 538.258)
+cast_shadow = 0
 multimesh = SubResource("MultiMesh_7noa1")
 
 [node name="AreaNotifier" type="Node3D" parent="." unique_id=77747606]
