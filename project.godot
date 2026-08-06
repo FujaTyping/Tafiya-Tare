@@ -186,12 +186,17 @@ locale/locale_filter_mode=1
 
 [physics]
 
-common/physics_ticks_per_second=90
+3d/run_on_separate_thread=true
 common/max_physics_steps_per_frame=24
 common/physics_interpolation=true
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true
 
 [steam]
 
 initialization/app_id=0
 initialization/initialize_on_startup=false
 initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

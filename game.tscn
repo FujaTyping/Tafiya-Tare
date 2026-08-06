@@ -1239,7 +1239,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -3525,16 +3525,28 @@ omni_range = 2.762321
 [node name="base" parent="." unique_id=39208368 instance=ExtResource("75_3xib3")]
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
+[node name="Landscape" parent="base" index="1" unique_id=268092521]
+lod_bias = 0.001
+
 [node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 828515135) index="0" unique_id=1881018549]
 transform = Transform3D(0.9988351, 0, 0, 0, 0.9988351, 0, 0, 0, 0.9988351, 0.22354126, 6.5267086e-06, 0.13165283)
+
+[node name="Landscape_003" parent="base" index="6" unique_id=454799399]
+lod_bias = 0.001
 
 [node name="CollisionShape3D" parent="base/Landscape_003/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 1468982288) index="0" unique_id=1678653385]
 transform = Transform3D(1, 0, 1.4901161e-08, 0, 1, 0, 0, 0, 1, 0.0009355545, 0, 0.001013279)
 
+[node name="Landscape_004" parent="base" index="7" unique_id=1800193840]
+lod_bias = 0.001
+
 [node name="Landscape_009" parent="base" index="12" unique_id=1297353464]
 material_override = ExtResource("53_ftkif")
 
-[node name="StaticBody3D" parent="base/Landscape_038" parent_id_path=PackedInt32Array(39208368, 1581292014) index="0" unique_id=1322039981]
+[node name="Landscape_038" parent="base" index="32" unique_id=1581292014]
+lod_bias = 0.001
+
+[node name="StaticBody3D" parent="base/Landscape_038" index="0" unique_id=1322039981]
 collision_layer = 2
 collision_mask = 3
 
