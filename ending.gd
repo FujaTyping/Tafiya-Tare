@@ -21,6 +21,9 @@ extends Area3D
 @onready var c_5: Marker3D = $"../EndingCam/C5"
 @onready var _3: Camera3D = $"../EndingCam/3"
 
+@onready var skip: MarginContainer = $"../Skip"
+@onready var animation_player: AnimationPlayer = $"../Skip/AnimationPlayer"
+
 func _on_body_entered(body: Node3D) -> void:
 	if body != player :
 		return
@@ -46,9 +49,14 @@ func _on_body_entered(body: Node3D) -> void:
 	Transition.hide()
 	# Begin Cam
 	await Varibles.wait(1)
+	animation_player.play("Fade")
+	await Varibles.wait(0.05)
+	skip.show()
 	changeTextEnding(['ENDING_CINEMATIC_TEXT_1','ENDING_CINEMATIC_TEXT_2','ENDING_CINEMATIC_TEXT_3'],8,2)
 	Varibles.tweenCam(_1,'global_transform',c_2.global_transform,15)
-	await Varibles.wait(14)
+	await Varibles.wait(5)
+	animation_player.play("Slide")
+	await Varibles.wait(9)
 	Varibles.tweenCam(_1,'global_transform',c_3.global_transform,25)
 	await Varibles.wait(24)
 	_2.make_current()
@@ -60,6 +68,10 @@ func _on_body_entered(body: Node3D) -> void:
 	Varibles.tweenCam(_3,'global_transform',c_5.global_transform,20)
 	await Varibles.wait(19)
 	ScenesLoader.load_scene("uid://bvlv0jtma8aq6")
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("pause") :
+		ScenesLoader.load_scene('uid://bvlv0jtma8aq6')
 
 func changeTextEnding(TextA:Array[String],waitSec:int,waitBetween:int) :
 	for Text in TextA :

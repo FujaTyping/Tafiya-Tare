@@ -1,12 +1,29 @@
 [gd_resource type="Theme" format=3 uid="uid://smv6met5kyl1"]
 
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="1_wi0rm"]
+[ext_resource type="Texture2D" uid="uid://kmc0a4lfluwi" path="res://UI/Theme/BgBTN.png" id="2_de7rr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sduji"]
+texture = ExtResource("2_de7rr")
+texture_margin_top = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 15.0
+expand_margin_top = 5.0
+expand_margin_right = 15.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wi0rm"]
 
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_wi0rm")
+Button/styles/hover = SubResource("StyleBoxTexture_sduji")
+Button/styles/normal = SubResource("StyleBoxTexture_sduji")
+Button/styles/pressed = SubResource("StyleBoxTexture_sduji")
 OptionButton/font_sizes/font_size = 18
 OptionButton/fonts/font = ExtResource("1_wi0rm")
 TabContainer/font_sizes/font_size = 24

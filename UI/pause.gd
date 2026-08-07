@@ -11,13 +11,12 @@ var confirmExit = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and not get_tree().current_scene.isEnding:
 		if self.visible == true :
 			pauseMenu()
 			return
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
 			pauseMenu()
-
 
 func _on_resume_pressed() -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:

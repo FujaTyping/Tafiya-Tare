@@ -42,6 +42,43 @@ _data = {
 &"RESET": SubResource("Animation_ojn3s")
 }
 
+[sub_resource type="Animation" id="Animation_ehwrf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1635, 1003)]
+}
+
+[sub_resource type="Animation" id="Animation_faerj"]
+resource_name = "Slide"
+length = 5.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 5.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1635, 1003), Vector2(1980, 1003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ehwrf"]
+_data = {
+&"RESET": SubResource("Animation_ehwrf"),
+&"Slide": SubResource("Animation_faerj")
+}
+
 [node name="EndCredit" type="Control" unique_id=1165806266]
 layout_mode = 3
 anchors_preset = 15
@@ -277,5 +314,32 @@ text = "TAHANKYOU_CREDIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1103831025]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -285.0
+offset_top = -77.0
+offset_right = 0.00024414063
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer2" unique_id=614035675]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_l5ro4")
+theme_override_font_sizes/font_size = 28
+text = "UI_CINEMATIC_SKTP"
+
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1844812120]
 libraries/ = SubResource("AnimationLibrary_faerj")
+
+[node name="Slide" type="AnimationPlayer" parent="." unique_id=1695325624]
+libraries/ = SubResource("AnimationLibrary_ehwrf")

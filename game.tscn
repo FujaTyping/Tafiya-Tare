@@ -1222,6 +1222,72 @@ _data = {
 &"RESET": SubResource("Animation_riv5k")
 }
 
+[sub_resource type="Animation" id="Animation_vsl7k"]
+resource_name = "Fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3dopg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1635, 1003)]
+}
+
+[sub_resource type="Animation" id="Animation_7x5qn"]
+resource_name = "Slide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1635, 1003), Vector2(1980, 1003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7x5qn"]
+_data = {
+&"Fade": SubResource("Animation_vsl7k"),
+&"RESET": SubResource("Animation_3dopg"),
+&"Slide": SubResource("Animation_7x5qn")
+}
+
 [node name="game" type="Node3D" unique_id=183536831]
 script = ExtResource("1_ryrav")
 dayIcon = ExtResource("4_aa0lp")
@@ -1239,7 +1305,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -8256,8 +8322,35 @@ libraries/ = SubResource("AnimationLibrary_qqive")
 [node name="Pause" parent="." unique_id=2115640099 instance=ExtResource("50_qpefm")]
 z_index = 99
 
+[node name="Skip" type="MarginContainer" parent="." unique_id=1457501945]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -285.0
+offset_top = -77.0
+offset_right = 0.00048828125
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Skip" unique_id=1763367257]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_ib7ph")
+theme_override_font_sizes/font_size = 28
+text = "UI_CINEMATIC_SKTP"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skip" unique_id=388309185]
+libraries/ = SubResource("AnimationLibrary_7x5qn")
+
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.07806, 3.2352223, 613.2733)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 628.1467, 24.30819, 445.4986)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

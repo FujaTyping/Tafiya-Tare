@@ -2,12 +2,13 @@ extends Control
 
 @onready var animation: AnimationPlayer = $Animation
 @onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var slide: AnimationPlayer = $Slide
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	await Varibles.wait(1)
 	animation.play("Play")
 	v_box_container.show()
+	slide.play('Slide')
 	await animation.animation_finished
 	await Varibles.wait(2.5)
 	startOver()
