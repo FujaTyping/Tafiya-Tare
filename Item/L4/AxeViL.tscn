@@ -12,7 +12,7 @@ size = Vector3(0.71777344, 1.3930664, 0.8161621)
 
 [node name="BoomVIL" type="Node3D" unique_id=355667002 node_paths=PackedStringArray("dialogStart", "submitBody", "failedDialog", "passDialog")]
 script = ExtResource("1_d4mc6")
-requirePotion = "purple_potion"
+requirePotion = "white_potion"
 NPCIndex = 1
 dialogStart = NodePath("DialogeTrigged")
 submitBody = NodePath("Submit")

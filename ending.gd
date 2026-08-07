@@ -70,7 +70,7 @@ func _on_body_entered(body: Node3D) -> void:
 	ScenesLoader.load_scene("uid://bvlv0jtma8aq6")
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("pause") :
+	if Input.is_action_just_pressed("pause") and get_tree().current_scene.isEnding :
 		ScenesLoader.load_scene('uid://bvlv0jtma8aq6')
 
 func changeTextEnding(TextA:Array[String],waitSec:int,waitBetween:int) :
