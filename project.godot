@@ -181,6 +181,9 @@ teleportTest={
 
 [internationalization]
 
+locale/translation_remaps={
+"res://logo.png": PackedStringArray("res://logo-th.png:th")
+}
 locale/translations=PackedStringArray("res://I18N/i18n.en.translation", "res://I18N/i18n.th.translation")
 locale/locale_filter_mode=1
 
