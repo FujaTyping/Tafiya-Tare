@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Swiper, SwiperWrapper, SwiperSlide } from "astro-swiper";
 import Logo from "../assets/Logo.webp";
+import GithubBanner from "../assets/GithubBanner.webp";
 import Image from "astro/components/Image.astro";
 import Trailer from "../components/trailer.astro";
 
@@ -26,10 +27,17 @@ import WindowsPF from "../assets/platform/windows.webp";
 </script>
 
 <Layout>
-	<main class="z-2 absolute top-0 left-0 h-screen overflow-y-auto w-full">
+	<main
+		class="z-2 absolute top-0 left-0 h-screen overflow-y-auto w-full px-2"
+	>
 		<div
 			class="flex flex-col gap-8 items-center justify-center h-screen p-4"
 		>
+			<div class="absolute top-0 left-0 z-1">
+				<a href="https://github.com/FujaTyping/Tafiya-Tare">
+					<Image src={GithubBanner} alt={'Github'} class={'w-18 md:w-20'} loading="eager" />
+				</a>
+			</div>
 			<Image
 				src={Logo}
 				alt="Icon"
@@ -49,9 +57,13 @@ import WindowsPF from "../assets/platform/windows.webp";
 						>Changes log</a
 					>
 					<a
+						w-[18rem]
+						md:w-[42rem]
+						h-[12rem]
+						md:h-[24rem]
 						class="btn"
-						href="https://nas.siraphop.me/apps/forms/s/Nsri5b2egNedRW8qZjNDqnmT"
-						>Feedback form</a
+						href="https://nas.siraphop.me/apps/forms/s/Czofop4CWsGpxkqGx3ZX8esf"
+						>Report BUG</a
 					>
 				</div>
 				<div
