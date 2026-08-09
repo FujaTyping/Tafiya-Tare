@@ -388,3 +388,6 @@ QUEST_STARTED_LEVEL_10,???,???
 OLD_MAN_NAME,Old man,ผู้เฒ่า
 VOICE_ACTOR_CREDIT,Voice actor,นักพากย์
 OPTION_VA,Voice Over,เสียงพากย์
+ON_INTERACTION_PLACE_STATUE,Press E to place statue,กด E เพื่อวางรูปปั้น
+INTERACTION_FAIL_NEED_STATUE,Need a statue,ต้องการรูปปั้น
+INTERACTION_FAIL_CAN_USE_AT_DAY,Can only be used in the day,สามารถใช้ได้แค่ตอนกลางวันเท่านั้น

@@ -69,6 +69,9 @@ var collectedRice:bool = false;
 # Level 5
 var cocoNUTLV5:bool = false
 
+# Level 4
+var isCollectDnNStatue:bool = false
+
 # Help
 @onready var tutorial: MarginContainer = $Tutorial
 @onready var control_sh: AnimationPlayer = $Tutorial/ControlSH
@@ -97,6 +100,7 @@ var cocoNUTLV5:bool = false
 @onready var planting: AudioStreamPlayer3D = $Planting
 @onready var havest: AudioStreamPlayer3D = $Havest
 @onready var collect_coconut: AudioStreamPlayer3D = $collectCoconut
+@onready var collect_statue: AudioStreamPlayer3D = $collectStatue
 
 func _ready():
 	if Varibles.isFromLoadSaved :
@@ -113,6 +117,7 @@ func _ready():
 		haveAPoonPowder = Varibles.saved_data.player_powder_inventory
 		collectedRice = Varibles.saved_data.player_rice_inventory
 		cocoNUTLV5 = Varibles.saved_data.coconut_inventory
+		isCollectDnNStatue = Varibles.saved_data.statue_collect_inventory
 	else :
 		self.global_position = default_spawn.global_position
 	SPEED = DSPEED
@@ -309,6 +314,18 @@ func _input(event):
 					wrongInteraction('INTERACTION_FAIL_NEED_COCONUT')
 				else :
 					colliderView.submitCOCO()
+			elif colliderView.has_method('collectDnNStatue') :
+				collect_statue.play()
+				colliderView.collectDnNStatue()
+			elif colliderView.has_method('placeStatue') :
+				if get_tree().current_scene.isStatueActivate : return
+				if get_tree().current_scene.get_day_time() != "TIME_DAY" :
+					wrongInteraction('INTERACTION_FAIL_CAN_USE_AT_DAY')
+					return
+				if not isCollectDnNStatue :
+					wrongInteraction('INTERACTION_FAIL_NEED_STATUE')
+				else :
+					colliderView.placeStatue()
 			elif colliderView.has_method('collectCOCO') :
 				collect_coconut.play()
 				colliderView.collectCOCO()

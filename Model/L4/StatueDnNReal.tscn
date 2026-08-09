@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://p4kv3txdo2pc"]
+
+[ext_resource type="PackedScene" uid="uid://c2f28dw0du6c2" path="res://Model/L4/DnN Statue.glb" id="1_ljww0"]
+[ext_resource type="Script" uid="uid://bh01oj0wcy8jd" path="res://Model/L4/statue_dn_n_real.gd" id="1_pvuah"]
+[ext_resource type="PackedScene" uid="uid://8aqakbxwna8n" path="res://Model/L4/DnNStatueItem.tscn" id="2_4owvx"]
+[ext_resource type="AudioStream" uid="uid://835atpy2d7uq" path="res://SFX/StatuePlace.wav" id="4_385o7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgsx7"]
+size = Vector3(1, 0.93933105, 0.9764404)
+
+[node name="StatueDnNReal" type="StaticBody3D" unique_id=1230740997]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_pvuah")
+statueItem = ExtResource("2_4owvx")
+
+[node name="DnN Statue" parent="." unique_id=830319648 instance=ExtResource("1_ljww0")]
+transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=761832122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05827582, 0.30999488, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="." unique_id=1651968215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05827582, 0.12443212, 0)
+
+[node name="c1" type="Marker3D" parent="." unique_id=1562657163]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.65779203, 0.6111384, 0)
+
+[node name="c2" type="Marker3D" parent="." unique_id=323819803]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.65779203, 0.24154973, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1482812146]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.65779203, 0.6111384, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1542410597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55707276, 0.3484313, 0)
+stream = ExtResource("4_385o7")
+volume_db = -33.175
+max_distance = 20.0
+bus = &"SFX"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2084799731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43695068, -0.011779785)
+shape = SubResource("BoxShape3D_qgsx7")

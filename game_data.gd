@@ -32,3 +32,5 @@ class_name gameData
 @export var car_max_torque:int
 @export var coconut_inventory:bool
 @export var quest_state_level_6:int
+@export var statue_collect_inventory:bool
+@export var is_activate_statue:bool

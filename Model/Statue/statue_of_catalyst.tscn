@@ -189,7 +189,7 @@ stretch_mode = 0
 [node name="StatueL" parent="." unique_id=1660084992 instance=ExtResource("1_7epxp")]
 transform = Transform3D(-1.4950032e-08, 0, 0.3599136, 0, 0.39428616, 0, -0.34201688, 0, -1.5732322e-08, 0, 0, 0)
 
-[node name="Skeleton3D" parent="StatueL/Armature" index="0"]
+[node name="Skeleton3D" parent="StatueL/Armature" parent_id_path=PackedInt32Array(1660084992, 909185353) index="0" unique_id=1650936541]
 bones/0/rotation = Quaternion(-4.009827e-08, 3.417824e-08, 0.04265473, 0.9990899)
 bones/1/rotation = Quaternion(9.19671e-09, -5.4252722e-09, -0.09792612, 0.99519366)
 bones/3/rotation = Quaternion(0.27028567, -0.5238942, 0.5542895, 0.5875745)

@@ -5,7 +5,7 @@ extends Node3D
 @onready var gameInstance:Node3D = get_tree().current_scene
 @onready var car:VehicleBody3D = get_tree().current_scene.get_node("VehicleBody3D")
 
-@export var rangeTrigged: int = 32
+@export var rangeTrigged: float = 32
 @export var defaultLightEnergy:float = 2.56
 
 func _process(delta: float) -> void:

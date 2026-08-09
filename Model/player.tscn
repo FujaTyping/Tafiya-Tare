@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://bbbt4c2dm6eau" path="res://SFX/Plant.wav" id="21_6u5hv"]
 [ext_resource type="AudioStream" uid="uid://cg33l6va54id1" path="res://SFX/Havest.wav" id="22_k5be8"]
 [ext_resource type="AudioStream" uid="uid://cn1h1s6k6em7j" path="res://SFX/coconutCollect.wav" id="23_xxxvx"]
+[ext_resource type="AudioStream" uid="uid://c6oswhir8rkou" path="res://SFX/statueCollect.wav" id="24_6k352"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -632,6 +633,11 @@ bus = &"SFX"
 [node name="collectCoconut" type="AudioStreamPlayer3D" parent="." unique_id=1416464935]
 stream = ExtResource("23_xxxvx")
 volume_db = 4.0
+bus = &"SFX"
+
+[node name="collectStatue" type="AudioStreamPlayer3D" parent="." unique_id=128147475]
+stream = ExtResource("24_6k352")
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="LookingCast" type="RayCast3D" parent="." unique_id=421009574]

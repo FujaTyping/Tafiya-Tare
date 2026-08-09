@@ -90,6 +90,8 @@ func _ready() -> void:
 		dayFromSave = true
 		famelandState = Varibles.saved_data.farmland_good_state
 		mtSavePoint = Varibles.saved_data.last_savepoint
+		collectStatueLV4 = Varibles.saved_data.statue_collect_inventory
+		isStatueActivate = Varibles.saved_data.is_activate_statue
 		if Varibles.saved_data.collectItem.size() > 0 :
 			collectedItem = Varibles.saved_data.collectItem
 			for item in Varibles.saved_data.collectItem :
@@ -249,6 +251,8 @@ var NPCV4S:Array[int] = [0,0,0]
 var LV4GetReward = true
 var QLV2State:int = 0
 var stateQLV5:int = 0
+var collectStatueLV4:bool = false
+var isStatueActivate:bool = false
 
 func saveDat() :
 	save_icon_indicator.show()
@@ -285,6 +289,8 @@ func saveDat() :
 	data.car_max_torque = carInstant.getMTourge()
 	data.coconut_inventory = player.cocoNUTLV5
 	data.quest_state_level_6 = stateQLV5
+	data.statue_collect_inventory = collectStatueLV4
+	data.is_activate_statue = isStatueActivate
 
 	var dirAccess = DirAccess.open("user://")
 	if not dirAccess.dir_exists("saves") :
@@ -323,3 +329,11 @@ func instanceDaySkip (time:int) :
 	
 func hideGameGUI() :
 	control.hide()
+	
+func fastForwardNight() :
+	day_night.speed_scale = 20
+	while day_night.current_animation_position < 485:
+		await get_tree().process_frame
+	day_night.speed_scale = 1
+	await Varibles.wait(1)
+	saveDat()
