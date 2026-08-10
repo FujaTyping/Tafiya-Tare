@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bh01oj0wcy8jd" path="res://Model/L4/statue_dn_n_real.gd" id="1_pvuah"]
 [ext_resource type="PackedScene" uid="uid://8aqakbxwna8n" path="res://Model/L4/DnNStatueItem.tscn" id="2_4owvx"]
 [ext_resource type="AudioStream" uid="uid://835atpy2d7uq" path="res://SFX/StatuePlace.wav" id="4_385o7"]
+[ext_resource type="AudioStream" uid="uid://bej7abkyd14hx" path="res://SFX/clocktick.wav" id="5_20pmf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qgsx7"]
 size = Vector3(1, 0.93933105, 0.9764404)
@@ -37,6 +38,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55707276, 0.3484313, 0)
 stream = ExtResource("4_385o7")
 volume_db = -33.175
 max_distance = 20.0
+bus = &"SFX"
+
+[node name="Tick" type="AudioStreamPlayer3D" parent="." unique_id=1723897686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55707276, 0.60960126, 0)
+stream = ExtResource("5_20pmf")
+volume_db = 4.0
+max_distance = 10.0
 bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2084799731]

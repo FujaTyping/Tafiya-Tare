@@ -1307,7 +1307,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -8223,6 +8223,7 @@ defaultLightEnergy = 0.3
 
 [node name="OmniLight3D" type="OmniLight3D" parent="StatueDnNReal/Node3D" unique_id=888796142 groups=["lightFromPole"]]
 transform = Transform3D(1, 7.450581e-09, -4.4703484e-08, 9.313226e-09, 1, -1.4901161e-08, 8.940697e-08, 1.4901161e-08, 1, 0.05621338, 0.64717484, 0.022247314)
+visible = false
 light_energy = 0.3
 shadow_enabled = true
 
@@ -8355,9 +8356,6 @@ libraries/ = SubResource("AnimationLibrary_7x5qn")
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255.66849, 24.30819, 375.21378)
-
-[node name="DnNStatueItem" parent="." unique_id=796425134 instance=ExtResource("210_7x5qn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256.69562, 1.8240327, 374.55988)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

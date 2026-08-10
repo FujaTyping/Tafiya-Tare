@@ -11,6 +11,7 @@ var alreadyUse:bool = false;
 @onready var c_2: Marker3D = $c2
 @onready var gameInstant:Node3D = get_tree().current_scene
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var tick: AudioStreamPlayer3D = $Tick
 
 func _ready() -> void:
 	playerCam = player.get_node('SpringArm3D/Camera3D')
@@ -39,10 +40,17 @@ func placeStatue() :
 	await Varibles.wait(1.5)
 	audio_stream_player_3d.play()
 	get_tree().current_scene.fastForwardNight()
+	playTick()
 	await Varibles.wait(3.6)
 	Varibles.tweenCam(camera_3d,'global_transform',playerCam.global_transform,8);
 	await Varibles.wait(8.1)
 	playerCam.make_current()
+
+func playTick() :
+	tick.play()
+	while get_tree().current_scene.day_night.current_animation_position < 485:
+		await get_tree().process_frame
+	tick.stop()
 
 func interact() :
 	if alreadyUse: return ""
