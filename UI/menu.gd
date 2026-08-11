@@ -83,6 +83,7 @@ func _ready():
 		#_on_s_check_button_toggled(data.effectEnable)
 		SHAvs_check_button.button_pressed = data.enableShadows
 		Varibles.allShadowsShow = data.enableShadows
+		disableShadows(data.enableShadows)
 	play.grab_focus()
 	DiscordRpc.updateRPC("In main menu")
 	h_slider.value = Varibles.MouseSens
@@ -100,6 +101,13 @@ func _ready():
 	
 	if not MenuMusic.getmusicplaying() :
 		MenuMusic.playmenumusic()
+
+func disableShadows(eN:bool) :
+	var sun:DirectionalLight3D = get_tree().current_scene.get_node('sun')
+	if not eN :
+		sun.shadow_enabled = false
+	else :
+		sun.shadow_enabled = true
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("down") and Input.is_action_pressed("shift") and Input.is_action_pressed("ctrl") :
@@ -284,7 +292,6 @@ func _on_window_option_button_item_selected(index: int) -> void:
 	currentWindowList = index
 
 func _on_vs_check_button_toggled(toggled_on: bool) -> void:
-	UiSound.ui_click()
 	currentVSyncMode = toggled_on
 	if toggled_on :
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
@@ -314,6 +321,6 @@ func _on_texture_buttonARC_4_pressed() -> void:
 
 
 func _on_vs_checkSHA_button_toggled(toggled_on: bool) -> void:
-	UiSound.ui_click()
 	currentEnableShadows = toggled_on
 	Varibles.allShadowsShow = toggled_on
+	disableShadows(toggled_on)

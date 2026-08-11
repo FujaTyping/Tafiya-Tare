@@ -465,7 +465,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
-transform = Transform3D(0.13918053, 0.012961894, 0.9901811, 0, 0.99991435, -0.013089279, -0.99026597, 0.0018217764, 0.13916859, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.13918051, 0.012961894, 0.990181, 0, 0.99991435, -0.013089278, -0.9902659, 0.0018217764, 0.13916858, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
