@@ -28,6 +28,7 @@ func getRewardLV4() :
 	rewardItem.fuelValue = 80
 	rewardItem.saveToremoveList = false
 	rewardItem.global_position = reward_spawner.global_position
+	get_tree().current_scene.addAchivement(3)
 
 func brew() :
 	isBrewing = true;

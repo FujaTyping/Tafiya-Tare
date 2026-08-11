@@ -6,6 +6,8 @@ extends StaticBody3D
 @export var saveAfterCollect :bool = true
 @export var saveToremoveList : bool = true
 @export var showNotiItem: bool = true
+@export var callBack:bool = false
+@export var callBackNode:Node3D;
 
 @onready var gameInstant = get_tree().current_scene
 @onready var notiContainer:MarginContainer = get_tree().current_scene.get_node("player/NotiItem")
@@ -22,7 +24,10 @@ func addFuel() :
 			gameInstant.collectedItem.append(self.get_path())
 		if saveAfterCollect :
 			gameInstant.saveDat()
+		if callBack :
+			callBackNode.on_fuel_collect()
 		self.queue_free()
+		
 
 func buyItem() :
 	addFuel()

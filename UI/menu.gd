@@ -295,3 +295,13 @@ func _on_force_full_ui_toggled(toggled_on: bool) -> void:
 func _on_va_slider_value_changed(value: float) -> void:
 	Varibles.VAValueSetting = value
 	AudioServer.set_bus_volume_db(VABus, value)
+
+
+func _on_texture_buttonBUG_3_pressed() -> void:
+	UiSound.ui_click()
+	OS.shell_open('https://nas.siraphop.me/apps/forms/s/Czofop4CWsGpxkqGx3ZX8esf')
+
+
+func _on_texture_buttonARC_4_pressed() -> void:
+	UiSound.ui_click()
+	ScenesLoader.load_scene('uid://d4icseeqedxfo')

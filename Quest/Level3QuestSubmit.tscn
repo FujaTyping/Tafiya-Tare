@@ -49,7 +49,7 @@ saveAfter = true
 [node name="L3ChefNPC" parent="." unique_id=1608878613 instance=ExtResource("1_k8rsk")]
 transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0, 0, 0)
 
-[node name="Skeleton3D" parent="L3ChefNPC/Armature" parent_id_path=PackedInt32Array(1608878613, 1258285182) index="0" unique_id=146955061]
+[node name="Skeleton3D" parent="L3ChefNPC/Armature" parent_id_path=PackedInt32Array(1608878613, 1582545143) index="0" unique_id=351515209]
 bones/0/position = Vector3(0, 0, 0)
 bones/2/rotation = Quaternion(0.7274155, 5.168598e-15, 1.7342936e-07, 0.6861973)
 bones/4/rotation = Quaternion(-0.02109417, 7.0868994e-15, -5.029227e-09, 0.9997775)

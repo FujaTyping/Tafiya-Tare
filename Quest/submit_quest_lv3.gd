@@ -47,6 +47,7 @@ func submitDish() :
 	RewardItem.saveToremoveList = false;
 	RewardItem.fuelValue = 60;
 	success.play()
+	get_tree().current_scene.addAchivement(2)
 	await Varibles.wait(0.5);
 	pass_dialog.global_position = passPos
 	self.position = selfDefaultPos

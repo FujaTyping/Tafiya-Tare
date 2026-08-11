@@ -29,6 +29,7 @@ func dialogEnd(params) :
 		thisReward.saveToremoveList = false
 		thisReward.global_position = reward.global_position
 		get_tree().current_scene.add_child(thisReward)
+		get_tree().current_scene.addAchivement(4)
 
 func changeState(Tstate:int) :
 	if state == 1 :

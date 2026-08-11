@@ -188,6 +188,43 @@ _data = {
 &"RESET": SubResource("Animation_cfwur")
 }
 
+[sub_resource type="Animation" id="Animation_4itj5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_stkbe"]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kafr7"]
+_data = {
+&"RESET": SubResource("Animation_4itj5"),
+&"fade": SubResource("Animation_stkbe")
+}
+
 [node name="SelectSave" type="Control" unique_id=1387389547]
 layout_mode = 3
 anchors_preset = 15
@@ -258,7 +295,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1689030968]
-transform = Transform3D(-0.7536757, 0.13838868, 0.642512, 0.011109445, 0.9801242, -0.19807442, -0.65715265, -0.14214589, -0.74023324, -7.2141123, 1.5220652, 1.3965603)
+transform = Transform3D(-0.54732263, 0.1717389, 0.8191115, 0.011109434, 0.98012406, -0.19807434, -0.83684796, -0.09931071, -0.538352, -3.8878589, 1.5220652, 1.5679371)
 
 [node name="DelConfirm" type="CanvasLayer" parent="." unique_id=833440950]
 layer = 0
@@ -401,17 +438,26 @@ layout_mode = 2
 theme = ExtResource("10_612j2")
 text = "CLOSE_BUTTON"
 
+[node name="Marker3D2" type="Marker3D" parent="." unique_id=830197401]
+transform = Transform3D(-0.75367564, 0.13838866, 0.6425119, 0.011109445, 0.980124, -0.19807437, -0.6571526, -0.14214587, -0.74023306, -7.2141123, 1.5220652, 1.3965603)
+
+[node name="Marker3D3" type="Marker3D" parent="." unique_id=913832291]
+transform = Transform3D(-0.54732263, 0.1717389, 0.8191115, 0.011109433, 0.980124, -0.19807434, -0.83684796, -0.09931071, -0.538352, -3.8878589, 1.5220652, 1.5679371)
+
 [node name="baseLevelTunnel" parent="." unique_id=920513363 instance=ExtResource("7_pruub")]
 transform = Transform3D(0.39337432, 0, 0.035799876, 0, 0.395, 0, -0.035799876, 0, 0.39337432, -14.617527, 0.50649786, 3.6090326)
 
-[node name="Cylinder_001" parent="baseLevelTunnel" index="1" unique_id=1616345624]
+[node name="Cylinder_001" parent="baseLevelTunnel" index="1" unique_id=1678951346]
 visible = false
 
-[node name="Cylinder_002" parent="baseLevelTunnel" index="2" unique_id=1944168280]
+[node name="Cylinder_002" parent="baseLevelTunnel" index="2" unique_id=551374707]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1524170564]
 libraries/ = SubResource("AnimationLibrary_612j2")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1279250058]
+libraries/ = SubResource("AnimationLibrary_kafr7")
 
 [connection signal="pressed" from="DelConfirm/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/DelButton2" to="." method="_on_del_button_2_pressed"]

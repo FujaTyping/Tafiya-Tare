@@ -89,7 +89,8 @@ func _on_button_pressed() -> void:
 		rewardItem.fuelValue = 65
 		rewardItem.saveToremoveList = false
 		rewardItem.global_transform = reward_spawn.global_transform
-		await Varibles.wait(5)
 		var gameInstance = get_tree().current_scene
+		gameInstance.addAchivement(0)
+		await Varibles.wait(5)
 		gameInstance.saveDat()
 		area_3d.hide()

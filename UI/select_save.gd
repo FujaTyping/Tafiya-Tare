@@ -10,8 +10,15 @@ extends Control
 @onready var GOanimation_player: AnimationPlayer = $AnimationPlayer
 @onready var margin_container_2: MarginContainer = $MarginContainer2
 @onready var c_button: Button = $MarginContainer2/HBoxContainer/CButton
+@onready var margin_container: MarginContainer = $MarginContainer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+
+@onready var marker_3d_2: Marker3D = $Marker3D2
+@onready var marker_3d_3: Marker3D = $Marker3D3
 
 func _ready() -> void:
+	camera_3d.global_transform = marker_3d_3.global_transform
+	margin_container.modulate = 'ffffff00'
 	del_confirm.hide()
 	del_button_2.text = "DELETE_ALL_SAVE_BUTTON"
 	var dirAccess = DirAccess.open("user://saves")
@@ -24,10 +31,15 @@ func _ready() -> void:
 		v_box_container_2.add_child(loadSaveBTN)
 	
 	c_button.grab_focus()
+	camPan()
 	return
 	if v_box_container_2.get_child_count() > 0:
 		v_box_container_2.get_child(0).call_deferred("grab_focus")
 	
+func camPan():
+	Varibles.tweenCam(camera_3d,'global_transform',marker_3d_2.global_transform,3)
+	await Varibles.wait(2.5)
+	animation_player_2.play("fade")
 
 func _on_c_button_pressed() -> void:
 	UiSound.ui_click()

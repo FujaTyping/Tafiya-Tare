@@ -254,6 +254,20 @@ var stateQLV5:int = 0
 var collectStatueLV4:bool = false
 var isStatueActivate:bool = false
 
+func addAchivement(Achivnumber:int) :
+	var achivData = achievementData.new()
+	if not FileAccess.file_exists('user://achievement_data.res') :
+		var newAchivment:Array[int] = []
+		newAchivment.append(Achivnumber)
+		achivData.list_of_achievement = newAchivment
+	else :
+		var achivmentDat = ResourceLoader.load("user://achievement_data.res") as achievementData
+		var newAchivment:Array[int] = achivmentDat.list_of_achievement
+		if not Achivnumber in newAchivment :
+			newAchivment.append(Achivnumber)
+		achivData.list_of_achievement = newAchivment
+	ResourceSaver.save(achivData,"user://achievement_data.res")
+
 func saveDat() :
 	save_icon_indicator.show()
 	animation_player.play("Saving")

@@ -37,4 +37,5 @@ func dialogEnd(params) :
 		reward.saveToremoveList = false
 		reward.global_position = reward_spawner.global_position
 		get_tree().current_scene.add_child(reward)
+		get_tree().current_scene.addAchivement(1)
 	gameInstant.QLV2State = state

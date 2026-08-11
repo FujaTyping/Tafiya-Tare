@@ -23,7 +23,7 @@ reward = ExtResource("5_xgrs4")
 [node name="KaTongRuuSii A" parent="." unique_id=1228811781 instance=ExtResource("2_vm1ew")]
 transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0, 0)
 
-[node name="Skeleton3D" parent="KaTongRuuSii A/Armature" parent_id_path=PackedInt32Array(1228811781, 1902291467) index="0" unique_id=1226596350]
+[node name="Skeleton3D" parent="KaTongRuuSii A/Armature" parent_id_path=PackedInt32Array(1228811781, 826834262) index="0" unique_id=1940262145]
 bones/0/position = Vector3(0, 0, 0)
 bones/2/rotation = Quaternion(0.37910375, 4.0036774e-14, -1.4762836e-07, 0.9253542)
 bones/4/rotation = Quaternion(0.37188718, -4.9825536e-24, 8.257555e-17, 0.92827797)

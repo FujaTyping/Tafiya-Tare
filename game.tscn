@@ -219,12 +219,12 @@ ground_bottom_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
 ground_horizon_color = Color(0.003921569, 0, 0.28627452, 1)
 ground_curve = 0.04287107
 
-[sub_resource type="Sky" id="Sky_7jktm"]
+[sub_resource type="Sky" id="Sky_7x5qn"]
 sky_material = SubResource("ProceduralSkyMaterial_fc0e3")
 
 [sub_resource type="Environment" id="Environment_ryrav"]
 background_mode = 2
-sky = SubResource("Sky_7jktm")
+sky = SubResource("Sky_7x5qn")
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
@@ -1307,7 +1307,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -7546,9 +7546,6 @@ transform = Transform3D(0.10965802, 0.27924025, 0, -0.27924025, 0.10965802, 0, 0
 [node name="potion_mt2" parent="Village4" unique_id=1588258082 instance=ExtResource("137_hxd3m")]
 transform = Transform3D(0.021960286, 0.2514212, -0.1621885, -0.29641187, 0.040412277, 0.02251214, 0.040714778, 0.1586008, 0.25137237, 232.91039, 1.1181064, 380.38614)
 
-[node name="DnNStatueItem" parent="Village4" unique_id=1303254267 instance=ExtResource("210_7x5qn")]
-transform = Transform3D(0.36279586, 0, 0.9318686, 0, 1, 0, -0.9318686, 0, 0.36279586, 156.94327, 1.8969945, 383.27356)
-
 [node name="Village5" type="Node3D" parent="." unique_id=1538791868 node_paths=PackedStringArray("notiShow")]
 script = ExtResource("63_o46vb")
 notiShow = NodePath("../AreaNotifier/V5")
@@ -8207,9 +8204,11 @@ transform = Transform3D(0.9922844, 0, 0.1239825, 0, 1, 0, -0.1239825, 0, 0.99228
 transform = Transform3D(0.9922844, 0, 0.1239825, 0, 1, 0, -0.1239825, 0, 0.9922844, -307.88766, 3.912, 154.66812)
 visible = false
 
-[node name="LV6Fuel" parent="." unique_id=314000550 instance=ExtResource("21_hb5m1")]
+[node name="LV6Fuel" parent="." unique_id=314000550 node_paths=PackedStringArray("callBackNode") instance=ExtResource("21_hb5m1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 415.03427, -21.804323, 546.9851)
 fuelValue = 75
+callBack = true
+callBackNode = NodePath("../Village 6")
 
 [node name="SubmitQlv6" parent="." unique_id=1797520423 instance=ExtResource("190_wr4we")]
 transform = Transform3D(-0.5136161, 0.3006725, -0.80361336, 0.16192283, 0.9537274, 0.2533475, 0.8426028, 0, -0.53853554, 316.35754, -1.6462444, 744.2641)
@@ -8226,6 +8225,9 @@ transform = Transform3D(1, 7.450581e-09, -4.4703484e-08, 9.313226e-09, 1, -1.490
 visible = false
 light_energy = 0.3
 shadow_enabled = true
+
+[node name="DnNStatueItem" parent="." unique_id=1303254267 instance=ExtResource("210_7x5qn")]
+transform = Transform3D(0.36279586, 0, 0.9318686, 0, 1, 0, -0.9318686, 0, 0.36279586, 156.94327, 1.8969945, 383.27356)
 
 [node name="Transition" type="Control" parent="." unique_id=143494358]
 visible = false
@@ -8355,7 +8357,7 @@ text = "UI_CINEMATIC_SKTP"
 libraries/ = SubResource("AnimationLibrary_7x5qn")
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255.66849, 24.30819, 375.21378)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 411.31683, 24.30819, 531.96454)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]
