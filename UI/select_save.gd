@@ -16,6 +16,10 @@ extends Control
 @onready var marker_3d_2: Marker3D = $Marker3D2
 @onready var marker_3d_3: Marker3D = $Marker3D3
 
+@export var confirmIcon:CompressedTexture2D;
+@export var trashIcon:CompressedTexture2D;
+@onready var Ttexture_button_2: TextureButton = $MarginContainer2/HBoxContainer/TextureButton2
+
 func _ready() -> void:
 	camera_3d.global_transform = marker_3d_3.global_transform
 	margin_container.modulate = 'ffffff00'
@@ -51,6 +55,10 @@ func _on_del_button_2_pressed() -> void:
 		del_confirm.show()
 		animation_player.play("On")
 		del_button_2.text = "CONFIRM_BUTTON"
+		Ttexture_button_2.texture_normal = confirmIcon
+		Ttexture_button_2.texture_hover = confirmIcon
+		Ttexture_button_2.texture_pressed = confirmIcon
+		Ttexture_button_2.texture_focused = confirmIcon
 	elif del_button_2.text == "CONFIRM_BUTTON" :
 		var file_to_remove = "user://saves"
 		OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
@@ -65,6 +73,10 @@ func goThrough() :
 func _on_close_pressed() -> void:
 	UiSound.ui_click()
 	del_button_2.text = "DELETE_ALL_SAVE_BUTTON"
+	Ttexture_button_2.texture_normal = trashIcon
+	Ttexture_button_2.texture_hover = trashIcon
+	Ttexture_button_2.texture_pressed = trashIcon
+	Ttexture_button_2.texture_focused = trashIcon
 	animation_player.play_backwards("On")
 	await animation_player.animation_finished
 	del_confirm.hide()

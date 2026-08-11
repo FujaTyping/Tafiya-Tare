@@ -11,4 +11,5 @@ class_name settingSave
 @export var VAValue:float
 @export var windowsModeIndex:int
 @export var isVSyncEnable:bool
+@export var enableShadows: bool
 @export var isStretchModeEnable: bool

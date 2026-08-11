@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://jl1gn04gtl8t" path="res://UI/select_save.gd" id="1_7grwk"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="1_tkfn1"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="2_7grwk"]
+[ext_resource type="Texture2D" uid="uid://bui0wu8wiem82" path="res://UI/Texture/checkIcon 48x48.png" id="2_kadbo"]
 [ext_resource type="Texture2D" uid="uid://caojr72gneu66" path="res://UI/Texture/delSaveConfirnBG.png" id="2_s07w0"]
 [ext_resource type="PackedScene" uid="uid://1sqg4n2rq77c" path="res://Terrain/loadSaveScene/LoadSaveBase.glb" id="2_xb10l"]
 [ext_resource type="ArrayMesh" uid="uid://b65seyi1rqvvn" path="res://Terrain/Tree/Mesh/Tree3.res" id="3_pruub"]
@@ -12,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cbu8n8wanen0g" path="res://UI/Texture/CloseIcon.png" id="7_4itj5"]
 [ext_resource type="PackedScene" uid="uid://ch73enkqbxb8u" path="res://Terrain/Base/baseLevelTunnel.glb" id="7_pruub"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="10_612j2"]
+[ext_resource type="Texture2D" uid="uid://clvrin2n5ev86" path="res://UI/Texture/Trash icon 48x48.png" id="12_kafr7"]
+[ext_resource type="Texture2D" uid="uid://by8lcuqc55k50" path="res://UI/Texture/Close icon 48x48.png" id="12_stkbe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54w6a"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -233,6 +236,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7grwk")
+confirmIcon = ExtResource("2_kadbo")
+trashIcon = ExtResource("12_kafr7")
 
 [node name="Environment" type="WorldEnvironment" parent="." unique_id=126870104]
 environment = SubResource("Environment_dddg7")
@@ -426,17 +431,36 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2" unique_id=1421024652]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 23
+alignment = 1
 
 [node name="DelButton2" type="Button" parent="MarginContainer2/HBoxContainer" unique_id=2097503369]
+visible = false
 layout_mode = 2
 theme = ExtResource("10_612j2")
 text = "DELETE_ALL_SAVE_BUTTON"
 
 [node name="CButton" type="Button" parent="MarginContainer2/HBoxContainer" unique_id=1503871154]
+visible = false
 layout_mode = 2
 theme = ExtResource("10_612j2")
 text = "CLOSE_BUTTON"
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer2/HBoxContainer" unique_id=820024734]
+layout_mode = 2
+texture_normal = ExtResource("12_kafr7")
+texture_pressed = ExtResource("12_kafr7")
+texture_hover = ExtResource("12_kafr7")
+texture_disabled = ExtResource("12_kafr7")
+texture_focused = ExtResource("12_kafr7")
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer2/HBoxContainer" unique_id=166270722]
+layout_mode = 2
+texture_normal = ExtResource("12_stkbe")
+texture_pressed = ExtResource("12_stkbe")
+texture_hover = ExtResource("12_stkbe")
+texture_disabled = ExtResource("12_stkbe")
+texture_focused = ExtResource("12_stkbe")
 
 [node name="Marker3D2" type="Marker3D" parent="." unique_id=830197401]
 transform = Transform3D(-0.75367564, 0.13838866, 0.6425119, 0.011109445, 0.980124, -0.19807437, -0.6571526, -0.14214587, -0.74023306, -7.2141123, 1.5220652, 1.3965603)
@@ -462,6 +486,8 @@ libraries/ = SubResource("AnimationLibrary_kafr7")
 [connection signal="pressed" from="DelConfirm/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/DelButton2" to="." method="_on_del_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/CButton" to="." method="_on_c_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/HBoxContainer/TextureButton2" to="." method="_on_del_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/HBoxContainer/TextureButton" to="." method="_on_c_button_pressed"]
 
 [editable path="LoadSaveBase"]
 [editable path="baseLevelTunnel"]

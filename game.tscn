@@ -1307,7 +1307,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -4554,7 +4554,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V1/WoodLantern" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/WoodLantern" unique_id=64119384]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/WoodLantern" unique_id=64119384 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -4573,7 +4573,7 @@ layers = 2
 [node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly" index="1" unique_id=1204993031]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly" unique_id=938465147]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly" unique_id=938465147 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.12509254, -2.3868997)
 visible = false
 light_color = Color(0.99215686, 0.9882353, 0.44313726, 1)
@@ -4591,7 +4591,7 @@ layers = 2
 [node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly2" index="1" unique_id=1204993031]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly2" unique_id=1020982626]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly2" unique_id=1020982626 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.12509254, -2.3868997)
 visible = false
 light_color = Color(0.99215686, 0.9882353, 0.44313726, 1)
@@ -4609,7 +4609,7 @@ layers = 2
 [node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly3" index="1" unique_id=1204993031]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly3" unique_id=2019259183]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly3" unique_id=2019259183 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.12509254, -2.3868997)
 visible = false
 light_color = Color(0.99215686, 0.9882353, 0.44313726, 1)
@@ -4627,7 +4627,7 @@ layers = 2
 [node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly4" index="1" unique_id=1204993031]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly4" unique_id=2007319504]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly4" unique_id=2007319504 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.12509254, -2.3868997)
 visible = false
 light_color = Color(0.99215686, 0.9882353, 0.44313726, 1)
@@ -4645,7 +4645,7 @@ layers = 2
 [node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly5" index="1" unique_id=1204993031]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly5" unique_id=103437841]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly5" unique_id=103437841 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.12509254, -2.3868997)
 visible = false
 light_color = Color(0.99215686, 0.9882353, 0.44313726, 1)
@@ -4663,7 +4663,7 @@ layers = 2
 [node name="Sphere_002" parent="TerrainLight/V1/Merge Firefly6" index="1" unique_id=1204993031]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly6" unique_id=825881559]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V1/Merge Firefly6" unique_id=825881559 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.12509254, -2.3868997)
 visible = false
 light_color = Color(0.99215686, 0.9882353, 0.44313726, 1)
@@ -5519,7 +5519,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern" unique_id=1795119538]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern" unique_id=1795119538 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5538,7 +5538,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern2" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern2" unique_id=1405956285]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern2" unique_id=1405956285 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5557,7 +5557,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern8" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern8" unique_id=174259825]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern8" unique_id=174259825 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5576,7 +5576,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern9" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern9" unique_id=589758690]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern9" unique_id=589758690 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5595,7 +5595,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern10" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern10" unique_id=928494344]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern10" unique_id=928494344 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5614,7 +5614,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern11" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern11" unique_id=1310026422]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern11" unique_id=1310026422 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5633,7 +5633,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern3" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern3" unique_id=398033552]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern3" unique_id=398033552 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5652,7 +5652,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern7" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern7" unique_id=740332787]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern7" unique_id=740332787 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5671,7 +5671,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern4" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern4" unique_id=2145401545]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern4" unique_id=2145401545 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5690,7 +5690,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern5" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern5" unique_id=1434946076]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern5" unique_id=1434946076 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5709,7 +5709,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern6" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern6" unique_id=507529778]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern6" unique_id=507529778 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -5728,7 +5728,7 @@ layers = 2
 [node name="Cube" parent="TerrainLight/V2/WoodLantern12" index="1" unique_id=1547911494]
 layers = 2
 
-[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern12" unique_id=208568562]
+[node name="OmniLight3D" type="OmniLight3D" parent="TerrainLight/V2/WoodLantern12" unique_id=208568562 groups=["lightFromPole"]]
 transform = Transform3D(6.6666675, 0, 0, 0, 6.666667, 0, 0, 0, 6.6666675, -0.055664063, 1.4735298, -0.013916016)
 visible = false
 light_color = Color(1, 0.9882353, 0.4392157, 1)
@@ -7360,7 +7360,7 @@ transform = Transform3D(-0.03295942, 0, 0.19219436, 0, 0.195, 0, -0.19219436, 0,
 script = ExtResource("85_vvpk2")
 defaultLightEnergy = 0.4
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Village3/Candle" unique_id=678025]
+[node name="OmniLight3D" type="OmniLight3D" parent="Village3/Candle" unique_id=678025 groups=["lightFromPole"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6548884, 0)
 visible = false
 light_energy = 0.4

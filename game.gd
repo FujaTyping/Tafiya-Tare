@@ -112,6 +112,15 @@ func _ready() -> void:
 	
 	_day_change_animation()
 	#print(day)
+	
+	setUpShadows(Varibles.allShadowsShow)
+
+func setUpShadows(OF:bool) :
+	if not OF :
+		sun.shadow_enabled = false
+		var allLightPole = get_tree().get_nodes_in_group('lightFromPole')
+		for light in allLightPole :
+			light.shadow_enabled = false
 
 func _change_duration():
 	durationMultiplier = dayLengthInSeconds/180

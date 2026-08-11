@@ -15,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="7_o5gyt"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="8_simev"]
 [ext_resource type="Texture2D" uid="uid://ck5w86qhe7l3w" path="res://UI/Texture/Badge/Badge Village 1 128x128.png" id="9_o5gyt"]
+[ext_resource type="Texture2D" uid="uid://by8lcuqc55k50" path="res://UI/Texture/Close icon 48x48.png" id="16_eax36"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8t6a3"]
 sky_top_color = Color(0.34509805, 0.5921569, 0.98039216, 1)
@@ -306,13 +307,23 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="CButton" type="Button" parent="MarginContainer2" unique_id=215297646]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_8axun")
 text = "CLOSE_BUTTON"
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer2" unique_id=1500273796]
+layout_mode = 2
+texture_normal = ExtResource("16_eax36")
+texture_pressed = ExtResource("16_eax36")
+texture_hover = ExtResource("16_eax36")
+texture_disabled = ExtResource("16_eax36")
+texture_focused = ExtResource("16_eax36")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1482151245]
 libraries/ = SubResource("AnimationLibrary_gjpaf")
 
 [connection signal="pressed" from="MarginContainer2/CButton" to="." method="_on_c_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/TextureButton" to="." method="_on_c_button_pressed"]
 
 [editable path="realBase archivement"]
