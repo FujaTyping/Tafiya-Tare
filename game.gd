@@ -263,7 +263,12 @@ var stateQLV5:int = 0
 var collectStatueLV4:bool = false
 var isStatueActivate:bool = false
 
+var listOfAcH:Array[String] = ['ACH_BTS','ACH_FM','ACH_CC','ACH_BWP','ACH_CNC','ACH_FHF']
+
 func addAchivement(Achivnumber:int) :
+	var steamACH = Steam.getAchievement(listOfAcH[Achivnumber])
+	if not steamACH['achieved'] :
+		Steam.setAchievement(listOfAcH[Achivnumber])
 	var achivData = achievementData.new()
 	if not FileAccess.file_exists('user://achievement_data.res') :
 		var newAchivment:Array[int] = []

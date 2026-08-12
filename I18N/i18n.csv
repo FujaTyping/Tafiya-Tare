@@ -393,18 +393,18 @@ INTERACTION_FAIL_NEED_STATUE,Need a statue,ต้องการรูปปั�
 INTERACTION_FAIL_CAN_USE_AT_DAY,Can only be used in the day,สามารถใช้ได้แค่ตอนกลางวันเท่านั้น
 ARCHIVEMENT_TITLE,Journey Milestones,บันทึกการเดินทาง
 ARCHIVEMENT_DESC,Every friend made and every path cleared. Look back at the memories you've created along the way.,ทุกเพื่อนร่วมทางที่พานพบ และทุกเส้นทางที่ถูกฟื้นฟู... ทบทวนเรื่องราวและความทรงจำที่คุณได้สร้างไว้ตลอดการเดินทาง
-ARCHIVEMENT_VILLAGE_1_TITLE,Beara's Blessing,พรแห่งศรัทธาคาปิบาร่า
-ARCHIVEMENT_VILLAGE_1_DESC,"Cleanse the ancient statue, offer your first scrap, and earn a magical item from the peaceful villagers.",ชำระล้างรูปปั้นโบราณ โยนเศษขยะชิ้นแรกเพื่อแลกไอเทม และซึมซับความสงบจากชาวบ้านใจเย็น
-ARCHIVEMENT_VILLAGE_2_TITLE,The Tech-Savvy Farmer,เกษตรกรไซบอร์ก
-ARCHIVEMENT_VILLAGE_2_DESC,Neutralize the acidic soil with the robot's help and successfully grow your very first batch of rice.,ร่วมมือกับหุ่นยนต์ใช้ผงปูนขาวปรับสภาพดินเปรี้ยว และปลูกข้าวรวงแรกแห่งวิสุทธิมณฑลได้สำเร็จ
-ARCHIVEMENT_VILLAGE_3_TITLE,Master of Compost,ปรุงดิน กินด้วย
-ARCHIVEMENT_VILLAGE_3_DESC,Turn food waste into organic compost and serve a perfect meal to the hungry villagers.,เปลี่ยนเศษอาหารเหลือทิ้งให้กลายเป็นปุ๋ยหมักชั้นดี และปรุงอาหารมื้ออร่อยให้ชาวบ้านนักชิม
-ARCHIVEMENT_VILLAGE_4_TITLE,The Midnight Alchemist,นักปรุงยารัตติกาล
-ARCHIVEMENT_VILLAGE_4_DESC,Brew the correct glowing potions for the night hunters and survive their hilariously disastrous weapon tests.,ปรุงยาสมุนไพรเรืองแสงให้เหล่านักล่าราตรี และเอาชีวิตรอดจากการทดสอบอาวุธสุดพังของพวกเขา
-ARCHIVEMENT_VILLAGE_5_TITLE,Coconut Crusher,สุดยอดนักกล้ามปูมะพร้าว
-ARCHIVEMENT_VILLAGE_5_DESC,"Survive the coconut crabs, finish the heavy workout, and earn the ultimate friendship engine upgrade.",รอดพ้นจากดงปูมะพร้าว ผ่านการวอร์มอัพสุดโหดริมหาด และได้รับอัปเกรดเครื่องยนต์มิตรภาพฟรี!
-ARCHIVEMENT_VILLAGE_6_TITLE,Tears of the Dried Ocean,มนุษย์ครีบบนผืนทราย
-ARCHIVEMENT_VILLAGE_6_DESC,"Witness the tragic dried ocean filled with trash, and bring hope to the finned villagers by offering them a ride.",ขับรถข้ามอดีตมหาสมุทรที่แห้งขอดเพราะขยะ และมอบความหวังครั้งใหม่ให้ชาวบ้านคนทะเลได้ติดรถไปด้วย
+ARCHIVEMENT_VILLAGE_1_TITLE,Blessing of the Statue,พรจากรูปปั้น
+ARCHIVEMENT_VILLAGE_1_DESC,Cleanse the ancient statue,ชำระล้างรูปปั้นโบราณ
+ARCHIVEMENT_VILLAGE_2_TITLE,The Helpful Farmer,ผู้ช่วยเหลือเกษตรกร
+ARCHIVEMENT_VILLAGE_2_DESC,Help recover the soil and plant rice for the villagers,ช่วยฟื้นฟูสภาพดินและปลูกข้าวให้กับชาวบ้าน
+ARCHIVEMENT_VILLAGE_3_TITLE,The Village Chef,เชฟประจำหมู่บ้าน
+ARCHIVEMENT_VILLAGE_3_DESC,Cook and serve a delicious meal for the villagers,ทำอาหารมื้ออร่อยเพื่อเสิร์ฟให้กับชาวบ้าน
+ARCHIVEMENT_VILLAGE_4_TITLE,Potion Brewer,นักปรุงยา
+ARCHIVEMENT_VILLAGE_4_DESC,Brew the correct potions for the night hunters,ปรุงยาที่ถูกต้องให้กับเหล่านักล่าราตรี
+ARCHIVEMENT_VILLAGE_5_TITLE,Coconut Collector,นักเก็บมะพร้าว
+ARCHIVEMENT_VILLAGE_5_DESC,Climb up the tree to collect coconuts for the villagers,ปีนต้นไม้เพื่อเก็บลูกมะพร้าวให้กับชาวบ้าน
+ARCHIVEMENT_VILLAGE_6_TITLE,Hidden Fuel,เชื้อเพลิงที่ซ่อนอยู่
+ARCHIVEMENT_VILLAGE_6_DESC,Find the hidden fuel in the sea,ค้นหาเชื้อเพลิงที่ซ่อนอยู่ในทะเล
 NO_ARCHIVEMENT_MSG,"No achievements yet. Are you just going to sleep in the truck, or are we going to find that Amrit pool?",ยังไม่มีความสำเร็จเลยสักถ้วย นี่จะจอดรถนอนหลับเฉยๆ หรือจะไปตามหาน้ำอมฤตกันเนี่ย?
 OPTION_SHADOWS,Shadows,เงา
 BEFORE_NOTICE_TITLE,Note from the Developer,ข้อความจากผู้พัฒนา

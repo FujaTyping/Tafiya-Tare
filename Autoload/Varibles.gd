@@ -21,6 +21,7 @@ var BGMValueSetting: float = 0
 var SFXValueSetting: float = 0
 var VAValueSetting: float = 0
 var allShadowsShow:bool = true
+var isSteamRunning = false
 
 func wait(seconds):
 	await get_tree().create_timer(seconds).timeout
