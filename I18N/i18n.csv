@@ -407,3 +407,15 @@ ARCHIVEMENT_VILLAGE_6_TITLE,Tears of the Dried Ocean,มนุษย์ครี
 ARCHIVEMENT_VILLAGE_6_DESC,"Witness the tragic dried ocean filled with trash, and bring hope to the finned villagers by offering them a ride.",ขับรถข้ามอดีตมหาสมุทรที่แห้งขอดเพราะขยะ และมอบความหวังครั้งใหม่ให้ชาวบ้านคนทะเลได้ติดรถไปด้วย
 NO_ARCHIVEMENT_MSG,"No achievements yet. Are you just going to sleep in the truck, or are we going to find that Amrit pool?",ยังไม่มีความสำเร็จเลยสักถ้วย นี่จะจอดรถนอนหลับเฉยๆ หรือจะไปตามหาน้ำอมฤตกันเนี่ย?
 OPTION_SHADOWS,Shadows,เงา
+BEFORE_NOTICE_TITLE,Note from the Developer,ข้อความจากผู้พัฒนา
+BEFORE_NOTICE_CONTENT,"Tafiya Tare was developed as a student project for the 28th National Software Contest (NSC 2026) in Thailand. This project serves as a major stepping stone for us to learn and improve our game development skills.
+
+As this game is still in its early development phase, you may encounter bugs, unpolished mechanics, or incomplete features. We sincerely apologize if the experience does not fully meet your expectations.
+
+We deeply appreciate all your feedback and promise to keep learning and improving the game in the future.
+Thank you for giving us a chance and traveling with us!","เกม ทาฟิยา ทาเร (Tafiya Tare) เป็นผลงานที่พัฒนาขึ้นเพื่อส่งเข้าร่วมการแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ 28 (NSC 2026) โดยมีจุดประสงค์หลักเพื่อฝึกฝนและพัฒนาทักษะการสร้างซอฟต์แวร์ของพวกเราในฐานะนักเรียน
+
+เนื่องจากตัวเกมยังอยู่ในช่วงเริ่มต้นของการพัฒนา หากท่านพบเจอข้อผิดพลาด (Bugs) ระบบที่ยังไม่สมบูรณ์ หรือประสบการณ์การเล่นที่ไม่เป็นไปตามความคาดหวัง พวกเราต้องขออภัยมา ณ ที่นี้
+
+พวกเราขอน้อมรับทุกคำติชม และจะมุ่งมั่นเรียนรู้เพื่อพัฒนาเกมนี้ให้ดียิ่งขึ้นในอนาคต
+ขอบคุณที่เปิดโอกาสและมาร่วม เดินทางไปด้วยกัน"

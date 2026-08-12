@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cpbbyap7mmyd8" path="res://UI/Texture/headsetIcon.png" id="1_djbmg"]
 [ext_resource type="Script" uid="uid://bf71ulwipw3iy" path="res://UI/before_menu.gd" id="1_pgjje"]
 [ext_resource type="FontFile" uid="uid://cn6d7g0oborxl" path="res://UI/Font/Sarabun-Regular.ttf" id="2_pgjje"]
+[ext_resource type="Texture2D" uid="uid://b3yjra1bpjj5a" path="res://UI/Texture/ReadbeforeNotice Divider Smaller.png" id="4_pprqh"]
 
 [sub_resource type="Animation" id="Animation_djbmg"]
 resource_name = "In"
-length = 2.5
+length = 6.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,7 +15,7 @@ tracks/0/path = NodePath("Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.2, 2.5),
+"times": PackedFloat32Array(4, 4.3, 6.2, 6.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -26,7 +27,19 @@ tracks/1/path = NodePath("TextureRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.2, 2.5),
+"times": PackedFloat32Array(4, 4.3, 6.2, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Notice:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -57,6 +70,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Notice:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pgjje"]
@@ -113,6 +138,46 @@ theme_override_fonts/font = ExtResource("2_pgjje")
 theme_override_font_sizes/font_size = 28
 text = "WELCOME_HEADSET_RECOMMEND"
 horizontal_alignment = 1
+
+[node name="Notice" type="Control" parent="." unique_id=1821642659]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Notice" unique_id=694373305]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -506.0
+offset_right = 506.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Label2" type="Label" parent="Notice/VBoxContainer" unique_id=437462366]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pgjje")
+theme_override_font_sizes/font_size = 32
+text = "BEFORE_NOTICE_TITLE"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Notice/VBoxContainer" unique_id=2114459566]
+layout_mode = 2
+texture = ExtResource("4_pprqh")
+
+[node name="Label" type="Label" parent="Notice/VBoxContainer" unique_id=1841974527]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pgjje")
+theme_override_font_sizes/font_size = 24
+text = "BEFORE_NOTICE_CONTENT"
+autowrap_mode = 1
 
 [node name="Intro" type="AnimationPlayer" parent="." unique_id=993335289]
 libraries/ = SubResource("AnimationLibrary_pgjje")
