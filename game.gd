@@ -266,6 +266,7 @@ var isStatueActivate:bool = false
 var listOfAcH:Array[String] = ['ACH_BTS','ACH_FM','ACH_CC','ACH_BWP','ACH_CNC','ACH_FHF']
 
 func addAchivement(Achivnumber:int) :
+	var notiContainer = player.get_node('AchNoti')
 	var steamACH = Steam.getAchievement(listOfAcH[Achivnumber])
 	if not steamACH['achieved'] :
 		Steam.setAchievement(listOfAcH[Achivnumber])
@@ -273,11 +274,13 @@ func addAchivement(Achivnumber:int) :
 	if not FileAccess.file_exists('user://achievement_data.res') :
 		var newAchivment:Array[int] = []
 		newAchivment.append(Achivnumber)
+		notiContainer.newACHNoti(Achivnumber)
 		achivData.list_of_achievement = newAchivment
 	else :
 		var achivmentDat = ResourceLoader.load("user://achievement_data.res") as achievementData
 		var newAchivment:Array[int] = achivmentDat.list_of_achievement
 		if not Achivnumber in newAchivment :
+			notiContainer.newACHNoti(Achivnumber)
 			newAchivment.append(Achivnumber)
 		achivData.list_of_achievement = newAchivment
 	ResourceSaver.save(achivData,"user://achievement_data.res")

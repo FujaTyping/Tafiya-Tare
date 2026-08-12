@@ -25,6 +25,14 @@
 [ext_resource type="AudioStream" uid="uid://cg33l6va54id1" path="res://SFX/Havest.wav" id="22_k5be8"]
 [ext_resource type="AudioStream" uid="uid://cn1h1s6k6em7j" path="res://SFX/coconutCollect.wav" id="23_xxxvx"]
 [ext_resource type="AudioStream" uid="uid://c6oswhir8rkou" path="res://SFX/statueCollect.wav" id="24_6k352"]
+[ext_resource type="AudioStream" uid="uid://brm0txerx83rc" path="res://SFX/ach_noti.wav" id="25_goc2s"]
+[ext_resource type="Texture2D" uid="uid://ck5w86qhe7l3w" path="res://UI/Texture/Badge/Badge Village 1 128x128.png" id="26_cg5ld"]
+[ext_resource type="Script" uid="uid://cgbdcl5ix7lwu" path="res://Model/ach_noti.gd" id="26_ibbwr"]
+[ext_resource type="Texture2D" uid="uid://drsktq0mq2j4l" path="res://UI/Texture/Badge/Badge Village 2 128x128.png" id="28_k0pqd"]
+[ext_resource type="Texture2D" uid="uid://da6t7606tudgc" path="res://UI/Texture/Badge/Badge Village 3 128x128.png" id="29_goc2s"]
+[ext_resource type="Texture2D" uid="uid://dfn7hxa6uqqo0" path="res://UI/Texture/Badge/Badge Village 4 128x128.png" id="30_vipwu"]
+[ext_resource type="Texture2D" uid="uid://di21n52fumfm8" path="res://UI/Texture/Badge/Badge Village 5 128x128.png" id="31_wfo4t"]
+[ext_resource type="Texture2D" uid="uid://docuiyrdkyqj5" path="res://UI/Texture/Badge/Badge Village 6 128x128.png" id="32_76mxo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -105,6 +113,43 @@ tracks/0/keys = {
 _data = {
 &"Hide": SubResource("Animation_5hd5c"),
 &"RESET": SubResource("Animation_fi0my")
+}
+
+[sub_resource type="Animation" id="Animation_k0pqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_goc2s"]
+resource_name = "slide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -250), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vipwu"]
+_data = {
+&"RESET": SubResource("Animation_k0pqd"),
+&"slide": SubResource("Animation_goc2s")
 }
 
 [sub_resource type="Animation" id="Animation_lfogq"]
@@ -640,6 +685,11 @@ stream = ExtResource("24_6k352")
 volume_db = -8.0
 bus = &"SFX"
 
+[node name="ach" type="AudioStreamPlayer3D" parent="." unique_id=285740913]
+stream = ExtResource("25_goc2s")
+volume_db = -10.0
+bus = &"SFX"
+
 [node name="LookingCast" type="RayCast3D" parent="." unique_id=421009574]
 transform = Transform3D(1, 0, 0, 0, 1.2536726, -0.43460256, 0, 0.6049696, 0.90062237, 0, 0.48375693, -0.15921128)
 collision_mask = 2
@@ -759,6 +809,45 @@ theme_override_fonts/font = ExtResource("7_416l5")
 theme_override_font_sizes/font_size = 26
 text = "ITEM_TEMPLATE"
 horizontal_alignment = 2
+
+[node name="AchNoti" type="MarginContainer" parent="." unique_id=1389889399]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 50
+script = ExtResource("26_ibbwr")
+ACH_Texture = Array[CompressedTexture2D]([ExtResource("26_cg5ld"), ExtResource("28_k0pqd"), ExtResource("29_goc2s"), ExtResource("30_vipwu"), ExtResource("31_wfo4t"), ExtResource("32_76mxo")])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AchNoti" unique_id=1989135688]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Badge" type="TextureRect" parent="AchNoti/HBoxContainer" unique_id=296987378]
+layout_mode = 2
+texture = ExtResource("26_cg5ld")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AchNoti/HBoxContainer" unique_id=1304326463]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Title" type="Label" parent="AchNoti/HBoxContainer/VBoxContainer" unique_id=920952944]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1yulc")
+theme_override_font_sizes/font_size = 26
+text = "ACHIEVEMENT_UNLOCKED_NOTIFY"
+
+[node name="Name" type="Label" parent="AchNoti/HBoxContainer/VBoxContainer" unique_id=1411492070]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_416l5")
+theme_override_font_sizes/font_size = 22
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AchNoti" unique_id=904214163]
+libraries/ = SubResource("AnimationLibrary_vipwu")
 
 [node name="Sleep" type="CanvasLayer" parent="." unique_id=1818803801]
 visible = false

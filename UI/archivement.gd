@@ -10,15 +10,6 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var margin_container: MarginContainer = $MarginContainer
 
-var badgeContent = [
-	{"title":'ARCHIVEMENT_VILLAGE_1_TITLE',"desc": 'ARCHIVEMENT_VILLAGE_1_DESC'},
-	{"title":'ARCHIVEMENT_VILLAGE_2_TITLE',"desc": 'ARCHIVEMENT_VILLAGE_2_DESC'},
-	{"title":'ARCHIVEMENT_VILLAGE_3_TITLE',"desc": 'ARCHIVEMENT_VILLAGE_3_DESC'},
-	{"title":'ARCHIVEMENT_VILLAGE_4_TITLE',"desc": 'ARCHIVEMENT_VILLAGE_4_DESC'},
-	{"title":'ARCHIVEMENT_VILLAGE_5_TITLE',"desc": 'ARCHIVEMENT_VILLAGE_5_DESC'},
-	{"title":'ARCHIVEMENT_VILLAGE_6_TITLE',"desc": 'ARCHIVEMENT_VILLAGE_6_DESC'}
-]
-
 var listCollectBadge = []
 
 func _ready() -> void:
@@ -36,8 +27,8 @@ func _ready() -> void:
 		for i in listCollectBadge :
 			var thisBadge = item.duplicate(	)
 			thisBadge.get_node('BadgeImg').texture = listbadgeImage[i]
-			thisBadge.get_node('VBoxContainer/Title').text = badgeContent[i].title
-			thisBadge.get_node('VBoxContainer/Desc').text = badgeContent[i].desc
+			thisBadge.get_node('VBoxContainer/Title').text = str("ARCHIVEMENT_VILLAGE_", i+1, "_TITLE")
+			thisBadge.get_node('VBoxContainer/Desc').text = str("ARCHIVEMENT_VILLAGE_", i+1, "_DESC")
 			thisBadge.show()
 			container.add_child(thisBadge)
 	

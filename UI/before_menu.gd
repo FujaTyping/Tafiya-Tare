@@ -21,7 +21,7 @@ func _ready() -> void:
 		DisplayServer.window_set_mode(windowList[data.windowsModeIndex])
 	Steam.steamInit()
 	var SteamRunning = Steam.isSteamRunning()
-	print(SteamRunning)
+
 	Varibles.isSteamRunning = SteamRunning
 	await Varibles.wait(0.25)	
 	intro.play("In")

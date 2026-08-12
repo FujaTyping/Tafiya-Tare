@@ -465,7 +465,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
-transform = Transform3D(0.13918051, 0.012961894, 0.990181, 0, 0.99991435, -0.013089278, -0.9902659, 0.0018217764, 0.13916858, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.1391805, 0.012961894, 0.99018097, 0, 0.99991435, -0.013089277, -0.99026585, 0.0018217764, 0.13916858, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
@@ -947,6 +947,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 23
 text = "rock_impact_crash_sounds_08022026 by Artninja -- https://freesound.org/s/865325/ -- License: Attribution 4.0"
+
+[node name="Label25" type="Label" parent="Credit/MarginContainer2/TabContainer/UI_CREDIT_SOUND/MarginContainer/ScrollContainer/Sound" unique_id=1945567898]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dte3n")
+theme_override_font_sizes/font_size = 23
+text = "Jingle_Achievement_00.wav by LittleRobotSoundFactory -- https://freesound.org/s/270404/ -- License: Attribution 4.0"
 
 [node name="UI_CREDIT_FONT" type="TabBar" parent="Credit/MarginContainer2/TabContainer" unique_id=164242972]
 visible = false
