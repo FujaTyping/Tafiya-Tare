@@ -13,6 +13,7 @@ import Showcase4 from "../assets/background/L4.webp";
 import NSC from "../assets/NSC.webp";
 import LinuxPF from "../assets/platform/linux.webp";
 import WindowsPF from "../assets/platform/windows.webp";
+import SteamPF from "../assets/platform/steamlogo.webp";
 ---
 
 <script>
@@ -35,7 +36,12 @@ import WindowsPF from "../assets/platform/windows.webp";
 		>
 			<div class="absolute top-0 left-0 z-1">
 				<a href="https://github.com/FujaTyping/Tafiya-Tare">
-					<Image src={GithubBanner} alt={'Github'} class={'w-18 md:w-20'} loading="eager" />
+					<Image
+						src={GithubBanner}
+						alt={"Github"}
+						class={"w-18 md:w-20"}
+						loading="eager"
+					/>
 				</a>
 			</div>
 			<Image
@@ -68,13 +74,13 @@ import WindowsPF from "../assets/platform/windows.webp";
 				</div>
 				<div
 					id="platform-download"
-					class="text-white flex items-center justify-center gap-4"
+					class="text-white flex items-start justify-center gap-4 pt-2"
 				>
 					<div>
 						<h2 class="font-bold">Download now</h2>
 						<p class="text-sm">alpha 0.1.8</p>
 					</div>
-					<div class="flex items-center gap-3">
+					<div class="flex items-start gap-3">
 						<a
 							href="https://l.siraphop.me/download-tafiya-tare-linux"
 							target="_blank"
@@ -99,6 +105,20 @@ import WindowsPF from "../assets/platform/windows.webp";
 								height={32}
 							/>
 						</a>
+						<a
+							href="https://store.steampowered.com/app/5099770"
+							target="_blank"
+							class="cursor-not-allowed"
+						>
+							<Image
+								src={SteamPF}
+								alt={"Steam"}
+								loading={"eager"}
+								width={32}
+								height={32}
+							/>
+							<p class="texxt-xs">Soon</p>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -109,7 +129,7 @@ import WindowsPF from "../assets/platform/windows.webp";
 					loading={"eager"}
 					class={"w-14 md:w-20"}
 				/>
-				<p class="text-sm md:text-base max-w-xl text-white">
+				<p class="max-w-xl text-white">
 					Tafiya Tare was made possible through the support and
 					funding provided by the 28th National Software Contest (NSC
 					2026), organized by the National Science and Technology
