@@ -267,9 +267,10 @@ var listOfAcH:Array[String] = ['ACH_BTS','ACH_FM','ACH_CC','ACH_BWP','ACH_CNC','
 
 func addAchivement(Achivnumber:int) :
 	var notiContainer = player.get_node('AchNoti')
-	var steamACH = Steam.getAchievement(listOfAcH[Achivnumber])
-	if not steamACH['achieved'] :
-		Steam.setAchievement(listOfAcH[Achivnumber])
+	if Varibles.isSteamRunning :
+		var steamACH = Steam.getAchievement(listOfAcH[Achivnumber])
+		if not steamACH['achieved'] :
+			Steam.setAchievement(listOfAcH[Achivnumber])
 	var achivData = achievementData.new()
 	if not FileAccess.file_exists('user://achievement_data.res') :
 		var newAchivment:Array[int] = []

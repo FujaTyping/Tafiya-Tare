@@ -11,6 +11,8 @@ func _ready() -> void:
 	self.position = Vector2(0,-250)
 	
 func newACHNoti(ach_index) :
+	if Varibles.isSteamRunning :
+		return
 	badge.texture = ACH_Texture[ach_index]
 	tname.text = str("ARCHIVEMENT_VILLAGE_",ach_index+1,"_TITLE")
 	animation_player.play("slide")

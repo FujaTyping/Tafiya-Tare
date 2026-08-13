@@ -158,7 +158,7 @@ offset_left = -506.0
 offset_right = 506.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 28
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Label2" type="Label" parent="Notice/VBoxContainer" unique_id=437462366]

@@ -275,7 +275,7 @@ script = ExtResource("15_sjakl")
 animation = NodePath("AnimationPlayer")
 sittAnimationName = "CarSit"
 
-[node name="AnimationPlayer" parent="V20001" index="1" unique_id=298782104]
+[node name="AnimationPlayer" parent="V20001" index="1" unique_id=1936794959]
 autoplay = &"CarSit"
 
 [node name="NPC0304" parent="." unique_id=672893614 node_paths=PackedStringArray("animation") instance=ExtResource("16_vkiah")]
@@ -285,7 +285,7 @@ script = ExtResource("17_caodj")
 animation = NodePath("AnimationPlayer")
 sittAnimationName = "Sit"
 
-[node name="Skeleton3D" parent="NPC0304/Armature" parent_id_path=PackedInt32Array(672893614, 241570566) index="0" unique_id=1370013512]
+[node name="Skeleton3D" parent="NPC0304/Armature" parent_id_path=PackedInt32Array(672893614, 476610374) index="0" unique_id=895883041]
 bones/0/position = Vector3(0.25903642, 0, -0.555078)
 bones/0/rotation = Quaternion(0.5722708, -0.7027801, -0.2668543, 0.32771182)
 bones/1/rotation = Quaternion(3.74184e-08, 1.0426934e-07, 0.07245437, 0.99737173)
@@ -320,7 +320,7 @@ script = ExtResource("20_nijln")
 animation = NodePath("AnimationPlayer")
 sittAnimationName = "Sit"
 
-[node name="Skeleton3D" parent="V50004/Armature" parent_id_path=PackedInt32Array(1671116145, 146792217) index="0" unique_id=795376781]
+[node name="Skeleton3D" parent="V50004/Armature" parent_id_path=PackedInt32Array(1671116145, 424111006) index="0" unique_id=1507738224]
 bones/0/rotation = Quaternion(-7.1604904e-15, -1.4536996e-09, 0.010819522, 0.99994147)
 bones/3/rotation = Quaternion(0.5110841, 0.08836228, -0.110043816, 0.84786534)
 bones/4/rotation = Quaternion(-0.020969225, 0.06809885, -0.0846828, 0.99385697)
@@ -346,7 +346,7 @@ script = ExtResource("22_vluwc")
 animation = NodePath("AnimationPlayer")
 sittAnimationName = "Sit"
 
-[node name="Skeleton3D" parent="V60001/Armature" parent_id_path=PackedInt32Array(460403000, 1846297350) index="0" unique_id=440194141]
+[node name="Skeleton3D" parent="V60001/Armature" parent_id_path=PackedInt32Array(460403000, 71506600) index="0" unique_id=1190492869]
 bones/0/rotation = Quaternion(0, -1.9302968e-09, 0.014366729, 0.9998969)
 bones/1/rotation = Quaternion(-0.0010324538, -0.00039630954, 0.012154638, 0.99992555)
 bones/2/rotation = Quaternion(0.7678863, -0.0077577573, -0.0049079135, 0.6405204)
