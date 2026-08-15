@@ -13,9 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://dl137oixy3yhi" path="res://logo.png" id="8_cvc1e"]
 [ext_resource type="Texture2D" uid="uid://mfgttr18njs2" path="res://UI/Texture/Stretch Icon 32x32.png" id="8_dhncy"]
 [ext_resource type="Texture2D" uid="uid://w4ju701qk4q8" path="res://UI/Texture/Icon/Bug Icon 48x48.png" id="12_60j7a"]
+[ext_resource type="Texture2D" uid="uid://dut3xfobcucbb" path="res://UI/Texture/Icon/play icon 32x32.png" id="12_yecwb"]
 [ext_resource type="Texture2D" uid="uid://bnv1uqjy633gw" path="res://UI/Texture/Icon/InfoIcon 48x48.png" id="13_60j7a"]
+[ext_resource type="Texture2D" uid="uid://bfx7wvfy7ygit" path="res://UI/Texture/Icon/Save icon 32x32.png" id="13_qoksu"]
+[ext_resource type="Texture2D" uid="uid://dtpyjpafnxlyp" path="res://UI/Texture/Icon/setting icon 32x32.png" id="14_gkf6b"]
 [ext_resource type="Texture2D" uid="uid://bray18uu5g3ug" path="res://UI/Texture/Icon/LicenseIcon 48x48.png" id="14_k0tp0"]
 [ext_resource type="Texture2D" uid="uid://4a27apa7peqb" path="res://UI/Texture/Icon/Archivement Icon 48x48.png" id="14_xbecv"]
+[ext_resource type="Texture2D" uid="uid://s2lvwu3gn4he" path="res://UI/Texture/Icon/Exit icon 32x32.png" id="15_cbyaf"]
 [ext_resource type="Texture2D" uid="uid://by8lcuqc55k50" path="res://UI/Texture/Close icon 48x48.png" id="16_xbecv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wfiwe"]
@@ -465,7 +469,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1474271294]
-transform = Transform3D(0.1391805, 0.012961894, 0.99018097, 0, 0.99991435, -0.013089277, -0.99026585, 0.0018217764, 0.13916858, 0.6935096, 0.893828, -0.01693809)
+transform = Transform3D(0.1391805, 0.012961894, 0.9901809, 0, 0.99991435, -0.013089276, -0.9902658, 0.0018217764, 0.13916856, 0.6935096, 0.893828, -0.01693809)
 keep_aspect = 0
 
 [node name="PlayerSelection" type="MarginContainer" parent="." unique_id=1417427803]
@@ -602,32 +606,39 @@ theme_override_fonts/font = ExtResource("3_kfjwn")
 theme_override_font_sizes/font_size = 52
 text = "TITLE"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/VBoxContainer" unique_id=534268851]
+[node name="MarginContainer" type="MarginContainer" parent="Main/VBoxContainer" unique_id=1329832726]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/VBoxContainer/MarginContainer" unique_id=534268851]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Play" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=1008272392]
+[node name="Play" type="Button" parent="Main/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1008272392]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Load")
 theme = ExtResource("7_dte3n")
 text = "PLAY_BUTTON"
+icon = ExtResource("12_yecwb")
 
-[node name="Load" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=1954982274]
+[node name="Load" type="Button" parent="Main/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1954982274]
 visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Option")
 theme = ExtResource("7_dte3n")
 text = "BUTTON_LOAD"
+icon = ExtResource("13_qoksu")
 
-[node name="Option" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=345375739]
+[node name="Option" type="Button" parent="Main/VBoxContainer/MarginContainer/VBoxContainer" unique_id=345375739]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Load")
 focus_neighbor_bottom = NodePath("../Credit")
 theme = ExtResource("7_dte3n")
 text = "OPTION_BUTTON"
+icon = ExtResource("14_gkf6b")
 
-[node name="Credit" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=2003642075]
+[node name="Credit" type="Button" parent="Main/VBoxContainer/MarginContainer/VBoxContainer" unique_id=2003642075]
 visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Option")
@@ -636,12 +647,13 @@ theme_override_fonts/font = ExtResource("4_dte3n")
 theme_override_font_sizes/font_size = 24
 text = "CREDIT_BUTTON"
 
-[node name="Quit" type="Button" parent="Main/VBoxContainer/VBoxContainer" unique_id=177273776]
+[node name="Quit" type="Button" parent="Main/VBoxContainer/MarginContainer/VBoxContainer" unique_id=177273776]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credit")
-focus_neighbor_bottom = NodePath("../../../VBoxContainer2/HBoxContainer2/LinkButton")
+focus_neighbor_bottom = NodePath("../../../../VBoxContainer2/HBoxContainer2/LinkButton")
 theme = ExtResource("7_dte3n")
 text = "QUIT_BUTTON"
+icon = ExtResource("15_cbyaf")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Main" unique_id=969318315]
 layout_mode = 2
@@ -1438,11 +1450,11 @@ libraries/ = SubResource("AnimationLibrary_60j7a")
 [connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/WM" to="PlayerSelection" method="_on_wm_pressed"]
 [connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/HBoxContainer/M" to="PlayerSelection" method="_on_m_pressed"]
 [connection signal="pressed" from="PlayerSelection/VBoxContainer/VBoxContainer2/Button" to="." method="_on_back_selection_pressed"]
-[connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Load" to="." method="_on_play_2_pressed"]
-[connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
-[connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
-[connection signal="pressed" from="Main/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Load" to="." method="_on_play_2_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/LinkButton2" to="." method="_on_link_button_2_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/LinkButton3" to="." method="_on_link_button_3_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer2/HBoxContainer2/TextureButton3" to="." method="_on_texture_buttonBUG_3_pressed"]

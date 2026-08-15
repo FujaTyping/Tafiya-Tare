@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://djtj7t0j0u5a4" path="res://UI/pause.gd" id="1_6wphx"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_jl6cd"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="3_85lix"]
+[ext_resource type="Texture2D" uid="uid://dut3xfobcucbb" path="res://UI/Texture/Icon/play icon 32x32.png" id="4_syi7u"]
+[ext_resource type="Texture2D" uid="uid://bfx7wvfy7ygit" path="res://UI/Texture/Icon/Save icon 32x32.png" id="5_ofr6j"]
+[ext_resource type="Texture2D" uid="uid://x2tet3drw1yd" path="res://UI/Texture/Icon/Home icon 32x32.png" id="6_0o46q"]
+[ext_resource type="Texture2D" uid="uid://s2lvwu3gn4he" path="res://UI/Texture/Icon/Exit icon 32x32.png" id="7_g74ew"]
 
 [sub_resource type="Animation" id="Animation_jl6cd"]
 resource_name = "CloseAnimation"
@@ -118,21 +122,25 @@ theme_override_constants/separation = 15
 layout_mode = 2
 theme = ExtResource("3_85lix")
 text = "RESUME_BUTTON"
+icon = ExtResource("4_syi7u")
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1785241352]
 layout_mode = 2
 theme = ExtResource("3_85lix")
 text = "BUTTON_SAVE"
+icon = ExtResource("5_ofr6j")
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1853824070]
 layout_mode = 2
 theme = ExtResource("3_85lix")
 text = "BACK_TO_MENU_BUTTON"
+icon = ExtResource("6_0o46q")
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1606528984]
 layout_mode = 2
 theme = ExtResource("3_85lix")
 text = "QUIT_BUTTON"
+icon = ExtResource("7_g74ew")
 
 [node name="Open" type="AnimationPlayer" parent="." unique_id=1926776139]
 libraries/ = SubResource("AnimationLibrary_jl6cd")

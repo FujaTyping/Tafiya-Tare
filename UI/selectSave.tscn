@@ -15,6 +15,7 @@
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="10_612j2"]
 [ext_resource type="Texture2D" uid="uid://clvrin2n5ev86" path="res://UI/Texture/Trash icon 48x48.png" id="12_kafr7"]
 [ext_resource type="Texture2D" uid="uid://by8lcuqc55k50" path="res://UI/Texture/Close icon 48x48.png" id="12_stkbe"]
+[ext_resource type="Texture2D" uid="uid://bfx7wvfy7ygit" path="res://UI/Texture/Icon/Save icon 32x32.png" id="13_u85ub"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54w6a"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -405,12 +406,13 @@ text = "LOAD_SELECTION_DECS"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer3" unique_id=837082976]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 12
 
 [node name="Button_TEMP" type="Button" parent="MarginContainer/VBoxContainer3/VBoxContainer2" unique_id=1196991663]
 visible = false
 layout_mode = 2
 theme = ExtResource("10_612j2")
+icon = ExtResource("13_u85ub")
 script = ExtResource("4_osi7q")
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=2094817302]

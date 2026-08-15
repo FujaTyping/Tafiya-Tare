@@ -1,6 +1,6 @@
 extends Control
 
-@onready var play: Button = $Main/VBoxContainer/VBoxContainer/Play
+@onready var play: Button = $Main/VBoxContainer/MarginContainer/VBoxContainer/Play
 @onready var credit_animation: AnimationPlayer = $CreditAnimation
 @onready var menu_animation: AnimationPlayer = $MenuAnimation
 @onready var close_credit: Button = $Credit/MarginContainer/CloseCredit
@@ -24,7 +24,7 @@ extends Control
 @onready var close_option: Button = $Option/MarginContainer/CloseOption
 @onready var fps_selector: OptionButton = $Option/MarginContainer/VBoxContainer/HBoxContainer6/FPSSelector
 @onready var version: Label = $Main/VBoxContainer2/HBoxContainer/Version
-@onready var load: Button = $Main/VBoxContainer/VBoxContainer/Load
+@onready var load: Button = $Main/VBoxContainer/MarginContainer/VBoxContainer/Load
 @onready var license_animation: AnimationPlayer = $LicenseAnimation
 @onready var license: MarginContainer = $License
 @onready var close_lisense: Button = $License/MarginContainer/CloseCredit
