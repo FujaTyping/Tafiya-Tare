@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djtj7t0j0u5a4" path="res://UI/pause.gd" id="1_6wphx"]
 [ext_resource type="FontFile" uid="uid://bb7olwpe2vhxd" path="res://UI/Font/PlaypenSansThai-SemiBold.ttf" id="2_jl6cd"]
+[ext_resource type="Texture2D" uid="uid://cpbdg4se8x2u3" path="res://UI/Texture/Icon/Check icon 32x32.png" id="2_ofr6j"]
 [ext_resource type="Theme" uid="uid://smv6met5kyl1" path="res://Themes/theme.tres" id="3_85lix"]
 [ext_resource type="Texture2D" uid="uid://dut3xfobcucbb" path="res://UI/Texture/Icon/play icon 32x32.png" id="4_syi7u"]
 [ext_resource type="Texture2D" uid="uid://bfx7wvfy7ygit" path="res://UI/Texture/Icon/Save icon 32x32.png" id="5_ofr6j"]
@@ -75,6 +76,8 @@ offset_bottom = -1090.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wphx")
+confirmImg = ExtResource("2_ofr6j")
+exitImgIcon = ExtResource("7_g74ew")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2026426989]
 layout_mode = 1

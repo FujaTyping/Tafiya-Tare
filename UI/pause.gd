@@ -8,6 +8,8 @@ var confirmExit = false
 @onready var exit: Button = $MarginContainer/VBoxContainer/VBoxContainer/Exit
 
 @onready var gameInstant = get_tree().current_scene
+@export var confirmImg:CompressedTexture2D;
+@export var exitImgIcon: CompressedTexture2D;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -35,6 +37,7 @@ func _on_exit_pressed() -> void:
 	if not confirmExit :
 		UiSound.ui_click()
 		exit.text = "BUTTON_CLICK_AGAIN_FOR_SURE"
+		exit.icon = confirmImg
 		confirmExit = true
 	else :
 		var day_bgm: AudioStreamPlayer = get_tree().current_scene.get_node("dayBGM")
@@ -57,6 +60,7 @@ func pauseMenu() :
 		await open.animation_finished
 		pause.visible = false
 		exit.text = "QUIT_BUTTON"
+		exit.icon = exitImgIcon
 		confirmExit = false
 	else:
 		get_tree().paused = true

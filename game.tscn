@@ -210,6 +210,15 @@
 [ext_resource type="AudioStream" uid="uid://ckmamyq4jnyhh" path="res://Sound/Ambient/UnderWaterAmbience2.mp3" id="207_jrysx"]
 [ext_resource type="PackedScene" uid="uid://p4kv3txdo2pc" path="res://Model/L4/StatueDnNReal.tscn" id="209_3dopg"]
 [ext_resource type="PackedScene" uid="uid://8aqakbxwna8n" path="res://Model/L4/DnNStatueItem.tscn" id="210_7x5qn"]
+[ext_resource type="PackedScene" uid="uid://cf72jr01ksu62" path="res://Model/L2/SeedState/Rice Ready.glb" id="211_3arph"]
+[ext_resource type="PackedScene" uid="uid://c5a1tj5lfiwwe" path="res://Model/L2/SeedState/Rice Tonkhla.glb" id="212_khwwa"]
+[ext_resource type="PackedScene" uid="uid://cx4b0dfctdmpy" path="res://Model/Paper/item/paperV2.tscn" id="213_14k7c"]
+[ext_resource type="PackedScene" uid="uid://brsdf1kihhrxq" path="res://Model/Paper/item/paperV1.tscn" id="214_66a1o"]
+[ext_resource type="PackedScene" uid="uid://dlv87whchvjih" path="res://Model/Paper/item/paperV3.tscn" id="215_8ltto"]
+[ext_resource type="PackedScene" uid="uid://svela3b5o6sp" path="res://Model/Paper/item/paperV4.tscn" id="216_wrsk8"]
+[ext_resource type="PackedScene" uid="uid://txeiyxdr4210" path="res://Model/Paper/item/paperV5.tscn" id="217_dryi3"]
+[ext_resource type="PackedScene" uid="uid://cyc44vgfy3yhl" path="res://Model/Paper/item/paperV6.tscn" id="218_qje4k"]
+[ext_resource type="PackedScene" uid="uid://cddo0g1qes1pw" path="res://Model/Paper/item/paperCave.tscn" id="219_dryi3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
 sky_top_color = Color(0.03529412, 0.05490196, 0.078431375, 1)
@@ -3599,6 +3608,7 @@ omni_range = 2.762321
 transform = Transform3D(-1.02066096e-07, 0, -2.335, 0, 2.335, 0, 2.335, 0, -1.02066096e-07, 32.055683, 0.2339859, 538.2577)
 
 [node name="Landscape" parent="base" index="1" unique_id=268092521]
+transform = Transform3D(0.99999994, 0, 3.5527137e-15, 0, 0.99999994, 0, -3.5527137e-15, 0, 0.99999994, 0, 0.17002532, -65.28387)
 lod_bias = 0.001
 
 [node name="CollisionShape3D" parent="base/Landscape/StaticBody3D" parent_id_path=PackedInt32Array(39208368, 828515135) index="0" unique_id=1881018549]
@@ -7248,6 +7258,123 @@ transform = Transform3D(0.733722, 0, -1.4387068, 0, 1.6149998, 0, 1.4387068, 0, 
 [node name="LV2 Tent2" parent="Village2" unique_id=345693954 instance=ExtResource("158_8f8qe")]
 transform = Transform3D(1.6121691, 0, -0.09558296, 0, 1.6149997, 0, 0.09558296, 0, 1.6121691, -146.73613, 1.738521, 635.6026)
 
+[node name="Rice Ready" parent="Village2" unique_id=1662663489 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -162.35991, 1.2232214, 617.1355)
+
+[node name="Rice Ready2" parent="Village2" unique_id=1252444844 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -162.1297, 1.2232214, 618.22705)
+
+[node name="Rice Ready3" parent="Village2" unique_id=1281613604 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -161.68245, 1.2232214, 619.0084)
+
+[node name="Rice Ready4" parent="Village2" unique_id=803375516 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -161.34671, 1.2232214, 620.4975)
+
+[node name="Rice Ready5" parent="Village2" unique_id=61222918 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -161.48228, 1.2232214, 616.70905)
+
+[node name="Rice Ready6" parent="Village2" unique_id=1664328201 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -160.98671, 1.2232214, 617.9122)
+
+[node name="Rice Ready7" parent="Village2" unique_id=11316226 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -160.82753, 1.2232214, 619.2201)
+
+[node name="Rice Ready8" parent="Village2" unique_id=674383765 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -160.06828, 1.2232214, 620.0946)
+
+[node name="Rice Ready9" parent="Village2" unique_id=1715893240 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -160.3025, 1.2232214, 616.689)
+
+[node name="Rice Ready13" parent="Village2" unique_id=789721639 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -155.30325, 1.2709723, 633.8068)
+
+[node name="Rice Ready14" parent="Village2" unique_id=2000752540 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -154.54698, 1.2709723, 634.2936)
+
+[node name="Rice Ready15" parent="Village2" unique_id=432560313 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -154.19167, 1.2709723, 635.08307)
+
+[node name="Rice Ready16" parent="Village2" unique_id=973722123 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -153.16806, 1.2709723, 635.1594)
+
+[node name="Rice Ready17" parent="Village2" unique_id=117766629 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -153.19029, 1.2709723, 633.78174)
+
+[node name="Rice Ready18" parent="Village2" unique_id=945849467 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -152.48892, 1.2709723, 634.4952)
+
+[node name="Rice Ready19" parent="Village2" unique_id=290452367 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -153.70364, 1.2709723, 635.9496)
+
+[node name="Rice Ready20" parent="Village2" unique_id=2008597168 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -152.45645, 1.2709723, 635.70044)
+
+[node name="Rice Ready21" parent="Village2" unique_id=586811687 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -153.6181, 1.2709723, 634.24677)
+
+[node name="Rice Ready22" parent="Village2" unique_id=1745343578 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -151.66748, 1.2709723, 635.19055)
+
+[node name="Rice Ready23" parent="Village2" unique_id=643861188 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -153.35596, 1.2709723, 632.7137)
+
+[node name="Rice Ready24" parent="Village2" unique_id=605304509 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -153.1451, 1.2709723, 636.4125)
+
+[node name="Rice Ready25" parent="Village2" unique_id=894204081 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -154.26088, 1.2709723, 633.28217)
+
+[node name="Rice Ready10" parent="Village2" unique_id=627718473 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -159.99385, 1.2232214, 617.6457)
+
+[node name="Rice Ready11" parent="Village2" unique_id=1893123203 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -159.71928, 1.2232214, 618.7581)
+
+[node name="Rice Ready12" parent="Village2" unique_id=406130890 instance=ExtResource("211_3arph")]
+transform = Transform3D(1.38, 0, 0, 0, 1.38, 0, 0, 0, 1.38, -159.16782, 1.2232214, 619.7843)
+
+[node name="Rice Tonkhla" parent="Village2" unique_id=1360797069 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -156.01624, 1.3525305, 632.38776)
+
+[node name="Rice Tonkhla2" parent="Village2" unique_id=749461151 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.86528, 1.3525305, 631.689)
+
+[node name="Rice Tonkhla3" parent="Village2" unique_id=1909483909 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.62015, 1.3525305, 632.0837)
+
+[node name="Rice Tonkhla4" parent="Village2" unique_id=1245694556 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.12413, 1.3525305, 631.90485)
+
+[node name="Rice Tonkhla5" parent="Village2" unique_id=1237481591 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -154.99272, 1.3525305, 631.25793)
+
+[node name="Rice Tonkhla6" parent="Village2" unique_id=1188428790 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.50586, 1.3525304, 631.36)
+
+[node name="Rice Tonkhla7" parent="Village2" unique_id=71941225 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -154.78743, 1.3525304, 631.82965)
+
+[node name="Rice Tonkhla8" parent="Village2" unique_id=1855808919 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.33383, 1.3525304, 632.1458)
+
+[node name="Rice Tonkhla9" parent="Village2" unique_id=730808970 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -156.48756, 1.3525304, 631.24274)
+
+[node name="Rice Tonkhla10" parent="Village2" unique_id=149494057 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -156.01183, 1.3525304, 630.936)
+
+[node name="Rice Tonkhla11" parent="Village2" unique_id=971225829 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.43501, 1.3525305, 630.63214)
+
+[node name="Rice Tonkhla12" parent="Village2" unique_id=977737046 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -156.43124, 1.3525305, 631.75696)
+
+[node name="Rice Tonkhla13" parent="Village2" unique_id=1165963476 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.57918, 1.3525305, 632.44385)
+
+[node name="Rice Tonkhla14" parent="Village2" unique_id=808226778 instance=ExtResource("212_khwwa")]
+transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, -155.03574, 1.3525306, 630.6331)
+
 [node name="Village3" type="Node3D" parent="." unique_id=1857284539 node_paths=PackedStringArray("notiShow")]
 script = ExtResource("63_o46vb")
 notiShow = NodePath("../AreaNotifier/V3")
@@ -8152,6 +8279,29 @@ dialoguesLine = Array[String](["DIALOGE_PLANT_ROTTEN_1", "DIALOGE_PLANT_ROTTEN_2
 charLine = Array[String](["PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME", "PLAYER_DIALOGE_NAME"])
 destroyAfterFinish = true
 
+[node name="AllPaper" type="Node3D" parent="." unique_id=886198418]
+
+[node name="recipie" parent="AllPaper" unique_id=1585788411 instance=ExtResource("213_14k7c")]
+transform = Transform3D(-0.25959456, 0.4379761, 0.8606903, -4.7381317e-09, 0.89124423, -0.45352396, -0.96571785, -0.11773234, -0.23136207, -145.9645, 8.058091, 637.5335)
+
+[node name="paper" parent="AllPaper" unique_id=16928693 instance=ExtResource("214_66a1o")]
+transform = Transform3D(0.027768439, -0.82986504, -0.5572728, 0.17317876, 0.5530518, -0.8149495, 0.9844987, -0.07387792, 0.15907237, -24.2257, 8.768394, 488.7432)
+
+[node name="paper2" parent="AllPaper" unique_id=426817226 instance=ExtResource("215_8ltto")]
+transform = Transform3D(0.1850683, -0.9768541, -0.107266724, 0.3810388, 0.17194238, -0.9084302, 0.9058472, 0.12724884, 0.40404037, 73.02585, 1.8262875, 642.4586)
+
+[node name="paper3" parent="AllPaper" unique_id=743669785 instance=ExtResource("216_wrsk8")]
+transform = Transform3D(0.49866307, -0.8622962, -0.088207565, -0.03708693, 0.08044447, -0.996069, 0.86600226, 0.49997416, 0.008134759, 242.71716, 1.601194, 378.5526)
+
+[node name="paper4" parent="AllPaper" unique_id=1247309058 instance=ExtResource("217_dryi3")]
+transform = Transform3D(-0.21315911, -0.95608616, -0.20115268, -0.042579874, 0.2147796, -0.9757338, 0.9760892, -0.19942154, -0.08649225, 315.11966, -0.44776565, 750.1552)
+
+[node name="paper5" parent="AllPaper" unique_id=1582745997 instance=ExtResource("218_qje4k")]
+transform = Transform3D(0.9990672, -0.0022796178, 0.04312325, 0.041878205, -0.19251831, -0.98039937, 0.010536952, 0.9812907, -0.19224325, 382.55234, -21.149837, 525.5601)
+
+[node name="paper6" parent="AllPaper" unique_id=1587941827 instance=ExtResource("219_dryi3")]
+transform = Transform3D(-0.9571226, 0.255134, 0.13719751, -1.8626451e-08, 0.4736119, -0.8807337, -0.28968343, -0.84296995, -0.45330447, 646.6981, 13.404198, 477.89767)
+
 [node name="JarMaker" parent="." unique_id=1979976088 instance=ExtResource("99_i3uta")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0.148776, 0.9888708, -6.5032073e-09, 0.9888708, -0.148776, -4.322492e-08, 76.406784, 2.8360465, 626.4471)
 
@@ -8357,7 +8507,7 @@ text = "UI_CINEMATIC_SKTP"
 libraries/ = SubResource("AnimationLibrary_7x5qn")
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 282.13968, 24.30819, 763.26385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.386078, 24.30819, 430.62375)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

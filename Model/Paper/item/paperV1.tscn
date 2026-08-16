@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://brsdf1kihhrxq"]
+
+[ext_resource type="Script" uid="uid://de2riqusrt3u1" path="res://Item/View/viewMoreManager.gd" id="1_qfivk"]
+[ext_resource type="Texture2D" uid="uid://bibrorlvgtn65" path="res://Model/Paper/view/paperV1.png" id="2_apfwa"]
+[ext_resource type="PackedScene" uid="uid://cjnlwjovokfwp" path="res://Model/Paper/paperV1.glb" id="4_uaxab"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an0si"]
+size = Vector3(0.34277344, 0.4167385, 0.12402344)
+
+[node name="paper" type="StaticBody3D" unique_id=865504212]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_qfivk")
+ImagetoView = ExtResource("2_apfwa")
+
+[node name="paperV1" parent="." unique_id=359375989 instance=ExtResource("4_uaxab")]
+transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615513184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.120417595, -0.047302246)
+shape = SubResource("BoxShape3D_an0si")
