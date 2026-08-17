@@ -214,10 +214,16 @@
 [ext_resource type="PackedScene" uid="uid://c5a1tj5lfiwwe" path="res://Model/L2/SeedState/Rice Tonkhla.glb" id="212_khwwa"]
 [ext_resource type="PackedScene" uid="uid://cx4b0dfctdmpy" path="res://Model/Paper/item/paperV2.tscn" id="213_14k7c"]
 [ext_resource type="PackedScene" uid="uid://brsdf1kihhrxq" path="res://Model/Paper/item/paperV1.tscn" id="214_66a1o"]
+[ext_resource type="AudioStream" uid="uid://bkb8sivtdhhaf" path="res://VAs/EDVA1.wav" id="214_a7oj8"]
 [ext_resource type="PackedScene" uid="uid://dlv87whchvjih" path="res://Model/Paper/item/paperV3.tscn" id="215_8ltto"]
+[ext_resource type="AudioStream" uid="uid://beu7d2xlr503w" path="res://VAs/EDVA2.wav" id="215_amry1"]
+[ext_resource type="AudioStream" uid="uid://b53r3qeuoqmjf" path="res://VAs/EDVA3.wav" id="216_svbav"]
 [ext_resource type="PackedScene" uid="uid://svela3b5o6sp" path="res://Model/Paper/item/paperV4.tscn" id="216_wrsk8"]
+[ext_resource type="AudioStream" uid="uid://du4i6vr4wmhxf" path="res://VAs/EDVA4.wav" id="217_1qepm"]
 [ext_resource type="PackedScene" uid="uid://txeiyxdr4210" path="res://Model/Paper/item/paperV5.tscn" id="217_dryi3"]
 [ext_resource type="PackedScene" uid="uid://cyc44vgfy3yhl" path="res://Model/Paper/item/paperV6.tscn" id="218_qje4k"]
+[ext_resource type="AudioStream" uid="uid://ds8wdxsa31p5q" path="res://VAs/EDVA5.wav" id="218_tni4d"]
+[ext_resource type="AudioStream" uid="uid://bwcsinmh0fwp4" path="res://VAs/EDVA6.wav" id="219_71sda"]
 [ext_resource type="PackedScene" uid="uid://cddo0g1qes1pw" path="res://Model/Paper/item/paperCave.tscn" id="219_dryi3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
@@ -1316,7 +1322,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=169580611]
-transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645005, 0.5964021, -0.21765177, -0.77261347, 0, 0, 0)
+transform = Transform3D(-0.6154047, -0.74195933, -0.26603213, -0.51534545, 0.6341325, -0.57645, 0.5964021, -0.21765174, -0.77261347, 0, 0, 0)
 top_level = true
 visible = false
 shadow_enabled = true
@@ -8322,6 +8328,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 638.72736, 15.946363, 440.603
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("162_yf7a7")
+endingVAs = Array[AudioStreamWAV]([ExtResource("214_a7oj8"), ExtResource("215_amry1"), ExtResource("216_svbav"), ExtResource("217_1qepm"), ExtResource("218_tni4d"), ExtResource("219_71sda")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ending" unique_id=1750043143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32666016, -0.7915039, -0.04598999)
@@ -8435,6 +8442,10 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EndingText" unique_id=1631309088]
 libraries/ = SubResource("AnimationLibrary_rbtfl")
 
+[node name="VAs" type="AudioStreamPlayer" parent="EndingText" unique_id=1323984154]
+volume_db = -14.0
+bus = &"VA"
+
 [node name="EOverlay" type="Control" parent="." unique_id=132527741]
 visible = false
 layout_mode = 3
@@ -8507,7 +8518,7 @@ text = "UI_CINEMATIC_SKTP"
 libraries/ = SubResource("AnimationLibrary_7x5qn")
 
 [node name="TestingMarker" type="Marker3D" parent="." unique_id=196855959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.386078, 24.30819, 430.62375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 626.9275, 24.30819, 441.51544)
 
 [connection signal="body_entered" from="MT/SaveBefore" to="MT/SaveBefore" method="_on_body_entered"]
 [connection signal="body_entered" from="Ending" to="Ending" method="_on_body_entered"]

@@ -24,6 +24,20 @@ extends Area3D
 @onready var skip: MarginContainer = $"../Skip"
 @onready var animation_player: AnimationPlayer = $"../Skip/AnimationPlayer"
 
+@export var endingVAs:Array[AudioStreamWAV];
+@onready var v_as: AudioStreamPlayer = $"../EndingText/VAs"
+
+func playVAs(vaindex:Array[int],waitSec:int) :
+	await Varibles.wait(1)
+	var isEnd = 0;
+	for i in vaindex :
+		isEnd += 1
+		var vaStream:AudioStreamWAV = endingVAs[i]
+		v_as.stream = vaStream
+		v_as.play()
+		if isEnd != vaindex.size() :
+			await Varibles.wait(waitSec + 3)
+
 func _on_body_entered(body: Node3D) -> void:
 	if body != player :
 		return
@@ -54,6 +68,7 @@ func _on_body_entered(body: Node3D) -> void:
 	skip.show()
 	changeTextEnding(['ENDING_CINEMATIC_TEXT_1','ENDING_CINEMATIC_TEXT_2','ENDING_CINEMATIC_TEXT_3'],8,2)
 	Varibles.tweenCam(_1,'global_transform',c_2.global_transform,15)
+	playVAs([0,1,2],10)
 	await Varibles.wait(5)
 	animation_player.play("Slide")
 	await Varibles.wait(9)
@@ -62,10 +77,12 @@ func _on_body_entered(body: Node3D) -> void:
 	_2.make_current()
 	changeTextEnding(['ENDING_CINEMATIC_TEXT_4','ENDING_CINEMATIC_TEXT_5'],10,2)
 	Varibles.tweenCam(_2,'global_transform',c_4.global_transform,35)
+	playVAs([3,4],12)
 	await  Varibles.wait(34)
 	_3.make_current()
 	changeTextEnding(['ENDING_CINEMATIC_TEXT_6'],10,0)
 	Varibles.tweenCam(_3,'global_transform',c_5.global_transform,20)
+	playVAs([5],10)
 	await Varibles.wait(19)
 	ScenesLoader.load_scene("uid://bvlv0jtma8aq6")
 
